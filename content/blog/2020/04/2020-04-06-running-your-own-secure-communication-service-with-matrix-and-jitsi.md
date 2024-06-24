@@ -45,7 +45,7 @@ there are many many other environments and architectures (e.g. installing
 under Docker) - this is just one relatively easy way to skin the cat.  Perhaps
 there will be other 'speed-run' videos in future :)
 
-<iframe src="https://www.youtube.com/embed/dDddKmdLEdg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="dDddKmdLEdg") }}
 
 If you want to follow along at home without listening to the video (and I can't blame you if you do ;) the high level steps are as follows:
 

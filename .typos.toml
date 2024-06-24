@@ -1,55 +1,88 @@
 [files]
 extend-exclude = [
+    # files thta make no sense to be searched for typos
+    "*.jpg", "*.js*", "*.json", "*.mov", "*.png", "*.svg", "*.asc",
+    "/static/jira",
+    "/static/blog/wp-content/uploads/2016/07/predisclosure.signed.txt",
     # external typo that must be replicated for technical correctness
     "content/blog/2020/09/2020-09-04-this-week-in-matrix-2020-09-04.md",
     # contains non-English
     "content/blog/2021/07/2021-07-02-this-week-in-matrix-2021-07-02.md",
     "content/blog/2021/09/2021-09-17-this-week-in-matrix-2021-09-17.md",
-    # Username wrongly detected as typo
+    "content/blog/2023/06/16-twim.md",
+    "content/blog/2023/07/2023-07-28-twim.md",
+    # contains username that is also a common typo
     "content/blog/2023/04/2023-04-14-this-week-in-matrix-2023-04-14.md",
-    # Tries to parse svg and image files
-    "static/blog/img/",
-    "static/js/",
-    # contains German
-    "content/blog/2023/06/16-twim.md"
+    # contains OTKs
+    "content/blog/2023/11/2023-11-24-twim.md",
+    "content/blog/2024/04/open-source-publicly-funded-service.md",
+    "content/blog/2024/04/2024-04-19-twim.md",
+    "content/blog/2024/04/2024-04-26-twim.md"
 ]
 
 [default]
+extend-ignore-re = [
+    # youtube metadata in toml file
+    "youtube = \"\\w+\"",
+    # youtube embed in articles
+    "\\{\\{ youtube_player\\(video_id=\"[^\"]+\"\\) \\}\\}",
+
+    # Matrix
+    "morg", # shorthand for m.org or matrix.org
+
+    # slang
+    "tha'",
+    "Wee!",
+
+    # multi-word terms where an individual word is detected as a typo
+    # such as user names, project names, domain names
+    "Allo", # Google Allo,
+    "Big Sur",
+    "CivTAK",
+    "Cy8aer",
+    "David Tennant",
+    "Fuj'ehr",
+    "GIFing",
+    "VaiTon",
+    "WeeChat",
+    "CSAE", # abbreviation
+    "Flate", # compression algorithm
+    "IIT", # Multiple tech institutes
+    "Konversation",
+    "MCH", # May Contain Hackers
+    "MUC", # Multi-user chat
+    "“Twosday”",
+
+    "add-ons",
+    "json-clos",
+    "new-morg\\.png",
+    "tak-hntlabs",
+    "whos-in-this-room",
+
+    "inex\\.rocks",
+    "raim\\.ist",
+    "loca\\.lt",
+    "programm\\.fr",
+    "supercable\\.onl",
+
+    "#interop-sme:matrix.org",
+
+    # weird things hard or impossible to catch with heuristics
+    "index.273f8abd.js",
+    "ERRORs",
+    "H5atH-tbeRo", # can't get more general regex for otwsu.toml working
+    "KSVTtGsolBXtfsLTeAciXnBc\\.png",
+    "MESSAGEs",
+    "\\`Ther\\`",
+    "\\[ba685b7\\]",
+    "\\[96e9afe6\\]",
+    "2020-03-06-oTyHd-",
+]
 
 [default.extend-words]
+automations = "automations" # valid word
 requestor = "requestor" # valid spelling variant
-tha = "tha" # intentional, followed by apostrophe
-morg = "morg" # abbreviation for matrix.org, used in filename
-
-Allo = "Allo" # Google Allo
-CSAE = "CSAE" # abbreviation
-Flate = "Flate" # compression algorithm
-Konversation = "Konversation"
-Ther = "Ther" # intentionally not a complete word
-Twosday = "Twosday" # quoted, portmanteau
-
-# https://github.com/crate-ci/typos/issues/399
-ERRO = "ERRO"
-MESSAG = "MESSAG"
-
-# part of base64 or similar strings
-afe = "afe"
-ba = "ba"
-tbe = "tbe"
-Aci = "Aci"
-Nd = "Nd"
-
-# everything below should be whitelisted as inter-punct but that's
-# not possible yet – https://github.com/crate-ci/typos/issues/400
-clos = "clos" # json-clos
-ehr = "ehr" # Fuj'ehr
-inex = "inex" # inex.rocks
-ist = "ist" # raim.ist
-loca = "loca" # loca.lt
-onl = "onl" # supercable.onl
-ons = "ons" # add-ons
-Vai = "Vai" # VaiTon
-whos = "whos" # whos-in-this-room
+wrk = "wrk" # application name
 
 # (user)names
 feld = "feld"

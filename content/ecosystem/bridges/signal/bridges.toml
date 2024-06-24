@@ -2,13 +2,13 @@
 name = "mautrix-signal"
 maintainer = "Tulir"
 summary = """
-A Matrix-Signal puppeting bridge. Written in Python using [mautrix-python](https://matrix.org/docs/projects/sdk/mautrix-python.html).
-Communicates with Signal using [signald](https://gitlab.com/signald/signald).
+A Matrix-Signal puppeting bridge. Written in Go.
+
 """
 maturity = "Beta"
-language = "Python"
+language = "Go"
 license = "AGPL-3.0-or-later"
-docs = "https://docs.mau.fi/bridges/python/setup.html?bridge=signal"
+docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=signal"
 repo = "https://github.com/mautrix/signal"
 room = "#signal:maunium.net"
 featured = true

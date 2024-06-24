@@ -1,5 +1,5 @@
 +++
-title = "Matrix Foundation Privacy Policy"
+title = "Matrix.org Foundation Privacy Policy"
 version = "3.1.0"
 +++
 
@@ -16,9 +16,9 @@ When you read 'the Matrix.org homeserver' or 'the Service' below, it refers to t
 
 The public Matrix Network is a decentralised and openly federated communication network. This means that user messages are replicated on each participant's server and messages posted to a room are visible to all participants including in some cases any new joiners. This is further explained at 2.3.
 
-Where you read The Matrix.org Foundation C.I.C., The Matrix.org Foundation, or The Foundation, it refers to the Community Interest Company incorporated on 29 October 2018 to be the neutral custodian of the Matrix protocol: The Matrix Foundation C.I.C., and their agents.
+Where you read The Matrix.org Foundation C.I.C., The Matrix.org Foundation, or The Foundation, it refers to the Community Interest Company incorporated on 29 October 2018 to be the neutral custodian of the Matrix protocol: The Matrix.org Foundation C.I.C., and their agents.
 
-The Matrix protocol is licensed by the Matrix Foundation which makes it available to third parties who set up their own homeserver. This privacy policy does not apply to such Matrix servers run by anyone else - Matrix is an open network like the Web and this agreement only applies to the server (Matrix.org) provided by Element.
+The Matrix protocol is licensed by the Matrix.org Foundation which makes it available to third parties who set up their own homeserver. This privacy policy does not apply to such Matrix servers run by anyone else - Matrix is an open network like the Web and this agreement only applies to the server (Matrix.org) provided by Element.
 
 Matrix.org is the Data Controller for the Service and works with [Element](element.io) as a Processor for data processing, hosting and management purposes. We can be contacted as per the details below:
 
@@ -129,7 +129,7 @@ We store and distribute the messages and files you share using the Service (and 
 
 This content includes any information about yourself that you choose to share.
 
-#### 2.2.1.3 Information you provide through purchases in the Matrix Foundation shop
+#### 2.2.1.3 Information you provide through purchases in the Matrix.org Foundation shop
 
 The Matrix.org Shop is an online store at which you can purchase Matrix.org-branded merchandise, such as stickers or tee-shirts. All proceeds go to The Matrix.org Foundation. Data you provide for this purpose is processed under Performance of Contract. This means that we process your data for the purposes of fulfilling orders you make from us, getting in touch with you, responding to your requests, working with our suppliers to deliver the Service and enabling its features, ensuring the security of our Service, developing, fixing and improving our Service, administering our business and complying with the law.
 
@@ -164,14 +164,24 @@ For further details, please refer directly to Printful's privacy policy: https:/
 
 **Stripe and Paypal**
 
-We use Stripe and Paypal to handle payment processing. By purchasing from our shop, the following details will be shared with either Stripe or Paypal:
+We use Stripe and Paypal to handle payment processing for the merchandise shop. By purchasing from our shop, the following details will be shared with either Stripe or Paypal:
 
 * Your payment details
 * Your purchase value
 
-Stripe and/or Paypal takes care of all payment processing, so The Matrix Foundation and its employees will never see your payment details.
+Stripe and/or Paypal takes care of all payment processing, so The Matrix.org Foundation and its employees will never see your payment details.
 
 Here is Stripe's Privacy Policy: https://stripe.com/privacy-shield-policy and Paypal's: https://www.paypal.com/webapps/mpp/ua/privacy-full
+
+**Donorbox**
+
+We use Donorbox to collect donations from individuals and organisations. By donating to us you will be asked to share:
+
+* Your name
+* Your email address
+* Your Matrix ID (optional)
+
+Donorbox manages payment processing via Stripe. You can review their Privacy Policy here: https://donorbox.org/privacy
 
 #### 2.2.2 Information we collect automatically as you use the Service:
 
@@ -182,6 +192,12 @@ Each device you use to access the Service is allocated a (user-configurable) ide
 This information is gathered to help you to manage your devices - you can view and manage the list of devices by connecting to the Service with a Matrix client such as the Element app.
 
 Currently, we log the IP addresses of everyone who accesses the Service. This data is used in order to mitigate abuse, debug operational issues, and monitor traffic patterns. Our logs are kept for not longer than 180 days.
+
+**Analytics information**
+
+We use the privacy-preserving website analytics solution Plausible. Plausible allows us to understand how our website is used, without the use of cookies or other tracking technologies. Your use of the matrix.org website is not associated with any persistent identifiers or cross-site tracking and no personal data is collected about you. 
+
+For full details on how Plausible processes data please refer to their Privacy Policy: https://plausible.io/data-policy
 
 ### 2.3 What information is shared with third-parties and why?
 
@@ -284,7 +300,7 @@ We never share what we see with other users or the general public.
 
 ### 2.11 Who else has access to my data?
 
-Element is a Processor of your data, managing the homeserver on behalf of the Matrix Foundation. We host the majority of the Service in Mythic Beasts data centres. Here’s Mythic Beast’s privacy policy: https://www.mythic-beasts.com/terms/privacy
+Element is a Processor of your data, managing the homeserver on behalf of the Matrix.org Foundation. We host the majority of the Service in Mythic Beasts data centres. Here’s Mythic Beast’s privacy policy: https://www.mythic-beasts.com/terms/privacy
 
 We host some Services in in UpCloud data centres. Here's UpCloud's privacy policy: https://upcloud.com/privacy-policy/. UpCloud controls physical access to their locations.
 
@@ -335,5 +351,6 @@ If you want to make a complaint about the way we have processed your personal in
 - 3.0.0 - annual review and updates to processors - June 2023
 - 3.0.1 - minor clarification of 2.12 - June 2023
 - 3.1.0 - include references to archive.matrix.org and room visibility settings - July 2023
+- 3.1.1 - include details on Plausible and Donorbox - February 2024
 
 **A note to other startups**: this document was heavily inspired by Balsamiq's plain English ToS document. We were impressed by their championing of plain English, and wanted to reproduce that as much as possible in our own legal documentation. Feel free to draw similar inspiration from this document, though be sure to get any documents you produce checked over by a lawyer. Good luck!

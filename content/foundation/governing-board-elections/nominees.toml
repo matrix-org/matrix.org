@@ -1,0 +1,393 @@
+# Categories can be any of
+# [[platinum_members]]
+# [[gold_members]]
+# [[silver_members]]
+# [[ecosystem_members]]
+# [[associate_members]]
+# [[individual_members]]
+# [[sct_members]]
+# [[guardians]]
+
+[[individual_members]]
+name = "Andy Balaam"
+pronouns = "he/him"
+bio = """I am to committed software freedom: I have contributed to free software projects for 25 years and am a sustainer of the Software Freedom Conservancy.
+
+I am a good communicator, known in my work as a highly-collaborative team member.
+
+As part of my work for Element I have contributed across many Matrix projects, including the spec. Being employed by Element could influence my involvement and I will remove myself from decisions where I feel there is a conflict.
+
+For more details see [https://www.artificialworlds.net/blog/2024/04/20/standing-for-the-matrix-governing-board/](https://www.artificialworlds.net/blog/2024/04/20/standing-for-the-matrix-governing-board/)
+"""
+platform_statement = """
+I am an enthusiastic supporter of Matrix because I can imagine a world where everyone can communicate securely and privately, free of snooping and manipulation by powerful companies. We should be able to talk privately, do business, and administrate our lives without worrying about who is excluded, who is listening, and whether we are the product. Email is awesome: it's time to level up to real-time, secure communication that is free from unwanted control and influence.
+
+My priorities:
+
+I want Matrix to last. When I look at the success of the Linux project, I see years of steady work paying off in the long term. I think Matrix should take the same approach: steadily working on creating an excellent open standard and excellent implementations of it. "Taking over the world" will inevitably come if the project is good enough, because the advantages of openness are so strong.
+
+For Matrix to last, the foundation needs financial independence. I want to see the foundation raise more money, both from individuals and from corporate and government users. I’d like to see the foundation itself fund development of the standard and some implementations, supporting maintenance and high quality.
+"""
+
+[[individual_members]]
+name = "Clem"
+bio = """I'm a highly cooperative human with a focus on fixing daily challenges in a way that empowers individuals. As a Linux system engineer, I advocate for a world where people are in charge of their technological tools and needs without any unwanted intrusion from 3rd-party companies or outside entities. FOSS (Free and Open Source Software) plays a significant role in this vision, and I like to support such projects as well as the kind, caring, user-focused philosophy that comes with it."""
+platform_statement = """As a Matrix governing board individual member, I'm fully supporting the foundation's vision and mission in giving back ownership to people for their own communication. I have no financial stake in any part of the Matrix ecosystem, and I feel confident in bringing a positive, team-based, honest, and constructive drive to help the foundation to achieve its mission. This includes giving a voice to medium and small homeserver communities and empowering Matrix users by facilitating even more the self-hosting process for their communication needs."""
+
+[[individual_members]]
+name = "Greg Sutcliffe"
+pronouns = "he/him"
+bio = """Greg has been a involved in open source for nearly 2 decades; first as a user & sysadmin, then a contributor & developer, and more recently as a community architect. He has the knowledge of how open source communities work, and what they need to succeed, and used that to bring improvements in process & governance to multiple communities. He’s also interested in data, particularly in how to quantify communities in ways that are useful to the humans within them, and is also as fascinated by the psychology & sociology of open source as by the technology it creates."""
+platform_statement = """Hello! I’m Greg, sometimes known as “Gwmngilfen” or also “that Ansible guy”. I’m probably most known in the Matrix world for the advocacy I’ve been doing for the past few years, especially the getting the Ansible community to migrate to Matrix (you can read more about that at [https://emeraldreverie.org/2021/07/08/ansible_and_matrix/](https://emeraldreverie.org/2021/07/08/ansible_and_matrix/)). I also regularly work with Fedora and other FOSS communities on usage, best practices, moderation, etc.
+
+However, I’ve been part of, the Matrix ecosystem for much longer – I first encountered it at the Open Source awards in 2015. Since then, it’s become clear that the world needs a modern replacement for older communication systems, and one that is fully in the control of the communities that use it - I’ve seen first-hand how effective that can be in the communities I work with. So I love Matrix, but with these experiences, I’m not blind to it flaws – we have work to do. With my experience, I think I’m well placed to advocate for more communities to move to Matrix, and to help with topics like Trust & Safety, data analysis, etc.
+
+If you want to talk to me, you can find me in the This Week in Matrix room, I’ll be happy to answer your questions!"""
+
+[[individual_members]]
+name = "J. B. Crawford"
+pronouns = "they/them"
+bio = "Best known as the author of “Computers Are Bad,” I’m a writer and DevOps consultant in Albuquerque, New Mexico. More importantly, I am deeply interested in federated communications technology. I have operated a Matrix homeserver since 2016 and have written on the topic of federated social platforms in several venues. I have served on nonprofit and government boards and have an interest in nonprofit governance. I hold a BS in Information Technology and an MS in Information Security and have worked in various sectors of the software industry for the past decade."
+platform_statement = """Instant messaging is, to say the least, a challenging field for new entrants. The most pervasive text-based messaging platform, email, has always been federated. XMPP demonstrates that federated instant messaging is far from new. Yet users today find themselves choosing from a long list of closed systems, many of them side projects of advertising networks. The Matrix project has much to learn from its competitors. Key among these lessons: ease of use almost always wins.
+
+While no protocol is ever complete, Matrix has achieved a substantial set of features. What is missing is polish. One of the challenges of an open, federated protocol is that no one organization owns the user experience. To develop Matrix into the easy, inviting, and practical option that it should be, the Matrix Project will need to collaborate with client developers, user groups, and homeserver operators. The Foundation should support projects with a meaningful impact on Matrix users while steering effort towards the quality of life features (like ease of use and performance) that currently leave Matrix uncompetitive.
+
+As a young nonprofit, the Matrix Foundation should focus on sustainability. The Foundation should maintain a narrow focus and practice a transparent and collaborative approach to governance."""
+
+[[individual_members]]
+name = "Oleg Fiksel"
+bio = """Oleg is working as an engineer by day and is hacking on open source by night. Being an open source ennthusiast for all of his professional career and the Matrix ambassador for Germany since 2018 he wants Matrix to succeed in the current siloed world of messengers. By conducting inspiring talks at several open source conferences and organizing Matrix Devroom at the FrOSCon every year he spreads Matrix awareness in Germany."""
+platform_statement = """I believe in bright future for Matrix. I spend much time spreading the word about Matrix and was involved in the community. I want to be more involved in forming it's future. And I will do my best to make Matrix more successful in every way!"""
+
+[[individual_members]]
+name = "Reid Anderson"
+pronouns = "he/him"
+bio = "Reid is a software engineer that has closely followed open-source software for 15 years, Matrix since 2018, and has donated monthly to the Matrix Foundation since 2021. He started as a developer building extensions and making small code contributions to Mozilla products. He unfortunately saw first-hand the danger in depending on a single business for an open-source product as a community contributor to Songbird, a now-defunct open-source music player whose corporate sponsor went out of business. He has managed development teams and currently works as a principal software engineer for a large logistics company."
+platform_statement = "The Matrix Foundation must be able to function, grow, and fund itself independently of Element. It's impossible to overstate how much of a debt the Matrix community owes Element for their generosity in creating and shepherding the standard to this point, and the support they continue to provide. But for Matrix to be sustainable in the long term, there needs to be true independence between the Foundation and any individual corporate sponsor. This means strong institutions that are responsive to the community, with members that are independent. The governing board is a strong additional step in this direction and helping to build an effective community body is what motivates me. My focus would be to communicate the work that the Foundation is doing as an independent entity. Specifically highlighting how the Foundation is using current funds, and the exciting things that could be done with additional funding. As just one of many members on the board, I believe a positive and transparent fundraising message will help me contribute beyond just my vote. Let's fund and build some cool stuff together."
+
+[[individual_members]]
+name = "Sumner Evans"
+bio = "I work on bridges and backend infrastructure as a software engineer at Beeper. You may have met me at one of the Matrix meetups and possibly even seen me giving a presentation at one of them. I've contributed multiple spec clarifications and been involved in many MSCs both personally and through my position at Beeper."
+platform_statement = """If elected, my primary goal as a member of the Governing Board would be to encourage a focus on chat and increase ecosystem diversity.
+
+FOCUS ON CHAT: If Matrix doesn't become the backbone for interoperable chat, the damage that siloed chat platforms do to personal privacy and data sovereignty will continue to go unchecked. The foundation should be SOLELY investing in making Matrix into the best platform for federated, interoperable chat. The Foundation should not invest in speculative ideas such as VR/AR, P2P Matrix, low-bandwidth Matrix, IOT Matrix, etc. until the chat ecosystem is healthy.
+
+ECOSYSTEM DIVERSITY: The best way to create a healthy ecosystem is to have ecosystem diversity. We need multiple complete implementations of the (meg)olm protocol for cryptography, multiple viable homeserver implementations, multiple featureful clients, etc. Every new implementation stress-tests the Matrix spec, and introduces new ideas into the ecosystem which benefits all of us.
+
+I am a member of the Matrix community first and an employee of Beeper second. I got my job through TWIM, and I want to see the Matrix ecosystem thrive. I'm concerned with the current direction of the ecosystem, and I want to do my part in turning the tide.
+"""
+
+[[individual_members]]
+name = "Thomas Braun"
+pronouns = "he/him"
+bio = """
+Thomas Braun, born in 1972 in West Berlin, grew up in a city divided by the Berlin Wall. When the Wall fell, he experienced the exhilaration of newfound freedom. As the internet emerged, Thomas embraced its open, collaborative nature.
+
+However, as tech companies began erecting their own digital barriers, he grew uneasy. He missed the open internet of the 1990s and sought ways to reclaim its spirit. The Matrix protocol offered him a renewed sense of hope, providing a path toward a more open and inclusive online community. Thomas is committed to breaking down barriers and fostering a connected, collaborative internet.
+"""
+platform_statement = """
+I want to start by clarifying that I’m not affiliated with Element or part of the community developing the Matrix ecosystem. My focus is on fostering steady evolution of the Matrix protocol and leading a revolution in real-time communication.
+
+To achieve these goals, the Matrix Foundation needs two solid pillars: a robust community and business partnerships. It's crucial to balance these two pillars to ensure a sustainable and vibrant future for Matrix.
+The community is the heart of the Matrix ecosystem, driving innovation and creativity. Business companies that build consumer products on Matrix provide the necessary funding to support this community. This symbiotic relationship helps keep the ecosystem dynamic.
+
+I bring a wealth of business ideas and a vision for the Foundation's future. My goal is to ensure Matrix continues to grow and thrive while avoiding the pitfalls that have marred other parts of the internet. By maintaining the values of openness and collaboration, we can keep Matrix on the right path.
+
+I am committed to contributing to a future where real-time communication is open, secure, and driven by a diverse and enthusiastic community. Together, we can ensure Matrix stays strong and forward-looking.
+"""
+
+[[individual_members]]
+name = "William Hawkes-Robinson (\"Hawke Robinson\")"
+bio = """
+40+ years tech & online experience. Fractional CTO/CIO for multiple companies. After 2600.net's IRC was taken down by a massive global DDoS in 2002 for over a year, I helped them start to rebuild from scratch, starting on my own ISP/WISP infrastructure first as the initial core from scratch, & back online since 2003. Founder spokane2600.org. Founder of non-profit RPGResearch.com, BCIRPG.com, "Grandfather of Therapeutic Gaming", hawkerobinson.com, TechTalkHawke.com, consultant. Using Matrix since 2020, implemented matrix-synapse servers and web clients for school districts, community programs, world events (WorldCon, GenCon, etc.), & more.
+"""
+platform_statement = """
+For open source (and humanity) to grow &  thrive, there must be unhindered global communication allowing the free & open sharing of ideas, free from oppression, to help raise up the overall human condition. I have a long history of open source advocacy, I have been online since 1979, using Linux since 1994, & always a very active open source, trust and transparency, advocate. I have seen globally multiple iterations of freedom-oppression cycles affect the flow of ideas & innovation directly, impacted by technologies & social trends. In addition to my extensive technology background & Fractional CTO of PracticingMusician.com, known as "The Grandfather of Therapeutic Gaming" as Founder of RPGResearch.com the world's largest free and open archives on the effects & uses of role-playing games. I have decades as a talk show host & guest on many terrestrial & online radio shows, streams, and podcasts, I am also a Recreational Therapist with a background in Research Psychology, Neuroscience, AI, and Neurotechnologies. Frequently consulted for "ethical psychology" of technology designs, such as ethical game tech design, ethical AI, ethical neurotech, etc. I have directly impacted the technology, accessibility, & communication policies of PBS, WorldCon, many school districts, & more.
+"""
+
+[[individual_members]]
+name = "Wm Salt Hale"
+pronouns = "he/lim"
+bio = "Salt is a Seattle local who has been involved with the Free Software movement since 1996. Currently, he works at IEEE SA Open while volunteering as Impresario of SeaGL and Community Director of Snowdrift.coop. Salt attended five years of graduate studies at the University of Washington where he focused on the intersection between communication, computer science, and law. Salt tries to be very approachable and will always be found wearing a kilt."
+platform_statement = """Hello, I'm Salt and I'm running for the Matrix Foundation Governing Board as an Individual Member. I have been a part of the Matrix ecosystem since discovering it at FOSDEM 2016. In that time I've been operating a personal homeserver, participating in a variety of MSC discussions, and building a remote conference experience portal on top of Element Web.
+
+I believe in the Matrix protocol. In terms of chat, it has the potential to bridge communities that are currently locked away behind walled gardens. Moreover, the foundation has vocally supported encryption, a fundamental requirement for free/libre/open (FLO) communication.
+
+However, it is clear to me that Matrix is about so much more than just chat, and it has a community of supporters that realize this too. Whether it is being used as a platform for innovation or a model of distributed standards development, Matrix is an example of the world I hope we are moving towards.
+
+My background and interests are diverse, and include over 15 years of being the core organizer of conferences, FLOSS projects, hackerspaces, LUGs, start-ups, and even a university sailing club. I would like to bring my experience facilitating and participating in community discussions to this new Governing Board.
+
+Thank you for your time and consideration!"""
+
+[[individual_members]]
+name = "Yan Minagawa"
+pronouns = "he/him"
+bio = "Yan, a Berlin-based matrix evangelist, embodies the fusion of artistry and technology. Passionate about decentralization, he champions innovative solutions in a digitally interconnected world. Beyond his artistic pursuits, Yan is an event organizer, curating gatherings that celebrate creativity and explore the frontiers of decentral systems. His commitment to community-building is evident in his collaborative projects and thought-provoking discussions. With a deep belief in the power of decentralized networks, Yan's advocacy extends beyond borders, inspiring others to embrace the potential of a more connected and equitable future."
+platform_statement = "Vote Yan Minagawa for the governing board of the Matrix Foundation for a visionary and inclusive leadership. With a background as a Berlin-based matrix evangelist and a proud member of the Matrix ecosystem for five years, Yan brings a wealth of experience and a deep understanding of the platform's intricacies. Moreover, his extensive involvement in the free software community for 25 years underscores his enduring commitment to the values of openness and collaboration. His passion for decentralization and commitment to fostering collaboration make him an ideal candidate to steer the Foundation towards its mission of advancing open, secure, and interoperable communication platforms. Yan's dedication to organizing events and promoting decentral systems demonstrates his proactive approach to driving positive change. By voting for Yan, you're endorsing a leader who will champion innovation, diversity, and transparency within the Matrix ecosystem."
+
+
+
+
+[[ecosystem_members]]
+name = "Benedict Benken"
+pronouns = "he/him"
+project = "Trixnity"
+bio = """As the main maintainer of [Trixnity](https://gitlab.com/trixnity/trixnity) (a multiplatform Matrix SDK for almost everything), I have many years of in-depth experience with Matrix and its encryption. Independently of Matrix, I am committed to open source, data protection, security and climate protection.
+
+Disclosure: I'm also CEO and developer of connect2x, which builds on top of Trixnity (most of it also Open Source). Nevertheless, I am applying here as a private individual and maintainer of Trixnity."""
+platform_statement = """My big vision is that Matrix becomes the de facto standard for (human) communication and that you can reach everyone with it. However, I believe that this still requires a lot of work, especially in terms of user-friendliness, account portability and reliable encryption. I would also like to see Element play a less important role in the overall ecosystem at some point.
+
+As a result of creating a Matrix SDK, my focus is also on the developer experience, specifically the implementation and usage of the Matrix specification. I am committed to making Matrix as diverse yet simple and elegant as possible. This also means, that the improvement of the existing Matrix specification is more important to me than many new (possibly half-baked) features.
+"""
+
+[[ecosystem_members]]
+name = "Bram van den Heuvel"
+pronouns = "he/they"
+project = "Elm SDK"
+bio = """
+Hi, my name’s Bram. I’m the lead developer and founder of the [Elm SDK project](https://github.com/noordstar/elm-matrix-sdk-beta). In the past, I have built bridges to [Minecraft](https://github.com/BramvdnHeuvel/Minecraft-bridge) and [Minetest](https://git.noordstar.me/Bram/mt-matrix), and I am maintaining the [Matrix Event Directory](https://matrix.di), a directory where people can look up custom event types from the Matrix ecosystem.
+
+I frequently participate in events close to the Netherlands such as FOSDEM in Brussels and the yearly community meetup in Berlin, where I try to get to know as many people as possible from Matrix’s community.
+"""
+platform_statement = """
+As the developer of an SDK in a functional programming language, I have personally encountered various issues in the spec, having lead to many (productive) discussions about the protocol. I have often felt first-hand how the current Matrix spec often revolves around Element’s needs – which isn’t a bad thing, but it reflects in the ecosystem: the more you resemble Element, the fewer issues you encounter. With my diverse experience of developing various clients, bridges and tools to support the ecosystem, I aim to focus on finding and solving issues that Synapse & Element wouldn’t encounter.
+
+Having seen the growing pains of changing Matrix significantly, my mission isn’t to change Matrix drastically; I just want to make sure that building a social media platform, a bridge, a moderation client, a collaboration tool or a video game encounters as few problems as building an instant messenger does.
+
+If I’m elected, I’d like to make sure that most of you know me personally, either by meeting me at a conference or by having a chat. I am an informal person and I’d like to keep my communications that way – especially if I can set a precedent. Thanks for reading everything! <3
+"""
+
+[[ecosystem_members]]
+name = "Cat"
+pronouns = "he/him"
+project = "Community Moderation Effort"
+bio = "I'm Cat a feline that works on Trust and Safety together with deployment of Draupnir. And I am a long time member of the Community Moderation Effort and a long time federation member."
+platform_statement = "So who is Cat the candidate? Well I seek to represent the T&S needs that our community has not only because I am the candidate from the Community Moderation Effort but because it's been a thing since day one for me on Matrix. But learning about why one should vote for me or shouldn't is probably best done by simply interacting with me as a candidate on Matrix. So take this as an invite to ask away in the regular forums on Matrix."
+
+[[ecosystem_members]]
+name = "Emma"
+pronouns = "it/its"
+project = "Rory&::LibMatrix"
+bio = """Hi, I'm Emma, the main maintainer of the [Rory&::LibMatrix](https://cgit.rory.gay/matrix) suite of SDKs, tools and bots. The Rory&::LibMatrix SDKs are focussed on C# (.NET) and aim to provide solid (not hard!) type mappings in order to obtain a consistent yet extensible (and enjoyable) developer experience, and to empower end users to create their own tools and harness the power of Matrix' flexibility.
+
+While I might be a newer member to the scene, I feel like I have a fairly solid grasp on interacting with Matrix, both as a developer and as a user, and have a solid group of longer-term Matrix users around me."""
+platform_statement = """The Rory&::LibMatrix suite of projects aim to empower end users to turn their Matrix experience to fit their needs.
+
+Some of our priorities are to increase consistency between servers (eg. admin APIs, server features such as [`/state/x/y?format=event`](https://github.com/matrix-org/matrix-spec/issues/1047), etc.), bringing more powerful features for bots (~~buttons~~ data-driven interactions, anyone?), and attempting to better define/refine existing client behavior (eg. rendering and interpreting of HTML elements, such as tables, codeblocks etc.), in order to create a more consistent user experience."""
+
+[[ecosystem_members]]
+name = "Kim Brose (HarHarLinks)"
+pronouns = "he/him"
+project = "Matrix Community Events"
+bio = "I started my journey in the free software world when I selected Linux as I started my degree and soon discovered the world of self-hosting from home using some old hardware. The amount of services I host for my family and friends is steadily growing ever since. In early 2017 I discovered Matrix in an effort to move my friends off proprietary messengers and into a self-hosted, sovereign, end-to-end encrypted, modern and feature-rich system that is extensible and hackable with bots and requires no dependency service such as phone numbers. Today, I work on all kinds of Matrix-related software as a software engineer at Nordeck."
+platform_statement = """
+I joined the Matrix ecosystem first as a homeserver owner and admin for a small community, giving me the perspective of the private and less technical end user through my server's users. Nowadays, I also get to experience the business side of Matrix every day at work.
+
+In over 7 years, I have seen lots of projects in the ecosystem, integrated some into my own instance, contributed to many in various ways, and started some myself. This drove me to attending and helping out at the first Matrix Community Summit, where I gave my first talk about Matrix and also connected to my current employer. I enjoyed the conference a lot and joined the group to organize many similar events subsequently.
+
+The mission of the Matrix Foundation includes nurturing the ecosystem for everyone involved. In my experience, events play a key role. They offer both the fertile soil for ecosystem members to connect and tighten their relationships, and are a gateway for newcomers to discover and dive into Matrix. If elected, I will help the Foundation to expand its relationships not only with businesses but also private users, and want to establish a working group for events that enables the community to continue running events beyond what the Foundation itself can.
+"""
+
+[[ecosystem_members]]
+name = "Nadine Minagawa"
+pronouns = "she/her"
+project = "Polychat"
+bio = "Nadine is a Designer and UX Specialist with over 25 years of industry experience. With her blend of creativity and user-centered focus, she crafts intuitive digital experiences that push boundaries. Her background in graphic design and her passion for technology fuels her journey, driving her to create interfaces that seamlessly merge form and function. Beyond design, she advocates for diversity and inclusion in the tech industry, mentoring startup projects, aspiring designers and championing equitable initiatives. Nadine is not just shaping user interactions within the Matrix; she's defining the future of digital experience."
+platform_statement = "Nadine has been drawn to Matrix 5 years ago by its possibility of interoperability and wide and interesting scope of UX potential and has since been thriving within the Matrix community as co-organiser of various community events as well as a passionate speaker. Her passion for Usability and Interoperability has found an application within the Matrix ecosystem as she initiated matrix-based interoperability service “polychat” which allows users to experience interoperability from within their trusted messenger. As a member of the governing board for the Matrix Foundation, Nadine is dedicated to advocating for users and placing interoperability at the forefront. She believes that interoperability is essential for empowering users with choice and control over their digital experiences. Nadine will prioritize initiatives that promote open protocols, transparent governance, and collaboration among developers to ensure seamless communication across platforms. With her leadership, the foundation will drive innovation and empower users in an interconnected digital world."
+
+[[ecosystem_members]]
+name = "Nico (Nicolas Werner)"
+pronouns = "he/him"
+project = "Nheko"
+bio = """
+I am one of the Nheko maintainers. I am heavily involved in the Community Moderation Effort (CME).
+
+I am currently employed by Famedly to work on their Matrix stuff. I chose Famedly originally, because it was one of the smaller Matrix companies in the ecosystem and I wanted to support a more equal power distribution of companies in the Matrixsphere.
+
+I wrote a few MSCs, primarily trying to clean up old warts in Matrix and improving edge cases. I fixed quite a few big bugs in various projects all over Matrix (unbanning users from single user servers, calls via Element on not-synapse, etc).
+
+I sometimes publish a community year-in review.
+"""
+platform_statement = """
+My primary goal is to make Matrix a comfy place. That sounds simplistic, but is actually quite complex and can be broken down into several different goals.
+
+First of all my goal isn't having more big ticket features in Matrix, but instead focusing on the smaller things. There are plenty of cases in Matrix that are simply a bit annoying. And there are lots of things that need a small tweak to make the experience a lot more fun. Matrix should be enjoyable for the people using it. Chasing marketshare and pushing Matrix everywhere can sometimes be counterproductive in that regard.
+
+Another goal is moderation. Not in doing less, but in making the ecosystem trustworthy and fight spam and abuse. For that reason I am already involved with the CME, but there is a lot to do there to make Matrix a platform, that is as easy to moderate as moderation can be.
+
+And lastly, I want to improve the relationship of the Matrix "teams" with the community. The community brings an incredible amount of energy and instead of presenting them with plans, we should harness that energy. There are few things more productive than someone just scratching their own itch.
+
+In the end I want people to enjoy using Matrix and work on that needs to cover all areas.
+"""
+
+
+
+[[associate_members]]
+name = "Cleo Menezes Jr."
+pronouns = "he/him"
+project = "GNOME Foundation"
+bio = """
+Cleo is a developer who loves free software and advocates not only for the user's freedom to be empowered by the right to choose, but also for the freedom of the maintainers and their mental health. Today, one of his passions is being able to contribute to projects linked to GNOME. This collects several contributions to various projects such as GNOME Web, Weather, Builder, Secrets etc. Maintain GNOME Weather O'Clock and Auto Activities extensions. He is also the creator and maintainer of apps such as Escambo and Aurea. In addition to actively contributing to Firefox GNOME Theme.
+In 2023, he participated in GNOME LATAM, where he talked on the topic "How to become a contributor".
+"""
+platform_statement="""
+My vision for Matrix is to fortify its stance against platform abuse while preserving its core value of privacy. I believe that in order to thrive and compete effectively in the messaging landscape, Matrix must evolve beyond its current status as a niche platform primarily accessible to tech-savvy individuals. As a candidate, I am committed to initiatives that prioritize user safety and inclusivity, making Matrix a welcoming space for all while maintaining robust privacy features. I aim to spearhead efforts to enhance the platform's user experience, ensuring it becomes more intuitive and appealing to a broader audience. Together, we can propel Matrix into a new era of accessibility, competitiveness, and resilience against abuse, all while upholding its commitment to privacy and security.
+"""
+
+[[associate_members]]
+name = "Tobias Fella"
+pronouns = "he/him"
+project = "KDE e.V."
+bio = "Tobias is a KDE contributor whose interest in open standards led him to start developing NeoChat, KDE's Matrix client. As part of his involvement in NeoChat, he is also one of the core developers of libQuotient, a C++ library for developing Matrix clients, where he's recently been focusing on implementing the library's encryption capabilities. Tobias has been involved in Open Source development since 2019, by developing applications like an RSS feed reader and a podcast player, and by being a GSoC mentor. He lives in southern Germany and works on GnuPG professionally."
+platform_statement = """As a representative of the Free Software organizations using Matrix, my focus would be on areas vital to ensure that Matrix is the obvious choice for FOSS organizations. This means concentrating on three areas:
+
+- Ensuring that the specification facilitates implementations that offer a high-quality UX, fulfilling users' expectations for a modern instant messaging platform.
+
+- Having powerful community management capabilities - this involves, for example, evolving spaces to be a way of managing permissions and configuration across all of a community's rooms.
+
+- Supporting community moderators by creating powerful tooling for handling reports.
+
+Finally, there's a large non-technical aspect to this: Making Matrix the go-to platform for communities and individual projects requires collaboration, planning, discussions and helping each other. The foundation should facilitate having these discussions and help with onboarding new projects that want to use matrix as their communication platform."""
+
+
+
+
+[[platinum_members]]
+name = "Neil Johnson"
+pronouns = "he/him"
+project = "Element"
+bio = """Neil has been a Matrix community member since before launch in 2014. From 2017, he has held the role of VP of Engineering Management at Element.
+
+In this capacity, he has grown and supported the Element engineering organisation, which makes up the bulk of the Matrix Core Team, and has been involved in all aspects of Element’s technical contribution to Matrix overall.
+
+Before that, he held various engineering leadership roles, starting his career as a software engineer with a focus on messaging and telephony."""
+platform_statement = """Element wants to see Matrix have the same impact on the world in the next 50 years as email has had on the previous 50.
+
+In the early days, out of pragmatism, there was a high level of overlap between Matrix and Element. Element was formed from the Matrix founding team, and even today 90%+ of github.com/matrix-org is attributable to Element staff. However, in the long run, it is essential for Matrix to have a strong Foundation independent of any specific organisation. Which is why the Governing Board is so important.
+
+To achieve the long-term goals of Matrix, we need not only a strong Foundation, a vibrant ecosystem, and a protocol that continues to evolve and innovate but also for Matrix to become a mainstream technology for the benefit of all.
+
+Element should continue to try to help make Matrix the best it can be, contributing to its evolution from promising but niche technology to something truly mainstream.
+
+Speaking personally, my experience at Element has given me first-hand practical insight into delivering large-scale Matrix projects benefiting millions of people, essential for the broader adoption of Matrix in the wild.
+
+I have dedicated my professional life to furthering Matrix, and it would be an honour to serve on the governing board."""
+
+
+
+
+[[gold_members]]
+name = "Brad Murray"
+pronouns = "he/him"
+project = "Beeper"
+bio = "Co-founder and CTO of Beeper (recently acquired by Automattic), building a chat app that allows you to chat with anyone on any network using Matrix bridges. Based in Waterloo, Ontario, Canada. Formerly held various engineering leadership positions at Faire, Fitbit, and Pebble."
+platform_statement = "I personally believe that a world where everyone uses Matrix to chat to each other is a better place. I’ve frequently pitched to people that Matrix makes chat more like email, except fast and secure. At Beeper, we’re committed to bringing our users into the Matrix world in the long term. I’d like to volunteer to the Matrix.org governing board to support the mission in whatever way possible."
+
+[[gold_members]]
+name = "Kevin Boos"
+pronouns = "he/him"
+project = "Futurewei Technologies"
+bio = """Kevin Boos is a Principal Architect at Futurewei Technologies and the tech lead of Project Robius, an open-source, decentralized framework for multi-platform app development in pure Rust. He is the developer of Robrix, a new multi-platform Matrix client and open-source community hub app built using Robius.
+
+Previously, Kevin created Theseus OS, an open-source OS written from scratch in Rust that rethinks OS structure and implementation, with an emphasis on maximally leveraging language mechanisms for compile-time safety and verifiable correctness. Kevin obtained his PhD from Rice University with a focus on OS design."""
+platform_statement = """I strongly believe in the importance of open-source development, decentralized/federated services, and individual data sovereignty. Over the past 12 years, I have worked exclusively in the open-source space as an academic, individual contributor, and project maintainer.
+
+Although relatively new to Matrix, I have devoted significant time to understanding the spec and SDK, primarily to develop Robrix: a multi-platform Matrix client built in Rust atop the emerging Robius app dev framework. Our goals with Robrix are to bring a consistent, performant, and lightweight Matrix experience to every mainstream platform, further demonstrating the power of both Matrix and Rust together.
+
+We also directly sponsor and contribute to other Matrix-coupled projects, such as (1) a new Matrix server backend in Rust, and (2) fully-local LLM engines embeddable into applications like Robrix, allowing users to benefit from convenient AI features like chat summaries without jeopardizing E2EE and data sovereignty.
+
+I will bring a systems programmer’s perspective to the Board and focus on practical improvements and extensions to both the spec and Rust SDK. My colleagues, open-source collaborators, and I will work hard to drive the adoption of Matrix forward and to further the cause of federated technologies."""
+
+
+
+
+[[silver_members]]
+name = "Jan Kohnert"
+pronouns = "he/him"
+project = "gematik GmbH"
+bio = "Healthcare IT professional with 20+ years of experience in software development, functional/project management, and cross-functional initiatives. Skilled in all areas of software engineering, including product design, DevOps, and software architecture. Committed team player with international experience. Currently serving as Product Owner for the TI Messenger at Germany's National Health Agency, gematik GmbH, for the past three years. Previously, held the position of Technical Lead at 3M Health Information Systems for two years, and prior to that, contributed over 10 years as a Software Architect at Roche Diagnostics."
+platform_statement = """The German National Health Agency, gematik, leads the charge in transforming healthcare through digital solutions. At the heart of gematik's efforts lies the TI-Messenger, a platform designed to streamline communication and information exchange within the healthcare sector.
+
+The TI-Messenger serves as a secure and efficient channel for sharing medical data, test results, and treatment plans among healthcare providers, institutions, and patients. It ensures that sensitive information remains protected through robust end-to-end encryption and a decentralized architecture, built upon the Matrix Protocol. This encryption guarantees privacy, preventing unauthorized access to patient data and instilling trust among users.
+
+Moreover, the TI-Messenger prioritizes compliance with data protection regulations, ensuring that patient data is handled with the utmost care and in accordance with legal requirements. By maintaining strict privacy standards, gematik's TI-Messenger fosters a safe and secure environment for collaboration, ultimately enhancing patient care and outcomes.
+
+In summary, gematik's TI-Messenger represents a significant leap forward in Germany's digital healthcare landscape."""
+
+[[silver_members]]
+name = "Thor Arne Johansen"
+project = "Verji Tech AS"
+bio = """Thor Arne Johansen is CTO and co-founder of Verji Tech AS, a Norwegian company building Verji, a communications solution based on Matrix.
+
+Thor Arne is passionate about technology, and thrives where people, technology, and business meet.
+After graduating from California State University his professional career involve: Developing hardware, recovering data from crashed hard drives, and developing commercial software for school management.
+
+Currently Thor Arne is heading up the tech. efforts in the startup Verji Tech.
+
+Privately Thor Arne enjoys the great outdoors with his family, sci-fi, series binging, and hanging out with friends."""
+platform_statement = """While the Matrix ecosystem in general embrace FOSS, we truly believe that FOSS is very much "compatible" with for-profit businesses. As a commercial for-profit company building on Matrix, we have a vested interest in the success and sustainability of Matrix. We believe that a key factor will be to ensure that commercial businesses can reap concrete and quantifiable benefits by contributing to Matrix. The challenge of course is to have the companies contribute in a way that aligns with Matrix’ vision, and to ensure contributions don’t compromise the integrity of the foundation, and the community.
+
+Many things need to come together to achieve this, and we certainly don't have all the answers and fixes. The current direction of the community and the foundation is essential. Clarifying the roles of the most influential  stakeholders in the community is IMO an absolute requirement for a "climate" conducive to businesses and commercial stakeholders. Equally important for companies is to strike a good balance between resources spent, benefits, and competitive advantages.
+
+We hope to bring the viewpoint of a for-profit company into the GB and help make the Matrix attractive for commercial businesses for the mutual benefit of the companies, and the community."""
+
+[[silver_members]]
+name = "Jan Krammer"
+pronouns = "he/him"
+project = "fairkom society"
+bio = "After my first FOSS experience with Firefox and Linux at an early age, there was no going back. When I was young and needed the money (while studying physics), I started working for our university and got more into servers, hosting and deploying FOSS stacks like Jitsi and Matrix. I then became independent while still working closely together with fairkom and universities focusing on opensource. I am a Sci-fi nerd who loves jazz piano and I am currently enjoying my thirties in Vienna."
+platform_statement = "As a heavy FOSS user and advocate, who tries to reduce dependencies of institutions on big companies by helping them with their own opensource solutions, I strongly believe that public funds should also equate to public code, thereby promoting transparency, shared knowledge and the nurture of the community. With the Matrix ecosystem, we have a great chance of replacing existing but proprietary communication silos with a healthy ecosystem for everyone. All that is doable without sacrificing usability, nence, privacy or security, as we can already see the roots starting to take hold in the german sector. However there is still work do be done to make it easy for everyone to use Matrix, be it directly or indirectly."
+
+
+
+[[guardians]]
+name = "Amandine Le Pape"
+pronouns = "she/her"
+bio = "Amandine is co-founder of Matrix, and COO of Element. She previously ran the business side of Amdocs’ UC unit with Matthew. She has an engineering degree in Telecoms, Electronics and Computer Science and uses it most to translate the technicalities of Matrix to humans and businesses, and make sure we keep the users at heart when making decisions!"
+platform_statement = "Amandine created Matrix in order to break the silos of communication and bring the control of their communication back to the users. She is looking to ensure that the Matrix ecosystem grows successfully, with more and more vendors and developers building on top of the protocol, and more and more users joining the public network. Matrix was created for everyone and she wants to support its mission further."
+
+[[guardians]]
+name = "Matthew Hodgson"
+pronouns = "he/him"
+bio = "Matthew co-founded Matrix in 2014, and is the current project lead. His day job is CEO/CTO at Element (the startup formed by the team who created Matrix).  He co-founded The Matrix.org Foundation as a neutral custodian for Matrix in 2018. He's been building communication software since 2002 and holds a degree in computer science & physics from the University of Cambridge."
+platform_statement = """As a Guardian (Foundation Director) on the Governing Board, and as the Spec Core Team lead, my priority will be on helping ensure the GB keeps focused on the long-term goals of the Foundation as laid out in the Matrix Manifesto, Mission and Values at [https://matrix.org/about](https://matrix.org/about). In particular, I want to work towards taking Matrix mainstream, and avoid it getting stuck as a technology just for geeks and governments.
+
+This means evolving the protocol to sustainably benefit the maximum number of people. This can result in some tough choices - e.g. how much to piggyback on the momentum of government uptake in order to build solid foundations; when to prioritise stability and performance over features; if/when the core team should invest in next-gen projects.  I hope to bring my experience leading the project so far to help navigate these choices most effectively, and work with the wider governing board to multiply Matrix's success in future.  I will also help with the interface to the Spec Core Team, translating direction from the GB into prioritising and steering MSCs - and help navigate how to keep the braintrust of the Matrix Core Team intact while also accelerating the wider ecosystem."""
+
+[[guardians]]
+name = "Ross Schulman"
+pronouns = "he/him"
+bio = """Ross is EFF's first Senior Fellow for Decentralization and a Guardian of the Matrix Foundation. He is a policy technologist that has dealt with a wide range of issues, from net neutrality to online surveillance, over the course of his career. His personal passion has always been decentralization, however. Prior to EFF he worked at New America's Open Technology Institute. He has also worked in the past at the Center for Democracy and Technology, the Computer and Communications Industry Association, and in Congress in various capacities.
+
+Ross has a J.D. from American University and a B.A. in computer science from Brandeis University."""
+platform_statement = """As a Guardian on the Governing Board, I will focus on expanding awareness and usage of Matrix tools to a broader audience amongst the general public. I will ensure that specification development serves first and foremost the end-users of the Matrix ecosystem. I will also work to make sure that the protocol remains maximally protective of the privacy and other rights of its users. In doing so I will call upon my many years studying privacy, surveillance, and security.
+
+Finally, I will focus on developing the Matrix Foundation itself so that it has a sustainable future and adequate funding to achieve its goals, and serves as an open and safe home for the flagship Matrix server and a responsible steward of the specification."""
+
+
+
+
+[[sct_members]]
+name = "Alexey Rusakov"
+bio = """Most of my career was concerned with Free Software, starting from  development for UNIX and Linux systems, through GNOME 2 packaging and Linux distro building, to my current sales engineer tenure at Red Hat. I joined Matrix in early 2016 as Kitsune Ral (still mainly known in the community by that nickname), to contribute to development of Quaternion.
+
+In 2018, already a lead developer of Quaternion/Quotient, I was invited to SCT to represent the community of "independent" client authors. MSc in Technical Management from The Open University, where I studied innovation management and systems thinking. Based in Amsterdam."""
+platform_statement = """I believe it is crucial for the Governing Board to have a representation of people with diverse backgrounds. Web technologies are extremely popular these days, especially among developers; we have to balance the evolution of Matrix so that people with non-web backgrounds could still use it effectively. I believe that my voice will add depth to the SCT position at the Governing Board, as I can articulate technical circumstances from the perspective of a non-web client developer. While I'm not financially tethered to Matrix success, I'm exposed to a number of Free Software communities who depend on Matrix as their primary place to meet. I believe it's an ideal combination as I don't run a risk that parting with my current employer would jeopardise my connection to the project. My motivation is inherent. Finally: being a federated system, Matrix faces complicated and multi-faceted (also known as "wicked") problems on regular basis. I'm ready to use my education and experience as a systems practitioner to assist the Governing Board and the community at large in addressing these problems, for the continued success of the project."""
+
+[[sct_members]]
+name = "Richard van der Hoff"
+pronouns = "he/him"
+bio = """I joined the Matrix Project in 2015 and was part of the founding "Matrix Core Team" that formed New Vector in 2017. Since then, I have worked as a software engineer in a number of areas: in particular Synapse, Element Web and Cryptography, and have played a significant role in the evolution of the Matrix protocol.
+
+I have over 20 years of experience as a software engineer, mostly working on internet and communications applications. I believe in developing well-designed but pragmatic solutions to engineering problems."""
+platform_statement = """Since the Governing Board will be guiding the Spec Core Team in its priorities, I believe it is important to have good technical expertise on that board to help with the prioritisation process. If elected to the Governing Board, I will use my extensive experience of the Matrix protocol, including federation and the room structure, to help guide members of the Board.
+
+I am passionate about the Matrix Foundation, and the Matrix Specification in particular. I believe that without this organisation, and the specification it maintains, Element is just creating another siloed communication protocol. It is by ensuring that the protocol is well-specified that we encourage a diversity of intercompatible implementations, which is one of the unique selling points of Matrix."""
+
+[[sct_members]]
+name = "Travis Ralston"
+pronouns = "he/him"
+bio = """Travis is an avid volunteer with experience in non-profit governance through his local makerspace, Spec Core Team (SCT) role, and many smaller organizations. Based in Canada, Travis first started writing PRs for Matrix in 2016 to support his makerspace in switching away from IRC and has continued contributing since. Today, Travis is the Director of Standards Development in addition to being a member of the Spec Core Team. This role engages with other standards bodies to advocate for and support Matrix, and provides direct support to the SCT in operating the Matrix Spec Change (MSC) process."""
+platform_statement = """The Matrix Governing Board is an exciting opportunity for all parts of the ecosystem to come together to shape the protocol and Foundation itself. The Spec Core Team (SCT) has representation in this Governing Board to provide context around the SCT’s responsibilities, expectations, capacity, and ideas. I will bring these considerations to the Governing Board to help prepare a publicly-available living backlog of prioritized Matrix Spec Changes (MSCs). I’ll also be bringing this backlog to the wider SCT for roadmap planning purposes and overall review.
+
+Naturally, the role of the SCT representatives will be a dynamic one. In addition to the above, I expect to advocate on behalf of the SCT, provide technical guidance to technical and non-technical members of the Governing Board, and demonstrate the Foundation’s mission and objectives through my work."""

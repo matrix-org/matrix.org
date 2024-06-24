@@ -4,8 +4,8 @@ description = "Matrix.org homeserver"
 author = "Matrix.org team"
 maturity = "Stable"
 language = "Python"
-licence = "Apache-2.0"
-repository = "https://github.com/matrix-org/synapse/"
+licence = "AGPL-3.0-or-later"
+repository = "https://github.com/element-hq/synapse"
 room = "#synapse:matrix.org"
 
 [[servers]]
@@ -71,6 +71,7 @@ author = "Swarmcom"
 language = "Java"
 maturity = "Obsolete"
 licence = "Apache-2.0"
+repository = "https://github.com/swarmcom/jSynapse"
 
 [[servers]]
 name = "Maelstrom"
@@ -117,3 +118,23 @@ maturity = "Obsolete"
 language = "TypeScript"
 licence = "Apache-2.0"
 repository = "https://github.com/bettiah/transform"
+
+[[servers]]
+name = "Telodendria"
+description = "Telodendria is an open source Matrix homeserver implementation written from scratch in ANSI C and designed to be lightweight and simple, yet functional."
+author = "Jordan Bancino"
+maturity = "Alpha"
+language = "C"
+licence = "MIT"
+repository = "https://git.telodendria.io/Telodendria/Telodendria"
+room = "#telodendria-general:bancino.net"
+
+[[servers]]
+name = "conduwuit"
+description = "conduwuit is a well-maintained, hard-fork of Conduit with tons of new features, many bug fixes, huge performance improvements, quality of life enhancements, moderation tools, and much more!"
+author = "strawberry"
+maturity = "Beta"
+language = "Rust"
+licence = "Apache-2.0"
+repository = "https://github.com/girlbossceo/conduwuit"
+room = "#conduwuit:puppygock.gay"

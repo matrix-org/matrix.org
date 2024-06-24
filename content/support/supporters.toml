@@ -1,0 +1,134 @@
+[[platinum]]
+name = "Element"
+website = "https://element.io"
+logo = "element.svg"
+
+[[gold]]
+name = "Beeper"
+website = "https://beeper.com"
+logo = "beeper.svg"
+
+[[gold]]
+name = "Futurewei Technologies"
+website = "https://www.futurewei.com/"
+logo = "futurewei.png"
+
+[[silver]]
+name = "Fairkom"
+website = "https://www.fairkom.eu/"
+logo = "fairkom.svg"
+
+[[silver]]
+name = "Famedly"
+website = "https://www.famedly.com/"
+logo = "famedly.svg"
+
+[[silver]]
+name = "Fractal Networks"
+website = "https://github.com/fractalnetworksco/"
+logo = "fractal-networks.svg"
+
+[[silver]]
+name = "Gematik"
+website = "https://www.gematik.de/"
+logo = "gematik.png"
+
+[[silver]]
+name = "IndieHosters"
+website = "https://indie.host"
+logo = "indiehosters.png"
+
+[[silver]]
+name = "Verji Tech AS"
+website = "https://verji.no/en"
+logo = "verji.svg"
+
+[[silver]]
+name = "XWiki"
+website = "https://www.xwiki.org/"
+logo = "xwiki.png"
+
+[[ecosystem]]
+name = "Cinny"
+website = "https://cinny.in/"
+logo = "cinny.svg"
+
+[[ecosystem]]
+name = "Community Moderation Effort"
+website = ""
+logo = "community-moderation-effort.png"
+
+[[ecosystem]]
+name = "Conduit"
+website = "https://conduit.rs/"
+logo = "conduit.svg"
+
+[[ecosystem]]
+name = "Draupnir"
+website = "https://github.com/the-draupnir-project/Draupnir"
+logo = "draupnir.png"
+
+[[ecosystem]]
+name = "Elm SDK"
+website = "https://github.com/noordstar/elm-matrix-sdk"
+logo = "elm-sdk.svg"
+
+[[ecosystem]]
+name = "FluffyChat"
+website = "https://fluffychat.im/"
+logo = "fluffychat.svg"
+
+[[ecosystem]]
+name = "Fractal"
+website = "https://gitlab.gnome.org/World/fractal"
+logo = "fractal.svg"
+
+[[ecosystem]]
+name = "Matrix Community Events"
+website = "https://matrix.to/#/#community-events:matrix.org"
+logo = "matrix-community-events.png"
+
+[[ecosystem]]
+name = "NeoChat"
+website = "https://apps.kde.org/neochat/"
+logo = "neochat.svg"
+
+[[ecosystem]]
+name = "Nheko-Reborn"
+website = "https://nheko.im/nheko-reborn/nheko/"
+logo = "nheko.svg"
+
+[[ecosystem]]
+name = "Polychat"
+website = "https://polychat.de/"
+logo = "polychat.png"
+
+[[ecosystem]]
+name = "Rory&::LibMatrix"
+website = "https://cgit.rory.gay/matrix"
+logo = "rory-libmatrix.png"
+
+[[ecosystem]]
+name = "Thunderbird"
+website = "https://thunderbird.net/"
+logo = "thunderbird.svg"
+
+[[ecosystem]]
+name = "Trixnity"
+website = "https://trixnity.gitlab.io/trixnity"
+logo = "trixnity.png"
+
+[[associate]]
+name = "Eclipse Foundation"
+website = "https://eclipse.org"
+logo = "eclipse.svg"
+
+[[associate]]
+name = "GNOME Foundation"
+website = "https://gnome.org"
+logo = "gnome.svg"
+
+[[associate]]
+name = "KDE e.V."
+website = "https://kde.org"
+logo = "kde.svg"

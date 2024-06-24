@@ -1,19 +1,19 @@
 header = [
     { title = "Spec", href = "https://spec.matrix.org" },
-    { title = "About", href = "/about/" },
+    { title = "Foundation", section = "foundation" },
     { title = "Blog", href = "/blog/" },
-    { title = "Documentation", href="/docs/" },
+    { title = "Docs", href = "/docs/" },
     { title = "Ecosystem", section = "ecosystem" },
-    { title = "Podcasts", href = "/podcasts/" },
-    { title = "Shop", href = "https://shop.matrix.org" },
+    { title = "Donate", href = "/support" },
     { title = "Try Matrix", href = "/try-matrix/", primary = true },
 ]
 
 footer_internal = [
-    { title = "FAQs", href = "/faq" },
+    { title = "Donate", href = "/support" },
+    { title = "Shop", href = "https://shop.matrix.org" },
     { title = "Security Disclosure Policy", href = "/security-disclosure-policy" },
     { title = "Security Hall of Fame", href = "/security-hall-of-fame" },
-    { title = "Code of Conduct for Matrix.org", href = "/legal/code-of-conduct" },
+    { title = "Code of Conduct", href = "/legal/code-of-conduct" },
     { title = "Legal", href = "/legal" },
     { title = "Contact", href = "/contact" },
     { title = "Site Source", href = "https://github.com/matrix-org/matrix.org/" },
@@ -25,4 +25,5 @@ footer_external = [
     { image = "mastodon.svg", alt = "Mastodon", href = "https://mastodon.matrix.org/@matrix" },
     { image = "twitter.svg", alt = "Twitter", href = "https://twitter.com/matrixdotorg" },
     { image = "youtube.svg", alt = "YouTube", href = "https://www.youtube.com/channel/UCVFkW-chclhuyYRbmmfwt6w" },
+    { image = "rss.svg", alt = "RSS", href = "/atom.xml" },
 ]

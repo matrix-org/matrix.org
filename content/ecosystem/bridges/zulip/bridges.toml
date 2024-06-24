@@ -1,0 +1,25 @@
+[[bridges]]
+name = "MatrixZulipBridge"
+maintainer = "GearKite"
+summary = "A Matrix puppeting appservice bridge for Zulip"
+maturity = "Beta"
+language = "Python"
+license = "AGPL-3.0"
+repo = "https://github.com/GearKite/MatrixZulipBridge"
+room = "#MatrixZulipBridge:shema.lv"
+featured = false
+privilege.platform = ""                                    # Free text
+privilege.matrix = "Homeserver Admin"                      # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = false
+channels = true
+formatted_text = true
+message_media = false
+replies = true
+mentions = true
+threads = true
+redactions = false
+editing = false
+reactions = false
+presence = false
+typing_notifications = false

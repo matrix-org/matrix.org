@@ -25,19 +25,6 @@ Matrix Client-Server SDK for JavaScript.
 """
 
 [[sdks]]
-name = "Matrix.org React SDK"
-maintainer = "Matrix.org team"
-maturity = "Stable"
-language = "JavaScript"
-licence = "Apache-2.0"
-repository = "https://github.com/matrix-org/matrix-react-sdk"
-purpose = ["client"]
-featured_in = []
-description = """
-Matrix SDK for React Javascript.
-"""
-
-[[sdks]]
 name = "MatrixBot .NET Core SDK"
 maintainer = "enimatek-nl"
 maturity = "Stable"
@@ -79,7 +66,7 @@ A set of Rust crates for interacting with the Matrix chat network.
 [[sdks]]
 name = "gomatrix"
 maintainer = "Matrix.org"
-maturity = "Stable"
+maturity = "Obsolete"
 language = "Go"
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/gomatrix"
@@ -210,7 +197,7 @@ maintainer = "Famedly GmBH"
 maturity = "Stable"
 language = "Dart"
 licence = "AGPL-3.0"
-repository = "https://gitlab.com/famedly/company/frontend/famedlysdk"
+repository = "https://github.com/famedly/matrix-dart-sdk"
 purpose = ["client"]
 featured_in = []
 description = """
@@ -389,7 +376,20 @@ repository = "https://gitlab.com/trixnity/trixnity"
 purpose = ["client", "bot", "bridge"]
 featured_in = []
 description = """
-Multiplatform Kotlin SDK for Matrix.
+Multiplatform Kotlin SDK for developing Clients, Bots, Appservices and Servers.
+"""
+
+[[sdks]]
+name = "Trixnity Messenger"
+maintainer = "connect2x GmbH"
+maturity = "Beta"
+language = "Kotlin"
+licence = "AGPL-3.0"
+repository = "https://gitlab.com/connect2x/trixnity-messenger"
+purpose = ["client"]
+featured_in = []
+description = """
+Multiplatform Kotlin SDK for developing messengers on top of Trixnity
 """
 
 [[sdks]]
@@ -448,10 +448,10 @@ featured_in = []
 [[sdks]]
 name = "libkazv"
 maintainer = "The Kazv Project"
-maturity = "Alpha"
+maturity = "Beta"
 language = "C++"
 licence = "AGPL-3.0-or-later"
-repository = "https://lily.kazv.moe/kazv/libkazv"
+repository = "https://lily-is.land/kazv/libkazv"
 purpose = ["client", "bot"]
 featured_in = []
 description = """
@@ -568,6 +568,71 @@ purpose = ["client", "bot"]
 featured_in = []
 description = """
 Matrix client library for MicroPython.
+"""
+
+[[sdks]]
+name = "matrix-communication-client"
+maintainer = "Réda Housni Alaoui"
+maturity = "Stable"
+language = "Java"
+licence = "MIT"
+repository = "https://github.com/Cosium/matrix-communication-client"
+purpose = ["client", "bot"]
+featured_in = []
+description = """
+A java client for the Matrix protocol.
+"""
+
+[[sdks]]
+name = "Rory&::LibMatrix"
+maintainer = "Rory& and other contributors"
+maturity = "Beta"
+language = "C#"
+licence = "AGPL-3.0"
+repository = "https://cgit.rory.gay/matrix/LibMatrix.git"
+purpose = ["client", "bot", "bridge"]
+featured_in = ["client", "bot", "bridge"]
+description = """
+A .NET 8 library for interacting with Matrix.
+"""
+
+[[sdks]]
+name = "libcmatrix"
+maintainer = ""
+maturity = "Beta"
+language = "C"
+licence = "LGPL-2.1-only"
+repository = "https://source.puri.sm/Librem5/libcmatrix"
+purpose = ["client"]
+featured_in = ["client"]
+description = """
+A matrix client client library written in GObjectified C
+"""
+
+[[sdks]]
+name = "mxbt"
+maintainer = "kulebyaka"
+maturity = "Beta"
+language = "Python"
+licence = "GPL-3.0"
+repository = "https://codeberg.org/librehub/mxbt"
+purpose = ["bot"]
+featured_in = ["bot"]
+description = """
+Yet another matrix bot library.
+"""
+
+[[sdks]]
+name = "Elm SDK"
+maintainer = "Bram Noordstar"
+maturity = "Beta"
+language = "Elm"
+licence = "EUPL-1.2"
+repository = "https://github.com/noordstar/elm-matrix-sdk-beta"
+purpose = ["client"]
+featured_in = ["client"]
+description = """
+A more consistent alternative to the matrix-js-sdk written in Elm.
 """
 
 [[sdks]]

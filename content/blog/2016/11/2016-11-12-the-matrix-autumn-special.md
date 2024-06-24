@@ -153,7 +153,7 @@ Telematrix is Telegram&lt;-&gt;Matrix bridge, written by Sijmen Schoon using pyt
 
 #### Ruma
 
-Meanwhile, the Ruma project to write a Matrix homeserver in Rust has been progressing steadily, with more and more checkboxes appearing on the <a href="https://github.com/ruma/ruma/blob/master/STATUS.md">status page</a>, with significant new contributions from mujx and farodin91. The best way to keep track of Ruma is to read Jimmy's excellent <a href="https://www.ruma.io/news/">This Week in Ruma</a> updates and of course hang out on <a href="https://matrix.to/#/#ruma:matrix.org">#ruma:matrix.org</a>.
+Meanwhile, the Ruma project to write a Matrix homeserver in Rust has been progressing steadily, with more and more checkboxes appearing on the <a href="https://github.com/ruma/ruma/blob/master/STATUS.md">status page</a>, with significant new contributions from mujx and farodin91. The best way to keep track of Ruma is to read Jimmy's excellent <a href="https://ruma.dev/news/">This Week in Ruma</a> updates and of course hang out on <a href="https://matrix.to/#/#ruma:matrix.org">#ruma:matrix.org</a>.
 
 #### NaChat
 

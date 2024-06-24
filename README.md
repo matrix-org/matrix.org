@@ -9,7 +9,7 @@ To discuss maintenance of this site, please come talk to the team in
 
 ## Building the website
 
-Install [Zola](https://getzola.org), clone the repo, and from the root of the
+Install the latest version of [Zola](https://www.getzola.org), clone the repo, and from the root of the
 repo type
 
 ```
@@ -18,3 +18,4 @@ zola serve
 
 Zola will build the website and start a web server, usually at
 http://127.0.0.1:1111
+

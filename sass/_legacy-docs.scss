@@ -1,13 +1,18 @@
 .legacy-doc-warning {
     padding: 1rem;
     border-radius: .5rem;
-    background-color: #FDF5F5;
-    color: #EC5A5B;
+    background-color: #F6E7D5;
+    color: #6F420F;
     margin-top: 1rem;
     margin-bottom: 1rem;
 
     h2 {
         margin-top: 0px;
         margin-bottom: 10px;
+    }
+
+    &.outdated {
+        background-color: #F6D5D5;
+        color: #8B1212;
     }
 }

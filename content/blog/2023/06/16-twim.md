@@ -13,7 +13,7 @@ image = "https://matrix.org/blog/img/matrix-logo.png"
 
 ## Matrix Live
 
-<iframe src="https://www.youtube.com/embed/kJPQc0QqVMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="kJPQc0QqVMg") }}
 
 
 ## Dept of Spec 📜
@@ -246,7 +246,7 @@ Next-gen crypto-included SDK for developing Clients, Bots and Appservices; writt
 
 [LoaD Accumulator](https://matrix.to/#/@devhonk:envs.net) announces
 
-> For a while, I and a couple of other people have been working and testing on a bot to parse LaTeX and LilyPond expressions. This allows people on clients like Nheko to send and see math equations on LaTeX(and even more, like custom packages, and TikZ support) and sheet music with LilyPond, both on normal, and encrpyted rooms!
+> For a while, I and a couple of other people have been working and testing on a bot to parse LaTeX and LilyPond expressions. This allows people on clients like Nheko to send and see math equations on LaTeX(and even more, like custom packages, and TikZ support) and sheet music with LilyPond, both on normal, and encrypted rooms!
 > 
 > Check out the code(and maybe host your own): <https://codeberg.org/lda/TexLiLy> (mirror), <https://git.freetards.xyz/lda/TexLiLy> (original)
 > 

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+ viewBox="-57 -57 114 114" width="57" height="57" style="overflow: hidden">
+ <style type="text/css">
+    * {
+      fill: none;
+      stroke-width: 7.5px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .X {
+      stroke-width: 13px;
+      stroke: #505052;
+    }
+    .west {
+      stroke: #0087CB;
+    }
+    .north {
+      stroke: #70B700;
+    }
+    .east {
+      stroke: #FF7700;
+    }
+    .south {
+      stroke: #FF0000;
+    }
+ </style>
+ <defs>
+   <g id="dash" transform="translate(20 -20)">
+     <path d="M 3 -3 L 14 -14"/>
+   </g>
+ </defs>
+<use xlink:href="#dash" transform="rotate(-45)" class="north"/>
+<use xlink:href="#dash" transform="rotate(45)" class="east"/>
+<use xlink:href="#dash" transform="rotate(135)" class="south"/>
+<use xlink:href="#dash" transform="rotate(-135)" class="west"/>
+<line class="X" x1="-35" y1="-40" x2="35" y2="40"/>
+<line class="X" x1="-35" y1="40" x2="35" y2="-40"/>
+</svg>

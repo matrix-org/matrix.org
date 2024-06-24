@@ -2,6 +2,10 @@ article.post {
     width: 100%;
     word-break: break-word;
 
+    h2:first-of-type {
+        margin-block-start: 0;
+    }
+
     &:not(:last-of-type) {
         padding-bottom: 1rem;
         margin-bottom: 2.5rem;
@@ -59,11 +63,6 @@ article.post {
         }
     }
 
-    iframe {
-        aspect-ratio: 16/9;
-        width: 100%;
-    }
-
     blockquote {
         margin: 0 0 10px 0;
         padding: 10px 20px;
@@ -81,6 +80,58 @@ article.post {
     flex-direction: row;
     align-items: flex-start;
     align-self: center;
+
+    .callout {
+
+        display: grid;
+        grid-template-columns: 300px auto;
+        color: #fff;
+        background-color: #000;
+        border-radius: 16px;
+
+        @media (max-width: 767px) {
+            grid-template-columns: auto;
+            grid-template-rows: 10rem auto;
+        }
+
+        .left-col {
+            display: grid;
+            place-content: center;
+            background-image: url("/assets/mandala.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            h2 {
+                margin: 2rem;
+                text-align: center;
+            }
+        }
+
+        .right-col {
+            padding: 2rem;
+        }
+
+        a {
+            color: rgba(34, 109, 227);
+        }
+
+        .call-to-action {
+            display: inline-block;
+            font-size: 1.125rem;
+            font-weight: 700;
+            background-color: rgba(34, 109, 227);
+            padding: .5rem 1.5rem;
+            border-radius: 9999px;
+            color: #fff;
+            margin-block-start: 1rem;
+        }
+
+        .call-to-action:hover {
+            background-color: #fff;
+            color: rgba(34, 109, 227);
+        }
+    }
 
     aside {
         @media (max-width: 1023px) {
@@ -105,7 +156,6 @@ article.post {
 
         flex: 1 1;
         max-width: 320px;
-        margin-top: 1rem;
         margin-left: 4rem;
         padding: 1.5rem;
         background-color: #f4f4f4;
@@ -141,4 +191,8 @@ article.post {
 
 h3 a {
     color: var(--color-link);
+}
+
+.footnote-definition>p {
+    display: inline;
 }

@@ -175,8 +175,8 @@ they’re unable to for whatever reason - e.g. their platform isn’t supported,
 or their government has blocked access, etc), or join BobChat yourself.
 
 <div style="text-align: center">
-<img src="/blog/img/2022-03-29-bob-invite.jpg" width="430"/>
-<img src="/blog/img/2022-03-29-bob-invite-b.png" width="430"/>
+<img src="/blog/img/2022-03-29-bob-invite.jpg"  />
+<img src="/blog/img/2022-03-29-bob-invite-b.png"  />
 </div>
 <br/>
 
@@ -187,7 +187,7 @@ use to open a given file extension (rather than the OS vendor hardcoding it
 to one of their own apps - another win for user rights [led by the EU](https://en.wikipedia.org/wiki/Microsoft_Corp._v._Commission)!).
 
 <div style="text-align: center">
-<img src="/blog/img/2022-03-29-bob-invite2.jpg" width="430"/>
+<img src="/blog/img/2022-03-29-bob-invite2.jpg" />
 </div>
 <br/>
 
@@ -327,7 +327,7 @@ interoperability and privacy if Bob is not on the same system as Alice
 warn Alice that the conversation is no longer end-to-end encrypted:
 
 <div style="text-align: center">
-<img src="/blog/img/2022-03-29-warning.jpg" width="430"/>
+<img src="/blog/img/2022-03-29-warning.jpg" />
 </div>
 <br/>
 

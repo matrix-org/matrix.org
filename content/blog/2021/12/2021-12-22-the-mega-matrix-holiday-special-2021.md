@@ -112,7 +112,7 @@ So, we’ve been thinking increasingly seriously about how to solve this…
 
 ## A new hope: matrix-rust-sdk
 
-[matrix-rust-sdk](https://github.com/matrix-org/matrix-rust-sdk) is an attempt to build a new reference client SDK for Matrix which can be used by as many platforms as possible - hopefully forever stopping us from reimplementing the wheel more than we need to. Work began towards the end of 2019, building on top of [Ruma](https://www.ruma.io/)’s excellent Matrix rust crates, and poljar has been working away solidly at it ever since.  We teased matrix-rust-sdk in last year’s update, but as of this year it is properly coming of age and we’ve started using it in earnest - beginning by swapping out Element Android’s encryption implementation for matrix-rust-sdk-crypto (the E2EE cryptography crate provided by the SDK).
+[matrix-rust-sdk](https://github.com/matrix-org/matrix-rust-sdk) is an attempt to build a new reference client SDK for Matrix which can be used by as many platforms as possible - hopefully forever stopping us from reimplementing the wheel more than we need to. Work began towards the end of 2019, building on top of [Ruma](https://ruma.dev/)’s excellent Matrix rust crates, and poljar has been working away solidly at it ever since.  We teased matrix-rust-sdk in last year’s update, but as of this year it is properly coming of age and we’ve started using it in earnest - beginning by swapping out Element Android’s encryption implementation for matrix-rust-sdk-crypto (the E2EE cryptography crate provided by the SDK).
 
 If you’re not familiar with Rust, the main benefits we get here are a heavy emphasis on safety and security without compromising performance; while providing a single codebase which can be used equally from iOS, native Desktop apps such as Fractal, Android (with native bindings) and even Web (via WASM, in future).  While technically this results in a “non-native” SDK relative to matrix-js-sdk, matrix-ios-sdk and matrix-android-sdk - in practice, it’s become so common to depend on native-code shared libraries (outside the web, at least) that it’s not really a problem.
 
@@ -173,7 +173,7 @@ Sync v3 gets this unbelievable performance by the client defining a sliding wind
 
 Sync v3 exists today as a proxy called [sync-v3](https://github.com/matrix-org/sync-v3) which sits between any existing homeserver and a sync-v3-capable Matrix client.  It’s very early days, but Hydrogen has [basic v3 support](https://github.com/vector-im/hydrogen-web/compare/kegan/syncv3) on a branch which we’ve been using to experiment with the API and flesh it out - and you can see a demo and intro talk in [last week’s Matrix Live](https://youtu.be/Hsyqa5ozWIo?t=59)!
 
-<iframe src="https://www.youtube.com/embed/Hsyqa5ozWIo?t=59" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="Hsyqa5ozWIo?t=59") }}
 
 The API itself is still in flux, but those interested can see the initial spec design at [https://github.com/matrix-org/sync-v3/blob/main/api.md](https://github.com/matrix-org/sync-v3/blob/main/api.md) and also an MSC is emerging at [MSC3575](https://github.com/matrix-org/matrix-doc/blob/kegan/sync-v3/proposals/3575-sync.md).  Next steps will be to finish hooking up to Hydrogen (including filtering the room list), finish the MSC, and then start thinking about implementing it in other clients and servers!
 
@@ -250,7 +250,7 @@ Robert Long has been frantically hacking away at the [initial implementation](ht
 
 Meanwhile, those interested can see all the gory details from our CommCon 2021 talk a few weeks ago, complete with a demo of the shape of things to come…
 
-<iframe src="https://www.youtube.com/embed/A4k7DVIK5TE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="A4k7DVIK5TE") }}
 
 Next up, we’ll be working on building an [MSC3401](https://github.com/matrix-org/matrix-doc/pull/3401)-compatible SFU so we can go beyond full mesh (which typically supports a maximum of ~7 callers).  Our candidates right now are mediasoup, ion-sfu, janus and signal-calling-service - we’ll let you know how it goes!  Also, if you’re interested in helping us build this out quicker, we are frantically searching for more WebRTC & VoIP gurus to [join the team at Element](https://apply.workable.com/elementio/j/25BB112FBD/) working on this.
 
@@ -268,7 +268,7 @@ While we’ve been looking at storing object trees in Matrix, another obvious an
 
 Finally, and last but not least, Robert Long has been building on top of our shiny new Native Matrix Voice/Video Conferencing capabilities to use Matrix as the communication backbone for a truly open, equitable and interoperable vision of the Metaverse.  The best way of describing it is to look at his awesome [Third Room demo from the Open Metaverse Interoperability Group demo session](https://www.youtube.com/watch?v=e26UJRCGfGk&t=2263s) in September:
 
-<iframe src="https://www.youtube.com/embed/e26UJRCGfGk?t=2263s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="e26UJRCGfGk?t=2263s") }}
 
 Now, some folks will recall that since day one (in fact, since before day one) the hope for Matrix was that it might end up as the communications fabric of the Metaverse.  We were about 4 years early when we [first starting enthusing about this](https://matrix.org/blog/2017/04/04/opening-up-cyberspace-with-matrix-and-webvr), and then still ahead of our time when we did the world’s first [3D Video calling](https://matrix.org/blog/2018/02/05/3-d-video-calling-with-matrix-webrtc-and-webvr-at-fosdem-2018) over Matrix.  However, it now feels like the world has finally caught up - and we’re in grave danger of being overtaken by a dystopia where the big tech companies balkanize the Metaverse into a series of closed proprietary user-exploiting walled gardens, much like today’s incumbent chat silos - but even worse.
 

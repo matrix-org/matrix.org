@@ -1,25 +1,19 @@
-{% extends "page.html" %}
+{% extends "section.html" %}
 {% block head_extra %}
-<meta name="description" content="{{ page.extra.summary }}">
+<meta name="description" content="{{ section.extra.summary }}">
 {% endblock head_extra %}
 {% block content %}
+{% set supporters = load_data(path="content/support/supporters.toml") %}
 <div class="page-header support">
     <div class="hero-block">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.extra.summary }}</p>
+        <h1>{{ section.title }}</h1>
+        <p>{{ section.extra.summary }}</p>
         <div class="donate-row">
-            <a class="call-to-action" href="https://www.patreon.com/matrixdotorg">
-                <img src="/assets/patreon-icon.svg" alt="" />
-                Become a Patron
-            </a>
             <a class="call-to-action" href="https://donorbox.org/keep-matrix-exciting">
                 <img src="/assets/donorbox-icon.svg" alt="" />
-                Donate with donorbox
+                Donate with Donorbox
             </a>
-            <a class="call-to-action" href="https://liberapay.com/matrixdotorg">
-                <img src="/assets/liberapay-icon.svg" alt="" />
-                Fund with LiberaPay
-            </a>
+            <a class="call-to-action inverted" href="#help-us">More options</a>
         </div>
     </div>
 </div>
@@ -37,12 +31,69 @@
         </p>
         <a href="/membership" class="call-to-action">Become a member</a>
     </div>
+    <div id="supporters">
+        <div class="supporters-section" id="platinum-supporters">
+            <h2>Platinum Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.platinum %}
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="supporters-section" id="gold-supporters">
+            <h2>Gold Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.gold %}
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="supporters-section" id="silver-supporters">
+            <h2>Silver Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.silver %}
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="supporters-section" id="ecosystem-supporters">
+            <h2>Ecosystem Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.ecosystem %}
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="supporters-section" id="associate-supporters">
+            <h2>Associate Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.associate %}
+                <a href="{{ supporter.website }}" class="supporters-card">
+                    <img src="/support/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
     <div id="the-spec">
         <div class="content">
             <div>
                 <h2>The Matrix Specification</h2>
                 <p>
-                    The Matrix Foundation maintains the Matrix Specification. It is a
+                    The Matrix.org Foundation maintains the Matrix Specification. It is a
                     living document everybody is encouraged to contribute to. The
                     Foundation’s Spec Core Team guides the contributors to make
                     meaningful changes to the specification that make Matrix better for
@@ -131,7 +182,22 @@
                     Foundation funds substantial work to make sure Matrix
                     addresses and will keep addressing actual issues.
                 </p>
-                <a href="#" class="call-to-action">Donate</a>
+                <p>
+                    Donorbox is our preferred method for donations because it has the lowest fees. We are keeping
+                    Patreon
+                    and LiberaPay to accommodate users preferences.
+                </p>
+                <div class="cta-row">
+                    <a class="call-to-action" href="https://donorbox.org/keep-matrix-exciting">
+                        <img src="/assets/donorbox-icon.svg" alt="" /> Donorbox
+                    </a>
+                    <a class="call-to-action" href="https://www.patreon.com/matrixdotorg">
+                        <img src="/assets/patreon-icon.svg" alt="" />Patreon
+                    </a>
+                    <a class="call-to-action" href="https://liberapay.com/matrixdotorg">
+                        <img src="/assets/liberapay-icon.svg" alt="" />LiberaPay
+                    </a>
+                </div>
             </div>
             <div class="features-matrix">
                 <ul>

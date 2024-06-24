@@ -25,7 +25,6 @@
 html {
     scroll-snap-type: y proximity;
     scroll-padding-top: 1.875rem; // obtained by fine tuning
-    scroll-behavior: smooth;
 }
 
 body {
@@ -91,6 +90,12 @@ ol:last-child {
     padding-inline: 1rem;
 
     img {
+        height: auto;
+        max-height: 40rem;
+        max-width: 100%;
+    }
+
+    video {
         max-height: 40rem;
         max-width: 100%;
     }
@@ -206,8 +211,6 @@ pre table {
 
     min-height: var(--page-header-height);
     background-color: #000000;
-    overflow: hidden;
-
     background-image: url(/assets/page-header-bg.svg);
     background-size: 90% 100%;
     background-position: bottom right;
@@ -294,4 +297,101 @@ a>code {
         transform: rotate(-90deg);
         filter: invert(1);
     }
+}
+
+.youtube_placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    aspect-ratio: 16/9;
+    width: 100%;
+    background-color: #333;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        padding: 1.5rem;
+        gap: 1.5rem;
+
+        img {
+            margin-inline: auto;
+        }
+
+        p {
+            max-width: 30rem;
+            text-align: center;
+            margin-inline: auto;
+        }
+
+        button {
+            max-width: fit-content;
+            margin-inline: auto;
+            padding: .5rem 1rem;
+            border-radius: 9999px;
+            background-color: #fff;
+            border: 1px solid transparent;
+            color: #000;
+            cursor: pointer;
+
+            &:hover {
+                border: 1px solid #fff;
+                color: #fff;
+                background-color: #333;
+            }
+        }
+    }
+}
+
+.call-to-action {
+    background-color: #000;
+    border: 2px solid #000;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 1000px;
+    padding: .6em 2em;
+
+    &.inverted {
+        border: 2px solid #fff;
+        background-color: #fff;
+        color: #000;
+
+        &.secondary {
+            background-color: #000;
+            color: #fff;
+
+            &:hover {
+                background-color: #fff;
+                color: #000
+            }
+        }
+    }
+
+    &.secondary {
+        background-color: #fff;
+        color: #000;
+
+        &:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+}
+
+.cta-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    row-gap: .5rem;
+}
+
+.cta-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+
+    align-items: center;
 }

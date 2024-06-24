@@ -1,0 +1,38 @@
+.guardian,
+.staff {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 2.5em 0;
+    gap: 1.25rem;
+
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+
+    .staff-details {
+        p {
+            margin-block: 0;
+        }
+
+        .socials {
+            display: flex;
+            flex-direction: row;
+            padding-inline: 0;
+            list-style: none;
+            gap: .6em
+        }
+    }
+
+    img {
+        width: 128px;
+        max-width: 25vw;
+        border-radius: 100%;
+    }
+}
+
+.guardian-name,
+.staff-name {
+    font-weight: bold;
+    margin: 0 0 .5rem;
+}

@@ -1,0 +1,28 @@
+{% macro individual(individual) %}
+<details class="nominee">
+    <summary>{{ individual.name }} {% if individual.pronouns %}({{ individual.pronouns }}){% endif %}</summary>
+    {% if individual.bio %}
+    <h4>Biography</h4>
+    {{ individual.bio | markdown() | safe }}
+    {% endif %}
+    {% if individual.platform_statement %}
+    <h4>Platform Statement</h4>
+    {{ individual.platform_statement | markdown() | safe }}
+    {% endif %}
+</details>
+{% endmacro %}
+
+{% macro project(representative) %}
+<details class="nominee">
+    <summary>{{ representative.name }} {% if representative.pronouns %}({{ representative.pronouns }}){% endif %} - {{
+        representative.project }}</summary>
+    {% if representative.bio %}
+    <h4>Biography</h4>
+    {{ representative.bio | markdown() | safe }}
+    {% endif %}
+    {% if representative.platform_statement %}
+    <h4>Platform Statement</h4>
+    {{ representative.platform_statement | markdown() | safe }}
+    {% endif %}
+</details>
+{% endmacro %}

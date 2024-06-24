@@ -1,4 +1,16 @@
 [[integrations]]
+name = "emm"
+description = """
+emm stands for Export Matrix Messages
+A CLI tool that joins the room and exports last N messages to the file(-s) you specified.
+"""
+maintainer = "etke.cc"
+language = "Go"
+licence = "GPL-3.0-or-later"
+repository = "https://gitlab.com/etke.cc/emm"
+room = "#emm:etke.cc"
+
+[[integrations]]
 name = "Hemppa"
 description = """
 Generic modular Matrix bot, a super easy platform to write Matrix bot
@@ -9,6 +21,17 @@ language = "Python"
 licence = "GPL-3.0-only"
 repository = "https://github.com/vranki/hemppa"
 room = "#hemppa:hacklab.fi"
+
+[[integrations]]
+name = "Honoroit"
+description = """
+A Matrix helpdesk bot
+"""
+maintainer = "etke.cc"
+language = "Go"
+licence = "AGPL-3.0-only"
+repository = "https://gitlab.com/etke.cc/honoroit"
+room = "#honoroit:etke.cc"
 
 [[integrations]]
 name = "matrix-email-bot"
@@ -51,6 +74,19 @@ language = "Python"
 licence = "AGPL-3.0-or-later"
 repository = "https://github.com/moan0s/matrix-registration-bot/"
 room = "#matrix-registration-bot:hyteck.de"
+
+[[integrations]]
+name = "Matrix Rooms Search API"
+description = """
+A fully-featured, standalone, matrix rooms search service.
+
+Demo instance: https://matrixrooms.info
+"""
+maintainer = "etke.cc"
+language = "Go"
+licence = "GPL-3.0-only"
+repository = "https://gitlab.com/etke.cc/mrs/api"
+room = "#mrs:etke.cc"
 
 [[integrations]]
 name = "matrix-rss-bridge"
@@ -138,3 +174,56 @@ language = "TypeScript"
 licence = "Apache-2.0"
 repository = "https://github.com/nordeck/matrix-barcamp"
 room = "#nordeck:matrix.org"
+
+[[integrations]]
+name = "Matrix Communication Plugin for Jenkins"
+description = "A plugin allowing Jenkins to communicate with a Matrix server"
+maintainer = "Réda Housni Alaoui"
+language = "Java"
+licence = "MIT"
+repository = "https://github.com/jenkinsci/matrix-communication-plugin"
+
+[[integrations]]
+name = "Time-to-Matrix"
+description = """
+A time-like command that will send end of an arbitrary command output
+and some other info (like exit status) to matrix room.
+"""
+maintainer = "etke.cc"
+language = "Go"
+licence = "MIT"
+repository = "https://gitlab.com/etke.cc/ttm"
+room = "#ttm:etke.cc"
+
+[[integrations]]
+name = "pipe2matrix"
+description = """
+netcat for matrix: redirect a program's input/output into a matrix room.
+"""
+author = "Anton Molyboha"
+language = "Python"
+licence = "GPL-3.0-only"
+repository = "https://gitlab.com/anton.molyboha/pipe2matrix"
+room = "#pipe2matrix:rendezvous.anton.molyboha.me"
+
+[[integrations]]
+name = "radicale-auth-matrix"
+description = """
+Matrix authentication plugin for Radicale
+"""
+maintainer = "etke.cc"
+language = "Python"
+licence = "AGPL-3.0-only"
+repository = "https://gitlab.com/etke.cc/radicale-auth-matrix"
+room = "#source:etke.cc"
+
+[[integrations]]
+name = "Draupnir"
+description = """
+A moderation tool for Matrix.
+"""
+maintainer = "Gnuxie"
+language = "TypeScript"
+licence = "AFL-3.0"
+repository = "https://github.com/the-draupnir-project/Draupnir"
+room = "#draupnir:matrix.org"

@@ -6,6 +6,11 @@
 {% endblock head_extra %}
 {% block content %}
 {% set sponsors_data = load_data(path="content/sponsors.toml") %}
+<div id="elections-banner">
+    <p>We are happy to launch <a href="https://2024.matrix.org">The Matrix Conference</a> on Sep 19-22 in Berlin,
+        Germany. <a href="https://2024.matrix.org">Learn more</a> about it, or <a href="https://cfp.matrix.org">submit a
+            proposal</a>!</p>
+</div>
 <div id="frontpage">
     <div id="hero" class="section">
         <div class="hero_content">
@@ -21,7 +26,10 @@
         <div class="use-case-personal-content">
             <div class="col">
                 <h2>Chat with friends, family, communities and co-workers</h2>
-                <a href="/try-matrix" class="call-to-action">Start a conversation</a>
+                <div class="cta-row">
+                    <a href="/try-matrix" class="call-to-action">Start a conversation</a>
+                    <a href="/support" class="call-to-action secondary">Support us</a>
+                </div>
             </div>
             <img src="assets/frontpage/personal-graphic.svg" alt="An artist view of a chat timeline." />
         </div>
@@ -29,13 +37,17 @@
     </div>
     <div id="use-case-community" class="section">
         <h2>A cozy, safe, supercharged place for your community</h2>
-        <a href="/docs/communities" class="call-to-action">Reclaim your Space</a>
+        <div class="cta-row">
+            <a href="/docs/communities" class="call-to-action inverted">Reclaim your Space</a>
+        </div>
         <img src="assets/frontpage/community-graphic.svg" alt="An artist view of a chat community." />
     </div>
     <div id="complex-apps" class="section">
         <div class="col">
             <h2>Build advanced, rich communication applications on top of Matrix.</h2>
-            <a href="/docs/technical" class="call-to-action">Start building apps</a>
+            <div class="cta-row">
+                <a href="/docs/technical" class="call-to-action">Start building apps</a>
+            </div>
         </div>
         <img src="/element-call.webp" id="complex-apps-image"
             alt="A conversation between four people on Element Call, a VoIP conference tool based on Matrix." />
@@ -47,37 +59,17 @@
         <img id="homeserver" src="/assets/frontpage/homeserver.svg" alt="A conceptual representation of a homeserver" />
         <img id="federation_visual" src="/assets/frontpage/federation-visual.svg"
             alt="A conceptual representation of the federation between homeservers" />
-        <img id="federation_visual_mobile" src="/assets/frontpage/federation-visual-mobile.svg"
-            alt="A conceptual representation of the federation between homeservers" />
         <h2>Build on Matrix</h2>
         <p>
             Matrix is a rich ecosystem of clients, servers, bots and application
             services. Find out more in our developer documentation.
         </p>
-        <a href="https://github.com/matrix-org" class="call-to-action"><img src="/assets/frontpage/github-mark.svg"
-                alt="" /> We're open source</a>
-        <a href="https://spec.matrix.org" class="call-to-action">Browse the Specification</a>
-    </div>
-    <div id="sponsors" class="section">
-        <h2>Thank you to our incredible sponsors</h2>
-        <div id="sponsors_grid">
-            {% for sponsor in sponsors_data.sponsors %}
-            <div class="sponsor_card">
-                <img src="/images/sponsors/{{ sponsor.image }}" alt="Logo of {{ sponsor.name }}" />
-                <div class="sponsor_text">
-                    <h3>{{ sponsor.name }}</h3>
-                    <p>{{ sponsor.description }}</p>
-                    <a href="{{ sponsor.website }}">Visit {{ sponsor.name }}’s website</a>
-                </div>
-            </div>
-            {% endfor %}
+        <div class="cta-col">
+            <a href="https://github.com/matrix-org" class="call-to-action inverted"><img
+                    src="/assets/frontpage/github-mark.svg" alt="" /> We're open source</a>
+            <a href="https://spec.matrix.org" class="call-to-action inverted">Browse the Specification</a>
+            <a href="/support" class="call-to-action inverted secondary">Support us</a>
         </div>
-        <p>
-            Matrix is supported by organisations and individuals like you who
-            care about the health of the ecosystem. Please consider supporting
-            us financially.
-        </p>
-        <a href="/support" class="call-to-action">Support Matrix</a>
     </div>
 </div>
 {% endblock content %}

@@ -1,0 +1,50 @@
+[[staff]]
+name = "Josh Simmons"
+title = "Managing Director"
+picture = "josh.jpg"
+email = "josh@foundation.matrix.org"
+website = "https://joshsimmons.com/"
+linkedin = "https://www.linkedin.com/in/joshsimmons/"
+fediverse = "https://josh.tel/@josh"
+bio = """
+Josh is a community organiser, web developer, nonprofit geek, and activist based in Petaluma, California. Best known for his time in leadership at the Open Source Initiative, Josh is also Vice President of Petaluma Pride, author of the Public Health Pledge, and an advisor to Independent Federated Trust & Safety (IFTAS). In the past, Josh has worked in community-facing roles focused on open source at Tidelift, Salesforce, Google, and O’Reilly Media.
+"""
+
+[[staff]]
+name = "Jim Mackenzie"
+title = "VP of Trust and Safety"
+picture = "jim.jpg"
+bio = """
+Jim brings a calm optimism to building a safer, kinder Internet. He has worked with the Safety team for Matrix.org since 2021, after joining from 37signals. Jim works on policy and process, tooling and techniques for Matrix.org and Matrix as a whole.
+"""
+
+[[staff]]
+name = "Thibault Martin"
+title = "Director of Program Development"
+picture = "thibault.jpg"
+website = "https://ergaster.org"
+linkedin = "https://www.linkedin.com/in/thibault-martin-84a6522a3/"
+fediverse = "https://mamot.fr/@thibaultamartin"
+bio = """
+Thib has as many silent letters in his first name as regular ones. He is a chronic enthusiast who believes software should improve people's lives but doesn't fall for techno-solutionism. Thib connects the Foundation's strategy and delivery by overseeing programmes. He ensures that the programmes stay on track and that they feed the vision of the Foundation in return.
+"""
+
+[[staff]]
+name = "Travis Ralston"
+title = "Director of Standards Development"
+picture = "travis.jpg"
+linkedin = "https://www.linkedin.com/in/travisralston/"
+fediverse = "https://mstdn.ca/@travisr"
+bio = """
+Travis is an avid volunteer, free software developer, Spec Core Team (SCT) member, makerspace director, and collector of strange hobbies. Travis started writing PRs for Matrix in 2016 to support his local makerspace in switching away from IRC, and has continued contributing to Matrix since. Travis’ latest role supports the SCT in operating the Matrix Spec Change (MSC) process, and engages with other standards bodies to advocate for and support Matrix.
+"""
+
+[[staff]]
+name = "Denise Almeida"
+title = "Data Protection Officer"
+picture = "denise.jpg"
+website = "https://denisealcom.wordpress.com/"
+linkedin = "https://www.linkedin.com/in/denisersalmeida/"
+bio = """
+Denise is passionate about justice and inclusion, which translates into her work in public policy and compliance. She has been working for Element, and Matrix.org, since early 2020 as their designated DPO and compliance lead. Denise is also in the final stages of her PhD, which focuses on the intersection of privacy, privilege and technology.
+"""

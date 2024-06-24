@@ -2,9 +2,9 @@
 {% block head_extra %}
 <meta name="description" content="{{ page.extra.summary }}">
 <noscript>
-    <link rel="stylesheet" href="/no-js.css" />
+    <link rel="stylesheet" href={{ get_url(path="/no-js.css" , cachebust=true) }} />
 </noscript>
-<script type="module" src="/js/servers.js"></script>
+<script type="module" src={{ get_url(path="/js/servers.js" , cachebust=true) }}></script>
 {% endblock head_extra%}
 {% block content %}
 <div class="page-header">

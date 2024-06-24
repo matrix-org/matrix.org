@@ -4,9 +4,9 @@
 {% block head_extra %}
 <meta name="description" content="{{ section.extra.summary }}">
 <noscript>
-    <link rel="stylesheet" href="/no-js.css" />
+    <link rel="stylesheet" href={{ get_url(path="/no-js.css" , cachebust=true) }} />
 </noscript>
-<script type="module" src="/js/clients.js"></script>
+<script type="module" src={{ get_url(path="/js/clients.js" , cachebust=true) }}></script>
 {% endblock head_extra%}
 {% block content %}
 {% set clients = section.pages %}
@@ -203,7 +203,7 @@
             <a href="{{ client.path }}" class="project-card client {{ clients::classes(client=client.extra) }}">
                 <img src="./{{ thumbnail }}" alt="{{ client.title }} Logo">
                 <h3>{{ client.title }}</h3>
-                <span>{{ client.content | safe }}</span>
+                <span>{{ client.content | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe  }}</span>
                 <div class="platform-links">
                     {{ clients::platforms(packages=client.extra.packages) }}
                 </div>

@@ -14,7 +14,7 @@ image = "https://matrix.org/blog/img/splash.jpg"
 
 Hi all,
 
-We are very excited to announce the first fully stable release of the Matrix protocol and specification across **all **APIs - as well as the Synapse 1.0 reference implementation which implements the full Matrix 1.0 API surface.
+We are very excited to announce the first fully stable release of the Matrix protocol and specification across **all** APIs - as well as the Synapse 1.0 reference implementation which implements the full Matrix 1.0 API surface.
 
 This means that after just over 5 years since the initial work on Matrix began, we are proud to have finally **exited beta**!!  This is the conclusion of the work which we announced at [FOSDEM 2019](https://matrix.org/blog/2019/02/04/matrix-at-fosdem-2019) when we cut the first stable release of the Server-Server API and began the Synapse 0.99 release series in anticipation of releasing a 1.0.
 

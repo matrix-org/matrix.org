@@ -6,6 +6,10 @@
 {% endif %}
 #}
 
+{%- if page.authors | length > 0 or page.taxonomies.author is undefined -%}
+{{ throw(message="Please put author under the taxonomies area.") }}
+{%- endif -%}
+
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -14,6 +18,19 @@
     "datePublished": "{{ page.date | date(format="%Y-%m-%dT%H:%M+00:00") }}",
     {% if page.updated %}
     "dateModified": "{{ page.updated | date(format="%Y-%m-%dT%H:%M+00:00") }}",
+    {% endif %}
+    {% if page.extra.image %}
+    "image": [
+        "{{ page.extra.image }}"
+    ],
+    {% elif section.extra.image %}
+    "image": [
+        "{{ section.extra.image }}"
+    ],
+    {% else %}
+    "image": [
+        "https://matrix.org/blog/img/matrix-logo.png"
+    ],
     {% endif %}
     "author": [
     {% for author in page.taxonomies.author %}
@@ -52,6 +69,24 @@
     <div class="post-main">
         <div class="post-content">
             {{ page.content | safe | markdown | safe }}
+            <div class="callout">
+                <div class="left-col">
+                    <h2>The Foundation needs you</h2>
+                </div>
+                <div class="right-col">
+                    <p>
+                        The Matrix.org Foundation is a non-profit and only relies
+                        on donations to operate. Its core mission is to maintain
+                        the Matrix Specification, but it does much more than that.
+                    </p>
+                    <p>
+                        It maintains the matrix.org homeserver and hosts several
+                        bridges for free. It fights for our collective rights to
+                        digital privacy and dignity.
+                    </p>
+                    <a class="call-to-action plausible-event-name=BlogPostCtaSupportUs" href="/support">Support us</a>
+                </div>
+            </div>
         </div>
         {% if page.toc %}
         <aside>

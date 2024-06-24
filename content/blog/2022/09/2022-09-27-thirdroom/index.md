@@ -15,4 +15,4 @@ We're excited to announce the first tech preview of [Third Room](https://thirdro
 
 To see what it's all about, head over to <https://thirdroom.io/preview> - or come chat in [#thirdroom-dev:matrix.org](https://matrix.to/#/#thirdroom-dev:matrix.org) to learn more!
 
-<iframe src="https://www.youtube.com/embed/skC5TYRAgKE" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="skC5TYRAgKE") }}

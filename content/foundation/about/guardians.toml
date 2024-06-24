@@ -1,0 +1,27 @@
+[[guardians]]
+name = "Prof. Jon Crowcroft"
+picture = "crowcroft.jpg"
+bio = """
+Jon Crowcroft is the Marconi Professor of Communications Systems in the Computer Lab at the University of Cambridge, and the Turing Institute. Jon is a pioneer in the field of decentralised communication, and a fellow of the Royal Society, the ACM, the British Computer Society, the Institution of Engineering and Technology, the Royal Academy of Engineering and the Institute of Electrical and Electronics Engineers. (He also supervised Matthew on building a pre-Matrix instant messaging system at Cambridge, and complained that it wasn’t decentralised enough!)
+"""
+
+[[guardians]]
+name = "Matthew Hodgson"
+picture = "matthew.jpg"
+bio = """
+Matthew is technical co-founder of Matrix, and CEO/CTO of Element - the company formed in 2017 to let the core Matrix dev team work on Matrix full-time as their day job. He came up with the idea of Matrix with Amandine in 2013 while they were running Amdocs’ Unified Communication unit. He has a degree in Physics & Computer Science from the University of Cambridge.
+"""
+
+[[guardians]]
+name = "Amandine Le Pape"
+picture = "amandine.jpg"
+bio = """
+Amandine is co-founder of Matrix, and COO of Element. She previously ran the business side of Amdocs’ UC unit with Matthew. She has an engineering degree in Telecoms, Electronics and Computer Science and uses it most to translate the technicalities of Matrix to humans and businesses, and make sure we keep the users at heart when making decisions!
+"""
+
+[[guardians]]
+name = "Ross Schulman"
+picture = "ross.jpg"
+bio = """
+Ross Schulman is a senior counsel and senior policy technologist at New America’s Open Technology Institute, where he focuses on internet measurement, emerging technologies, surveillance, and decentralization. Prior to joining OTI, Ross worked for Google. Ross brings a unique perspective as a tech- and decentralisation-savvy lawyer to the Foundation, as well as being one of the first non-developers in the Matrix community to run his own homeserver. Ross has been known to walk around Mozfest clutching a battery-powered Synapse in a box, promoting decentralised communication for all.
+"""

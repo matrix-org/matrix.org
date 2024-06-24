@@ -14,7 +14,7 @@ image = "https://matrix.org/blog/img/nHPgFgyvkPnvPDETuAFzniPw.png"
 
 ## Matrix Live
 
-<iframe src="https://www.youtube.com/embed/MwOh4NvPdtQ" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{ youtube_player(video_id="MwOh4NvPdtQ") }}
 
 <!-- more -->
 

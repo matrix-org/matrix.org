@@ -77,7 +77,7 @@
 # Static redirects for the zola rewrite
 /docs/guides/faq /faq
 /docs/guides/faq.html /faq
-/docs/guides/ /docs/legacy
+/docs/guides/ /docs/older
 /clients /ecosystem/clients/
 /clients/ /ecosystem/clients/
 /bots /ecosystem/integrations/
@@ -104,8 +104,13 @@
 /docs/spec/olm.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/olm.md
 /docs/spec/megolm.html https://gitlab.matrix.org/matrix-org/olm/blob/master/docs/megolm.md
 
+# Unbreaking Synapse links, see https://github.com/matrix-org/synapse/issues/15825
+/docs/projects/try-matrix-now.html /ecosystem/clients
+
+#####################################################
 ## Dynamic redirects (100 limit, first match wins) ##
-## Keep these below the static redirects ##
+##      Keep these below the static redirects      ##
+#####################################################
 
 # Dynamic redirect /packages/X to packages.matrix.org/X
 /packages/* https://packages.matrix.org/:splat
@@ -119,6 +124,9 @@
 # Blog feeds
 /blog/feed/* /atom.xml
 /blog/category/security/feed/* /category/security/atom.xml
+/blog/category/:category_id /category/:category_id
+/blog/category/:category_id/ /category/:category_id
+/blog/category/:category_id/atom.xml /category/:category_id/atom.xml
 
 # Dynamic old "unstable" spec doc requests to the new spec docs
 /docs/spec/client_server/unstable/* https://spec.matrix.org/unstable/client-server-api
@@ -134,9 +142,6 @@
 /docs/spec/identity_service/latest/* https://spec.matrix.org/latest/identity-service-api
 /docs/spec/push_gateway/latest/* https://spec.matrix.org/latest/push-gateway-api
 
-# Unbreaking Synapse links, see https://github.com/matrix-org/synapse/issues/15825
-/docs/projects/try-matrix-now.html /ecosystem/clients
-
 # Dynamic old "latest" spec doc requests to the equivalent page in the new spec docs
 /docs/spec/rooms/* https://spec.matrix.org/latest/rooms/:splat
 
@@ -149,5 +154,6 @@
 # Dynamic redirects for the zola rewrite
 /clients/* /ecosystem/clients/:splat
 /blog/faq/* /faq
-/docs/howtos/* /docs/legacy/:splat
+/docs/howtos/* /docs/older/:splat
+/docs/legacy/* /docs/older/:splat
 /docs/projects/clients/:client_placeholder /ecosystem/clients/:client_placeholder
