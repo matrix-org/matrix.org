@@ -3,7 +3,7 @@ title = "chatrix"
 [extra]
 thumbnail = "chatrix.svg"
 maintainer = "wordpressdotorg, akirk, ashfame, psrpinto"
-licence = "GNU GPLv2"
+licence = "GPL-2.0-only"
 language = "TypeScript"
 latest_release = "2023-11-30"
 maturity = "Stable"
@@ -12,14 +12,14 @@ website = "https://wordpress.com/plugins/chatrix"
 matrix_room = "#chatrix:matrix.org"
 featured = true
 [extra.features]
-e2ee = ""
-spaces = ""
-voip_1to1 = "" 
-voip_jitsi = ""
-threads = ""
-sso = ""
-multi_account = ""
-multi_language = ""
+e2ee = false
+spaces = false
+voip_1to1 = false 
+voip_jitsi = false
+threads = false
+sso = false
+multi_account = false
+multi_language = false
 [extra.packages]
 webapp = "https://wordpress.com/plugins/chatrix"
 +++
