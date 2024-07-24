@@ -26,4 +26,4 @@ macos_installer = "https://binary-factory.kde.org/search/?q=neochat"
 flathub.app_id = "org.kde.neochat"
 +++
 
-A Matrix client for desktop and mobile
+A Matrix client for desktop and mobile based on Qt and KDE frameworks
