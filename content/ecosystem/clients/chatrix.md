@@ -10,7 +10,7 @@ maturity = "Stable"
 repo = "https://github.com/Automattic/chatrix"
 website = "https://wordpress.com/plugins/chatrix"
 matrix_room = "#chatrix:matrix.org"
-featured = true
+featured = false
 [extra.features]
 e2ee = false
 spaces = false
