@@ -20,9 +20,11 @@ We received more than 60 high-quality proposals and ended up building 5 tracks o
 
 The conference will occur between September 19th and 22nd at [Mitosis Labs in Berlin](https://2024.matrix.org/attend/#getting-there).
 
-- **Thursday, 19, will be a BarCamp** starting at 10 a.m. local time. It’s an informal workshop-like day where attendees can join, pitch a topic they want to discuss and vote for topics they are interested in. In the evening, we will have a buffet at the venue.
+- **Thursday, 19, will be a [BarCamp](https://en.wikipedia.org/wiki/BarCamp)** starting at 10 a.m. local time. It’s an informal workshop-like day where attendees can join, pitch a topic they want to discuss and vote for topics they are interested in. In the evening, we will have a buffet at the venue.
 - **The two core conference days are Friday, 20, and Saturday, 21.** The full schedule is [on the Matrix Conference Website](https://2024.matrix.org/schedule/).
 - **Sunday 22** will be dedicated to sprints: sessions where the attendees can gather to work together on ideas that emerged during the conference in a more relaxed atmosphere.
+
+Tip: You can also view the schedule through pretalx-interoperable apps on your phone, such as [Giggity](https://ggt.gaa.st/#url=https://cfp.matrix.org/matrixconf2024/schedule/export/schedule.xml) on Android.
 
 
 We are particularly excited about the lineup of speakers:
