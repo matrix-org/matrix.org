@@ -189,6 +189,9 @@
             border-radius: 6px;
             padding-inline: 1rem;
             padding-block: 0.75rem;
+            
+            display: flex;
+            flex-direction: column;
 
             a {
                 white-space: nowrap;
