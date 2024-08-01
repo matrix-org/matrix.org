@@ -183,6 +183,43 @@ We use Donorbox to collect donations from individuals and organisations. By dona
 
 Donorbox manages payment processing via Stripe. You can review their Privacy Policy here: https://donorbox.org/privacy
 
+**2.2.1.4 Information collected for Event Management**
+
+For events held by the Foundation, we collect information through services such as Pretix and Pretalx. This information includes:
+
+**Pretix**
+
+We collect:
+* Name
+* Pronouns
+* Email
+* MatrixID
+
+If you request an invoice, we also collect:
+
+* Name
+* Address
+* Zip code
+* City
+* Country
+
+For more information on Pretix, who support us with event ticketing, please see their Privacy Policy here: https://pretix.eu/about/en/privacy
+
+**Pretalx** – specifically with regards to event speakers, we collect:
+
+* Profile picture
+* Name
+* Email
+* Biography
+* Availability
+* MatrixID
+* Fediverse handle
+* LinkedIn profile
+* Twitter handle
+* Other media (e.g., a text box where speakers can link to their website or any other relevant content)
+
+For more information on Pretalx, who support us with event scheduling, please see their Privacy Policy here: https://pretalx.com/p/privacy
+
 #### 2.2.2 Information we collect automatically as you use the Service:
 
 **Device and Connection Information**
@@ -352,5 +389,6 @@ If you want to make a complaint about the way we have processed your personal in
 - 3.0.1 - minor clarification of 2.12 - June 2023
 - 3.1.0 - include references to archive.matrix.org and room visibility settings - July 2023
 - 3.1.1 - include details on Plausible and Donorbox - February 2024
+- 3.1.2 - include details on Pretix and Pretalx for event management - August 2024
 
 **A note to other startups**: this document was heavily inspired by Balsamiq's plain English ToS document. We were impressed by their championing of plain English, and wanted to reproduce that as much as possible in our own legal documentation. Feel free to draw similar inspiration from this document, though be sure to get any documents you produce checked over by a lawyer. Good luck!
