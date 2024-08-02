@@ -18,6 +18,8 @@ Join us by publishing the letter on your own website and add yourself to [this t
 
 Since 2020, Next Generation Internet ([NGI](https://www.ngi.eu)) programmes, part of European Commission's Horizon programme, fund free software in Europe using a cascade funding mechanism (see for example NLnet's [calls](https://www.nlnet.nl/commonsfund)). This year, according to the Horizon Europe working draft detailing funding programmes for 2025, we notice that Next Generation Internet is not mentioned any more as part of Cluster&nbsp;4.
 
+<!-- more -->
+
 NGI programmes have shown their strength and importance to supporting the European software infrastructure, as a generic funding instrument to fund digital commons and ensure their long-term sustainability. We find this transformation incomprehensible, moreover when NGI has proven efficient and economical to support free software as a whole, from the smallest to the most established initiatives. This ecosystem diversity backs the strength of European technological innovation, and maintaining the NGI initiative to provide structural support to software projects at the heart of worldwide innovation is key to enforce the sovereignty of a European infrastructure.
 Contrary to common perception, technical innovations often originate from European rather than North American programming communities, and are mostly initiated by small-scaled organizations.
 
