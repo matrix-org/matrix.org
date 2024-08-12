@@ -91,7 +91,7 @@ generator expects for these links. If you are able to add them around your links
 it will help us in making sure your links will be clickable on the blog.
 
 This is unnecessary if you are using a markdown link with text, such as:
-`You can find our guidelines [here](https://matrix.org/twim-guide/).`
+`You can find our guidelines [here](https://matrix.org/twim-guide/).`.
 
 ## Reactions and Adding a Project to the Bot
 
