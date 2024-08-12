@@ -82,10 +82,16 @@ want to highlight the links.
 
 ### Correct Linking
 
-Due to the static site generator matrix.org is using, we require bare links to be
-surrounded by `<>`, e.g. `https://matrix.org`. Most matrix clients don't do this.
-If you are able to add them around your links, it will help us in making sure your
-links will be clickable on the blog.
+The static site generator that matrix.org is using uses CommonMark for content,
+and requires bare links to be surrounded by angled brackets to produce
+[autolinks](https://spec.commonmark.org/0.31.2/#autolinks). For example:
+`Take a look at the TWIM entry guidelines <https://matrix.org/twim-guide/>`.
+Most matrix clients will not automatically emit the CommonMark the site
+generator expects for these links. If you are able to add them around your links,
+it will help us in making sure your links will be clickable on the blog.
+
+This is unnecessary if you are using a markdown link with text, such as:
+`You can find our guidelines [here](https://matrix.org/twim-guide/).`.
 
 ## Reactions and Adding a Project to the Bot
 
