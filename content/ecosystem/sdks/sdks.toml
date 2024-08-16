@@ -647,3 +647,16 @@ featured_in = []
 description = """
 Matrix client SDK in Swift
 """
+
+[[sdks]]
+name = "matrix_dotnet"
+maintainer = "Greenscreener"
+maturity = "Beta"
+language = "C#"
+licence = "GPL-3.0-or-later"
+repository = "https://gitlab.com/Greenscreener/matrix-dotnet"
+purpose = ["client", "bot"]
+featured_in = []
+description = """
+Matrix client SDK in C#
+"""
