@@ -31,7 +31,7 @@ But three questions remain that we think are worth offering provisional answers 
 
 **The first question is easy to answer:**
 
-_The Foundation will seek to fund and coordinate maintenance and development of core projects if faced with a competing fork. We believe some projects, like the spec, test suites, SDKs, and shared cryptographic libraries, are so important that they require ongoing stewardship, under a permissive open source licence, by an organisation that is accountable to the ecosystem._
+_The Foundation will seek to fund and coordinate maintenance and development of core projects even if faced with a competing fork. We believe some projects, like the spec, test suites, SDKs, and shared cryptographic libraries, are so important that they require ongoing stewardship, under a permissive open source licence, by an organisation that is accountable to the ecosystem._
 
 The Foundation may host a variety of other projects for the benefit of the ecosystem, and may also fund and coordinate maintenance and development of some of those projects where we see a meaningful gap in the ecosystem. This broader set of projects is more subject to change over time, and is less likely to receive direct investment from the Foundation.
 
