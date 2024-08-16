@@ -53,7 +53,7 @@ A non-exhaustive list of projects we think are core includes:
 
 ## Taking the next steps
 
-We hope this helps answer some of the questions that folks have been raising, illuminates where we are on our journey in defining these things, and provides some assurance that the Matrix.org Foundation is ever evolving in partnership with the community and will draw a line to protect at maintain projects that are truly at the heart of Matrix.
+We hope this helps answer some of the questions that folks have been raising, illuminates where we are on our journey in defining these things, and provides some assurance that the Matrix.org Foundation is ever evolving in partnership with the community and will draw a line to protect and maintain projects that are truly at the heart of Matrix.
 
 Next, we’ll be deliberating on these things with the Governing Board, Spec Core Team, Guardians, and the broader ecosystem including you, the reader. We encourage you to reach out to [your representatives on the Governing Board](https://matrix.org/foundation/governing-board-elections/#elected-representatives) along the way.
 
