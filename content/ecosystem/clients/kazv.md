@@ -5,7 +5,7 @@ thumbnail = "kazv.png"
 maintainer = "The Kazv Project"
 licence = "AGPL-3.0-or-later"
 language = "C++"
-latest_release = "2024-03-02"
+latest_release = "2024-08-03"
 maturity = "Beta"
 repo = "https://lily-is.land/kazv/kazv"
 website = "https://kazv.chat"
@@ -17,7 +17,7 @@ spaces = false
 voip_1to1 = false
 voip_jitsi = false
 sso = false
-multi_account = false
+multi_account = true
 multi_language = true
 [extra.packages]
 windows_installer = "https://lily-is.land/kazv/kazv/-/releases"
