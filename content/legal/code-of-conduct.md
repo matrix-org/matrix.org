@@ -75,7 +75,7 @@ If the person who is harassing you is part of the response team, they will recus
 
 You are also able to report abusive content via your chosen Matrix client, by clicking the event in question and selecting report. Please note these reports go to your homeserver administrator.
 
-We use [Mjolnir](https://github.com/matrix-org/mjolnir) to handle the moderation of rooms under this Code of Conduct, via the bot @administrator:matrix.org. Please note that pinging this account, or any other staff accounts, is not the appropriate reporting mechanism. Repeated in-room reports might result in moderation action.
+We use [Mjolnir](https://github.com/matrix-org/mjolnir) to handle the moderation of rooms under this Code of Conduct, via the bot @abuse:matrix.org. Please note that pinging this account, or any other staff accounts, is not the appropriate reporting mechanism. Repeated in-room reports might result in moderation action.
 
 |
 
