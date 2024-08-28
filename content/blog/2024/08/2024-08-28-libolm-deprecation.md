@@ -7,8 +7,6 @@ author = ["Neil Johnson"]
 category = ["Cryptography"]
 +++
 
-# Libolm Deprecation
-
 Folks, it’s been a few weeks since we announced the [deprecation of libolm](https://gitlab.matrix.org/matrix-org/olm/-/blob/master/README.md?ref\_type=heads\#important-libolm-is-now-deprecated). Since then, we’ve fielded some questions on the subject and thought it would be helpful to collect this context in a blog post.
 
 First up, a recap. We first introduced the idea that [libolm would make way for Vodozemac](https://matrix.org/blog/2022/05/16/independent-public-audit-of-vodozemac-a-native-rust-reference-implementation-of-matrix-end-to-end-encryption/) in 2022 following the [Gematik](https://www.gematik.de/) sponsored audit from [Least Authority](https://leastauthority.com/).
