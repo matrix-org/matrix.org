@@ -7,7 +7,7 @@ author = ["Neil Johnson"]
 category = ["Cryptography"]
 +++
 
-Folks, it's been a few weeks since we announced the [deprecation of libolm](https://gitlab.matrix.org/matrix-org/olm/-/blob/master/README.md?ref\_type=heads\#important-libolm-is-now-deprecated). Since then, we've fielded some questions on the subject and thought it would be helpful to collect this context in a blog post.
+It's been a few weeks since we announced the [deprecation of libolm](https://gitlab.matrix.org/matrix-org/olm/-/blob/master/README.md?ref\_type=heads\#important-libolm-is-now-deprecated). Since then, we've fielded some questions on the subject and thought it would be helpful to collect this context in a blog post.
 
 First up, a recap. We first introduced the idea that [libolm would make way for vodozemac](https://matrix.org/blog/2022/05/16/independent-public-audit-of-vodozemac-a-native-rust-reference-implementation-of-matrix-end-to-end-encryption/) in 2022, following the [Gematik](https://www.gematik.de/) sponsored audit from [Least Authority](https://leastauthority.com/).
 
@@ -23,7 +23,7 @@ Quoting selectively:
 
 > We're not aware of any way to actually exploit these weaknesses over the network, but we continue to strongly recommend developers to migrate to [vodozemac](https://github.com/matrix-org/vodozemac) (or fork libolm to add better primitives). We should have done a better job of explicitly deprecating libolm sooner (and/or improving its primitives) – but all of our focus has been on ensuring that vodozemac is excellent, to the detriment of libolm. Apologies to those who are now finding themselves expediting libolm replacement.
 
-So what does this mean if you are building an app that has a dependency on libolm?
+**So what does this mean if you are building an app that has a dependency on libolm?**
 
 * We have been public from the outset that that libolm's primitives are functionally correct, but not resilient to timing attacks
   * [Repository issue](https://github.com/matrix-org/olm/issues/3)
