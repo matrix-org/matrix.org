@@ -54,7 +54,7 @@ The good news is that if you are building on matrix-rust-sdk or matrix-js-sdk th
 
 * libolm is referenced [here](https://github.com/matrix-org/matrix-js-sdk/blob/c408c0d1d517eeac98c7ee11d99a6a8a874ecda5/src/crypto/backup.ts\#L666), as a hangover from recent work to migrate from libolm to vodozemac. This file will be [removed](https://github.com/element-hq/element-web/issues/26922).
 
-Additionally, the legacy SDKs, [matrix-android-sdk2](https://github.com/matrix-org/matrix-android-sdk2) and [matrix-ios-sdk](https://github.com/matrix-org/matrix-ios-sdk), also have dependencies on libolm. It is used there for the following:
+Additionally, the legacy mobile SDKs, [matrix-android-sdk2](https://github.com/matrix-org/matrix-android-sdk2) and [matrix-ios-sdk](https://github.com/matrix-org/matrix-ios-sdk), also have dependencies on libolm. It is used there for the following:
 
 * To encrypt the bodies of the requests for the Element maintained [content scanner](https://github.com/element-hq/matrix-content-scanner-python) project. These references are unused in any publicly available application and will be removed.
 * To support migration of users from legacy crypto to Rust crypto. Given the adoption of Rust crypto in March 2023 for iOS and July 2023 for Android we will remove this support in the near future, once we have confirmed that the vast majority of users have migrated.
