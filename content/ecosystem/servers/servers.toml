@@ -1,7 +1,7 @@
 [[servers]]
 name = "Synapse"
-description = "Matrix.org homeserver"
-author = "Matrix.org team"
+description = "Synapse is a Matrix homeserver written in Python/Twisted. "
+author = "Element"
 maturity = "Stable"
 language = "Python"
 licence = "AGPL-3.0-or-later"
