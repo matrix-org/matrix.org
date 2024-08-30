@@ -10,7 +10,7 @@ project = "Matrix React SDK"
 [[findings]]
 date = "2024-05-26"
 reporter.name = "morguldir"
-reporter.link = "https://github.com/morguldir/"
+reporter.link = "https://github.com/morguldir"
 summary = """
 Discovered a way to freeze clients using the Matrix JS SDK by crafting a room with itself as its predecessor (CVE-2024-42369 / GHSA-vhr5-g3pm-49fm).
 """
