@@ -26,6 +26,15 @@ Identified a method to supply arbitrary parameter to sonar-scanner.
 project = "matrix-org/sonarcloud-workflow-action"
 
 [[findings]]
+date = "2023-06-20"
+reporter.name = "Alexey Shchepin"
+reporter.link = "https://github.com/alexeyshch"
+summary = """
+Discovered that weakness in auth chain indexing allowed DoS from remote room members through disk fill and high CPU usage ([GHSA-3h7q-rfh9-xm4v](https://github.com/element-hq/synapse/security/advisories/GHSA-3h7q-rfh9-xm4v)).
+"""
+project = "Synapse"
+
+[[findings]]
 date = "2023-07-31"
 reporter.name = "Martin Schobert, Pentagrid AG"
 reporter.link = "https://www.pentagrid.ch/"
