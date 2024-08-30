@@ -5,7 +5,7 @@ reporter.link = "https://github.com/DarkKirb"
 summary = """
 Found room preview settings were controllable by the homeserver.
 """
-project = "Matrix JS SDK"
+project = "Matrix React SDK"
 
 [[findings]]
 date = "2024-05-26"
