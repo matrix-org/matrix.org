@@ -3,7 +3,7 @@ date = "2024-05-26"
 reporter.name = "Charlotte"
 reporter.link = "https://github.com/DarkKirb"
 summary = """
-Found room preview settings were controllable by the homeserver.
+Found room URL preview settings were controllable by the homeserver.
 """
 project = "Matrix React SDK"
 
