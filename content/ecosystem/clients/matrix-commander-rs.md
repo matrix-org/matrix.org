@@ -17,6 +17,8 @@ voip_jitsi = false
 sso = true
 multi_account = false
 multi_language = false
+[extra.packages]
+other_linux_link = "https://github.com/8go/matrix-commander-rs/#Usage"
 +++
 
 Simple but convenient CLI-based Matrix client app for sending and receiving.
