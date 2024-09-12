@@ -4,7 +4,7 @@ title = "Security Disclosure Policy"
 
 Matrix.org greatly appreciates investigative work into security vulnerabilities
 carried out by well-intentioned, ethical security researchers. We follow the
-practice of [responsible disclosure](https://en.wikipedia.org/wiki/Responsible_disclosure)
+practice of [coordinated vulnerability disclosure](https://en.wikipedia.org/wiki/Coordinated_vulnerability_disclosure)
 in order to best protect Matrix's user base from the impact of security issues.
 On our side, this means:
 
