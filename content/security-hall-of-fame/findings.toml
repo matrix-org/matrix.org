@@ -49,7 +49,7 @@ reporter.name = "Josh Qou"
 reporter.link = "https://github.com/joshqou"
 summary = """
 Discovered that the download endpoint of the matrix-media-repo was serving unsafe media inline
-([CVE-2023-41318](https://nvd.nist.gov/vuln/detail/CVE-2023-41318)/
+([CVE-2023-41318](https://www.cve.org/CVERecord?id=CVE-2023-41318) /
 [GHSA-5crw-6j7v-xc72](https://github.com/turt2live/matrix-media-repo/security/advisories/GHSA-5crw-6j7v-xc72)).
 """
 project = "matrix-media-repo"
@@ -60,7 +60,7 @@ reporter.name = "Thimothé Maljean"
 reporter.link = "https://www.linkedin.com/in/thimoth%C3%A9-maljean/"
 summary = """
 Discovered temporary storage of plaintext passwords during password changes
-([CVE-2023-41335](https://nvd.nist.gov/vuln/detail/CVE-2023-41335)/
+([CVE-2023-41335](https://www.cve.org/CVERecord?id=CVE-2023-41335) /
 [GHSA-4f74-84v3-j9q5](https://github.com/matrix-org/synapse/security/advisories/GHSA-4f74-84v3-j9q5)).
 """
 project = "Synapse"
@@ -71,7 +71,7 @@ reporter.name = "S1m"
 reporter.link = "https://github.com/p1gp1g"
 summary = """
 Discovered an XSS vector for
-[CVE-2023-30609](https://nvd.nist.gov/vuln/detail/CVE-2023-30609)/
+[CVE-2023-30609](https://www.cve.org/CVERecord?id=CVE-2023-30609) /
 [GHSA-xv83-x443-7rmw](https://github.com/matrix-org/matrix-react-sdk/security/advisories/GHSA-xv83-x443-7rmw).
 """
 project = "Matrix React SDK"
@@ -82,7 +82,7 @@ reporter.name = "Cadence Ember"
 reporter.link = "https://cadence.moe/"
 summary = """
 Found an HTML injection via highlighting of search results
-([CVE-2023-30609](https://nvd.nist.gov/vuln/detail/CVE-2023-38690)/
+([CVE-2023-30609](https://www.cve.org/CVERecord?id=CVE-2023-38690) /
 [GHSA-xv83-x443-7rmw](https://github.com/matrix-org/matrix-react-sdk/security/advisories/GHSA-xv83-x443-7rmw)).
 """
 project = "Matrix React SDK"
@@ -102,7 +102,7 @@ reporter.name = "Val Lorentz"
 reporter.link = "https://valentin-lorentz.fr/"
 summary = """
 Discovered a IRC command injection via admin commands
-([CVE-2023-38690](https://nvd.nist.gov/vuln/detail/CVE-2023-38690)/
+([CVE-2023-38690](https://www.cve.org/CVERecord?id=CVE-2023-38690) /
 [GHSA-3pmj-jqqp-2mj3](https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-3pmj-jqqp-2mj3)).
 """
 project = "matrix-appservice-irc"
@@ -247,7 +247,7 @@ summary = """
 Remotely triggerable host program execution with user interaction, caused by an
 outdated Electron dependency. Depending on the host environment, full RCE may be
 possible. Fixed in Element Desktop 1.9.7 and tracked as [GHSA-mjrg-9f8r-h3m7](https://github.com/vector-im/element-desktop/security/advisories/GHSA-mjrg-9f8r-h3m7)
-/ [CVE-2022-23597](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23597).
+/ [CVE-2022-23597](https://www.cve.org/CVERecord?id=CVE-2022-23597).
 """
 project = "Element Desktop"
 
@@ -258,7 +258,7 @@ reporter.link = "https://github.com/brevilo"
 summary = """
 Buffer overflow in olm_session_describe in libolm before version 3.2.8, remotely
 triggerable from matrix-js-sdk before 15.2.1. Fixed in libolm 3.2.8 and
-matrix-js-sdk 15.2.1. Assigned [CVE-2021-44538](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44538).
+matrix-js-sdk 15.2.1. Assigned [CVE-2021-44538](https://www.cve.org/CVERecord?id=CVE-2021-44538).
 """
 project = "libolm"
 
@@ -287,7 +287,7 @@ reporter.name = "Thomas Chauchefoin (SonarSource)"
 reporter.link = "https://www.sonarsource.com/"
 summary = """
 Discovered status.matrix.org was running a version of Cachet vulnerable to an
-[SQL injection](https://nvd.nist.gov/vuln/detail/CVE-2021-39165). Since this
+[SQL injection](https://www.cve.org/CVERecord?id=CVE-2021-39165). Since this
 host was used solely for running the status page, we fixed this by
 decommissioning it and switching to Atlassian's Statuspage service.
 """
@@ -296,7 +296,7 @@ project = "status.matrix.org"
 [[findings]]
 date = "2021-07-03"
 reporter.name = "Aaron Raimist"
-reporter.link = "https://github.com/aaronraimist/"
+reporter.link = "https://github.com/aaronraimist"
 summary = """
 Discovered that an explicit assignment of power level 0 was misinterpreted as
 the default power level. Fixed in Synapse v1.40.0.
@@ -306,7 +306,7 @@ project = "Synapse"
 [[findings]]
 date = "2021-05-21"
 reporter.name = "Aaron Raimist and an anonymous security researcher"
-reporter.link = "https://github.com/aaronraimist/"
+reporter.link = "https://github.com/aaronraimist"
 summary = """
 Discovered that Element Android was disclosing the filename of end-to-end
 encrypted attachments to the homeserver. Fixed in Element Android 1.1.8.
@@ -336,7 +336,7 @@ project = "Matrix React SDK"
 [[findings]]
 date = "2021-01-18"
 reporter.name = "Michaël Scherer"
-reporter.link = "https://github.com/mscherer/"
+reporter.link = "https://github.com/mscherer"
 summary = """
 IP blacklist bypass via transitional IPv6 addresses on dual-stack networks
 ([CVE-2021-21392](https://github.com/matrix-org/synapse/security/advisories/GHSA-5wrh-4jwv-5w78)).
@@ -356,9 +356,9 @@ project = "Element iOS"
 [[findings]]
 date = "2020-11-17"
 reporter.name = "Michaël Scherer"
-reporter.link = "https://github.com/mscherer/"
+reporter.link = "https://github.com/mscherer"
 summary = """
-Denial of service attack via .well-known lookups ([CVE-2021-21274](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21274)).
+Denial of service attack via .well-known lookups ([CVE-2021-21274](https://www.cve.org/CVERecord?id=CVE-2021-21274)).
 Fixed in Synapse 1.25.0.
 """
 project = "Synapse"
@@ -366,10 +366,10 @@ project = "Synapse"
 [[findings]]
 date = "2020-11-17"
 reporter.name = "Michaël Scherer"
-reporter.link = "https://github.com/mscherer/"
+reporter.link = "https://github.com/mscherer"
 summary = """
 IP blacklist bypass via redirects on some federation and push requests
-([CVE-2021-21273](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21273)).
+([CVE-2021-21273](https://www.cve.org/CVERecord?id=CVE-2021-21273)).
 Fixed in Synapse 1.25.0.
 """
 project = "Synapse"
@@ -380,7 +380,7 @@ reporter.name = "Denis Kasak"
 reporter.link = "https://github.com/dkasak"
 summary = """
 HTML injection in login fallback endpoints could be used for a
-Cross-site-scripting attack ([CVE-2020-26891](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26891)).
+Cross-site-scripting attack ([CVE-2020-26891](https://www.cve.org/CVERecord?id=CVE-2020-26891)).
 Fixed in Synapse 1.21.0.
 """
 project = "Synapse"
@@ -410,7 +410,7 @@ project = "Element"
 [[findings]]
 date = "2020-07-29"
 reporter.name = "0x1a8510f2"
-reporter.link = "https://github.com/0x1a8510f2/"
+reporter.link = "https://github.com/0x1a8510f2"
 summary = """
 An issue where Element Android was leaking PII. Fixed in [Element Android 1.0.5](https://github.com/vector-im/element-android/releases/tag/v1.0.5)
 """
@@ -432,7 +432,7 @@ reporter.name = "Denis Kasak"
 reporter.link = "https://github.com/dkasak"
 summary = """
 Invalid JSON could become part of the room state, acting as a denial of service
-vector ([CVE-2020-26890](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-26890)).
+vector ([CVE-2020-26890](https://www.cve.org/CVERecord?id=CVE-2020-26890)).
 Fixed in Synapse 1.20.0. Disclosed 2020-11-23.
 """
 project = "Synapse"
@@ -558,7 +558,7 @@ reporter.name = "fs0c131y"
 reporter.link = "https://fs0c131y.com/"
 summary = """
 An email validation exploit in Sydent. For more details see [here](https://matrix.org/blog/2019/04/18/security-update-sydent-1-0-2/)
-and [CVE-2019-11340](https://www.cvedetails.com/cve/CVE-2019-11340/).
+and [CVE-2019-11340](https://www.cve.org/CVERecord?id=CVE-2019-11340).
 """
 project = "Sydent"
 
