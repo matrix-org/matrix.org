@@ -1,4 +1,40 @@
 [[findings]]
+date = "2024-05-26"
+reporter.name = "Charlotte"
+reporter.link = "https://github.com/DarkKirb"
+summary = """
+Found room URL preview settings were controllable by the homeserver.
+"""
+project = "Matrix React SDK"
+
+[[findings]]
+date = "2024-05-26"
+reporter.name = "morguldir"
+reporter.link = "https://github.com/morguldir"
+summary = """
+Discovered a way to freeze clients using the Matrix JS SDK by crafting a room with itself as its predecessor ([CVE-2024-42369](https://www.cve.org/CVERecord?id=CVE-2024-42369) / [GHSA-vhr5-g3pm-49fm](https://github.com/matrix-org/matrix-js-sdk/security/advisories/GHSA-vhr5-g3pm-49fm)).
+"""
+project = "Matrix JS SDK"
+
+[[findings]]
+date = "2024-04-25"
+reporter.name = "Johannes Marbach"
+reporter.link = "https://github.com/Johennes"
+summary = """
+Identified a method to supply arbitrary parameter to sonar-scanner.
+"""
+project = "matrix-org/sonarcloud-workflow-action"
+
+[[findings]]
+date = "2023-06-20"
+reporter.name = "Alexey Shchepin"
+reporter.link = "https://github.com/alexeyshch"
+summary = """
+Discovered that weakness in auth chain indexing allowed DoS from remote room members through disk fill and high CPU usage ([CVE-2024-31208](https://www.cve.org/CVERecord?id=CVE-2024-31208) / [GHSA-3h7q-rfh9-xm4v](https://github.com/element-hq/synapse/security/advisories/GHSA-3h7q-rfh9-xm4v)).
+"""
+project = "Synapse"
+
+[[findings]]
 date = "2023-07-31"
 reporter.name = "Martin Schobert, Pentagrid AG"
 reporter.link = "https://www.pentagrid.ch/"
@@ -32,7 +68,7 @@ project = "Synapse"
 [[findings]]
 date = "2023-04-25"
 reporter.name = "S1m"
-reporter.link = "https://github.com/p1gp1g/"
+reporter.link = "https://github.com/p1gp1g"
 summary = """
 Discovered an XSS vector for
 [CVE-2023-30609](https://nvd.nist.gov/vuln/detail/CVE-2023-30609)/
