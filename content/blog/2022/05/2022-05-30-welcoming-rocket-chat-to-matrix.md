@@ -26,7 +26,7 @@ Rocket.Chat’s implementation follows the “[How do you make an existing chat 
 
 You can see a quick preview of a Rocket.Chat user chatting away with an Element user on matrix.org via Matrix here:
 
-<video style="width: 100%" src="/blog/img/164530391-e8b17ecd-a4d0-4ef8-a8b7-81230c1773d3.mp4" controls></video>
+{{figureVideo(vid="/blog/img/164530391-e8b17ecd-a4d0-4ef8-a8b7-81230c1773d3.mp4",caption="Rocket Chat user chatting with an Element user on matrix.org via Matrix")}}
 
 So, exciting times ahead - needless to say we’ll be doing everything we can to support Rocket.Chat and ensure their Matrix integration is a success.  And at this rate, they might be distinctly ahead of the curve if they start shipping Dendrite!  Meanwhile, we have to wonder who will be next? Nextcloud? Mattermost? Place your bets… ;)
 

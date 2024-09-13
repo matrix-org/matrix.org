@@ -1,5 +1,9 @@
+{%- set av1_filename = vid | regex_replace(pattern=`\..+`, rep=`.webm`) | replace(from='/blog/img/', to='/blog/img/av1/') -%}
+{%- set hevc_filename = vid | regex_replace(pattern=`\..+`, rep=`.mp4`) | replace(from='/blog/img/', to='/blog/img/hevc/') -%}
 <figure>
     <video controls preload="auto">
+        <source src="{{ av1_filename }}" type="video/webm">
+        <source src="{{ hevc_filename }}" type="video/mp4">
         <source src="{{ vid }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
