@@ -15,6 +15,8 @@ Since then, various client implementations have migrated to [vodozemac](https://
 
 In [This Week in Matrix 2024-08-02](https://matrix.org/blog/2024/08/02/this-week-in-matrix-2024-08-02/\#vodozemac-website) [Matthew](https://matrix.to/#/@matthew:matrix.org) formally announced the deprecation of libolm in favour of vodozemac.
 
+<!-- more -->
+
 > Heads up that we have officially marked the original C/C++ libolm implementation as deprecated, as warned back in [May 2022](https://matrix.org/blog/2022/05/16/independent-public-audit-of-vodozemac-a-native-rust-reference-implementation-of-matrix-end-to-end-encryption/) when we announced the Rust vodozemac implementation as the successor to libolm. The rationale for doing so now is that all of the SDKs maintained by the core team at [github.com/matrix-org](https://github.com/matrix-org) now support vodozemac, and the majority of apps built on top of them have now successfully switched over to vodozemac. Meanwhile, we simply don't have bandwidth to maintain and support both vodozemac and libolm, so our maintenance will be focused on vodozemac going forwards. You can find the official deprecation notice [here](https://gitlab.matrix.org/matrix-org/olm/-/blob/master/README.md?ref\_type=heads\#important-libolm-is-now-deprecated).
 
 Matthew then followed up in [This Week in Matrix 2024-08-16](https://matrix.org/blog/2024/08/16/this-week-in-matrix-2024-08-16/\#dept-of-encryption-closed-lock-with-key) in light of the coordinated disclosure by security researcher Soatok of [potential security weaknesses in libolm](https://soatok.blog/2024/08/14/security-issues-in-matrixs-olm-library/) underpinned by the primitives employed by the library.
