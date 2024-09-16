@@ -21,6 +21,8 @@ Subsequently WhatsApp [launched](https://engineering.fb.com/2024/03/06/security/
 
 4. WhatsApp would require each Matrix server provider to sign a separate agreement in order to interconnect - i.e. you can’t bridge other server’s users unless those servers have signed a contract with Meta.
 
+<!-- more -->
+
 Now, the good news is that we’ve subsequently been talking with WhatsApp to see if we could progress these points - and we’re happy to say that they’ve listened to us and we’ve made progress on the first 3 items:
 
 
