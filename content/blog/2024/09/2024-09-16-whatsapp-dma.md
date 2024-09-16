@@ -11,6 +11,8 @@ Hi all,
 
 Back at [FOSDEM](https://fosdem.org/2024/schedule/event/fosdem-2024-3345-opening-up-communication-silos-with-matrix-2-0-and-the-eu-digital-markets-act/) in February we showed off how Matrix could be used for E2EE-preserving messaging interoperability as required by the [Digital Markets Act messaging interoperability](https://element.io/blog/the-eu-digital-markets-act-is-here/) - and we announced that Element had been working with Meta on integrating with its DMA APIs in order to connect WhatsApp to Matrix. You can [see the video here](https://youtu.be/s5BrVVf0B1I?t=1488), and we also demoed interop working at the technical level to the European Commission a few days beforehand.
 
+<!-- more -->
+
 Subsequently WhatsApp [launched](https://engineering.fb.com/2024/03/06/security/whatsapp-messenger-messaging-interoperability-eu/) its [DMA portal](https://developers.facebook.com/m/messaging-interoperability/) on March 8th, and the proposed Reference Offer (i.e. the terms you have to accept as a Requesting Party in order to interoperate) was revealed. The Reference Offer for Facebook Messenger was launched on September 6th.  At the time of the WhatsApp launch we flagged up some significant unresolved questions - the main points being that:
 
 1. WhatsApp would require their users to manually enable DMA in settings before they can receive any traffic from interconnecting service providers (e.g. Element) - meaning that WhatsApp users would not be reachable by default.
