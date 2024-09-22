@@ -6,12 +6,41 @@
 {% endblock head_extra %}
 {% block content %}
 {% set sponsors_data = load_data(path="content/sponsors.toml") %}
-<div id="elections-banner">
-    <p>We are happy to launch <a href="https://2024.matrix.org">The Matrix Conference</a> on Sep 19-22 in Berlin,
-        Germany. <a href="https://2024.matrix.org">Learn more</a> about it, <a
-            href="https://2024.matrix.org/register/">buy a
-            ticket</a>, or <a href="https://2024.matrix.org/schedule/">check the schedule</a>!</p>
+
+{% if config.extra.banner %}
+<div id="information-banner">
+    {% if config.extra.conference_state == "cfp" %}
+    <p>We are happy to launch <a href="{{ config.extra.conference_website }}">The Matrix Conference</a> on {{
+        config.extra.conference_dates }} in
+        {{ config.extra.conference_location }}. <a href="{{ config.extra.conference_website }}">Learn more</a> about it,
+        or <a href="https://cfp.matrix.org">submit a
+            proposal</a>!</p>
+    {% elif config.extra.conference_state == "awaiting_schedule" %}
+    <p>We are happy to launch <a href="{{ config.extra.conference_website }}">The Matrix Conference</a> on {{
+        config.extra.conference_dates }} in
+        {{ config.extra.conference_location }}. <a href="{{ config.extra.conference_website }}">Learn more</a> about it,
+        <a href="{{ config.extra.conference_website }}/register/">buy a
+            ticket</a>!
+    </p>
+    {% elif config.extra.conference_state == "scheduled" %}
+    <p>We are happy to launch <a href="{{ config.extra.conference_website }}">The Matrix Conference</a> on {{
+        config.extra.conference_dates }} in
+        {{ config.extra.conference_location }}. <a href="{{ config.extra.conference_website }}">Learn more</a> about it,
+        <a href="{{ config.extra.conference_website }}/register/">buy a
+            ticket</a>, or <a href="{{ config.extra.conference_website }}/schedule/">check the schedule</a>!
+    </p>
+    {% elif config.extra.conference_state == "no_tickets" %}
+    <p>We are happy to launch <a href="{{ config.extra.conference_website }}">The Matrix Conference</a> on {{
+        config.extra.conference_dates }} in
+        {{ config.extra.conference_location }}. <a href="{{ config.extra.conference_website }}">Learn more</a> about it,
+        or <a href="{{ config.extra.conference_website }}/schedule/">check the schedule</a>!</p>
+    {% elif config.extra.conference_state == "live" %}
+    <p><a href="{{ config.extra.conference_website }}">The Matrix Conference</a> is Live.
+        <a href="{{ config.extra.conference_website }}/watch/">Check the livestreams</a>!
+    </p>
+    {% endif %}
 </div>
+{% endif %}
 <div id="frontpage">
     <div id="hero" class="section">
         <div class="hero_content">
