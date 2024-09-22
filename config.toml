@@ -46,3 +46,6 @@ conference_state = "none"
 conference_website = "https://2024.matrix.org"
 conference_dates = "Sep 19-22"
 conference_location = "Berlin, Germany"
+
+governence_board_elections = false
+governence_board_elections_page = "/governing-board/elections/2024"
