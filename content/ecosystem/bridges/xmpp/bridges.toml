@@ -26,8 +26,8 @@ summary = """
 The jealous XMPP-Matrix bridge
 """
 maturity = "Alpha"
-language = "C99"
-license = "AGPL-3.0"
+language = "C"
+license = "AGPL-3.0-only"
 room = "#parsee:tedomum.net"
 repo = "https://git.kappach.at/lda/Parsee"
 featured = false
