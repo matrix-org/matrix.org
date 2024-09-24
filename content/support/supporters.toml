@@ -101,7 +101,7 @@ logo = "nheko.svg"
 [[ecosystem]]
 name = "Polychat"
 website = "https://polychat.de/"
-logo = "polychat.png"
+logo = "polychat.svg"
 
 [[ecosystem]]
 name = "Rory&::LibMatrix"
