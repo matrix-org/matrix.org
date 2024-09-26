@@ -38,6 +38,10 @@
     <p><a href="{{ config.extra.conference_website }}">The Matrix Conference</a> is Live.
         <a href="{{ config.extra.conference_website }}/watch/">Check the livestreams</a>!
     </p>
+    {% elif config.extra.conference_state == "watch-recordings" %}
+    <p><a href="{{ config.extra.conference_website }}">The Matrix Conference</a> is over and the recordings are here!.
+        <a href="{{ config.extra.conference_website }}/watch/">Check out the recordings</a>!
+    </p>
     {% endif %}
     {% if config.extra.governence_board_elections %}
     <p>We are holding our Governing Board elections. Find all the information <a

@@ -39,7 +39,7 @@ skip_anchor_prefixes = [
 [extra]
 banner = false
 
-# Possible states: "cfp", "awaiting_schedule", "scheduled", "no_tickets", "live", "none"
+# Possible states: "cfp", "awaiting_schedule", "scheduled", "no_tickets", "live", "watch-recordings", "none"
 # None is used when elections instead are used
 conference_state = "none"
 
