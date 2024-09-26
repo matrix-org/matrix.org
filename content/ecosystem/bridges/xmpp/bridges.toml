@@ -18,3 +18,24 @@ channel = true
 message_media = true
 replies = true
 mentions = true
+
+[[bridges]]
+name = "parsee"
+maintainer = "LDA"
+summary = """
+The jealous XMPP-Matrix bridge
+"""
+maturity = "Alpha"
+language = "C"
+license = "AGPL-3.0-or-later"
+room = "#parsee:tedomum.net"
+repo = "https://git.kappach.at/lda/Parsee"
+featured = false
+privilege.platform = "JCP Access"
+privilege.matrix = "Homeserver Admin"
+[bridges.supports]
+dm = true
+channel = true
+message_media = true
+replies = true
+mentions = false
