@@ -1,0 +1,8 @@
+<div class="figureGallery">
+{% for img in images %}
+<figure>
+    <img src="{{ img }}" alt="{{ captions[loop.index0] }}">
+    <figcaption>{{ captions[loop.index0] | markdown | safe }}</figcaption>
+</figure>
+{% endfor %}
+</div>
