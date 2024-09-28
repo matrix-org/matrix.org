@@ -114,7 +114,7 @@ the copy is on example.com, matrix.org or ergaster.org.
 
 When someone else joins the room, whether they are on the same homeserver as the
 creator or another homeserver, by default they are assigned the power level 0.
-If Bob on `ergaster.org` joins `#goodfriends:example.com`, his server is going to
+If Bob on `matrix.org` joins `#goodfriends:example.com`, his server is going to
 ask Alice's `example.com` a local copy of the room, and stay in sync with it.
 
 {{ figure(
@@ -122,7 +122,7 @@ ask Alice's `example.com` a local copy of the room, and stay in sync with it.
     caption="Bob joins the room and automatically gets Power Level 0")
 }}
 
-If Carol joins from her homeserver `matrix.org`, she will also get the power level
+If Carol joins from her homeserver `ergaster.org`, she will also get the power level
 0.
 
 {{ figure(
