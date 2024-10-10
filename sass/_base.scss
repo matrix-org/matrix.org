@@ -11,7 +11,7 @@
         --color-text-light: #595959;
     }
 
-    --color-link: #0098d4;
+    --color-link: #00719d;
 
     --page-header-height: 15rem;
 
@@ -59,6 +59,10 @@ main {
 
 a {
     color: var(--color-link);
+    text-decoration: underline;
+}
+
+nav a {
     text-decoration: none;
 }
 
@@ -117,7 +121,6 @@ ol:last-child {
 
     a {
         color: #999;
-        text-decoration: none;
         margin-inline: .8rem;
     }
 
@@ -351,6 +354,8 @@ a>code {
     font-weight: 600;
     border-radius: 1000px;
     padding: .6em 2em;
+
+    text-decoration: none;
 
     &.inverted {
         border: 2px solid #fff;
