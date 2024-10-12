@@ -14,9 +14,9 @@
         <div class="details">
             <img class="app-logo" src="../{{ thumbnail }}" alt="{{ page.title }} Logo">
             <div class="name-and-release-date">
-                <h3>{{ page.title }}<div class="maturity {{ page.extra.maturity | lower }}">{{ page.extra.maturity }}
+                <h1>{{ page.title }}<div class="maturity {{ page.extra.maturity | lower }}">{{ page.extra.maturity }}
                     </div>
-                </h3>
+                </h1>
             </div>
             <p class="summary">{{ page.content | markdown | safe }}</p>
             <div class="project-links">
