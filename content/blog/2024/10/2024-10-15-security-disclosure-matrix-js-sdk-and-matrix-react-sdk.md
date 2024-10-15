@@ -31,3 +31,7 @@ Furthermore, matrix-android-sdk2 and matrix-ios-sdk have similar functionality t
 ### Proposed specification changes
 
 To fix this functionality in terms of the specification process, we will open an MSC to explicitly clarify that MSC3061 key forwarding should only forward keys to verified devices owned by verified users, ensuring that historical keys are never shared with untrusted devices. This also encourages users to verify each other to enable reading message history, thereby improving Matrix security against interception.
+
+### Note on project ownership
+
+The matrix-react-sdk is no longer a Foundation project but that of Element and has been moved to <https://github.com/element-hq/matrix-react-sdk>. However, the vulnerability in question was introduced, found and patched while it was still under Foundation ownership. For this reason, the Matrix.org Security team decided to treat this as a Foundation advisory. Future advisories for matrix-react-sdk (if any) will come from Element.
