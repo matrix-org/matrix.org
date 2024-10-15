@@ -182,6 +182,24 @@ article.post {
             font-style: italic;
         }
     }
+
+    .figureGallery {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+
+        figure {
+            height: 100%;
+        }
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+
+            figure {
+                width: 100%;
+            }
+        }
+    }
 }
 
 #continue-reading {
