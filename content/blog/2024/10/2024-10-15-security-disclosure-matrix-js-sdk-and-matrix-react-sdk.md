@@ -1,7 +1,6 @@
 +++
 title = "Security disclosure for matrix-js-sdk (CVE-2024-47080) and matrix-react-sdk (CVE-2024-47824)"
 date = "2024-10-15T11:39:35Z"
-path = "/blog/2024/10/2024-10-15-security-disclosure-matrix-js-sdk-and-matrix-react-sdk"
 
 [taxonomies]
 author = ["Matrix.org Security Team"]
