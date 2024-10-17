@@ -2,7 +2,7 @@
 title = "NeoChat"
 [extra]
 thumbnail = "neochat.svg"
-maintainer = "Carl Schwan, Tobias Fella"
+maintainer = "Carl Schwan, Tobias Fella, and James Graham"
 licence = "GPL-3.0-only"
 language = "C++"
 latest_release = "2023-11-09"
@@ -21,7 +21,6 @@ multi_account = true
 multi_language = true
 [extra.packages]
 windows_installer = "https://www.microsoft.com/store/apps/9PNXWVNRC29H"
-macos_installer = "https://binary-factory.kde.org/search/?q=neochat"
 #f_droid.app_id = "" https://community.kde.org/Android/FDroid
 flathub.app_id = "org.kde.neochat"
 +++
