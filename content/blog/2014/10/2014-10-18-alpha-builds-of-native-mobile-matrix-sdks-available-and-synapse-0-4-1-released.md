@@ -11,8 +11,8 @@ It's been an incredibly busy few weeks in Matrixland - we've had our heads down 
 
 The big news is that we have our first alpha releases of native Mobile SDKs available today for Matrix for iOS & Android! These are entirely new projects - you can check out the SDKs and demo apps (which implement a basic Matrix chatroom client similar to the <a href="http://matrix.org/alpha">webclient demo</a> at:
 <ul>
-	<li><a href="http://github.com/matrix-org/matrix-ios-sdk">http://github.com/matrix-org/matrix-ios-sdk</a></li>
-	<li><a href="http://github.com/matrix-org/matrix-android-sdk">http://github.com/matrix-org/matrix-android-sdk</a></li>
+ <li><a href="http://github.com/matrix-org/matrix-ios-sdk">http://github.com/matrix-org/matrix-ios-sdk</a></li>
+ <li><a href="http://github.com/matrix-org/matrix-android-sdk">http://github.com/matrix-org/matrix-android-sdk</a></li>
 </ul>
 We still have a lot of polishing and lipstick to apply to these, but it should be a good starting point for folks who'd like to hack on mobile apps for Matrix! We haven't had a chance to generate appledoc/javadoc for these yet, but we'll post them on matrix.org shortly.
 
@@ -30,26 +30,23 @@ Finally, we've also had a detour into <a href="http://trossenrobotics.com/phanto
 
 Thanks for supporting Matrix - please let us know how you get on with the new releases at <a href="http://matrix.org/alpha">#matrix:matrix.org!</a>
 
-<code>
-Changes in synapse 0.4.1 (2014-10-17)
-=====================================
+## Changes in synapse 0.4.1 (2014-10-17)
+
 Webclient:
 
- * Fix bug with display of timestamps.
+* Fix bug with display of timestamps.
 
-Changes in synpase 0.4.0 (2014-10-17)
-=====================================
+## Changes in synpase 0.4.0 (2014-10-17)
+
 This release includes changes to the federation protocol and client-server API
 that is not backwards compatible.
 
 The Matrix specification has been moved to a separate git repository:
-http://github.com/matrix-org/matrix-doc
+<http://github.com/matrix-org/matrix-doc>
 
 You will also need an updated syutil and config. See UPGRADES.rst.
 
 Homeserver:
 
- * Sign federation transactions to assert strong identity over federation.
- * Rename timestamp keys in PDUs and events from 'ts' and 'hsob_ts' to 'origin_server_ts'.
- 
-</code>
+* Sign federation transactions to assert strong identity over federation.
+* Rename timestamp keys in PDUs and events from 'ts' and 'hsob_ts' to 'origin_server_ts'.

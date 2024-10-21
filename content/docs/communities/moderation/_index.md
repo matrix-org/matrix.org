@@ -77,6 +77,7 @@ easily.
 ### Setting it up in your rooms
 
 Once you have performed the technical set-up of mjolnir, you need to:
+
 1. Make sure your moderation staff is in the control room of your community
 1. Invite mjolnir the security guard bot in all your rooms
 1. Make the mjolnir bot Administrator in all your rooms (so it can enforce
@@ -86,7 +87,7 @@ To do so you need to invite the moderation bot in each room. You can do so
 either by opening the right panel, opening the members list and clicking on
 Invite, or you can type the following message in the message bar at the bottom:
 
-```
+```txt
 /invite @yourMjolnirBot:example.com
 ```
 
@@ -94,20 +95,29 @@ The bot will join, and you can then promote it Administrator by finding it in
 the list of members and changing its role, or you can type the following message
 in the message bar at the bottom:
 
-```
+```txt
 /op @yourMjolnirBot:example.com 100
 ```
 
-You should spend some time thinking about what privileges you want to give to your Mjolnir. A common setup is to give the Mjolnir user power level 100. This gives Mjolnir the permissions to kick and ban people from the rooms it protects. This has a couple of implications. First, anyone with access to the Mjolnir has power level 100 in the rooms it protects. Also, Mjolnir is the de-facto owner of those community rooms. For more advanced set-ups, read the [spec covering power levels](https://spec.matrix.org/v1.5/client-server-api/#mroompower_levels).
+You should spend some time thinking about what privileges you want to give to your Mjolnir.
+A common setup is to give the Mjolnir user power level 100.
+This gives Mjolnir the permissions to kick and ban people from the rooms it protects.
+This has a couple of implications.
+First, anyone with access to the Mjolnir has power level 100 in the rooms it protects.
+Also, Mjolnir is the de-facto owner of those community rooms.
+For more advanced set-ups, read the [spec covering power levels](https://spec.matrix.org/v1.5/client-server-api/#mroompower_levels).
 
 ## Getting moderation reports
 
 By default, the moderation reports go to the reporter's homeserver
-administrator. If you are the homeserver admin, you can choose to send the reports to the Mjolnir management room. Those reports look like this:
+administrator. If you are the homeserver admin, you can choose to send the reports to the Mjolnir management room.
+Those reports look like this:
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](./mjolnir_report.png)
 
-The report gives you some information about the reported message. Underneath, there are some buttons that you can use to take action on the report.
+The report gives you some information about the reported message.
+Underneath, there are some buttons that you can use to take action on the report.
 
 We'll talk about moderation actions in a moment. If you want to set up these reports, please follow the documentation [here](https://github.com/matrix-org/mjolnir#enabling-readable-abuse-reports).
 
@@ -115,29 +125,39 @@ We'll talk about moderation actions in a moment. If you want to set up these rep
 
 ### Redacting a specific message
 
-There are two ways to redact a message. You can click the {{ mjolnirbutton(text="🗍 Redact") }} button underneath a report, if you are using those reports. You can also redact a particular message by sending a message in Mjolnir's control room. This method is useful when you haven't received a report about a message, but you want to redact it.
+There are two ways to redact a message.
+You can click the {{ mjolnirbutton(text="🗍 Redact") }} button underneath a report,
+if you are using those reports.
+You can also redact a particular message by sending a message in Mjolnir's control room.
+This method is useful when you haven't received a report about a message, but you want to redact it.
 
-To redact a specific message, you need to find its permalink. You can find the permalink by hovering the message you want to delete, clicking on the `…`, then on `Share`.
+To redact a specific message, you need to find its permalink.
+You can find the permalink by hovering the message you want to delete, clicking on the `…`, then on `Share`.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](./share_message.png)
 
 This will open a pop-up window from which you can copy the permalink.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](./copy_permalink.png)
 
 Once you have the permalink, you can use it in mjolnir's redaction command
 
-```
+```txt
 !mjolnir redact <event permalink> 
 ```
 
 For example
 
-```
+```txt
 !mjolnir redact https://matrix.to/#/!yOatELRSQXzfQMmxjH:matrix.org/$F76L2figPEC240TFaUkHoKPxxhJ3P54vP4hi14Sd8xw?via=matrix.org&via=t2bot.io
 ```
 
-One important feature of Mjolnir is to protect individual moderators from retaliation. If you redact a message using the client UI, that redaction appears with your user id. When you use Mjolnir, it shows Mjolnir's id. This can help to reduce direct retaliation against moderators for their moderation actions. Your management room will record who took the action.
+One important feature of Mjolnir is to protect individual moderators from retaliation.
+If you redact a message using the client UI, that redaction appears with your user id. When you use Mjolnir,
+it shows Mjolnir's id. This can help to reduce direct retaliation against moderators for their moderation actions.
+Your management room will record who took the action.
 
 ### Redacting a user's last messages
 
@@ -149,20 +169,20 @@ If such a user has been identified, it's possible to redact their last n
 messages, either globally or in a specific room. To do so, grab the user's
 Matrix ID and issue a command following this pattern:
 
-```
+```txt
 !mjolnir redact <user ID> [room alias/ID] [limit] 
 ```
 
 For example to redact the last 100 messages of `@john:example.com` in
 `#matrix:matrix.org`:
 
-```
+```txt
 !mjolnir redact @john:example.com #matrix:matrix.org 100
 ```
 
 Or to redact the last 100 messages from `@john:example.com` globally:
 
-```
+```txt
 !mjolnir redact @john:example.com 100
 ```
 
@@ -180,13 +200,13 @@ from the room where they were reported.
 If you don't have moderation reports enabled, you can also kick a user either
 from a specific room or globally with the following command.
 
-```
+```txt
 !mjolnir kick <glob> [room alias/ID] [reason]
 ```
 
 For example
 
-```
+```txt
 !mjolnir kick @john:example.com #matrix:matrix.org Inappropriate interactions with other people.
 ```
 
@@ -196,7 +216,7 @@ Some people may not stop after their messages have been redacted and they have
 been kicked. In that case you need to be able to remove them permanently from
 your community.
 
-If you have reports enabled, and click on the 
+If you have reports enabled, and click on the
 {{ mjolnirbutton(text="🚫 Ban") }} button below it, mjolnir will ban the user
 from all the rooms it protects. The user will be banned not only from the room
 where they were reported, but from your whole community.
@@ -204,7 +224,7 @@ where they were reported, but from your whole community.
 If you don't have moderation reports enabled, you can also ban either a user
 with the following command
 
-```
+```txt
 !mjolnir ban <list shortcode> <user|room|server> <glob> [reason]
 ```
 
@@ -212,7 +232,7 @@ For example, to remove `@john:example.com` permanently from your community for
 infringement to the code of conduct, you can issue the following command in
 mjolnir's control room.
 
-```
+```txt
 !mjolnir ban coc user @john:example.com User keeps insulting people
 ```
 
@@ -250,14 +270,14 @@ all the malicious users are going to be banned at once.
 To do so, you can issue a variant of the command used to ban an individual user.
 The command was
 
-```
+```txt
 !mjolnir ban <list shortcode> <user|room|server> <glob> [reason]
 ```
 
 As you probably guessed, you are not going to ban a user but a server this once.
 For example, to ban the `maliciousdomain.tld` domain:
 
-```
+```txt
 !mjolnir ban spam server maliciousdomain.tld
 ```
 
@@ -272,7 +292,7 @@ ban lists can also be watched by third parties if you make them public.
 The command to issue in mjolnir's control room to create a list is the
 following
 
-```
+```txt
 !mjolnir list create <shortcode> <alias localpart>
 ```
 
@@ -286,7 +306,7 @@ For example, assuming the server mjolnir is deployed against is `example.com`,
 the following command will create a ban list with the short code `spam` and the
 address `#my-community-spam-ban-list:example.com`
 
-```
+```txt
 !mjolnir list create spam my-community-spam-ban-list
 ```
 
@@ -301,7 +321,7 @@ It is also possible to configure a default ban list mjolnir will use for bans if
 no short code is specified. For example, to use the ban list with short code
 `spam` by default, issue the following command:
 
-```
+```txt
 !mjolnir default spam
 ```
 
@@ -328,13 +348,13 @@ follows the usual `#room_name:server.tld` format.
 Then to make mjolnir follow this list, you need to issue the following command
 in its control room
 
-```
+```txt
 !mjolnir watch <room alias/ID>
 ```
 
 For example to subscribe to the `#matrix-org-hs-tos-bl:matrix.org` ban list
 maintained by the Matrix.org Foundation, you would issue the following command
 
-```
+```txt
 !mjolnir watch #matrix-org-hs-tos-bl:matrix.org
 ```

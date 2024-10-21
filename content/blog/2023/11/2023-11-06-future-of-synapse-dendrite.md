@@ -43,6 +43,6 @@ People who run a Synapse or Dendrite server shouldn’t notice a big change. The
 
 You are welcome to fork Synapse and Dendrite yourself. Indeed, you’ll also be able to fork Element’s versions, as they remain open source under the new license. Note that if you fork the Foundation versions under the ALv2 license, they won’t receive security updates.
 
-Of course, folks building on any of these open source projects will have the rights and responsibilities that come with their licenses. 
+Of course, folks building on any of these open source projects will have the rights and responsibilities that come with their licenses.
 
 We’ll share more info as we have it here on the blog, on our social channels, and in the relevant rooms. We are listening, and hope you’ll join us in conversation in the coming months as we work through this.

@@ -19,8 +19,8 @@ Later in the day it was time for the Kranky Geek, and the talk then was a bit mo
 
 <a href="https://twitter.com/webrtcHacks/status/588341443363786752" title="picture credit: twitter.com/webrtcHacks"><img src="http://matrix.org/blog/wp-content/uploads/2015/04/matrix-krankygeek.jpg" alt="matrix-krankygeek" width="1024" height="576" class="aligncenter size-full wp-image-800" /></a>
 
-What's great about these kind of events is the feedback and discussion following talks; lots of people have relevant experiences and opinions that they are happy to share, and of course questions on how exactly different features actually work. 
+What's great about these kind of events is the feedback and discussion following talks; lots of people have relevant experiences and opinions that they are happy to share, and of course questions on how exactly different features actually work.
 
-It's always great to meet new people and have lots of various discussions. Hopefully we have got a few more people interested in Matrix - we have already seen some new joiners in the <a href="/beta/#/room/#matrix:matrix.org" title="#matrix:matrix.org">#matrix:matrix.org</a> room! 
+It's always great to meet new people and have lots of various discussions. Hopefully we have got a few more people interested in Matrix - we have already seen some new joiners in the <a href="/beta/#/room/#matrix:matrix.org" title="#matrix:matrix.org">#matrix:matrix.org</a> room!
 
 Next up is <a href="http://fluentconf.com/javascript-html-2015/">Fluent</a> in San Francisco next week, where I will be <a href="http://fluentconf.com/javascript-html-2015/public/schedule/detail/42666" title="speaking">speaking</a>.

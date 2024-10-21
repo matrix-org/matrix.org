@@ -14,40 +14,30 @@ The most important thing to know about 1.18.0 is that it contains support for sh
 
 Aside from that, we have new admin API support to list the users in a room, support for oEmbed for media previews (you can unfurl tweets again!) and a general slew of federation bug fixes.
 
-Get the new releases from any of the usual sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md. 1.18.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.18.0).
+Get the new releases from any of the usual sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>. 1.18.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.18.0).
 
 Changelog for 1.18.0 follows:
 
-Synapse 1.18.0 (2020-07-30)
-===========================
+## Synapse 1.18.0 (2020-07-30)
 
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Update worker docs with latest enhancements. ([\#7969](https://github.com/matrix-org/synapse/issues/7969))
 
+## Synapse 1.18.0rc2 (2020-07-28)
 
-Synapse 1.18.0rc2 (2020-07-28)
-==============================
-
-Bugfixes
---------
+### Bugfixes
 
 - Fix an `AssertionError` exception introduced in v1.18.0rc1. ([\#7876](https://github.com/matrix-org/synapse/issues/7876))
 - Fix experimental support for moving typing off master when worker is restarted, which is broken in v1.18.0rc1. ([\#7967](https://github.com/matrix-org/synapse/issues/7967))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Further optimise queueing of inbound replication commands. ([\#7876](https://github.com/matrix-org/synapse/issues/7876))
 
+## Synapse 1.18.0rc1 (2020-07-27)
 
-Synapse 1.18.0rc1 (2020-07-27)
-==============================
-
-Features
---------
+### Features
 
 - Include room states on invite events that are sent to application services. Contributed by @Sorunome. ([\#6455](https://github.com/matrix-org/synapse/issues/6455))
 - Add delete room admin endpoint (`POST /_synapse/admin/v1/rooms/<room_id>/delete`). Contributed by @dklimpel. ([\#7613](https://github.com/matrix-org/synapse/issues/7613), [\#7953](https://github.com/matrix-org/synapse/issues/7953))
@@ -64,9 +54,7 @@ Features
 - Abort federation requests where the client disconnects before the ratelimiter expires. ([\#7930](https://github.com/matrix-org/synapse/issues/7930))
 - Cache responses to `/_matrix/federation/v1/state_ids` to reduce duplicated work. ([\#7931](https://github.com/matrix-org/synapse/issues/7931))
 
-
-Bugfixes
---------
+### Bugfixes
 
 - Fix detection of out of sync remote device lists when receiving events from remote users. ([\#7815](https://github.com/matrix-org/synapse/issues/7815))
 - Fix bug where Synapse fails to process an incoming event over federation if the server is missing too much of the event's auth chain. ([\#7817](https://github.com/matrix-org/synapse/issues/7817))
@@ -81,31 +69,23 @@ Bugfixes
 - Fix "TypeError in `synapse.notifier`" exceptions. ([\#7880](https://github.com/matrix-org/synapse/issues/7880))
 - Fix deprecation warning due to invalid escape sequences. ([\#7895](https://github.com/matrix-org/synapse/issues/7895))
 
-
-Updates to the Docker image
----------------------------
+### Updates to the Docker image
 
 - Base docker image on Debian Buster rather than Alpine Linux. Contributed by @maquis196. ([\#7839](https://github.com/matrix-org/synapse/issues/7839))
 
-
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Provide instructions on using `register_new_matrix_user` via docker. ([\#7885](https://github.com/matrix-org/synapse/issues/7885))
 - Change the sample config postgres user section to use `synapse_user` instead of `synapse` to align with the documentation. ([\#7889](https://github.com/matrix-org/synapse/issues/7889))
 - Reorder database paragraphs to promote postgres over sqlite. ([\#7933](https://github.com/matrix-org/synapse/issues/7933))
 - Update the dates of ACME v1's end of life in [`ACME.md`](https://github.com/matrix-org/synapse/blob/master/docs/ACME.md). ([\#7934](https://github.com/matrix-org/synapse/issues/7934))
 
-
-Deprecations and Removals
--------------------------
+### Deprecations and Removals
 
 - Remove unused `synapse_replication_tcp_resource_invalidate_cache` prometheus metric. ([\#7878](https://github.com/matrix-org/synapse/issues/7878))
 - Remove Ubuntu Eoan from the list of `.deb` packages that we build as it is now end-of-life. Contributed by @gary-kim. ([\#7888](https://github.com/matrix-org/synapse/issues/7888))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Switch parts of the codebase from `simplejson` to the standard library `json`. ([\#7802](https://github.com/matrix-org/synapse/issues/7802))
 - Add type hints to the http server code and remove an unused parameter. ([\#7813](https://github.com/matrix-org/synapse/issues/7813))
@@ -134,4 +114,3 @@ Internal Changes
 - Add debugging to `/sync` response generation (disabled by default). ([\#7929](https://github.com/matrix-org/synapse/issues/7929))
 - Update comments that refer to Deferreds for async functions. ([\#7945](https://github.com/matrix-org/synapse/issues/7945))
 - Simplify error handling in federation handler. ([\#7950](https://github.com/matrix-org/synapse/issues/7950))
-

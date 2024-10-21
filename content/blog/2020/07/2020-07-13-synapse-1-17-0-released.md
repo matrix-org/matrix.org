@@ -13,20 +13,17 @@ Synapse 1.17.0 is here!
 
 Hot on the heels of Synapse 1.16.1, 1.17.0 is a bug fix release most notably containing a fix for ['stuck invites'](https://github.com/matrix-org/synapse/issues/2181) which happen when we are unable to reject a room invite received over federation.
 
-Get the new releases from any of the usual sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md. 1.17.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.17.0).
+Get the new releases from any of the usual sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>. 1.17.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.17.0).
 
 Changelog for 1.17.0 follows:
 
-Synapse 1.17.0 (2020-07-13)
-===========================
+## Synapse 1.17.0 (2020-07-13)
 
 Synapse 1.17.0 is identical to 1.17.0rc1, with the addition of the fix that was included in [1.16.1](https://github.com/matrix-org/synapse/releases/v1.16.1).
 
-Synapse 1.17.0rc1 (2020-07-09)
-==============================
+## Synapse 1.17.0rc1 (2020-07-09)
 
-Bugfixes
---------
+### Bugfixes
 
 - Fix inconsistent handling of upper and lower case in email addresses when used as identifiers for login, etc. Contributed by @dklimpel. ([\#7021](https://github.com/matrix-org/synapse/issues/7021))
 - Fix "Tried to close a non-active scope!" error messages when opentracing is enabled. ([\#7732](https://github.com/matrix-org/synapse/issues/7732))
@@ -36,19 +33,16 @@ Bugfixes
 - Fixes a long standing bug in worker mode where worker information was saved in the devices table instead of the original IP address and user agent. ([\#7797](https://github.com/matrix-org/synapse/issues/7797))
 - Fix 'stuck invites' which happen when we are unable to reject a room invite received over federation. ([\#7804](https://github.com/matrix-org/synapse/issues/7804), [\#7809](https://github.com/matrix-org/synapse/issues/7809), [\#7810](https://github.com/matrix-org/synapse/issues/7810))
 
-Updates to the Docker image
----------------------------
+### Updates to the Docker image
 
 - Include libwebp in the Docker file to properly handle webp image uploads. ([\#7791](https://github.com/matrix-org/synapse/issues/7791))
 
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Improve the documentation of the non-standard JSON web token login type. ([\#7776](https://github.com/matrix-org/synapse/issues/7776))
 - Update doc links for caddy. Contributed by Nicolai Søborg. ([\#7789](https://github.com/matrix-org/synapse/issues/7789))
 
-Internal Changes
-----------------
+### Internal Changes
 
 - Refactor getting replication updates from database. ([\#7740](https://github.com/matrix-org/synapse/issues/7740))
 - Send push notifications with a high or low priority depending upon whether they may generate user-observable effects. ([\#7765](https://github.com/matrix-org/synapse/issues/7765))

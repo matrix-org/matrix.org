@@ -17,9 +17,9 @@ Matrix is:
 
 In this article we'll benefit from all three of these attributes:
 <ul>
- 	<li><em>interoperable:</em> we'll see how Matrix can be made to interact with WhatsApp</li>
- 	<li><em>decentralised</em>: you can perform this on your own server while still enjoying the benefits of being connected to the rest of the Matrix federation</li>
- 	<li><em>real-time communication</em>: we'll see how to send and receive messages in real-time</li>
+  <li><em>interoperable:</em> we'll see how Matrix can be made to interact with WhatsApp</li>
+  <li><em>decentralised</em>: you can perform this on your own server while still enjoying the benefits of being connected to the rest of the Matrix federation</li>
+  <li><em>real-time communication</em>: we'll see how to send and receive messages in real-time</li>
 </ul>
 
 ## Install your homeserver and install mautrix-whatsapp, the WhatsApp bridge
@@ -55,6 +55,7 @@ Launch the Virtual Device, the open the Play Store and sign in. Now use the Play
 You will be asked to verify your phone number, use your number on another device to complete this step.
 
 <center>
+<!-- markdownlint-disable-next-line no-alt-text -->
 <img src="/docs/img/nexus5.png" /></center>
 
 ## Setup mautrix-whatsapp bridge
@@ -72,6 +73,6 @@ Once this is complete, you can type <code>sync</code>, to start bridging contact
 
 And that's it! You may need to take a little time to watch the sync happen, particularly if you have a very large number of chats on the WhatsApp side, but there is no further configuration needed.
 
-## Demo!
+## Demo
 
 {{ youtube_player(video_id="edSgP2dEZ1o") }}

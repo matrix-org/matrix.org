@@ -48,7 +48,7 @@ the entire implementation will be [accredited by BSI](https://www.bsi.bund.de/EN
 (Federal Office for Information Security) and [BfDI](https://www.bfdi.bund.de/DE/Home/home_node.html)
 (Federal Commissioner for Data Protection and Freedom of Information).
 
-## The full context...
+## The full context
 
 Germany’s digital care modernisation law (“Digitale Versorgung und Pflege
 Modernisierungs Gesetz” or DVPMG), which came into force in June 2021, spells
@@ -89,10 +89,10 @@ compliant apps for HCPs are expected to be licensed by Q2 2022.
 
 Eric Grey (product manager for TI-Messenger at gematik), reckons there will
 initially be around 10-15 TI-Messenger compliant Matrix-based apps for HCP
-communications available from different vendors. 
+communications available from different vendors.
 
 Healthcare professionals will be able to choose a TI-Messenger provider, who
-will be hosting their personal accounts and provide the messenger-client. 
+will be hosting their personal accounts and provide the messenger-client.
 
 Healthcare organisations will choose a TI-Messenger provider to build the
 dedicated homeserver infrastructure (on prem or in a data center), provide
@@ -102,7 +102,7 @@ the client and ongoing support.
 
 Matrix is already integral to huge parts of the public sector; from the French
 government’s Tchap platform, to Bundeswehr’s use of BwMessenger and adoption
-by universities and schools across Europe. 
+by universities and schools across Europe.
 
 Germany’s healthcare system standardising on Matrix takes this to entirely the
 next level - and we can’t wait to see the rest of Europe (and the world!)

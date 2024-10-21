@@ -21,8 +21,8 @@ Freenom can be tricky to renew for free after the first year. A Matrix server
 cannot be [migrated] from one domain to another, so you might want to get a
 longer-lived one.
 
-- https://tld-list.com/ - find cheap domains, look at renewal fees also
-- https://www.namecheap.com/promos/99-cent-domain-names/ - cheap first year
+- <https://tld-list.com/> - find cheap domains, look at renewal fees also
+- <https://www.namecheap.com/promos/99-cent-domain-names/> - cheap first year
 
 You also need to specify subdomains (which is why most dynamic dns services
 aren't sufficient). To do this I added the domain on the free [Cloudflare] plan.
@@ -90,6 +90,7 @@ View resources -> Instances -> Select instance -> Virtual Cloud Network ->
 Public Subnet -> Security Lists -> Default -> Ingress
 
 Open incoming for CIDR 0.0.0.0/0:
+
 - 22/tcp for SSH (should be open already)
 - 80/tcp for HTTP
 - 443/tcp for HTTPS
@@ -102,7 +103,7 @@ The Oracle Cloud Ubuntu images come with somewhat restrictive iptables rules by
 default. Docker manages the instance firewall and we have the Oracle Cloud
 firewall in front, so let's remove the current firewall to avoid trouble:
 
-```
+```bash
 apt purge netfilter-persistent iptables-persistent
 ```
 
@@ -115,7 +116,6 @@ records:
 - CNAME record `matrix.$domain` pointing to `$domain`
 - CNAME record `element.$domain` pointing to `$domain`
 
-
 ## Use matrix-docker-ansible-deploy
 
 Follow the [guide], with some tweaks:
@@ -126,7 +126,7 @@ Follow the [guide], with some tweaks:
 
 If you are too busy to read the guide, here are the most important steps:
 
-```
+```bash
 git clone https://github.com/spantaleev/matrix-docker-ansible-deploy/
 cd matrix-docker-ansible-deploy
 mkdir inventory/host_vars/matrix.$domain
@@ -159,16 +159,16 @@ matrix_nginx_proxy_base_domain_serving_enabled: true
 matrix_coturn_turn_external_ip_address: $instance_external_ip_address
 ```
 
-## Done!
+## Done
 
-Point your browser to https://element.$domain or use [another
+Point your browser to <https://element.$domain> or use [another
 client](https://matrix.org/clients).
 
 ## Maintenance
 
 Remember to keep your VM up to date!
 
-```
+```bash
 apt update
 apt upgrade
 reboot # e.g. kernel,dbus,systemd updates

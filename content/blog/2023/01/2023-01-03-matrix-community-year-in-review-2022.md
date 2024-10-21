@@ -10,7 +10,7 @@ category = ["General"]
 image = "https://matrix.org/blog/img/matrix-logo.png"
 +++
 
-> Note: This was originally posted on https://blog.neko.dev/posts/matrix-year-in-review-2022.html , which also includes some small info boxes about each projects, which got lost in the translation.
+> Note: This was originally posted on <https://blog.neko.dev/posts/matrix-year-in-review-2022.html> , which also includes some small info boxes about each projects, which got lost in the translation.
 
 As we send off 2022 with a bang, it makes sense to look back on what we did this year and where we want to go next year. In its holiday special post, the Matrix Foundation has been focusing on the core team's work. This post is focusing on the achievements of the community outside of the Matrix Foundation.
 
@@ -141,6 +141,7 @@ members. We hope you have a spam-free and enjoyable 2023!</p></blockquote>
 <p>Nico mentions</p>
 <blockquote>
 <p>I built a Valheim Mod to bridge Matrix messages from and to Valheim, so that I didn't have to switch windows as often when playing with the other Nheko devs. You can find it here: <a href="https://nheko.im/nheko-reborn/valheimmatrix">https://nheko.im/nheko-reborn/valheimmatrix</a></p>
+<!-- markdownlint-disable-next-line no-alt-text -->
 <img src="/blog/img/neko.dev_cltTmMvhoxagKJMNiPHdcLLB.png" style="display: inline-block"/>
 </blockquote>
 <h2>Postmoogle</h2>
@@ -279,6 +280,7 @@ I haven't had much time, but I did write two tiny projects and small blog posts:
 <p>Which brings us on the last big goal: We do want to eventually switch to Qt6. We did have a branch testing out how difficult that would be and it was doable, but we were mostly blocked on GStreamer not supporting Qt6 yet. This is fixed in GStreamer 1.24, which should be out soon, so this is probably the time we can start looking into finalizing the port. Qt6 will fix A LOT of Wayland issues and give us a lot of new optimization opportunities. Maybe that is the year we can get below 100MB RAM usage on my ever growing account and make every room switch feel instant.</p>
 <p>Well... this was a bit of a long one? Certainly it wasn't the work of one person. The Nheko community seems to just be constantly growing and there are so many people contributing, that it really makes me love open source! Thank you! All of you! It has been a great year (Nheko wise) and I hope 2023 becomes even greater! Have a great year!</p>
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 <img src="/blog/img/neko.dev_qiXeJLZOYzYGDltLQptSTZxb.png" style="display: inline-block;"/>
 </blockquote>
 <h2>Timo Kösters' year in Matrix</h2>
@@ -443,6 +445,7 @@ Oh also, I almost forgot, happy new year Matrixians, stay awesome!</p>
 <p>ajbura shares</p><blockquote>
 <p>Cinny is a Matrix client for instant messaging. Our main goal is to make the best UI/UX so that less technical folks can easily adopt Matrix.<br/>2022 has been really productive year for Cinny, we have landed Full Spaces support, Room settings, Custom emojis and stickers, Session verification and cross-signing, and so many cool features.</p><p>Lately, we have been working on a design system for Cinny and it is almost ready to release. Our short-term goals for 2023 would be to incorporate the design system into Cinny, and convert the code to TypeScript both of which will greatly improve the developer and user experience.</p><p>You can join <a href="https://matrix.to/#/#cinny-space:matrix.org">Cinny space</a> to talk about it or browse <a href="https://cinny.in">https://cinny.in</a> </p>
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 <img src="/blog/img/matrix.org_nIQXMyDqrhZmlzaPlmcPHPKV.png" style="display: inline-block;"/>
 </blockquote>
 <h2>2022 year in Nyatrix</h2>
@@ -675,6 +678,5 @@ And as always, like Emacs, Ement is Free Software, so contributions are welcome.
 <h3><a href="https://miki.community">Miki - A Matrix Wiki</a></h3>
 <p>Miki is a MediaWiki meant for Matrix. It isn't a bridge, but instead the goal is to document projects and history around Matrix. This project aims for 2023 to extend the data, while in 2022 the work was focused around infrastructure.</p>
 </blockquote>
-
 
 <p>That's all I know about so far. I hope you had a great year and that the next one will be even better. As you can see, the Matrix community is a riot of colors and seems to grow every year. I absolutely love it!</p>

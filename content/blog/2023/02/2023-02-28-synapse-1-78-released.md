@@ -44,7 +44,6 @@ filed an issue.
 Finally, for those deployments using workers, v1.78.0 fixed a bug introduced in Synapse 1.76 where 5s delays would
 occasionally occur.
 
-
 ## Everything else
 
 See the full [changelog](https://github.com/matrix-org/synapse/releases/tag/v1.78.0) for a
@@ -58,6 +57,3 @@ V02460, and thezaidbintariq.
 
 We are also grateful to anyone helping us make Synapse better by sharing their
 feedback and reporting issues, or helping with community support questions.
-
-
-

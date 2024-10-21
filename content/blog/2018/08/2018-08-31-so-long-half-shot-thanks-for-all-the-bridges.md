@@ -17,9 +17,9 @@ Tasked with the goal of making it crash less and run faster, I hope that the evi
 
 Some stats pulled from the matrix-appservice-irc repo:
 <ul>
- 	<li>39 PRs closed (4 remain open)</li>
- 	<li>27 issues closed, 27 issues opened.</li>
- 	<li>334 commits, averaging 7.6 commits a PR.</li>
+  <li>39 PRs closed (4 remain open)</li>
+  <li>27 issues closed, 27 issues opened.</li>
+  <li>334 commits, averaging 7.6 commits a PR.</li>
 </ul>
 Commits this year:
 
@@ -29,13 +29,13 @@ Commits this year:
 
 But aside from showing off some stats, I wanted to mention all the new features:
 <ul>
- 	<li>Replies on Matrix translate well to IRC, or as well as IRC allows.</li>
- 	<li>People mentioning your IRC nick now ping your matrix user, finally!</li>
- 	<li>So. Many. Metrics. Everything you wanted to know about the internals of the bridge, but were too afraid to <code>--inspect</code>.</li>
- 	<li>Not spamming homeservers with join requests on startup (it makes for a happy ops team).</li>
- 	<li>No longer are IRC users shackled to a "(IRC)" extension on their displayname, you can be who you want
+  <li>Replies on Matrix translate well to IRC, or as well as IRC allows.</li>
+  <li>People mentioning your IRC nick now ping your matrix user, finally!</li>
+  <li>So. Many. Metrics. Everything you wanted to know about the internals of the bridge, but were too afraid to <code>--inspect</code>.</li>
+  <li>Not spamming homeservers with join requests on startup (it makes for a happy ops team).</li>
+  <li>No longer are IRC users shackled to a "(IRC)" extension on their displayname, you can be who you want
 with group flairs!</li>
- 	<li>Support for node 4 has been dropped, and support for 6,8 and 10 has been assured.</li>
+  <li>Support for node 4 has been dropped, and support for 6,8 and 10 has been assured.</li>
 </ul>
 On the <a href="https://github.com/matrix-org/matrix-appservice-bridge">matrix-appservice-bridge</a> side, I optimised some calls to cache locally and avoid hitting the homeserver too often, and disabling presence for homeservers that don't support it.
 

@@ -21,13 +21,13 @@ thanks,
 
 Matthew
 
-Changes in synapse 0.3.4 (2014-09-25)
-=====================================
+## Changes in synapse 0.3.4 (2014-09-25)
 
 This version adds support for using a TURN server. See docs/turn-howto.rst on
 how to set one up.
 
 Homeserver:
+
 * Add support for redaction of messages.
 * Fix bug where inviting a user on a remote home server could take up to
 20-30s.
@@ -35,6 +35,7 @@ Homeserver:
 * Add support specifying and retrieving turn server configuration.
 
 Webclient:
+
 * Add button to send messages to users from the home page.
 * Add support for using TURN for VoIP calls.
 * Show display name change messages.

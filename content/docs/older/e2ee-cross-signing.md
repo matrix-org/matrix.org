@@ -39,6 +39,7 @@ here is in the spec yet, and some of the information can only be found scattered
 and reading through the source code of [matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk).
 
 ## 1. Implement emoji verification (SAS)
+
 Emoji verification is part of a verification model called SAS, for Short Authentication String. In
 addition to emoji verification, there is also numerical verification. It is expected that all clients
 that support SAS support *at least* numerical verification. This is to ensure that clients that may
@@ -56,6 +57,7 @@ done to verify *devices*, while verification via messages in a room is typically
 think about how to structure your code to already support this from the start.
 
 ### A general look at the verification process
+
 Verification works via two devices sending each other messages, either via to_device messaging or through
 messages in a room. A device (Alice) that wants to verify another device (Bob) sends a `m.key.verification.request`
 message along with the methods it supports. Bob
@@ -92,7 +94,9 @@ containing your own device ID. A payload such as
   "foo": "bar"
 }
 ```
+
 would thus look like:
+
 ```json
 {
   "foo": "bar",
@@ -104,6 +108,7 @@ would thus look like:
 For room messages, the transaction ID, which is the event Id of the first event, is added in the
 `m.relates_to` section of the event. The device ID is the same as to_device massages; it should be
 set to the ID of the sending device. So the above payload becomes:
+
 ```json
 {
   "foo": "bar",
@@ -123,21 +128,26 @@ for sending to_device messages defaults to sending them encrypted. Whether room 
 typically depends on whether the room they are sent in is encrypted or not.
 
 #### `m.key.verification.request`
+
 Sending this starts a verification request. It sends all the verification methods you know (in the
 case of SAS that is only `m.sas.v1`), along with the current timestamp in milliseconds.
+
 ```json
 {
   "methods": ["m.sas.v1"],
   "timestamp": 1590314157821
 }
 ```
+
 A receiving client is expected to reject the request if it is more than 10 minutes in the past or more
 than 5 minutes in the future.
 
 #### `m.key.verification.ready`
+
 Sending this indicates that you accept the key verification request and additionally reveals which
 methods you support yourself. That way both verification partners will be able to figure out which
 methods they have in common.
+
 ```json
 {
   "methods": ["m.sas.v1"],
@@ -145,8 +155,10 @@ methods they have in common.
 ```
 
 #### `m.key.verification.start`
+
 Sending this indicates that you are starting verification with a specific method. The exact payload
 is dependent on the verification method.
+
 ```json
 {
   "method": "m.sas.v1",
@@ -155,14 +167,18 @@ is dependent on the verification method.
 ```
 
 #### `m.key.verification.done`
+
 Sending this indicates that the verification process is *fully* done.
+
 ```json
 {}
 ```
 
 #### `m.key.verification.cancel`
+
 Sending this cancels the verification (timeout, key mismatch, user cancellation, etc.). It has a
 human-readable reason, along with a cancellation code.
+
 ```json
 {
   "reason": "The verification timed out",
@@ -174,6 +190,7 @@ A list of all cancellation codes and their use can be found in
 [the Client-Server Spec](https://matrix.org/docs/spec/client_server/latest#m-key-verification-cancel).
 
 #### Recap
+
 To recap, the *general* verification process of Alice wanting to verify Bob works as follows:
 
 1. Alice sends Bob an `m.key.verification.request` along with the methods she supports.
@@ -181,13 +198,14 @@ To recap, the *general* verification process of Alice wanting to verify Bob work
 3. Bob sends an `m.key.verification.ready` along with the methods he supports.
 4. Alice receives Bob's methods, and based on that and her own, she sends
    an `m.key.verification.start` for a method that they have in common.
-  1. Bob also sends an `m.key.verification.start`, which happens to be the same method as alices
-  2. As Alices user ID is lexicographically smaller (`@alice:example.org` vs `@bob:example.org`), the
+5. Bob also sends an `m.key.verification.start`, which happens to be the same method as alices
+6. As Alices user ID is lexicographically smaller (`@alice:example.org` vs `@bob:example.org`), the
      start command sent by Alice is used.
-5. The specific verification method follows here.
-6. When Alice and Bob are fully done with verification, they send each other an `m.key.verification.done`.
+7. The specific verification method follows here.
+8. When Alice and Bob are fully done with verification, they send each other an `m.key.verification.done`.
 
 ### Taking a look at SAS
+
 Okay, now that we took a look at how the verification process framework works in general, lets take a
 look at SAS specifically.
 
@@ -219,10 +237,13 @@ containing a MAC of the keys they should verify. After verifying them, they both
 SAS introduces a few more cancellation codes, specific to SAS verification,
 [as seen in the client-server spec](https://matrix.org/docs/spec/client_server/latest#verification-messages-specific-to-sas).
 
+<!-- markdownlint-disable-next-line no-duplicate-heading -->
 #### `m.key.verification.start`
+
 This sends a bunch of parameters that the sending device supports. Please note that you will have to
 remember this object while performing a commitment check (explained in the next section), of the one
 that *includes* the metadata of `transaction_id` and `from_device` keys, omitted in these examples.
+
 ```json
 {
   "method": "m.sas.v1",
@@ -234,10 +255,12 @@ that *includes* the metadata of `transaction_id` and `from_device` keys, omitted
 ```
 
 #### Commitment generation
+
 A commitment is an additional verification process. It is the hash (based on the hash method
 specified) of the concatenated ephemeral public key you generate and the canonical json of the
 `m.key.verification.start` body. Libolm provides both the hashing method and the public/private key
 generation. Code for calculating the commitment could look as follows:
+
 ```dart
 var sas = olm.SAS(); // save for later. This will generate our ephemeral public/private keypair
 var canonicalJson = ""; // the canonical json of the `m.key.verification.start` request
@@ -253,8 +276,10 @@ if (hashMethod == "sha256") {
 ```
 
 #### `m.key.verification.accept`
+
 This accepts the `m.key.verification.start` request, and sends the parameters that both parties support.
 Along with that, it also sends a `commitment`, as defined above.
+
 ```json
 {
   "method": "m.sas.v1",
@@ -267,12 +292,14 @@ Along with that, it also sends a `commitment`, as defined above.
 ```
 
 #### `m.key.verification.key`
+
 This sends the ephemeral *public* key to each other. If you haven't generated it yet (due to not having
 calculated the commitment), do so now with `var sas = olm.SAS();` and read it with `sas.get_pubkey();`.
 Be sure that if you received the commitment, you use the received public key to verify the commitment
 you received earlier. The public key is both added to the `sas` object with `sas.set_their_key(payload["key"]);`
 and also saved in a separate variable, as you'll need it later, as unfortunately the `sas` object does
 not allow for it to be retrieved again.
+
 ```json
 {
   "key": "your-public-key"
@@ -280,6 +307,7 @@ not allow for it to be retrieved again.
 ```
 
 #### Display Emojis / Numbers
+
 Based on the agreed upon `key_agreement_protocol` and which `short_authentication_string`s are supported,
 the user should now be prompted with the emojis/numbers, so that they can verify that they match. For
 that, you will have to generate bytes to derive the emojis from for comparison. For that, a "SAS info"
@@ -305,6 +333,7 @@ The key agreement protocol `curve25519` is deprecated and should not be implemen
 outlined here.
 
 ##### Generate bytes
+
 Once you have that SAS info, you use it to generate bytes through `sas.generate_bytes(sasInfo, bytes)`.
 For emoji verification, 6 bytes are needed, for number verification 5 are needed. You could, however,
 always generate 6 bytes and, for number verification, only use the first 5.
@@ -314,18 +343,21 @@ display numbers. It might be a good idea to have a button to switch back and for
 numbers, just in case.
 
 ##### Numbers
+
 To get the numbers you compare, you need to generate 5 bytes using the above method. Split these into
 three chunks of 13 bits each, discarding the last bit. Then add 1000 to each number, meaning they can
 be in the range of 1000 to 9191. It is expected to to display the numbers with some separator in between,
 e.g. `1337-4242-9001`.
 
 ##### Emoji
+
 To get the emoji to compare, you need to generate 6 bytes using the method above. Split these into 7
 chunks of 6 bits each, discarding the last 6 bits. Then use the appropriate table
 [in the client-server spec](https://matrix.org/docs/spec/client_server/latest#sas-method-emoji) to
 display the emoji, along with their name.
 
 #### Emojis / Numbers match: Calculating the MAC
+
 Once the user says that their emojis / numbers match, that means that they have a secure channel! A
 MAC is then calculated out of the device IDs and the public keys you want the other party to verify.
 For now, only send your own public key using that method. Later on in this guide, you will also send your
@@ -333,6 +365,7 @@ master cross-signing key. For that, a base information is created, which is the 
 `MATRIX_KEY_VERIFICATION_MAC`, your own user ID, your own device ID, the other user's ID, the other
 device's ID, and the transaction ID. Note how, unlike SAS, no `|` delimiter is used and the order
 does *not* depend on who started the verification:
+
 ```dart
 var baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
     client.userID +
@@ -343,6 +376,8 @@ var baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
 ```
 
 Next calculate the MAC of your device IDs and the fingerprints that you want to send:
+
+<!-- markdownlint-disable line-length -->
 ```dart
 String _calculateMac(String input, String info) {
   if (messageAuthenticationCode == "hkdf-hmac-sha256") { // this is from the m.key.verification.accept call
@@ -366,8 +401,10 @@ var keys = _calculateMac(keyList.join(","), baseInfo + "KEY_IDS");
 
 // send off the stuff!
 ```
+<!-- markdownlint-enable line-length -->
 
 #### `m.key.verification.mac`
+
 Sends the MAC of the keys to verify off to the other party.
 
 ```json
@@ -380,10 +417,12 @@ Sends the MAC of the keys to verify off to the other party.
 ```
 
 #### Receiving / verifying the MAC
+
 After receiving the MAC and having the user verify that the emoji match (and thus also sending
 your own MAC), you have to verify that the received MACs are valid, and only verify the keys if the
 MACs are valid. For that, generate the base info from the perspective of the other party; essentially
 placing other person's information before your own:
+
 ```dart
 final baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
     request.userId +
@@ -392,8 +431,10 @@ final baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
     client.deviceID +
     request.transactionId;
 ```
+
 Then generate the key list out of the dictionary keys of the `mac` object received and verify that
 the MAC matches up:
+
 ```dart
 final keyList = payload["mac"].keys.toList();
 keyList.sort();
@@ -402,6 +443,7 @@ if (payload["keys"] != _calculateMac(keyList.join(","), baseInfo + "KEY_IDS")) {
   return;
 }
 ```
+
 Then verify the MACs of the keys themselves by iterating over the objects, and calculating the MACs
 of the keys again as above. You should have the public key yourself already, as you are just verifying
 if the key matches. If you received the MAC of a key you don't know, just ignore it. It is likely to
@@ -410,7 +452,9 @@ however, don't verify *any* devices and cancel the entire request.
 
 Finally send a `m.key.verification.done`, and you are done!
 
+<!-- markdownlint-disable-next-line no-duplicate-heading -->
 #### Recap
+
 So, the entire SAS verification flow in short is as follows:
 
 1. (Optional) Alice sends Bob a `m.key.verification.request` along with the methods she supports, including
@@ -421,24 +465,25 @@ So, the entire SAS verification flow in short is as follows:
    a `m.key.verification.start` for `m.sas.v1`. This will contain a bunch of parameters for how the
    SAS will specifically work. Alice's device notes down the canonical json of the request for later
    commitment verification.
-  1. Bob could also send an `m.key.verification.start` for `m.sas.v1`. As Alice user ID is lexicographically
+5. Bob could also send an `m.key.verification.start` for `m.sas.v1`. As Alice user ID is lexicographically
      smaller it is discarded, though.
-5. Bob received the `m.key.verification.start`, and generates his own ephemeral keypair with `var sas = olm.SAS();`. He then
+6. Bob received the `m.key.verification.start`, and generates his own ephemeral keypair with `var sas = olm.SAS();`. He then
    calculates the commitment using the canonical json of the `m.key.verification.start` request, before sending a
    `m.key.verification.accept` back to Alice, along with specific parameters to use for this SAS
    verificaton.
-6. Alice receives the `m.key.verification.accept` and stores the commitment to verify it later. She now creates her own
+7. Alice receives the `m.key.verification.accept` and stores the commitment to verify it later. She now creates her own
    ephemeral key pair with `var sas = olm.SAS();` and sends Bob the public key, via `m.key.verification.key`.
-7. Bob receives the public key from Alice and sends his own public key. Bob's device displays
+8. Bob receives the public key from Alice and sends his own public key. Bob's device displays
    the emoji / numbers for verification now.
-8. Alice receives Bob's public key, and can finally verify the commitment she saved earlier. If all
+9. Alice receives Bob's public key, and can finally verify the commitment she saved earlier. If all
    matches, Alice's device will now display the emoji / numbers for verification.
-9. If the emoji / numbers both match up, they will send each other an `m.key.verification.mac` with
+10. If the emoji / numbers both match up, they will send each other an `m.key.verification.mac` with
    the MAC'd information of the keys that should be verified.
-10. Finally, if all checks out, they send each other a `m.key.verification.done` and
+11. Finally, if all checks out, they send each other a `m.key.verification.done` and
     the verification process is concluded.
 
 ### Things to look out for
+
 1. *Always* verify that an incoming message has a valid, known transaction ID.
 2. *Always* verify that an incoming message is no more than 10 minutes in the past.
 3. *Always* stop the verification process as soon as you receive a `m.key.verification.cancel`, be
@@ -453,10 +498,12 @@ So, the entire SAS verification flow in short is as follows:
    add other methods than `m.sas.v1` later on.
 
 ## 2. Display verification status based on signatures
+
 Don't worry, after having implemented SAS this should be a breeze, it's way simpler and way less of a
 hassle to implement!
 
 ### General ideas of Cross-Signing
+
 The general idea of cross-signing is that instead of every device having to verify every other device,
 people will only have to verify other people, and you will have to verify each of your own new sessions
 (logins) only once. For this, each *user* has three keys: A master key, a self-signing key and a
@@ -468,6 +515,7 @@ still keeping the master key. As the master key is *only* used for signing your 
 self-signing key, it is rarely used, so the attack surface to obtain it is minimal. Optionally, device
 keys themselves can sign their own master key.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/docs/guides/img/matrix-cross-signing-key-diagram.svg)
 Graph from [jcgruenhage's blog](https://jcg.re/blog/quick-overview-matrix-cross-signing/), licensed as [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
@@ -475,18 +523,21 @@ So, in addition to the device keys of others, we also need to fetch their cross-
 keys. We can then verify their signatures!
 
 ### Cross-Signing keys
+
 In addition to device keys, cross-signing keys are introduced. Instead of being identified by a
 key ID, they are identified via their public key. In order to prevent collisions, homeservers
 *must* make sure that no user has a key ID that is the same as a cross-signing key's public key. That
 is handy, as it means that as clients, we don't have to care about that part!
 
 ### Keeping track of cross-signing keys
+
 Keeping track of cross-signing keys should be simple if you already do so for device keys. When a
 user is flagged as out-of-date, you should already query their keys again with `POST /_matrix/client/r0/keys/query`
 and update your `device_keys` dictionary accordingly, just as before. This endpoint should now also
 return the `master_keys`, `self_signing_keys` and `user_signing_keys` of a user, given they are using
 cross-signing. Simply update and store this information locally as well. The format of these are
 pretty similar to the `device_keys` dictionary:
+
 ```json
 {
   "self_signing_keys": {
@@ -505,6 +556,7 @@ pretty similar to the `device_keys` dictionary:
   }
 }
 ```
+
 In this example we have Bob's self-signing key which has a signature of Bob's master key. The `usage`
 array additionally indicates the usage of the key, which is `master`, `self_signing` or `user_signing`.
 While for cross-signing there should only be one item in `usage`, in the future some other keys might be added
@@ -513,12 +565,14 @@ that could have multiple uses. As such, an array is used here to future-proof th
 The `master_keys` and `user_signing_keys` sections look the same.
 
 ### Changes to key verification
+
 Now, there is a slight change you need to perform to the key verification, specifically SAS, that we previously
 implemented: In the `m.key.verification.mac` reply, there will be a dictionary of MACs to verify certain
 keys. These don't only contain device keys, but also contain cross-signing keys, identified by
 `ed25519:base64+master+public+key`, etc. Be sure to flag those cross-signing keys as verified, too.
 
 ### Getting the verification level based on cross-signing status
+
 If you want to know if a device key is verified, just recursively check all of the *valid* signatures
 of the keys, until you hit a key that is already verified! This means that given a signature chain as
 follows (assuming you are Alice):
@@ -530,6 +584,7 @@ to know if Bob's Tablet is verified, you propagate that chain backwards, provide
 are valid, until you hit your verified master Key.
 
 ### Verifying a signature
+
 Libolm to the rescue! It has a method which makes verifying signatures easy! If you have key A and want
 to verify the signature that key B added, you will have to do the following:
 
@@ -541,12 +596,15 @@ to verify the signature that key B added, you will have to do the following:
 4. That's it, you have verified the signature!
 
 ### Check if a *user* is verified
+
 To see if a user is verified, simply check if their master key is verified! You can find the master
 key of a user by looking for a cross-signing key which has `master` within their `usage` array.
 
 If a user is verified but all of their devices are not, it is a good idea to display a warning.
 
+<!-- markdownlint-disable-next-line no-duplicate-heading -->
 ### Things to look out for
+
 1. *Never* trust invalid signatures. Just treat them as if there was no signature at all.
 2. Signature loops *will* exist. Add infinite recursion protection to your signature loop checking.
 3. While signature checking doesn't seem to be expensive, it might be a good idea to cache the results
@@ -558,6 +616,7 @@ If a user is verified but all of their devices are not, it is a good idea to dis
    cross-signing verification. Recursing until you hit a verified device is thus preferred.
 
 ## 3. Implementing SSSS
+
 SSSS is short for Secure Secret Storage and Sharing, which provides a method of storing secret data
 on the server, without the server administrator or anyone else having access to that data. As such,
 this is optimal for storing the private keys for cross-signing on the server so that all your devices
@@ -579,6 +638,7 @@ however, still crucial to look at the general structure of the SSSS first.
 TODO: This section doesn't list yet how to *create* keys, add this later on.
 
 ### General Structure of SSSS storage
+
 SSSS depends on keys with which the actual secrets are being encrypted to be stored. These keys need
 to be provided by the client. There is, however, metadata information on the keys in a users account_data.
 For that, there are entries `m.secret_storage.key.<keyId>`, where the keyId is the unique ID of said
@@ -607,6 +667,7 @@ and MAC of the secret. A content could look as following:
 ```
 
 ### Caching of secrets
+
 You have to access some secrets comparatively often. As fetching from the store requires to get a key
 for said secret, that requires user interaction. As such, if a client can store a secret reasonably
 securely client-sided, the client could cache some secrets locally. As this introduces an attack surface
@@ -626,6 +687,7 @@ ciphertext changes, you know that you'll have to fetch the secret from the store
 is out-of-date.
 
 ### Sharing
+
 The same limitations of caching apply to sharing: It only makes sense to request secrets or share
 secrets that are cacheable, as else potentially sensitive data is leaked, or it requires user interaction
 to load those secrets in the first place anyways.
@@ -643,7 +705,9 @@ of secrets, you should also appropriately reply to a sharing request of another 
 provided you have that secret cached.
 
 #### `m.secret.request`
+
 This requests a secret from another device, or cancels a pending request.
+
 ```json
 {
   "action": "request", // or request_cancellation
@@ -654,7 +718,9 @@ This requests a secret from another device, or cancels a pending request.
 ```
 
 #### `m.secret.send`
+
 This sends / shares a secret with another device
+
 ```json
 {
   "request_id": "<same request id as received in m.secret.request>",
@@ -663,6 +729,7 @@ This sends / shares a secret with another device
 ```
 
 #### Asking for a secret
+
 1. Only ask your own, verified devices for a secret. Be reasonably sure that they might have it (e.g.
    the other device sent you your master key to verify).
 2. When receiving a secret, verify that it was encrypted
@@ -675,6 +742,7 @@ This sends / shares a secret with another device
    yet.
 
 #### Sharing a secret
+
 1. Make sure the request is coming from ourself
 2. Make sure that that particular device is verified
 3. Make sure we have the secret cached
@@ -682,11 +750,13 @@ This sends / shares a secret with another device
 5. Make sure that the shared secret is verified
 
 ### Opening keys
+
 To be able to access stored secrets, or store some yourself, you need to be able to access the SSSS
 keys. This is done either by passphrase or by keyfile, afterwards the `m.secret_storage.key.<keyId>` is
 used to verify the validity of the key.
 
 #### Keyfile
+
 The contents of the keyfile is just base58-encoded data. They consist of two prefix bytes, `0x8B` and
 `0x01`. Additionally they contain a parity byte all at the end, which is all other bytes XOR'd onto
 each other. The key itself is base58-encoded chunked into characters of four. As such, the key can
@@ -730,6 +800,7 @@ Uint8List decodeRecoveryKey(String recoveryKey) {
 ```
 
 #### Passphrase
+
 The `passphrase` block of the key information in the account data specifies information on how to
 generate the key off of the password. It an look as follows:
 
@@ -760,10 +831,12 @@ Important: Some PBKDF2 implementations take the length in bytes (like here), whi
 the length in bits. Divide by 8 appropriately, and only when needed.
 
 #### Validating the generated key
+
 To know if the right keyfile was supplied or if the user entered the right password, we need to verify
 the resulting keys validity. For that, the other information of the keys object in account data is
 relevant:
 
+<!-- markdownlint-disable line-length -->
 ```json
 {
   "algorithm": "m.secret_storage.v1.aes-hmac-sha2", // some old accounts might use a different algorithm, which is not covered in this guide
@@ -771,6 +844,7 @@ relevant:
   "mac": "<bae64 encoded MAC>"
 }
 ```
+<!-- markdownlint-enable line-length -->
 
 To verify the key, encrypt 32 bytes of 0 with a blank name and the IV of the key information. Compare
 the resulting MACs with each other. Be sure to compare the *unpadded* Base64-encoded MACs, so strip
@@ -797,6 +871,7 @@ bool checkKey(Uint8List key, AccountData keyData) {
 ```
 
 ### Encrypting and decrypting
+
 Both encrypting and decrypting is done with AES-CTR. Out of the secret key and the name of the secret
 using [HKDF](https://en.wikipedia.org/wiki/HKDF) with SHA-256 both the actual AES key and the key for
 the MAC integrity is generated. IVs are randomly generated 16 bytes, with bit 63 set to 0. In the
@@ -810,6 +885,7 @@ method will *not* work with block ciphers (e.g. XTS), it is something specific t
 as CTR.
 
 #### Deriving the keys using HKDF
+
 As key deriving is needed for both encrypting and decrypting it makes sense to implement this first.
 If you have a working HKDF implementation, you can use that. If not, you can implement it yourself.
 HKDF is a series of specific HMAC-SHA256 MACs, as following:
@@ -837,6 +913,7 @@ _DerivedKeys deriveKeys(Uint8List key, String name) {
 ```
 
 #### Decrypting
+
 Now, to decrypt, you just create a MAC with the HMAC key of the raw ciphertext, and compare it with
 the MAC stored in the account data secret. If it matches, you decrypt using AES-CTR. The name here
 is the name of the secret we want to decrypt. The resulting code could look as follows:
@@ -867,6 +944,7 @@ String decryptAes(_Encrypted data, Uint8List key, String name) {
 ```
 
 #### Encrypting
+
 Encrypting is rather similar. If no IV is specified, you have to randomly generate 16 bytes and set
 bit 63 to 0, as mentioned above. Again, we derive our AES and HMAC keys off of the supplied key and
 the name. Then the ciphertext and the HMAC is computed, which is can be then stored later on. The name
@@ -907,10 +985,12 @@ _Encrypted encryptAes(String data, Uint8List key, String name, [String ivStr]) {
 ```
 
 #### Storing a secret
+
 To store a secret, just encrypt it and save the outcome to the account data, using the format mentioned
 above.
 
 #### Debugging hints
+
 Debugging can be hard. If you successfully encrypt and decrypt a secret using your methods, how do
 you know that you followed through implementation correctly and didn't just e.g. derive the keys wrong?
 To mitigate that, you could receive a secret (e.g. `m.cross_signing.self_signing`) via sharing from
@@ -922,14 +1002,17 @@ As using a keyfile is simpler in implementation than using password, you could a
 first, and only after that is working fine, debug any errors you might have in deriving the key from
 the password.
 
+<!-- markdownlint-disable-next-line no-duplicate-heading -->
 ### Things to look out for
- - *Only* cache a whitelisted set of secrets, that is `m.cross_signing.self_signing`,
+
+- *Only* cache a whitelisted set of secrets, that is `m.cross_signing.self_signing`,
    `m.cross_signing.user_signing` and `m.megolm_backup.v1`.
- - When fetching a secret from the store that is cacheable - cache it!
- - Only share secrets with own devices you trust.
- - Only request secrets from own devices you trust.
+- When fetching a secret from the store that is cacheable - cache it!
+- Only share secrets with own devices you trust.
+- Only request secrets from own devices you trust.
 
 ## 4. Signing of other keys
+
 At this point you already display the verification status of others based on cross signing and are
 able to access your own private keys - either cached in some way, or you decrypt them from SSSS, or
 you request them from other devices via SSSS as outlined above.
@@ -939,6 +1022,7 @@ way when you verify other people, you can also sign their master key, so that ot
 will see all of their other devices verified.
 
 ### Which keys to sign
+
 This step is rather simple: When successfully verifying either another of your own devices or another
 person via interactive verification, you take all the devices you verify and (potentially) all the
 devices you receive, be it device keys or cross signing keys, and sign them with one of your own keys:
@@ -950,11 +1034,13 @@ devices you receive, be it device keys or cross signing keys, and sign them with
 All other keys received, that is device keys of other people, are *not* signed.
 
 ### How to sign a key
+
 To sign a key, you take the device key object, or the cross signing key object, remove the `unsigned`
 and `signature` keys and sign the canonical json encoded object. Afterwards you upload them to the
 server.
 
 For example, you want to sign the following device key:
+
 ```json
 {
   "user_id": "@alice:example.com",
@@ -980,6 +1066,7 @@ For example, you want to sign the following device key:
 ```
 
 Then you strip the `signatures` and `unsigned` keys:
+
 ```json
 {
   "user_id": "@alice:example.com",
@@ -998,11 +1085,13 @@ Then you strip the `signatures` and `unsigned` keys:
 ```
 
 And then the canonical json you need to sign is:
-```
+
+```json
 {"algorithms":["m.olm.v1.curve25519-aes-sha2","m.megolm.v1.aes-sha2"],"device_id":"JLAFKJWSCS","keys":{"curve25519:JLAFKJWSCS":"3C5BFWi2Y8MaVvjM8M22DBmh24PmgR0nPvJOIArzgyI","ed25519:JLAFKJWSCS":"lEuiRJBit0IG6nUf5pUzWTUEsRVVe/HJkoKuEww9ULI"},"user_id":"@alice:example.com"}
 ```
 
 You can easily sign a key with libolm:
+
 ```dart
 String sign(String canonicalJson, Uint8List key) {
   final keyObj = olm.PkSigning();
@@ -1019,13 +1108,14 @@ Keep in mind that the keys coming from SSSS are base64 encoded and olm needs a r
 will have to base64 decode that!
 
 ### Uploading signatures
+
 After creating the signatures, you need to upload them! For that you bundle all the key objects with
 only your *new* signatures together and POST them to `/_matrix/client/unstable/keys/signatures/upload`.
 The payload is bundled by user ID, mapped to device ID or cross signing public key, which then contains
 the key objects with the new signatures. An example payload could thus look as following (taken from
 the spec):
 
-```
+```txt
 POST /_matrix/client/unstable/keys/signatures/upload HTTP/1.1
 Content-Type: application/json
 
@@ -1082,7 +1172,9 @@ Content-Type: application/json
 }
 ```
 
+<!-- markdownlint-disable-next-line no-duplicate-heading -->
 ### Things to look out for
+
 1. *Only* sign the keys mentioned above, do *not* sign any other keys.
 2. Use the correct key to sign the correct key type - self_signing for your own things, user_signing
    for other users and your own device key for your own master key.
@@ -1097,6 +1189,7 @@ Content-Type: application/json
    have them yet.
 
 ## 5. In-room verification
+
 The idea of cross-signing is that users verify other users. So far we only talked about devices
 verifying devices, though. For that, in-room verification is introduced. In-room verification is
 typically used when verifying *other* users. To not confused the user it should be considered to
@@ -1104,6 +1197,7 @@ hide device verification for other users all-together, and to only show device v
 verification with yourself.
 
 ### Starting in-room verification
+
 In-room verification happens in a direct message room between two users. So, when Alice wants to verify
 Bob she has to find an existing direct message room she has with Bob, and, if there is none, create
 it and invite him.
@@ -1112,6 +1206,7 @@ Afterwards, as with the to_device verification flow, messages are sent in the ro
 verification flow chosen. There are, however, a few changes.
 
 ### Sending a verification request
+
 Instead of sending an event with type `m.verification.key.request`, a normal message event with the
 msgtype of `m.verification.key.request` is sent. As normal room messages already have an `origin_server_ts`
 the `timestamp` field is omitted. As transaction ID the event of this message sent is used. Additionally,
@@ -1120,6 +1215,7 @@ support in-room verification.
 
 As the content of such an `m.room.message` for Alice to start an in-room verification request with Bob
 could look as follows:
+
 ```json
 {
   "methods": [
@@ -1133,12 +1229,14 @@ could look as follows:
 ```
 
 ### Sending other payloads
+
 Next messages are sent with the type being the type of that specific step, e.g. instead of sending
 a message as `m.room.message` as above, you send it as `m.key.verification.accept`. The `from_device`
 property is still added as usual.
 
 As transaction ID the event ID of the original request is used. That, however, is added in an `m.relates_to`
 block as follows:
+
 ```json
 {
   // other content of that specific type
@@ -1150,7 +1248,9 @@ block as follows:
 }
 ```
 
+<!-- markdownlint-disable-next-line no-duplicate-heading -->
 ### Things to look out for
+
 1. Don't allow to directly verify other users devices
 2. Use in-room verification to verify other users, not specific devices
 3. Don't use in-room verification for self-verification, use device verification for that
@@ -1158,11 +1258,13 @@ block as follows:
    probably the one Bob uses to accept the verification, should send verification messages.
 
 ## 6. Miscellaneous cross-signing things
+
 Apart from bootstrapping cross-signing there are a few miscellaneous things that you can optionally
 implement to smoothen out the cross-signing experience for the user, things that don't justify their
 own section. As such, they are listed here.
 
 ### Detect if you are verified for others
+
 Your client might want to introduce a popup or something saying "This session isn't verified for others.
 Please verify it with one of your devices.". For that, you need to detect if that is the case.
 
@@ -1174,6 +1276,7 @@ You could re-use the same recursive method to determine if a device is verified 
 but only cut off if it reaches at your own verified master key, not at any verified key.
 
 ### Migration of previous verifications
+
 Let's say Alice and Bob previously met, before cross-signing and had manually verified their devices
 specifically. And now, both have enabled cross signing. Alice could detect Bobs master key as verified
 with the following signature chain, where `->` denotes "is signed by":
@@ -1183,6 +1286,7 @@ Alice could then, based on this trust establishment, sign bobs master key with h
 key, thus bootstrapping a cross-signing relationship from Alice to Bob.
 
 ### Self-Verification
+
 Let's say you log into a new device but don't have any other device to verify with around. Don't worry,
 this is where self-verification comes in: You prompt the user their SSSS passphrase / recovery key
 and use that to verify and sign yourself:
@@ -1197,6 +1301,7 @@ and use that to verify and sign yourself:
 6. Fetch all entries from SSSS that you want to cache and cache them.
 
 ## 7. Bootstrapping SSSS and cross-signing
+
 By now your client should be able to cross-sign other devices, use SSSS if it is set up and sign other
 people via verification. To set up all the things that means to *bootstrap* them, you still rely on
 other clients, such as element.
@@ -1211,6 +1316,7 @@ keys and set the events. So, a rough roadmap of what to do can look as following
 5. Do other things (generate cross-signing keys, etc.) with that new key
 
 ### Creating the SSSS key information
+
 Creating the key information for the new `m.secret_storage.key.<keyid>` event is basically just doing
 what you did before to verify if an entered key is correct, but now using the data to set the account
 data event. In the case of a passphrase you will have to generate a salt and iteration times yourself.
@@ -1221,6 +1327,7 @@ random as possible. Many languages have libraries for creating more securely ran
 default pseudo random number generator.
 
 #### Key from passphrase
+
 A reasonably-secure iteration number for PBKDF2 is `500000` (That is five-hundred thousand). The salt
 needs as much random data as our hash function. While PBKDF2 uses sha512 as hash, the generated key
 is only 256 bits long, so 256 bits should be reasonably secure. To make sure that the salt is usable,
@@ -1229,6 +1336,7 @@ you can just base64 the randomly generated salt.
 After that, you use PBKDF2 to get the key from the passphrase, and calculate the MAC and IV.
 
 Code for generating the key could look as follows:
+
 ```dart
 // "passphrase" is the passphrase by the user
 
@@ -1244,6 +1352,7 @@ var key = Uint8List.fromList(generator.generateKey(passphrase, passphraseInfo["s
 ```
 
 #### Generating a random key without a passphrase
+
 Just generate a 256-bit long key.
 
 ```dart
@@ -1251,6 +1360,7 @@ var key = SecureRandom(32).bytes; // 32 bytes = 256 bits
 ```
 
 #### Calculating the key information
+
 You still need an IV to be able to calculate the MAC you later on use to verify the key. For that,
 generate 16 bytes and base64-encode them. Afterwards you just generate the MAC like you would for
 verifying the key, and then store the account data event.
@@ -1269,6 +1379,7 @@ var info = {
 ```
 
 #### Generating the key ID
+
 The key ID is just a short, random string which doesn't contain a dot. For that, you can e.g. generate
 a few random bytes and base64 encode them. Make sure no key with such an ID exists yet! After you have
 the key ID, set your key information object to account data `m.secret_storage.key.<keyId>`.
@@ -1283,6 +1394,7 @@ data to the key ID (*NOT* the full account data type):
 ```
 
 ### Bootstrapping cross-signing
+
 Now that you bootstrapped SSSS, it is time to bootstrap cross-signing! For that, you generate an
 ed25519 keypair for master key, self-signing key and user-signing key. Afterwards you store the
 base64-encoded private keys in SSSS, generate the key objects with the public keys for uploading,
@@ -1294,6 +1406,7 @@ as verified!
 Fortunately libolm gives us methods for creating an ed25519 keypair. We already showed how to sign
 key objects with libolm above, when creating new signatures after verifying.
 
+<!-- markdownlint-disable line-length -->
 ```dart
 var master = olm.PkSigning();
 try {
@@ -1325,6 +1438,7 @@ try {
   master.free();
 }
 ```
+<!-- markdownlint-enable line-length -->
 
 After you generated all the json key objects you can POST them to `/_matrix/client/unstable/keys/device_signing/upload`.
 Keep in mind that this endpoint uses user-interactive authentication, so you will also have to send
@@ -1332,7 +1446,7 @@ an additional `auth` array with the needed information to complete stages. Hereb
 the master key object, `self_signing_key` the self-signing key and `user_signing_key` the user-signing
 key. An example request could look as following (taken from the spec):
 
-```
+```txt
 POST /_matrix/client/unstable/keys/device_signing/upload HTTP/1.1
 Content-Type: application/json
 
@@ -1378,6 +1492,7 @@ Content-Type: application/json
 ```
 
 ### Changing SSSS passphrase / key
+
 Along with bootstrapping you can implement other things, such as the ability to change the SSSS passphrase.
 When doing so, keep in mind that keeping an in-tact SSSS is crucial for having a functional account,
 as such an algorithm is needed where any single step can fail and no data at all is lost. For this,

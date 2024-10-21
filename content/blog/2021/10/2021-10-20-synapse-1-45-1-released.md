@@ -10,7 +10,7 @@ category = ["Releases"]
 Synapse 1.45.1 is out now! Python 3.10 and PostgreSQL 14 are now tested and supported by Synapse. Support for Python 3.6 and PostgreSQL 9.6 will be removed by the end of the year.
 
 > **Note:** This release may require changes to how media storage providers access your homeserver's configuration. See the [Upgrade Notes](https://matrix-org.github.io/synapse/v1.45/upgrade.html#upgrading-to-v1450) for more information.
-
+>
 > **Note:** Synapse 1.45.0 was released yesterday and [changed](https://github.com/matrix-org/synapse/pull/10947) how Synapse's monthly active user limits were calculated. Today's release of 1.45.1 [reverts](https://github.com/matrix-org/synapse/pull/11127) that change, but is otherwise identical to 1.45.0.
 
 ## Support for oEmbed Autodiscovery

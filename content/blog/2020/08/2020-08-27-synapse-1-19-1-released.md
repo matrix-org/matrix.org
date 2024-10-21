@@ -18,20 +18,17 @@ The second one prevented profile updates from being correctly propagated across 
 
 Sorry if you have been bitten!
 
-Get 1.19.1 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.19.1) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get 1.19.1 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.19.1) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 Changelog since v1.19.0
 
-Synapse 1.19.1 (2020-08-27)
-===========================
+## Synapse 1.19.1 (2020-08-27)
 
 No significant changes.
 
-Synapse 1.19.1rc1 (2020-08-25)
-==============================
+## Synapse 1.19.1rc1 (2020-08-25)
 
-Bugfixes
---------
+### Bugfixes
 
 - Fix a bug introduced in v1.19.0 where appservices with ratelimiting disabled would still be ratelimited when joining rooms. ([\#8139](https://github.com/matrix-org/synapse/issues/8139))
 - Fix a bug introduced in v1.19.0 that would cause e.g. profile updates to fail due to incorrect application of rate limits on join requests. ([\#8153](https://github.com/matrix-org/synapse/issues/8153))

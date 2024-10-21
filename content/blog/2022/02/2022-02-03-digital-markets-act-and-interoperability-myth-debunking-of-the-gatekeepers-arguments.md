@@ -12,7 +12,7 @@ Today the European Parliament, the European Council and the European Commission 
 [The DMA](https://ec.europa.eu/info/strategy/priorities-2019-2024/europe-fit-digital-age/digital-markets-act-ensuring-fair-and-open-digital-markets_en) is a groundbreaking step forward in shaking the hold a few gatekeepers have on users and the market, in particular because it looks to (among others):
 
 * Require gatekeepers to allow other services to interoperate with their services
-* Prevent them to treat their own services and products more favourably (for example by ranking) 
+* Prevent them to treat their own services and products more favourably (for example by ranking)
 * Require them to allow users to uninstall any pre-installed software or app
 
 The interoperability obligation is obviously the one on which we’ve kept a particularly close eye, as if it lands well it could take the success of Matrix to the next level completely overnight.
@@ -23,7 +23,6 @@ We’ve been lucky to have had the opportunity to talk to policy advisors from d
 
 We’ve ended up just listing them in a quick, high level, Myth Debunking exercise and thought it would be useful to actually publish them for everyone to access, so here they are!
 
-
 * **MYTH #1 -** "It is impossible to have a standard that is open, decentralized and secure at the same time"  
 ⇒ **false**: HTTPS did it, Matrix did it.
 * **MYTH #2 -** "It is difficult and expensive to make existing services compatible with a standard"  
@@ -33,7 +32,7 @@ We’ve ended up just listing them in a quick, high level, Myth Debunking exerci
 * **MYTH #4 -** "It may work for messaging, but less so for social networks"  
 ⇒ **false**: it's still about managing content and users. Even though social networks have more varied content, it is already well modelled for their own APIs, ready to be expressed in a common language. The key is in the fallback option on unsupported features, as well as the ability to have moderation tools (more on that later).
 * **MYTH #5 -** “Interoperability is not compatible with data privacy”  
-⇒ **false**: Interoperability gives the ability to users to choose who is hosting their data and as such choose providers they trust. Besides, the DMA doesn’t live in a vacuum: it will exist alongside horizontal regulations like the GDPR and the Data Act, which give people sufficient control over their data to rectify their choices if they are not happy. Because the possibility of interoperability is there, it does not mean it will become mandatory for users to use it: they will still have their own threat models and will make decisions accordingly, just as they do today. But enshrining interoperability in law will at least ensure gatekeepers need to provide recourse for people to have further control over their data, which will be an improvement from the landscape today. 
+⇒ **false**: Interoperability gives the ability to users to choose who is hosting their data and as such choose providers they trust. Besides, the DMA doesn’t live in a vacuum: it will exist alongside horizontal regulations like the GDPR and the Data Act, which give people sufficient control over their data to rectify their choices if they are not happy. Because the possibility of interoperability is there, it does not mean it will become mandatory for users to use it: they will still have their own threat models and will make decisions accordingly, just as they do today. But enshrining interoperability in law will at least ensure gatekeepers need to provide recourse for people to have further control over their data, which will be an improvement from the landscape today.
 * **MYTH #6 -** "There is no user need"  
 ⇒ **false**: most haven't had a taste of interoperable chat/social media (but they know email), others are demanding bridges between services: [25% users of 2 communication apps lose contact with friends because they are using too many apps](https://www.dailymail.co.uk/sciencetech/article-10451559/One-four-people-struggle-friends-using-apps.html). And this figure doubles for people using more than 5 apps. There was no demand for cars when they were created: people only wanted faster horses.
 * **MYTH #7 -** "There is no demand from European companies"  

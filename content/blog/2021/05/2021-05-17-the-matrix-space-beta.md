@@ -44,14 +44,14 @@ way of handling groups of rooms and users as... Spaces!
 
 Spaces work as follows:
 
- * You can designate specific rooms as 'spaces', which contain other rooms.
- * You can have a nested hierarchy of spaces.
- * You can rapidly navigate around that hierarchy using the new 'space summary'
+* You can designate specific rooms as 'spaces', which contain other rooms.
+* You can have a nested hierarchy of spaces.
+* You can rapidly navigate around that hierarchy using the new 'space summary'
    (aka space-nav) API - [MSC2946](https://github.com/matrix-org/matrix-doc/blob/kegan/spaces-summary/proposals/2946-spaces-summary.md).
- * Spaces can be shared with other people publicly, or invite-only, or private
+* Spaces can be shared with other people publicly, or invite-only, or private
    for your own curation purposes.
- * Rooms can appear in multiple places in the hierarchy.
- * You can have 'secret' spaces where you group your own personal rooms and
+* Rooms can appear in multiple places in the hierarchy.
+* You can have 'secret' spaces where you group your own personal rooms and
    spaces into an existing hierarchy.
 
 Today, we're ridiculously excited to be launching Space support as a beta in
@@ -90,7 +90,7 @@ existing rooms of all flavours into an epic multiplayer tree of realtime data.
 It's like USENET had a baby with the Web!
 
 For lots more info from the Element perspective, head over to the [Element
-blog](https://element.io/blog/p/4ff44807-fe9a-4363-8521-9eab7efd4365/). 
+blog](https://element.io/blog/p/4ff44807-fe9a-4363-8521-9eab7efd4365/).
 Finally, the point of the beta is to gather feedback and fix bugs - so please
 go wild in Element reporting your first impressions and help us make Spaces as
 awesome as they deserve to be!

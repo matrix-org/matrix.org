@@ -25,24 +25,24 @@ DMs and invite-only rooms.
 
 Work on E2EE in Matrix has progressed in waves since we first shipped it - including:
 
- * adding keysharing (letting you share encryption keys between your devices to improve reliability)
- * making Riot Web's encryption resilient to running concurrently in multiple tabs
- * adding online key backup (so you don't lose all your history if you lose all your devices)
- * making encryption resilient to restoring the app from a backup
- * adding interactive key verification via emoji to make the verification process easier.
+* adding keysharing (letting you share encryption keys between your devices to improve reliability)
+* making Riot Web's encryption resilient to running concurrently in multiple tabs
+* adding online key backup (so you don't lose all your history if you lose all your devices)
+* making encryption resilient to restoring the app from a backup
+* adding interactive key verification via emoji to make the verification process easier.
 
 However, our goal was always to enable E2EE by default for all private rooms,
 which means having feature parity between unencrypted and E2EE Matrix so that
 we can enable encryption without *any* negative impact on usability.  The
 high-level remaining items were significant:
 
- * Cross-signing: verifying your own logins so others don’t have to.
- * Adding QR codes for even better verification UX, to make cross-signing as painless as possible.
- * Replacing the old prototype UI for E2EE with final polished UI/UX.
- * Ability to support non-E2EE clients.
- * Ability to search encrypted rooms.
- * Ability to view file indexes in encrypted rooms.
- * Fixing the remaining “Unable to decrypt” errors.
+* Cross-signing: verifying your own logins so others don’t have to.
+* Adding QR codes for even better verification UX, to make cross-signing as painless as possible.
+* Replacing the old prototype UI for E2EE with final polished UI/UX.
+* Ability to support non-E2EE clients.
+* Ability to search encrypted rooms.
+* Ability to view file indexes in encrypted rooms.
+* Fixing the remaining “Unable to decrypt” errors.
 
 Over the last few months the Riot team has been almost entirely focused on
 implementing solutions to these items - and we're finally at the point where

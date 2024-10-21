@@ -35,7 +35,7 @@ Starting point: one old BQ Aquaris E5 ubuntu phone, running some old version of 
 
 Step one: flash to latest UBPorts image:
 <ul>
- 	<li>Set up Ubuntu desktop as a host (as per <a href="https://docs.ubuntu.com/phone/en/devices/installing-ubuntu-for-devices">https://docs.ubuntu.com/phone/en/devices/installing-ubuntu-for-devices</a>)</li>
+  <li>Set up Ubuntu desktop as a host (as per <a href="https://docs.ubuntu.com/phone/en/devices/installing-ubuntu-for-devices">https://docs.ubuntu.com/phone/en/devices/installing-ubuntu-for-devices</a>)</li>
 </ul>
 <pre><code>sudo add-apt-repository ppa:ubuntu-sdk-team/ppa
 sudo apt-get update
@@ -43,28 +43,28 @@ sudo apt-get install ubuntu-device-flash
 sudo apt-get install phablet-tools
 </code></pre>
 <ul>
- 	<li>Grab an adb-compatible recovery image (yes, seems like the right place is someone's personal webspace...)</li>
+  <li>Grab an adb-compatible recovery image (yes, seems like the right place is someone's personal webspace...)</li>
 </ul>
 <pre><code>wget http://people.canonical.com/~jhm/barajas/recovery-vegetahd.img
 </code></pre>
 <ul>
- 	<li>If your Ubuntu desktop is running in a VM, make sure you have USB 2.0 or 3.0 support enabled (in Virtualbox this needs the extension pack installed). USB 1 is too slow and the flash will timeout, semi-bricking the phone.</li>
- 	<li>Press volume-up and power on the phone during boot to get at the bootloader. Make sure it's not plugged into USB</li>
- 	<li>Select fastboot</li>
- 	<li>Plug into USB</li>
- 	<li>Flash the recovery image and latest UBPorts OS:</li>
+  <li>If your Ubuntu desktop is running in a VM, make sure you have USB 2.0 or 3.0 support enabled (in Virtualbox this needs the extension pack installed). USB 1 is too slow and the flash will timeout, semi-bricking the phone.</li>
+  <li>Press volume-up and power on the phone during boot to get at the bootloader. Make sure it's not plugged into USB</li>
+  <li>Select fastboot</li>
+  <li>Plug into USB</li>
+  <li>Flash the recovery image and latest UBPorts OS:</li>
 </ul>
 <pre><code>sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --device=vegetahd \\
                          --channel=15.04/stable --bootstrap --recovery-image=recovery-vegetahd.img \\
                          --developer-mode --password=secret
 </code></pre>
 <ul>
- 	<li>Ensure the system OS is writable. (Ubuntu Touch runs the OS partition read-only by default to protect users. In this case, you can always re-flash it if all goes wrong.)</li>
+  <li>Ensure the system OS is writable. (Ubuntu Touch runs the OS partition read-only by default to protect users. In this case, you can always re-flash it if all goes wrong.)</li>
 </ul>
 <pre><code>sudo phablet-config writable-image
 </code></pre>
 <ul>
- 	<li>Get an SSH server running on the phone before you go insane</li>
+  <li>Get an SSH server running on the phone before you go insane</li>
 </ul>
 <pre><code>adb shell
 sudo /etc/init.d/ssh start # password is as set when flashing.
@@ -205,7 +205,7 @@ cd maliit-framework
 # add QMAKE_LFLAGS+='-lQt5Network -lGLESv2' to config.pri
 
 # technically don't need to build all of maliit - only the platform inputcontext plugin is required
-export QMAKEMODULES=/mnt/build/qt5/qtdeclarative/mkspecs/modules 
+export QMAKEMODULES=/mnt/build/qt5/qtdeclarative/mkspecs/modules
 /mnt/build/qt5/qtbase/bin/qmake -spec /mnt/build/qt5/qtbase/mkspecs/linux-arm-gnueabihf-g++
 make -j4
 

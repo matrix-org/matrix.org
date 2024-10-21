@@ -63,5 +63,5 @@ Improvements:
  - Highlight room invitations in blue.
  - Calculate room names for rooms of 3+ members.
  - Improved page load performance.
- 
+
 </pre>
