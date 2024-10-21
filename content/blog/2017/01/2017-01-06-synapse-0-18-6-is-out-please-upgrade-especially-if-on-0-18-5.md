@@ -41,7 +41,7 @@ Matthew
 
 Bug fixes:
 <ul>
- 	<li>Fix error in rc1's discarding invalid inbound traffic logic that was incorrectly discarding missing events
+  <li>Fix error in rc1's discarding invalid inbound traffic logic that was incorrectly discarding missing events
 </li>
 </ul>
 
@@ -49,11 +49,11 @@ Bug fixes:
 
 Bug fixes:
 <ul>
- 	<li>Fix error in #PR 1764 to actually fix the nightmare #1753 bug.
+  <li>Fix error in #PR 1764 to actually fix the nightmare #1753 bug.
 </li>
- 	<li>Improve deadlock logging further
+  <li>Improve deadlock logging further
 </li>
- 	<li>Discard inbound federation traffic from invalid domains, to immunise 
+  <li>Discard inbound federation traffic from invalid domains, to immunise
 against #1753
 </li>
 </ul>
@@ -62,33 +62,33 @@ against #1753
 
 Bug fixes:
 <ul>
- 	<li>Fix bug when checking if a guest user is allowed to join a room - thanks to Patrik Oldsberg (PR <a class="issue-link js-issue-link" title="handlers/room_member: fix guest access check when joining rooms" href="https://github.com/matrix-org/synapse/pull/1772" data-id="199209215" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1772</a>)</li>
+  <li>Fix bug when checking if a guest user is allowed to join a room - thanks to Patrik Oldsberg (PR <a class="issue-link js-issue-link" title="handlers/room_member: fix guest access check when joining rooms" href="https://github.com/matrix-org/synapse/pull/1772" data-id="199209215" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1772</a>)</li>
 </ul>
 
 ### Changes in synapse v0.18.6-rc3 (2017-01-05)
 
 Bug fixes:
 <ul>
- 	<li>Fix bug where we failed to send ban events to the banned server (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1758" data-url="https://github.com/matrix-org/synapse/issues/1758" data-id="198709898" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1758</a>)</li>
- 	<li>Fix bug where we sent event that didn't originate on this server to other servers (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1764" data-url="https://github.com/matrix-org/synapse/issues/1764" data-id="198934605" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1764</a>)</li>
- 	<li>Fix bug where processing an event from a remote server took a long time because we were making long HTTP requests (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1765" data-url="https://github.com/matrix-org/synapse/issues/1765" data-id="198940353" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1765</a>, PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1744" data-url="https://github.com/matrix-org/synapse/issues/1744" data-id="198236017" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1744</a>)</li>
+  <li>Fix bug where we failed to send ban events to the banned server (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1758" data-url="https://github.com/matrix-org/synapse/issues/1758" data-id="198709898" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1758</a>)</li>
+  <li>Fix bug where we sent event that didn't originate on this server to other servers (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1764" data-url="https://github.com/matrix-org/synapse/issues/1764" data-id="198934605" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1764</a>)</li>
+  <li>Fix bug where processing an event from a remote server took a long time because we were making long HTTP requests (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1765" data-url="https://github.com/matrix-org/synapse/issues/1765" data-id="198940353" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1765</a>, PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1744" data-url="https://github.com/matrix-org/synapse/issues/1744" data-id="198236017" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1744</a>)</li>
 </ul>
 Changes:
 <ul>
- 	<li>Improve logging for debugging deadlocks (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1766" data-url="https://github.com/matrix-org/synapse/issues/1766" data-id="198946790" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1766</a>, PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1767" data-url="https://github.com/matrix-org/synapse/issues/1767" data-id="198958245" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1767</a>)</li>
+  <li>Improve logging for debugging deadlocks (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1766" data-url="https://github.com/matrix-org/synapse/issues/1766" data-id="198946790" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1766</a>, PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1767" data-url="https://github.com/matrix-org/synapse/issues/1767" data-id="198958245" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1767</a>)</li>
 </ul>
 
 ### Changes in synapse v0.18.6-rc2 (2016-12-30)
 
 Bug fixes:
 <ul>
- 	<li>Fix memory leak in twisted by initialising logging correctly (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1731" data-url="https://github.com/matrix-org/synapse/issues/1731" data-id="198134635" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1731</a>)</li>
- 	<li>Fix bug where fetching missing events took an unacceptable amount of time in large rooms (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1734" data-url="https://github.com/matrix-org/synapse/issues/1734" data-id="198178611" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1734</a>)</li>
+  <li>Fix memory leak in twisted by initialising logging correctly (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1731" data-url="https://github.com/matrix-org/synapse/issues/1731" data-id="198134635" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1731</a>)</li>
+  <li>Fix bug where fetching missing events took an unacceptable amount of time in large rooms (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1734" data-url="https://github.com/matrix-org/synapse/issues/1734" data-id="198178611" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1734</a>)</li>
 </ul>
 
 ### Changes in synapse v0.18.6-rc1 (2016-12-29)
 
 Bug fixes:
 <ul>
- 	<li>Make sure that outbound connections are closed (PR <a class="issue-link js-issue-link" title="Wrap connections in an N minute timeout to ensure they get reaped correctly" href="https://github.com/matrix-org/synapse/pull/1725" data-id="197934419" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1725</a>)</li>
+  <li>Make sure that outbound connections are closed (PR <a class="issue-link js-issue-link" title="Wrap connections in an N minute timeout to ensure they get reaped correctly" href="https://github.com/matrix-org/synapse/pull/1725" data-id="197934419" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1725</a>)</li>
 </ul>

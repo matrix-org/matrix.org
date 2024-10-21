@@ -17,12 +17,11 @@ This release includes *four* security fixes:
 - Fix a vulnerability where a federated server could spoof read-receipts from
   users on other servers. Thanks to [Dylanger](https://github.com/dylangerdaly) for identifying this issue too. ([\#5743](https://github.com/matrix-org/synapse/issues/5743))
 
-Additionally, the following fix was in Synapse **1.2.0**, but was not correctly
+Additionally, the following fix was in Synapse __1.2.0__, but was not correctly
 identified during the original release:
 
 - It was possible for a room moderator to send a redaction for an `m.room.create` event, which would downgrade the room to version 1. Thanks to `@/dev/ponies:ponies.im` for identifying and responsibly disclosing this issue! ([\#5701](https://github.com/matrix-org/synapse/issues/5701))
 
 You can get the new update [here](https://github.com/matrix-org/synapse/releases/tag/v1.2.1) or any of the sources mentioned at [https://github.com/matrix-org/synapse](https://github.com/matrix-org/synapse). Alternatively check out our [Synapse installation guide page](https://matrix.org/docs/guides/installing-synapse)
-
 
 Thanks for bearing with us.

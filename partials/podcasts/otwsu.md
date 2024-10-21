@@ -2,7 +2,7 @@
 
 Every last Wednesday of the month, at 18:00 Paris time we broadcasted Open Tech
 Will Save Us, our live show with guests from the broader open source world. We
-try to **understand the social impact of software and how open source can make 
+try to **understand the social impact of software and how open source can make
 it more positive**.
 
 This show is for every open source enthusiast, whether they want to hear about

@@ -36,14 +36,14 @@ This will of course replace the old and creaky [matrix-appservice-gitter](https:
 
 Now we come to the interesting bit. Gitter has some *really* nice features which are sorely lacking in Element today:
 
-*   Instant live room peeking (less than a second to load the webapp into a live-view of a massive room with 20K users!!)
-*   Seamless onboarding thanks to using GitLab & GitHub for accounts
-*   Curated hierarchical room directory
-*   Magical creation of rooms on demand for every GitLab and GitHub project ever
-*   GitLab/GitHub activity as a first-class citizen in a room’s side-panel
-*   Excellent search-engine-friendly static content and archives
-*   KaTeX support for Maths communities
-*   Threads!
+* Instant live room peeking (less than a second to load the webapp into a live-view of a massive room with 20K users!!)
+* Seamless onboarding thanks to using GitLab & GitHub for accounts
+* Curated hierarchical room directory
+* Magical creation of rooms on demand for every GitLab and GitHub project ever
+* GitLab/GitHub activity as a first-class citizen in a room’s side-panel
+* Excellent search-engine-friendly static content and archives
+* KaTeX support for Maths communities
+* Threads!
 
 ...and we promise to do everything in our power to preserve and honour these features at all costs and continue to give the Gitter community the experience they’ve come to know and love.
 
@@ -51,14 +51,14 @@ Now we come to the interesting bit. Gitter has some *really* nice features which
 
 In practice, the main outcome in the end should be Element having benefited massively from levelling up with Gitter - and Gitter benefiting massively from all the goodies which Element and Matrix brings, including:
 
-*   E2E Encryption
-*   Reactions
-*   Constantly improving native iOS & Android clients (which should be a welcome alternative to Gitter’s natives ones, which are [already being deprecated](https://gitlab.com/gitlab-org/gitter/webapp/-/issues/2281))
-*   VoIP and conferencing
-*   All the alternative clients, bots, bridges and servers in Matrix
-*   The full open standard Matrix API
-*   Widgets (embedding webapps into rooms!)
-*   ...and of course participation in the wider decentralised Matrix network.
+* E2E Encryption
+* Reactions
+* Constantly improving native iOS & Android clients (which should be a welcome alternative to Gitter’s natives ones, which are [already being deprecated](https://gitlab.com/gitlab-org/gitter/webapp/-/issues/2281))
+* VoIP and conferencing
+* All the alternative clients, bots, bridges and servers in Matrix
+* The full open standard Matrix API
+* Widgets (embedding webapps into rooms!)
+* ...and of course participation in the wider decentralised Matrix network.
 
 So, there you have it. It’s a new era for Gitter - and we look forward to reinvigorating Gitter’s communities over the coming months. We hope Gitter users will be blown away by the features arriving from Matrix… and we hope that Element users will be ecstatic with the performance and polish work that Gitter-parity will drive us towards. Imagine having guest access in Element that can launch and load a massive room in less than a second!
 
@@ -74,7 +74,7 @@ Any questions, come talk to us on [#gitter:matrix.org](https://matrix.to/#/#gitt
     <i><small>Matthew and Amandine model 2014-vintage Matrix & Gitter swag in celebration :D</small></i>
 </div>
 
-## Bonus update - The Changelog Interview!
+## Bonus update - The Changelog Interview
 
 Sid Sijbrandij (CEO at GitLab) and Matthew had a chance to sit down with [The Changelog](https://changelog.com) to talk about Gitter's Big Adventure - so tune in to hear the story first hand!  Warning: contains non-ironic use of the word "synergy" :D
 

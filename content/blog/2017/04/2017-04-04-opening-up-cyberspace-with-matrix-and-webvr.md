@@ -21,9 +21,9 @@ But despite all this activity, where is the open cyberspace? Where is the univer
 
 Aside from cultural ones, we believe there are three missing ingredients which have been technically holding back the development of an open cyberspace so far:
 <ol>
- 	<li> The hardware</li>
- 	<li> Client software support (i.e. apps)</li>
- 	<li> A universal real-time data layer to store the space</li>
+  <li> The hardware</li>
+  <li> Client software support (i.e. apps)</li>
+  <li> A universal real-time data layer to store the space</li>
 </ol>
 Nowadays the hardware problem is effectively solved: the <a href="https://www.vive.com">HTC Vive</a>, <a href="https://www.oculus.com/">Oculus Rift</a> and even <a href="https://vr.google.com/cardboard/">Google Cardboard</a> have brought VR displays to the general public.  Meanwhile, accelerometers and head-tracking turn normal screens into displays for immersive content without even needing goggles, giving <i>everyone</i> a window into a virtual world.
 
@@ -41,9 +41,9 @@ In fact, the best way is to test it live: we've put together a quick demo at <a 
 
 <a href="/vrdemo">In the demo</a> you get:
 <ol>
- 	<li> a virtual lobby, providing a 1:1 WebRTC video call via Matrix through to a ‘guide' user of your choice anywhere else in Matrix (VR or not).  From the lobby you can jump into two other apps:</li>
- 	<li> a video conference, calling between all the participants of a given Matrix room in VR (no interop yet with other Matrix apps)</li>
- 	<li> a 'virtual tourism' example, featuring a 1:1 WebRTC video call with a guide, superimposed over the top of the user going skiing through 360 degree video footage.</li>
+  <li> a virtual lobby, providing a 1:1 WebRTC video call via Matrix through to a ‘guide' user of your choice anywhere else in Matrix (VR or not).  From the lobby you can jump into two other apps:</li>
+  <li> a video conference, calling between all the participants of a given Matrix room in VR (no interop yet with other Matrix apps)</li>
+  <li> a 'virtual tourism' example, featuring a 1:1 WebRTC video call with a guide, superimposed over the top of the user going skiing through 360 degree video footage.</li>
 </ol>
 Video calling requires a WebRTC-capable browser (Chrome or Firefox). Unfortunately no iOS browsers support it yet. If you have dedicated VR hardware (Vive or Rift), you'll have to configure your browser appropriately to use the demo - see <a href="https://webvr.rocks">https://webvr.rocks</a> for the latest details.
 

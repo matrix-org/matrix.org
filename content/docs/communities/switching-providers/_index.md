@@ -15,7 +15,7 @@ conversations, and to connect them to their own systems.
 
 ## Why switching providers?
 
-Many users start by creating a Matrix account on Matrix.org, operated by the 
+Many users start by creating a Matrix account on Matrix.org, operated by the
 Matrix.org Foundation. It is a reliable and free provider, but as they grow
 communities may want to host their own instance to have more control over their
 data and image.
@@ -102,7 +102,7 @@ You can find a list of the systems that can be bridged to Matrix on the
 ## Picking a new provider
 
 The Matrix.org Foundation happily provides the matrix.org homeserver as a
-convenience, but strongly encourages organisations to get their own homeserver. 
+convenience, but strongly encourages organisations to get their own homeserver.
 
 ### Paid hosting
 

@@ -26,6 +26,7 @@ Webclient:
 * Make IRC-style commands a little more forgiving
 
 Homeserver:
+
 * Validate `m.room.power_level` events.
 * When the server returns state events it now also includes the previous content if any to aid pagination
 * Add support for inviting people when creating a new room.

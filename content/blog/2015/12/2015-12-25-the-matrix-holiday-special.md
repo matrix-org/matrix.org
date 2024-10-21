@@ -80,7 +80,7 @@ We had a lot of fun in Orlando in October at <a href="http://www.asterisk.org/co
 
 The slides for our 'Bridging Asterisk to the Matrix Ecosystem' talk are <a href="/~matthew/2015-10-15 Matrix Astricon.pdf">downloadable here</a>.
 
-## Pidgin!
+## Pidgin
 
 We also implemented a basic libpurple plugin for Matrix - adding Matrix support to any app like Pidgin or Bitlbee that uses libpurple.  (You could in theory even use it with matrix-appservice-purple to bridge from Matrix to Matrix, but that'd be silly :).  It supports basic functionality and uses the new 'v2' APIs for syncing to Matrix.  Adventurous libpurplers can go check it out and experiment with it from <a href="https://github.com/matrix-org/purple-matrix">https://github.com/matrix-org/purple-matrix</a> - feedback welcome.
 

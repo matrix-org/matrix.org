@@ -39,6 +39,7 @@ Memory usage of the bridge comparison
 CPU usage of the bridge comparison
 
 In terms of how many users matrix.org is currently serving at the moment, we present to you some figures:
+
 - 2562 bridged rooms
 - 764 teams connected to the bridge
 - 103711 events have passed through the bridge since the launch of 0.3.2

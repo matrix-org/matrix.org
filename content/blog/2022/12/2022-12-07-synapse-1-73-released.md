@@ -15,7 +15,7 @@ And here is another update to your beloved Matrix homeserver implementation, [Sy
 ### Legacy Prometheus metric names removed
 
 When releasing [Synapse 1.69](https://matrix.org/blog/2022/10/17/synapse-1-69-released#upcoming-removal-of-deprecated-prometheus-metric-names)
-a couple of months ago, we also announced the removal of old Prometheus metrics that have been replaced by more aptly named ones. 
+a couple of months ago, we also announced the removal of old Prometheus metrics that have been replaced by more aptly named ones.
 he list of these metrics can be found [here](https://matrix-org.github.io/synapse/v1.73/metrics-howto.html#renaming-of-metrics--deprecation-of-old-names-in-12).
 
 Synapse 1.73 implements the final phase of this plan and entirely removes support for those metrics. As a result,
@@ -34,11 +34,13 @@ the [`/messages`](https://spec.matrix.org/v1.5/client-server-api/#get_matrixclie
 
 [Improvements to event filtering on the client-server API](https://github.com/matrix-org/synapse/pull/14527) gave the matrix.org homeserver a first nice bump as visible on this graph:
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/2022-12-07-apdex-filter-events-improvement.png)
 
 Various optimizations around [fetching](https://github.com/matrix-org/synapse/pull/14491) [bundled](https://github.com/matrix-org/synapse/pull/14508)
 [aggregations](https://github.com/matrix-org/synapse/pull/14510) resulted in yet another nice improvement:
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 [![](/blog/img/2022-12-07-bundled-aggregations-improvement.png)](/blog/img/2022-12-07-bundled-aggregations-improvement.png)
 
 Note that the graph from the first image, and the second graph from the second image are [apdexes](https://en.wikipedia.org/wiki/Apdex), which
@@ -69,4 +71,3 @@ thanks to everyone who contributed to this release, including (in no particular
 order) [schmop](https://github.com/schmop), [Ashish Kumar](https://github.com/ashfame),
 [realtyem](https://github.com/realtyem), and [Brennan Chapman](https://github.com/chapb)
 as well as anyone helping us make Synapse better by sharing their feedback and reporting issues.
-

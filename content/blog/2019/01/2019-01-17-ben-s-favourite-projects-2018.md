@@ -30,10 +30,10 @@ There is a tendency in the community to build a bot for everything and anything.
 
 <a href="https://github.com/turt2live">TravisR</a> was perhaps the first person I saw to get the obsession, creating
 <ul>
- 	<li><a href="https://github.com/turt2live/matrix-monitor-bot">matrix-monitor-bot</a></li>
- 	<li><a href="https://github.com/turt2live/matrix-trello-bot">matrix-trello-bot</a></li>
- 	<li><a href="https://github.com/turt2live/matrix-alias-bot">matrix-alias-bot</a></li>
- 	<li><a href="https://github.com/turt2live/matrix-hashtag-bot">hashtag bot</a> (perhaps the most absurd!)</li>
+  <li><a href="https://github.com/turt2live/matrix-monitor-bot">matrix-monitor-bot</a></li>
+  <li><a href="https://github.com/turt2live/matrix-trello-bot">matrix-trello-bot</a></li>
+  <li><a href="https://github.com/turt2live/matrix-alias-bot">matrix-alias-bot</a></li>
+  <li><a href="https://github.com/turt2live/matrix-hashtag-bot">hashtag bot</a> (perhaps the most absurd!)</li>
 </ul>
 and more…
 
@@ -89,8 +89,8 @@ Having a <strong><a href="https://shields.io/#/examples/chat">Matrix-native mode
 
 Two students worked on Matrix-related projects during <strong><a href="https://summerofcode.withgoogle.com/projects/?sp-search=matrix">GSOC 2018</a></strong>.
 <ul>
- 	<li><a href="https://matrix.to/#/@Zil0:matrix.org">Zil0</a> created E2EE bindings for <a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a></li>
- 	<li><a href="@apwhitehat:matrix.org">APwhitehat</a> worked on the federation APIs in Dendrite</li>
+  <li><a href="https://matrix.to/#/@Zil0:matrix.org">Zil0</a> created E2EE bindings for <a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a></li>
+  <li><a href="@apwhitehat:matrix.org">APwhitehat</a> worked on the federation APIs in Dendrite</li>
 </ul>
 Something which came in super-helpful for me when testing homeserver installations was <strong><a href="https://neo.lain.haus/fed-tester/">f0x's fed-tester</a></strong>. <a href="https://github.com/f0x52/fed-tester/">Source code available</a> (obv.)
 

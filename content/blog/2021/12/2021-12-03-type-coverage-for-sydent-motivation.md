@@ -30,8 +30,7 @@ In this first part, we'll concentrate on the first two topics; the [second](http
 
 ## Why do this now?
 
-It took us a long time (too long) to notice that the Sydent instance serving `matrix.org` [was failing to send SMS messages for verification](https://github.com/vector-im/element-web/issues/19317). We suspected that something was going wrong with our [API call to OpenMarket](https://github.com/matrix-org/sydent/blob/main/sydent/sms/openmarket.py). Our first step was to [improve logging](https://github.com/matrix-org/sydent/issues/410), so we could start to deduce what was going wrong and why. Whilst trawling through logs, we spotted [
-one problem](https://github.com/matrix-org/sydent/pull/413#pullrequestreview-775154313) which meant we weren't actually sending off the API request in the first place. Further investigation revealed a [strings-versus-bytes confusion](https://github.com/matrix-org/sydent/pull/415) which meant that we would always (incorrectly) interpret the API response as having failed.
+It took us a long time (too long) to notice that the Sydent instance serving `matrix.org` [was failing to send SMS messages for verification](https://github.com/vector-im/element-web/issues/19317). We suspected that something was going wrong with our [API call to OpenMarket](https://github.com/matrix-org/sydent/blob/main/sydent/sms/openmarket.py). Our first step was to [improve logging](https://github.com/matrix-org/sydent/issues/410), so we could start to deduce what was going wrong and why. Whilst trawling through logs, we spotted [one problem](https://github.com/matrix-org/sydent/pull/413#pullrequestreview-775154313) which meant we weren't actually sending off the API request in the first place. Further investigation revealed a [strings-versus-bytes confusion](https://github.com/matrix-org/sydent/pull/415) which meant that we would always (incorrectly) interpret the API response as having failed.
 
 All in all, phone number verification was unknowingly broken in the 2.4.0 release, to be fixed in 2.4.6 a month later. How could we do better? Better test coverage is (as ever) one answer. But [it struck me](https://github.com/matrix-org/sydent/pull/413#pullrequestreview-775154313) that the two bugs we'd encountered might be ripe for automatic detection:
 
@@ -64,7 +63,7 @@ Are there other opportunities to spot the error? Here's the relevant bit of sour
 
 The call to `requestToken` produces a value of type `Awaitable[int]`. If we tried to assign that to an expression of type `int` we'd get an error that mypy can spot.
 
-```
+```python
 $ cat example.py
 async def foo() -> int:
     return 1
@@ -112,7 +111,8 @@ In this sample, `resp.headers` is a [twisted.web.http_headers.Headers](https://t
         headers = dict(resp.headers.getAllRawHeaders())
         reveal_type(headers)
 ```
-```
+
+```txt
 $ mypy
 sydent/sms/openmarket.py:110: note: Revealed type is "builtins.dict[builtins.bytes*, typing.Sequence*[builtins.bytes]]"
 ```
@@ -121,14 +121,13 @@ sydent/sms/openmarket.py:110: note: Revealed type is "builtins.dict[builtins.byt
 
 That's all fine and dandy. But why didn't we spot this before if the annotations were all in place in twisted? Let's put aside the fact that, erm, we weren't running mypy in Sydent's CI [until the recent sprint](https://github.com/matrix-org/sydent/pull/416), unlike our [other](https://github.com/matrix-org/synapse/blob/5640992d176a499204a0756b1677c9b1575b0a49/.github/workflows/tests.yml#L21) [projects](https://github.com/matrix-org/sygnal/blob/4a7367e84476a4b1054b1fe20e9e06f9f66e27f8/.github/workflows/pipeline.yml#L18-L26). Checking out the problematic version, we can run mypy on the file we know to contain the bug.
 
-```
+```txt
 $ git checkout v2.4.0
 $ mypy --strict sydent/sms/openmarket.py
 sydent/sms/openmarket.py:82: error: Dict entry 0 has incompatible type "str": "int"; expected "str": "str"  [dict-item]
 ```
 
 Huh. Mypy spots something, but not the error we were hoping for. What's going on here? We can ask mypy to show its working with `reveal_type` again.
-
 
 ```python
         resp = await self.http_cli.post_json_get_nothing(
@@ -143,7 +142,7 @@ Huh. Mypy spots something, but not the error we were hoping for. What's going on
 
 This yields:
 
-```
+```txt
 $ mypy sydent/sms/openmarket.py
 sydent/sms/openmarket.py:82: error: Dict entry 0 has incompatible type "str": "int"; expected "str": "str"  [dict-item]
 sydent/sms/openmarket.py:102: note: Revealed type is "twisted.web.iweb.IResponse*"
@@ -167,7 +166,7 @@ The problem here is that mypy can't see that `resp.headers` is a twisted `Header
         reveal_type(headers)
 ```
 
-```
+```txt
 $ mypy sydent/sms/openmarket.py
 sydent/sms/openmarket.py:82: error: Dict entry 0 has incompatible type "str": "int"; expected "str": "str"  [dict-item]
 sydent/sms/openmarket.py:104: note: Revealed type is "twisted.web.iweb.IResponse*"

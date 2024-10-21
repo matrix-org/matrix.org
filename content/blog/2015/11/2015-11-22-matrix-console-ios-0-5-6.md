@@ -7,7 +7,7 @@ author = ["Oddvar Lovaas"]
 category = ["General"]
 +++
 
-In addition to the Android release a couple of days ago, we also released a new version of Matrix Console iOS: v0.5.6! 
+In addition to the Android release a couple of days ago, we also released a new version of Matrix Console iOS: v0.5.6!
 
 This release includes a new version of MatrixKit (v0.2.7) that you can take advantage of in your MatrixKit powered app. There are several changes in MatrixKit since the last release, including improved performance, better handling of unrecognized certificates and fixes of reported crash issues. We have also introduced read receipts, improved the chat history display, made room invites more obvious, and fixed a whole lot of JIRA issues.
 

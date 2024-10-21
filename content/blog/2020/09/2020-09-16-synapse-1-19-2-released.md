@@ -15,7 +15,7 @@ The bug prevents affected Synapse instances from joining rooms with invalid even
 
 __Those on Synapse 1.19.1 or earlier should upgrade to Synapse 1.19.2, while those who are running a release candidate of Synapse 1.20.0 should upgrade to 1.20.0rc4.__
 
-Get the new releases from any of the usual sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md. 1.19.2 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.19.2), and 1.20.0rc4 is [here](https://github.com/matrix-org/synapse/releases/tag/v1.20.0rc4).
+Get the new releases from any of the usual sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>. 1.19.2 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.19.2), and 1.20.0rc4 is [here](https://github.com/matrix-org/synapse/releases/tag/v1.20.0rc4).
 
 The changelog for 1.19.2 is as follows:
 
@@ -23,4 +23,5 @@ The changelog for 1.19.2 is as follows:
 
 Due to the issue below server admins are encouraged to upgrade as soon as possible.
 Bugfixes
+
 - Fix joining rooms over federation that include malformed events. (#8324)

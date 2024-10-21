@@ -103,7 +103,7 @@ Running the offending input on the ASAN variant of the harness revealed it was
 an invalid read one byte past the end of a heap buffer. The read was happening
 in the base64 decoder:
 
-```
+```txt
 ❮ ./build/fuzzers/fuzz_group_decrypt_asan "" pickled-inbound-group-session.txt <input
 =================================================================
 ==1838065==ERROR: AddressSanitizer: heap-buffer-overflow on address 0xf4a00795 at pc 0x56560660 bp 0xffff9df8 sp 0xffff9de8
@@ -273,7 +273,7 @@ This longer value is then eventually passed by Element Android to libolm's
 place, I deleted the local encryption key backup on my device and asked for it
 to be restored from the server:
 
-```
+```txt
 F libc    : stack corruption detected (-fstack-protector)
 F libc    : Fatal signal 6 (SIGABRT), code -6 (SI_TKILL) in tid 24517 (DefaultDispatch), pid 24459 (im.vector.app)
 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***

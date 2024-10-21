@@ -14,7 +14,7 @@ Matrix will be represented at the 32nd Chaos Computer Club, Dec 27th-30th, 2015.
 
 The session is free of charge, although you do need a ticket to the Congress itself.
 
-If you are interested, please register by sending an email to mark@matrix.org. All you need for the session is curiosity - but do bring your own laptop if you want to hack as well!
+If you are interested, please register by sending an email to <mark@matrix.org>. All you need for the session is curiosity - but do bring your own laptop if you want to hack as well!
 
 Anyone is welcome to join - it will basically be a fairly open-ended chat about all things relating to Matrix, and a good chance to do some deep digging into Matrix itself.
 

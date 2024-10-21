@@ -21,7 +21,7 @@ doesn't cover yet) we'll be declaring a 1.0 :)
 
 If you're running Dendrite, please upgrade.  If not, perhaps this would be a
 good version to give it a try?  You can get it, as always from,
-https://github.com/matrix-org/dendrite/releases/tag/v0.4.1.  The changelog
+<https://github.com/matrix-org/dendrite/releases/tag/v0.4.1>.  The changelog
 follows:
 
 ### Features

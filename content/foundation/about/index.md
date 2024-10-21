@@ -125,7 +125,8 @@ which define the scope and mechanisms of its day-to-day activity.
 
 The Rules were originally drafted through the open [Matrix Specification Change](https://spec.matrix.org/proposals/)
 proposal process in order to provide full transparency and review from the
-wider community. The result was [MSC1779](https://github.com/matrix-org/matrix-doc/pull/1779) -  [Proposal for Open Governance of Matrix.org](https://github.com/matrix-org/matrix-doc/tree/master/proposals/1779-open-governance.md),
+wider community.
+The result was [MSC1779](https://github.com/matrix-org/matrix-doc/pull/1779) -  [Proposal for Open Governance of Matrix.org](https://github.com/matrix-org/matrix-doc/tree/master/proposals/1779-open-governance.md),
 providing a comprehensive overview of the whole governance process.
 
 The Proposal for Open Governance was then formalised into legal form and
@@ -142,7 +143,8 @@ The full history of the rules can be followed via:
 * [https://github.com/matrix-org/matrix-doc/pull/1779](https://github.com/matrix-org/matrix-doc/pull/1779)
 
 One of the most important items defined in the Rules are The Guiding Principles
-of the project and the definition of the Spec Core Team, which are [reproduced here](#the-spec-core-team) from MSC1779 for ease of reference.
+of the project and the definition of the Spec Core Team,
+which are [reproduced here](#the-spec-core-team) from MSC1779 for ease of reference.
 
 ## Who We Are
 

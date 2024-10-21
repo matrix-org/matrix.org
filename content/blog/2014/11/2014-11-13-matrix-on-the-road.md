@@ -39,7 +39,7 @@ Movidiam did a very ambitious hack, modelling the trends of conversation in the
 
 Matrix team worked on a MIDI to Matrix bridge allowing to share and display music you play in a chatroom and jam together even if in different places. Here is the demo video:
 
-http://youtu.be/LXDBoHyjmtw
+<http://youtu.be/LXDBoHyjmtw>
 
 Another great time to meet a lot of interesting people and build partnerships!
 

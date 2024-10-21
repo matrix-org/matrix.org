@@ -10,7 +10,7 @@ Matrix is an **open standard** for **interoperable**, **decentralised**,
 
 * there exists an **open standard** in the form of the
   [Matrix Specification](https://matrix.org/docs/spec/)
-* it's **interoperable**, meaning it is designed to *interoperate* with other 
+* it's **interoperable**, meaning it is designed to *interoperate* with other
   communication systems, and being an Open Standard means it's easy to see how
   to interoperate with it
 * Matrix is **decentralised**, which means there is *no central point* - anyone
@@ -55,7 +55,8 @@ away. There are also native Element apps for [Android](https://play.google.com/s
 
 Don’t like web based clients? Not a problem! Since Matrix is an open standard
 there are dozens of clients to choose from, each built for a different type of
-user. Check out our [list of a few popular Matrix clients](https://matrix.org/clients/) and [Try Matrix Now](https://matrix.org/docs/projects/try-matrix-now/) for a list of everything that’s out there.
+user. Check out our [list of a few popular Matrix clients](https://matrix.org/clients/)
+and [Try Matrix Now](https://matrix.org/docs/projects/try-matrix-now/) for a list of everything that’s out there.
 
 ## How can I get my own server?
 

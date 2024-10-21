@@ -8,12 +8,11 @@ category = ["General"]
 +++
 
 <img src="/blog/wp-content/uploads/2016/10/TADHack-2016-Global-3-300x244.png" alt="tadhack-2016-global-3-300x244" width="300" height="244" class="alignleft size-full wp-image-1796" />
-TADHack Global 2016 was held across 30+ different locations last weekend. The goal in the TADHack is to create a hack over the weekend, using one or more of the APIs provided by the sponsors - of which Matrix is one. 
+TADHack Global 2016 was held across 30+ different locations last weekend. The goal in the TADHack is to create a hack over the weekend, using one or more of the APIs provided by the sponsors - of which Matrix is one.
 
 Over 2600 people participated, and over 150 hacks were created! I think it's safe to say that TADHack Global 2016 was a great success!
 
-The Matrix team were on location in Shoreditch, London, where we helped people with their hacks (while also keeping an eye on the online <a href="https://matrix.to/#/#tadhack-tadmentor-matrix:matrix.org">TADHack Matrix room</a> to help remote entries). 
-
+The Matrix team were on location in Shoreditch, London, where we helped people with their hacks (while also keeping an eye on the online <a href="https://matrix.to/#/#tadhack-tadmentor-matrix:matrix.org">TADHack Matrix room</a> to help remote entries).
 
 Several teams used Matrix in their hack, both in London and elsewhere:
 
