@@ -34,3 +34,14 @@ zola serve
 
 Zola will build the website and start a web server, usually at
 <http://127.0.0.1:1111>
+
+## Running the markdown linter
+
+We are running the <https://github.com/DavidAnson/markdownlint-cli2>2> markdown linter on the website.
+To run it locally, you can use the following command:
+
+```bash
+npx markdownlint-cli2 --fix "**/*.md"
+```
+
+This is based on <https://github.com/DavidAnson/markdownlint> and can also be used as a [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
