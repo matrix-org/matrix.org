@@ -18,17 +18,17 @@ If you believe you are eligible to participate but have not heard from us, first
 All members of each constituency group are entitled to vote on the candidates within that constituency group. Generally, we will hold elections for half of the constituency groups each year. However, this year we are holding elections for all of the constituency groups:
 
 * **Community representatives**
-  * 4 seats for Individual Members – these are people who currently provide financial support to the Foundation.
-  * 3 seats for Ecosystem Members – these are FOSS projects and communities around Matrix.
-  * 2 seats for Associate Members – these are FOSS foundations, academic institutions, and other communities that are aligned with key parts of our mission.
+    * 4 seats for Individual Members – these are people who currently provide financial support to the Foundation.
+    * 3 seats for Ecosystem Members – these are FOSS projects and communities around Matrix.
+    * 2 seats for Associate Members – these are FOSS foundations, academic institutions, and other communities that are aligned with key parts of our mission.
 * **Funder representatives**
-  * 4 seats for Platinum Members – these organisations sponsor at the highest level.
-  * 3 seats for Gold Members — these organisations sponsor at a high level.
-  * 2 seats for Silver Members — these organisations sponsor at a level commensurate with the size of their organisation.
+    * 4 seats for Platinum Members – these organisations sponsor at the highest level.
+    * 3 seats for Gold Members — these organisations sponsor at a high level.
+    * 2 seats for Silver Members — these organisations sponsor at a level commensurate with the size of their organisation.
 * **Foundation representatives**
-  * 3 seats for Guardians – these are the members of the Foundation's board of directors.
-  * 2 seats for the Spec Core Team – these are the members of the Spec Core Team that looks after the spec.
-  * Managing Director – this is the Foundation's head of staff, no election is run for this seat.
+    * 3 seats for Guardians – these are the members of the Foundation's board of directors.
+    * 2 seats for the Spec Core Team – these are the members of the Spec Core Team that looks after the spec.
+    * Managing Director – this is the Foundation's head of staff, no election is run for this seat.
 
 Next year, we'll run elections just for Gold, Silver, Individual, and Associate Members.
 

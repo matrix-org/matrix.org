@@ -13,7 +13,7 @@ Synapse 1.40.0 is out now!
 
 This release of Synapse includes stable support for [Room Version 8](https://github.com/matrix-org/matrix-doc/pull/3289)! Version 8 codifies a concept of "[restricted rooms](https://github.com/matrix-org/matrix-doc/pull/3083)" which are private rooms joinable only by direct invitation or by being a member of other, designated Spaces / rooms.
 
-This means you can create a Matrix Space for your company, team, or guild, and instead of inviting people to the Space _and_ directly to a bunch of private rooms, you can simply configure your private rooms such that membership in the Space *automatically* confers access to the private rooms.
+This means you can create a Matrix Space for your company, team, or guild, and instead of inviting people to the Space _and_ directly to a bunch of private rooms, you can simply configure your private rooms such that membership in the Space _automatically_ confers access to the private rooms.
 
 This is a major improvement to access control in Matrix, and we can't wait to use it ourselves.
 

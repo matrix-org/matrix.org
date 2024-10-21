@@ -9,8 +9,8 @@ category = ["Tutorials"]
 
 Historically we've had two projects for iOS:
 <ul>
-	<li><strong>MatrixSDK</strong>: a low level library to interact with a Matrix homeserver</li>
-	<li><strong>Console</strong>: an example Matrix client based on MatrixSDK</li>
+ <li><strong>MatrixSDK</strong>: a low level library to interact with a Matrix homeserver</li>
+ <li><strong>Console</strong>: an example Matrix client based on MatrixSDK</li>
 </ul>
 
 The primary intention of Console was to demonstrate how to use MatrixSDK to write a Matrix client app.
@@ -35,9 +35,9 @@ MatrixKit repository is here: <a href="https://github.com/matrix-org/matrix-ios
 
 In parallel of MatrixKit, we did some spring-cleaning - the official Matrix.org iOS offerings are now split into three github repos. One for each deliverable:
 <ul>
-	<li><a href="https://github.com/matrix-org/matrix-ios-sdk">https://github.com/matrix-org/matrix-ios-sdk</a></li>
-	<li><a href="https://github.com/matrix-org/matrix-ios-kit">https://github.com/matrix-org/matrix-ios-kit</a></li>
-	<li><a href="https://github.com/matrix-org/matrix-ios-console">https://github.com/matrix-org/matrix-ios-console</a></li>
+ <li><a href="https://github.com/matrix-org/matrix-ios-sdk">https://github.com/matrix-org/matrix-ios-sdk</a></li>
+ <li><a href="https://github.com/matrix-org/matrix-ios-kit">https://github.com/matrix-org/matrix-ios-kit</a></li>
+ <li><a href="https://github.com/matrix-org/matrix-ios-console">https://github.com/matrix-org/matrix-ios-console</a></li>
 </ul>
 
 <strong>Other releases:</strong>

@@ -26,7 +26,7 @@ Key dates are:
 - Matrix Devroom date: Sunday 5 morning in person, online devroom to be
   announced
 - Submission deadline: Monday 5th December
-- Announcement of selected talks: Thursday 15th December 
+- Announcement of selected talks: Thursday 15th December
 
 You must be available in person to present your talk for the physical devroom.
 
@@ -34,10 +34,10 @@ You must be available in person to present your talk for the physical devroom.
 
 The talks can follow one of thee two formats for the physical devroom
 
-* 20 min talk + 10 min Q&A, for topics that can be covered briefly
-* 50 min talk + 10 min Q&A for more complex subjects which need more focus
+- 20 min talk + 10 min Q&A, for topics that can be covered briefly
+- 50 min talk + 10 min Q&A for more complex subjects which need more focus
 
-We strongly encourage you to prepare a demo when it makes sense, so people can 
+We strongly encourage you to prepare a demo when it makes sense, so people can
 actually see what your work looks like in practice!
 
 Of course, the proposal must respect the FOSDEM terms as well:
@@ -56,7 +56,7 @@ follow this [beginners guide to Pentabarf](https://eyskens.me/beginners-guide-to
 We expect to receive more requests than we have slots available. The devroom
 organisers will be reviewing the proposals and accepting them based on the
 potential positive impact the project has on Matrix (as defined in by the
-Mission section of https://matrix.org/foundation).
+Mission section of <https://matrix.org/foundation>).
 
 If a project proposal has been turned down, it doesn't mean we don't believe it
 has good potential. Maintainers are invited to join the [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org)

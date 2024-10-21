@@ -20,8 +20,7 @@ Kicking a user means that user is removed from the room by force, but is not
 banned - so they are able to re-join.
 
 Once you have your client object running (see
-[usage-of-matrix-bot-sdk#instantiation
-](https://matrix.org/docs/guides/usage-of-matrix-bot-sdk#instantiation)), you
+[usage-of-matrix-bot-sdk#instantiation](https://matrix.org/docs/guides/usage-of-matrix-bot-sdk#instantiation)), you
 can use the `kickUser()` method. There are three parameters:
 
 * the user ID (MXID) you want to kick
@@ -80,8 +79,7 @@ const members = await client.getJoinedRoomMembers(roomId);
 
 ## Responding to a keyword
 
-In [usage-of-matrix-bot-sdk#implementing-echobot-functionality
-](https://matrix.org/docs/guides/usage-of-matrix-bot-sdk#implementing-echobot-functionality),
+In [usage-of-matrix-bot-sdk#implementing-echobot-functionality](https://matrix.org/docs/guides/usage-of-matrix-bot-sdk#implementing-echobot-functionality),
 we showed how it's possible to read the content of messages and respond to
 them. To reiterate:
 
@@ -159,12 +157,12 @@ This uses several concepts from this guide to create an endless silly scene.
 
 ![screenshot showing the bots interacting](/docs/legacy/bot-dance.png)
 
-You can find the code for [this strange project here
-](https://github.com/benparsons/bot-dance).
+You can find the code for [this strange project here](https://github.com/benparsons/bot-dance).
 
 ## Conclusion
 
-[matrix-bot-sdk] can do a great deal when it comes to room administration. Check out [the repo][matrix-bot-sdk] directly to find out more - or if you need a more introductory guide see [Usage of matrix-bot-sdk].
+[matrix-bot-sdk] can do a great deal when it comes to room administration.
+Check out [the repo][matrix-bot-sdk] directly to find out more - or if you need a more introductory guide see [Usage of matrix-bot-sdk].
 
 [matrix-bot-sdk]: https://github.com/turt2live/matrix-bot-sdk
 [Usage of matrix-bot-sdk]: https://matrix.org/docs/guides/usage-of-matrix-bot-sdk

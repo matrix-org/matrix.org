@@ -31,7 +31,7 @@ Porting to nio and adding encryption support was the bulk of the project, and th
 
 ## The Process
 
-The process began with [This PR](https://github.com/opsdroid/opsdroid/pull/1418) which gave us a head start with the migration to matrix-nio. Through helping to review the PR I got to understand how matrix-nio and opsdroid work. 
+The process began with [This PR](https://github.com/opsdroid/opsdroid/pull/1418) which gave us a head start with the migration to matrix-nio. Through helping to review the PR I got to understand how matrix-nio and opsdroid work.
 
 The implementation of encryption support was a little tricky in that it was tough to figure out the process required to do that in the context of the connector. One problem we faced was the installation of dependencies. Installing `libolm`, a C library which nio uses for encryption was a less than smooth process. This spawned a couple side projects that dealt with the CI, testing and installation of opsdroid. In the end we found a solution and had a working connector on our hands.
 

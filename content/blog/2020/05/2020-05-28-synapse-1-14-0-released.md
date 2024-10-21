@@ -19,36 +19,29 @@ You'll also find support for [rooms v6](https://matrix.org/docs/spec/rooms/v6). 
 
 As an aside we continue to be very happy with using Redis for worker inter-communication and will likely recommend it for production use in the coming weeks.
 
-Get 1.14.0 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.14.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
-
+Get 1.14.0 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.14.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 Changelog since v1.13.0
 
-Synapse 1.14.0 (2020-05-28)
-===========================
+## Synapse 1.14.0 (2020-05-28)
 
 No significant changes.
 
-Synapse 1.14.0rc2 (2020-05-27)
-==============================
+## Synapse 1.14.0rc2 (2020-05-27)
 
-Bugfixes
---------
+### Bugfixes
 
 - Fix cache config to not apply cache factor to event cache. Regression in v1.14.0rc1. ([\#7578](https://github.com/matrix-org/synapse/issues/7578))
 - Fix bug where `ReplicationStreamer` was not always started when replication was enabled. Bug introduced in v1.14.0rc1. ([\#7579](https://github.com/matrix-org/synapse/issues/7579))
 - Fix specifying individual cache factors for caches with special characters in their name. Regression in v1.14.0rc1. ([\#7580](https://github.com/matrix-org/synapse/issues/7580))
 
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Fix the OIDC `client_auth_method` value in the sample config. ([\#7581](https://github.com/matrix-org/synapse/issues/7581))
 
-Synapse 1.14.0rc1 (2020-05-26)
-==============================
+## Synapse 1.14.0rc1 (2020-05-26)
 
-Features
---------
+### Features
 
 - Synapse's cache factor can now be configured in `homeserver.yaml` by the `caches.global_factor` setting. Additionally, `caches.per_cache_factors` controls the cache factors for individual caches. ([\#6391](https://github.com/matrix-org/synapse/issues/6391))
 - Add OpenID Connect login/registration support. Contributed by Quentin Gliech, on behalf of [les Connecteurs](https://connecteu.rs). ([\#7256](https://github.com/matrix-org/synapse/issues/7256), [\#7457](https://github.com/matrix-org/synapse/issues/7457))
@@ -58,8 +51,7 @@ Features
 - Implement room version 6 per [MSC2240](https://github.com/matrix-org/matrix-doc/pull/2240). ([\#7506](https://github.com/matrix-org/synapse/issues/7506))
 - Add highly experimental option to move event persistence off master. ([\#7281](https://github.com/matrix-org/synapse/issues/7281), [\#7374](https://github.com/matrix-org/synapse/issues/7374), [\#7436](https://github.com/matrix-org/synapse/issues/7436), [\#7440](https://github.com/matrix-org/synapse/issues/7440), [\#7475](https://github.com/matrix-org/synapse/issues/7475), [\#7490](https://github.com/matrix-org/synapse/issues/7490), [\#7491](https://github.com/matrix-org/synapse/issues/7491), [\#7492](https://github.com/matrix-org/synapse/issues/7492), [\#7493](https://github.com/matrix-org/synapse/issues/7493), [\#7495](https://github.com/matrix-org/synapse/issues/7495), [\#7515](https://github.com/matrix-org/synapse/issues/7515), [\#7516](https://github.com/matrix-org/synapse/issues/7516), [\#7517](https://github.com/matrix-org/synapse/issues/7517), [\#7542](https://github.com/matrix-org/synapse/issues/7542))
 
-Bugfixes
---------
+### Bugfixes
 
 - Fix a bug where event updates might not be sent over replication to worker processes after the stream falls behind. ([\#7384](https://github.com/matrix-org/synapse/issues/7384))
 - Allow expired user accounts to log out their device sessions. ([\#7443](https://github.com/matrix-org/synapse/issues/7443))
@@ -77,13 +69,11 @@ Bugfixes
 - Fix exception `'GenericWorkerReplicationHandler' object has no attribute 'send_federation_ack'`, introduced in v1.13.0. ([\#7564](https://github.com/matrix-org/synapse/issues/7564))
 - `synctl` now warns if it was unable to stop Synapse and will not attempt to start Synapse if nothing was stopped. Contributed by Romain Bouyé. ([\#6590](https://github.com/matrix-org/synapse/issues/6590))
 
-Updates to the Docker image
----------------------------
+### Updates to the Docker image
 
 - Update docker runtime image to Alpine v3.11. Contributed by @Starbix. ([\#7398](https://github.com/matrix-org/synapse/issues/7398))
 
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Update information about mapping providers for SAML and OpenID. ([\#7458](https://github.com/matrix-org/synapse/issues/7458))
 - Add additional reverse proxy example for Caddy v2. Contributed by Jeff Peeler. ([\#7463](https://github.com/matrix-org/synapse/issues/7463))
@@ -92,8 +82,7 @@ Improved Documentation
 - Change the systemd worker service to check that the worker config file exists instead of silently failing. Contributed by David Vo. ([\#7528](https://github.com/matrix-org/synapse/issues/7528))
 - Minor clarifications to the TURN docs. ([\#7533](https://github.com/matrix-org/synapse/issues/7533))
 
-Internal Changes
-----------------
+### Internal Changes
 
 - Add typing annotations in `synapse.federation`. ([\#7382](https://github.com/matrix-org/synapse/issues/7382))
 - Convert the room handler to async/await. ([\#7396](https://github.com/matrix-org/synapse/issues/7396))

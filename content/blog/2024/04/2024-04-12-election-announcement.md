@@ -9,6 +9,7 @@ category = ["Foundation", "Elections", "Governing Board"]
 +++
 
 _Update: the terms of the board have been updated with the follow changes:_
+
 * _Allow for filling vacancies by appointment or by-election at the discretion of the Managing Director and the Guardians, in consultation with a Governance Committee. (2.7.1)_
 * _Allow for the Governing Board to adopt voting mechanisms other than simple majority on a case-by-case basis. (5.5)_
 * _Disallow nominees from running for election in more than one constituency at a time. (2.4.1)_
@@ -36,7 +37,7 @@ To minimize confusion, and maximize inclusion given our international community,
 
 ## How our elections work
 
-Our Governing Board is made up of 9 different constituency groups across 3 categories: nonprofit and community representatives, funder representatives, and foundation representatives. Each group has been allocated seats on the board, gets to nominate its own slate of candidates, and gets to vote within that slate of candidates. 
+Our Governing Board is made up of 9 different constituency groups across 3 categories: nonprofit and community representatives, funder representatives, and foundation representatives. Each group has been allocated seats on the board, gets to nominate its own slate of candidates, and gets to vote within that slate of candidates.
 
 For example, Individual Members get to nominate themselves, and vote on the Individual Members who are qualified candidates. The only exception is with the Managing Director (hi, that’s me) who automatically gets a seat on the Governing Board, but that’s just one seat of many.
 
@@ -66,7 +67,7 @@ All nominees must have consented to nomination _before being nominated_ and must
 
 ## Who can vote
 
-All members of each constituency group are entitled to vote on the candidates within that constituency group. We will be reaching out to everyone we have contact information for, to ensure we have our voter rolls together before voting begins in May. 
+All members of each constituency group are entitled to vote on the candidates within that constituency group. We will be reaching out to everyone we have contact information for, to ensure we have our voter rolls together before voting begins in May.
 
 We will hold an election for every constituency even if a given constituency has fewer candidates than there are seats allocated for them on the Governing Board. This is, effectively, as a vote of confidence.
 
@@ -97,7 +98,7 @@ You are likely to receive a packet of materials before each meeting which you wi
 
 While the Governing Board is an advisory board, members are encouraged to play a role in helping to carry out the activities that support the staff in delivering on the Foundation’s collective remit, such as coalescing priorities to share with the Spec Core Team and connecting with contributors and funders to implement proposals.
 
-We intend to charter committees – such as for finance, which would review our annual budget in detail – who will meet in between Governing Board meetings and present their assessments and recommendations to the Governing Board. These committees are where the bulk of the activity will take place since the board, which may have up to 24 members, is quite large. 
+We intend to charter committees – such as for finance, which would review our annual budget in detail – who will meet in between Governing Board meetings and present their assessments and recommendations to the Governing Board. These committees are where the bulk of the activity will take place since the board, which may have up to 24 members, is quite large.
 
 ## How to nominate
 

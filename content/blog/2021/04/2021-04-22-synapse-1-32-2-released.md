@@ -10,7 +10,7 @@ category = ["Releases"]
 
 Synapse 1.32.2 is out! **Synapse now requires Python 3.6** (or later) and we've made a few small changes which you should be aware of before upgrading. These are documented in the [upgrade notes](https://github.com/matrix-org/synapse/blob/v1.32.2/UPGRADE.rst#upgrading-to-v1320).
 
-> __Note:__ We scrubbed the releases of Synapse 1.32.0 and 1.32.1 as we discovered a pair of regressions including [a bug](https://github.com/matrix-org/synapse/issues/9853) with Prometheus metrics after tagging the release. These have been resolved.
+> **Note:** We scrubbed the releases of Synapse 1.32.0 and 1.32.1 as we discovered a pair of regressions including [a bug](https://github.com/matrix-org/synapse/issues/9853) with Prometheus metrics after tagging the release. These have been resolved.
 
 On Monday, humankind flew a helicopter on Mars. And while our pursuit of [Space(s)](https://github.com/matrix-org/matrix-doc/pull/1772) is considerably more modest, it is nevertheless progressing apace: Synapse 1.32 includes an experimental implementation of [MSC3083](https://github.com/matrix-org/matrix-doc/pull/3083).
 

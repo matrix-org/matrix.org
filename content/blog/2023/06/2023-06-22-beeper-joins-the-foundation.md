@@ -15,7 +15,6 @@ the Foundation! Beeper is a universal chat app, built on top of Matrix. Beeper
 is strongly committing to support Matrix by becoming the first member in the
 Gold tier as well.
 
-
 ## Matrix is a strategic choice
 
 Beeper allows you to connect accounts from up to 15 different chat platforms to
@@ -41,7 +40,6 @@ to the content of the messages. It protects customers against passive leaks, and
 the most privacy conscious ones can even [self-host their bridges](https://github.com/beeper/bridge-manager)
 to get total control of the messages making it through.
 
-
 ## Mission aligned
 
 Beyond the obvious business choice of relying on Matrix, Beeper and the
@@ -54,7 +52,6 @@ gardens of [Gatekeepers](https://commission.europa.eu/strategy-and-policy/priori
 The regulation change brought by the DMA will accelerate the adoption of
 interoperability across the board, bringing the tools to make it sustainable and
 reliable, which is a direct business enabler for Beeper.
-
 
 ## Join us
 

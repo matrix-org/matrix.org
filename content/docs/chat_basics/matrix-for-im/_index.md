@@ -51,7 +51,7 @@ any point in time, even if you started with Element.
 Go to [app.element.io](https://app.element.io), and click on "Create Account".
 You should land on the following page.
 
-{{ 
+{{
     figure(
         img="../element-io-sign-up.png",
         caption="Sign up page of app.element.io")

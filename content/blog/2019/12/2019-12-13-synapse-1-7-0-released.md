@@ -27,9 +27,7 @@ As ever, you can get the new update [here](https://github.com/matrix-org/synapse
 
 The changelog since 1.6.1 follows:
 
-
-Synapse 1.7.0 (2019-12-13)
-==========================
+## Synapse 1.7.0 (2019-12-13)
 
 This release changes the default settings so that only local authenticated users can query the server's room directory. See the [upgrade notes](https://github.com/matrix-org/synapse/blob/v1.7.0/UPGRADE.rst#upgrading-to-v170) for details.
 
@@ -39,23 +37,17 @@ Administrators are reminded that SQLite should not be used for production instan
 
 No significant changes since 1.7.0rc2.
 
+## Synapse 1.7.0rc2 (2019-12-11)
 
-Synapse 1.7.0rc2 (2019-12-11)
-=============================
-
-Bugfixes
---------
+### Bugfixes
 
 - Fix incorrect error message for invalid requests when setting user's avatar URL. ([\#6497](https://github.com/matrix-org/synapse/issues/6497))
 - Fix support for SQLite 3.7. ([\#6499](https://github.com/matrix-org/synapse/issues/6499))
 - Fix regression where sending email push would not work when using a pusher worker. ([\#6507](https://github.com/matrix-org/synapse/issues/6507), [\#6509](https://github.com/matrix-org/synapse/issues/6509))
 
+## Synapse 1.7.0rc1 (2019-12-09)
 
-Synapse 1.7.0rc1 (2019-12-09)
-=============================
-
-Features
---------
+### Features
 
 - Implement per-room message retention policies. ([\#5815](https://github.com/matrix-org/synapse/issues/5815), [\#6436](https://github.com/matrix-org/synapse/issues/6436))
 - Add etag and count fields to key backup endpoints to help clients guess if there are new keys. ([\#5858](https://github.com/matrix-org/synapse/issues/5858))
@@ -66,9 +58,7 @@ Features
 - Add ephemeral messages support by partially implementing [MSC2228](https://github.com/matrix-org/matrix-doc/pull/2228). ([\#6409](https://github.com/matrix-org/synapse/issues/6409))
 - Add support for [MSC 2367](https://github.com/matrix-org/matrix-doc/pull/2367), which allows specifying a reason on all membership events. ([\#6434](https://github.com/matrix-org/synapse/issues/6434))
 
-
-Bugfixes
---------
+### Bugfixes
 
 - Transfer non-standard power levels on room upgrade. ([\#6237](https://github.com/matrix-org/synapse/issues/6237))
 - Fix error from the Pillow library when uploading RGBA images. ([\#6241](https://github.com/matrix-org/synapse/issues/6241))
@@ -88,9 +78,7 @@ Bugfixes
 - Fix small performance regression for sending invites. ([\#6493](https://github.com/matrix-org/synapse/issues/6493))
 - Back out cross-signing code added in Synapse 1.5.0, which caused a performance regression. ([\#6494](https://github.com/matrix-org/synapse/issues/6494))
 
-
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Update documentation and variables in user contributed systemd reference file. ([\#6369](https://github.com/matrix-org/synapse/issues/6369), [\#6490](https://github.com/matrix-org/synapse/issues/6490))
 - Fix link in the user directory documentation. ([\#6388](https://github.com/matrix-org/synapse/issues/6388))
@@ -99,16 +87,12 @@ Improved Documentation
 - Write some docs for the quarantine_media api. ([\#6458](https://github.com/matrix-org/synapse/issues/6458))
 - Convert CONTRIBUTING.rst to markdown (among other small fixes). ([\#6461](https://github.com/matrix-org/synapse/issues/6461))
 
-
-Deprecations and Removals
--------------------------
+### Deprecations and Removals
 
 - Remove admin/v1/users_paginate endpoint. Contributed by Awesome Technologies Innovationslabor GmbH. ([\#5925](https://github.com/matrix-org/synapse/issues/5925))
 - Remove fallback for federation with old servers which lack the /federation/v1/state_ids API. ([\#6488](https://github.com/matrix-org/synapse/issues/6488))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Add benchmarks for structured logging and improve output performance. ([\#6266](https://github.com/matrix-org/synapse/issues/6266))
 - Improve the performance of outputting structured logging. ([\#6322](https://github.com/matrix-org/synapse/issues/6322))

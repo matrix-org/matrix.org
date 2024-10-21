@@ -12,15 +12,11 @@ Hi folks,
 
 We're incredibly excited that the Government of France has confirmed it is in the process of deploying a huge private federation of Matrix homeservers spanning the whole government, and developing a fork of Riot.im for use as their official secure communications client! The goal is to replace usage of WhatsApp or Telegram for official purposes.
 
-
 It's a unbelievably wonderful situation that we're living in a world where governments genuinely care about openness, open source and open-standard based communications - and Matrix's decentralisation and end-to-end encryption is a perfect fit for intra- and inter-governmental communication.  Congratulations to France for going decentralised and supporting FOSS! We understand the whole project is going to be released entirely open source (other than the operational bits) - development is well under way and an early proof of concept is already circulating within various government entities.
-
 
 I'm sure there will be more details from their side as the project progresses, but meanwhile here's the official press release, and an English translation too. We expect this will drive a lot of effort into maturing Synapse/Dendrite, E2E encryption and matrix-{'{'}react,ios,android{'}'}-sdk, which is great news for the whole Matrix ecosystem! The deployment is going to be speaking pure Matrix and should be fully compatible with other Matrix clients and projects in addition to the official client.
 
-
 So: exciting times for Matrix.  Needless to say, if you work on Open Government projects in other countries, please get in touch - we're seeing that Matrix really is a sweet spot for these sort of use cases and we'd love to help get other deployments up and running.  We're also hoping it's going to help iron out many of the UX kinks we have in Riot.im today as we merge stuff back. We'd like to thank DINSIC (the Department responsible for the project) for choosing Matrix, and can't wait to see how the project progresses!
-
 
 <a href="/blog/wp-content/uploads/2018/04/CP_messagerie_instantanee_Etat.pdf"><img class="aligncenter size-large wp-image-3082" src="/blog/wp-content/uploads/2018/04/dinsic.jpg" alt="" width="620" height="877" /></a>
 

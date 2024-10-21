@@ -24,7 +24,7 @@ The only viable solution to this is for organisations building on Matrix to cont
 
 As a reminder, the work the [Foundation](https://matrix.org/foundation) does today for the benefit of the Matrix includes:
 
-* Publishing the[ Matrix Specification](https://spec.matrix.org)
+* Publishing the[Matrix Specification](https://spec.matrix.org)
 * Organising the Matrix Spec Core Team, responsible for reviewing and evolving the protocol.
 * Writing roughly half the Matrix Spec Change [proposals](https://spec.matrix.org/proposals).
 * Developing [Synapse](https://github.com/matrix-org/synapse), the Python matrix homeserver implementation
@@ -49,7 +49,7 @@ As a reminder, the work the [Foundation](https://matrix.org/foundation) does tod
 * Developing open source authentication mechanisms and integrations for Matrix ([OIDC](https://areweoidcyet.com))
 * Developing decentralised Video/VoIP conferencing servers on Matrix ([waterfall](github.com/matrix-org/waterfall))
 * Developing decentralised Video/VoIP client components on Matrix ([matrixRTC](https://github.com/matrix-org/matrix-js-sdk/pull/2553))
-* Developing showcase "beyond chat" implementations of Matrix such as [Third Room](https://thirdroom.io) 
+* Developing showcase "beyond chat" implementations of Matrix such as [Third Room](https://thirdroom.io)
 * Developing moderation tooling and applying it to matrix.org ([mjolnir](https://github.com/matrix-org/mjolnir) and much more)
 * Publishing moderation reputation lists for the benefit of the wider community
 * Developing integration test suites for Matrix compatibility testing ([sytest](github.com/matrix-org/sytest), [complement](https://github.com/matrix-org/complement), [trafficlight](https://github.com/matrix-org/trafficlight))
@@ -66,7 +66,6 @@ As a reminder, the work the [Foundation](https://matrix.org/foundation) does tod
 * Running free public bridges to networks such as IRC networks and XMPP.
 
 This list is not remotely exhaustive (turns out there are over 240 projects in the matrix.org GitHub org!) but it serves to illustrate the sheer scale of work that the Foundation performs today.  Keeping the core team funded to work on Matrix as our day job is critical for Matrix’s long-term success, and so we **really** hope that organisations depending on Matrix (or passing philanthropists who appreciate Matrix’s value) will drop a line to [funding@matrix.org](mailto:funding@matrix.org) and help keep the show on the road.
-
 
 ### Turbocharging Matrix
 
@@ -101,7 +100,6 @@ Thirdly, we’ve been pushing ahead on implementing Decentralised MLS as a next-
 
 Finally, we’ve been working hard on completely reworking the overall UX of how E2EE should work in Matrix clients - specifically, requiring users to cross-sign their devices in order to use E2EE, and so end up in a much higher trust world (alongside Trust On First Use). Can’t wait to finally simplify the E2EE UX!
 
-
 ### All new features
 
 It’s not all been performance and stability work this year - there have been some large areas of feature work happening too.
@@ -112,7 +110,6 @@ Another big project in 2022 has been to create a general purpose Rich Text Edito
 
 Location Sharing was another feature which landed in 2022 - powered by [MSC3488](https://github.com/matrix-org/matrix-spec-proposals/pull/3488) and [MSC3489](https://github.com/matrix-org/matrix-spec-proposals/pull/3489), and implemented in matrix-{js,ios,android}-sdk in Element Web/iOS/Android, letting users share static and live locations and view them on an OpenStreetMap compatible map tileserver of their server’s choice. The Live Location Sharing is controversial in that it stores location data in the room history (and as such is hidden behind a labs flag on Element), but should eventually be replaced by [MSC3672](https://github.com/matrix-org/matrix-spec-proposals/pull/3672) to share locations are custom ephemeral events instead (once custom EDUs land) in the spec.  Around the same time, Polls also went live thanks to [MSC3381](https://github.com/matrix-org/matrix-spec-proposals/pull/3381) - it’s worth noting that both Location Sharing and Polls are excellent examples of “extensible events” in the wild: ensuring that clients which understand the custom event type will render them appropriately, but letting other clients fall back to showing them as simple timeline events.
 
-
 ### Open ID Connect
 
 The transition to using Open ID Connect for Matrix authentication has been progressing steadily throughout 2022 - with Third Room being the first OIDC-native Matrix client, closely followed by Element X. [matrix-authentication-service](https://github.com/matrix-org/matrix-authentication-service) now exists as a basic OIDC identity provider suitable for being linked into Synapse, and meanwhile Third Room demonstrates how you can integrate Keycloak as a third party IDP (complete with reCAPTCHA and guest access!).  The team also went on a very exciting detour to figure out how to perform login-and-E2EE-setup in a single operation by scanning a QR code ([MSC3906](https://github.com/matrix-org/matrix-spec-proposals/pull/3906)), and how it might integrate into OIDC in future.
@@ -120,7 +117,6 @@ The transition to using Open ID Connect for Matrix authentication has been progr
 Element X looks set to be the showcase for native OIDC in a typical Matrix client going forwards, so watch this space to see how it feels!
 
 You can keep track of the inexorable transition to OIDC over at [https://areweoidcyet.com](https://areweoidcyet.com).
-
 
 ### VoIP
 
@@ -132,7 +128,6 @@ There’s only one catch, which is that Element Call is still in (very very late
 
 Even better, the plan is for Element X to rely entirely on embedding Element Call for VoIP - so we should be able to jump forwards pretty rapidly to having excellent native multiparty VoIP and video rooms on mobile as well as on Web.  So, once Element Call exits beta, everything should follow.  Just for a change, we’re aiming to get this done by the end of January - but there are a lot of unknown unknowns still flying around, so watch this space…
 
-
 ### IETF & MIMI
 
 Another massive new initiative this year has been the process of proposing Matrix to the IETF as a candidate for use in interoperable instant messaging standardisation.  The [MIMI (More Instant Messaging Interoperability) working group](https://datatracker.ietf.org/group/mimi/about/) emerged earlier in the year within IETF as an initiative to define how MLS could be used to interoperate between different instant messaging silos - as shortly to be required by the [Digital Markets Act](https://matrix.org/blog/2022/03/29/how-do-you-implement-interoperability-in-a-dma-world).
@@ -141,13 +136,11 @@ One of the things that MIMI aims to do is to define a common application layer p
 
 The next step here is to re-express the relevant bits of the current Matrix spec as self-contained IETF Drafts (rather than backreferencing the current spec from the drafts).  The idea is that the normal Matrix spec will continue to evolve much as it always has, but we’ll effectively donate a Long Term Supported dialect of it to IETF which can then evolve according to IETF process and be immortalise as RFCs for use in MIMI.  We’ll then backport those changes into spec.matrix.org in order to avoid fragmentation, while retaining the same ability we have to rapidly iterate and extend Matrix with MSCs.  This work is well under way (taking opportunity to use [Extensible Events](https://github.com/matrix-org/matrix-spec-proposals/blob/matthew/msc1767/proposals/1767-extensible-events.md) from the outset!), and we should see explosions of further IETF Drafts emanating from Travis as 2023 progresses.
 
-
 ### Trust & Safety
 
 2022 saw a real uptick in spam and abuse across Matrix, and there have been some valiant attempts to improve our moderation tooling over the course of the year.  Unfortunately it hasn’t come together as rapidly as we might have hoped, however, and we’ve seen several large communities give up on Matrix and move back to Discord thanks in part to needing better anti-abuse mechanisms.
 
 In 2023 we’re resetting our trust & safety work, with Mjolnir dev returning to its original development team, and we’ll be working as tactically as possible to ensure that all communities on Matrix can easily block abuse using whatever mechanisms they need.
-
 
 ### P2P & Dendrite
 
@@ -156,7 +149,6 @@ Meanwhile, Dendrite (our second generation homeserver implementation) developmen
 The interesting plot twist is that Dendrite development has ended up increasingly focusing on embedded matrix server use cases - particularly to power Peer-to-Peer Matrix, where clients require a server to be embedded within them.  So while Synapse has ended up increasingly focusing on large-scale deployments, Dendrite has ended up pursuing smaller instances (which is ironic, given originally it was meant to be the other way round!).
 
 P2P Matrix work has been progressing well too - you can follow the blow-by-blow updates over at [https://arewep2pyet.com](https://arewep2pyet.com). After a lot of back and forth evaluating hard-state routing versus soft-state routing in Pinecone, we’ve ended up converging on soft-state routing (which is chattier, but easier to reason about in terms of mitigating attacks). However, the chattiness means that it doesn’t scale as well as one might hope - so we’re now working on a “tiered” approach where separate Pinecone networks can be tiered together into one inter-network, giving us scalability at the expense of being slightly less decentralised. It’s fair to say that the journey here has been pretty frustrating in its twists and turns, and sadly Neil Alexander chose to move on a few months ago. However, Devon has stepped up to fill his shoes as primary Pinecone and P2P wrangler, and is making amazing progress on the remaining work - firstly implementing [Store and Forward relaying](https://github.com/matrix-org/dendrite/pull/2917) in Dendrite so that today’s Pinecone networks can exchange messages even if the recipient node is offline.  Next up will be bridging P2P Matrix with today’s Matrix network - and then working on tiering to provide the scalability we need.  The expectation is that today’s serverside Dendrite instances will effectively turn into static pinecone peers, store and forwarding messages on behalf of P2P nodes, and providing tiering between respective pinecone subnets.
-
 
 ### Hydrogen & Chatterbox
 
@@ -167,7 +159,6 @@ The biggest change has been Hydrogen sprouting a separate SDK layer, letting the
 Hydrogen also added independent support for [MSC3401](https://github.com/matrix-org/matrix-spec-proposals/pull/3401) multiparty voice/video calling (albeit on a [branch](https://github.com/vector-im/hydrogen-web/pull/705)), letting us showcase heterogeneous Element Call &lt;-> Hydrogen group calling and prove MSC3401 as fit for purpose as a true open interoperable call signalling - and in turn Hydrogen SDK, complete with the multiparty voice/video calling, powers the Matrix engine within Third Room - our metaverse-on-Matrix platform.
 
 We’re looking forwards to Hydrogen continuing to reach full feature parity with Element over the next year, and popping up in increasingly unexpected places as everyone’s favourite embedded Matrix client!
-
 
 ### Third Room
 
@@ -181,13 +172,13 @@ We launched [Tech Preview 1 of Third Room](https://matrix.org/blog/2022/09/27/an
 
 If you want a quick sneak preview of the scripting capabilities on the horizon with a [very basic script](https://matrix.thirdroom.io/_matrix/media/r0/download/thirdroom.io/qFfvHcXNQkjeDjTpdMfPCniY) stored in the media repository, head over to [https://thirdroom.io/world/#surprise:thirdroom.dev](https://thirdroom.io/world/#surprise:thirdroom.dev) and click on the television ;)
 
-
 ### Conclusion
 
 So there you have it: it’s been a mixed year for Matrix, but at least the project itself is moving forwards faster than ever, for now. If you look back at the predictions from [last year’s holiday blog post](https://matrix.org/blog/2021/12/22/the-mega-matrix-holiday-special-2021#2022) you’ll see that most of them even came true. This year, we’ll keep the predictions simple: our plans for 2023 are to ensure that the Foundation is well funded, ship all of the step-change improvements in performance and usability which are currently in beta as rapidly as possible - and demonstrate for once and for all that Matrix can indeed punch its weight against the proprietary centralised alternatives.
 
 If you can afford it, please consider donating to the Matrix.org Foundation to support our work. The most efficient way to support us is to [donate via donorbox](https://donorbox.org/keep-matrix-exciting). Our Patreon is not going anywhere, so if you wish to keep supporting it there we're happy to count you in our supporters.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 [![](/images/donorbox.png)](https://donorbox.org/keep-matrix-exciting)
 
 Thanks for flying Matrix;

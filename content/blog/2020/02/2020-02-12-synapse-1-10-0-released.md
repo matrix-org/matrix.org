@@ -16,78 +16,56 @@ We've also included a temporary fix to address alias abuse. The idea is that unt
 
 Finally, as of this release Synapse validates ```client_secret``` parameters in the Client-Server API as per the spec. See [#6766](https://github.com/matrix-org/synapse/issues/6766) for details.
 
-
-Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.10.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
-
+Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.10.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 Changelog since Synapse 1.9.0
 
-Synapse 1.10.0 (2020-02-12)
-===========================
+## Synapse 1.10.0 (2020-02-12)
 
 **WARNING to client developers**: As of this release Synapse validates `client_secret` parameters in the Client-Server API as per the spec. See [\#6766](https://github.com/matrix-org/synapse/issues/6766) for details.
 
-Updates to the Docker image
----------------------------
+### Updates to the Docker image
 
 - Update the docker images to Alpine Linux 3.11. ([\#6897](https://github.com/matrix-org/synapse/issues/6897))
 
+## Synapse 1.10.0rc5 (2020-02-11)
 
-Synapse 1.10.0rc5 (2020-02-11)
-==============================
-
-Bugfixes
---------
+### Bugfixes
 
 - Fix the filtering introduced in 1.10.0rc3 to also apply to the state blocks returned by `/sync`. ([\#6884](https://github.com/matrix-org/synapse/issues/6884))
 
-Synapse 1.10.0rc4 (2020-02-11)
-==============================
+## Synapse 1.10.0rc4 (2020-02-11)
 
 This release candidate was built incorrectly and is superseded by 1.10.0rc5.
 
-Synapse 1.10.0rc3 (2020-02-10)
-==============================
+## Synapse 1.10.0rc3 (2020-02-10)
 
-Features
---------
+### Features
 
 - Filter out `m.room.aliases` from the CS API to mitigate abuse while a better solution is specced. ([\#6878](https://github.com/matrix-org/synapse/issues/6878))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Fix continuous integration failures with old versions of `pip`, which were introduced by a release of the `zipp` library. ([\#6880](https://github.com/matrix-org/synapse/issues/6880))
 
+## Synapse 1.10.0rc2 (2020-02-06)
 
-Synapse 1.10.0rc2 (2020-02-06)
-==============================
-
-Bugfixes
---------
+### Bugfixes
 
 - Fix an issue with cross-signing where device signatures were not sent to remote servers. ([\#6844](https://github.com/matrix-org/synapse/issues/6844))
 - Fix to the unknown remote device detection which was introduced in 1.10.rc1. ([\#6848](https://github.com/matrix-org/synapse/issues/6848))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Detect unexpected sender keys on remote encrypted events and resync device lists. ([\#6850](https://github.com/matrix-org/synapse/issues/6850))
 
+## Synapse 1.10.0rc1 (2020-01-31)
 
-Synapse 1.10.0rc1 (2020-01-31)
-==============================
-
-Features
---------
+### Features
 
 - Add experimental support for updated authorization rules for aliases events, from [MSC2260](https://github.com/matrix-org/matrix-doc/pull/2260). ([\#6787](https://github.com/matrix-org/synapse/issues/6787), [\#6790](https://github.com/matrix-org/synapse/issues/6790), [\#6794](https://github.com/matrix-org/synapse/issues/6794))
 
-
-Bugfixes
---------
+### Bugfixes
 
 - Warn if postgres database has a non-C locale, as that can cause issues when upgrading locales (e.g. due to upgrading OS). ([\#6734](https://github.com/matrix-org/synapse/issues/6734))
 - Minor fixes to `PUT /_synapse/admin/v2/users` admin api. ([\#6761](https://github.com/matrix-org/synapse/issues/6761))
@@ -99,15 +77,11 @@ Bugfixes
 - Fix bug where Synapse didn't invalidate cache of remote users' devices when Synapse left a room. ([\#6801](https://github.com/matrix-org/synapse/issues/6801))
 - Fix waking up other workers when remote server is detected to have come back online. ([\#6811](https://github.com/matrix-org/synapse/issues/6811))
 
-
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Clarify documentation related to `user_dir` and `federation_reader` workers. ([\#6775](https://github.com/matrix-org/synapse/issues/6775))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Record room versions in the `rooms` table. ([\#6729](https://github.com/matrix-org/synapse/issues/6729), [\#6788](https://github.com/matrix-org/synapse/issues/6788), [\#6810](https://github.com/matrix-org/synapse/issues/6810))
 - Propagate cache invalidates from workers to other workers. ([\#6748](https://github.com/matrix-org/synapse/issues/6748))

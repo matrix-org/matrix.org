@@ -69,6 +69,7 @@ A short Matrix Live where we can see the goodness coming to Element very shortly
 >
 > This MSC attempts to optionally add that metadata to messages, with the crucial goal of preventing that metadata from being faked (which could be dangerous). Check if out if that's something that interests you!
 >
+> <!-- markdownlint-disable-next-line no-alt-text -->
 > ![](20220909-spec.png)
 
 ## Dept of Servers 🏢
@@ -146,13 +147,13 @@ Desktop client for Matrix using Qt and C++17.
 > ## Highlights
 >
 > * Community editing support 🤼
->   - You can now create communities.
->   - You can add and remove rooms to and from communities in various ways.
+>     * You can now create communities.
+>     * You can add and remove rooms to and from communities in various ways.
 > * Prettier joins ✨
->   - You can now see the avatar, title, topic and member count of the room you
+>     * You can now see the avatar, title, topic and member count of the room you
 >     are trying to join.
->   - You can see if a room requires knocking or can be joined directly.
->   - Requires MSC3266 support from your server.
+>     * You can see if a room requires knocking or can be joined directly.
+>     * Requires MSC3266 support from your server.
 >
 > ## Features
 >
@@ -203,6 +204,7 @@ Desktop client for Matrix using Qt and C++17.
 > FluffyChat 1.6.4 has been released. 🥳 This time it is only a minor bugfix release which also updates translations and some dependencies. The app now tries to automatically request keys for undecryptable messages and displays a detailed explanation why a message is unable to decrypt, when clicking on it.
 >
 > Full changelog:
+>
 > * Translated using Weblate (Chinese (Simplified)) (Eric)
 > * Translated using Weblate (Estonian) (Priit Jõerüüt)
 > * Translated using Weblate (Galician) (Xosé M)
@@ -216,6 +218,7 @@ Desktop client for Matrix using Qt and C++17.
 > * feat: Automatic key requests and better key error dialog (Christian Pauly)
 > * fix: Styling and notification settings (Christian Pauly)
 > * fix: add missing command localizations (Christian Pauly)
+> <!-- markdownlint-disable-next-line no-alt-text -->
 > ![](/blog/img/EHiFOtiHUqDdSfslEajVCmMf.png)
 
 ### Element ([website](https://element.io))
@@ -254,6 +257,7 @@ Secure and independent communication for iOS, connected via Matrix. Come talk wi
 > * Also starting with this release, Direct Message rooms will only be created when the first message is sent
 > * In ElementX land we fixed the last issues on sliding sync, the timeline can now handle edits, redactions and reactions, we’re implementing proper signing out and started adding more timeline actions like copying permalinks and replies.
 >
+> <!-- markdownlint-disable-next-line no-alt-text -->
 > ![](20220909-ios.gif)
 
 ### Element Android ([website](https://github.com/vector-im/element-android))
@@ -284,7 +288,7 @@ Native Decentralised End-to-end Encrypted Group Calls in Matrix, as a standalone
 >
 > ❓ Please help us test our new integration of Element Call into Element Web.
 >
-> (Details in https://matrix.to/#/#element-community-testing:matrix.org)
+> (Details in <https://matrix.to/#/#element-community-testing:matrix.org>)
 
 ## Dept of SDKs and Frameworks 🧰
 
@@ -342,7 +346,7 @@ Matrix server setup using Ansible and Docker
 
 [imbev](https://matrix.to/#/@imbev:matrix.org) reports
 
-> matrix-rss-bridge is a bridge for reading RSS feeds in Matrix rooms. You can find the repository at https://gitlab.com/imbev/matrix-rss-bridge
+> matrix-rss-bridge is a bridge for reading RSS feeds in Matrix rooms. You can find the repository at <https://gitlab.com/imbev/matrix-rss-bridge>
 >
 > ### Setup
 >
@@ -385,6 +389,7 @@ Matrix server setup using Ansible and Docker
 Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
 
 ### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+
 Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|
@@ -401,6 +406,7 @@ Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience th
 |10|rom4nik.pl|875|
 
 ### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+
 Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|

@@ -22,10 +22,9 @@ Focused on libQuotient, I've also [added changes to Quaternion client](https://g
 I've reused libQtOlm, which is a Qt wrapper to the matrix olm library and [contributed to provide better compatibility during its building and deployment](https://gitlab.com/b0/libqtolm/merge_requests?scope=all&utf8=%E2%9C%93&state=all&author_username=aa13q).
 This also required to dive into the olm library itself and provide [minor patch](https://gitlab.matrix.org/matrix-org/olm/commit/aa0c9ab6b51d182cb78ab4cc75c81c0054765bde) for the olm CMake files too.
 
-
 So, the basic structure of the project changed a bit, libQtOlm was added as a dependency to support libolm:
 
-```
+```txt
                               +--------------------------------------------+
                               |   Quaternion/Spectral/Telepathy|Tank/etc   |
 +------------------+          +--------------------------------------------+
@@ -46,6 +45,7 @@ During the coding period, I've resorted to [the specification](https://matrix.or
 ## Future work
 
 Talking about future work, the status is going to be captured at [libQuotient project board](https://github.com/quotient-im/libQuotient/projects). Next steps are:
+
 - Managing devices list for users in the room
 - Sending encrypted messages
 
@@ -61,7 +61,7 @@ From the beginning of the project, I've realized I'm very lucky since I've got a
 
 However, planning and updating the plan were my weak points, where I've made key mistakes, such as poor combination with my regular part-time job. And I definitely should have reserved a small vacation at least for the final period of the project to handle tasks better.
 
-In the end, I've managed to debug the mistakes and provided encrypted messages receiving that could already be used at the clients. Also, I evolved my skills and dived into the megolm E2EE subject. I'm willing to continue my contribution to develop libQuotient as full-featured Qt-based Matrix library. 
+In the end, I've managed to debug the mistakes and provided encrypted messages receiving that could already be used at the clients. Also, I evolved my skills and dived into the megolm E2EE subject. I'm willing to continue my contribution to develop libQuotient as full-featured Qt-based Matrix library.
 
 In general, I am not disappointed. I'm wishing luck to all the future students who are reading this. I'm happy to receive support and contribute to an international open project not only for myself, but also for the other developers and users.
 

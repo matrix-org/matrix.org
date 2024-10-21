@@ -28,8 +28,8 @@ You must be available in person in Brussels to present your talk.
 
 The talks can follow one of the two formats:
 
-* 20 min talk + 10 min Q&A, for topics that can be covered briefly
-* 50 min talk + 10 min Q&A for more complex subjects which need more focus
+- 20 min talk + 10 min Q&A, for topics that can be covered briefly
+- 50 min talk + 10 min Q&A for more complex subjects which need more focus
 
 We strongly encourage you to prepare a demo when it makes sense, so people can actually see what your work looks like in practice.
 
@@ -44,5 +44,3 @@ Proposals must be submitted on FOSDEM's conference management system: <https://p
 We expect to receive more requests than we have slots available. The devroom organisers will be reviewing the proposals and accepting them based on the potential positive impact the project has on Matrix, as defined in the Mission section of <https://matrix.org/foundation>.
 
 If a project proposal has been turned down, it doesn't mean we don't believe it has good potential. Maintainers are invited to join the <https://matrix.to/#/#twim:matrix.org> Matrix room to give it some visibility.
-
-

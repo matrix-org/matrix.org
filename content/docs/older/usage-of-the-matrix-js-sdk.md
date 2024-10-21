@@ -35,7 +35,7 @@ Before we start, make sure you have Node.js and NPM installed: follow
 instructions at [nodejs.org](https://nodejs.org/) for your platform. Then
 create a new directory to work in:
 
-```
+```bash
 mkdir my-first-matrix-client
 cd my-first-matrix-client
 ```
@@ -45,7 +45,7 @@ cd my-first-matrix-client
 Once you're ready, the first thing to do is install the matrix-js-sdk from
 NPM:
 
-```
+```bash
 npm install matrix-js-sdk
 ```
 
@@ -235,6 +235,5 @@ There is much, much more to Matrix, the Client-Server API and the matrix-js-sdk,
 but this guide should give some understanding of simple usage. In subsequent
 guides we'll cover more detail and also explore projects you can build on top,
 such as IoT controls and chatbot interfaces. For now you can take a look at
-[other examples in the matrix-js-sdk itself
-](https://github.com/matrix-org/matrix-js-sdk/tree/master/examples), and also
+[other examples in the matrix-js-sdk itself](https://github.com/matrix-org/matrix-js-sdk/tree/master/examples), and also
 the Matrix Client-Server API which it implements.

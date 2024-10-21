@@ -14,10 +14,9 @@ A few weeks ago we found ourselves in Brussels to participate in the second [sta
 
 The [DMA](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-markets-act-ensuring-fair-and-open-digital-markets_en) is new antitrust/competition regulation from Europe which came into force in November, whose objective is to make digital markets more competitive by forcing gatekeepers (i.e. large tech companies) to reconsider some of their anti-competitive or self-preferencing practices. Gatekeepers are defined as companies which have a clear position of influence in a given market (based on revenue / market cap / number of users thresholds), and “an entrenched and durable position”. The process for designating which companies count as gatekeepers will start in May 2023.
 
-The DMA touches upon different key topics, from self-preferencing behaviour to app store management practices - but most importantly includes interoperability for “number-independent interpersonal communication services” (NIICS), otherwise known as chat and voice/video calling and conferencing services (social media was left out for now). 
+The DMA touches upon different key topics, from self-preferencing behaviour to app store management practices - but most importantly includes interoperability for “number-independent interpersonal communication services” (NIICS), otherwise known as chat and voice/video calling and conferencing services (social media was left out for now).
 
 [This particular workshop](https://competition-policy.ec.europa.eu/dma/dma-workshops/interoperability-workshop_en) was focused on the latter: interoperability between messaging services, with the aim of getting the different stakeholders of the industry in the same place to discuss how the legislation could be implemented.  The whole idea is to figure out a practical way in which WhatsApp could interoperate with iMessage, Google Messages and others, creating an interoperable communication network where users are no longer locked into communication silos and pick their preferred service provider without compromising on who they can talk to. \
-
 
 About 900 people participated online, and around 80 people were present in person: the maximum the room could hold. It was particularly fun to see representatives from the whole industry turning up in person, including folks from XMPP, MIMI (the new IETF working group on messaging interoperability), MLS, us from Matrix obviously (alongside Matrix ecosystem representatives from Beeper and NeoChat!) - all together with the Body of European Regulators for Electronic Communications ([BEREC](https://www.berec.europa.eu/en/berec/what-is-berec)), civil society representatives (like the Federation of German Consumer Organisations ([VZBV](https://VZBV.de)) and European Digital Rights ([EDRi](https://edri.org))), mobile network operators, local network agencies, and obviously some of those who are likely to be designated as gatekeepers, such as Meta, Apple and Google.
 
@@ -26,7 +25,6 @@ About 900 people participated online, and around 80 people were present in perso
 ## So what was discussed?
 
 All of the workshop proceeds were livestreamed and archived by European Commission’s [webcasting service](https://webcast.ec.europa.eu/dma-workshop-2023-02-27) and [released](https://commission.europa.eu/legal-notice_en#copyright-notice) under the terms of the Creative Commons Attribution 4.0 International (CC BY 4.0) licence, so we’ve taken the liberty of republishing them split up into chapters so that folks can quickly refer to the discussion.
-
 
 ### Panel 1: Introduction to horizontal interoperability between messaging services: goals, challenges and potential solutions
 
@@ -65,7 +63,6 @@ The first panel focused on setting up the scene and highlighting the challenges 
 * [01:51:11](https://www.youtube.com/watch?v=yoKjXN3G8a8&t=6671s) Question - What about account portability, for users switching from one platform to another? (University of Rome)
 * [01:54:53](https://www.youtube.com/watch?v=yoKjXN3G8a8&t=6893s) Question - Is contact information part of the data gatekeepers need to share? (XMPP)
 * [01:56:12](https://www.youtube.com/watch?v=yoKjXN3G8a8&t=6972s) Closing
-
 
 ### Panel 2: Exploring the technical aspects of interoperability (Part 1): end-to-end encryption, security of the service
 
@@ -133,7 +130,6 @@ You can see the whole panel split into the various sections below:
 * [01:53:00](https://www.youtube.com/watch?v=FDnUJXzVn3s&t=6780s) What about interoperability of features like custom emojis, removing messages, etc? (online)
 * [01:57:42](https://www.youtube.com/watch?v=FDnUJXzVn3s&t=7062s) What does the rest of the panel thinks about the guarantees they can provide when a message leaves a system? (XMPP)
 
-
 ### Panel 3: Exploring the technical aspects of interoperability (II): data collection, identification of users, quality of interoperable services, system management, integrity of the service/prevention of misuse
 
 Finally, we launched into the third and final session of the day - a second technical panel to dig into questions of identity, usability, data privacy, consent and anti-abuse in a DMA world.  Relative to the second panel, there were more questions than answers here, as the panellists discussed whether users would need to consent or opt-in/opt-out of interoperability, and debated the various data privacy implications of DMA.  The panel starred Stephen Hurley from Meta again, [Lucas Verney](https://www.linkedin.com/in/lucas-verney) from [PEReN](https://www.peren.gouv.fr), Markus Klein from [Bundesnetzagentur](https://www.bundesnetzagentur.de/) and [Rohan Mahy](https://rohan.com/) from [Wire](https://wire.com) introducing the [MIMI working group](https://datatracker.ietf.org/group/mimi) at IETF.
@@ -184,7 +180,6 @@ Finally, we launched into the third and final session of the day - a second tech
 * [01:27:40](https://www.youtube.com/watch?v=ZtRmAaHUxWw&t=5260s) Does Meta expect to provide a EU-only and a global version of their messengers?
 * [01:29:55](https://www.youtube.com/watch?v=ZtRmAaHUxWw&t=5395s) The views expressed here regarding consent are concerning when it comes to self-hosting
 * [01:36:20](https://www.youtube.com/watch?v=ZtRmAaHUxWw&t=5780s) Closing
-
 
 ## Conclusion
 

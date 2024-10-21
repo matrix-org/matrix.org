@@ -41,11 +41,11 @@ The UI for adding widgets to a room in Riot is currently via Modular - the new 
 
 This is very much the minimum viable implementation of widgets: the stuff left to do includes:
 <ul>
- 	<li>Adding them to the spec, and getting clients other than Riot using them!</li>
- 	<li>Supporting better layouts (especially to allow for more screen real-estate) and more than 2 widgets</li>
- 	<li>Ability to add widgets directly, for situations where Modular isn't available</li>
- 	<li>Speccing APIs for widgets to interact directly with the host client - with the appropriate permissions model</li>
- 	<li>Adding lots more prepackaged widgets to the Modular store!</li>
+  <li>Adding them to the spec, and getting clients other than Riot using them!</li>
+  <li>Supporting better layouts (especially to allow for more screen real-estate) and more than 2 widgets</li>
+  <li>Ability to add widgets directly, for situations where Modular isn't available</li>
+  <li>Speccing APIs for widgets to interact directly with the host client - with the appropriate permissions model</li>
+  <li>Adding lots more prepackaged widgets to the Modular store!</li>
 </ul>
 Modular comes with 6 widgets ready to go: Grafana, Jitsi, Etherpad, YouTube, Google Docs and Custom Widget (which lets you add any arbitrary URL into the room). The most exciting of these is probably Jitsi, which provides Hangouts-style video conferencing into any room.  This provides a welcome alternative to our 'native' conferencing functionality which sadly got stuck in a permanent early beta - and includes full screensharing as well!  The only catch is that it hasn't been released on iOS yet, and Android is still be to be implemented - but the experience is a still massive improvement over what we've had historically.  Here's a screenshot of some of the core team doing a 6-way conference with the native Jitsi functionality now included in Riot/iOS!
 

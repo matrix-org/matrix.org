@@ -96,7 +96,7 @@ from [TravisR].
 First, we'll need a new instance of the Bot SDK, which we can obtain from NPM as
 follows:
 
-```
+```bash
 npm install matrix-bot-sdk
 ```
 
@@ -202,20 +202,20 @@ Pi](https://www.raspberrypi.org/documentation/usage/terminal/) (possibly using a
 graphical desktop if one is installed, or using ssh) and enter this command to
 access the correct directory:
 
-```
+```bash
 cd /etc/systemd/system
 ```
 
 Now, we'll use vim to create a file describing the service we want to create:
 
-```
+```bash
 vim elizabot.service
 ```
 
 Finally, enter the following text (you may need to change paths depending on
 where your script is located):
 
-```
+```txt
 [Unit]
 Description=Elizabot
 After=multi-user.target
@@ -230,7 +230,7 @@ WantedBy=multi-user.target
 
 ... and run the following to enable the service:
 
-```
+```bash
 sudo systemctl enable elizabot.service
 ```
 
@@ -241,9 +241,8 @@ more attention and understanding from people who see it.
 
 ![Physical Pi](/docs/legacy/elizabot-pi.png)
 
-To learn more about Matrix development, take a look at the [Matrix Guides
-](https://matrix.org/docs/guides) page, and join us in the [
-#matrix-dev:matrix.org](https://matrix.to/#/#matrix-dev:matrix.org) room!
+To learn more about Matrix development, take a look at the [Matrix Guides](https://matrix.org/docs/guides) page,
+and join us in the [#matrix-dev:matrix.org](https://matrix.to/#/#matrix-dev:matrix.org) room
 
 [matrix-bot-sdk]: https://github.com/turt2live/matrix-bot-sdk
 [TravisR]: https://github.com/turt2live

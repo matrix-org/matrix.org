@@ -94,4 +94,3 @@ Klimpel](https://github.com/dklimpel), [Ashish
 Kumar](https://github.com/ashfame), [Famedly](https://www.famedly.com/) and
 [Beeper](https://www.beeper.com/), as well as anyone helping us make Synapse
 better by sharing their feedback and reporting issues.
-

@@ -14,7 +14,7 @@ The new version of the API is `r0`; this should be used in paths where `v1` used
 to appear. Additionally, the `/api` path component has now been removed. API
 endpoint paths are now:
 
-```
+```txt
 POST /_matrix/client/r0/register
 GET /_matrix/client/r0/login
 ```
@@ -38,7 +38,7 @@ the `GET` method as before.
 
 The following endpoints are now deprecated and replaced by the `/sync` API:
 
-```
+```txt
 /initialSync
 /events
 /rooms/:roomId/initialSync
@@ -51,12 +51,12 @@ The return value takes a different structure to that from the previous
 `/initialSync` API. For full details see the API documentation, but the
 following summary may be useful to compare with `v1`:
 
-> -   `/initialSync` returned a `state` key containing the most recent
+> - `/initialSync` returned a `state` key containing the most recent
 >     state in the room, whereas the new `/sync` API's `state`
 >     corresponds to the room state at the start of the returned
 >     timeline. This makes it easier for clients to represent state
 >     changes that occur within the region of returned timeline.
-> -   In `/events`, if more events occurred since the `since` token than
+> - In `/events`, if more events occurred since the `since` token than
 >     the `limit` parameter allowed, then events from the start of this
 >     range were returned and the client had to perform another fetch to
 >     incrementally obtain more of them. In the `/sync` API the result
@@ -64,7 +64,7 @@ following summary may be useful to compare with `v1`:
 >     would be more events than the requested limit. If this occurs then
 >     the client can use the `prev_batch` token as a reference to
 >     obtaining more.
-> -   The `state` contained in the response to a `/sync` request that
+> - The `state` contained in the response to a `/sync` request that
 >     has a `since` parameter will contain only keys that have changed
 >     since the basis given in the `since` parameter, rather than
 >     containing a full set values.
@@ -73,7 +73,7 @@ The `/initialSync` API allowed a parameter called `limit` to limit the number of
 events returned. To apply this limit to the new `/sync` API, you can supply an
 ad-hoc filter:
 
-```
+```txt
 GET .../sync?filter={"room":{"timeline":{"limit:$limit}}}
 ```
 
@@ -81,7 +81,7 @@ There is no direct replacement for the per-room `/rooms/:roomId/initialSync`
 endpoint, but the behaviour can be recreated by applying an ad-hoc filter using
 the `filter` parameter to `/sync` that selects only the required room ID:
 
-```
+```txt
 GET .../sync?filter={"room":{"rooms":[$room_id]}}
 ```
 
@@ -93,7 +93,7 @@ room specially.
 
 The following endpoint is deprecated and has no direct replacement:
 
-```
+```txt
 /events/:eventId
 ```
 
@@ -113,6 +113,6 @@ locally.
 
 The following URLs have therefore been removed:
 
-```
+```txt
 POST .../rooms/:roomId/send/:messageType
 ```

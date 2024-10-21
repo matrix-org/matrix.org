@@ -22,13 +22,11 @@ The first machines upgraded only ran stateless workers and were trivial to upgra
 
 The machines that received the additional workers ended up being resource-starved. In the meantime, it took significant time to upgrade the free machine and bring its network back online before we could move the workers back to it to better share the load.
 
-
 ## Organizational cause
 
-Matrix.org is a historical and complex deployment that is difficult and costly to replicate entirely in a staging environment at this scale. It is also the largest deployment in the federation and has unique performance requirements. 
+Matrix.org is a historical and complex deployment that is difficult and costly to replicate entirely in a staging environment at this scale. It is also the largest deployment in the federation and has unique performance requirements.
 
 Through this upgrade process, gaps in the deployment documentation were identified and these gaps contributed to the upgrade taking longer than expected. The deployment specificity has now been properly documented, and we are confident that the next machines’ upgrade will be significantly faster.
-
 
 ## Lessons learned
 

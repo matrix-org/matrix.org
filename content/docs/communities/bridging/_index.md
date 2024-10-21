@@ -16,7 +16,9 @@ your Matrix rooms. Please refer to their documentation directly.
 
 Here you can see a bridged room from the Matrix and the Discord perspective.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](./from-matrix.png)
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](./from-discord.png)
 
 If you're interested in self-hosting your bridge or discovering all the Discord

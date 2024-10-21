@@ -31,7 +31,6 @@ A steep and steady growth comes with three significant issues:
 
 In short: everyone stands to benefit from Matrix.org not being a supermassive homeserver that is difficult to leave.
 
-
 ## Mindfulness of others
 
 One of the goals of the Matrix.org Foundation is to maximise the number of Matrix users in the open federation. Another goal is to make sure Matrix remains decentralised by increasing the number of servers in that same open federation.
@@ -44,29 +43,23 @@ We have made Matrix.org one of the most prominent entry points for people discov
 
 So then, how do we reconcile the need for ease of adoption with the goal of decentralisation?
 
-
 ## A way in and a way out
 
 Creating an account on Matrix.org is a typical first step in the Matrix user journey. Since agglomeration around a single instance is against the goals of Matrix and its Foundation, users need to have a way out and incentives to move.
 
 To move to another homeserver, a user needs to be able to pick a homeserver and move there.
 
-
 ### Picking a homeserver
 
 Matrix community member Austin Huang created [servers.joinmatrix.org](https://servers.joinmatrix.org) to list all the servers with open registrations where people could find a new home. I am working on creating an official and curated version. We need the instance picker to work on Matrix.org's website, and provide data that the client apps can reuse and present to users who want to move away from Matrix.org.
-
 
 ### Moving to the new homeserver
 
 The Foundation will implement an account migration tool to allow people to migrate to another server. A proper portable identity mechanism would be better - however, the Foundation had to pause its development due to a lack of funding. Such a mechanism would also rely on a new room version. It would only allow migrating conversations that happened after a room upgrade to that hypothetical new version, which results in data loss.
 
-
 ## The most reasonable solution
 
 There are alternatives to a prominent onboarding homeserver like the Matrix.org homeserver. We don't find any of them satisfactory:
-
-
 
 * Picking a server randomly when a user wants to sign up in the app is confusing and has a lot of security implications. This is not acceptable.
 * Forcing the user to choose a server when they sign up is a highly cumbersome process that does not respect the user's time and resources.

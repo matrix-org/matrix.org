@@ -42,6 +42,7 @@ safe. The key unlocking that digital safe is called a Security Key. Element
 walks you through the set-up of this digital safe called "Secure Backup" when
 you click on Continue on the top-left pop-up.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](create-room-set-up-encryption-highlighted.png)
 
 You can either let Element generate a Security Key that is difficult to guess to
@@ -49,6 +50,7 @@ secure your digital safe, or pick your own. Unless you are an expert and know
 exactly what you are doing, in most cases it's better to let Element generate it
 for you. Leave "Generate a Security Key" ticked, and click on "Continue".
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](setup-safe-generate-security-key.png)
 
 Element will display the Security Key it has generated. This is a unique and
@@ -63,6 +65,7 @@ you can read encrypted messages.
 Make sure to download and print the security key before clicking on Continue, as
 it will never be displayed again and cannot be recovered.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](setup-safe-save-security-key.png)
 
 ### Sending your first messages
@@ -71,6 +74,7 @@ Voilà, you're in your own group chat! In the Matrix jargon, chats are called
 rooms. Let's give it a try immediately and type a message, then either press the
 return key or click on the send button.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](experiment-send-first-message.png)
 
 You can see your message in the room! That large area where your message appears
@@ -79,6 +83,7 @@ made a typo! Fortunately, Matrix supports message edits, either by pressing the
 up arrow of the keyboard or by clicking the pen icon when hovering the mouse
 over the message we want to edit.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](experiment-click-edit.png)
 
 Fixing the typo and either pressing return or clicking "Save" will update the
@@ -88,6 +93,7 @@ But now you realise… this message doesn't add much to the conversation. Maybe
 it's worth removing it entirely? To do so, hover the mouse over the message you
 want to remove, and click on the bin.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](experiment-hover-and-bin.png)
 
 There are other fun ways to handle a conversation in Matrix, such as replies or
@@ -103,6 +109,7 @@ To invite friends to your group chat, click on the circled `i` on the top right
 corner. It opens the right panel. Click on "People" to display the list of
 members of this room: you should be the only one there for now.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](experiment-hover-and-bin.png)
 
 Click on "Invite to this room" on top of the people list, and a prompt will open
@@ -110,11 +117,13 @@ so you can invite your friends to join you in Matrix. If they're already on
 Matrix, enter their Matrix ID. If they're not, enter their email address and
 they will be invited to join.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](invite-name.png)
 
 The person you invited can either accept or decline the invite. If they accept
 it, you should see them joining the room. The more the merrier!
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](invite-hello.png)
 
 ## Keeping the group safe
@@ -127,6 +136,7 @@ troublemakers start being annoying, you can redact their messages. You can do it
 the same way you did it for your messages: hover the message, click on the three
 dots, and click on "Remove"
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](redact-menu.png)
 
 You can provide a reason why the message is redacted, but it's not strictly
@@ -136,6 +146,7 @@ If the person sent a lot of messages that need to be deleted, you can click on
 their avatar to open the details view in the right panel. Scroll to the bottom
 of the right panel and click on "Remove recent messages".
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](redact-redact-all.png)
 
 But sometimes removing the messages is not enough, and the troublemaker doesn't
@@ -143,6 +154,7 @@ want to be reasoned with. In such a case, you can remove them from the private
 group chat. To do so, click on their avatar in the timeline, scroll to the
 bottom of the right panel, and click on "Remove from room".
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](redact-kick.png)
 
 ### Getting help keeping the group safe
@@ -154,6 +166,7 @@ technically called a "Power Level", or a "Role" in Element.
 With the "Default" role, people can only participate in the conversation.
 Element defines two other roles: "Moderator" and "Admin".
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](role.png)
 
 If you promote someone to "Moderator", they will be able to redact other people's

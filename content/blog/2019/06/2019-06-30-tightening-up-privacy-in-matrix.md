@@ -58,13 +58,13 @@ Specifically:
    [MSC2140](https://github.com/matrix-org/matrix-doc/pull/2140) for the gory
    details.
 
-Meanwhile, Riot is being updated to prompt the user to accept the IS & IM terms
-of use (if different to the HS's), and thus make it crystal clear to the user
-that they are using an IS & IM and that they have the option not to if desired - see https://github.com/vector-im/riot-web/issues/10167 and associated
-[issues](https://github.com/vector-im/riot-web/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Ap1+label%3Aprivacy+label%3Aphase%3A1+identity).
-This includes also explicitly prompting the user as to whether they want
-3PIDs they provide at registration to be discoverable, as per
-https://github.com/vector-im/riot-web/issues/10091.
+   Meanwhile, Riot is being updated to prompt the user to accept the IS & IM terms
+   of use (if different to the HS's), and thus make it crystal clear to the user
+   that they are using an IS & IM and that they have the option not to if desired - see <https://github.com/vector-im/riot-web/issues/10167> and associated
+   [issues](https://github.com/vector-im/riot-web/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Ap1+label%3Aprivacy+label%3Aphase%3A1+identity).
+   This includes also explicitly prompting the user as to whether they want
+   3PIDs they provide at registration to be discoverable, as per
+   <https://github.com/vector-im/riot-web/issues/10091>.
 
 2. Riot on iOS & Android gives the option of scanning your local addressbook to
    discover which of your contacts are on Matrix.  The wording explaining this
@@ -78,7 +78,7 @@ https://github.com/vector-im/riot-web/issues/10091.
    contact details anyway by hashing as per
    [MSC2134](https://github.com/matrix-org/matrix-doc/pull/2134), which has all
    the details.  We're also adding an explicit lookup warning in Riot/Web, as
-   per https://github.com/vector-im/riot-web/issues/10093.
+   per <https://github.com/vector-im/riot-web/issues/10093>.
 
 3. There was a bug where Riot/Web was querying the Integration Manager every
    time you opened a room, even if that room had no integrations (actually, it
@@ -119,14 +119,14 @@ https://github.com/vector-im/riot-web/issues/10091.
    slightly increased the chances of calls working for users without a proper
    TURN server, but not by much - and rather than fall back to Google, we've
    decided to simply remove it from Riot (e.g.
-   https://github.com/matrix-org/matrix-ios-sdk/commit/24832a2b14fb72ae6f051d5aba40262d11eef65d).
+   <https://github.com/matrix-org/matrix-ios-sdk/commit/24832a2b14fb72ae6f051d5aba40262d11eef65d>).
    This means that VoIP might get less reliable for users who were relying on
    this fallback, but you really should be running your own TURN server anyway
    if you want VoIP to work reliably on your homeserver.
 
 6. We should make it clearer in Riot that device names are world-readable, and
    not just for the user's own personal reference. This is
-   https://github.com/vector-im/riot-web/issues/10216
+   <https://github.com/vector-im/riot-web/issues/10216>
 
 As you can see, much of the work on improving these issues is still in full
 swing, although some has already shipped.  As should also be obvious, these

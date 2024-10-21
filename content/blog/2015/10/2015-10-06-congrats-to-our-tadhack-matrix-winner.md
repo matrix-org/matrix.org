@@ -19,5 +19,4 @@ Adnan Baleh, Caterina Lazaro, Javier Garcia, Ernesto G. Grabwosky, Sergio Gil an
 
 [caption id="attachment_1307" align="aligncenter" width="1024"]<a href="http://blog.tadhack.com/2015/10/04/tadhack-mini-chicago-winners/"><img src="//matrix.org/blog/wp-content/uploads/2015/10/2015-10-04-16.30.09-1024x683.jpg" alt="Daniel presenting the HR-OS1 to team 'ProbatioNerds'" width="1024" height="683" class="size-full wp-image-1307" /></a> Daniel presenting the HR-OS1 to team 'ProbatioNerds' <em>(Photo courtesy of Alan Quayle)</em>[/caption]
 
-
 We keep being impressed by the quality of projects developed at TADHacks - remember, in practice you only have around 12 hours to work on your hack. Congrats to all who participated - and thanks to <a href="https://twitter.com/Alan_Quayle">Alan</a> for arranging it!

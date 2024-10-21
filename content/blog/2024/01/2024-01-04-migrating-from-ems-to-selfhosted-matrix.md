@@ -12,7 +12,7 @@ category = ["Guides"]
 
 I confess I'm awfully chuffed with myself as we return from the holiday break. I just completed a successful migration of my main Matrix account from managed hosting to a homeserver that I run for myself on a virtual private server (VPS).
 
-The whole experience has been illuminating, and there are some specific details that are timely for people like me who needed to migrate off of Element Matrix Services (EMS) as they pivot to focus on enterprise. 
+The whole experience has been illuminating, and there are some specific details that are timely for people like me who needed to migrate off of Element Matrix Services (EMS) as they pivot to focus on enterprise.
 
 Thus, this blog post. I'm going to share my experience in hopes that it'll help some folks with that migration!
 
@@ -65,7 +65,7 @@ These instructions are focused on setting up your homeserver, importing your dat
 * Dependencies are already addressed locally and remotely.
 * You don't have any bridges setup on EMS. (Their [docs](https://ems-docs.element.io/books/element-cloud-documentation/page/migrate-from-ems-to-self-hosted) cover what to do if you do have bridges.)
 * You've cloned the MDAD project locally and configured your playbook.
-  * You're using the default profile (Synapse, Element, Postgres, Coturn, Traefik, Let's Encrypt, and Exim) and, of the optional services, have opted to use matrix-media-repo (MMR).
+    * You're using the default profile (Synapse, Element, Postgres, Coturn, Traefik, Let's Encrypt, and Exim) and, of the optional services, have opted to use matrix-media-repo (MMR).
 * You've already set your target host in the MDAD project.
 * You've already put the `macaroon` and `pepper` keys from your EMS export into the MDAD project's `vars.yml`, under `matrix_synapse_macaroon_secret_key` and `matrix_synapse_password_config_pepper` respectively.
 * You're using a bare domain for your account handles (as in, not using a subdomain).
@@ -79,7 +79,7 @@ OK, with all that scene setting done, let's walk through the steps you'll need t
 
 From your local machine, run the Ansible playbook. All of the commands we run from the local machine are within the base directory of the MDAD project. Critically, we're only installing things – not starting any services yet.
 
-```
+```bash
 > just roles
 > ansible-playbook -i inventory/hosts setup.yml --tags=install-all
 ```
@@ -92,7 +92,7 @@ On your remote host, edit `/matrix/synapse/config/matrix.DOMAIN.signing.key` and
 
 Upload your database and media exports to your remote host by running these commands on your local machine.
 
-```
+```bash
 > rsync -Pav ~/dev/migration/DOMAIN-synapse-database.zip root@REMOTEHOST:/root/migration/
 > rsync -Pav ~/dev/migration/DOMAIN-media-DOMAIN.zip root@REMOTEHOST:/root/migration/
 ```
@@ -101,14 +101,14 @@ Upload your database and media exports to your remote host by running these comm
 
 On your remote host, run the following sequence of commands. These will convert the EMS database export to the format that the MDAD project supports importing, and prepares Postgres for the import.
 
-```
+```bash
 > cd ~/migration
 > unzip DOMAIN-synapse-database.zip
 ```
 
 Take note of the name of the directory that's extracted from the archive. It will be of the format `UNIQUEID-live-DOMAIN-synapse-database.dir` and that unique ID will be something we need to refer back to several times.
 
-```
+```bash
 > rm DOMAIN-synapse-database.zip
 > pg_restore –file=ems-export.sql UNIQUEID-live-DOMAIN-synapse-database.dir/
 > rm -fr UNIQUEID-live-DOMAIN-synapse-database.dir/
@@ -116,7 +116,7 @@ Take note of the name of the directory that's extracted from the archive. It wil
 
 Now that you've converted the EMS database export, let's prepare Postgres for some of the minor differences it will encounter when we run the import.
 
-```
+```bash
 > systemctl start matrix-postgres
 > /matrix/postgres/bin/cli
 > > CREATE ROLE rdsadmin;
@@ -128,13 +128,13 @@ Now that you've converted the EMS database export, let's prepare Postgres for so
 
 On your local machine, run this command to begin the import process on your remote host:
 
-```
+```bash
 > just run-tags import-postgres --extra-vars=server_path_postgres_dump=/root/migration/ems-export.sql --extra-vars=postgres_default_import_database=synapse
 ```
 
 Now, going back to the remote machine, let's make one change to the database to make sure the imported data is owned by the correct user:
 
-```
+```bash
 > /matrix/postgres/bin/cli
 > > \c synapse
 > > REASSIGN OWNED BY UNIQUEID TO synapse;
@@ -151,7 +151,7 @@ This step differs in key ways from the database import. The database import we d
 
 Here we go:
 
-```
+```bash
 > mv ~/migration/DOMAIN-media-DOMAIN.zip /matrix/matrix-media-repo/data/
 > cd /matrix/matrix-media-repo/data/
 > unzip DOMAIN-media-DOMAIN.zip
@@ -165,7 +165,7 @@ The import process will ask for a Machine ID. As it suggests, you can just enter
 
 To test if the import was successful, run the following command:
 
-```
+```bash
 > docker exec -it matrix-media-repo /usr/local/bin/gdpr_import -directory /data/UNIQUEID-live-DOMAIN-media-DOMAIN -verify
 ```
 
@@ -185,11 +185,11 @@ If your database and media imports have gone over successfully, you can safely s
 
 Here's the command to start your homeserver, which is meant to be run from your local machine:
 
-```
+```bash
 > ansible-playbook -i inventory/hosts setup.yml --tags=start
 ```
 
-## Have fun!
+## Have fun
 
 In my case, I had a pretty vanilla setup on EMS – no bridges or anything. But since migrating, I've started customizing things! There's a lot you can do with Matrix and the [MDAD project](https://github.com/spantaleev/matrix-docker-ansible-deploy/tree/master) makes it fairly painless to experiment.
 

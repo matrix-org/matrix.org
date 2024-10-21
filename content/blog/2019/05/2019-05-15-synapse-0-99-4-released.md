@@ -13,12 +13,9 @@ Hey ho Synapse release day.
 
 As ever, you can get the new update [here](https://github.com/matrix-org/synapse/releases/tag/v0.99.4) or any of the sources mentioned at [https://github.com/matrix-org/synapse](https://github.com/matrix-org/synapse). Note, Synapse is now available from PyPI, pick it up [here](https://pypi.org/project/matrix-synapse/). Also, check out our [Synapse installation guide page](https://matrix.org/docs/guides/installing-synapse)
 
+## Synapse 0.99.4 Changelog
 
-Synapse 0.99.4 Changelog
-========================
-
-Features
---------
+### Features
 
 - Add systemd-python to the optional dependencies to enable logging to the systemd journal. Install with `pip install matrix-synapse[systemd]`. ([\#4339](https://github.com/matrix-org/synapse/issues/4339))
 - Add a default .m.rule.tombstone push rule. ([\#4867](https://github.com/matrix-org/synapse/issues/4867))
@@ -38,9 +35,7 @@ Features
 - Move admin APIs to `/_synapse/admin/v1`. (The old paths are retained for backwards-compatibility, for now). ([\#5119](https://github.com/matrix-org/synapse/issues/5119))
 - Implement an admin API for sending server notices. Many thanks to @krombel who provided a foundation for this work. ([\#5121](https://github.com/matrix-org/synapse/issues/5121), [\#5142](https://github.com/matrix-org/synapse/issues/5142))
 
-
-Bugfixes
---------
+### Bugfixes
 
 - Avoid redundant URL encoding of redirect URL for SSO login in the fallback login page. Fixes a regression introduced in [#4220](https://github.com/matrix-org/synapse/pull/4220). Contributed by Marcel Fabian Krüger ("[zaugin](https://github.com/zauguin)"). ([\#4555](https://github.com/matrix-org/synapse/issues/4555))
 - Fix bug where presence updates were sent to all servers in a room when a new server joined, rather than to just the new server. ([\#4942](https://github.com/matrix-org/synapse/issues/4942), [\#5103](https://github.com/matrix-org/synapse/issues/5103))
@@ -60,9 +55,7 @@ Bugfixes
 - Limit the number of EDUs in transactions to 100 as expected by synapse. Thanks to @superboum for this work! ([\#5138](https://github.com/matrix-org/synapse/issues/5138))
 - Fix bogus imports in unit tests. ([\#5154](https://github.com/matrix-org/synapse/issues/5154))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Add test to verify threepid auth check added in #4435. ([\#4474](https://github.com/matrix-org/synapse/issues/4474))
 - Fix/improve some docstrings in the replication code. ([\#4949](https://github.com/matrix-org/synapse/issues/4949))
@@ -94,4 +87,3 @@ Internal Changes
 - Prevent an exception from being raised in a IResolutionReceiver and use a more generic error message for blacklisted URL previews. ([\#5155](https://github.com/matrix-org/synapse/issues/5155))
 - Run `black` on the tests directory. ([\#5170](https://github.com/matrix-org/synapse/issues/5170))
 - Fix CI after new release of isort. ([\#5179](https://github.com/matrix-org/synapse/issues/5179))
-

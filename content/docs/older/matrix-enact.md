@@ -23,8 +23,7 @@ very light by not including an SDK.
 
 ## Get Guest access_token
 
-Matrix allows for [guest access
-](https://matrix.org/docs/spec/client_server/latest.html#guest-access) by
+Matrix allows for [guest access](https://matrix.org/docs/spec/client_server/latest.html#guest-access) by
 providing an interface to register a new guest user and be immediately given an
 access token. To do this we call the `/register` endpoint with a query param
 `kind` set to `guest`. In matrix-enact, this looks like:
@@ -136,7 +135,7 @@ window.speechSynthesis.speak(utterance);
 
 To find out when an utterance ends, attach a function to the onend event:
 
-```
+```javascript
 utterance.onend = function() {
     // do something when the line ends
 };

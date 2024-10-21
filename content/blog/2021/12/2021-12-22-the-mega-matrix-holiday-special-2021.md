@@ -44,9 +44,7 @@ Aside from the new spec site, we also released our first official point release 
 
 Talking of which, in 2021 we saw a record **109** Matrix Spec Change proposals (MSCs) created. Even better, we closed **62** MSCs - so while the backlog is still growing, we’re still making very concrete progress.  Of the 109 new MSCs: 34 were from the wider Matrix community, 34 were from ex-community contributors who are now part of the core team, 13 were from the founding Matrix team, and 28 were from folks hired to work on Matrix by Element on behalf of the Matrix.org Foundation.  This feels like a pretty healthy blend of contributions, and while it’s true that spec work could always progress faster, things do seem to be heading in the right direction.
 
-
 ![The latest MSC stats](/blog/img/2021-12-22-spec.png)
-
 
 In the new year, the Spec Core Team (responsible for reviewing MSCs and voting on what gets merged to the spec) is going to make a concerted effort to carve out more dedicated time for spec work - thankfully one of the side-effects of Matrix growing is that there are now a lot more people around with whom we can share other work, hopefully meaning that we can put significantly more hours into keeping the spec growing healthily.
 
@@ -59,7 +57,6 @@ Synapse is the primary homeserver implementation published by the Matrix core te
 Further signs of maturity include Synapse’s radically improved new [documentation](https://matrix-org.github.io/synapse/latest/) and the new [module API](https://matrix-org.github.io/synapse/latest/modules/index.html), the fact that mypy type-safety coverage has improved from ~75% to over 89.7% (across 151,903 lines of code!), and the fact that Open Tracing support has matured to the point that visualising complex cross-worker behaviour is nowadays a genuine pleasure.  Frankly, Synapse should be feeling robust and stable these days - if you see folks claiming otherwise, please check they’re not basing that on outdated info (or failing that, get them to file bug reports that we can jump on!).
 
 Meanwhile, on the feature side, we’ve landed a huge spate of long-awaited core functionality.  Probably the best way to track it is by the Matrix Spec Change proposals (MSCs) which have been implemented (although I dare you to also go and check out Synapse’s [changelog](https://github.com/matrix-org/synapse/blob/develop/CHANGES.md), all 675KB of it, which is frankly a thing of beauty and will take you down a rabbithole all the way back to v0.0.0 in Aug 2014 if you so desire ;P). Major MSCs which we’ve landed include:
-
 
 * Spaces! It’s hard to overstate how positive this has been for Matrix’s usability: at last, we can group our rooms together however we please, both for our own edification and to share with others - and we can view space hierarchies over federation, complete with pagination ([MSC2946](https://github.com/matrix-org/matrix-doc/pull/2946)) as well as specify who can join a room based on whether they’re a member of a given space/room ([MSC3083](https://github.com/matrix-org/matrix-doc/pull/3083)).
 * Threads! Yes, that’s right - coming any day now to a Matrix client close to you, we have ‘classic’ threaded messaging landing, providing sidebars of conversation through the new m.thread relation type ([MSC3440](https://github.com/matrix-org/matrix-doc/pull/3440)), building on Matrix’s existing aggregation API as used for edits and reactions.  We’ve chosen to prioritise single-level-deep-threads rather than arbitrarily-deep-trees ([MSC2836](https://github.com/matrix-org/matrix-doc/pull/2836)) as it maps more easily to a chat UX, although the two approaches are not mutually exclusive.
@@ -85,15 +82,13 @@ More recently, there’s also been a major shift towards structured [user testin
 
 The [Element blog](https://element.io/blog/) covers the work this year from the Element side, but from the Matrix side, the key changes include:
 
-
-
 * finalising [Spaces](https://element.io/blog/spaces-blast-out-of-beta/) as a way to group together rooms - providing the equivalent of Discord servers or Slack workspaces, or alternatively letting you gather your own rooms together into a private space.
 * building out Threads (available in labs; launching soon!)
 * Social Login!
 * radically improving Element’s Information Architecture (i.e. the layout of the UI, so that the panels and buttons are correctly semantically grouped together in a visual hierarchy)
 * adding [Voice Messages](https://element.io/blog/introducing-voice-messages-and-so-much-more/) as a really beautiful polished feature powered by [MSC3245](https://github.com/matrix-org/matrix-doc/pull/3245)
 * adding Location Share (available in labs; launching soon!) powered by [MSC3488](https://github.com/matrix-org/matrix-doc/pull/3488) (and in future [MSC3489](https://github.com/matrix-org/matrix-doc/pull/3489) for live-location sharing - in dev on iOS right now!)
-* adding [Chat Export](https://element.io/blog/element-1-9-1-export-is-finally-here/), thanks to the amazing GSOC work by Jaiwanth 
+* adding [Chat Export](https://element.io/blog/element-1-9-1-export-is-finally-here/), thanks to the amazing GSOC work by Jaiwanth
 * adding Polls via [MSC3381](https://github.com/matrix-org/matrix-doc/pull/3381).
 
 ![Spaces in all their glory](/blog/img/2021-12-22-spaces.gif)
@@ -207,7 +202,7 @@ Otherwise, the team has had three big projects: adding matrix-rust-sdk-crypto in
 
 [Vodozemac](https://github.com/matrix-org/vodozemac) (pronounced roughly vod-oz-eh-matz) is an entirely new implementation of our Olm and Megolm end-to-end encryption system, written from scratch in pure Rust, aiming to replace the original reference C/C++11 implementation in [libolm](https://gitlab.matrix.org/matrix-org/olm).  Originally written as an [experiment for matrix-rust-sdk](https://github.com/matrix-org/matrix-rust-sdk/compare/vodozemac-bench) at the beginning of the year, in the last week it’s received a [huge explosion of attention](https://github.com/matrix-org/vodozemac/graphs/contributors) from poljar and dkasak to bring it up to production quality… for we decided that if we are doing a full E2EE audit for Matrix, we should target the new and future codebase rather than burn money on re-auditing the legacy libolm library (much as the [original 2016 review of libolm](https://matrix.org/blog/2016/11/21/matrixs-olm-end-to-end-encryption-security-assessment-released-and-implemented-cross-platform-on-riot-at-last) happened when the library was fresh and new).
 
-The motivation for vodozemac in general is to benefit from the intrinsic type and memory safety and fearless parallelism provided by Rust - and also maintain full type & memory safety throughout the matrix-rust-sdk stack, including encryption.  Over the last year we’ve been taking[ more and more of a careful look at libolm](https://matrix.org/blog/2021/06/14/adventures-in-fuzzing-libolm), and despite our best efforts a [few](https://matrix.org/blog/2021/12/13/disclosure-buffer-overflow-in-libolm-and-matrix-js-sdk) memory management bugs have crept in - which vodozemac should be immune to.  Vodozemac will solve another embarrassing problem with libolm: that its default cryptography primitives are designed for correctness rather than performance or safety.  By switching to Rust’s ed25519-dalek and rustCrypto AES primitives we should be in a much better position in terms of performance and safety.
+The motivation for vodozemac in general is to benefit from the intrinsic type and memory safety and fearless parallelism provided by Rust - and also maintain full type & memory safety throughout the matrix-rust-sdk stack, including encryption.  Over the last year we’ve been taking[more and more of a careful look at libolm](https://matrix.org/blog/2021/06/14/adventures-in-fuzzing-libolm), and despite our best efforts a [few](https://matrix.org/blog/2021/12/13/disclosure-buffer-overflow-in-libolm-and-matrix-js-sdk) memory management bugs have crept in - which vodozemac should be immune to.  Vodozemac will solve another embarrassing problem with libolm: that its default cryptography primitives are designed for correctness rather than performance or safety.  By switching to Rust’s ed25519-dalek and rustCrypto AES primitives we should be in a much better position in terms of performance and safety.
 
 Next up, we’ll be fully integrating vodozemac into matrix-rust-sdk, and figuring out how best to provide it as a libolm replacement in general.
 
@@ -224,8 +219,6 @@ We’ll have more updates on this in the coming year as we release the tools we�
 ## OpenID Connect
 
 A new project brewing throughout 2021 has been the investigation into replacing the entirety of Matrix’s authentication APIs with industry standard OpenID Connect.  Spearheaded by Quentin, this has proved to be a fascinating and challenging endeavour, but we’re starting to see some really interesting results.  The problem we’re trying to solve here is:
-
-
 
 * As Matrix grows, we’re seeing more and more clients and services appearing which you might want to log into with your Matrix account.  But do you really want to trust each app with your account password?  And what if you only want to give it access to a small subset of your account?
 * Similarly, we’re seeing more and more login mechanisms used to access Matrix - it’s no longer just a matter just a username + password; many servers use single-sign-on (e.g. mozilla.org) or social login (fosdem.org, matrix.org), or layer on 2FA or MFA hardware tokens and similar to access their accounts via an SSO provider.  We also see passwordless login on the horizon.
@@ -282,14 +275,11 @@ Meanwhile, if you’re in a web browser, you might hop into a lightweight single
 
 Perhaps the vision of Matrix as the missing communication layer of the open Web is more literal than we ever thought.  Eitherway, it will be fascinating to see how Applications Beyond Chat evolves over the next year.
 
-
 ## 2022
 
 Now, I dare you to cross-reference all of the above with [last year’s predictions for 2021](https://matrix.org/blog/2020/12/25/the-matrix-holiday-special-2020#2021) to see how we did :D In practice, the only things from the list we haven’t got to are peeking-over-federation (although arguably fast joins are a key part of that), account portability, and restoring incremental sign-up (although our new clients have it!).
 
 So, here go the predictions for 2022 (keeping it short, otherwise it’ll be 2023 before this blog post gets finished…):
-
-
 
 * **Client polish and performance** - our prime directive is to ensure that Matrix clients can be built with UX polish and quality which exceeds our centralised alternatives.  In practice, this means:
     * **Element must spark joy**.  Ensuring Element’s Information Architecture continues to be simplified and refined, and that *nobody* who knows how to use a computer hits a WTF moment when first using the app.  Never again do we want to see someone on Twitter saying “I have no idea how to use Matrix”.
@@ -299,9 +289,9 @@ So, here go the predictions for 2022 (keeping it short, otherwise it’ll be 202
         * **Flair** - Users who are members of a space should be able to announce it loud and proud with a Flair badge on their avatar, like we used to with the old pre-spaces Communities feature ([MSC3219](https://github.com/matrix-org/matrix-doc/pull/3219) being the potential proposal).
         * **Synchronising access controls** - You should be able to apply access controls based on whether a user is a member of a given group (so that if you invite them to #moderators:example.com, they automatically get made moderator in all the rooms in a given space).  It looks likely that this will be implemented at last using joepie91’s [MSC3216](https://github.com/matrix-org/matrix-doc/pull/3216) proposal for Synchronized access control for Spaces (rather than Matthew’s original [MSC2962](https://github.com/matrix-org/matrix-doc/pull/2962) - an excellent example of the community steering the spec process :)
         * **Bulk joins** - It should be a one-button operation to join all the rooms in a space.
-        * **Subspaces **- as more and more spaces emerge, the ability to navigate them as a hierarchy becomes more and more useful.  We want to get to the point where we can turn off the Matrix.org public rooms list, and instead present a Space tree of all the good rooms we know about in Matrix… delegating over curation to the wider community; building a huge USENET-style hierarchy of where to go in Matrix.  To do that, we need subspaces to sing!
+        * **Subspaces**- as more and more spaces emerge, the ability to navigate them as a hierarchy becomes more and more useful.  We want to get to the point where we can turn off the Matrix.org public rooms list, and instead present a Space tree of all the good rooms we know about in Matrix… delegating over curation to the wider community; building a huge USENET-style hierarchy of where to go in Matrix.  To do that, we need subspaces to sing!
         * **Removing communities/groups**, which will then be entirely superseded by spaces.
-    * **Threads **go-live!
+    * **Threads**go-live!
     * **Location share** go-live
     * **Pinned messages**, so the most important messages are always visible to everyone n the room
     * **Starred messages**, so you never lose a message ever again
@@ -312,13 +302,13 @@ So, here go the predictions for 2022 (keeping it short, otherwise it’ll be 202
     * …and experiment to see how matrix-rust-sdk feels on Web? It’s a real shame that [Daydream](https://github.com/daydream-mx/Daydream) got archived…
 * **Encryption**
     * **Vodozemac** in matrix-rust-sdk, maybe even elsewhere.
-    * **Updated E2EE Audit **spanning vodozemac, olm+megolm, matrix-rust-sdk… and a representative sample of a typical Element+Synapse deployment.
+    * **Updated E2EE Audit**spanning vodozemac, olm+megolm, matrix-rust-sdk… and a representative sample of a typical Element+Synapse deployment.
     * **DMLS** - getting to the point where we can experiment with it in real clients.
     * **Encryption Agility** - the ability to [migrate encrypted history](https://github.com/matrix-org/matrix-doc/issues/3516) is going to become really important as we evolve our E2EE, whether that’s by adding in post-quantum algorithms, or moving from Megolm to MLS, or any other shifts.  We will need to start thinking about it in 2022.
 * **Next-generation MSCs**
     * **Aggregations** - finalising the foundational MSCs for aggregations, at last
     * **Extensible events** - finalising the foundational MSCs for extensible events, at last
-    * **Sync v3 **- finalising the MSC and implementing it in matrix-rust-sdk
+    * **Sync v3**- finalising the MSC and implementing it in matrix-rust-sdk
     * **Fast joins** - getting them implemented in Synapse and Dendrite
     * **Peeking over federation** - getting them implemented in Synapse and Dendrite
     * **Extensible profiles** - who needs a facebook wall when you have a profile room on Matrix?
@@ -328,18 +318,18 @@ So, here go the predictions for 2022 (keeping it short, otherwise it’ll be 202
     * **Implementing excellent public static Matrix archives** (replacing both view.matrix.org and gitter.im’s static views)
     * **Transfiguring Gitter into a Gitter-themed Element**
 * **Dendrite**
-    * **Parity with Synapse **- and out of beta, with any luck!
+    * **Parity with Synapse**- and out of beta, with any luck!
 * **P2P Matrix**
     * **Exposing the normal Matrix network via P2P!**
     * **Multihomed accounts**
     * **Store and forward** (if only by relaying via other P2P Matrix nodes)
-    * **Low bandwidth transports **- via PineCoAP or similar
+    * **Low bandwidth transports**- via PineCoAP or similar
     * **Making federation robust in a highly disconnected network.**
 * **Hydrogen**
-    * **Daily Driver **- making sure that Hydrogen can be readily used as a daily driver Matrix client, even if it lacks full parity with Element.
-    * **Embeddable Hydrogen **- making the most of Hydrogen as a tiny lightweight PWA to embed it into existing websites.
+    * **Daily Driver**- making sure that Hydrogen can be readily used as a daily driver Matrix client, even if it lacks full parity with Element.
+    * **Embeddable Hydrogen**- making the most of Hydrogen as a tiny lightweight PWA to embed it into existing websites.
 * **Bots and Bridges**
-    * **Landing End-to-Bridge-Encryption **for all existing matrix-appservice-bridge based bridges
+    * **Landing End-to-Bridge-Encryption**for all existing matrix-appservice-bridge based bridges
     * **All the integrations!**
     * **First-class UI for configuring integrations!**
 * **Trust & Safety**
@@ -351,8 +341,8 @@ So, here go the predictions for 2022 (keeping it short, otherwise it’ll be 202
 * **Border gateways**
     * Something we didn’t mention in 2021 is the increasing interest in building border gateways and hardware cross domain gateways to safely link different Matrix federations together.  We expect to see a lot of activity in this space in 2022, and there should be some new MSCs too :)
 * **Beyond Chat**
-    * **Metaverse on Matrix **- building out the dream as per above!
-    * **Collaborative editing **- extending Matrix to store trees of events, and collaborate on them in realtime - starting with a collaborative editor!
+    * **Metaverse on Matrix**- building out the dream as per above!
+    * **Collaborative editing**- extending Matrix to store trees of events, and collaborate on them in realtime - starting with a collaborative editor!
     * **File storage in Matrix** - building out real-life file storage on top of Matrix.
 
 So, there you have it. If you’ve got this far… it’s incredible; you’re amazing: thank you for reading!  The sheer length of this update shows just how much Matrix has grown in 2021 relative to previous years; it’s frankly terrifying to imagine how long the equivalent post will be next year.  We may have to change the format a little :)

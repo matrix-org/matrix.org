@@ -11,7 +11,7 @@ category = ["Tutorials"]
 
 Synapse has had support for exporting a comprehensive range of metrics via HTTP since 0.8.1 - we added this to help quantify the benefits of all the performance work which is going on currently in advance of Synapse 0.9. If you're interested in monitoring your own synapse and seeing what's going on using something like Prometheus, Leo just wrote a quick tutorial on getting up and running:
 
-#### How to monitor Synapse metrics using Prometheus
+### How to monitor Synapse metrics using Prometheus
 
 <dl>
 <dt>1: Install prometheus:</dt><dd>Follow instructions at <a href="http://prometheus.io/docs/introduction/install/">http://prometheus.io/docs/introduction/install/</a></dd>
@@ -37,7 +37,7 @@ job: {'{'}
   name: "synapse"
 
   target_group: {'{'}
-    target: "http://localhost:9092/"
+    target: "<http://localhost:9092/>"
   {'}'}
 {'}'}
 </pre>

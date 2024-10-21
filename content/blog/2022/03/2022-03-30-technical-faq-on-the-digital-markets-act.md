@@ -63,6 +63,7 @@ that their conversation is leaving their platform and is no longer E2EE with
 something like this:
 
 <div style="text-align: center">
+<!-- markdownlint-disable-next-line no-alt-text -->
 <img src="/blog/img/2022-03-29-warning.jpg" width="430"/>
 </div>
 <br/>
@@ -96,7 +97,7 @@ from under its users) - and in fact it gives the gatekeepers an excellent way
 to advertise the selling point that E2EE is only guaranteed when you speak to
 other users on the same platform.
 
-### But why do we need bridges? If everyone spoke a common protocol, you wouldn’t ever have to decrypt messages to convert them between protocols.
+### But why do we need bridges? If everyone spoke a common protocol, you wouldn’t ever have to decrypt messages to convert them between protocols
 
 Practically speaking, we don’t expect the gatekeepers to throw away their
 existing stacks (or implement multihead messengers that also speak open

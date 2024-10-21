@@ -63,7 +63,6 @@ completely open without verification and without bypassing that security
 setting. In our example we’ll close registrations entirely, and create accounts
 manually.
 
-
 ### General Concepts
 
 On the infrastructure level, we will need to have a machine exposed to the
@@ -84,7 +83,6 @@ containers.
 
 Finally, given containers are stateless, we will need to rely on volumes to
 persist the data. This is where the data and configuration files are stored.
-
 
 ## The Bare Minimum We Need
 
@@ -115,7 +113,7 @@ needs a domain name to be able to build Matrix IDs and room aliases, and you
 need to be able to at least add A records (and ideally AAAA, which we’re not
 going to cover in this tutorial for the sake of simplicity).
 
-## Let’s Get Our Hands Dirty!
+## Let’s Get Our Hands Dirty
 
 ### The Global Architecture
 
@@ -160,7 +158,6 @@ Let’s start by going to our home directory, and create a directory called
 with the following content. This will create a PostgreSQL database for our
 Synapse instance.
 
-
 ```yaml
 version: '3'
 
@@ -187,7 +184,6 @@ please check [docker compose and secrets](https://docs.docker.com/compose/compos
 We can now start the container by running `docker-compose up -d`. We can check
 the container is running with docker ps:
 
-
 ```yaml
 [root@v2202112135873173933 infra]# docker ps
 CONTAINER ID   IMAGE                COMMAND                  CREATED          STATUS          PORTS      NAMES
@@ -198,8 +194,8 @@ It may look like the database is open on the Internet… but it’s actually not
 The container is listening on port 5432 on docker’s internal network. You can
 verify it’s not actually open by running `ss -tunlp`
 
-
-```
+<!-- markdownlint-disable line-length -->
+```txt
 [root@v2202112135873173933 infra]# ss -tunlp
 Netid     State      Recv-Q     Send-Q         Local Address:Port         Peer Address:Port     Process                               
 udp       UNCONN     0          0                  127.0.0.1:323               0.0.0.0:*         users:(("chronyd",pid=735,fd=5))     
@@ -207,11 +203,13 @@ udp       UNCONN     0          0                      [::1]:323                
 tcp       LISTEN     0          128                  0.0.0.0:22                0.0.0.0:*         users:(("sshd",pid=14338,fd=3))      
 tcp       LISTEN     0          128                     [::]:22                   [::]:*         users:(("sshd",pid=14338,fd=4))
 ```
+<!-- markdownlint-enable line-length -->
 
 And now let’s check the logs by running `docker logs infra-synapse_db-1`. The
 output should look like below:
 
-```
+<!-- markdownlint-disable line-length -->
+```txt
 [root@v2202112135873173933 infra]# docker logs -f infra-synapse_db-1
 […]
 PostgreSQL init process complete; ready for start up.
@@ -223,10 +221,15 @@ PostgreSQL init process complete; ready for start up.
 2022-07-26 14:27:31.863 UTC [50] LOG:  database system was shut down at 2022-07-26 14:27:31 UTC
 2022-07-26 14:27:31.866 UTC [1] LOG:  database system is ready to accept connections
 ```
+<!-- markdownlint-enable line-length -->
 
-We can check if the user synapse was created by trying to connect to the database. To do so, let’s get the shell inside the postgresql container by running `docker exec -it infra_synapse_db_1 /bin/bash`. We should now be able to use the built-in SQL client by running `psql -U synapse -W`. We will be prompted for our password. We need to use the `POSTGRES_PASSWORD` declared in the docker-compose file. The output should look like as follows
+We can check if the user synapse was created by trying to connect to the database.
+To do so, let’s get the shell inside the postgresql container by running `docker exec -it infra_synapse_db_1 /bin/bash`.
+We should now be able to use the built-in SQL client by running `psql -U synapse -W`.
+We will be prompted for our password.
+We need to use the `POSTGRES_PASSWORD` declared in the docker-compose file. The output should look like as follows
 
-```
+```bash
 bash-5.1# psql -U synapse -W Password: psql (14.4) Type "help" for help.
 
 synapse=#
@@ -245,8 +248,8 @@ need to edit the value of the SYNAPSE_SERVER_NAME to the value you want for the
 server part of your Matrix IDs, and SYNAPSE_REPORT_STATS depending on whether
 you want to report anonymous stats or not.
 
-
-```
+<!-- markdownlint-disable line-length -->
+```txt
 [root@v2202112135873173933 infra]# docker run -it --rm --mount type=volume,src=infra_synapse_data,dst=/data -e SYNAPSE_SERVER_NAME=example.org -e SYNAPSE_REPORT_STATS=yes matrixdotorg/synapse:v1.63.0 generate
 Setting ownership on /data to 991:991
 Creating log config /data/example.org.log.config
@@ -254,13 +257,14 @@ Generating config file /data/homeserver.yaml
 Generating signing key file /data/example.org.signing.key
 A config file has been generated in '/data/homeserver.yaml' for server name 'example.org'. Please review this file and customise it to your needs.
 ```
+<!-- markdownlint-enable line-length -->
 
 The container generated several files. The first one we’re going to have a look
 at is the homeserver.yaml file, which contains all the basic information to
 allow our server to run. Docker volumes data is located in
 `/var/lib/docker/volumes/your_volume_name/_data`. We asked this container to
 generate the files in the `infra_synapse_data` volumes. Let’s have a look at
-`/var/lib/docker/volumes/infra_synapse_data/_data/homeserver.yaml `and see what
+`/var/lib/docker/volumes/infra_synapse_data/_data/homeserver.yaml`and see what
 it contains:
 
 ```yaml
@@ -289,7 +293,6 @@ trusted_key_servers:
   - server_name: "matrix.org"
 ```
 
-
 What a pleasant surprise, it’s fairly short! Synapse indeed tries to have safe
 and sane defaults, and allows administrators to add options to tweak their
 configuration if they needed. The complete reference of every single option and
@@ -301,7 +304,6 @@ going to make Synapse connect to the PostgreSQL database we have set up
 earlier. [According to Synapse’s documentation](https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html#database),
 we need to edit the database section so it looks like the following instead of
 the sql3 default:
-
 
 ```yaml
 database:
@@ -317,10 +319,8 @@ database:
     cp_max: 10
 ```
 
-
 We can save the file. Let’s edit our docker-compose.yaml file to add Synapse,
 and give it the volumes it needs to persist data:
-
 
 ```yaml
 version: '3'
@@ -352,13 +352,12 @@ volumes:
   synapse_db_data:
 ```
 
-
 We can now start Synapse by entering `docker compose up -d` and monitor what is
 happening with `docker logs -f infra-synapse-1`. It should give us pretty
 verbose output, as follows:
 
-
-```
+<!-- markdownlint-disable line-length -->
+```txt
 [root@v2202112135873173933 infra]# docker logs -f infra-synapse-1
 Starting synapse with args -m synapse.app.homeserver --config-path /data/homeserver.yaml
 This server is configured to use 'matrix.org' as its trusted key server via the
@@ -385,6 +384,7 @@ To suppress this warning and continue using 'matrix.org', admins should set
 2022-07-26 15:35:48,012 - synapse.storage.prepare_database - 519 - INFO - main - Applying schema 55/users_alter_deactivated.sql
 […]
 ```
+<!-- markdownlint-enable line-length -->
 
 We can quit watching the logs by pressing the Ctrl and C keys simultaneously.
 Voilà! We have a Synapse instance using our PostgreSQL database. Now we need to
@@ -407,13 +407,13 @@ the actual technical server is on matrix.example.org: this is what delegation
 of incoming traffic is for.
 
 This can be done by serving two static files:
+
 * example.org/.well-known/matrix/server and
 * example.org/.well-known/matrix/client
 
 One simple way to do it is to set-up a nginx homeserver and to instruct it to
 serve those files directly in its configuration file. Let’s add the nginx
 server in our docker-compose file:
-
 
 ```yaml
 version: '3'
@@ -452,7 +452,6 @@ volumes:
   synapse_db_data:
 ```
 
-
 We can then start the container for it to populate the `nginx_conf` volume with
 `docker compose up -d`
 
@@ -460,8 +459,7 @@ Let’s now edit the /var/lib/docker/volumes/infra_nginx_conf/_data/default.conf
 file, to add the following at the bottom of the file right before the closing
 `}`:
 
-
-```
+```txt
     location /.well-known/matrix/server {
         access_log off;
         add_header Access-Control-Allow-Origin *;
@@ -484,7 +482,7 @@ it with `docker exec -it infra-nginx-1 /bin/bash`
 
 Once inside the container, we can use curl to ask for these files:
 
-```
+```txt
 root@66a61467b9ba:/# curl -X GET "http://localhost/.well-known/matrix/server"
 {"m.server": "matrix.example.org:443"}
 root@66a61467b9ba:/# curl -X GET "http://localhost/.well-known/matrix/client"
@@ -512,7 +510,6 @@ can do its magic, and to give it a volume so it can store the certificates and
 associated keypairs. Our docker-compose file should look like below. Make sure
 to update the `certificatesresolvers.letls.acme.email` label to an email
 address where you can be reached out to.
-
 
 ```yaml
 version: '3'
@@ -572,12 +569,11 @@ volumes:
   synapse_db_data:
 ```
 
-
 Now let’s check traefik is actually listening to the outside world with
 `ss -tunlp`:
 
-
-```
+<!-- markdownlint-disable line-length -->
+```bash
 [root@v2202112135873173933 infra]# ss -tunlp
 Netid         State          Recv-Q         Send-Q                 Local Address:Port                  Peer Address:Port         Process                                           
 udp           UNCONN         0              0                          127.0.0.1:323                        0.0.0.0:*             users:(("chronyd",pid=735,fd=5))                 
@@ -589,6 +585,7 @@ tcp           LISTEN         0              4096                            [::]
 tcp           LISTEN         0              4096                            [::]:80                            [::]:*             users:(("docker-proxy",pid=111032,fd=4))         
 tcp           LISTEN         0              128                             [::]:22                            [::]:*             users:(("sshd",pid=14338,fd=4))
 ```
+<!-- markdownlint-enable line-length -->
 
 Fantastic! But that’s only the first step: traefik does listen to the outside
 world, but it doesn’t know where to route calls yet. For that we’re going to
@@ -598,7 +595,6 @@ serving the `.well-known` files.
 
 The nginx section of our docker-compose file should look like below. Of course,
 adapt the labels to your own domain.
-
 
 ```yaml
   nginx:
@@ -613,7 +609,6 @@ adapt the labels to your own domain.
       - "traefik.http.routers.nginx.tls=true"
       - "traefik.http.routers.nginx.tls.certresolver=letls"
 ```
-
 
 We can then restart containers with `docker compose up -d`. Traefik might need a
 few minutes to retrieve the certificates, but you should now be able to reach
@@ -642,7 +637,7 @@ here again adapt the labels to your own domain.
       - traefik.http.routers.synapse.tls.certresolver=letls
 ```
 
-We can try to reach https://matrix.example.org… and it should answer!
+We can try to reach <https://matrix.example.org…> and it should answer!
 
 ![Synapse serving its static page, behind nginx](/docs/legacy/understanding-synapse-hosting-nginx.png "Synapse serving its static page, behind nginx")
 
@@ -655,8 +650,7 @@ container with `docker exec -it infra-synapse-1 /bin/bash` to manually register
 a new user using the `register_new_matrix_user -c /data/homeserver.yaml
 http://localhost:8008` command:
 
-
-```
+```txt
 root@e752d46bc5f2:/# register_new_matrix_user -c /data/homeserver.yaml http://localhost:8008
 New user localpart [root]: myuserid 
 Password: 

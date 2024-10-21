@@ -9,7 +9,7 @@ category = ["Releases"]
 
 [Synapse 1.48.0](https://github.com/matrix-org/synapse/releases/tag/v1.48.0) is out now!
 
-> __NOTE:__ Synapse 1.49, due out on December 14th, will be the **last release of Synapse to support Python 3.6 or PostgreSQL 9.6** per our [platform dependency deprecation policy](https://matrix-org.github.io/synapse/v1.48/deprecation_policy.html). Accordingly, we will remove support for Ubuntu 18.04 LTS (Bionic) at the same date, as it ships with Python 3.6.
+> __NOTE:__ Synapse 1.49, due out on December 14th, will be the __last release of Synapse to support Python 3.6 or PostgreSQL 9.6__ per our [platform dependency deprecation policy](https://matrix-org.github.io/synapse/v1.48/deprecation_policy.html). Accordingly, we will remove support for Ubuntu 18.04 LTS (Bionic) at the same date, as it ships with Python 3.6.
 
 ## Password resets and identity servers
 

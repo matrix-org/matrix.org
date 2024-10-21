@@ -21,43 +21,32 @@ As ever, you can get the new update [here](https://github.com/matrix-org/synapse
 
 The changelog since 1.4.1 follows:
 
-Synapse 1.5.0 (2019-10-29)
-==========================
+## Synapse 1.5.0 (2019-10-29)
 
-Security updates
-----------------
+### Security updates
 
 This release includes a security fix ([\#6262](https://github.com/matrix-org/synapse/issues/6262), below). Administrators are encouraged to upgrade as soon as possible.
 
-Bugfixes
---------
+### Bugfixes
 
 - Fix bug where room directory search was case sensitive. ([\#6268](https://github.com/matrix-org/synapse/issues/6268))
 
+## Synapse 1.5.0rc2 (2019-10-28)
 
-Synapse 1.5.0rc2 (2019-10-28)
-=============================
-
-Bugfixes
---------
+### Bugfixes
 
 - Update list of boolean columns in `synapse_port_db`. ([\#6247](https://github.com/matrix-org/synapse/issues/6247))
 - Fix /keys/query API on workers. ([\#6256](https://github.com/matrix-org/synapse/issues/6256))
 - Improve signature checking on some federation APIs. ([\#6262](https://github.com/matrix-org/synapse/issues/6262))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Move schema delta files to the correct data store. ([\#6248](https://github.com/matrix-org/synapse/issues/6248))
 - Small performance improvement by removing repeated config lookups in room stats calculation. ([\#6255](https://github.com/matrix-org/synapse/issues/6255))
 
+## Synapse 1.5.0rc1 (2019-10-24)
 
-Synapse 1.5.0rc1 (2019-10-24)
-==========================
-
-Features
---------
+### Features
 
 - Improve quality of thumbnails for 1-bit/8-bit color palette images. ([\#2142](https://github.com/matrix-org/synapse/issues/2142))
 - Add ability to upload cross-signing signatures. ([\#5726](https://github.com/matrix-org/synapse/issues/5726))
@@ -66,9 +55,7 @@ Features
 - Reject all pending invites for a user during deactivation. ([\#6125](https://github.com/matrix-org/synapse/issues/6125))
 - Add config option to suppress client side resource limit alerting. ([\#6173](https://github.com/matrix-org/synapse/issues/6173))
 
-
-Bugfixes
---------
+### Bugfixes
 
 - Return an HTTP 404 instead of 400 when requesting a filter by ID that is unknown to the server. Thanks to @krombel for contributing this! ([\#2380](https://github.com/matrix-org/synapse/issues/2380))
 - Fix a bug where users could be invited twice to the same group. ([\#3436](https://github.com/matrix-org/synapse/issues/3436))
@@ -88,15 +75,11 @@ Bugfixes
 - synapse_port_db: Add 2 additional BOOLEAN_COLUMNS to be able to convert from database schema v56. ([\#6216](https://github.com/matrix-org/synapse/issues/6216))
 - Fix a bug where the Synapse demo script blacklisted `::1` (ipv6 localhost) from receiving federation traffic. ([\#6229](https://github.com/matrix-org/synapse/issues/6229))
 
-
-Updates to the Docker image
----------------------------
+### Updates to the Docker image
 
 - Fix logging getting lost for the docker image. ([\#6197](https://github.com/matrix-org/synapse/issues/6197))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Update `user_filters` table to have a unique index, and non-null columns. Thanks to @pik for contributing this. ([\#1172](https://github.com/matrix-org/synapse/issues/1172), [\#6175](https://github.com/matrix-org/synapse/issues/6175), [\#6184](https://github.com/matrix-org/synapse/issues/6184))
 - Allow devices to be marked as hidden, for use by features such as cross-signing.

@@ -35,7 +35,7 @@ retrigger a noisy notification. That can be pretty annoying when the message is 
 [MSC3958](https://github.com/matrix-org/matrix-spec-proposals/pull/3958)
 is here to solve that, and Synapse now implements it as an experimental feature.
 
-### The quest for speed continues!
+### The quest for speed continues
 
 Some iterative optimizations have been implemented that should make [joining or leaving](https://github.com/matrix-org/synapse/pull/14971)
 large rooms even faster, and should also [improve sending message](https://github.com/matrix-org/synapse/pull/14962).

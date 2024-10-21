@@ -41,13 +41,13 @@ A non-exhaustive list of projects we think are core includes:
 
 * The Spec, Spec Proposals, the matrix.org website and homeserver, and matrix.to link redirection service
 * Integration test suites, to confirm that implementations conform to the spec:
-  * sytest
-  * complement
-  * complement-crypto
+    * sytest
+    * complement
+    * complement-crypto
 * SDKs and libraries which are used extensively by the wider community:
-  * matrix-rust-sdk
-  * matrix-js-sdk
-  * vodozemac
+    * matrix-rust-sdk
+    * matrix-js-sdk
+    * vodozemac
 
 **As to the third question – are there any projects that don’t belong at the Foundation?** Probably, yes. It’s debatable whether it makes sense to host experimental or speculative projects, and we don’t think it’s appropriate to host projects that don’t have anything to do with Matrix specifically.
 
@@ -59,7 +59,7 @@ Next, we’ll be deliberating on these things with the Governing Board, Spec Cor
 
 Ultimately, we’ll define a framework and begin aligning our operations with it – including defining a legal and governance framework and setting up the infrastructure to facilitate it.
 
-As always, we can’t do this without your support. Some organisations have stepped forward to support our work, but we still don’t have enough to sustain our operations. The more people that come together to fund the Foundation’s work, the more capable we are of investing in core projects, operationalizing more open governance, and nurturing the broader ecosystem. 
+As always, we can’t do this without your support. Some organisations have stepped forward to support our work, but we still don’t have enough to sustain our operations. The more people that come together to fund the Foundation’s work, the more capable we are of investing in core projects, operationalizing more open governance, and nurturing the broader ecosystem.
 
 [Please join the Foundation today](https://matrix.org/support), especially if you depend on Matrix, to ensure the Matrix ecosystem is here for you today and tomorrow.
 

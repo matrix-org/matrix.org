@@ -26,4 +26,3 @@ See the [Upgrading Instructions](https://github.com/matrix-org/synapse/blob/v1.3
 ### Thank You
 
 Synapse is a Free and Open Source Software project, and we'd like to extend our thanks to everyone who contributed to this release, including [rkfg](https://github.com/rkfg), and [ShadowJonathan](https://github.com/ShadowJonathan).
-

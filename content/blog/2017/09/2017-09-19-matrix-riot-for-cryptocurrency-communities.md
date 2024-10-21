@@ -13,7 +13,7 @@ Over the last few weeks there's been a huge movement in the cryptocurrency commu
 
 To be clear: we see Ethereum, Bitcoin, Ripple, Stellar and all the other decentralised currencies as being very closely related to Matrix.  Just as distributed ledgers disrupt the fragmented oligopoly old-school banking industry, we want Matrix to disrupt the relatively old-school communications systems of today. And so we'd really rather like that Matrix and Riot rocked when it comes to supporting cryptocurrency communities, and this is something we intend to dedicate resources to long term: we've got some big plans.
 
-### Things Matrix provides:
+### Things Matrix provides
 
 **Decentralisation**. Rather than each community having its own silo, with users having to juggle accounts over all of them, Matrix decentralises rooms over all the different servers. Users can have a single account and still jump into all the other communities (as well as the rest of the Matrix universe). However, each community can run its own server instance (if they want to) and have complete control over its behaviour.
 
@@ -36,46 +36,41 @@ the <a href="https://github.com/matrix-org/synapse/pull/2457">DM/invite disablin
 **Other stuff.** Matrix and Riot give loads of other fun stuff too:
 
 <ul>
- 	<li style="font-weight: 400;">Widgets - the ability to embed arbitrary apps into your rooms (video conferences; currency tickers; DApps; wallets; monitoring dashboards; etc.).
+  <li style="font-weight: 400;">Widgets - the ability to embed arbitrary apps into your rooms (video conferences; currency tickers; DApps; wallets; monitoring dashboards; etc.).
 </li>
- 	<li style="font-weight: 400;">100% Native clients on iOS & Android (including Jitsi video conferencing & Widgets, as of the develop branch!)
+  <li style="font-weight: 400;">100% Native clients on iOS & Android (including Jitsi video conferencing & Widgets, as of the develop branch!)
 </li>
- 	<li style="font-weight: 400;">Read receipts! (how can you live without them on Slack?!)
+  <li style="font-weight: 400;">Read receipts! (how can you live without them on Slack?!)
 </li>
- 	<li style="font-weight: 400;">Internationalised to 20+ languages (thanks to the community! :)
+  <li style="font-weight: 400;">Internationalised to 20+ languages (thanks to the community! :)
 </li>
- 	<li style="font-weight: 400;"><a href="/blog/2017/03/11/how-do-i-bridge-thee-let-me-count-the-ways/">Bridges</a> through to IRC, Slack, Gitter, and more.
+  <li style="font-weight: 400;"><a href="/blog/2017/03/11/how-do-i-bridge-thee-let-me-count-the-ways/">Bridges</a> through to IRC, Slack, Gitter, and more.
 </li>
- 	<li style="font-weight: 400;">All sorts of alternative clients (e.g. <a href="https://github.com/mujx/nheko">nheko</a>, <a href="https://github.com/QMatrixClient/Quaternion">quaternion</a>) and <a href="/docs/projects/try-matrix-now.html">SDKs</a></li>
- 	<li style="font-weight: 400;">Insanely scalable and performant next-generation server (
+  <li style="font-weight: 400;">All sorts of alternative clients (e.g. <a href="https://github.com/mujx/nheko">nheko</a>, <a href="https://github.com/QMatrixClient/Quaternion">quaternion</a>) and <a href="/docs/projects/try-matrix-now.html">SDKs</a></li>
+  <li style="font-weight: 400;">Insanely scalable and performant next-generation server (
 <a href="https://github.com/matrix-org/dendrite">Dendrite</a>) on the horizon
 </li>
- 	<li style="font-weight: 400;">An <a href="/docs/spec">open spec</a> for the protocol.
+  <li style="font-weight: 400;">An <a href="/docs/spec">open spec</a> for the protocol.
 </li>
- 	<li style="font-weight: 400;">100% Apache-licensed FLOSS.  Riot/Web is particularly easy to hack on and theme & customise as needed.
+  <li style="font-weight: 400;">100% Apache-licensed FLOSS.  Riot/Web is particularly easy to hack on and theme & customise as needed.
 </li>
- 	<li style="font-weight: 400;">Ability to disable federation for a room if you really want to lock it down to the users & rules of a single server.
+  <li style="font-weight: 400;">Ability to disable federation for a room if you really want to lock it down to the users & rules of a single server.
 </li>
 </ul>
 
-### Things we need to improve:
+### Things we need to improve
 
-**Groups (aka Communities):  **One of the biggest missing features in Matrix is the ability to define groups of users & rooms, similar to a Slack team or Discord server, which can be used to organise together a set of discussions and generally give a feeling of community.  We've been working hard at this and expect to see it land in Riot/Web in the next few weeks.  In the meanwhile, you can see some of the UX we're aiming for <a href="https://docs.google.com/document/d/1wv78GqgG59CLjIKPi7GGkdqI6KOeQUBl9Bnf-uA-Kc0/edit#heading=h.xravd1v7n60m">here</a>!
+**Groups (aka Communities):**One of the biggest missing features in Matrix is the ability to define groups of users & rooms, similar to a Slack team or Discord server, which can be used to organise together a set of discussions and generally give a feeling of community.  We've been working hard at this and expect to see it land in Riot/Web in the next few weeks.  In the meanwhile, you can see some of the UX we're aiming for <a href="https://docs.google.com/document/d/1wv78GqgG59CLjIKPi7GGkdqI6KOeQUBl9Bnf-uA-Kc0/edit#heading=h.xravd1v7n60m">here</a>!
 
-
-**E2E UX (and Riot UX in general):  **While the underlying encryption of Matrix is solid, the UX exposed by Riot needs considerable work - specifically to improve the device verification flow and automatically share keys between trusted devices.  We're continuing to work on this over the next few months.  Likewise there are <a href="https://github.com/vector-im/riot-web/issues/2984">many areas</a> for possible improvement in Riot's overall UX and design that we're working through as urgently as we can.
-
+**E2E UX (and Riot UX in general):**While the underlying encryption of Matrix is solid, the UX exposed by Riot needs considerable work - specifically to improve the device verification flow and automatically share keys between trusted devices.  We're continuing to work on this over the next few months.  Likewise there are <a href="https://github.com/vector-im/riot-web/issues/2984">many areas</a> for possible improvement in Riot's overall UX and design that we're working through as urgently as we can.
 
 **Active Application Services**: The per-server filtering described above is good if you just want to protect users on a given server (e.g. the server you point your community at).  However, if you want to filter all the messages for a given room which may be federated over multiple servers, you need a way to define a centralised chokepoint to define the filtering rules.  Architecturally this is meant to be performed by an ‘Active Application Service' in Matrix, but we've not yet defined or implemented this API.  The idea for the room to define a list of services that messages are filtered through by all servers before they may be accepted for the room.  This would be the ideal solution to the phishing-filtering problem, but in practice filtering just local users (and perhaps disabling federation for particularly sensitive rooms or servers) is probably good enough for the immediate problem here.
-
 
 Hope this provides some much-needed clarity to the debate! If there are other features cryptocurrency communities need to thrive please let us know, as we'd like to actively help to support decentralized communities.  
 <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:matrix.org</a> is probably the best place for further questions :)
 
-
-Finally: one thing that has come up a few times in this discussion has been “Matrix's funding crisis means they may not be here to stay”.  All I can say is that 
+Finally: one thing that has come up a few times in this discussion has been “Matrix's funding crisis means they may not be here to stay”.  All I can say is that
 **Matrix is here to stay**. Even if the core team ended up just being Matthew hacking away by himself funded by <a href="https://patreon.com/matrixdotorg">Patreon</a>/
 <a href="https://liberapay.com/matrixdotorg">Liberapay</a>, we have a large and passionate wider dev community who aren't going anywhere.  But more importantly (and not wishing to jinx it), in the last few weeks we have received offers of significant funding which may hopefully resolve the funding crisis for the foreseeable.  Nothing is signed yet, but watch this space, and meanwhile I strongly suggest betting on Matrix being here to stay!
-
 
 --Matthew

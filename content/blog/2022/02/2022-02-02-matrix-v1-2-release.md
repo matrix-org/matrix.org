@@ -46,20 +46,15 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 
 <strong>Breaking Changes</strong>
 
-
 - The `prev_content` field is now returned inside the `unsigned` property of events, rather than at the top level, as per [MSC3442](https://github.com/matrix-org/matrix-doc/pull/3442). ([#3524](https://github.com/matrix-org/matrix-doc/issues/3524))
 - The `aliases` property from the chunks returned by `/publicRooms`, as per [MSC2432](https://github.com/matrix-org/matrix-doc/pull/2432). ([#3624](https://github.com/matrix-org/matrix-doc/issues/3624))
 
-
 <strong>New Endpoints</strong>
-
 
 - Add the Space Hierarchy API (`GET /_matrix/client/v1/rooms/{roomId}/hierarchy`) as per [MSC2946](https://github.com/matrix-org/matrix-doc/pull/2946). ([#3610](https://github.com/matrix-org/matrix-doc/issues/3610))
 - Add `/_matrix/client/v1/register/m.login.registration_token/validity` as per [MSC3231](https://github.com/matrix-org/matrix-doc/pull/3231). ([#3616](https://github.com/matrix-org/matrix-doc/issues/3616))
 
-
 <strong>Backwards Compatible Changes</strong>
-
 
 - Extend `/_matrix/client/r0/login` to accept a `m.login.appservice`, as per [MSC2778](https://github.com/matrix-org/matrix-doc/pull/2778). ([#3324](https://github.com/matrix-org/matrix-doc/issues/3324))
 - Add support for `restricted` rooms as per [MSC3083](https://github.com/matrix-org/matrix-doc/pull/3083), [MSC3289](https://github.com/matrix-org/matrix-doc/pull/3289), and [MSC3375](https://github.com/matrix-org/matrix-doc/pull/3375). ([#3387](https://github.com/matrix-org/matrix-doc/issues/3387))
@@ -70,9 +65,7 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 - Add support for fallback keys (optional keys used once one-time keys run out), as per [MSC2732](https://github.com/matrix-org/matrix-doc/pull/2732). ([#3615](https://github.com/matrix-org/matrix-doc/issues/3615))
 - Add token-authenticated registration support as per [MSC3231](https://github.com/matrix-org/matrix-doc/pull/3231). ([#3616](https://github.com/matrix-org/matrix-doc/issues/3616))
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Make `AesHmacSha2KeyDescription` consistent with `KeyDescription` in marking `name` as optional. ([#3481](https://github.com/matrix-org/matrix-doc/issues/3481))
 - Fix various typos throughout the specification. ([#3482](https://github.com/matrix-org/matrix-doc/issues/3482), [#3495](https://github.com/matrix-org/matrix-doc/issues/3495), [#3509](https://github.com/matrix-org/matrix-doc/issues/3509), [#3535](https://github.com/matrix-org/matrix-doc/issues/3535), [#3591](https://github.com/matrix-org/matrix-doc/issues/3591), [#3601](https://github.com/matrix-org/matrix-doc/issues/3601), [#3611](https://github.com/matrix-org/matrix-doc/issues/3611), [#3671](https://github.com/matrix-org/matrix-doc/issues/3671), [#3680](https://github.com/matrix-org/matrix-doc/issues/3680))
@@ -92,27 +85,21 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 
 <strong>New Endpoints</strong>
 
-
 - Add the Space Hierarchy API (`GET /_matrix/federation/v1/hierarchy/{roomId}`) as per [MSC2946](https://github.com/matrix-org/matrix-doc/pull/2946). ([#3610](https://github.com/matrix-org/matrix-doc/issues/3610), [#3660](https://github.com/matrix-org/matrix-doc/issues/3660))
-
 
 <strong>Backwards Compatible Changes</strong>
 
-
 - Add support for `restricted` rooms as per [MSC3083](https://github.com/matrix-org/matrix-doc/pull/3083), [MSC3289](https://github.com/matrix-org/matrix-doc/pull/3289), and [MSC3375](https://github.com/matrix-org/matrix-doc/pull/3375). ([#3387](https://github.com/matrix-org/matrix-doc/issues/3387))
-
 
 <strong>Spec Clarifications</strong>
 
-
 - Fix various typos throughout the specification. ([#3527](https://github.com/matrix-org/matrix-doc/issues/3527))
-- Clarify that `GET /_matrix/federation/v1/event_auth/{roomId}/{eventId}` does *not* return the auth chain for the full state of the room. ([#3583](https://github.com/matrix-org/matrix-doc/issues/3583))
+- Clarify that `GET /_matrix/federation/v1/event_auth/{roomId}/{eventId}` does _not_ return the auth chain for the full state of the room. ([#3583](https://github.com/matrix-org/matrix-doc/issues/3583))
 - Fix the rendering of the responses for various API endpoints. ([#3674](https://github.com/matrix-org/matrix-doc/issues/3674))
 
 ### Application Service API
 
 <strong>Spec Clarifications</strong>
-
 
 - Distinguish between "federation" event format as exchanged by the Federation API, and the "client" event formats as used in the client-server and AS APIs. ([#3658](https://github.com/matrix-org/matrix-doc/issues/3658))
 - Fix the rendering of the responses for various API endpoints. ([#3674](https://github.com/matrix-org/matrix-doc/issues/3674))
@@ -122,12 +109,9 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 
 <strong>Backwards Compatible Changes</strong>
 
-
 - Add the `room_type` to stored invites as per [MSC3288](https://github.com/matrix-org/matrix-doc/pull/3288). ([#3610](https://github.com/matrix-org/matrix-doc/issues/3610))
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Fix the rendering of the responses for various API endpoints. ([#3674](https://github.com/matrix-org/matrix-doc/issues/3674))
 
@@ -135,20 +119,16 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 
 <strong>Spec Clarifications</strong>
 
-
 - Fix the rendering of the responses for various API endpoints. ([#3674](https://github.com/matrix-org/matrix-doc/issues/3674))
 
 ### Room Versions
 
 <strong>Backwards Compatible Changes</strong>
 
-
 - Add Room Version 8 as per [MSC3289](https://github.com/matrix-org/matrix-doc/pull/3289). ([#3387](https://github.com/matrix-org/matrix-doc/issues/3387))
 - Add Room Version 9 as per [MSC3375](https://github.com/matrix-org/matrix-doc/pull/3375). ([#3387](https://github.com/matrix-org/matrix-doc/issues/3387))
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Fully specify room versions to indicate what exactly is carried over from parent versions. ([#3432](https://github.com/matrix-org/matrix-doc/issues/3432), [#3661](https://github.com/matrix-org/matrix-doc/issues/3661))
 - Clarifications to sections on event IDs and event formats. ([#3501](https://github.com/matrix-org/matrix-doc/issues/3501))
@@ -160,7 +140,6 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 ### Appendices
 
 <strong>Backwards Compatible Changes</strong>
-
 
 - Describe "Common Namespaced Identifier Grammar" as per [MSC2758](https://github.com/matrix-org/matrix-doc/pull/2758). ([#3171](https://github.com/matrix-org/matrix-doc/issues/3171))
 - Describe the `matrix:` URI scheme as per [MSC2312](https://github.com/matrix-org/matrix-doc/pull/2312). ([#3608](https://github.com/matrix-org/matrix-doc/issues/3608))

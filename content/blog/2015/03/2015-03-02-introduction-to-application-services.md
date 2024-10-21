@@ -84,7 +84,7 @@ namespaces:
 To test everything is working correctly, go ahead and explicitly create a room with the alias "#logged_test:localhost" and send a message into the room: the HS will relay the message to the AS by PUTing to /transactions/&lt;tid&gt; and you should see your AS print the event on the terminal. This will monitor any room which has an alias prefix of "#logged_", but it won't lazily create room aliases if they don't already exist. This means it will only log messages in the room you created before: #logged_test:localhost. Try joining the room "#logged_test2:localhost" without creating it, and it will fail. Let's fix that and add in lazy room creation:
 <pre>@app.route("/rooms/&lt;alias&gt;")
 def query_alias(alias):
-    alias_localpart = alias.split(":")[0][1:]
+    alias_localpart = alias.split[":"][0](1:)
     requests.post(
         # NB: "TOKEN" is the as_token referred to in registration.yaml
         "<a href="http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN" target="_blank">http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN</a>",
@@ -95,7 +95,7 @@ def query_alias(alias):
     )
     return jsonify({'{'}{'}'})
 </pre>
-This makes the application service lazily create a room with the requested alias whenever the HS queries the AS for the existence of that alias (when users try to join that room), allowing any room with the alias prefix #logged_ to be sent to the AS. Now try joining the room "#logged_test2:localhost" and it will work as you'd expect.  You can see that if this were a real bridge, the AS would have checked for the existence of #logged_test2 in the remote network, and then lazily-created it in Matrix as required.
+This makes the application service lazily create a room with the requested alias whenever the HS queries the AS for the existence of that alias (when users try to join that room), allowing any room with the alias prefix #logged_to be sent to the AS. Now try joining the room "#logged_test2:localhost" and it will work as you'd expect.  You can see that if this were a real bridge, the AS would have checked for the existence of #logged_test2 in the remote network, and then lazily-created it in Matrix as required.
 
 Application services are powerful components which extend the functionality of home servers, but they are limited. They can only ever function in a "passive" way. For example, you cannot implement an application service which censors swear words in rooms, because there is no way to prevent the event from being sent. Aside from the fact that censoring will not work when using end-to-end encryption, all federated home servers would also need to reject the event in order to stop developing an inconsistent event graph. To "actively" monitor events, another component called a "Policy Server" is required, which is beyond the scope of this post.  Also, Application Services can result in a performance bottleneck, as all events on the homeserver must be ordered and sent to the registered application services.  If you are bridging huge amounts of traffic, you may be better off having your bridge directly talk the Server-Server federation API rather than the simpler Application Service API.
 

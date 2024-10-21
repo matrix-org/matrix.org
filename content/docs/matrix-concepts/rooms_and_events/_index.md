@@ -40,7 +40,7 @@ have a unique technical identifier, and zero or more human-readable aliases.
 Aliases are made of a room name, and a server part, and are sometimes referred
 to as "addresses". A typical room alias would be:
 
-```
+```txt
 #goodfriends:example.com
 ```
 

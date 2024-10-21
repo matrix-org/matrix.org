@@ -26,4 +26,3 @@ Matthew's day job is running the Unified Communications team at Amdocs, creating
 Amandine Le Pape is business co-founder of matrix.org, responsible for defining the Matrix vision with Matthew and then organising the non-technical activities required to support and promote it and make it successful.
 
 Amandine has spent the last 2 years setting up and leading the Unified Communications line of business within Amdocs as a Product Manager, and has more than 10 years of experience in mobile services and telecommunications.  She has a degree in telecommunications engineering from Ecole Supérieure de Chimie, Physique et Electronique de Lyon and an EMBA from ESC Rennes. [<a href="https://www.linkedin.com/in/amandineroux">LinkedIn</a>]
-

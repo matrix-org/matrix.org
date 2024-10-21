@@ -31,7 +31,7 @@ a bit trickier. They use a `multipart/mixed` response format with exactly 2 part
 metadata about the file, and the file itself (or a pointer to the file). This can
 look like either of the following two examples:
 
-```text
+```txt
 Content-Type: multipart/mixed; boundary=gc0p4Jq0M2Yt08jU534c0p
 
 --gc0p4Jq0M2Yt08jU534c0p
@@ -47,7 +47,7 @@ This media is plain text. Maybe somebody used it as a paste bin.
 --gc0p4Jq0M2Yt08jU534c0p
 ```
 
-```text
+```txt
 Content-Type: multipart/mixed; boundary=gc0p4Jq0M2Yt08jU534c0p
 
 --gc0p4Jq0M2Yt08jU534c0p

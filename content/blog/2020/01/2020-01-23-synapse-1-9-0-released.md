@@ -11,39 +11,30 @@ Synapse 1.9.0 contains a bunch of new admin APIs as well as bug fixes to existin
 
 Aside from that it is worth noting that we have officially dropped support for SQLite versions < 3.11. Though more generally we would recommend that all admins [migrate to Postgres](https://github.com/matrix-org/synapse/blob/release-v1.9.0/docs/postgres.md) for anything other than test and evaluation purposes.
 
-Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.9.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
-
+Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.9.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 Changelog since Synapse 1.8.0
 
-Synapse 1.9.0 (2020-01-23)
-==========================
+## Synapse 1.9.0 (2020-01-23)
 
 **WARNING**: As of this release, Synapse no longer supports versions of SQLite before 3.11, and will refuse to start when configured to use an older version. Administrators are recommended to migrate their database to Postgres (see instructions [here](https://github.com/matrix-org/synapse/blob/release-v1.9.0/docs/postgres.md)).
 
 If your Synapse deployment uses workers, note that the reverse-proxy configurations for the `synapse.app.media_repository`, `synapse.app.federation_reader` and `synapse.app.event_creator` workers have changed, with the addition of a few paths (see the updated configurations [here](https://github.com/matrix-org/synapse/blob/release-v1.9.0/docs/workers.md#available-worker-applications)). Existing configurations will continue to work.
 
-
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Fix endpoint documentation for the List Rooms admin API. ([\#6770](https://github.com/matrix-org/synapse/issues/6770))
 
+## Synapse 1.9.0rc1 (2020-01-22)
 
-Synapse 1.9.0rc1 (2020-01-22)
-=============================
-
-Features
---------
+### Features
 
 - Allow admin to create or modify a user. Contributed by Awesome Technologies Innovationslabor GmbH. ([\#5742](https://github.com/matrix-org/synapse/issues/5742))
 - Add new quarantine media admin APIs to quarantine by media ID or by user who uploaded the media. ([\#6681](https://github.com/matrix-org/synapse/issues/6681), [\#6756](https://github.com/matrix-org/synapse/issues/6756))
 - Add `org.matrix.e2e_cross_signing` to `unstable_features` in `/versions` as per [MSC1756](https://github.com/matrix-org/matrix-doc/pull/1756). ([\#6712](https://github.com/matrix-org/synapse/issues/6712))
 - Add a new admin API to list and filter rooms on the server. ([\#6720](https://github.com/matrix-org/synapse/issues/6720))
 
-
-Bugfixes
---------
+### Bugfixes
 
 - Correctly proxy HTTP errors due to API calls to remote group servers. ([\#6654](https://github.com/matrix-org/synapse/issues/6654))
 - Fix media repo admin APIs when using a media worker. ([\#6664](https://github.com/matrix-org/synapse/issues/6664))
@@ -59,9 +50,7 @@ Bugfixes
 - Fix `AttributeError: 'NoneType' object has no attribute 'get'` in `hash_password` when configuration has an empty `password_config`. Contributed by @ivilata. ([\#6753](https://github.com/matrix-org/synapse/issues/6753))
 - Fix the `docker-compose.yaml` overriding the entire `/etc` folder of the container. Contributed by Fabian Meyer. ([\#6656](https://github.com/matrix-org/synapse/issues/6656))
 
-
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Fix a typo in the configuration example for purge jobs in the sample configuration file. ([\#6621](https://github.com/matrix-org/synapse/issues/6621))
 - Add complete documentation of the message retention policies support. ([\#6624](https://github.com/matrix-org/synapse/issues/6624), [\#6665](https://github.com/matrix-org/synapse/issues/6665))
@@ -69,15 +58,11 @@ Improved Documentation
 - Clarify the `account_validity` and `email` sections of the sample configuration. ([\#6685](https://github.com/matrix-org/synapse/issues/6685))
 - Add more endpoints to the documentation for Synapse workers. ([\#6698](https://github.com/matrix-org/synapse/issues/6698))
 
-
-Deprecations and Removals
--------------------------
+### Deprecations and Removals
 
 - Synapse no longer supports versions of SQLite before 3.11, and will refuse to start when configured to use an older version. Administrators are recommended to migrate their database to Postgres (see instructions [here](docs/postgres.md)). ([\#6675](https://github.com/matrix-org/synapse/issues/6675))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Add `local_current_membership` table for tracking local user membership state in rooms. ([\#6655](https://github.com/matrix-org/synapse/issues/6655), [\#6728](https://github.com/matrix-org/synapse/issues/6728))
 - Port `synapse.replication.tcp` to async/await. ([\#6666](https://github.com/matrix-org/synapse/issues/6666))

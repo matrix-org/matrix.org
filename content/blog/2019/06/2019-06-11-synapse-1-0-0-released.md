@@ -27,49 +27,35 @@ As ever, you can get the new update [here](https://github.com/matrix-org/synapse
 
 The changelog since 0.99.5 follows:
 
-Synapse 1.0.0 (2019-06-11)
-==========================
+## Synapse 1.0.0 (2019-06-11)
 
-Bugfixes
---------
+### Bugfixes
 
 - Fix bug where attempting to send transactions with large number of EDUs can fail. ([\#5418](https://github.com/matrix-org/synapse/issues/5418))
 
-
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Expand the federation guide to include relevant content from the MSC1711 FAQ ([\#5419](https://github.com/matrix-org/synapse/issues/5419))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Move password reset links to /_matrix/client/unstable namespace. ([\#5424](https://github.com/matrix-org/synapse/issues/5424))
 
-
-Synapse 1.0.0rc3 (2019-06-10)
-=============================
+## Synapse 1.0.0rc3 (2019-06-10)
 
 Security: Fix authentication bug introduced in 1.0.0rc1. Please upgrade to rc3 immediately
 
+## Synapse 1.0.0rc2 (2019-06-10)
 
-Synapse 1.0.0rc2 (2019-06-10)
-=============================
-
-Bugfixes
---------
+### Bugfixes
 
 - Remove redundant warning about key server response validation. ([\#5392](https://github.com/matrix-org/synapse/issues/5392))
 - Fix bug where old keys stored in the database with a null valid until timestamp caused all verification requests for that key to fail. ([\#5415](https://github.com/matrix-org/synapse/issues/5415))
 - Fix excessive memory using with default `federation_verify_certificates: true` configuration. ([\#5417](https://github.com/matrix-org/synapse/issues/5417))
 
+## Synapse 1.0.0rc1 (2019-06-07)
 
-Synapse 1.0.0rc1 (2019-06-07)
-=============================
-
-Features
---------
+### Features
 
 - Synapse now more efficiently collates room statistics. ([\#4338](https://github.com/matrix-org/synapse/issues/4338), [\#5260](https://github.com/matrix-org/synapse/issues/5260), [\#5324](https://github.com/matrix-org/synapse/issues/5324))
 - Add experimental support for relations (aka reactions and edits). ([\#5220](https://github.com/matrix-org/synapse/issues/5220))
@@ -84,9 +70,7 @@ Features
 - Add ability to perform password reset via email without trusting the identity server. ([\#5377](https://github.com/matrix-org/synapse/issues/5377))
 - Set default room version to v4. ([\#5379](https://github.com/matrix-org/synapse/issues/5379))
 
-
-Bugfixes
---------
+### Bugfixes
 
 - Fixes client-server API not sending "m.heroes" to lazy-load /sync requests when a rooms name or its canonical alias are empty. Thanks to @dnaf for this work! ([\#5089](https://github.com/matrix-org/synapse/issues/5089))
 - Prevent federation device list updates breaking when processing multiple updates at once. ([\#5156](https://github.com/matrix-org/synapse/issues/5156))
@@ -119,16 +103,12 @@ Bugfixes
 - Fix `federation_custom_ca_list` configuration option. ([\#5362](https://github.com/matrix-org/synapse/issues/5362))
 - Fix missing logcontext warnings on shutdown. ([\#5369](https://github.com/matrix-org/synapse/issues/5369))
 
-
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Fix docs on resetting the user directory. ([\#5282](https://github.com/matrix-org/synapse/issues/5282))
 - Fix notes about ACME in the MSC1711 faq. ([\#5357](https://github.com/matrix-org/synapse/issues/5357))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Synapse will now serve the experimental "room complexity" API endpoint. ([\#5216](https://github.com/matrix-org/synapse/issues/5216))
 - The base classes for the v1 and v2_alpha REST APIs have been unified. ([\#5226](https://github.com/matrix-org/synapse/issues/5226), [\#5328](https://github.com/matrix-org/synapse/issues/5328))

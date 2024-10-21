@@ -38,31 +38,31 @@ creating RiotX/Android; and launching the Modular.im hosting platform.
 
 With today’s new funding, the priorities for Matrix will be:
 
- * Turning on end-to-end encryption by default for DMs
+* Turning on end-to-end encryption by default for DMs
 
- * Much better support for grouping rooms into Communities
+* Much better support for grouping rooms into Communities
 
- * More anti-abuse/anti-spam mechanisms
+* More anti-abuse/anti-spam mechanisms
 
- * Shrinking Synapse (and/or finishing Dendrite)
+* Shrinking Synapse (and/or finishing Dendrite)
 
- * Canonical DMs (having one DM per user, and have them feel clearly distinct from ‘rooms’)
+* Canonical DMs (having one DM per user, and have them feel clearly distinct from ‘rooms’)
 
- * Extensible Profiles
+* Extensible Profiles
 
- * Decentralised accounts
+* Decentralised accounts
 
- * Threading
+* Threading
 
- * ...and furthering development on P2P Matrix, so users can have full control of their communications without having to run or trust a server.
+* ...and furthering development on P2P Matrix, so users can have full control of their communications without having to run or trust a server.
 
-On the New Vector side, this funding will support: 
+On the New Vector side, this funding will support:
 
- * A whole new wave of UX improvements to Riot (particularly around onboarding and first time user experience).
+* A whole new wave of UX improvements to Riot (particularly around onboarding and first time user experience).
 
- * Making Modular hosting as polished and powerful as possible.
+* Making Modular hosting as polished and powerful as possible.
 
- * Creating a whole new set of next-generation Modular integrations.
+* Creating a whole new set of next-generation Modular integrations.
 
 While New Vector’s contributions to the Matrix ecosystem can’t be ignored,
 it’s important to remember that the Matrix protocol and specification itself
@@ -77,9 +77,9 @@ interest with commercial Matrix endeavours, including New Vector.
 That said, New Vector would not be taking money from any investors if they did
 not believe their goals are aligned with Matrix's. To clarify:
 
-*   Matrix exists to create an open secure decentralised communication network and protocol for the benefit of all.  
-*   New Vector exists to help grow Matrix and be one of many successful companies in the Matrix ecosystem. 
-*   Tech VCs exist to invest their money in growing companies in order to get a return when the company IPOs or gets bought.  
+* Matrix exists to create an open secure decentralised communication network and protocol for the benefit of all.  
+* New Vector exists to help grow Matrix and be one of many successful companies in the Matrix ecosystem.
+* Tech VCs exist to invest their money in growing companies in order to get a return when the company IPOs or gets bought.  
 
 It turns out that these goals are not incompatible if one understands that the
 potential of the Matrix ecosystem is directly linked to its openness and size
@@ -144,9 +144,8 @@ supporting Matrix, whether by donating to the Foundation, promoting and using
 the protocol, or contributing code to the ecosystem.  You are the ones keeping
 the dream alive :)
 
-You can read things from the NV angle over at https://blog.vector.im/8-5m-to-accelerate-matrix/.
+You can read things from the NV angle over at <https://blog.vector.im/8-5m-to-accelerate-matrix/>.
 We hope you’re as excited as we are to open a whole new chapter as Matrix
 picks up yet more momentum :D
 
 -- Matthew, Amandine, and the whole Matrix team
-

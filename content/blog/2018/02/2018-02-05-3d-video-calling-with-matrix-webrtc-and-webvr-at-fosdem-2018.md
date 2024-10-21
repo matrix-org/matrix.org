@@ -14,11 +14,11 @@ category = ["General"]
 
 Last year we spent a few weeks putting together a <a href="/blog/2017/04/04/opening-up-cyberspace-with-matrix-and-webvr/">proof of concept of using Matrix as an open, interoperable communication layer for VR/AR</a> - showing how you can use it as an open signalling protocol to connect users within (and between) virtual worlds, with full-mesh E2E encrypted video conferencing in VR; WebRTC calls overlaid on 360 degree video, and other fun stuff. The reasons for building the demo were quite eclectic:
 <ol>
- 	<li>Try to highlight that Matrix is about much more than just about instant messaging or team chat</li>
- 	<li>Try to encourage the community to jump in and build out more interesting use cases</li>
- 	<li>Learn where the state of the art in WebVR + WebGL is</li>
- 	<li>Kick off the process of encouraging folks to think about storing world geometry and physics in Matrix</li>
- 	<li>Have a fun visual demo we could show to excite potential investors in New Vector (which comically backfired when the investment community spontaneously decided that <a href="https://techcrunch.com/2017/08/26/this-vr-cycle-is-dead/">VR is still too early</a>).</li>
+  <li>Try to highlight that Matrix is about much more than just about instant messaging or team chat</li>
+  <li>Try to encourage the community to jump in and build out more interesting use cases</li>
+  <li>Learn where the state of the art in WebVR + WebGL is</li>
+  <li>Kick off the process of encouraging folks to think about storing world geometry and physics in Matrix</li>
+  <li>Have a fun visual demo we could show to excite potential investors in New Vector (which comically backfired when the investment community spontaneously decided that <a href="https://techcrunch.com/2017/08/26/this-vr-cycle-is-dead/">VR is still too early</a>).</li>
 </ol>
 In the end it succeeded on some points (highlighting exotic uses of Matrix; learning all about WebVR) and failed on others (a surge in Matrix-for-VR) - although we did have a lot of fun showing it off at the <a href="https://www.youtube.com/watch?v=y0-j4Q77KXM">ETHLDN meetup</a> back in October. (Eagle eyed viewers may be amused to spot team <a href="https://status.im">Status</a> & Matrix sitting together in the audience ;)
 
@@ -54,12 +54,12 @@ Unfortunately, it showed that the depth encoding really wasn't working very well
 
 The main problems seem to be:
 <ul>
- 	<li>Whenever there's a big jump in depth, the stripes get incredibly noisy and don't compress at all well, generating completely corrupt data at edges of objects (e.g. the sides of my head)</li>
- 	<li>The complexity of the pattern as a whole isn't particularly compression-friendly</li>
- 	<li>The contrast of the red/green stripes tends to dominate, causing the arguably more important blue to get overpowered during compression.</li>
- 	<li>Converting from 4:4:4 RGB to 4:2:0 YUV (NV12) as required by WebRTC and then back to RGB inevitably entangles the colours - meaning that the extreme contrast of the red/green stripes is very visible on the blue channel after round-tripping due to sampling artefacts.</li>
- 	<li>I probably made a mistake by bitwise casting the 16-bit half-precision floating point depth values directly onto the 16-bit unsigned int lookup index, rather than interpreting the float as a number and building a new index into the lookup table based on its numeric value.  As a result, depth values being encoded ended up having a much lower range than they should.</li>
- 	<li>There are probably other bugs too.</li>
+  <li>Whenever there's a big jump in depth, the stripes get incredibly noisy and don't compress at all well, generating completely corrupt data at edges of objects (e.g. the sides of my head)</li>
+  <li>The complexity of the pattern as a whole isn't particularly compression-friendly</li>
+  <li>The contrast of the red/green stripes tends to dominate, causing the arguably more important blue to get overpowered during compression.</li>
+  <li>Converting from 4:4:4 RGB to 4:2:0 YUV (NV12) as required by WebRTC and then back to RGB inevitably entangles the colours - meaning that the extreme contrast of the red/green stripes is very visible on the blue channel after round-tripping due to sampling artefacts.</li>
+  <li>I probably made a mistake by bitwise casting the 16-bit half-precision floating point depth values directly onto the 16-bit unsigned int lookup index, rather than interpreting the float as a number and building a new index into the lookup table based on its numeric value.  As a result, depth values being encoded ended up having a much lower range than they should.</li>
+  <li>There are probably other bugs too.</li>
 </ul>
 
 <strong>Step 5: </strong>Give up on the fancy depth encoding (for now): <a href="https://github.com/matrix-org/webrtc/commit/2f5d29352ce5d80727639991b1480f610cbdd54c">https://github.com/matrix-org/webrtc/commit/2f5d29352ce5d80727639991b1480f610cbdd54c</a>.  In practice, simply picking a range of the 16-bit half-precision floats to fit in the integer range [0,255] turns out to be good enough for a quick demo (i.e. 8-bit depth buffer, but over a small subset of the 16-bit depth space) - the dot cloud suddenly looked a lot more 3D and recognisable:
@@ -82,16 +82,16 @@ And here's the end result! (complete with trancey soundtrack as the audio we rec
 
 Hopefully this gives a bit of a taste of what proper 3D video calling could be like in VR, and how (relatively) easy it was at the Matrix level to add it in.  If anyone wants to follow along at home, the various hacky branches are:
 <ul>
- 	<li>Playback:
+  <li>Playback:
 <ul>
- 	<li><a href="https://github.com/matrix-org/matrix-vr-demo/tree/dbkr/depthhack_plane">https://github.com/matrix-org/matrix-vr-demo/tree/dbkr/depthhack_plane</a></li>
- 	<li><a href="https://github.com/matrix-org/webrtc/tree/matthew/depth">https://github.com/matrix-org/matrix-js-sdk/tree/matthew/depth</a></li>
+  <li><a href="https://github.com/matrix-org/matrix-vr-demo/tree/dbkr/depthhack_plane">https://github.com/matrix-org/matrix-vr-demo/tree/dbkr/depthhack_plane</a></li>
+  <li><a href="https://github.com/matrix-org/webrtc/tree/matthew/depth">https://github.com/matrix-org/matrix-js-sdk/tree/matthew/depth</a></li>
 </ul>
 </li>
- 	<li>Capture:
+  <li>Capture:
 <ul>
- 	<li><a href="https://github.com/matrix-org/webrtc/tree/matthew/depth">https://github.com/matrix-org/webrtc/tree/matthew/depth</a></li>
- 	<li><a href="https://github.com/matrix-org/matrix-ios-sdk/tree/matthew/depth">https://github.com/matrix-org/matrix-ios-sdk/tree/matthew/depth</a></li>
+  <li><a href="https://github.com/matrix-org/webrtc/tree/matthew/depth">https://github.com/matrix-org/webrtc/tree/matthew/depth</a></li>
+  <li><a href="https://github.com/matrix-org/matrix-ios-sdk/tree/matthew/depth">https://github.com/matrix-org/matrix-ios-sdk/tree/matthew/depth</a></li>
 </ul>
 </li>
 </ul>

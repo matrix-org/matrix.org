@@ -15,23 +15,17 @@ The main change is to introduce an experimental API [MSC2432](https://github.com
 
 We've also changed the default power levels for new rooms so that room upgrades and ACLs require you to be an Admin (PL100), and invites in public rooms now require you to be a moderator (PL50).
 
-Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.11.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.11.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
+## Synapse 1.11.0 (2020-02-21)
 
-Synapse 1.11.0 (2020-02-21)
-===========================
-
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Small grammatical fixes to the ACME v1 deprecation notice. ([\#6944](https://github.com/matrix-org/synapse/issues/6944))
 
+## Synapse 1.11.0rc1 (2020-02-19)
 
-Synapse 1.11.0rc1 (2020-02-19)
-==============================
-
-Features
---------
+### Features
 
 - Admin API to add or modify threepids of user accounts. ([\#6769](https://github.com/matrix-org/synapse/issues/6769))
 - Limit the number of events that can be requested by the backfill federation API to 100. ([\#6864](https://github.com/matrix-org/synapse/issues/6864))
@@ -43,8 +37,7 @@ Features
 - Stop sending `m.room.aliases` events when adding / removing aliases. Check `alt_aliases` in the latest `m.room.canonical_alias` event when deleting an alias. ([\#6904](https://github.com/matrix-org/synapse/issues/6904))
 - Change the default power levels of invites, tombstones and server ACLs for new rooms. ([\#6834](https://github.com/matrix-org/synapse/pull/6834))
 
-Bugfixes
---------
+### Bugfixes
 
 - Fixed third party event rules function `on_create_room`'s return value being ignored. ([\#6781](https://github.com/matrix-org/synapse/issues/6781))
 - Allow URL-encoded User IDs on `/_synapse/admin/v2/users/<user_id>[/admin]` endpoints. Thanks to @NHAS for reporting. ([\#6825](https://github.com/matrix-org/synapse/issues/6825))
@@ -52,15 +45,11 @@ Bugfixes
 - Fix errors from logging in the purge jobs related to the message retention policies support. ([\#6945](https://github.com/matrix-org/synapse/issues/6945))
 - Return a 404 instead of 200 for querying information of a non-existent user through the admin API. ([\#6901](https://github.com/matrix-org/synapse/issues/6901))
 
-
-Updates to the Docker image
----------------------------
+### Updates to the Docker image
 
 - The deprecated "generate-config-on-the-fly" mode is no longer supported. ([\#6918](https://github.com/matrix-org/synapse/issues/6918))
 
-
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Add details of PR merge strategy to contributing docs. ([\#6846](https://github.com/matrix-org/synapse/issues/6846))
 - Spell out that the last event sent to a room won't be deleted by a purge. ([\#6891](https://github.com/matrix-org/synapse/issues/6891))
@@ -72,15 +61,11 @@ Improved Documentation
 - Databases created using the compose file in contrib/docker will now always have correct encoding and locale settings. Contributed by Fridtjof Mund. ([\#6921](https://github.com/matrix-org/synapse/issues/6921))
 - Update pip install directions in readme to avoid error when using zsh. ([\#6855](https://github.com/matrix-org/synapse/issues/6855))
 
-
-Deprecations and Removals
--------------------------
+### Deprecations and Removals
 
 - Remove `m.lazy_load_members` from `unstable_features` since lazy loading is in the stable Client-Server API version r0.5.0. ([\#6877](https://github.com/matrix-org/synapse/issues/6877))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Add type hints to `SyncHandler`. ([\#6821](https://github.com/matrix-org/synapse/issues/6821))
 - Refactoring work in preparation for changing the event redaction algorithm. ([\#6823](https://github.com/matrix-org/synapse/issues/6823), [\#6827](https://github.com/matrix-org/synapse/issues/6827), [\#6854](https://github.com/matrix-org/synapse/issues/6854), [\#6856](https://github.com/matrix-org/synapse/issues/6856), [\#6857](https://github.com/matrix-org/synapse/issues/6857), [\#6858](https://github.com/matrix-org/synapse/issues/6858))

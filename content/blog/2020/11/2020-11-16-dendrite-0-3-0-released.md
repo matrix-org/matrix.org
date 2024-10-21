@@ -21,7 +21,7 @@ makes an enormous perceptual improvement when using Dendrite - so especial
 thanks are due there :)
 
 So, if you're interested in helping us test, please spin up a copy from
-https://github.com/matrix-org/dendrite and let us know how it goes - and if you're
+<https://github.com/matrix-org/dendrite> and let us know how it goes - and if you're
 already running one, now is an excellent time to upgrade!
 
 Full changelog (including 0.2.1, which we forgot to blog about) follows:
@@ -53,4 +53,3 @@ Full changelog (including 0.2.1, which we forgot to blog about) follows:
 * Roomserver output events no longer incorrectly flag state rewrites ([#1557](https://github.com/matrix-org/dendrite/pull/1557))
 * Notification levels are now parsed correctly in power level events ([gomatrixserverlib#228](https://github.com/matrix-org/gomatrixserverlib/pull/228), contributed by [Pestdoktor](https://github.com/Pestdoktor))
 * Invalid UTF-8 is now correctly rejected when making federation requests ([gomatrixserverlib#229](https://github.com/matrix-org/gomatrixserverlib/pull/229), contributed by [Pestdoktor](https://github.com/Pestdoktor))
-

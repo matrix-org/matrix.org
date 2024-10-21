@@ -13,16 +13,15 @@ At the time we didn’t respond via a blog post; instead we ended up talking it 
 
 From my perspective, the main points proposed in ‘The ecosystem is moving’ boil down to:
 
+* Decentralised systems are harder to design and build than centralised ones, as coordination is harder if you don’t have a single authority to trust.
 
-*   Decentralised systems are harder to design and build than centralised ones, as coordination is harder if you don’t have a single authority to trust.
+* Decentralised systems are harder and slower to evolve than centralised ones, as you can’t force participants to rapidly roll out (or even agree on) new features.
 
-*   Decentralised systems are harder and slower to evolve than centralised ones, as you can’t force participants to rapidly roll out (or even agree on) new features.
+* Users in federated systems tend to coalesce around the best/biggest server that the bulk of people use - which means that server typically gets to see a disproportionate amount of communication metadata (who’s talking to who, and when), and has disproportionate power over the network, which could bully others away from running their own deployments.
 
-*   Users in federated systems tend to coalesce around the best/biggest server that the bulk of people use - which means that server typically gets to see a disproportionate amount of communication metadata (who’s talking to who, and when), and has disproportionate power over the network, which could bully others away from running their own deployments.
+* If users don’t trust their app provider, they can always go switch apps, which gives them freedom.
 
-*   If users don’t trust their app provider, they can always go switch apps, which gives them freedom.
-
-*   Open systems are less secure because you have no control over the quality of the implementations - if anyone can bring their own client or server to the table, all it takes is one bad implementation to compromise everyone in the vicinity.
+* Open systems are less secure because you have no control over the quality of the implementations - if anyone can bring their own client or server to the table, all it takes is one bad implementation to compromise everyone in the vicinity.
 
 Now, all of these points are valid to some extent.
 

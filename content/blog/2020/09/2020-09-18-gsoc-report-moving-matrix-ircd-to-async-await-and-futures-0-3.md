@@ -40,15 +40,14 @@ Lastly, In [#77](https://github.com/matrix-org/matrix-ircd/pull/77) I included m
 
 ## Remaining Work
 
-Based on my personal testing there is _no additional work_ to be done in the realm of updating to async/await. All tests pass and the IRC server and matrix bridge function as expected. @jplatte kindly announced in the [This Week In Matrix](https://matrix.org/blog/category/this-week-in-matrix#matrix-ircd---call-for-testing) blog that we will be conducting public testing of the `async_await` branch on github. Barring any issues the async/await code should be merged into the master branch in the next few weeks.
+Based on my personal testing there is *no additional work* to be done in the realm of updating to async/await. All tests pass and the IRC server and matrix bridge function as expected. @jplatte kindly announced in the [This Week In Matrix](https://matrix.org/blog/category/this-week-in-matrix#matrix-ircd---call-for-testing) blog that we will be conducting public testing of the `async_await` branch on github. Barring any issues the async/await code should be merged into the master branch in the next few weeks.
 
 ### Pull request list
 
-* https://github.com/matrix-org/matrix-ircd/pull/64
-* https://github.com/matrix-org/matrix-ircd/pull/65
-* https://github.com/matrix-org/matrix-ircd/pull/66
-* https://github.com/matrix-org/matrix-ircd/pull/67
-* https://github.com/matrix-org/matrix-ircd/pull/71
-* https://github.com/matrix-org/matrix-ircd/pull/72
-* https://github.com/matrix-org/matrix-ircd/pull/77
-
+* <https://github.com/matrix-org/matrix-ircd/pull/64>
+* <https://github.com/matrix-org/matrix-ircd/pull/65>
+* <https://github.com/matrix-org/matrix-ircd/pull/66>
+* <https://github.com/matrix-org/matrix-ircd/pull/67>
+* <https://github.com/matrix-org/matrix-ircd/pull/71>
+* <https://github.com/matrix-org/matrix-ircd/pull/72>
+* <https://github.com/matrix-org/matrix-ircd/pull/77>

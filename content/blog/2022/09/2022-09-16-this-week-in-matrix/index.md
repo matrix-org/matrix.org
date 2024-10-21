@@ -39,11 +39,11 @@ category = ["This Week in Matrix"]
 >
 > **Accepted MSCs:**
 >
-> * _No MSCs were accepted this week._
+> * *No MSCs were accepted this week.*
 >
 > **Merged MSCs:**
 >
-> * _No MSCs were merged this week._
+> * *No MSCs were merged this week.*
 >
 > ## Spec Updates
 >
@@ -63,6 +63,7 @@ category = ["This Week in Matrix"]
 >
 > As far as I can tell, this MSC is currently waiting for [MSC3574](https://github.com/matrix-org/matrix-spec-proposals/pull/3574) to progress before it itself moves much further. But feel free to check out both in the meantime if you're interested.
 >
+> <!-- markdownlint-disable-next-line no-alt-text -->
 > ![](20220916-spec.png)
 
 ## Dept of Servers 🏢
@@ -103,13 +104,14 @@ An Email to Matrix bridge. 1 room = 1 mailbox.
 > * set `msgtype` by attachment's mime-type (received image -> got rendered image in your matrix client; received audio -> got audio player in your matrix client; etc)
 >
 > [Source code](https://gitlab.com/etke.cc/postmoogle), say hi in the [#postmoogle:etke.cc](https://matrix.to/#/#postmoogle:etke.cc) room
+>
 ### matrix-hookshot ([website](https://github.com/Half-Shot/matrix-hookshot))
 
 A multi purpose multi platform bridge, formerly known as matrix-github
 
 [Half-Shot](https://matrix.to/#/@Half-Shot:half-shot.uk) says
 
-> ### matrix-hookshot 2.2.0 arrives with fewer bugs and more features!
+> ### matrix-hookshot 2.2.0 arrives with fewer bugs and more features
 >
 > Hello gang. This week, another hookshot release. They do come fast!
 >
@@ -205,6 +207,7 @@ A client for matrix, the decentralized communication protocol
 > * You can now edit notification settings for each room (Thanks to James Graham)
 > * NeoChat will now better follow Kirigami's style of progress indicator and the system's color for text selection (Thanks to Bharadwaj Raju)
 >
+> <!-- markdownlint-disable-next-line no-alt-text -->
 > ![](2c5afae81a1ee8d120cf71dce2d14fb66a5b5407.png)
 
 ### Ement.el ([website](https://github.com/alphapapa/ement.el))
@@ -223,8 +226,8 @@ Secure and independent communication, connected via Matrix. Come talk with us in
 
 > * On Web we’ve been working on perfecting the app and fixing bugs
 > * Also in the roadmap and currently in development:
->     - Updates to the composer. We’re working on improving the composer and creating a WYSIWYG version (What You See Is What You Get). Keep your eyes peeled for more info in the coming weeks!
->     - There are also improvements to the ‘forgot password’ flow on their way. We made these same improvements to the mobile apps some weeks ago and received great feedback.
+>     * Updates to the composer. We’re working on improving the composer and creating a WYSIWYG version (What You See Is What You Get). Keep your eyes peeled for more info in the coming weeks!
+>     * There are also improvements to the ‘forgot password’ flow on their way. We made these same improvements to the mobile apps some weeks ago and received great feedback.
 >
 > **In labs (you can enable labs features in settings on develop.element.io or on Nightly):**
 >
@@ -249,8 +252,8 @@ Secure and independent communication for Android, connected via Matrix. Come tal
 
 > * Not only are we hard at work smashing bugs but we’re also working on 2 big updates for the coming releases:
 >
->     - The new app layout! While you can currently access this via Labs, we’re closing bugs and addressing feedback that will allow us to make it the default layout for all users. Check out [more info here](https://element.io/blog/an-unrecognisable-improvement-elements-new-design-is-here/)
->     - Also coming up, starting a DM when the first message is sent. No more waiting around for the room to be created before you say hi to the recipients - your invite and message will be received together. Yey! :ta\_da:
+>     * The new app layout! While you can currently access this via Labs, we’re closing bugs and addressing feedback that will allow us to make it the default layout for all users. Check out [more info here](https://element.io/blog/an-unrecognisable-improvement-elements-new-design-is-here/)
+>     * Also coming up, starting a DM when the first message is sent. No more waiting around for the room to be created before you say hi to the recipients - your invite and message will be received together. Yey! :ta\_da:
 > * We’re also working on a fix for the bug that’s making verifying others difficult.
 
 ## Dept of SDKs and Frameworks 🧰
@@ -343,6 +346,7 @@ Your matrix server on your conditions
 Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
 
 ### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+
 Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|
@@ -359,6 +363,7 @@ Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience th
 |10|jacksonchen666.com|1824|
 
 ### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+
 Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|

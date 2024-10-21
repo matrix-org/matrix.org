@@ -27,7 +27,6 @@ If your community is spread across Matrix and Libera Chat, you need to make sure
 your room is “plumbed” into a Libera Chat channel, and not “portalled” to it.
 But what are those, and how to find out?
 
-
 ## Plumbed and portalled?
 
 The simplest approach to it is to say that:
@@ -54,17 +53,18 @@ bridge working.
 In this guide, we’ll be using Element. Open your room, then click on the top
 right `i` to open the right panel. Click on “Add widgets bridges & bots”.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/right-panel-add-widgets-bridges.png)
 
 Click on “IRC Bridge (Libera.Chat)” and see if you have results in the “Linked
 channels” section.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/libera-widget-linked-section.png)
 
 If you see results in that section, the room is plumbed, and it will keep
 working. If you don’t see any result in that section, the room is portalled and
 the bridge will stop working by July 31st.
-
 
 ## What to do if my room is portalled
 
@@ -86,7 +86,6 @@ room history visibility to “Members only (since they joined)”, which corresp
 to `m.room.history_visibility = joined` technically. This setting matches IRC’s
 behaviour.
 
-
 ### Plumb it to IRC
 
 In Element, make sure you’re in the room you have just created, and click on the
@@ -99,6 +98,7 @@ plumb the room to IRC. You can’t edit the server field, which is correctly set
 to Libera Chat. Enter the channel you want to plumb to, and the nick of a chanop
 of this channel.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/request-plumbing.png)
 
 We ask you to please be considerate of Libera Chat chanops and staff, and to
@@ -109,13 +109,13 @@ only send plumb requests to channels:
 
 The chanop will receive this request on their end:
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/plumbing-op-request.png)
 
 If they accept, the room will be plumbed into the IRC channel. Again, please be
 mindful of the remote side of the bridge and don’t send plumbing requests out of
 the blue: IRC chanops will very likely turn them down if they don’t know who is
 sending them or who is controlling the room.
-
 
 ### A note on aliases
 

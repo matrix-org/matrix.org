@@ -20,6 +20,7 @@ That's right, after several months of studying, designing and implementing: we'r
 
 I also need to thank Jonas Platte not only for his technical expertise but also for his kind support and patience. Thanks to MTRNord as well for kickstarting the project, and to the various designers involved.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/new-morg.png)
 
 <!-- more -->

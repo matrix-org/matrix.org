@@ -7,7 +7,7 @@ aliases = ["/docs/guides/client-server-api"]
 
 If you haven't already, get a homeserver up and running on
 `https://localhost:8448` - e.g. by following the instructions at
-https://github.com/matrix-org/synapse/blob/master/INSTALL.md
+<https://github.com/matrix-org/synapse/blob/master/INSTALL.md>
 
 ## Accounts
 
@@ -21,7 +21,7 @@ If you already have an account, you must **login** into it.
 The aim of registration is to get a user ID and access token which you will need
 when accessing other APIs:
 
-```
+```bash
 curl -XPOST -d '{"username":"example", "password":"wordpass", "auth": {"type":"m.login.dummy"}}' "https://localhost:8448/_matrix/client/r0/register"
 
 {
@@ -45,7 +45,7 @@ specify the `type` of method.
 
 The aim when logging in is to get an access token for your existing user ID:
 
-```
+```bash
 curl -XGET "https://localhost:8448/_matrix/client/r0/login"
 
 {
@@ -85,7 +85,7 @@ user and **send a message** to that room.
 If you want to send a message to someone, you have to be in a room with them. To
 create a room:
 
-```
+```bash
     curl -XPOST -d '{"room_alias_name":"tutorial"}' "https://localhost:8448/_matrix/client/r0/createRoom?access_token=YOUR_ACCESS_TOKEN"
 
     {
@@ -102,7 +102,7 @@ string. You can have multiple room aliases per room.
 
 You can now send messages to this room:
 
-```
+```bash
 curl -XPOST -d '{"msgtype":"m.text", "body":"hello"}' "https://localhost:8448/_matrix/client/r0/rooms/%21asfLdzLnOdGRkdPZWu:localhost/send/m.room.message?access_token=YOUR_ACCESS_TOKEN"
 
 {
@@ -131,7 +131,7 @@ join a room **via a room alias** if one was set up.
 
 You can directly invite a user to a room like so:
 
-```
+```bash
 curl -XPOST -d '{"user_id":"@myfriend:localhost"}' "https://localhost:8448/_matrix/client/r0/rooms/%21asfLdzLnOdGRkdPZWu:localhost/invite?access_token=YOUR_ACCESS_TOKEN"
 ```
 
@@ -142,7 +142,7 @@ This informs `@myfriend:localhost` of the room ID
 
 If you receive an invite, you can join the room:
 
-```
+```bash
 curl -XPOST -d '{}' "https://localhost:8448/_matrix/client/r0/rooms/%21asfLdzLnOdGRkdPZWu:localhost/join?access_token=YOUR_ACCESS_TOKEN"
 ```
 
@@ -154,7 +154,7 @@ state to `"join"`. Repeatedly joining a room does nothing.
 Alternatively, if you know the room alias for this room and the room config
 allows it, you can directly join a room via the alias:
 
-```
+```bash
 curl -XPOST -d '{}' "https://localhost:8448/_matrix/client/r0/join/%21asfLdzLnOdGRkdPZWu:localhost?access_token=YOUR_ACCESS_TOKEN"
 
 {
@@ -175,14 +175,14 @@ An event is some interesting piece of data that a client may be interested in.
 It can be a message in a room, a room invite, etc. There are many different
 ways of getting events, depending on what the client already knows.
 
-https://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix.org/tree/master/jekyll/_posts/howtos/jsfiddles/event_stream
+<https://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix.org/tree/master/jekyll/_posts/howtos/jsfiddles/event_stream>
 
 ### Getting all state
 
 If the client doesn't know any information on the rooms the user is
 invited/joined on, they can get all the user's state for all rooms:
 
-```
+```bash
 curl -XGET "https://localhost:8448/_matrix/client/r0/sync?access_token=YOUR_ACCESS_TOKEN"
 
 {
@@ -269,7 +269,7 @@ all of the presences relevant for these rooms. This can be a LOT of data. You
 may just want the most recent event for each room. This can be achieved by
 applying a filter that asks for a limit of 1 timeline event per room:
 
-```
+```bash
 curl --globoff -XGET 'https://localhost:8448/_matrix/client/r0/sync?filter={"room":{"timeline":{"limit":1}}}&access_token=YOUR_ACCESS_TOKEN'
 
 {
@@ -316,7 +316,7 @@ used to obtain updates since this point under the object key `next_batch`. To
 use this token, specify its value as the `since` parameter to another `/sync`
 request.:
 
-```
+```bash
 curl -XGET "https://localhost:8448/_matrix/client/r0/sync?since=s9_7_0_1_1_1&access_token=YOUR_ACCESS_TOKEN"
 
 {
@@ -351,7 +351,7 @@ parameter, which gives a duration in milliseconds, we can ask the server to
 wait for up to that amount of time before it returns. If no interesting events
 have happened since then, the response will be relatively empty.:
 
-```
+```bash
 curl -XGET "https://localhost:8448/_matrix/client/r0/sync?since=s9_13_0_1_1_1&access_token=YOUR_ACCESS_TOKEN"
 {
     "account_data": {

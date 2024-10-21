@@ -27,5 +27,3 @@ category = ["Releases", "Security"]
   Installation instructions are available [on GitHub](https://github.com/matrix-org/synapse/blob/master/INSTALL.md), as is the `v1.24.0` [release tag](https://github.com/matrix-org/synapse/releases/tag/v1.24.0).
 
   Synapse is a Free and Open Source Software project, and we'd like to extend our thanks to everyone who contributed to this release, including [@angdraug](https://github.com/angdraug), [@chagai95](https://github.com/chagai95), [@daenney](https://github.com/daenney), [@dklimpel](https://github.com/dklimpel), [@jordanbancino](https://github.com/jordanbancino), [@localguru](https://github.com/localguru), [@nchamo](https://github.com/nchamo), [@ShadowJonathan](https://github.com/ShadowJonathan), [@TeFiLeDo](https://github.com/TeFiLeDo), [@tulir](https://github.com/tulir), and [@waylon531](https://github.com/waylon531).
-
-

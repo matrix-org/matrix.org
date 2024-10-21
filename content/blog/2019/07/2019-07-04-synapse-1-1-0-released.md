@@ -26,8 +26,7 @@ As ever, you can get the new update [here](https://github.com/matrix-org/synapse
 
 The changelog since 1.0.0 follows:
 
-Synapse 1.1.0 (2019-07-04)
-==========================
+## Synapse 1.1.0 (2019-07-04)
 
 As of v1.1.0, Synapse no longer supports Python 2, nor Postgres version 9.4.
 See the [upgrade notes](https://github.com/matrix-org/synapse/blob/master/UPGRADE.rst#upgrading-to-v110) for more details.
@@ -38,32 +37,24 @@ for more details.
 
 No changes since 1.1.0rc2.
 
+## Synapse 1.1.0rc2 (2019-07-03)
 
-Synapse 1.1.0rc2 (2019-07-03)
-=============================
-
-Bugfixes
---------
+### Bugfixes
 
 - Fix regression in 1.1rc1 where OPTIONS requests to the media repo would fail. ([\#5593](https://github.com/matrix-org/synapse/issues/5593))
 - Removed the `SYNAPSE_SMTP_*` docker container environment variables. Using these environment variables prevented the docker container from starting in Synapse v1.0, even though they didn't actually allow any functionality anyway. ([\#5596](https://github.com/matrix-org/synapse/issues/5596))
 - Fix a number of "Starting txn from sentinel context" warnings. ([\#5605](https://github.com/matrix-org/synapse/issues/5605))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Update github templates. ([\#5552](https://github.com/matrix-org/synapse/issues/5552))
 
-
-Synapse 1.1.0rc1 (2019-07-02)
-=============================
+## Synapse 1.1.0rc1 (2019-07-02)
 
 As of v1.1.0, Synapse no longer supports Python 2, nor Postgres version 9.4.
 See the [upgrade notes](UPGRADE.rst#upgrading-to-v110) for more details.
 
-Features
---------
+### Features
 
 - Added possibility to disable local password authentication. Contributed by Daniel Hoffend. ([\#5092](https://github.com/matrix-org/synapse/issues/5092))
 - Add monthly active users to phonehome stats. ([\#5252](https://github.com/matrix-org/synapse/issues/5252))
@@ -81,8 +72,7 @@ Features
 - Optimise devices changed query to not pull unnecessary rows from the database, reducing database load. ([\#5559](https://github.com/matrix-org/synapse/issues/5559))
 - Add new metrics for number of forward extremities being persisted and number of state groups involved in resolution. ([\#5476](https://github.com/matrix-org/synapse/issues/5476))
 
-Bugfixes
---------
+### Bugfixes
 
 - Fix bug processing incoming events over federation if call to `/get_missing_events` fails. ([\#5042](https://github.com/matrix-org/synapse/issues/5042))
 - Prevent more than one room upgrade happening simultaneously on the same room. ([\#5051](https://github.com/matrix-org/synapse/issues/5051))
@@ -101,9 +91,8 @@ Bugfixes
 - Fixed m.login.jwt using unregistered user_id and added pyjwt>=1.6.4 as jwt conditional dependencies. Contributed by Pau Rodriguez-Estivill. ([\#5555](https://github.com/matrix-org/synapse/issues/5555), [\#5586](https://github.com/matrix-org/synapse/issues/5586))
 - Fix a bug that would cause invited users to receive several emails for a single 3PID invite in case the inviter is rate limited. ([\#5576](https://github.com/matrix-org/synapse/issues/5576))
 
+### Updates to the Docker image
 
-Updates to the Docker image
----------------------------
 - Add ability to change Docker containers [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) with the `TZ` variable. ([\#5383](https://github.com/matrix-org/synapse/issues/5383))
 - Update docker image to use Python 3.7. ([\#5546](https://github.com/matrix-org/synapse/issues/5546))
 - Deprecate the use of environment variables for configuration, and make the use of a static configuration the default. ([\#5561](https://github.com/matrix-org/synapse/issues/5561), [\#5562](https://github.com/matrix-org/synapse/issues/5562), [\#5566](https://github.com/matrix-org/synapse/issues/5566), [\#5567](https://github.com/matrix-org/synapse/issues/5567))
@@ -113,24 +102,19 @@ Updates to the Docker image
 - Fix failure to start under docker with SAML support enabled. ([\#5490](https://github.com/matrix-org/synapse/issues/5490))
 - Use a sensible location for data files when generating a config file. ([\#5563](https://github.com/matrix-org/synapse/issues/5563))
 
-
-Deprecations and Removals
--------------------------
+### Deprecations and Removals
 
 - Python 2.7 is no longer a supported platform. Synapse now requires Python 3.5+ to run. ([\#5425](https://github.com/matrix-org/synapse/issues/5425))
 - PostgreSQL 9.4 is no longer supported. Synapse requires Postgres 9.5+ or above for Postgres support. ([\#5448](https://github.com/matrix-org/synapse/issues/5448))
 - Remove support for cpu_affinity setting. ([\#5525](https://github.com/matrix-org/synapse/issues/5525))
 
+### Improved Documentation
 
-Improved Documentation
-----------------------
 - Improve README section on performance troubleshooting. ([\#4276](https://github.com/matrix-org/synapse/issues/4276))
 - Add information about how to install and run `black` on the codebase to code_style.rst. ([\#5537](https://github.com/matrix-org/synapse/issues/5537))
 - Improve install docs on choosing server_name. ([\#5558](https://github.com/matrix-org/synapse/issues/5558))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Add logging to 3pid invite signature verification. ([\#5015](https://github.com/matrix-org/synapse/issues/5015))
 - Update example haproxy config to a more compatible setup. ([\#5313](https://github.com/matrix-org/synapse/issues/5313))

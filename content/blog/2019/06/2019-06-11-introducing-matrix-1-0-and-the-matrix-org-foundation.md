@@ -24,42 +24,44 @@ On the Synapse side, our focus has been exclusively on ensuring that Synapse cor
 
 All this means that the main headline features which land in Matrix 1.0 are vitally important but relatively dry:
 
-*   Using X.509 certificates to trust servers rather than perspective notaries, to simplify and improve server-side trust.  This is a **breaking change** across Matrix, and we’ve given the community several months now to ensure their homeservers run a valid TLS certificate.  See [MSC1711](https://github.com/matrix-org/synapse/blob/master/docs/MSC1711_certificates_FAQ.md) for full details, and the [2 week warning](https://matrix.org/blog/2019/05/24/final-countdown-to-1-0) we gave.  As of ~9am UTC today, the matrix.org homeserver is running Synapse 1.0 and enforcing valid TLS certificates - the transition has begun (and so far we haven’t spotted any major breakage :).  Thank you to everyone who [got ready](https://arewereadyyet.com) in advance!
-*   Using .well-known URIs to discover servers, in case you can’t get a valid TLS certificate for your server’s domain.
-*   Switching to **[room version 4](https://matrix.org/docs/spec/rooms/v4.html) by default** for creating new rooms.  This fixes the most important defects that the core room algorithm has historically encountered, particularly:
-    *   The new State Resolution algorithm to fix the [Hotel California bug](https://github.com/matrix-org/synapse/issues/2432) and many others: [State Resolution Reloaded](https://github.com/matrix-org/matrix-doc/issues/1442)
-    *   [Collision resistant event IDs](https://github.com/matrix-org/matrix-doc/pull/1659)
-*   Specifying the ability to upgrade between room versions
-*   Full specification of lazy loading room members
-*   [Short Authentication String](https://github.com/matrix-org/matrix-doc/issues/1267) (Emoji!) interactive verification of E2EE devices
-*   ...and lots and lots and lots of bugfixes and spec omission fixes.
+* Using X.509 certificates to trust servers rather than perspective notaries, to simplify and improve server-side trust.  This is a **breaking change** across Matrix, and we’ve given the community several months now to ensure their homeservers run a valid TLS certificate.  See [MSC1711](https://github.com/matrix-org/synapse/blob/master/docs/MSC1711_certificates_FAQ.md) for full details, and the [2 week warning](https://matrix.org/blog/2019/05/24/final-countdown-to-1-0) we gave.  As of ~9am UTC today, the matrix.org homeserver is running Synapse 1.0 and enforcing valid TLS certificates - the transition has begun (and so far we haven’t spotted any major breakage :).  Thank you to everyone who [got ready](https://arewereadyyet.com) in advance!
+* Using .well-known URIs to discover servers, in case you can’t get a valid TLS certificate for your server’s domain.
+* Switching to **[room version 4](https://matrix.org/docs/spec/rooms/v4.html) by default** for creating new rooms.  This fixes the most important defects that the core room algorithm has historically encountered, particularly:
+    * The new State Resolution algorithm to fix the [Hotel California bug](https://github.com/matrix-org/synapse/issues/2432) and many others: [State Resolution Reloaded](https://github.com/matrix-org/matrix-doc/issues/1442)
+    * [Collision resistant event IDs](https://github.com/matrix-org/matrix-doc/pull/1659)
+* Specifying the ability to upgrade between room versions
+* Full specification of lazy loading room members
+* [Short Authentication String](https://github.com/matrix-org/matrix-doc/issues/1267) (Emoji!) interactive verification of E2EE devices
+* ...and lots and lots and lots of bugfixes and spec omission fixes.
 
 That said, there is a *lot* of really exciting stuff in flight right now which sadly didn’t stabilise in time for Matrix 1.0, but will be landing as fast as we can finalise it now that 1.0 is at last out the door.  This includes:
 
-*   Editable messages!  (These are in Synapse 1.0 and Riot already, but still stabilising so not enabled by default)
-*   Reactions! (Similarly these are in develop)
-*   Threading!! (We’ve planted the seeds for this in the new ‘aggregations’ support which powers edits & reactions - but full thread support is still a bit further out).
-*   [Cross-signed verification for end-to-end encryption](https://github.com/uhoreg/matrix-doc/blob/cross-signing2/proposals/1756-cross-signing.md) (This is on a branch, but due to land any day now).  We’ve also held off merging E2E backups into the Matrix 1.0 spec until cross-signing lands, given it may change the backup behaviour a bit.  Once this is done, we can seriously talk about turning on E2E by default everywhere.
-*   Live-tracking of room statistics and state in Synapse!  (This is in Synapse 1.0 already if you check out the new room_stats and room_state tables, but we need to provide a nice admin interface for it).
-*   Support for smaller footprint homeservers by reducing memory usage and stopping them from joining overly complex rooms.
+* Editable messages!  (These are in Synapse 1.0 and Riot already, but still stabilising so not enabled by default)
+* Reactions! (Similarly these are in develop)
+* Threading!! (We’ve planted the seeds for this in the new ‘aggregations’ support which powers edits & reactions - but full thread support is still a bit further out).
+* [Cross-signed verification for end-to-end encryption](https://github.com/uhoreg/matrix-doc/blob/cross-signing2/proposals/1756-cross-signing.md) (This is on a branch, but due to land any day now).  We’ve also held off merging E2E backups into the Matrix 1.0 spec until cross-signing lands, given it may change the backup behaviour a bit.  Once this is done, we can seriously talk about turning on E2E by default everywhere.
+* Live-tracking of room statistics and state in Synapse!  (This is in Synapse 1.0 already if you check out the new room_stats and room_state tables, but we need to provide a nice admin interface for it).
+* Support for smaller footprint homeservers by reducing memory usage and stopping them from joining overly complex rooms.
 
 Then stuff which we haven’t yet started, but is now unlocked by the 1.0 release:
 
-*   Fixing extremities build-up (and so massively improving performance)
-*   Rewriting Communities.  Groups/Communities deliberately didn’t land in Matrix 1.0 as the current implementation has issues we want to fix first.  [MSC1772](https://github.com/matrix-org/matrix-doc/pull/1772) has the details.
-*   Rewritten room directory using the new room stats/state tables to be super-speedy.
-*   Super-speedy [incremental state resolution](https://github.com/matrix-org/synapse/pull/3122)
-*   Removing MXIDs from events ([MSC1228](https://github.com/matrix-org/matrix-doc/issues/1228))
+* Fixing extremities build-up (and so massively improving performance)
+* Rewriting Communities.  Groups/Communities deliberately didn’t land in Matrix 1.0 as the current implementation has issues we want to fix first.  [MSC1772](https://github.com/matrix-org/matrix-doc/pull/1772) has the details.
+* Rewritten room directory using the new room stats/state tables to be super-speedy.
+* Super-speedy [incremental state resolution](https://github.com/matrix-org/synapse/pull/3122)
+* Removing MXIDs from events ([MSC1228](https://github.com/matrix-org/matrix-doc/issues/1228))
 
 Just to give a quick taster of the shape of things to come, here’s RiotX/Android, the all-new Riot client for Android, showing off Edits & Reactions in the wild…
 
 <div style="text-align: center">
+<!-- markdownlint-disable-next-line no-alt-text -->
 <img src="/blog/img/edits.jpg" style="height: 640px;"/>
 </div>
 
 ...and here’s a screenshot of the final test jig for cross-signing devices in end-to-end encryption, so you will never have to manually verify new devices for a trusted user ever again!  We demoed a *very* early version of this at FOSDEM, but this here is the testing harness for real deal, after several iterations of the spec and implementation to nail down the model. + means the device/user's cross-signing key is trusted, T means it's TOFU:
 
 <div style="text-align: center">
+<!-- markdownlint-disable-next-line no-alt-text -->
 <img src="/blog/img/cross-signing.png" style="height: 480px; margin: auto"/>
 </div>
 
@@ -118,4 +120,3 @@ Finally, huge thanks to everyone who has continued to support us through thick a
 So: thank you once again for flying Matrix.  We hope you enjoy 1.0, and we look forward to everything else landing on the horizon!
 
 \- Matthew, Amandine & the whole Matrix.org Team.
-

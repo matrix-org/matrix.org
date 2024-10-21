@@ -77,4 +77,3 @@ order): Ashish Kumar, Dirk Klimpel, Jeremy Kescher, Jeyachandran Rathnam,
 Nick Mills-Barrett, Jason Little, Villepeh and Vertux.
 We are also grateful to anyone helping us make Synapse better by sharing their
 feedback and reporting issues, or helping with community support questions.
-

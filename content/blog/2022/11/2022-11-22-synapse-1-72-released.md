@@ -55,9 +55,10 @@ notes](https://matrix-org.github.io/synapse/v1.71/upgrade.html#changes-to-the-ev
 
 ## The new stuff
 
-### Threads, threads, threads!
+### Threads, threads, threads
 
 Several MSCs related to threads got implemented:
+
 - [MSC3856](https://github.com/matrix-org/matrix-spec-proposals/pull/3856)
   provide an API to fetch threads and related metadata.
 - [MSC3771](https://github.com/matrix-org/matrix-spec-proposals/pull/3771) and
@@ -126,4 +127,3 @@ Jong](https://github.com/ShadowJonathan),
 [MichaIng](https://github.com/MichaIng) and [Aaron
 Raimist](https://github.com/aaronraimist) as well as anyone helping us make
 Synapse better by sharing their feedback and reporting issues.
-

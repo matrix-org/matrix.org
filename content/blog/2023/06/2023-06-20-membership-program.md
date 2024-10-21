@@ -14,7 +14,7 @@ We shared back in December how we wanted to find a way for people and
 organisations to support Matrix in a more impactful manner. We wanted it to also
 enable the Foundation to be more autonomous and more powerful in growing the
 ecosystem. Well the day has come: the Foundation is now able to formally accept
-members! 
+members!
 
 So what is a member of the Matrix.org Foundation? It's an organisation or
 individual who financially supports the Foundation by paying a yearly membership
@@ -69,7 +69,6 @@ open standard that is supporting their healthcare, defence and public
 administration continues to benefit from innovative open source software
 development.
 
-
 ## Stay unbiased & vendor neutral
 
 The Matrix manifesto hasn't changed. We still believe people should have full
@@ -91,7 +90,6 @@ to somehow cripple or fragment the open protocol and ecosystem in favour of
 competitive advantage. As such it is a guardian of the neutrality of the
 protocol, making sure it will serve the general public's interests and be a
 solid base to build robust products on for commercial organisations.
-
 
 ## Delivering from the get go
 
@@ -142,7 +140,7 @@ the relations of power in the Matrix ecosystem, to make it more independent of
 specific vendors. We believe this is a major next step to make Matrix thrive,
 and [welcome everyone to join us in our mission](https://matrix.org/membership).
 You can also check our Prospective Members presentation [here](https://drive.google.com/file/d/18YSlh5Uv2YMb6QaLi4fFu7Xv1uSWKAo7/view?usp=drive_link)
-for more details. 
+for more details.
 
 **In short, become a member today!**
 

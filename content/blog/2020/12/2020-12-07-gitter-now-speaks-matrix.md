@@ -66,9 +66,9 @@ In terms of the work which has gone into this - Gitter has been an excellent cas
 At high level, the core work needed was as simple as:
 
 - Add ‘virtual users’, so remote Matrix users can be modelled and represented in Gitter correctly: [https://gitlab.com/gitterHQ/webapp/-/merge_requests/2027/diffs](https://gitlab.com/gitterHQ/webapp/-/merge_requests/2027/diffs).
-  - This can be accomplished by simply adding a `virtualUser` property to your chat message/post/tweet schema which holds the mxid, displayName, and avatar as an alternative to your `author` field. Then display the `virtualUser` whenever available over the `author`.
+    - This can be accomplished by simply adding a `virtualUser` property to your chat message/post/tweet schema which holds the mxid, displayName, and avatar as an alternative to your `author` field. Then display the `virtualUser` whenever available over the `author`.
 - Add an application service to Gitter to bridge traffic in & out of Matrix: [https://gitlab.com/gitterHQ/webapp/-/merge_requests/2041/diffs](https://gitlab.com/gitterHQ/webapp/-/merge_requests/2041/diffs)
-  - This "application service" comes pre-packaged for you in many cases, so for example you can simply drop in a library like [matrix-appservice-bridge](https://github.com/matrix-org/matrix-appservice-bridge) in a Node.js application, and all of the Matrix talking complexity is handled for you.
+    - This "application service" comes pre-packaged for you in many cases, so for example you can simply drop in a library like [matrix-appservice-bridge](https://github.com/matrix-org/matrix-appservice-bridge) in a Node.js application, and all of the Matrix talking complexity is handled for you.
 - Polish it!
 
 In practice, Eric (lead Gitter dev) laid out the waypoints of the full journey:

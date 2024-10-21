@@ -49,8 +49,8 @@ Either way, you will soon have a functioning Matrix Synapse homeserver and
 ## Set up an Android VM
 
 The best way to run an Android Virtual Machine is to use the Android Studio
-tools from Google. First, [install Android Studio
-](https://developer.android.com/studio/install), making sure to follow the
+tools from Google.
+First, [install Android Studio](https://developer.android.com/studio/install), making sure to follow the
 post-install steps, as they will install additional tools we need, including
 AVD Manager.
 
@@ -61,17 +61,18 @@ Follow the steps to create a new virtual machine, in this example I have a Nexus
 5X running Android 9, but almost any configuration is fine here. Make sure that
 you give the device access to the Play Store.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/docs/legacy/avd.png)
 
 ## Install WhatsApp and sign-in
 
-Launch the Virtual Device, the open the Play Store and sign in. Now use the Play Store to install WhatsApp on the Virtual Device.
+Launch the Virtual Device, the open the Play Store and sign in.
+Now use the Play Store to install WhatsApp on the Virtual Device.
 
 You will be asked to verify your phone number, use your number on another device to complete this step.
 
-
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/docs/legacy/nexus5.png)
-
 
 ## Setup mautrix-whatsapp bridge
 
@@ -88,7 +89,9 @@ which in your case is the AVD. In order to scan the presented QR code, set your
 AVD camera to passthrough the camera device on your host machine - see the
 images below.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/docs/legacy/camera1.png)
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/docs/legacy/camera2.png)
 
 Once this is complete, you can type `sync`, to start bridging contacts, and
@@ -98,7 +101,7 @@ And that's it! You may need to take a little time to watch the sync happen,
 particularly if you have a very large number of chats on the WhatsApp side, but
 there is no further configuration needed.
 
-## Demo!
+## Demo
 
 {{ youtube_player(video_id="edSgP2dEZ1o") }}
 

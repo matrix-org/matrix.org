@@ -25,11 +25,11 @@ Changes in synapse v0.7.1 (2015-02-19)
 * Initial alpha implementation of parts of the Application Services API.
   Including:
 
-  - AS Registration / Unregistration
-  - User Query API
-  - Room Alias Query API
-  - Push transport for receiving events.
-  - User/Alias namespace admin control
+    * AS Registration / Unregistration
+    * User Query API
+    * Room Alias Query API
+    * Push transport for receiving events.
+    * User/Alias namespace admin control
 
 * Add cache when fetching events from remote servers to stop repeatedly
   fetching events with bad signatures.

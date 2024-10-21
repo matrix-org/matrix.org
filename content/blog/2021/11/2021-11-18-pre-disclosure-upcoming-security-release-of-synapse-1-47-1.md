@@ -9,7 +9,6 @@ category = ["Security"]
 
 On **Tuesday, 23rd November** we plan to release Synapse 1.47.1 at 12:00 UTC to address a single high severity issue. This vulnerability was discovered internally by our security team. Synapse is a Matrix homeserver implementation developed by the matrix.org team and the wider Matrix community.
 
-
 If you're a server administrator running Synapse, **please be prepared to upgrade as soon as the patched version is released**.
 
 We will be reaching out to downstream packagers to ensure they can prepare patched versions of affected packages at the time of the release. The details of the vulnerability will be disclosed in a blog post on the day of the release. There is so far no evidence of the vulnerability being exploited in the wild.

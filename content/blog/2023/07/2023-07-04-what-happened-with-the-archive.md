@@ -82,7 +82,6 @@ they're able to read the history without ever joining. All of this is defined
 for each room, and is vanilla Matrix without any involvement of the Matrix
 Public Archive.
 
-
 ## Room Visibility and IRC Bridging
 
 It is important to note that the Libera Chat and OFTC bridges hosted by the
@@ -95,7 +94,6 @@ never shared with other users.**
 
 For the sake of completeness, let's cover the two types of rooms that exist when
 bridging a room to IRC, and the implications on history visibility control.
-
 
 ### Portalled rooms
 
@@ -110,7 +108,6 @@ promotes the IRC representation of a Matrix user as op in the channel, the
 bridge bot will promote said user to the power level 50 on the Matrix side. This
 Matrix user will be able to change the visibility of the room on the Matrix
 side, and opt-in for a world-readable visibility.
-
 
 ### Plumbed rooms
 
@@ -129,7 +126,6 @@ PL100). They are in total control of the history visibility, which can be
 world-readable from the start. It's worth reiterating that such rooms can only
 be linked to IRC when an IRC chanop approves the plumbing request.
 
-
 ## The Matrix Public Archive is not an archive
 
 In retrospect, the Matrix Public Archive is a terrible name for this project -
@@ -147,8 +143,7 @@ is not reading any information which wasn't already publicly visible without
 joining the room - but we can see why having a random bot join is scary,
 especially when it's called ‘archive', and it's not actually archiving anything.
 
-
-### Wait, my room's world readable?!
+### Wait, my room's world readable?
 
 The most obvious issue is that some people were surprised that their room was
 world readable in the first place. Some rooms have a long history themselves,
@@ -163,7 +158,7 @@ room. Earlier in Matrix history, guest accounts were popular in some communities
 and people also made their room `world_readable` to onboard guests more easily.
 All of this leads us to the same two issues today.
 
-First, it should be made clearer in the UI of archive.matrix.org on *why* a room
+First, it should be made clearer in the UI of archive.matrix.org on _why_ a room
 is world-readable (i.e. "A room admin (chanop) called Bob set the room to be
 world-readable on Jan 2, 2018"). And moreover, Matrix clients in general could
 do a better job of calling out when a room's history can be read by everyone,
@@ -192,7 +187,7 @@ visibility which prevented them from being in the archive at all. We have
 additionally prevented the Matrix.org hosted public archive from exposing the
 content of portalled rooms that are bridged to Libera Chat since June 7, and
 rooms bridged to OFTC since June 27, regardless of their history visibility
-setting. 
+setting.
 
 Looking at [Libera Chat's Public logging policy](https://libera.chat/policies/#public-logging)
 there might be a way to make the bridge change the topic to be explicit about
@@ -213,7 +208,7 @@ We're investigating:
 ## A word on GDPR
 
 We understand that there have been some concerns around the GDPR compliance of
-the Matrix Public Archive. As always, we hear you and welcome your feedback. 
+the Matrix Public Archive. As always, we hear you and welcome your feedback.
 
 The first step we will take is actually rename the project, to clarify what its
 technical purpose is. ‘Archiving' has very specific connotations within the
@@ -229,7 +224,6 @@ removing data from the ‘archive' is as simple as [deleting it from the room](h
 
 If you have feedback on the legal aspects of this project, please send it over
 to [dpo@matrix.org](mailto:dpo@matrix.org).
-
 
 ## Next steps
 

@@ -19,7 +19,7 @@ We're happy to say that Synapse 1.37.1 [fixes this](https://github.com/matrix-or
 
 **Also, we highly recommend that you disable open registration or, if you keep it enabled, use SSO or require email validation to avoid abusive signups. Empirically adding a CAPTCHA is not enough. Otherwise you may find your server blocked all over the place if it is hosting spambots.**
 
-**Finally, if your server has open registration, PLEASE check whether spambots have been registered on your server, and deactivate them.  Once deactivated, you will need to contact abuse@matrix.org to request that blocks on your server are removed**.
+**Finally, if your server has open registration, PLEASE check whether spambots have been registered on your server, and deactivate them.  Once deactivated, you will need to contact <abuse@matrix.org> to request that blocks on your server are removed**.
 
 Your best bet for spotting and neutralising dormant spambots is to review signups on your homeserver over the past 3-5 days and deactivate suspicious users. We do not recommend relying solely on lists of suspicious IP addresses for this task, as the distributed nature of the attack means any such list is likely to be incomplete or include shared proxies which may also catch legitimate users.
 
@@ -31,7 +31,7 @@ Meanwhile, over to Dan for the Synapse 1.37 release notes.
 
 Synapse 1.37 is now available!
 
-> **Note: ** The legacy APIs for Spam Checker extension modules are now considered deprecated and targeted for removal in August. Please see [the module docs](https://matrix-org.github.io/synapse/v1.37/modules.html#porting-an-existing-module-that-uses-the-old-interface) for information on updating.
+> **Note:** The legacy APIs for Spam Checker extension modules are now considered deprecated and targeted for removal in August. Please see [the module docs](https://matrix-org.github.io/synapse/v1.37/modules.html#porting-an-existing-module-that-uses-the-old-interface) for information on updating.
 >
 > This release also removes Synapse's built-in support for the obsolete ACMEv1 protocol for automatically obtaining TLS certificates. Server administrators should place Synapse behind a [reverse proxy](https://matrix-org.github.io/synapse/v1.37/reverse_proxy.html) for TLS termination, or switch to a standalone ACMEv2 client like [certbot](https://certbot.eff.org/).
 

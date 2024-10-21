@@ -37,34 +37,30 @@ Meanwhile, on the core Matrix side, the investment lets us focus immediately on 
 * <b>At the same time, we're excited to ramp up our investment in Riot's performance and overall polish (as well as achieving feature parity with Slack/Discord and friends) - that means we're looking for React, Android & iOS folks to join the core team full-time asap to take the apps to the next level.  Again, <a href="mailto:jobs@riot.im">jobs@riot.im</a> if this sounds like you!</b>
 
 <ul>
- 	<li><b>Getting End-to-end Encryption out of beta.</b> We know what we need to do to push E2E out of beta (incremental key backup; cross-signing devices; improved device verification) - Status' investment means we can build the team to get it done! Decentralised end-to-end encryption is not for the faint-hearted, but if you're up for the challenge please get in touch at <a href="mailto:jobs@matrix.org">jobs@matrix.org</a>.
+  <li><b>Getting End-to-end Encryption out of beta.</b> We know what we need to do to push E2E out of beta (incremental key backup; cross-signing devices; improved device verification) - Status' investment means we can build the team to get it done! Decentralised end-to-end encryption is not for the faint-hearted, but if you're up for the challenge please get in touch at <a href="mailto:jobs@matrix.org">jobs@matrix.org</a>.
 
 </li>
 </ul>
 <ul>
- 	<li><b>Finishing Dendrite.</b> Dendrite (our next-gen golang homeserver implementation) is a hugely ambitious project and right now the only folks working on it are Rich and Erik… who also happen to be supporting Synapse too.  The good news is that the community has been helping considerably with Dendrite, but it would be even better if we had more people supported to work on it full time.  If you love Go, and you love massively scalable decentralised systems, please hit up <a href="mailto:jobs@matrix.org">jobs@matrix.org</a>!
+  <li><b>Finishing Dendrite.</b> Dendrite (our next-gen golang homeserver implementation) is a hugely ambitious project and right now the only folks working on it are Rich and Erik… who also happen to be supporting Synapse too.  The good news is that the community has been helping considerably with Dendrite, but it would be even better if we had more people supported to work on it full time.  If you love Go, and you love massively scalable decentralised systems, please hit up <a href="mailto:jobs@matrix.org">jobs@matrix.org</a>!
 </li>
 </ul>
 <ul>
- 	<li><b>Supporting Synapse.</b>There is massive scope for performance improvements to Synapse, and there are thousands of deployments out there today, so we really want to improve support for Synapse.  If you love Python and Twisted, and interesting performance/profiling and efficiency work, please hit up <a href="mailto:jobs@matrix.org">jobs@matrix.org</a> too!
+  <li><b>Supporting Synapse.</b>There is massive scope for performance improvements to Synapse, and there are thousands of deployments out there today, so we really want to improve support for Synapse.  If you love Python and Twisted, and interesting performance/profiling and efficiency work, please hit up <a href="mailto:jobs@matrix.org">jobs@matrix.org</a> too!
 
 </li>
 </ul>
 <ul>
- 	<li><b>Maintaining the Spec.</b> If Matrix is anything it is the spec, and maintenance of the spec is key to the project's success. In 2018 we intend to invest heavily in its maintenance and address outstanding API proposals, documenting APIs, not to mention updating the general technical documentation (guides, FAQ etc) on Matrix.org in general.  If you are a developer who loves spec work, we need you over at <a href="mailto:jobs@matrix.org">jobs@matrix.org</a> immediately! :)
+  <li><b>Maintaining the Spec.</b> If Matrix is anything it is the spec, and maintenance of the spec is key to the project's success. In 2018 we intend to invest heavily in its maintenance and address outstanding API proposals, documenting APIs, not to mention updating the general technical documentation (guides, FAQ etc) on Matrix.org in general.  If you are a developer who loves spec work, we need you over at <a href="mailto:jobs@matrix.org">jobs@matrix.org</a> immediately! :)
 </li>
 </ul>
 Beyond these immediate priorities, we have a long feature roadmap lined up too (highest priority first): Reactions, Message Editing, improved Widgets (e.g. Sticker Packs), Threading, Decentralised Accounts, Decentralised Identity, Decentralised Reputation, Peer-to-peer Matrix and more.  However, right now our focus has to be on improving the quality and stability of what we have today and getting it out of beta before we open yet more battlefronts.  In other words: we're not adding more features (modulo emergencies) until the current features are polished!
 
-
 So: exciting times ahead!  Never before has Matrix had the resources to fully realise its potential, and we'd like to say enormous thanks to Carl, Jarrad, Yessin and Nabil at Status for their patience and support while sorting out the investment.  We'd also like to say thanks to everyone else who offered us investment: in the end we had several viable offers on the table - and we owe sincere thanks to those who invested the time and faith to make an offer which we've ended up turning down.
-
 
 For now, however, it's back to work: making Riot slicker than Slack; making Synapse go faster and use less RAM; making Dendrite federate; making E2E encryption transparent and indestructible; making sure that it's possible to implement Matrix purely by referring to the Spec.
 
-
 2018 is going to be an interesting year indeed :)  Thank you all for supporting Matrix - and thanks, once again, to Status for helping to take us to the next level.
-
 
 Matthew, Amandine & the whole team.
 

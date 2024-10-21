@@ -25,7 +25,7 @@ New this year, we also generated a space hierarchy for the whole conference at [
 
 ![FOSDEM Space listing all the FOSDEM rooms](/blog/img/2022-07-02-fosdem_space.png)
 
-Another greatly appreciated feature was the famous “maximised widgets” I (Thib) [keep telling you about in Matrix Live episodes](https://www.youtube.com/c/Matrixdotorg). Attendees and speakers could give the conference the central attention it deserved while simultaneously keeping an eye on what was happening in the chat. 
+Another greatly appreciated feature was the famous “maximised widgets” I (Thib) [keep telling you about in Matrix Live episodes](https://www.youtube.com/c/Matrixdotorg). Attendees and speakers could give the conference the central attention it deserved while simultaneously keeping an eye on what was happening in the chat.
 
 ![FOSDEM stand with maximised widget view](/blog/img/2022-07-02-fosdem_stand.png)
 

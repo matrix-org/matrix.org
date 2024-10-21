@@ -19,7 +19,7 @@ As you may know, there is a [proposal](https://github.com/matrix-org/matrix-spec
 
 Currently Matrix uses a [custom authentication protocol](https://spec.matrix.org/v1.3/client-server-api/#client-authentication) baked into the Matrix spec. This poses a number of drawbacks. To overcome these drawbacks the project proposes migrating to use the industry standard authentication protocol OpenID Connect (OIDC) instead.
 
-In terms of why this is a good idea: [MSC3861](https://github.com/matrix-org/matrix-spec-proposals/blob/hughns/delegated-oidc-architecture/proposals/3861-delegated-oidc-architecture.md) has all the details - please check it out! 
+In terms of why this is a good idea: [MSC3861](https://github.com/matrix-org/matrix-spec-proposals/blob/hughns/delegated-oidc-architecture/proposals/3861-delegated-oidc-architecture.md) has all the details - please check it out!
 
 The bottom line is that Matrix should focus on being a decentralised communication protocol - **not** an authentication protocol… and by adopting a dedicated authentication protocol we can benefit from all sorts of goodies such as easy 2FA and MFA, passwordless-auth via WebAuthn, Login via QR-code, alternative CAPTCHAs and so much more.
 
@@ -29,11 +29,11 @@ Whilst this project proposes a significant change to the Matrix ecosystem that w
 
 Today we are launching the [areweoidcyet.com](https://areweoidcyet.com/) website which is packed with information and resources on the project:
 
- * What? Why? When?
- * MSC proposals
- * Status of homeservers, clients, auth servers (OIDC Providers/OPs)
- * A client implementation guide
- * Links to the Matrix OIDC Playground environment where you can try out the latest progress
+* What? Why? When?
+* MSC proposals
+* Status of homeservers, clients, auth servers (OIDC Providers/OPs)
+* A client implementation guide
+* Links to the Matrix OIDC Playground environment where you can try out the latest progress
 
 Please do take a look and come join us at [#matrix-auth:matrix.org](https://matrix.to/#/#matrix-auth:matrix.org)!
 

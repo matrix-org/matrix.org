@@ -24,6 +24,6 @@ And finally, Cnly’s proposal for working towards completion of [Dendrite](http
 
 Congratulations to the selected students. We look forward to participating with you on completing your project over the course of the summer holidays.
 
-If your proposal was not selected, do not give up hope! Being an active member of the Matrix community and having a deep understanding of the ecosystem and its projects is a big part of what we look for when choosing candidates. If you stick around, you have a strong chance of being chosen in a subsequent year. 
+If your proposal was not selected, do not give up hope! Being an active member of the Matrix community and having a deep understanding of the ecosystem and its projects is a big part of what we look for when choosing candidates. If you stick around, you have a strong chance of being chosen in a subsequent year.
 
 We will not be sharing individual’s proposal documents, but students are free to share them as they please.

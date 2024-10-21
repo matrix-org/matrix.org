@@ -128,7 +128,7 @@ Since we only want to perform state resolution on the _conflicted_ set, start by
 working through the set of input events, including their auth events and sorting
 them into _conflicted_ and _unconflicted_ buckets:
 
-```
+```txt
 var conflicted_events:   list(event)
 var unconflicted_events: list(event)
 ```
@@ -139,7 +139,7 @@ We refer to the state as _partial_ when we have not yet completed the state
 resolution algorithm, therefore the result is incomplete. In the first stage,
 the partial state is equal to the unconflicted state:
 
-```
+```txt
 var partial_state: map(event_type -> map(state_key -> event))
 
 for each unconflicted_events as e:
@@ -183,7 +183,7 @@ The _auth difference_ therefore contains all auth events that were not common to
 both forks - if an auth event appears in only one fork but not the other then
 that auth event must appear in the _auth difference_:
 
-```
+```txt
 var auth_difference:     list(event)
 var auth_sets:           map(fork_id -> list(event))
 
@@ -200,7 +200,7 @@ for each conflicted_events as e:
 The _full conflicted set_ is effectively the conflicted events combined with the
 auth difference:
 
-```
+```txt
 var full_conflicted_set: list(event)
 
 full_conflicted_set = conflicted_events + auth_difference
@@ -246,7 +246,7 @@ In our case, Kahn's algorithm works on three main components:
 Assuming the following data structures, we can populate the event map and
 incoming edges with initial values:
 
-```
+```txt
 var output_events:  list(event)
 var event_map:      map(event_id -> event)
 var incoming_edges: map(event_id -> integer)
@@ -274,7 +274,7 @@ To ensure that the algorithm is deterministic (that is, running in the same
 order) for a given set of inputs, we must ensure that the map of incoming edges
 has been sorted using the above rules before we do anything with it:
 
-```
+```txt
 func sorted_incoming_edges() returns list(event):
     sort incoming_edges where x < y when:
         x.power_level > y.power_level or
@@ -287,7 +287,7 @@ Once the incoming edges have been sorted, iterate through the input list to
 count how many incoming edges each event has and update the incoming edges map
 with those values:
 
-```
+```txt
 for each input_events as e:
     for each e.auth_events as a:
         incoming_edges[a.event_id] += 1
@@ -298,7 +298,7 @@ beginning of the output list—note that we differ from a pure implementation of
 Kahn's algorithm here as we specifically require the incoming edges map to be
 sorted (as above):
 
-```
+```txt
 while len(incoming_edges) > 0:
     for each sorted_incoming_edges() as id, count:
         if count == 0:
@@ -342,7 +342,7 @@ grow with each iteration.
 If the event passes auth checks then update the partial state to include the
 newly authed event before moving onto the next iteration:
 
-```
+```txt
 for each output_event as e:
     if auth_against_partial_state(e):
         partial_state[e.event_type][e.state_key] = e
@@ -362,7 +362,7 @@ The _power level_ _mainline_ is created by following the path of power level
 events, starting from the resolved `m.room.power_level` event from the partial
 state, back to the point that the room was created:
 
-```
+```txt
 var resolved_power_level_event: partial_state["m.room.power_level"][""] as event
 var power_level_mainline:       list(event)
 
@@ -394,7 +394,7 @@ in the mainline, in which case it is necessary to step through the power level
 events iteratively until you encounter one that is on the mainline. It is
 referred to as the _closest mainline event_:
 
-```
+```txt
 func get_closest_mainline_event(e as event) returns event:
     var closest_mainline_event: event
 
@@ -435,7 +435,7 @@ To ensure that the algorithm is deterministic (that is, running in the same
 order) for a given set of inputs, we ensure that the normal state events have
 been sorted using the above criteria:
 
-```
+```txt
 func sorted_normal_state_events() as list(event):
     sort normal_events where x < y when:
         x.position_on_mainline < y.position_on_mainline or
@@ -457,7 +457,7 @@ Just as with the control events, each normal state event should be authed
 against the partial state, before applying the valid events to the partial
 state:
 
-```
+```txt
 for each sorted_normal_state_events() as e:
     if auth_against_partial_state(e):
         partial_state[e.event_type][e.state_key] = e
@@ -477,7 +477,7 @@ may bring in additional state.
 Reapply the unconflicted state events onto the partial state to complete the
 state:
 
-```
+```txt
 for each unconflicted_events as e:
     partial_state[e.event_type][e.state_key] = e
 ```
@@ -494,6 +494,6 @@ Developers](https://matrix.to/#/#homeservers-dev:matrix.org) channel.
 
 Further reading:
 
-- [Matrix Specification - Room Version 2](https://matrix.org/docs/spec/rooms/v2)
-- [State Resolution: Reloaded (in Haskell)](https://matrix.uhoreg.ca/stateres/reloaded.html)
-- [MSC1442 - State Resolution: Reloaded](https://github.com/matrix-org/matrix-doc/blob/erikj/state_res_msc/proposals/1442-state-resolution.md)
+* [Matrix Specification - Room Version 2](https://matrix.org/docs/spec/rooms/v2)
+* [State Resolution: Reloaded (in Haskell)](https://matrix.uhoreg.ca/stateres/reloaded.html)
+* [MSC1442 - State Resolution: Reloaded](https://github.com/matrix-org/matrix-doc/blob/erikj/state_res_msc/proposals/1442-state-resolution.md)
