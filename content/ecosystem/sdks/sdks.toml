@@ -660,3 +660,16 @@ featured_in = []
 description = """
 Matrix client SDK in C#
 """
+
+[[sdks]]
+name = "POSIX Shell Matrix SDK"
+maintainer = "wj25czxj47bu6q"
+maturity = "Beta"
+language = "POSIX Shell"
+licence = "MIT-Modern-Variant"
+repository = "https://gitlab.com/matrix-mellifluousness/sdk"
+purpose = ["client", "bot"]
+featured_in = []
+description = """
+Simple shell script SDK for the Matrix Client‑Server API. Works in any POSIX-compliant shell.
+"""
