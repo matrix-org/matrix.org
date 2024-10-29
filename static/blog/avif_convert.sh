@@ -1,11 +1,16 @@
 #!/bin/sh
 set -euo pipefail
 
-mkdir -p img_avif
+defaultSource="./img"
+source="${1:-$defaultSource}"
 
-magick mogrify -format avif -path ./img_avif/ img/*.jpg
-magick mogrify -format avif -path ./img_avif/ img/*.jpeg
-magick mogrify -format avif -path ./img_avif/ img/*.jpe
-magick mogrify -format avif -path ./img_avif/ img/*.png
-magick mogrify -format avif -path ./img_avif/ img/*.PNG
-magick mogrify -format avif -path ./img_avif/ img/*.webp
+mkdir -p img_avif
+for i in ${source}/*.jpg ${source}/*.jpeg ${source}/*.jpe ${source}/*.png ${source}/*.PNG ${source}/*.webp; do
+    basename=$(basename $i)
+    filename=${basename%.*}
+    [ "$filename" = "*" ] && continue
+    [ -f "./img_avif/${filename}.avif" ] && continue
+    echo "Processing ${basename}..."
+    magick mogrify -format avif -path ./img_avif "$i"
+    echo "Processed to ./img_avif/${filename}.avif..."
+done
