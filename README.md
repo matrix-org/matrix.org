@@ -37,7 +37,7 @@ Zola will build the website and start a web server, usually at
 
 ## Running the markdown linter
 
-We are running the <https://github.com/DavidAnson/markdownlint-cli2>2> markdown linter on the website.
+We are running the <https://github.com/DavidAnson/markdownlint-cli2> markdown linter on the website.
 To run it locally, you can use the following command:
 
 ```bash
