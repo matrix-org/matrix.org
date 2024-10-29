@@ -19,11 +19,11 @@ Synapse can now automatically discover rich metadata when generating previews of
 
 Before:
 
-![synapse-1.44-link-preview](/blog/img/2021-10-20-synapse-1.44-link-preview.png)
+![synapse-1.44-link-preview](/blog/img/2021-10-20-synapse-1.44-link-preview.avif)
 
 After:
 
-![synapse-1.45-link-preview](/blog/img/2021-10-20-synapse-1.45-link-preview.png)
+![synapse-1.45-link-preview](/blog/img/2021-10-20-synapse-1.45-link-preview.avif)
 
 Note that URL previews are generated server-side, and thus generally disabled in encrypted rooms to avoid leaking information about message content to your homeserver. You may need to adjust the room's settings to see the new oEmbed previews.
 

@@ -63,7 +63,7 @@ that their conversation is leaving their platform and is no longer E2EE with
 something like this:
 
 <div style="text-align: center">
-<img src="/blog/img/2022-03-29-warning.jpg" width="430"/>
+<img src="/blog/img/2022-03-29-warning.avif" width="430"/>
 </div>
 <br/>
 

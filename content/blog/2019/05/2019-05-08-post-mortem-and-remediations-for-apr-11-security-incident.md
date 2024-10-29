@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General", "Security"]
 
 [extra]
-image = "https://matrix.org/blog/img/services.png"
+image = "https://matrix.org/blog/img/services.avif"
 +++
 
 ### Table of contents
@@ -111,7 +111,7 @@ At around 7am, we were woken up to the news that the attacker had managed to rep
 On inspection, it transpired that the attacker had not compromised the new infrastructure, but had used Cloudflare to repoint the DNS for matrix.org to a defacement site hosted on Github.  Now, as part of rotating the secrets which had been compromised via our configuration repositories, we had of course rotated the Cloudflare API key (used to automate changes to our DNS) during the rebuild on Apr 11.  When you log into Cloudflare, it looks something like this...
 
 
-![Cloudflare login UI](/blog/img/cf.png)
+![Cloudflare login UI](/blog/img/cf.avif)
 
 
 ...where the top account is your personal one, and the bottom one is an admin role account.  To rotate the admin API key, we clicked on the admin account to log in as the admin, and then went to the Profile menu, found the API keys and hit the [Change API Key](https://support.cloudflare.com/hc/en-us/articles/221318707-How-do-I-change-my-Global-API-Key-) button.
@@ -140,7 +140,7 @@ Now, while we restored the main synapse (homeserver), sydent (identity server), 
 
 In the interest of transparency (and to try to give a sense of scale of the impact of the breach), here is the public-facing service list we restored, showing priority (1 is top, 4 is bottom) and the % restore status as of May 4th:
 
-![Service status](/blog/img/services.png)
+![Service status](/blog/img/services.avif)
 
 Apologies again that it took longer to get some of these services back up than we’d preferred (and that there are still a few pending).  Once we got the top priority ones up, we had no choice but to juggle the remainder alongside remediation work, [other security work](https://matrix.org/blog/2019/05/03/security-updates-sydent-1-0-3-synapse-0-99-3-1-and-riot-android-0-9-0-0-8-99-0-8-28-a/), and actually working on Matrix(!), whilst ensuring that the services we restored were being restored securely.
 

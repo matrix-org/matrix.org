@@ -33,7 +33,7 @@ Memory usage still spikes because we're effectively doing the same work with a d
 
 Concretely, Erik Johnston has an experimental branch of Synapse which completely eliminates the memory spike:
 
-![Memory usage graph for Synapse 1.33, 1.35, and an experimental branch](/blog/img/2021-06-01-synapse-1.35-join-memory.png)
+![Memory usage graph for Synapse 1.33, 1.35, and an experimental branch](/blog/img/2021-06-01-synapse-1.35-join-memory.avif)
 
 The remaining work is centered on splitting that branch into self-contained, reviewable pull requests, like a rewrite of the Synapse Keyring class ([#10035](https://github.com/matrix-org/synapse/pull/10035)). After that's merged, we'll need to make one further change to properly batch up work, at which point we should attain the efficiency gains from Erik's experiment.
 

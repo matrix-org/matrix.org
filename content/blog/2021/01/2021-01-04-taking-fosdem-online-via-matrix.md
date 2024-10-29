@@ -8,12 +8,12 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2021-01-04-fosdem.jpg"
+image = "https://matrix.org/blog/img/2021-01-04-fosdem.avif"
 +++
 
 <div style="text-align: center; padding-bottom: 1em">
 <a href="https://fosdem.org">
-    <img src="/blog/img/2021-01-04-fosdem.jpg" alt="FOSDEM" width="480"/>
+    <img src="/blog/img/2021-01-04-fosdem.avif" alt="FOSDEM" width="480"/>
 </a>
 </div>
 

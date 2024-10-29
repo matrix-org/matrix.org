@@ -8,7 +8,7 @@ author = ["Matthew Hodgson"]
 category = ["Releases"]
 
 [extra]
-image = "https://matrix.org/blog/img/thirdroom.png"
+image = "https://matrix.org/blog/img/thirdroom.avif"
 +++
 
 We're excited to announce the first tech preview of [Third Room](https://thirdroom.io/), an open, standards-based, decentralised vision of the metaverse for the open Web, built entirely on Matrix… without cryptocurrencies, NFTs or walled gardens.

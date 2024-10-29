@@ -88,11 +88,11 @@ I found mypy's various [reports](https://mypy.readthedocs.io/en/stable/command_l
 
 This produces a main index page showing the "imprecision" of each module. At the bottom of the table is a total imprecision value across the entire project.
 
-  ![HTML report, index page. A table showing each module's precision and number of lines of code.](/blog/img/2021-12-17-sydent-typing-html-report-index.png)
+  ![HTML report, index page. A table showing each module's precision and number of lines of code.](/blog/img/2021-12-17-sydent-typing-html-report-index.avif)
 
 The precision for each module is broken down line-by-line and colour-coded accordingly, which is useful for getting an intuition for what makes a line imprecise. More on that shortly.
 
-  ![HTML report, module page. Most lines of source code are highlighted green; a minority are highlighted red.](/blog/img/2021-12-17-sydent-typing-html-report-module.png)
+  ![HTML report, module page. Most lines of source code are highlighted green; a minority are highlighted red.](/blog/img/2021-12-17-sydent-typing-html-report-module.avif)
 
 #### `--txt-report`
 

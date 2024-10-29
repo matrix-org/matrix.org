@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/runthru.jpg"
+image = "https://matrix.org/blog/img/runthru.avif"
 +++
 
 Hi all,

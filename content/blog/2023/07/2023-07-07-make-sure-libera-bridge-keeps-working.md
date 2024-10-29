@@ -54,12 +54,12 @@ bridge working.
 In this guide, we’ll be using Element. Open your room, then click on the top
 right `i` to open the right panel. Click on “Add widgets bridges & bots”.
 
-![](/blog/img/right-panel-add-widgets-bridges.png)
+![](/blog/img/right-panel-add-widgets-bridges.avif)
 
 Click on “IRC Bridge (Libera.Chat)” and see if you have results in the “Linked
 channels” section.
 
-![](/blog/img/libera-widget-linked-section.png)
+![](/blog/img/libera-widget-linked-section.avif)
 
 If you see results in that section, the room is plumbed, and it will keep
 working. If you don’t see any result in that section, the room is portalled and
@@ -99,7 +99,7 @@ plumb the room to IRC. You can’t edit the server field, which is correctly set
 to Libera Chat. Enter the channel you want to plumb to, and the nick of a chanop
 of this channel.
 
-![](/blog/img/request-plumbing.png)
+![](/blog/img/request-plumbing.avif)
 
 We ask you to please be considerate of Libera Chat chanops and staff, and to
 only send plumb requests to channels:
@@ -109,7 +109,7 @@ only send plumb requests to channels:
 
 The chanop will receive this request on their end:
 
-![](/blog/img/plumbing-op-request.png)
+![](/blog/img/plumbing-op-request.avif)
 
 If they accept, the room will be plumbed into the IRC channel. Again, please be
 mindful of the remote side of the bridge and don’t send plumbing requests out of

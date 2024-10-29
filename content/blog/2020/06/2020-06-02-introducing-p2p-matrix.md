@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-logo.png"
+image = "https://matrix.org/blog/img/matrix-logo.avif"
 +++
 
 TL;DR: we shipped a major update (v0.1.1) to [https://p2p.riot.im](https://p2p.riot.im) - fire up a desktop Chrome or Firefox in not-private-browsing mode and give it a go!
@@ -32,7 +32,7 @@ So, P2P has been acting as fuel for a lot of our longer term Matrix work over th
 
 Most recently, however, we’ve been experimenting with compiling Dendrite down to Web Assembly and running it embedded in Riot Web as a Service Worker, using HTTP over libp2p’s websocket transport (coordinated via a websocket rendezvous server).  Architecturally, it looks like this:
 
-![P2P Architecture Diagram](/blog/img/p2p-diag.png)
+![P2P Architecture Diagram](/blog/img/p2p-diag.avif)
 
 Today, we’re shipping a major new alpha (v0.1.1) of this P2P demo up at [https://p2p.riot.im](https://p2p.riot.im) (requires desktop Chrome or Firefox in non-private-browsing mode) - which hopefully should give a really usable and concrete taste of the shape of things to come.
 

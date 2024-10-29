@@ -9,7 +9,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-logo.png"
+image = "https://matrix.org/blog/img/matrix-logo.avif"
 +++
 
 Hi all,
@@ -45,7 +45,7 @@ Aside from the new spec site, we also released our first official point release 
 Talking of which, in 2021 we saw a record **109** Matrix Spec Change proposals (MSCs) created. Even better, we closed **62** MSCs - so while the backlog is still growing, we’re still making very concrete progress.  Of the 109 new MSCs: 34 were from the wider Matrix community, 34 were from ex-community contributors who are now part of the core team, 13 were from the founding Matrix team, and 28 were from folks hired to work on Matrix by Element on behalf of the Matrix.org Foundation.  This feels like a pretty healthy blend of contributions, and while it’s true that spec work could always progress faster, things do seem to be heading in the right direction.
 
 
-![The latest MSC stats](/blog/img/2021-12-22-spec.png)
+![The latest MSC stats](/blog/img/2021-12-22-spec.avif)
 
 
 In the new year, the Spec Core Team (responsible for reviewing MSCs and voting on what gets merged to the spec) is going to make a concerted effort to carve out more dedicated time for spec work - thankfully one of the side-effects of Matrix growing is that there are now a lot more people around with whom we can share other work, hopefully meaning that we can put significantly more hours into keeping the spec growing healthily.
@@ -54,7 +54,7 @@ In the new year, the Spec Core Team (responsible for reviewing MSCs and voting o
 
 Synapse is the primary homeserver implementation published by the Matrix core team, and its maturity is unrecognisable from where we were a year ago.  One of the big breakthroughs has been stabilising memory usage through caching improvements - the Matrix.org synapse now reliably only uses 2-3GB of RAM on its main process, despite its activity having more than doubled over the last year (up from 513K monthly active users to 1.11M!).
 
-![Synapse memory performance fixes](/blog/img/2021-12-22-perf.jpg)
+![Synapse memory performance fixes](/blog/img/2021-12-22-perf.avif)
 
 Further signs of maturity include Synapse’s radically improved new [documentation](https://matrix-org.github.io/synapse/latest/) and the new [module API](https://matrix-org.github.io/synapse/latest/modules/index.html), the fact that mypy type-safety coverage has improved from ~75% to over 89.7% (across 151,903 lines of code!), and the fact that Open Tracing support has matured to the point that visualising complex cross-worker behaviour is nowadays a genuine pleasure.  Frankly, Synapse should be feeling robust and stable these days - if you see folks claiming otherwise, please check they’re not basing that on outdated info (or failing that, get them to file bug reports that we can jump on!).
 
@@ -65,7 +65,7 @@ Meanwhile, on the feature side, we’ve landed a huge spate of long-awaited core
 * Threads! Yes, that’s right - coming any day now to a Matrix client close to you, we have ‘classic’ threaded messaging landing, providing sidebars of conversation through the new m.thread relation type ([MSC3440](https://github.com/matrix-org/matrix-doc/pull/3440)), building on Matrix’s existing aggregation API as used for edits and reactions.  We’ve chosen to prioritise single-level-deep-threads rather than arbitrarily-deep-trees ([MSC2836](https://github.com/matrix-org/matrix-doc/pull/2836)) as it maps more easily to a chat UX, although the two approaches are not mutually exclusive.
 * Aggregations! Everyone’s favourite bête noire in Matrix tends to be that aggregations for edits & reactions predate today’s Matrix Spec Change process and went mainstream without using a vendor prefix before their spec had been stabilised.  Better late than never, we’ve taken advantage of Threads to go back and fix what once went wrong - and now [MSC2674](https://github.com/matrix-org/matrix-doc/pull/2674) and [MSC2675](https://github.com/matrix-org/matrix-doc/pull/2675) and friends are hopefully on a much better track to provide a basis for how aggregations work - both in the spec and in the reference implementation in Synapse.
 
-![Anatomy of a bête noire](/blog/img/2021-12-22-aggs.png)
+![Anatomy of a bête noire](/blog/img/2021-12-22-aggs.avif)
 
 * Social Login via multiple SSO providers ([MSC2858](https://github.com/matrix-org/matrix-doc/pull/2858)) - almost 50% of new registrations on the Matrix.org homeserver now use social login!  Interestingly the split of SSO usage is roughly 70% Google, 12% GitHub, 11% Apple, 6% Facebook and 1% GitLab. Make of that what you will!
 * Knocking ([MSC2403](https://github.com/matrix-org/matrix-doc/pull/2403))! Huge thanks to Sorunome and Anoa, we now support the ability to knock to ask to join a room if not yet invited. If this sounds unfamiliar, it may be because it hasn’t landed in Element yet, but expect it to land next year.
@@ -128,7 +128,7 @@ There’s also a new kid in town: [matrix-hookshot](https://github.com/Half-Shot
 
 Meanwhile, change is afoot for integration managers, which have been screaming out for an overhaul for years. There was a cheeky hint in last week’s [Matrix Live](https://youtu.be/Hsyqa5ozWIo?t=724) where [Dimension](https://dimension.t2bot.io/) did an unexpected cameo looking particularly swish…  All shall be revealed next year!
 
-![A whole new Dimension](/blog/img/2021-12-22-dimension.png)
+![A whole new Dimension](/blog/img/2021-12-22-dimension.avif)
 
 ## Dendrite, Low bandwidth Matrix and Peer-to-Peer Matrix
 
@@ -144,7 +144,7 @@ Secondly, we’ve been sidetracked by the entirety of P2P Matrix.  This is our l
 
 You can read all about it in [the blog post](https://matrix.org/blog/2021/05/06/introducing-the-pinecone-overlay-network), but suffice it to say that Pinecone outperformed all the other P2P overlay networks in [meshnet-lab](https://github.com/mwarning/meshnet-lab)’s [Mobility2](https://github.com/mwarning/meshnet-lab/tree/master/tests/mobility2) test:
 
-![Pinecone perf benchmarks](/blog/img/2021-12-22-pinecone-perf.png)
+![Pinecone perf benchmarks](/blog/img/2021-12-22-pinecone-perf.avif)
 
 You can play with P2P Matrix today on iOS and Android (head over to [#p2p:matrix.org](https://matrix.to/#/#p2p:matrix.org) for builds), but there is some major work still to be done:
 
@@ -201,7 +201,7 @@ So far the team has been busy digging deep into the few remaining causes of UISI
 
 Meanwhile, on the more foundational side of things, we’re continuing to define Decentralised MLS as a potential next-generation form of end-to-end encryption, building on the IETF’s [MLS](https://datatracker.ietf.org/wg/mls/about/) work - providing much better scalability for large chat rooms and potentially helping with some causes of encryption failures.  Hubert (uhoreg) has been leading the charge here, with his [latest thoughts emerging here](https://gitlab.matrix.org/matrix-org/mls-ts/-/blob/decentralised2/decentralised.org) alongside a [brand new demo](https://www.youtube.com/watch?v=UiUyWZg3J7k) showing his [DMLS simulator](https://gitlab.matrix.org/uhoreg/mls-demo) - which under the hood is actually sending real Matrix events over DMLS!
 
-![DMLS](/blog/img/2021-12-22-dmls.png)
+![DMLS](/blog/img/2021-12-22-dmls.avif)
 
 Otherwise, the team has had three big projects: adding matrix-rust-sdk-crypto into Element Android (which we already covered above), arranging a fresh security audit of Matrix’s end-to-end encryption (due to complete January 2022)… and, most excitingly: vodozemac.
 

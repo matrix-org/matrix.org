@@ -9,7 +9,7 @@ author = ["Matthew Hodgson"]
 category = ["Events"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-02-03-fosdem.jpg"
+image = "https://matrix.org/blog/img/2020-02-03-fosdem.avif"
 +++
 
 Hi all,

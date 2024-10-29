@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-logo.png"
+image = "https://matrix.org/blog/img/matrix-logo.avif"
 +++
 
 Hi all,
@@ -41,7 +41,7 @@ Then, there’s whole new waves of exciting stuff going on.  The most obvious ha
 
 Another exciting thing which emerged this year is the amazing academic work that Karlsruhe Institute of Technology’s [Decentralized Systems and Network Services Research Group](https://dsn.tm.kit.edu/english/) has been conducting on Matrix.  This really came on the radar back in June when their [Matrix Decomposition: Analysis of an Access Control Approach on Transaction-based DAGs without Finality](https://matrix.org/blog/2020/06/16/matrix-decomposition-an-independent-academic-analysis-of-matrix-state-resolution) paper was published - a truly fascinating analysis of how state resolution works in Matrix, and how we manage to preserve access control within rooms without using blockchain-style ‘sealed blocks’ (and has helped fix a few nasty bugs!).  I’m not sure any of us realised that Matrix’s state resolution counts as a new field of research, but it’s been great to follow along with their independent work.  Most recently, and even more excitingly, they’re circulating a preview of their [Analysis of the Matrix Event Graph Replicated Data Type](https://arxiv.org/abs/2011.06488) paper - a deep analysis of the properties of Matrix DAGs themselves.  We highly recommend reading the papers (what better way to spend the holiday break!).  To give a taste, the final paragraph of the paper concludes:
 
-[![MEG summary](https://matrix.org/blog/img/2020-12-25-meg-summary.png)](https://arxiv.org/abs/2011.06488)
+[![MEG summary](https://matrix.org/blog/img/2020-12-25-meg-summary.avif)](https://arxiv.org/abs/2011.06488)
 
 2020 has also seen the arrival and maturation of a whole new generation of Matrix clients - [Hydrogen](https://hydrogen.element.io) is *really* impressive as an experimental next-generation Web (and Mobile Web) client; an account with 3000 rooms that uses 1.4GB of RAM on Element Web uses 14MB of RAM on Hydrogen and launches instantly, complete with excellent E2EE implementation.  It even works on MSIE!  The whole app, including dependencies, is about 70KB of code (200KB including Olm).  Meanwhile, [matrix-rust-sdk](https://github.com/matrix-org/matrix-rust-sdk) is coming along well, providing a general purpose native library for writing excellent native Matrix clients.  Fractal merged initial matrix-rust-sdk a few weeks ago, and we’ll be experimenting with switching to it in Element iOS and Element Android (for its e2ee) in the coming year.  It’s not inconceivable to think of a world where matrix-rust-sdk ends up being the no-brainer official SDK for native apps, and Hydrogen’s SDK becomes the no-brainer official SDK for JS apps.
 

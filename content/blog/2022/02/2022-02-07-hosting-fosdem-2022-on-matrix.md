@@ -13,25 +13,25 @@ This year hosting the event went smoother than last year, the only significant i
 
 The most notable difference between this year and the previous year has been the usage of a “attendees.fosdem.org” instance in addition to the original “fosdem.org” one, specifically for attendees. The graphs speak for themselves: Synapse could handle the load of the 23K users (13K joined users and 10K lurkers) spread across a total number of 941 rooms. The real eye-opener however is that of the 13K joined users, only 4K came came from the FOSDEM attendee server, and 1K from Libera Chat, meaning that ~70% of the Matrix participants were already on Matrix and came in from existing servers! 🤯 That means the vast majority of people attended over federation. Decentralisation at work, people! It works! We didn’t host the conference… you did!!
 
-![FOSDEM attendees heatmap](/blog/img/2022-07-02-fosdem_attendees_heatmap.png)
+![FOSDEM attendees heatmap](/blog/img/2022-07-02-fosdem_attendees_heatmap.avif)
 
 But not only did the backend handle the load smoothly: the general user experience felt tightly integrated. People were welcomed by a tailor-made home page in Element to help them navigate through all the tracks and stands:.
 
-![Homescreen of chat.fosdem.org](/blog/img/2022-07-02-fosdem_homescreen.png)
+![Homescreen of chat.fosdem.org](/blog/img/2022-07-02-fosdem_homescreen.avif)
 
 One of the great things is it doesn’t require heavy modifications to Element: anyone who installs their own instance of Element can use a simple html file to display relevant information to their audience.
 
 New this year, we also generated a space hierarchy for the whole conference at [#fosdem2022:fosdem.org](https://matrix.to/#/#fosdem2022:fosdem.org) to help navigate the maze of rooms, making it even easier for users on their own servers to jump in:
 
-![FOSDEM Space listing all the FOSDEM rooms](/blog/img/2022-07-02-fosdem_space.png)
+![FOSDEM Space listing all the FOSDEM rooms](/blog/img/2022-07-02-fosdem_space.avif)
 
 Another greatly appreciated feature was the famous “maximised widgets” I (Thib) [keep telling you about in Matrix Live episodes](https://www.youtube.com/c/Matrixdotorg). Attendees and speakers could give the conference the central attention it deserved while simultaneously keeping an eye on what was happening in the chat. 
 
-![FOSDEM stand with maximised widget view](/blog/img/2022-07-02-fosdem_stand.png)
+![FOSDEM stand with maximised widget view](/blog/img/2022-07-02-fosdem_stand.avif)
 
 From the speaker's perspective, we tried to streamline the user journey as much as possible: a bot invited them to a backstage room, in which they joined a Jitsi widget while their talk was being played in the track or devroom. They could see the most upvoted questions by the audience in a dedicated widget. A few minutes before their pre-recorded talk was over, a countdown (new this year!) could be displayed to tell them and the host they were about to go live. At the end of the countdown, the backstage Jitsi was broadcasted to the track so the speaker could answer the questions.
 
-![Backstage room where the speaker and host could talk and see the questions](/blog/img/2022-07-02-fosdem_backstage.png)
+![Backstage room where the speaker and host could talk and see the questions](/blog/img/2022-07-02-fosdem_backstage.avif)
 
 If you want to have an in-depth look at the backend’s architecture, it didn’t change much from last year. You can have a look at [last year’s blog post for the details on the setup](https://matrix.org/blog/2021/02/15/how-we-hosted-fosdem-2021-on-matrix#how-was-it-built). Most of the heavy lifting was around [the conference bot](https://github.com/matrix-org/conference-bot) used to set rooms up, create the spaces, populate them with widgets, arrange layouts and trigger countdowns before going live…
 

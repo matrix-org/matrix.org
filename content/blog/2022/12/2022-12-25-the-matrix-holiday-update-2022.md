@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-logo.png"
+image = "https://matrix.org/blog/img/matrix-logo.avif"
 +++
 
 Hi all,
@@ -80,7 +80,7 @@ On the client-side, the work to transform Matrix client performance has centred 
 
 Element X itself is shaping up to be a showcase of just how snappy and performant Matrix can be: built on matrix-rust-sdk, it uses native Swift UI on iOS/macOS and Jetpack Compose on Android to couple together the best possible platform-native user experience with the ultimate underlying native-code SDK implementation, backed by sliding sync. The goal is to be at least as snappy as Telegram, iMessage or WhatsApp (we’ve taken to counting the frames in screen recordings to compare things like time-to-launch and time-to-load scrollback).  Element X is currently in late alpha on iOS, and the hope is to enter public beta in time for FOSDEM.  You can see a sneak peek here of the iPad-style layout (running under macOS) though!
 
-![Element X](/blog/img/2022-12-25-elementx.png)
+![Element X](/blog/img/2022-12-25-elementx.avif)
 
 Finally, in terms of usability, there have been leaps and bounds forwards across Matrix - particularly with Element’s mobile UI being [entirely refreshed](https://element.io/blog/an-unrecognisable-improvement-elements-new-design-is-here/) by the design team in September as a stepping stone to the forthcoming final Element X design.  Any remaining UX quirks should be flushed out with Element X, but the visuals are already a clear step forwards towards an excellent alternative to the centralised encumbents.
 

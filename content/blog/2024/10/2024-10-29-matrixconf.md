@@ -20,13 +20,13 @@ And the world noticed, with press in [The Guardian](https://www.theguardian.com/
 
 <!-- more -->
 
-{{figure(img="/blog/img/matrixconf2024_presenter.webp", caption="Andrew Morgan, Spec Core Team member, presents on stage.")}}
+{{figure(img="/blog/img/matrixconf2024_presenter.avif", caption="Andrew Morgan, Spec Core Team member, presents on stage.")}}
 
 None of this would’ve been possible without the vision of Matthew Hodgson and Amandine Le Pape, a deep collaboration between the Foundation and the [Matrix Community Events](https://matrix.to/#/#community-events:matrix.org) team – namely Kim Brose, Nadine Minagawa, and Yan Minagawa, the help of the production team at [Plain Schwarz](https://plainschwarz.com/), more than a dozen on-site volunteers, and the hospitality of the venue staff at [Mitosis LAB](https://mitosis.co/).
 
 And at the center, working behind the scenes to orchestrate everything? The Foundation’s own Thibault Martin, whose attention to detail, warmth, and expert juggling brought it all together.
 
-{{figure(img="/blog/img/matrixconf2024_thanks.webp", caption="Amandine Le Pape, Matrix co-founder and Guardian, thanks the team and sponsors.")}}
+{{figure(img="/blog/img/matrixconf2024_thanks.avif", caption="Amandine Le Pape, Matrix co-founder and Guardian, thanks the team and sponsors.")}}
 
 Now, as you may know, events like this are not cheap to produce. We couldn’t have pulled it off without our event sponsors, [Element](https://element.io/), [DINUM](https://beta.gouv.fr/startups/tchap.html), [Famedly](https://www.famedly.com/), [Connect2x](https://connect2x.de/), and [Nordeck](https://nordeck.net/), as well the Foundation’s funding members, [Element](https://element.io/), [Beeper](https://beeper.com/), [Futurewei Technologies](https://futurewei.com/), [Fairkom](https://fairkom.de/), [Famedly](https://famedly.com/), [Fractal Networks](https://www.fractalnetworks.co/), [Gematik](https://gematik.de/), [IndieHosters](https://indiehosters.net/), [Verji Tech AS](https://verji.no/), and [XWiki](https://xwiki.com/).
 

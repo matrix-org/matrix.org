@@ -8,7 +8,7 @@ author = ["Matthew Hodgson", "Hubert Chathi"]
 category = ["Encryption"]
 
 [extra]
-image = "https://matrix.org/blog/img/mls-matrix.png"
+image = "https://matrix.org/blog/img/mls-matrix.avif"
 +++
 
 Hi all,

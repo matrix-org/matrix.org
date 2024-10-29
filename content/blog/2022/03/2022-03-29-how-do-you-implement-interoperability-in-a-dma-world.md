@@ -9,7 +9,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2022-03-29-chat-bubbles.jpg"
+image = "https://matrix.org/blog/img/2022-03-29-chat-bubbles.avif"
 +++
 
 With last week’s revelation that the [EU Digital Markets Act](https://www.europarl.europa.eu/news/en/press-room/20220315IPR25504/deal-on-digital-markets-act-ensuring-fair-competition-and-more-choice-for-users)
@@ -175,8 +175,8 @@ they’re unable to for whatever reason - e.g. their platform isn’t supported,
 or their government has blocked access, etc), or join BobChat yourself.
 
 <div style="text-align: center">
-<img src="/blog/img/2022-03-29-bob-invite.jpg"  />
-<img src="/blog/img/2022-03-29-bob-invite-b.png"  />
+<img src="/blog/img/2022-03-29-bob-invite.avif"  />
+<img src="/blog/img/2022-03-29-bob-invite-b.avif"  />
 </div>
 <br/>
 
@@ -187,7 +187,7 @@ use to open a given file extension (rather than the OS vendor hardcoding it
 to one of their own apps - another win for user rights [led by the EU](https://en.wikipedia.org/wiki/Microsoft_Corp._v._Commission)!).
 
 <div style="text-align: center">
-<img src="/blog/img/2022-03-29-bob-invite2.jpg" />
+<img src="/blog/img/2022-03-29-bob-invite2.avif" />
 </div>
 <br/>
 
@@ -248,7 +248,7 @@ WhatsApp&lt;->Matrix bridge before WhatsApp themselves did…)
 
 Architecturally, it could look like this:
 
-![](/blog/img/2022-03-29-alice-bob.jpg)
+![](/blog/img/2022-03-29-alice-bob.avif)
 
 Or, more likely (given a dedicated bridge between two proprietary services
 would be a bit of a special case, and you’d have to solve the dilemma of who
@@ -256,7 +256,7 @@ hosts the bridge), both services could run a bridge to a common open standard
 protocol like Matrix or XMPP instead (thus immediately enabling
 interoperability with everyone else connected to that network):
 
-![](/blog/img/2022-03-29-alice-bob-bridged.jpg)
+![](/blog/img/2022-03-29-alice-bob-bridged.avif)
 
 Please note that while these examples show server-side bridges, in practice it
 would be infinitely preferable to use client-side bridges when connecting to
@@ -269,7 +269,7 @@ client on your phone which auths you with AliceChat and then sits in the
 background receiving messages and bridging them through to Matrix or XMPP,
 like this:
 
-![](/blog/img/2022-03-29-alice-bob-clientside.jpg)
+![](/blog/img/2022-03-29-alice-bob-clientside.avif)
 
 Another possible architecture could be for the E2EE gatekeeper to expose their
 open APIs on the clients, rather than the server.  DMA allows this, to the
@@ -279,7 +279,7 @@ doing a form of realtime
 [data liberation](https://en.wikipedia.org/wiki/Google_Data_Liberation_Front)
 from the closed service to an open system, looking something like this:
 
-![](/blog/img/2022-03-29-alice-bob-clientside-apis.jpg)
+![](/blog/img/2022-03-29-alice-bob-clientside-apis.avif)
 
 Finally, it's worth noting that when peer-to-peer decentralised protocols
 like [P2P Matrix](https://matrix.org/blog/2020/06/02/introducing-p-2-p-matrix/)
@@ -327,7 +327,7 @@ interoperability and privacy if Bob is not on the same system as Alice
 warn Alice that the conversation is no longer end-to-end encrypted:
 
 <div style="text-align: center">
-<img src="/blog/img/2022-03-29-warning.jpg" />
+<img src="/blog/img/2022-03-29-warning.avif" />
 </div>
 <br/>
 
@@ -393,7 +393,7 @@ a spanning tree for each conversation to prevent forwarding loops.
 
 Here’s a deliberately twisty example to illustrate the above thought experiment:
 
-![](/blog/img/2022-03-29-alice-bob-charlie.jpg)
+![](/blog/img/2022-03-29-alice-bob-charlie.avif)
 
 There is also a risk of bridge proliferation here - in the worst case, every
 service would have to source bridges to directly connect to every other

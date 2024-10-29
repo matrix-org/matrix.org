@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-09-30-gitter.png"
+image = "https://matrix.org/blog/img/2020-09-30-gitter.avif"
 +++
 
 Hi all,
@@ -20,7 +20,7 @@ from Matrix, just head over to [#nodejs_node:gitter.im](https://matrix.to/#/#nod
 
 This means Gitter is now running a Matrix homeserver at gitter.im which exposes all the active public rooms - so if you go to the the room directory in Element (for instance) and select gitter.im as a homeserver, you can jump straight in:
 
-![Gitter room directory](https://matrix.org/blog/img/2020-12-07-gitter-roomdir.png)
+![Gitter room directory](https://matrix.org/blog/img/2020-12-07-gitter-roomdir.avif)
 
 Once you’re in, you can chat back and forth transparently between users on the Gitter side and the Matrix side, and you no longer have the ugly “Matrixbot” user faking the messages back and forth - these are ‘real’ users talking directly to one another, and every public msg in every public room is now automatically exposed into Matrix.
 

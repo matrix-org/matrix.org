@@ -9,7 +9,7 @@ author = ["Thib"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/new-morg.png"
+image = "https://matrix.org/blog/img/new-morg.avif"
 +++
 
 Hello federation,
@@ -20,7 +20,7 @@ That's right, after several months of studying, designing and implementing: we'r
 
 I also need to thank Jonas Platte not only for his technical expertise but also for his kind support and patience. Thanks to MTRNord as well for kickstarting the project, and to the various designers involved.
 
-![](/blog/img/new-morg.png)
+![](/blog/img/new-morg.avif)
 
 <!-- more -->
 

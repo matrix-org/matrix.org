@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["Releases"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-10-08-dendrite-arch.png"
+image = "https://matrix.org/blog/img/2020-10-08-dendrite-arch.avif"
 +++
 
 Hi all,
@@ -52,7 +52,7 @@ In Dec 2019, we finally got to the point where Element could fund full-time dedi
 
 Here’s a pretty picture courtesy of GitHub to visualise the progress:
 
-![020-10-08-dendrite-contributors.png](/blog/img/2020-10-08-dendrite-contributors.png)
+![020-10-08-dendrite-contributors.png](/blog/img/2020-10-08-dendrite-contributors.avif)
 
 Throughout 2020 there’s been a huge amount of stabilisation work and polish:
 

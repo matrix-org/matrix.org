@@ -8,7 +8,7 @@ author = ["Matthew Hodgson"]
 category = ["Releases"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-11-03-synapse5.jpg"
+image = "https://matrix.org/blog/img/2020-11-03-synapse5.avif"
 +++
 
 Hi all,
@@ -50,7 +50,7 @@ caches to speed things up by avoiding hitting the database (at the expense of
 RAM).  It looked like this:
 
 <div style="margin: auto; max-width: 640px;">
-    <img src="/blog/img/2020-11-03-synapse1.png"/>
+    <img src="/blog/img/2020-11-03-synapse1.avif"/>
 </div>
 
 Eventually the caches stopped helping and we needed more than one thread of
@@ -86,7 +86,7 @@ through the single main process (as it was a star topology, the main process
 could talk to all workers but workers could only talk to the main process and
 not each other).
 
-![2020-11-03-synapse2.png](/blog/img/2020-11-03-synapse2.png)
+![2020-11-03-synapse2.png](/blog/img/2020-11-03-synapse2.avif)
 
 As an aside: cache invalidations also had to be streamed down the replication
 connections, which has the side effect that we could only cache things that
@@ -104,7 +104,7 @@ involve writing to the DB. To write stuff from other processes we needed a way
 for the workers to stream updates to each other. The easiest and most obvious
 way was to just use Redis and its pub/sub support. 
 
-![2020-11-03-synapse3.png](/blog/img/2020-11-03-synapse3.png)
+![2020-11-03-synapse3.png](/blog/img/2020-11-03-synapse3.avif)
 
 This almost allowed us to move writing of a particular stream to a different
 worker, _except_ writing to streams generally also meant invalidating caches
@@ -124,7 +124,7 @@ This then unlocks the ability to move writing of streams off the main process
 and onto different workers - and so we added the “event persister” worker for
 offloading the main event stream off the main process:
 
-![2020-11-03-synapse4.png](/blog/img/2020-11-03-synapse4.png)
+![2020-11-03-synapse4.png](/blog/img/2020-11-03-synapse4.avif)
 
 ## Sharding the events stream
 
@@ -186,7 +186,7 @@ encode those).
 
 And this is what we have today:
 
-![2020-11-03-synapse5.png](/blog/img/2020-11-03-synapse5.png)
+![2020-11-03-synapse5.png](/blog/img/2020-11-03-synapse5.avif)
 
 The major limitation of the current situation is that you can’t dynamically
 add/remove workers which persist events, as the sharding by room ID is
@@ -217,14 +217,14 @@ background worker).  As you can see, we go from messages being spread over a
 huge range of durations (up to several seconds) to the sweet spot being 50ms
 or less - a spectacular improvement!
 
-![2020-11-03-synapse-heatmap.png](/blog/img/2020-11-03-synapse-heatmap.png)
+![2020-11-03-synapse-heatmap.png](/blog/img/2020-11-03-synapse-heatmap.avif)
 
 Meanwhile, here’s the actual CPU utilisation as we split the traffic from a
 single event persister (yellow) to two persisters (one yellow, one blue),
 showing the sharding beautifully horizontally balancing CPU between the two
 active/active worker processes:
 
-![2020-11-03-synapse-cpu.png](/blog/img/2020-11-03-synapse-cpu.png)
+![2020-11-03-synapse-cpu.png](/blog/img/2020-11-03-synapse-cpu.avif)
 
 We’ve yet to loadtest to see just how fast we can go now (before we start
 hitting bottlenecks on the postgres cluster), but it sure feels good to have

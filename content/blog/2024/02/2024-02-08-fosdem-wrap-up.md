@@ -7,7 +7,7 @@ author = ["Thib"]
 category = ["FOSDEM"]
 
 [extra]
-image = "https://matrix.org/blog/img/fosdem2024-devroom.jpg"
+image = "https://matrix.org/blog/img/fosdem2024-devroom.avif"
 +++
 
 This year again the Matrix.org Foundation was at FOSDEM, and what a huge energy boost it has been for us! Between a Fringe Event for the Matrix community to gather, a booth where the vast majority of people came by to show their support for our work, a devroom with four hours of awesome Matrix content, and last but not least a main track talk where Matthew covered what we had been doing for the past year… It has been a very intense weekend!
@@ -20,7 +20,7 @@ The first stop in our FOSDEM journey was the Fringe Event on Friday afternoon at
 
 Thanks to the sponsorship of [Nordeck](https://nordeck.net/) and [Famedly](https://www.famedly.com/) and to the extensive efforts of Adrian and the rest of the HSBXL staff, the Foundation could offer 70 pizzas and crates and crates of drinks to the community. Not only was it great to meet people in the flesh: we could also have a tonne of interesting discussions around the Foundation’s governance, funding, trust & safety tooling, and plenty more that we’re going to factor into our roadmap. And look at this happy community!
 
-![A picture of several dozens of people smiling in a room. Some of them are holding a Matrix flag together.](/blog/img/fosdem2024-fringe.jpg)
+![A picture of several dozens of people smiling in a room. Some of them are holding a Matrix flag together.](/blog/img/fosdem2024-fringe.avif)
 
 ## A crowded Booth
 
@@ -28,7 +28,7 @@ After an already successful Friday, it was time to head to FOSDEM itself: for tw
 
 Needless to say, Matrix is _extremely popular_ in OSS communities. Most people knew and already loved Matrix when coming to the booth, a few didn’t know Matrix, and even fewer people told us where we need to improve for them to consider using it.
 
-![A picture of three persons standing behind a table. One of them has his arm stretched, the two others are looking at the camera smiling. There are folded t-shirts and stickers on the table.](/blog/img/fosdem2024-booth.jpg)
+![A picture of three persons standing behind a table. One of them has his arm stretched, the two others are looking at the camera smiling. There are folded t-shirts and stickers on the table.](/blog/img/fosdem2024-booth.avif)
 
 We brought a box of 100 t-shirts and several thousands of stickers with us this year. Some t-shirt sizes were sold out on the first day, and by the end of the weekend we had sold everything. Lesson learnt: bring much more next year!
 
@@ -48,7 +48,7 @@ Both [Wired](https://www.wired.com/story/whatsapp-interoperability-messaging/) a
 
 This year again we had the opportunity to get a [Matrix Devroom](https://fosdem.org/2024/schedule/track/matrix/): more than 4 hours of Matrix content for a delighted audience. Matrix State of the Union, DMA & Interoperability, MatrixRTC and more: there was a talk for everyone!
 
-![A picture of Matthew and Amandine in front of a classroom with a wide audience. Amandine is holding the mic for Matthew. Their slides are projected, and we can ready "5 years from now, everyone will communicate via Matrix"](/blog/img/fosdem2024-devroom.jpg)
+![A picture of Matthew and Amandine in front of a classroom with a wide audience. Amandine is holding the mic for Matthew. Their slides are projected, and we can ready "5 years from now, everyone will communicate via Matrix"](/blog/img/fosdem2024-devroom.avif)
 
 The devroom happened in a room twice as big as last year’s: it was still packed most of the time. We couldn’t be happier about the enthusiasm for Matrix that we have seen this year again! If you missed a talk you were interested in, you can still catch up with our [FOSDEM 2024 YouTube Playlist](https://www.youtube.com/watch?v=s5BrVVf0B1I&list=PLl5dnxRMP1hWa_UHphXfOHvaw4B2JfSlx).
 

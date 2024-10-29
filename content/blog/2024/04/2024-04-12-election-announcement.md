@@ -30,7 +30,7 @@ To learn about what the Governing Board is, what it does, and the context it ope
 
 Here is the timeline for this election season, which will happen in the second quarter of every year:
 
-![A visual election timeline for this year: Announcements on April 15, Nominations begin April 20, Campaigning begins April 27, Voting begins May 18, and Results announced on June 3.](/blog/img/2024-election-timeline.png)
+![A visual election timeline for this year: Announcements on April 15, Nominations begin April 20, Campaigning begins April 27, Voting begins May 18, and Results announced on June 3.](/blog/img/2024-election-timeline.avif)
 
 To minimize confusion, and maximize inclusion given our international community, we will be using [“Anywhere on Earth” (AOE) time](https://en.wikipedia.org/wiki/Anywhere_on_Earth). If you’re not familiar with AOE time, here’s what it means using our nomination period as an example: so long as it’s still Friday, April 26th in any timezone on the planet (from UTC+12 to UTC-12), the nomination period is open.
 
@@ -52,7 +52,7 @@ Here is the composition of seats on the Governing Board:
 
 We will be seating candidates for all constituency groups in our first election. Starting in 2025, we’ll run elections for half of the constituency groups. This is so that we maintain some level of continuity and institutional knowledge across each election. Consequently, while the first elected representatives from the Guardians, Spec Core Team, Platinum, and Ecosystem Members will serve 2-year terms, the first elected representatives from Gold, Silver, Individual, and Associate Members will serve a 1-year term. We anticipate that many people in those constituencies who are elected this year will run for re-election in 2025.
 
-![A visual election timeline for the next few years: in 2024 we elect all constituencies, in 2025 we elect Gold, Silver, Individual, and Associate Members, in 2026 we elect Platinum, Ecosystem, Guardians, and Spec Core Team Members, in 2027 we elect Gold, Silver, Individual, and Associate Members, and so on.](/blog/img/2024-election-years.png)
+![A visual election timeline for the next few years: in 2024 we elect all constituencies, in 2025 we elect Gold, Silver, Individual, and Associate Members, in 2026 we elect Platinum, Ecosystem, Guardians, and Spec Core Team Members, in 2027 we elect Gold, Silver, Individual, and Associate Members, and so on.](/blog/img/2024-election-years.avif)
 
 There are currently no term limits, but term limits are a best practice in open governance so we intend to introduce them as we find our collective footing.
 

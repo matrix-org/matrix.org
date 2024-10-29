@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-summer.jpg"
+image = "https://matrix.org/blog/img/matrix-summer.avif"
 +++
 
 Hi all,
@@ -130,7 +130,7 @@ All the stuff above is focused on improving the core performance and usability o
 
 However, the catch was that Element Call beta 1 and 2 only ever implemented “full mesh” conferencing - where every participant calls every other participant simultaneously, limiting the size of the conference to ~7 participants on typical hardware, and wasting lots of bandwidth (given you end up sending the same upstream multiple times over for all the other participants).  Element Call has been working surprisingly well in spite of this, but the design of MSC3401 was always to have “foci” (the plural of ‘focus’ - i.e. conference servers) to optionally sit alongside homeservers in order to aggregate the participating calls, a bit like this:
 
-![MSC3401 Architecture](/blog/img/2022-08-15-msc3401.jpg)
+![MSC3401 Architecture](/blog/img/2022-08-15-msc3401.avif)
 
 With foci, clients only need to send their upstream to their local focus, rather than replicating it across all the other participants - and the focus can then fan it out to other foci or clients as required.  In fact, if no other clients are even watching your upstream, then your client can skip sending an upstream to its focus entirely!
 
@@ -142,7 +142,7 @@ But in the last few months this completely changed, thanks to an **amazing** ope
 
 Either way: Sean’s SFU work has opened the floodgates to making native Matrix conferencing actually scale, with Šimon Brandner and I jumping in to [implement SFU support](https://github.com/matrix-org/matrix-js-sdk/pull/2423) in matrix-js-sdk… and as of a few weeks ago we did the first ever SFU-powered Matrix call - which worked impressively well for 12 participants!
 
-![12 person Element Call](/blog/img/2022-08-15-sfu.jpg)
+![12 person Element Call](/blog/img/2022-08-15-sfu.avif)
 
 Now, this isn’t released yet, and there is still work to be done, including:
 
@@ -163,7 +163,7 @@ Elsewhere on VoIP, we’ve also been hard at work figuring out how to embed Elem
 
 In practice, we do this by extending the Widget API to let Matrix clients within the widget share the parent’s Matrix client for operations such as sending and receiving to-device messages and accessing TURN servers (c.f. [MSC3819](https://github.com/matrix-org/matrix-spec-proposals/blob/travis/msc/widgets-send-recv-toDevice/proposals/3819-to-device-messages-for-widgets.md) and [MSC3846](https://github.com/robintown/matrix-doc/blob/widget-turn-servers/proposals/3846-widget-turn-servers.md)).  This in turn has been [implemented](https://github.com/matrix-org/matrix-widget-api/pull/57) in the matrix-widget-api helper library for widget implementers - and then a few days ago Robin demonstrated the world’s first ever matryoshka embedded Element Call call, looking like this:
 
-![Matryoshka embedded Element Call](/blog/img/2022-08-15-matryoshka.jpg)
+![Matryoshka embedded Element Call](/blog/img/2022-08-15-matryoshka.avif)
 
 Note that the MSC3401 events are happening in the actual room where the widget has been added, sent by the right users from Element Web rather than from Element Call, and so are subject to all the normal Matrix access control and encryption semantics.  This is a *huge* step forwards from embedding Jitsi widgets, where the subsequent call membership and signalling happens in an entirely separate system (XMPP via Prosody, ironically) - instead: this is proper native Matrix calling at last.
 
@@ -173,7 +173,7 @@ Matryoshka embedding isn’t live yet, but between scalable calls via SFU and na
 
 Finally, we also added Video Rooms to Element Web - adding the user interface for an “always on” video room that you can hop into whenever you want.  You can read about it over on the [Element blog](https://element.io/blog/drop-in-drop-out-chats-with-video-rooms-and-a-new-search-experience/) - the initial implementation uses Jitsi, but once Element Call and Matryoshka embedding is ready, we’ll switch over to using Element Call instead (and add Voice Rooms too!)
 
-![Video Rooms](/blog/img/2022-08-15-video-rooms.jpg)
+![Video Rooms](/blog/img/2022-08-15-video-rooms.avif)
 
 ### Third Room
 
@@ -213,7 +213,7 @@ Meanwhile, here are some shots of Robert and Nate chasing each other around the 
 
 And don't forget, it's just a Matrix client - with no infrastructure required other than a normal Matrix server:
 
-![Third Room Overlay](/blog/img/2022-08-15-thirdroom-overlay.jpg)
+![Third Room Overlay](/blog/img/2022-08-15-thirdroom-overlay.avif)
 
 As you can see, we are rapidly approaching the point where we’ll need support from technical artists to help create beautiful scenes and avatars and assets in order to make it all come to life - especially once the Blender and Unity pipelines, and/or the Third Room editor are finished. If you’re interested in getting involved come chat at [#thirdroom-dev:matrix.org](https://matrix.to/#/#thirdroom-dev:matrix.org)!
 

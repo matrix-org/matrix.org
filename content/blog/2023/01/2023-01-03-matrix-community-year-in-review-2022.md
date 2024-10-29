@@ -7,7 +7,7 @@ author = ["Nico"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-logo.png"
+image = "https://matrix.org/blog/img/matrix-logo.avif"
 +++
 
 > Note: This was originally posted on https://blog.neko.dev/posts/matrix-year-in-review-2022.html , which also includes some small info boxes about each projects, which got lost in the translation.
@@ -141,7 +141,7 @@ members. We hope you have a spam-free and enjoyable 2023!</p></blockquote>
 <p>Nico mentions</p>
 <blockquote>
 <p>I built a Valheim Mod to bridge Matrix messages from and to Valheim, so that I didn't have to switch windows as often when playing with the other Nheko devs. You can find it here: <a href="https://nheko.im/nheko-reborn/valheimmatrix">https://nheko.im/nheko-reborn/valheimmatrix</a></p>
-<img src="/blog/img/neko.dev_cltTmMvhoxagKJMNiPHdcLLB.png" style="display: inline-block"/>
+<img src="/blog/img/neko.dev_cltTmMvhoxagKJMNiPHdcLLB.avif" style="display: inline-block"/>
 </blockquote>
 <h2>Postmoogle</h2>
 <p>An Email to Matrix bridge. Postmoogle is an actual SMTP server that allows you to send and receive emails on your matrix server. It can't be used with arbitrary email providers, because it acts as an actual email provider itself, so you can use it to send emails from your apps and scripts as well. <a href="https://gitlab.com/etke.cc/postmoogle" target="_blank" rel="nofollow noopener noreferrer">↗</a></p>
@@ -279,7 +279,7 @@ I haven't had much time, but I did write two tiny projects and small blog posts:
 <p>Which brings us on the last big goal: We do want to eventually switch to Qt6. We did have a branch testing out how difficult that would be and it was doable, but we were mostly blocked on GStreamer not supporting Qt6 yet. This is fixed in GStreamer 1.24, which should be out soon, so this is probably the time we can start looking into finalizing the port. Qt6 will fix A LOT of Wayland issues and give us a lot of new optimization opportunities. Maybe that is the year we can get below 100MB RAM usage on my ever growing account and make every room switch feel instant.</p>
 <p>Well... this was a bit of a long one? Certainly it wasn't the work of one person. The Nheko community seems to just be constantly growing and there are so many people contributing, that it really makes me love open source! Thank you! All of you! It has been a great year (Nheko wise) and I hope 2023 becomes even greater! Have a great year!</p>
 
-<img src="/blog/img/neko.dev_qiXeJLZOYzYGDltLQptSTZxb.png" style="display: inline-block;"/>
+<img src="/blog/img/neko.dev_qiXeJLZOYzYGDltLQptSTZxb.avif" style="display: inline-block;"/>
 </blockquote>
 <h2>Timo Kösters' year in Matrix</h2>
 <p>Timo gives an update about Conduit and their year on Matrix. <a href="https://conduit.rs" target="_blank" rel="nofollow noopener noreferrer">↗</a></p>
@@ -306,7 +306,7 @@ It began with 3 rooms and under 500 images, but with
 <a href="https://github.com/matrix-org/matrix-spec-proposals/pull/2545">MSC2545</a> getting
 implemented in more and more clients in 2022, the space quickly grew and we're
 now at 7 rooms with more than 30 packs containing over 2000 stickers and emojis!
-<img data-mx-emoticon height="32" src="/blog/img/pixie.town_i2OfzCDAFTltAQ1BlFLITwjx.png" alt="Blobcat tooting a party horn" style="height: 2em;"/></p>
+<img data-mx-emoticon height="32" src="/blog/img/pixie.town_i2OfzCDAFTltAQ1BlFLITwjx.avif" alt="Blobcat tooting a party horn" style="height: 2em;"/></p>
 <p>One thing i didn't anticipate was that people started to request new stickers
 and sometimes submitted their own. We're not just collectors anymore but also
 the prime source for Blobcats on Matrix!<sup>[citation needed]</sup>
@@ -314,7 +314,7 @@ If you have a sticker room too, please drop by our lobby and tell us
 about it so we can list it and make it known to more people! Do you make your
 own Blobcats or want to learn how to? Visit <a href="https://matrix.to/#/%23tastytea_emojis%3Atastytea.de">my
 room</a>
-so we can spread the blobby joy together! <img data-mx-emoticon height="32" src="/blog/img/pixie.town_A5gZTcUCMSFX0H2ag1kOVkgw.png" alt="Blobcat holding heart in its paws" style="height: 2em;"/></p></blockquote>
+so we can spread the blobby joy together! <img data-mx-emoticon height="32" src="/blog/img/pixie.town_A5gZTcUCMSFX0H2ag1kOVkgw.avif" alt="Blobcat holding heart in its paws" style="height: 2em;"/></p></blockquote>
 <h2>Meetups in Berlin</h2>
 <p>Berlin has a vivid Matrix community with not only one, but two Matrix meetups.</p>
 
@@ -443,7 +443,7 @@ Oh also, I almost forgot, happy new year Matrixians, stay awesome!</p>
 <p>ajbura shares</p><blockquote>
 <p>Cinny is a Matrix client for instant messaging. Our main goal is to make the best UI/UX so that less technical folks can easily adopt Matrix.<br/>2022 has been really productive year for Cinny, we have landed Full Spaces support, Room settings, Custom emojis and stickers, Session verification and cross-signing, and so many cool features.</p><p>Lately, we have been working on a design system for Cinny and it is almost ready to release. Our short-term goals for 2023 would be to incorporate the design system into Cinny, and convert the code to TypeScript both of which will greatly improve the developer and user experience.</p><p>You can join <a href="https://matrix.to/#/#cinny-space:matrix.org">Cinny space</a> to talk about it or browse <a href="https://cinny.in">https://cinny.in</a> </p>
 
-<img src="/blog/img/matrix.org_nIQXMyDqrhZmlzaPlmcPHPKV.png" style="display: inline-block;"/>
+<img src="/blog/img/matrix.org_nIQXMyDqrhZmlzaPlmcPHPKV.avif" style="display: inline-block;"/>
 </blockquote>
 <h2>2022 year in Nyatrix</h2>
 Nyaoori gives us an update about their various Matrix related projects.

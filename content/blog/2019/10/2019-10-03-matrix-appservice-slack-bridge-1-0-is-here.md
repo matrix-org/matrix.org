@@ -25,17 +25,17 @@ directly, when you talk using your Matrix account. This opens the door to seamle
 For those wishing to bridge their whole workspace across, [picard](https://github.com/SolarDrew/skill-picard) exists
 as a tool to manage large scale Slack bridge deployments. This tool is provided by [Cadair](https://matrix.to/#/@Cadair:matrix.org) and [SolarDrew](https://matrix.to/#/@SolarDrew:matrix.org)
 
-![Slack Screenshot](/blog/img/2019-10-03-slack1.0-threading.png)
+![Slack Screenshot](/blog/img/2019-10-03-slack1.0-threading.avif)
 Threading & Reactions!
 
 The bridge has undergone some pretty serious code surgery as well. The whole codebase has been rewritten in
 TypeScript to take advantage of type checking and generic types. The bridge is currently based upon the
 [matrix-appservice-bridge](https://github.com/matrix-org/matrix-appservice-bridge/) library. The datastore interface now supports PostgreSQL, which allows for administrators to inspect and edit the database while the bridge is running, as well as offering  helpful performance boost over the NeDB datastore format that was used previously. Finally, the codebase has proper Unit and Integration Tests to ensure new changes will not cause any regressions in behaviour. In short, **now is an excellent time to get involved and hack on the bridge**. There is already a [crafted list of easy issues](https://github.com/matrix-org/matrix-appservice-slack/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) for new and experienced bridge devs.
 
-![Grafana memory usage graph](/blog/img/2019-10-03-slack1.0-perfmem.png)
+![Grafana memory usage graph](/blog/img/2019-10-03-slack1.0-perfmem.avif)
 Memory usage of the bridge comparison
 
-![Grafana CPU usage graph](/blog/img/2019-10-03-slack1.0-perfcpu.png)
+![Grafana CPU usage graph](/blog/img/2019-10-03-slack1.0-perfcpu.avif)
 CPU usage of the bridge comparison
 
 In terms of how many users matrix.org is currently serving at the moment, we present to you some figures:

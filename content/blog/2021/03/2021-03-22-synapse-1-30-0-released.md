@@ -14,7 +14,7 @@ A key theme of this release was stability and resilience around federation. We'v
 
 That last one turns out to be a pretty big deal: we've seen an order of magnitude improvement in both the CPU and DB cost of the `state_ids` endpoint. For example, the average CPU usage by that endpoint on matrix.org dropped from few seconds to well under 100ms:
 
-![CPU usage graph](/blog/img/2021-03-22-synapse-1.30rc1-state_ids-cpu.png)
+![CPU usage graph](/blog/img/2021-03-22-synapse-1.30rc1-state_ids-cpu.avif)
 
 Enjoy. 🙂
 

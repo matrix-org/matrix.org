@@ -7,7 +7,7 @@ author = ["Thib"]
 category = ["Bridges"]
 
 [extra]
-image = "https://matrix.org/blog/img/libera-chat-bridge-og.png"
+image = "https://matrix.org/blog/img/libera-chat-bridge-og.avif"
 +++
 
 The Matrix.org Foundation has taken down the bridge with the Libera Chat network. This only prevented messages from making it across the bridges, for Matrix users to appear on the IRC side, and for new IRC users to appear on the Matrix side.
@@ -20,7 +20,7 @@ As part of our work to remove the bridge leftovers, we have removed the ghosts i
 
 One of the core concepts of Matrix is interoperability with third party platforms via bridges. In the example of Libera Chat, when an IRC user appears on the Matrix side, it’s called a ghost. When a Matrix user appears on IRC, it’s called a puppet.
 
-![](/blog/img/libera-chat-bridge.png)
+![](/blog/img/libera-chat-bridge.avif)
 
 When the IRC bridge was taken down, all the puppets disappeared from IRC. Matrix works differently than IRC, and all the ghosts remained in most bridged rooms.
 

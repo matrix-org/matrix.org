@@ -7,7 +7,7 @@ author = ["Neil Alexander"]
 category = ["Tech"]
 
 [extra]
-image = "https://matrix.org/blog/img/2021-05-06-pinecone.png"
+image = "https://matrix.org/blog/img/2021-05-06-pinecone.avif"
 +++
 
 Since the end of 2019, we have spent quite a bit of time thinking about and exploring different technologies whilst building various demos for P2P Matrix.  Our mission for P2P Matrix is to evolve Matrix into a hybrid between today's server-oriented network and a pure P2P network - empowering users to have **total** autonomy and privacy over their data if they want (by storing it in P2P Matrix, by embedding their server into their Matrix client), while also letting users store their data in serverside nodes if they so desire.  
@@ -20,7 +20,7 @@ Pinecone is designed to provide end-to-end encrypted communications between devi
 
 Nodes seek out their closest keyspace neighbours on the network and paths are built between these pairs of nodes, similar to how a Chord DHT functions, populating the routing tables of intermediate nodes in the process. These paths are then used to forward traffic without having to perform up-front searches, allowing for very fast connection setups between overlay nodes. These paths are resilient to network topology changes and handle node mobility considerably better than any other name-independent routing scheme that we have seen — early results are very promising so far. We have also been experimenting with a combination of the μTP (Micro Transport Protocol) and TLS to provide stateful connection setup, congestion control and end-to-end encryption for all federation traffic carried over the Pinecone network.
 
-![Pinecone simulator showing line/snake logical network topology](/blog/img/2021-05-06-pineconesim.png)
+![Pinecone simulator showing line/snake logical network topology](/blog/img/2021-05-06-pineconesim.avif)
 
 If Pinecone works out, our intention is to collaborate with the libp2p and IPFS team to incorporate Pinecone routing into libp2p (if they'll have us!) while incorporating their gossipsub routing to improve Matrix federation... and get the best of both worlds :)
 
@@ -33,6 +33,6 @@ Building a routing overlay is only the first step in the journey towards P2P Mat
 
 The long-term plan could look something like this:
 
-![Diagram showing possible P2P Matrix stack](/blog/img/2021-05-06-pinecone.png)
+![Diagram showing possible P2P Matrix stack](/blog/img/2021-05-06-pinecone.avif)
 
 Most discussion around P2P Matrix takes place in [#p2p:matrix.org](http://matrix.to/#/#p2p:matrix.org), so if you are interested in what's going on, please join us there!

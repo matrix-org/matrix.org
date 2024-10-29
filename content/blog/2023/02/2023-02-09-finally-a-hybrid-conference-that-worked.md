@@ -9,7 +9,7 @@ author = ["Thib"]
 category = ["conferences", "fosdem"]
 
 [extra]
-image = "https://matrix.org/blog/img/fosdem2023_stand_blurred.jpg"
+image = "https://matrix.org/blog/img/fosdem2023_stand_blurred.avif"
 +++
 
 For the past two years, FOSDEM couldn’t happen in-person. Fortunately we could
@@ -127,7 +127,7 @@ meet there. The least we can say is that our stand was busy. We ran out of
 stickers and medium size t-shirts early on Sunday morning, but above all we had
 plenty of interesting discussions.
 
-![](/blog/img/fosdem2023_stand_blurred.jpg)
+![](/blog/img/fosdem2023_stand_blurred.avif)
 
 A few people discovered Matrix during FOSDEM and were blown away by messages
 making it from Slack to Discord before their eyes, all thanks to Matrix and

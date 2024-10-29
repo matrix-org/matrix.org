@@ -9,10 +9,10 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-05-21-automattic.png"
+image = "https://matrix.org/blog/img/2020-05-21-automattic.avif"
 +++
 
-![Automattic ♥️ Matrix](https://matrix.org/blog/img/2020-05-21-automattic.png)
+![Automattic ♥️ Matrix](https://matrix.org/blog/img/2020-05-21-automattic.avif)
 
 Hi all,
 

@@ -7,7 +7,7 @@ author = ["Thib", "Matrix Auth Team"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-oidc.png"
+image = "https://matrix.org/blog/img/matrix-oidc.avif"
 +++
 
 Before we explain all about our new authentication system - don't panic! This change is part of Matrix 2.0, the next step for Matrix that will be introduced in a blog post later today.
@@ -27,13 +27,13 @@ One of the most popular Matrix server implementations, Synapse, [supports authen
 
 As it is today, Synapse is more _OIDC-compatible_ than _OIDC-native_. This means that it’s possible to use SSO (typically OpenID Connect) to connect to Synapse, but that’s about where the OpenID Connect adventure stops. Once you’re authenticated, Synapse generates a Matrix Access Token for your client, but that is not an OAuth2/OIDC Access Token. From your client point of view, it is doing the “Matrix SSO dance” [defined by the spec](https://spec.matrix.org/v1.8/client-server-api/#client-login-via-sso), but the fact that Synapse does a login via OIDC, SAML or CAS is irrelevant to the client. Whenever your client asks Synapse for anything that requires being logged in, it sends that Matrix Access Token in the `Authorization` header of the http requests.
 
-![](/blog/img/20230921-classic-token.png)
+![](/blog/img/20230921-classic-token.avif)
 
 While this approach has served Matrix well, the Matrix Access Token method is reimplementing some concepts of OpenID Connect without all the benefits of thousands of developers battle testing and fixing every edge case they meet.
 
 [MSC3861](https://github.com/matrix-org/matrix-spec-proposals/pull/3861), which proposes the adoption of OIDC in Matrix, is all about embracing the best of OIDC to make Matrix even better. By adopting the standard OIDC flows we allow Matrix to stand on the shoulders of another battle-tested industry standard. Not only does it improve security overall, it also unlocks new use cases for Matrix.
 
-![](/blog/img/20230921-oidc-token.png)
+![](/blog/img/20230921-oidc-token.avif)
 
 
 ## Unlocking use cases
@@ -57,7 +57,7 @@ During the whole process, no password was given to the client, and the client do
 
 From the user perspective, the authentication is a very familiar process very well integrated in their password manager regardless of the client they use. They can use any client that supports OIDC, without having to worry about whether it supports every particular step of their authentication process. It’s also worth noting that matrix-authentication-service has a compatibility layer to support the `m.login.password` flow. This means compatibility with older clients will not break!
 
-![](/blog/img/20230921-mas-ui.png)
+![](/blog/img/20230921-mas-ui.avif)
 
 From the administrator perspective, it’s possible to force authentication flows (e.g. MFA), making sure the login is secure and matches their organisation’s policies. It also makes it possible to have a central management of all users' devices, including the ability to enforce policies upon them as provided by the OpenID Provider. For example, it becomes possible to the re-authentication of the user if they leave a trusted network.
 

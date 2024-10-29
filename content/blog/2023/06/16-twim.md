@@ -8,7 +8,7 @@ author = ["Thib"]
 category = ["This Week in Matrix"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-logo.png"
+image = "https://matrix.org/blog/img/matrix-logo.avif"
 +++
 
 ## Matrix Live
@@ -250,7 +250,7 @@ Next-gen crypto-included SDK for developing Clients, Bots and Appservices; writt
 > 
 > Check out the code(and maybe host your own): <https://codeberg.org/lda/TexLiLy> (mirror), <https://git.freetards.xyz/lda/TexLiLy> (original)
 > 
-> ![](/blog/img/e67c93d8a829055b8cb9141ecbd2b59ca35a4c3d.png)
+> ![](/blog/img/e67c93d8a829055b8cb9141ecbd2b59ca35a4c3d.avif)
 
 ### maubot ([website](https://github.com/maubot/maubot))
 

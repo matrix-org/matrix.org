@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/awry.2019-05-24.png"
+image = "https://matrix.org/blog/img/awry.2019-05-24.avif"
 +++
 
 Hi all,
@@ -26,7 +26,7 @@ You can check that your server has been correctly configured [here](https://fede
 
 We've been tracking readiness for the certificate change at https://arewereadyyet.com, at the time of writing 68% of active _servers_ on the federation have valid certificates. We obviously would want that number to be higher, however since the largest installations _have_ upgraded the total number of _users_ who are ready for 1.0 stands at 96%, which we consider to be high enough to release 1.0.
 
-![](/blog/img/awry.2019-05-24.png)
+![](/blog/img/awry.2019-05-24.avif)
 
 **This is not a drill**, from here until 10th June we need everyone to not only ensure that their own server is ready, but also to encourage their fellow admins to update as well. With your help we can get everyone over the line!
 

@@ -9,10 +9,10 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-09-30-gitter.png"
+image = "https://matrix.org/blog/img/2020-09-30-gitter.avif"
 +++
 
-![Gitter ♥️ Matrix](/blog/img/2020-09-30-gitter.png)
+![Gitter ♥️ Matrix](/blog/img/2020-09-30-gitter.avif)
 
 Hi all,
 
@@ -69,7 +69,7 @@ Any questions, come talk to us on [#gitter:matrix.org](https://matrix.to/#/#gitt
 \- Matthew, Amandine, and the whole Matrix, Element and Gitter teams.
 
 <div style="text-align: center">
-    <img src="/blog/img/2020-09-30-gitter-photo.jpg" width="480" alt="Matthew & Amandine being dorky"/>
+    <img src="/blog/img/2020-09-30-gitter-photo.avif" width="480" alt="Matthew & Amandine being dorky"/>
     <br/>
     <i><small>Matthew and Amandine model 2014-vintage Matrix & Gitter swag in celebration :D</small></i>
 </div>
@@ -82,7 +82,7 @@ Sid Sijbrandij (CEO at GitLab) and Matthew had a chance to sit down with [The Ch
 <div style="text-align: center">
 
 <a rel="noopener" href="https://cdn.changelog.com/uploads/podcast/414/the-changelog-414.mp3">
-    <img src="https://matrix.org/blog/img/2020-09-30-gitter-changelog.png" alt="Changelog podcast 414"/>
+    <img src="https://matrix.org/blog/img/2020-09-30-gitter-changelog.avif" alt="Changelog podcast 414"/>
 </a>
 
 <a href="https://changelog.com/podcast/414">The Changelog 414: Gitter's Big Adventure</a> - Listen on <a href="https://changelog.com/">Changelog.com</a>

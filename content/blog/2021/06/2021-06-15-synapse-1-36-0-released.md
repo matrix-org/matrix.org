@@ -15,7 +15,7 @@ Synapse 1.36.0 is out, and it's a big one!
 
 We did it! Synapse no longer experiences a memory spike when joining large / complex rooms.
 
-![Memory usage graph for Synapse 1.33 and 1.36](/blog/img/2021-06-15-synapse-1.36-join-memory.png)
+![Memory usage graph for Synapse 1.33 and 1.36](/blog/img/2021-06-15-synapse-1.36-join-memory.avif)
 
 These improvements mainly arise from processing join responses incrementally, rather than trying to load everything into memory at once. However, realizing these gains involved a fair bit of rewriting, as the entire processing pipeline had to work incrementally, and with appropriately sized batches, to avoid downstream bottlenecks. You can hear more about our original plans for this work in last month's Matrix Live: [S6E23 — Dan and Erik talk about Synapse](https://www.youtube.com/watch?v=694VuhmVmfo).
 
@@ -27,7 +27,7 @@ We had also noticed a recent increase in presence load on federation workers; th
 
 With both issues fixed, outgoing federation load has returned to normal levels:
 
-![Graph of outgoing federation transaction rate ranging from around 75 Hz down to under 25 Hz](/blog/img/2021-06-15-synapse-1.36-fed-sender-tx-rate.png)
+![Graph of outgoing federation transaction rate ranging from around 75 Hz down to under 25 Hz](/blog/img/2021-06-15-synapse-1.36-fed-sender-tx-rate.avif)
 
 (Thank you to David Mehren for this graph from issue [#10153](https://github.com/matrix-org/synapse/issues/10153))
 

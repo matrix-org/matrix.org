@@ -9,11 +9,11 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/rocketchat.png"
+image = "https://matrix.org/blog/img/rocketchat.avif"
 +++
 
 <div style="text-align: center">
-<img src="/blog/img/rocketchat.png" alt="Rocket.Chat ♥️ Matrix"/>
+<img src="/blog/img/rocketchat.avif" alt="Rocket.Chat ♥️ Matrix"/>
 </div>
 
 Hi folks,

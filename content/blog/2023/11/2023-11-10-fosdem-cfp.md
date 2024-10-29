@@ -7,7 +7,7 @@ author = ["Thib"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-fosdem.png"
+image = "https://matrix.org/blog/img/matrix-fosdem.avif"
 +++
 
 Building on last year's success, the Matrix.org Foundation is excited to host a Matrix.org Foundation and Community devroom in person this year again at FOSDEM. Half a day of talks, demos and workshops around Matrix itself and projects built on top of Matrix.

@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-12-18-cerulean.png"
+image = "https://matrix.org/blog/img/2020-12-18-cerulean.avif"
 +++
 
 Hi all,
@@ -18,7 +18,7 @@ Alongside all the normal business-as-usual Matrix stuff, we’ve found some time
 
 It turns out the answer is a firm “yes” - and as a result we’d like to present a **very** early sneak preview of [Cerulean](https://cerulean.matrix.org): a highly experimental new microblogging app for Matrix, complete with first-class support for arbitrarily nested threading, with both Twitter-style (“vertical”) and HN/Reddit-style (“horizontal”) layout… and mobile web support!
 
-[![Cerulean screenie](https://matrix.org/blog/img/2020-12-18-cerulean-screenshot.jpg)](https://cerulean.matrix.org/@kegan:dendrite.matrix.org/!bHe21S4P3axekSRD:dendrite.matrix.org/$0QE6vqMZiS9169Y-3C84dkQui-1G5uG2eGFsYzPrhx8)
+[![Cerulean screenie](https://matrix.org/blog/img/2020-12-18-cerulean-screenshot.avif)](https://cerulean.matrix.org/@kegan:dendrite.matrix.org/!bHe21S4P3axekSRD:dendrite.matrix.org/$0QE6vqMZiS9169Y-3C84dkQui-1G5uG2eGFsYzPrhx8)
 
 Cerulean is unusual in many ways:
 
@@ -74,7 +74,7 @@ These semantics play nicely with existing Matrix clients, who will see one room 
 
 In this initial version, Cerulean literally posts the message twice into both rooms - but we’re also experimenting with the idea of adding “symlinks” to Matrix, letting the canonical version of the event be in the timeline room, and then the instance of the event in the thread room be a ‘symlink’ to the one in the timeline.  This means that the threading metadata could be structured in the thread room, and let the user do things like turn their timeline private (or vice versa) without impacting the threading metadata.  We could also add an API to both post to timeline and symlink into a thread in one fell swoop, rather than manually sending two events.  It’d look something like this:
 
-![Cerulean diagram](https://matrix.org/blog/img/2020-12-18-cerulean-diagram.png)
+![Cerulean diagram](https://matrix.org/blog/img/2020-12-18-cerulean-diagram.avif)
 
 We also experimented with cross-room threading (letting Bob’s timeline messages directly respond to Alice’s timeline messages and vice versa), but it posed some nasty problems - for instance, to find out what cross-room replies a message has, you’d need to store forward references somehow which the replier would need permission to create.  Also, if you didn’t have access to view the remote room, the thread would break. So we’ve punted cross-room threading to a later MSC for now.
 

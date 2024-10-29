@@ -7,7 +7,7 @@ author = ["Denise Almeida"]
 category = ["Foundation"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-logo.png"
+image = "https://matrix.org/blog/img/matrix-logo.avif"
 +++
 
 We join our voices to technology companies, trade associations and other supporters in asking EU member states to align the Council's position on the CSA Regulation to the position agreed by the Parliament.

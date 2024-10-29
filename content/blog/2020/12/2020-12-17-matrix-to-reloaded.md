@@ -9,7 +9,7 @@ author = ["Nad Chishtie"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-12-17-matrix_to.png"
+image = "https://matrix.org/blog/img/2020-12-17-matrix_to.avif"
 +++
 
 One of the goals on the core team is to reduce friction for new users joining Matrix. A challenge we regularly face is all the factors which make Matrix flexible and powerful as an open, secure decentralised protocol also increase the difficulty of getting started.
@@ -26,7 +26,7 @@ It’s privacy preserving, with no information stored server side, with all calc
 
 ## What's new?
 
-![The matrix.to room, on the new matrix.to!](https://matrix.org/blog/img/2020-12-17-matrix_to.png)
+![The matrix.to room, on the new matrix.to!](https://matrix.org/blog/img/2020-12-17-matrix_to.avif)
 
 We’ve re-written matrix.to from scratch, giving it a visual upgrade and refocused the experience around:
 

@@ -7,7 +7,7 @@ author = ["Neil Johnson"]
 category = ["Releases"]
 
 [extra]
-image = "https://matrix.org/blog/img/2019-08-15-message-send.png"
+image = "https://matrix.org/blog/img/2019-08-15-message-send.avif"
 +++
 
 Well now, Synapse 1.3.0 is here.
@@ -16,7 +16,7 @@ The main thing to know about 1.3.0 is that is contains performance improvements 
 
 Check out our message send heat map.
 
-![Message Send](/blog/img/2019-08-15-message-send.png)
+![Message Send](/blog/img/2019-08-15-message-send.avif)
 
 
 Other than that there are a bunch of bug fixes and tweaks to generally make things run more smoothly.

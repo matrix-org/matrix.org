@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/splash.jpg"
+image = "https://matrix.org/blog/img/splash.avif"
 +++
 
 ## Matrix 1.0
@@ -54,13 +54,13 @@ Then stuff which we haven’t yet started, but is now unlocked by the 1.0 releas
 Just to give a quick taster of the shape of things to come, here’s RiotX/Android, the all-new Riot client for Android, showing off Edits & Reactions in the wild…
 
 <div style="text-align: center">
-<img src="/blog/img/edits.jpg" style="height: 640px;"/>
+<img src="/blog/img/edits.avif" style="height: 640px;"/>
 </div>
 
 ...and here’s a screenshot of the final test jig for cross-signing devices in end-to-end encryption, so you will never have to manually verify new devices for a trusted user ever again!  We demoed a *very* early version of this at FOSDEM, but this here is the testing harness for real deal, after several iterations of the spec and implementation to nail down the model. + means the device/user's cross-signing key is trusted, T means it's TOFU:
 
 <div style="text-align: center">
-<img src="/blog/img/cross-signing.png" style="height: 480px; margin: auto"/>
+<img src="/blog/img/cross-signing.avif" style="height: 480px; margin: auto"/>
 </div>
 
 So, there you have it - welcome to Matrix 1.0, and we look forward to our backlog of feature work now landing!
@@ -69,11 +69,11 @@ Massive massive thanks to everyone who has stuck with the project over the years
 
 Talking of which, we were looking through the photos we took from the first ever session hacking on Matrix back in May 2014…
 
-![Whiteboard 1](/blog/img/nightmare.jpg)
+![Whiteboard 1](/blog/img/nightmare.avif)
 
 ...suffice it to say that of the architectural options, we went with #3 in the end...
 
-![Whiteboard 2](/blog/img/pl.jpg)
+![Whiteboard 2](/blog/img/pl.avif)
 
 ...and that nowadays we actually know how power levels work, in excruciating and (hopefully) well-specified detail :)
 
