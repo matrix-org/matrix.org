@@ -136,6 +136,7 @@ name = "Synapse Admin"
 description = """
 Admin console for synapse Matrix homeserver with additional features
 
+(Maintained by etke.cc fork)
 CDN version: https://admin.etke.cc
 """
 maintainer = "etke.cc"
