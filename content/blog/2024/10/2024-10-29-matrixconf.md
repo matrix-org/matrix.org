@@ -14,7 +14,13 @@ The result was a fantastic demonstration of how much we can learn from each othe
 
 When we were planning the conference, we weren’t sure how big the demand would be. Having hit capacity and sold out of tickets weeks before the event, we know to aim higher next time! We’ll get a larger venue next year, but it was very gratifying to have sessions where the room was literally full!
 
-You could really feel the energy: all told, we had 236 participants from 12 countries across 3 continents, representing 79 different organisations, join us across 4 days of events featuring 52 speakers. You can [find the slides and video recordings on the website](https://2024.matrix.org/watch/), or [see the photo albums](https://cryptpad.fr/drive/#/2/drive/view/SbyjABJvteHpv22WJNxtNUBMRou8j-PnGhwLMI5-b1Y/).
+You could really feel the energy: all told, we had 236 participants from 12 countries across 3 continents, representing 79 different organisations, join us across 4 days of events featuring 52 speakers.
+
+You can [find the slides and video recordings on the website](https://2024.matrix.org/watch/), or [see the photo albums](https://cryptpad.fr/drive/#/2/drive/view/SbyjABJvteHpv22WJNxtNUBMRou8j-PnGhwLMI5-b1Y/).
+
+
+<a href="https://2024.matrix.org/watch/">{{figure(img="/blog/img/conf-talks.jpg", caption="Thumbnails of all the conference talks")}}</a>
+
 
 And the world noticed, with press in [The Guardian](https://www.theguardian.com/technology/2024/sep/24/meet-the-scrappy-tech-company-taking-on-slack), [Heise](https://www.heise.de/en/news/Matrix-conference-On-current-developments-the-state-of-open-source-and-more-9951334.html), and [Fast Company](https://www.fastcompany.com/91194828/nato-is-testing-out-this-decentralized-messenger-for-communications-between-member-nations).
 
