@@ -130,6 +130,20 @@ language = "Rust"
 licence = "MIT"
 repository = "https://gitlab.com/jpypi/rustix"
 
+
+[[integrations]]
+name = "Synapse Admin"
+description = """
+Admin console for synapse Matrix homeserver with additional features
+
+CDN version: https://admin.etke.cc
+"""
+maintainer = "etke.cc"
+language = "TypeScript"
+licence = "Apache-2.0"
+repository = "https://github.com/etkecc/synapse-admin"
+room = "#synapse-admin:etke.cc"
+
 [[integrations]]
 name = "matrix-hookshot"
 description = "A bridge between Matrix and multiple project management services, such as GitHub, GitLab and JIRA."
