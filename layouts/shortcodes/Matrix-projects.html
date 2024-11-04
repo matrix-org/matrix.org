@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Matrix Ecosystem</title>
+</head>
+<body>
+  <h1>The Matrix Ecosystem</h1>
+  <ul>
+    {{ range .Site.Data.matrix-categories.categories }}
+    <li>
+      <a href="{{ .url | replace "https://github.com/matrix-org/matrix.org/content/ecosystem/" "" | trimSuffix "/" }}">{{ .name }}</a> &ndash; {{ .description }}
+    </li>
+    {{ end }}
+  </ul>
+</body>
+</html>
