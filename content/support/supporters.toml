@@ -86,7 +86,7 @@ logo = "fractal.svg"
 [[ecosystem]]
 name = "Matrix Community Events"
 website = "https://matrix.to/#/#community-events:matrix.org"
-logo = "matrix-community-events.png"
+logo = "matrix-community-events.svg"
 
 [[ecosystem]]
 name = "NeoChat"
@@ -101,7 +101,7 @@ logo = "nheko.svg"
 [[ecosystem]]
 name = "Polychat"
 website = "https://polychat.de/"
-logo = "polychat.png"
+logo = "polychat.svg"
 
 [[ecosystem]]
 name = "Rory&::LibMatrix"

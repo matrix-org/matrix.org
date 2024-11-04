@@ -91,11 +91,11 @@ Bridging infrastructure for Application Services.
 
 [[sdks]]
 name = "matrix-nio"
-maintainer = "poljar"
+maintainer = "matrix-nio maintainers"
 maturity = "Stable"
 language = "Python"
 licence = "ISC"
-repository = "https://github.com/poljar/matrix-nio"
+repository = "https://github.com/matrix-nio/matrix-nio"
 purpose = ["client", "bot"]
 featured_in = ["client", "bot"]
 description = """
@@ -193,7 +193,7 @@ featured_in = []
 
 [[sdks]]
 name = "Matrix Dart SDK"
-maintainer = "Famedly GmBH"
+maintainer = "Famedly GmbH"
 maturity = "Stable"
 language = "Dart"
 licence = "AGPL-3.0"

@@ -1,6 +1,7 @@
 .projects-card-deck {
     display: grid;
     grid-template-columns: repeat(auto-fill, 17.6rem);
+    justify-content: center;
 
     @media (max-width: 767px) {
         max-width: 17.6rem;

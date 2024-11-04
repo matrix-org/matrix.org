@@ -52,14 +52,18 @@
             {{ page.date | date(format="%d.%m.%Y %H:%M") }}
             {% if page.taxonomies.category %}
             —
-            {% for category in
-            page.taxonomies.category %}<a href="/category/{{ category | slugify }}">{{ category }}</a>{% if not
-            loop.last %}, {% endif %}{% endfor %}
+            {% for category in page.taxonomies.category %}
+                <a href="/category/{{ category | slugify }}">
+                    {{- category -}}
+                </a>
+            {%- if not loop.last %}, {% endif %}{% endfor %}
             {% endif %}
             —
-            {% for author in page.taxonomies.author %}<a
-                href="/author/{{ author | default (value=['unknown author']) | slugify }}">{{ author | default
-                (value=["unknown author"]) }}</a>{% if not loop.last %}, {% endif %}
+            {% for author in page.taxonomies.author %}
+                <a href="/author/{{ author | default (value=['unknown author']) | slugify }}">
+                    {{- author | default (value=["unknown author"]) -}}
+                </a>
+            {%- if not loop.last %}, {% endif %}
             {% endfor %}
         </span>
         {% if page.updated %}

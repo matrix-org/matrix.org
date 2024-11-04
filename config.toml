@@ -35,3 +35,18 @@ skip_anchor_prefixes = [
     # Spec page does not have anchors in the html it seems. (Probably loading using js.) This causes a false positive
     "https://spec.matrix.org/v1.3/changelog/",
 ]
+
+[extra]
+banner = false
+
+# Possible states: "cfp", "awaiting_schedule", "scheduled", "no_tickets", "live", "watch-recordings", "none"
+# None is used when elections instead are used
+conference_state = "none"
+
+conference_website = "https://2024.matrix.org"
+conference_dates = "Sep 19-22"
+conference_location = "Berlin, Germany"
+
+governence_board_elections = false
+governence_board_elections_page = "/governing-board/elections/2024"
+

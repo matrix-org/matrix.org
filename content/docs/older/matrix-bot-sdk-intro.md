@@ -130,7 +130,7 @@ client.on("room.message", (roomId, event) => {
 });
 ```
 
-In this way we can inspect an the contents of an event and render them. We
+This way we can inspect the contents of an event and render them. We
 choose to exit early in the case that `event["content"]` is empty because this
 will usually mean the message was redacted.
 
