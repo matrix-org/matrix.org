@@ -7,7 +7,7 @@ author = ["Thib"]
 category = ["Foundation"]
 
 [extra]
-image = "https://matrix.org/blog/img/beeper.avif"
+image = "/blog/img/beeper.avif"
 +++
 
 We're proud to announce [Beeper](https://beeper.com) is the first member to join

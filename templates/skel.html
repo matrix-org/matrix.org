@@ -32,12 +32,18 @@
     <meta property="og:description" content="{{ og_description }}" />
     <meta name="description" content="{{ og_description }}" />
     {% if page.extra.image %}
-    <meta property="og:image" content="{{ page.extra.image }}" />
+    {% set mdata = get_image_metadata(path=page.extra.image) %}
+    {% set image = resize_image(path=page.extra.image, width=(mdata.width * 0.5)|int, op="fit_width") %}
+    <meta property="og:image" content="{{ image }}" />
     {% elif section.extra.image %}
-    <meta property="og:image" content="{{ section.extra.image }}" />
+    {% set mdata = get_image_metadata(path=section.extra.image) %}
+    {% set image = resize_image(path=section.extra.image, width=(mdata.width * 0.5)|int, op="fit_width") %}
+    <meta property="og:image" content="{{ image }}" />
     {% else %}
-    <meta property="og:image" content="https://matrix.org/blog/img/matrix-logo.avif" />
-    <meta name="twitter:image" content="https://matrix.org/blog/img/matrix-logo.avif" />
+    {% set mdata = get_image_metadata(path="/blog/img/matrix-logo.avif") %}
+    {% set image = resize_image(path="/blog/img/matrix-logo.avif", width=(mdata.width * 0.5)|int, op="fit_width") %}
+    <meta property="og:image" content="{{ image }}" />
+    <meta name="twitter:image" content="{{ image }}" />
     {% endif %}
     <title>
         {%- if config.mode == "serve" -%}&#x1F6E0;&#xFE0F; {% endif -%}

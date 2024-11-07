@@ -9,7 +9,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2022-03-29-chat-bubbles.avif"
+image = "/blog/img/2022-03-29-chat-bubbles.avif"
 +++
 
 With last week’s revelation that the [EU Digital Markets Act](https://www.europarl.europa.eu/news/en/press-room/20220315IPR25504/deal-on-digital-markets-act-ensuring-fair-competition-and-more-choice-for-users)

@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2022-03-29-chat-bubbles.avif"
+image = "/blog/img/2022-03-29-chat-bubbles.avif"
 +++
 
 A few weeks ago we found ourselves in Brussels to participate in the second [stakeholder workshop for the Digital Markets Act (DMA)](https://competition-policy.ec.europa.eu/dma/dma-workshops_en).

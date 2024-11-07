@@ -7,7 +7,7 @@ author = ["Neil Alexander"]
 category = ["Tech"]
 
 [extra]
-image = "https://matrix.org/blog/img/2021-05-06-pinecone.avif"
+image = "/blog/img/2021-05-06-pinecone.avif"
 +++
 
 Since the end of 2019, we have spent quite a bit of time thinking about and exploring different technologies whilst building various demos for P2P Matrix.  Our mission for P2P Matrix is to evolve Matrix into a hybrid between today's server-oriented network and a pure P2P network - empowering users to have **total** autonomy and privacy over their data if they want (by storing it in P2P Matrix, by embedding their server into their Matrix client), while also letting users store their data in serverside nodes if they so desire.  

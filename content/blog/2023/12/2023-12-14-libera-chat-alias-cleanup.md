@@ -7,7 +7,7 @@ author = ["Thib"]
 category = ["Bridges"]
 
 [extra]
-image = "https://matrix.org/blog/img/libera-chat-bridge-og.avif"
+image = "/blog/img/libera-chat-bridge-og.avif"
 +++
 
 The Matrix.org Foundation has taken down the bridge with the Libera Chat network. This only prevented messages from making it across the bridges, for Matrix users to appear on the IRC side, and for new IRC users to appear on the Matrix side.

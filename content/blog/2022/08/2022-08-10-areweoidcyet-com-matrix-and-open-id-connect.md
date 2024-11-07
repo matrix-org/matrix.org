@@ -8,7 +8,7 @@ author = ["Hugh Nimmo-Smith"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-logo.avif"
+image = "/blog/img/matrix-logo.avif"
 +++
 
 TL;DR: we’ve just launched [areweoidcyet.com](https://areweoidcyet.com) to track the project to adopt OpenID Connect (OIDC) as _the_ authentication method used by Matrix. It has a load of useful resources ([FAQs](https://areweoidcyet.com/#faqs), [status](https://areweoidcyet.com/#when) etc.) so do please check it out!

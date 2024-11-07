@@ -8,7 +8,7 @@ author = ["Matthew Hodgson"]
 category = ["Releases"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-11-03-synapse5.avif"
+image = "/blog/img/2020-11-03-synapse5.avif"
 +++
 
 Hi all,

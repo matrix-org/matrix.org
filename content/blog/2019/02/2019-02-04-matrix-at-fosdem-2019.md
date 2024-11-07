@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["In the News"]
 
 [extra]
-image = "https://matrix.org/blog/wp-content/uploads/2019/02/DyaWzqGW0AAk9pd.jpg"
+image = "/blog/wp-content/uploads/2019/02/DyaWzqGW0AAk9pd.jpg"
 +++
 
 Hi all,

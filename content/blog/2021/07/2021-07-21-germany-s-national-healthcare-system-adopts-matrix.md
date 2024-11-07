@@ -9,7 +9,7 @@ author = ["Matthew Hodgson"]
 category = ["General", "News"]
 
 [extra]
-image = "https://matrix.org/blog/img/2021-07-21-gematik.avif"
+image = "/blog/img/2021-07-21-gematik.avif"
 +++
 
 Hi folks,

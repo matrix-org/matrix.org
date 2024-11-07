@@ -7,7 +7,7 @@ author = ["Ben Parsons"]
 category = ["GSOC"]
 
 [extra]
-image = "https://matrix.org/blog/img/gsoc.avif"
+image = "/blog/img/gsoc.avif"
 +++
 
 [Google Summer of Code 2021](https://summerofcode.withgoogle.com) participants have been announced! This year [Matrix has been assigned *seven* students](https://summerofcode.withgoogle.com/organizations/6691635666092032/).

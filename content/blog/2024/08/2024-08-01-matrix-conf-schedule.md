@@ -7,7 +7,7 @@ author = ["Thib"]
 category = ["Conference"]
 
 [extra]
-image = "https://matrix.org/img/matrix-conference-opengraph.png"
+image = "/img/matrix-conference-opengraph.png"
 +++
 
 ![](/img/matrix-conference-opengraph.png)

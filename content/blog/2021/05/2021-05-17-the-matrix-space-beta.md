@@ -9,7 +9,7 @@ author = ["Matthew Hodgson"]
 category = ["Tech", "General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2021-05-17-space.avif"
+image = "/blog/img/2021-05-17-space.avif"
 +++
 
 Hi all,

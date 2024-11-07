@@ -9,7 +9,7 @@ author = ["Thib"]
 category = ["conferences", "fosdem"]
 
 [extra]
-image = "https://matrix.org/blog/img/fosdem2023_stand_blurred.avif"
+image = "/blog/img/fosdem2023_stand_blurred.avif"
 +++
 
 For the past two years, FOSDEM couldn’t happen in-person. Fortunately we could

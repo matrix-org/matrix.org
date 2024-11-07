@@ -7,7 +7,7 @@ author = ["Thib"]
 category = ["FOSDEM"]
 
 [extra]
-image = "https://matrix.org/blog/img/fosdem2024-devroom.avif"
+image = "/blog/img/fosdem2024-devroom.avif"
 +++
 
 This year again the Matrix.org Foundation was at FOSDEM, and what a huge energy boost it has been for us! Between a Fringe Event for the Matrix community to gather, a booth where the vast majority of people came by to show their support for our work, a devroom with four hours of awesome Matrix content, and last but not least a main track talk where Matthew covered what we had been doing for the past year… It has been a very intense weekend!

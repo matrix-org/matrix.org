@@ -9,7 +9,7 @@ author = ["Nad Chishtie"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-12-17-matrix_to.avif"
+image = "/blog/img/2020-12-17-matrix_to.avif"
 +++
 
 One of the goals on the core team is to reduce friction for new users joining Matrix. A challenge we regularly face is all the factors which make Matrix flexible and powerful as an open, secure decentralised protocol also increase the difficulty of getting started.

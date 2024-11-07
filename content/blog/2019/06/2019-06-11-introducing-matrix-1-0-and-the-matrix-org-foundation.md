@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/splash.avif"
+image = "/blog/img/splash.avif"
 +++
 
 ## Matrix 1.0

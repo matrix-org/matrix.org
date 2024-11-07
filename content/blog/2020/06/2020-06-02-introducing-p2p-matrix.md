@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-logo.avif"
+image = "/blog/img/matrix-logo.avif"
 +++
 
 TL;DR: we shipped a major update (v0.1.1) to [https://p2p.riot.im](https://p2p.riot.im) - fire up a desktop Chrome or Firefox in not-private-browsing mode and give it a go!

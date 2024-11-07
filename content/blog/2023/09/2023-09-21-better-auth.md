@@ -7,7 +7,7 @@ author = ["Thib", "Matrix Auth Team"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-oidc.avif"
+image = "/blog/img/matrix-oidc.avif"
 +++
 
 Before we explain all about our new authentication system - don't panic! This change is part of Matrix 2.0, the next step for Matrix that will be introduced in a blog post later today.

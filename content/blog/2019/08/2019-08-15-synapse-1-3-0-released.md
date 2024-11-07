@@ -7,7 +7,7 @@ author = ["Neil Johnson"]
 category = ["Releases"]
 
 [extra]
-image = "https://matrix.org/blog/img/2019-08-15-message-send.avif"
+image = "/blog/img/2019-08-15-message-send.avif"
 +++
 
 Well now, Synapse 1.3.0 is here.

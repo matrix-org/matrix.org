@@ -7,7 +7,7 @@ author = ["Ben Parsons"]
 category = ["Merch"]
 
 [extra]
-image = "https://matrix.org/blog/img/2019-08-09-stickers.avif"
+image = "/blog/img/2019-08-09-stickers.avif"
 +++
 
 Here at Matrix we’re frequently asked for official merch. While those who choose to [sponsor Matrix development on Patreon](https://www.patreon.com/matrixdotorg) have always been blessed with branded t-shirts, it was otherwise very difficult to obtain official merch.

@@ -9,7 +9,7 @@ author = ["Andrew Morgan"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-04-28-msc-banner.avif"
+image = "/blog/img/2020-04-28-msc-banner.avif"
 +++
 
 On April 14th, the Spec Core Team conducted a long-overdue retrospective

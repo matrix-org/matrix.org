@@ -7,7 +7,7 @@ author = ["Amandine Le Pape"]
 category = ["Foundation"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-logo.avif"
+image = "/blog/img/matrix-logo.avif"
 +++
 
 We shared back in December how we wanted to find a way for people and

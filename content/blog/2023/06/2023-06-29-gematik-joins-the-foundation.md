@@ -7,7 +7,7 @@ author = ["Thib"]
 category = ["Foundation"]
 
 [extra]
-image = "https://matrix.org/blog/img/gematik_2020.avif"
+image = "/blog/img/gematik_2020.avif"
 +++
 
 We were already proud to [announce](/blog/2021/07/21/germany-s-national-healthcare-system-adopts-matrix/)

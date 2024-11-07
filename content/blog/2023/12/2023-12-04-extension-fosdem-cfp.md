@@ -7,7 +7,7 @@ author = ["Thib"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-fosdem.avif"
+image = "/blog/img/matrix-fosdem.avif"
 +++
 
 Several potential speakers asked us to extend the deadline of our CfP for the Matrix Devroom at FOSDEM. We are extending the deadline to Friday 8th December.

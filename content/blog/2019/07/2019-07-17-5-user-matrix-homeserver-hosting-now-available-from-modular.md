@@ -7,7 +7,7 @@ author = ["Modular.im"]
 category = ["General", "In the News"]
 
 [extra]
-image = "https://matrix.org/blog/img/2019-07-17-create_small_homeserver_twitter_card.avif"
+image = "/blog/img/2019-07-17-create_small_homeserver_twitter_card.avif"
 +++
 
 Hi all,

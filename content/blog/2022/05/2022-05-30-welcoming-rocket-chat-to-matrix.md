@@ -9,7 +9,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/rocketchat.avif"
+image = "/blog/img/rocketchat.avif"
 +++
 
 <div style="text-align: center">

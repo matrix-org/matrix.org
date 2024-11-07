@@ -7,7 +7,7 @@ author = ["Ben Parsons"]
 category = ["GSOC"]
 
 [extra]
-image = "https://matrix.org/blog/img/gsoc.avif"
+image = "/blog/img/gsoc.avif"
 +++
 
 ![GSOC Logo](/blog/img/gsoc.avif)

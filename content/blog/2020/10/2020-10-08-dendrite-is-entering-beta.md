@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["Releases"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-10-08-dendrite-arch.avif"
+image = "/blog/img/2020-10-08-dendrite-arch.avif"
 +++
 
 Hi all,

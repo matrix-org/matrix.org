@@ -8,7 +8,7 @@ author = ["Thib"]
 category = ["This Week in Matrix"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-logo.avif"
+image = "/blog/img/matrix-logo.avif"
 +++
 
 ## Matrix Live

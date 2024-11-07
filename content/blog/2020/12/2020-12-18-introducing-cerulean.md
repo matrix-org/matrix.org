@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2020-12-18-cerulean.avif"
+image = "/blog/img/2020-12-18-cerulean.avif"
 +++
 
 Hi all,

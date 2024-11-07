@@ -9,7 +9,7 @@ author = ["Thib"]
 category = ["General"]
 
 [extra]
-image = "https://matrix.org/blog/img/new-morg.avif"
+image = "/blog/img/new-morg.avif"
 +++
 
 Hello federation,

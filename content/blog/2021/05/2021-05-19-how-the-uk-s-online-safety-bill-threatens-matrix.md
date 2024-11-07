@@ -10,7 +10,7 @@ author = ["Denise Almeida"]
 category = ["Tech", "General"]
 
 [extra]
-image = "https://matrix.org/blog/img/2021-05-19-brazil.avif"
+image = "/blog/img/2021-05-19-brazil.avif"
 +++
 
 Last week the UK government published a [draft of the proposed Online Safety

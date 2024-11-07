@@ -8,7 +8,7 @@ author = ["Thib"]
 category = ["Foundation"]
 
 [extra]
-image = "https://matrix.org/blog/img/matrix-website-opengraph.avif"
+image = "/blog/img/matrix-website-opengraph.avif"
 +++
 
 The Matrix.org website is the public face of the Foundation, and the first thing you stumble upon when looking up “matrix chat” on a search engine. It’s a very important step in people’s Matrix journey.

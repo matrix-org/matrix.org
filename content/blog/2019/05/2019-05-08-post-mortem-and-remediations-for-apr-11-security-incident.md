@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["General", "Security"]
 
 [extra]
-image = "https://matrix.org/blog/img/services.avif"
+image = "/blog/img/services.avif"
 +++
 
 ### Table of contents
