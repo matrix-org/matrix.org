@@ -20,7 +20,8 @@ extend-exclude = [
     "content/blog/2024/04/2024-04-26-twim.md",
     "content/blog/2024/07/2024-07-26-twim.md",
     "content/blog/2024/08/2024-08-02-twim.md",
-    "content/blog/2024/08/2024-08-09-twim.md"
+    "content/blog/2024/08/2024-08-09-twim.md",
+    "content/blog/2024/11/2024-11-08-twim.md"
 ]
 
 [default]
