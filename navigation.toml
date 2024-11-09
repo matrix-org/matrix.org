@@ -2,7 +2,7 @@ header = [
     { title = "Spec", href = "https://spec.matrix.org" },
     { title = "Foundation", section = "foundation" },
     { title = "Blog", href = "/blog/" },
-    { title = "Docs", href = "/docs/" },
+    { title = "Learn Matrix", href = "/docs/" },
     { title = "Ecosystem", section = "ecosystem" },
     { title = "Donate", href = "/support" },
     { title = "Try Matrix", href = "/try-matrix/", primary = true },
