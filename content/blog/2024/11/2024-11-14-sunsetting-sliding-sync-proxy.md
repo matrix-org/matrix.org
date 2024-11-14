@@ -14,7 +14,7 @@ Sliding Sync is designed to provide a significantly faster and more scalable syn
 
 Simplified Sliding Sync [MSC4186](https://github.com/matrix-org/matrix-spec-proposals/blob/erikj/sss/proposals/4186-simplified-sliding-sync.md) (also known as native sliding sync), has since been implemented in Synapse, with encouraging results. Now that we don’t expect the API shape to change significantly, we recommend homeserver developers to implement MSC4186 natively.
 
-The Matrix.org Foundation does not have the resources to keep up maintenance of the proxy service or its codebase, and plans to decommission the proxy from Mid-October and archive the sliding-sync repo.
+The Matrix.org Foundation does not have the resources to keep up maintenance of the proxy service or its codebase, and plans to decommission the proxy from Mid-November and archive the sliding-sync repo.
 
 Recognising that the community needs time to adopt sliding sync natively, Element will keep client support for the old API (MSC3575) until the 17th of January, 2025. 
 
