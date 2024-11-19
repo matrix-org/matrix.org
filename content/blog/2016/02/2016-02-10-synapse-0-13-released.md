@@ -19,16 +19,13 @@ Matthew
 
 Full release notes:
 
-<code>
-Changes in synapse v0.13.1 (2016-02-10)
-=======================================
+## Changes in synapse v0.13.1 (2016-02-10)
 
 * Bump matrix-angular-sdk (matrix web console) dependency to 0.6.8 to
   pull in the fix for SYWEB-361 so that the default client can display
   HTML messages again(!)
 
-Changes in synapse v0.13.0 (2016-02-10)
-=======================================
+## Changes in synapse v0.13.0 (2016-02-10)
 
 This version includes an upgrade of the schema, specifically adding an index to
 the ``events`` table. This may cause synapse to pause for several minutes the
@@ -49,10 +46,7 @@ Bug fixes:
   registration email on a different device (PR #547)
 * Fix bug where unread count could be wrong (PR #568)
 
-
-
-Changes in synapse v0.12.1-rc1 (2016-01-29)
-===========================================
+## Changes in synapse v0.12.1-rc1 (2016-01-29)
 
 Features:
 
@@ -95,5 +89,3 @@ Bug fixes:
 * Fix enabling and disabling push rules (PR #498)
 * Fix bug where ``/register`` returned 500 when given unicode username
   (PR #513)
-  
-</code>

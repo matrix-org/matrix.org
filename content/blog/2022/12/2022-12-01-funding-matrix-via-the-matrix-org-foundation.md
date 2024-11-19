@@ -35,24 +35,24 @@ to ensure the resilience of the tech which you rely on for the success of your
 business? Become a member, and ensure the core development is funded and that
 Matrix is here to thrive.
 
-Are you about to be designated a gatekeeper by the EU, and have to rapidly figure out how to implement [DMA-compliant interoperability](https://matrix.org/blog/2022/03/29/how-do-you-implement-interoperability-in-a-dma-world) (complete with end-to-end encryption compatibility) into your services? Become a member, and discover how Matrix can solve all your problems, while providing your input too. 
+Are you about to be designated a gatekeeper by the EU, and have to rapidly figure out how to implement [DMA-compliant interoperability](https://matrix.org/blog/2022/03/29/how-do-you-implement-interoperability-in-a-dma-world) (complete with end-to-end encryption compatibility) into your services? Become a member, and discover how Matrix can solve all your problems, while providing your input too.
 
 Are you looking to implement DMA interoperability but don't fall into the gatekeeper designation? Become a member, and help ensure Matrix fits your needs too!
 
 Are you a non-profit organisation with a mission to provide secure and sovereign communications to those who need it the most, providing an alternative to the current players? Become a member, and help us take our mission forward.
 
-Are you an individual who strongly supports the mission of Matrix and wants to see it thrive and become the open backbone of the world’s communications? Become a member, and support the future of Matrix. 
+Are you an individual who strongly supports the mission of Matrix and wants to see it thrive and become the open backbone of the world’s communications? Become a member, and support the future of Matrix.
 
-In short, this finally gives the wider world a way to contribute concretely to the significant costs of funding folks to work fulltime on core Matrix development - which now covers over 243(!) projects in [github.com/matrix-org](https://github.com/matrix-org). Core Matrix work ranges from: 
+In short, this finally gives the wider world a way to contribute concretely to the significant costs of funding folks to work fulltime on core Matrix development - which now covers over 243(!) projects in [github.com/matrix-org](https://github.com/matrix-org). Core Matrix work ranges from:
 
-- managing the Matrix spec itself 
+- managing the Matrix spec itself
 - maintaining the reference client SDKs and encryption and getting them independently audited
 - maintaining example server implementations in the form of Synapse and Dendrite
 - writing the test suite
 - publishing the matrix.org website
 - promoting awareness of Matrix
 - running the matrix.org homeserver
-- and so much more... 
+- and so much more...
 
 In exchange for supporting the Foundation, and beyond providing certainty that our work can continue, organisations and individuals who contribute financially will be able to directly provide input to the trajectory of the core Matrix developments by becoming official members of the Matrix.org Foundation.
 
@@ -65,27 +65,27 @@ In other words, we are literally expanding the day-to-day steering of the direct
 Membership comes at various levels, each with different rewards:
 
 - Individual memberships (i.e. today’s Patreon supporters):
-  - Ability to vote in the appointment of up to 2 ‘community representatives’ to the Foundation's governing board.
-  - Name on the Matrix.org website
+    - Ability to vote in the appointment of up to 2 ‘community representatives’ to the Foundation's governing board.
+    - Name on the Matrix.org website
 - Silver member: between £2,000 and £80,000 per year, depending on organisation size
-  - Ability to vote on the appointment of up to 2 ‘Silver representative’ to the Foundation's governing board
-  - Supporter logo on the front page of the new Matrix.org website
+    - Ability to vote on the appointment of up to 2 ‘Silver representative’ to the Foundation's governing board
+    - Supporter logo on the front page of the new Matrix.org website
 - Gold member: £200,000 / year, adds:
-  - Ability to vote on the appointment of up to 3 ‘Gold representatives’ to the Foundation's governing board.
-  - Press release announcing the sponsorship
-  - 1 original post on the Matrix.org blog per year
-  - Participation in the internal Spec Core Team room
-  - Larger logo on the front page of Matrix.org
+    - Ability to vote on the appointment of up to 3 ‘Gold representatives’ to the Foundation's governing board.
+    - Press release announcing the sponsorship
+    - 1 original post on the Matrix.org blog per year
+    - Participation in the internal Spec Core Team room
+    - Larger logo on the front page of Matrix.org
 - Platinum member: £500,000 / year, adds:
-  - Ability to vote on the appointment of up to 5 ‘platinum representatives’ to the Foundation's governing board.
-  - 1 sponsored Matrix Live episode per year
-  - Largest logo on the front page of Matrix.org
+    - Ability to vote on the appointment of up to 5 ‘platinum representatives’ to the Foundation's governing board.
+    - 1 sponsored Matrix Live episode per year
+    - Largest logo on the front page of Matrix.org
 
 As the activities of the Foundation increase, we expect to add more benefits to this list, for example discounts on sponsoring a future Matrix Conference, or similar.
 
 Governing Board elections will occur yearly, with the first election planned towards the end of this year once we’ve gathered together the first wave of members and candidates have proposed themselves for election.
 
-For anyone building on Matrix, memberships are a no-brainer as they will ensure the perpetuity and future-proof-ness of the standard. But for anyone supporting the mission of Matrix, this membership can be key to define its future. 
+For anyone building on Matrix, memberships are a no-brainer as they will ensure the perpetuity and future-proof-ness of the standard. But for anyone supporting the mission of Matrix, this membership can be key to define its future.
 
 Meanwhile, with Matrix looking increasingly integral to implementing interoperable communication for compliance with the EU’s Digital Markets Act (whether that’s as pure Matrix, or as part of the IETF [MIMI](https://datatracker.ietf.org/doc/draft-ralston-mimi-matrix-transport/) initiative), this is an incredible opportunity for the organisations impacted by DMA to get a front-row seat within the Foundation to ensure that Matrix thrives and solves the challenges posed by the act. To get involved, please apply via the [membership application form](https://forms.gle/Yy345QkB5pifJJNy6).
 

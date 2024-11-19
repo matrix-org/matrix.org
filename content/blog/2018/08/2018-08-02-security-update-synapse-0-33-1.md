@@ -18,6 +18,6 @@ Thanks
 ### Changes in Synapse v0.33.1 (2018-08-2)
 
 <ul>
- 	<li>Fix a potential issue where servers could request events for rooms they have not joined. (<a href="https://github.com/matrix-org/synapse/issues/3641">#3641</a>)</li>
- 	<li>Fix a potential issue where users could see events in private rooms before they joined. (<a href="https://github.com/matrix-org/synapse/issues/3642">#3642</a>)</li>
+  <li>Fix a potential issue where servers could request events for rooms they have not joined. (<a href="https://github.com/matrix-org/synapse/issues/3641">#3641</a>)</li>
+  <li>Fix a potential issue where users could see events in private rooms before they joined. (<a href="https://github.com/matrix-org/synapse/issues/3642">#3642</a>)</li>
 </ul>

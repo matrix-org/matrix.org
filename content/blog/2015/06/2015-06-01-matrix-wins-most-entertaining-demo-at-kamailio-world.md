@@ -23,4 +23,4 @@ A video from the dangerous demo event is available here:
 
 The Parrot Drone we use in the demo has a 14 megapixel fisheye camera with advanced stabilization techniques which means that you can't actually see what happened when everybody went "ooh" - I assure you the "flip" command does exactly what you would expect!
 
-Thanks to everybody who talked to us at Kamailio - and as always, come find us in the <a href="/beta/#/room/#matrix:matrix.org" title="#matrix:matrix.org">#matrix:matrix.org</a> room on Matrix! 
+Thanks to everybody who talked to us at Kamailio - and as always, come find us in the <a href="/beta/#/room/#matrix:matrix.org" title="#matrix:matrix.org">#matrix:matrix.org</a> room on Matrix!

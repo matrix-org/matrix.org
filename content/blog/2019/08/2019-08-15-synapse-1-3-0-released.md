@@ -18,28 +18,22 @@ Check out our message send heat map.
 
 ![Message Send](/blog/img/2019-08-15-message-send.png)
 
-
 Other than that there are a bunch of bug fixes and tweaks to generally make things run more smoothly.
 
 As ever, you can get the new update [here](https://github.com/matrix-org/synapse/releases/tag/v1.3.0) or any of the sources mentioned at [https://github.com/matrix-org/synapse](https://github.com/matrix-org/synapse). Also, check out our [Synapse installation guide page](https://matrix.org/docs/guides/installing-synapse)
 
 The changelog since 1.2.1 follows:
 
-Synapse 1.3.0 (2019-08-15)
-==========================
+## Synapse 1.3.0 (2019-08-15)
 
-Bugfixes
---------
+### Bugfixes
 
 - Fix 500 Internal Server Error on `publicRooms` when the public room list was
   cached. ([\#5851](https://github.com/matrix-org/synapse/issues/5851))
 
+## Synapse 1.3.0rc1 (2019-08-13)
 
-Synapse 1.3.0rc1 (2019-08-13)
-==========================
-
-Features
---------
+### Features
 
 - Use `M_USER_DEACTIVATED` instead of `M_UNKNOWN` for errcode when a deactivated user attempts to login. ([\#5686](https://github.com/matrix-org/synapse/issues/5686))
 - Add sd_notify hooks to ease systemd integration and allows usage of Type=Notify. ([\#5732](https://github.com/matrix-org/synapse/issues/5732))
@@ -47,9 +41,7 @@ Features
 - Synapse can now be configured to not join remote rooms of a given "complexity" (currently, state events) over federation. This option can be used to prevent adverse performance on resource-constrained homeservers. ([\#5783](https://github.com/matrix-org/synapse/issues/5783))
 - Allow defining HTML templates to serve the user on account renewal attempt when using the account validity feature. ([\#5807](https://github.com/matrix-org/synapse/issues/5807))
 
-
-Bugfixes
---------
+### Bugfixes
 
 - Fix UISIs during homeserver outage. ([\#5693](https://github.com/matrix-org/synapse/issues/5693), [\#5789](https://github.com/matrix-org/synapse/issues/5789))
 - Fix stack overflow in server key lookup code. ([\#5724](https://github.com/matrix-org/synapse/issues/5724))
@@ -63,16 +55,12 @@ Bugfixes
 - Fix bug where user `/sync` stream could get wedged in rare circumstances. ([\#5825](https://github.com/matrix-org/synapse/issues/5825))
 - The purge_remote_media.sh script was fixed. ([\#5839](https://github.com/matrix-org/synapse/issues/5839))
 
-
-Deprecations and Removals
--------------------------
+### Deprecations and Removals
 
 - Synapse now no longer accepts the `-v`/`--verbose`, `-f`/`--log-file`, or `--log-config` command line flags, and removes the deprecated `verbose` and `log_file` configuration file options. Users of these options should migrate their options into the dedicated log configuration. ([\#5678](https://github.com/matrix-org/synapse/issues/5678), [\#5729](https://github.com/matrix-org/synapse/issues/5729))
 - Remove non-functional 'expire_access_token' setting. ([\#5782](https://github.com/matrix-org/synapse/issues/5782))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Make Jaeger fully configurable. ([\#5694](https://github.com/matrix-org/synapse/issues/5694))
 - Add precautionary measures to prevent future abuse of `window.opener` in default welcome page. ([\#5695](https://github.com/matrix-org/synapse/issues/5695))

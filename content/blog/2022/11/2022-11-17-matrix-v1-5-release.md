@@ -17,13 +17,11 @@ Matrix 1.5 sees just 2 MSCs get merged, though this is to be expected from a mai
 
 We’ve covered both MSCs below, but read on to the full changelog for the full picture.
 
-
 ## MSC3267: Reference relations
 
 Already supported implicitly by the spec up until now, [reference relations](https://spec.matrix.org/v1.5/client-server-api/#reference-relations) are a way to simply reference another event. Usually these sorts of relations are used for events which need to be related to each other, but a dedicated relationship type doesn’t make a lot of sense.
 
 [In-room verification](https://spec.matrix.org/v1.5/client-server-api/#key-verification-framework) and [MSC3381: Polls](https://github.com/matrix-org/matrix-spec-proposals/pull/3381) are examples of how these relations get used.
-
 
 ## MSC3905: Clarify appservice interest in user IDs
 
@@ -33,23 +31,18 @@ Overall this should have no effect on most bridges/appservices, however if an ap
 
 While writing this MSC into the spec we took some time to clarify the appservice registration requirements more generally: check them out [here](https://spec.matrix.org/v1.5/application-service-api/#registration).
 
-
 ## The full changelog
 
 MSCs are how the spec changes in the way it does - adding, fixing, and maintaining features for the whole ecosystem to use. Check out the full changelog below, and the [Spec Change Proposals](https://spec.matrix.org/proposals/) page for more information on how these MSCs got merged (hint: they submitted a proposal, which anyone can do - take a look at the [Matrix Live episode](https://www.youtube.com/watch?v=SFkZz60RRfc) where Matthew covers the proposal process).
 
 ### Client-Server API
 
-
 <strong>Backwards Compatible Changes</strong>
-
 
 - Add `m.reference` relations, as per [MSC3267](https://github.com/matrix-org/matrix-spec-proposals/pull/3267). ([#1206](https://github.com/matrix-org/matrix-spec/issues/1206))
 - Add missing documentation for `m.key.verification.request` msgtype for in-room verification. ([#1271](https://github.com/matrix-org/matrix-spec/issues/1271))
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Fix various typos throughout the specification. ([#1260](https://github.com/matrix-org/matrix-spec/issues/1260), [#1265](https://github.com/matrix-org/matrix-spec/issues/1265), [#1276](https://github.com/matrix-org/matrix-spec/issues/1276))
 - Fix naming of `device_one_time_keys_count` in `/sync`. ([#1266](https://github.com/matrix-org/matrix-spec/issues/1266))
@@ -65,68 +58,47 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 - Fix a number of broken links in the specification. ([#1330](https://github.com/matrix-org/matrix-spec/issues/1330))
 - Add example read receipt to `GET /_matrix/client/v3/sync` response example. ([#1341](https://github.com/matrix-org/matrix-spec/issues/1341))
 
-
 ### Server-Server API
-
 
 <strong>Spec Clarifications</strong>
 
-
 - Fix a number of broken links in the specification. ([#1330](https://github.com/matrix-org/matrix-spec/issues/1330))
-
 
 ### Application Service API
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Clarify that application services can only register an interest in local users, as per [MSC3905](https://github.com/matrix-org/matrix-spec-proposals/issues/3905). ([#1305](https://github.com/matrix-org/matrix-spec/issues/1305))
 
-
 ### Identity Service API
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Fix a number of broken links in the specification. ([#1330](https://github.com/matrix-org/matrix-spec/issues/1330))
 
-
 ### Push Gateway API
-
 
 No significant changes.
 
-
 ### Room Versions
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Reword the event auth rules to clarify that users cannot demote other users with the same power level. ([#1269](https://github.com/matrix-org/matrix-spec/issues/1269))
 - Various clarifications to the text on event authorisation rules. ([#1270](https://github.com/matrix-org/matrix-spec/issues/1270))
 - Fix a number of broken links in the specification. ([#1330](https://github.com/matrix-org/matrix-spec/issues/1330))
 
-
 ### Appendices
-
 
 No significant changes.
 
-
 ### Internal Changes/Tooling
-
 
 <strong>Backwards Compatible Changes</strong>
 
-
-- Update docsy theme to v0.5.0 + matrix.org modifications (https://github.com/matrix-org/docsy/commit/a0032f8db919a6c67ba6cdef2c455f105b6272a2). ([#1295](https://github.com/matrix-org/matrix-spec/issues/1295))
-
+- Update docsy theme to v0.5.0 + matrix.org modifications (<https://github.com/matrix-org/docsy/commit/a0032f8db919a6c67ba6cdef2c455f105b6272a2>). ([#1295](https://github.com/matrix-org/matrix-spec/issues/1295))
 
 <strong>Spec Clarifications</strong>
-
 
 - Improve error messages emitted by `resolve-additional-types` template. ([#1303](https://github.com/matrix-org/matrix-spec/issues/1303))
 - Fix link to API viewer. ([#1308](https://github.com/matrix-org/matrix-spec/issues/1308))
@@ -138,4 +110,3 @@ No significant changes.
 - Update CONTRIBUTING.md to mention that non-content changes to this repo should have an "internal" changelog entry. ([#1342](https://github.com/matrix-org/matrix-spec/issues/1342))
 - Update module summary table with new modules: Event Replacements, Threading and Reference Relations. ([#1344](https://github.com/matrix-org/matrix-spec/issues/1344))
 - Disable RSS generation for the spec. ([#1346](https://github.com/matrix-org/matrix-spec/issues/1346))
-

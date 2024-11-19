@@ -1,0 +1,18 @@
+{
+    "default": true,
+    "MD007": {
+        "indent": 4,
+        "start_indent": 4
+    },
+    "//MD013": {
+        "line_length": 120
+    },
+    "MD041": false,
+    "MD033": false,
+    "MD051": false,
+    "MD013": {
+        "//comment": "//Temporary disabled until we can fix the line length issue",
+        "line_length": 1200000
+    },
+    "MD024": false
+}

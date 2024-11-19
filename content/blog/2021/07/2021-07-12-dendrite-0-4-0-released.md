@@ -17,11 +17,11 @@ Recently our release cadence for Dendrite has slowed as we have spent more time 
 
 One of the major features in v0.4.0 is that we've introduced newly-refactored state storage in the roomserver database. The goal here is to make state storage significantly more efficient by ensuring that we deduplicate state  blocks and snapshots wherever we can. By ensuring that all state blocks and snapshots are ordered strictly, and by enforcing uniqueness constraints on the hashes of the blocks/snapshots, we've been able to achieve this.
 
-This was largely spurred on by watching `dendrite.matrix.org` consuming a rather alarming amount of disk space on a daily basis. In this particular instance, moving to the new state storage resulted in a 15x improvement on disk utilisation for state blocks and a further 2x improvement for state snapshot references immediately after the migration, and the growth rate of the database has slowed substantially since. 
+This was largely spurred on by watching `dendrite.matrix.org` consuming a rather alarming amount of disk space on a daily basis. In this particular instance, moving to the new state storage resulted in a 15x improvement on disk utilisation for state blocks and a further 2x improvement for state snapshot references immediately after the migration, and the growth rate of the database has slowed substantially since.
 
 Ensuring that we don't waste disk space is one of the most important factors in ensuring that Dendrite operates well at any scale — future datacentre deployments supporting many users will find storage overheads decreased and small/embedded single-user deployments (such as P2P, on mobile devices or in the browser) will fit much more effectively onto resource-constrained targets.
 
-After upgrading to v0.4.0, Dendrite will run an automatic migration to update your homeserver to the new state storage format. This might take a while on larger databases so please expect some downtime. 
+After upgrading to v0.4.0, Dendrite will run an automatic migration to update your homeserver to the new state storage format. This might take a while on larger databases so please expect some downtime.
 
 ### Optimisations
 
@@ -29,7 +29,7 @@ We've continued to squeeze further optimisations into the federation and state r
 
 The bulk of this resource usage comes either from attempting to reconcile missing events or running state resolution in rooms with lots of members, as potentially large state sets of events need to be brought into memory in order to do so. We've introduced some transaction-level caches for dealing with missing auth/prev events to reduce the memory pressure and we've also tweaked the caching around around `/get_missing_events` to ensure we don't duplicate any state events in memory.
 
-Resource spikes aren't completely eliminated but this should smooth out CPU and memory utilisation significantly. In the case of `dendrite.matrix.org`,  which is joined to some 6500 rooms at present, memory utilisation of the Dendrite process typically sits around 1.5GB at present. 
+Resource spikes aren't completely eliminated but this should smooth out CPU and memory utilisation significantly. In the case of `dendrite.matrix.org`,  which is joined to some 6500 rooms at present, memory utilisation of the Dendrite process typically sits around 1.5GB at present.
 
 State Resolution v2 has also seen further optimisations in the power-level checking, which should reduce CPU usage even more.
 
@@ -43,7 +43,7 @@ We've done quite a bit of preliminary testing with [matrix-appservice-irc](https
 
 A number of bugs in various places (including the roomserver, federation API and media API) which could cause Dendrite to crash have also been fixed.  Some of these have been contributed by the community in pull requests, so we extend our thanks to anyone who has submitted a fix to the project.
 
-A special mention also goes to Jakob Varmose Bentzen for reporting a security issue to us around the legacy `/v1/register` endpoint, where a flaw in the legacy shared secret registration allowed malicious users to create accounts. We've since removed this legacy endpoint and the vulnerability is now fixed. 
+A special mention also goes to Jakob Varmose Bentzen for reporting a security issue to us around the legacy `/v1/register` endpoint, where a flaw in the legacy shared secret registration allowed malicious users to create accounts. We've since removed this legacy endpoint and the vulnerability is now fixed.
 
 ### What's next
 

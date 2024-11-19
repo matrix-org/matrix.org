@@ -53,34 +53,25 @@ PS: The MSC process is how changes to Matrix are made, and you (yes, you) can pr
 
 <strong>Breaking Changes</strong>
 
-
 - Document `curve25519-hkdf-sha256` key agreement method for SAS verification, and deprecate old method as per [MSC2630](https://github.com/matrix-org/matrix-doc/pull/2630). ([#2687](https://github.com/matrix-org/matrix-doc/issues/2687))
 - Add `m.key.verification.ready` and `m.key.verification.done` to key verification framework as per [MSC2366](https://github.com/matrix-org/matrix-doc/pull/2366). ([#3139](https://github.com/matrix-org/matrix-doc/issues/3139))
 
-
 <strong>Deprecations</strong>
-
 
 - Deprecate starting verifications that don't start with `m.key.verification.request` as per [MSC3122](https://github.com/matrix-org/matrix-doc/pull/3122). ([#3199](https://github.com/matrix-org/matrix-doc/issues/3199))
 
-
 <strong>New Endpoints</strong>
-
 
 - Add key backup (`/room_keys/*`) endpoints as per [MSC1219](https://github.com/matrix-org/matrix-doc/pull/1219). ([#2387](https://github.com/matrix-org/matrix-doc/issues/2387), [#2639](https://github.com/matrix-org/matrix-doc/issues/2639))
 - Add `POST /keys/device_signing/upload` and `POST /keys/signatures/upload` as per [MSC1756](https://github.com/matrix-org/matrix-doc/pull/1756). ([#2536](https://github.com/matrix-org/matrix-doc/issues/2536))
 - Add `/knock` endpoint as per [MSC2403](https://github.com/matrix-org/matrix-doc/pull/2403). ([#3154](https://github.com/matrix-org/matrix-doc/issues/3154))
 - Add `/login/sso/redirect/{idpId}` as per [MSC2858](https://github.com/matrix-org/matrix-doc/pull/2858). ([#3163](https://github.com/matrix-org/matrix-doc/issues/3163))
 
-
 <strong>Removed Endpoints</strong>
-
 
 - Remove unimplemented `m.login.oauth2` and `m.login.token` user-interactive authentication mechanisms as per [MSC2610](https://github.com/matrix-org/matrix-doc/pull/2610) and [MSC2611](https://github.com/matrix-org/matrix-doc/pull/2611). ([#2609](https://github.com/matrix-org/matrix-doc/issues/2609))
 
-
 <strong>Backwards Compatible Changes</strong>
-
 
 - Document how clients can advise recipients that it is withholding decryption keys as per [MSC2399](https://github.com/matrix-org/matrix-doc/pull/2399). ([#2399](https://github.com/matrix-org/matrix-doc/issues/2399))
 - Add cross-signing properties to the response of `POST /keys/query` as per [MSC1756](https://github.com/matrix-org/matrix-doc/pull/1756). ([#2536](https://github.com/matrix-org/matrix-doc/issues/2536))
@@ -103,9 +94,7 @@ PS: The MSC process is how changes to Matrix are made, and you (yes, you) can pr
 - Downgrade identity server discovery failures to `FAIL_PROMPT` as per [MSC2284](https://github.com/matrix-org/matrix-doc/pull/2284). ([#3169](https://github.com/matrix-org/matrix-doc/issues/3169))
 - Re-version all endpoints to be `v3` as a starting point instead of `r0` as per [MSC2844](https://github.com/matrix-org/matrix-doc/pull/2844). ([#3421](https://github.com/matrix-org/matrix-doc/issues/3421))
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Fix issues with `age` and `unsigned` being shown in the wrong places. ([#2591](https://github.com/matrix-org/matrix-doc/issues/2591))
 - Fix definitions for room version capabilities. ([#2592](https://github.com/matrix-org/matrix-doc/issues/2592))
@@ -144,19 +133,14 @@ PS: The MSC process is how changes to Matrix are made, and you (yes, you) can pr
 
 <strong>New Endpoints</strong>
 
-
 - Add `/make_knock` and `/send_knock` endpoints as per [MSC2403](https://github.com/matrix-org/matrix-doc/pull/2403). ([#3154](https://github.com/matrix-org/matrix-doc/issues/3154))
 
-
 <strong>Backwards Compatible Changes</strong>
-
 
 - Add cross-signing information to `GET /user/keys` and `GET /user/devices/{userId}`, `m.device_list_update` EDU, and a new `m.signing_key_update` EDU as per [MSC1756](https://github.com/matrix-org/matrix-doc/pull/1756). ([#2536](https://github.com/matrix-org/matrix-doc/issues/2536))
 - Add support for knocking, as per [MSC2403](https://github.com/matrix-org/matrix-doc/pull/2403). ([#3154](https://github.com/matrix-org/matrix-doc/issues/3154))
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Specify that `GET /_matrix/federation/v1/make_join/{roomId}/{userId}` can return a 404 if the room is unknown. ([#2688](https://github.com/matrix-org/matrix-doc/issues/2688))
 - Fix various typos throughout the specification. ([#2888](https://github.com/matrix-org/matrix-doc/issues/2888), [#3116](https://github.com/matrix-org/matrix-doc/issues/3116), [#3128](https://github.com/matrix-org/matrix-doc/issues/3128), [#3207](https://github.com/matrix-org/matrix-doc/issues/3207))
@@ -168,25 +152,19 @@ PS: The MSC process is how changes to Matrix are made, and you (yes, you) can pr
 
 <strong>Spec Clarifications</strong>
 
-
 - Fix various typos throughout the specification. ([#2888](https://github.com/matrix-org/matrix-doc/issues/2888))
 
 ### Identity Service API
 
 <strong>New Endpoints</strong>
 
-
 - Add `GET /_matrix/identity/versions` API as per [MSC2320](https://github.com/matrix-org/matrix-doc/pull/2320). ([#3101](https://github.com/matrix-org/matrix-doc/issues/3101))
-
 
 <strong>Removed Endpoints</strong>
 
-
 - The v1 identity service API has been removed in favour of the v2 API, as per [MSC2713](https://github.com/matrix-org/matrix-doc/pull/2713). ([#3170](https://github.com/matrix-org/matrix-doc/issues/3170))
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Fix various typos throughout the specification. ([#2888](https://github.com/matrix-org/matrix-doc/issues/2888))
 - Clarify that some identifiers must be case folded prior to processing, as per [MSC2265](https://github.com/matrix-org/matrix-doc/pull/2265). ([#3167](https://github.com/matrix-org/matrix-doc/issues/3167), [#3176](https://github.com/matrix-org/matrix-doc/issues/3176))
@@ -195,6 +173,5 @@ PS: The MSC process is how changes to Matrix are made, and you (yes, you) can pr
 ### Push Gateway API
 
 <strong>Spec Clarifications</strong>
-
 
 - Clarify where to get information about the various parameter values for the notify endpoint. ([#2763](https://github.com/matrix-org/matrix-doc/issues/2763))

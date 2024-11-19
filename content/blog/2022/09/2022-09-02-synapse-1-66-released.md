@@ -83,4 +83,3 @@ particular order) [Dirk Klimpel](https://github.com/dklimpel) and
 [Antonin Loubiere](https://github.com/AntoninLoubiere), as well as anyone
 helping us make Synapse better by sharing their feedback and reporting
 issues.
-

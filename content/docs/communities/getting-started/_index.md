@@ -27,7 +27,9 @@ without a traumatic big platform switch.
 Here are a couple of screenshots to see how a thriving community can look like
 on Matrix.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](../bridging/from-matrix.png)
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](../bridging/from-discord.png)
 
 We recommend you to set up a dummy community to play around first, and then you
@@ -43,15 +45,18 @@ people and rooms.
 
 Click on the + on the leftmost column of Element to create a new Space
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](space-click-plus.png)
 
 In this example, we're creating a public space for people who enjoy warm drinks.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](space-public-private.png)
 
 You can add a picture, name and description for your Space to be easier to find
 and for people to have a good idea about what's happening in your community.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](space-details.png)
 
 Note there's also an address field. The address of your Space consists of a name
@@ -77,6 +82,7 @@ You can play around in the rooms, but look! We forgot to create a room for
 people who enjoy hot cocoas! Click on the Space avatar in the left bar to go to
 the Space's index
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](space-click-avatar.png)
 
 From there you can see the list of all the rooms in your Space. The rooms you
@@ -87,11 +93,13 @@ necessarily be the case for new joiners.
 
 Click on "Add" then on "New room" to create the room for hot cocoa drinkers.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](space-add-room-menu.png)
 
 Here again, you can give the room a name, a description, an address, and make it
 public or private.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](space-add-room-details.png)
 
 Note that you can create a private room in a public Space. People who are not
@@ -104,23 +112,27 @@ visibility at any point in the room settings.
 
 The room visibility is not the only important parameter in a room. You can also
 change the _history_ visibility so people can either:
+
 - Not see what was said in this room before they joined
 - See what happened since the option was selected
 - See what happened since they were invited in the room
 - See what happened since they joined
 
-To change this setting, click on the `i` on the top right, then on "Room 
+To change this setting, click on the `i` on the top right, then on "Room
 settings"
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](room-settings-right-bar.png)
 
 Alternatively you can click on the room name in the header and click on
 "Settings"
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](room-settings-header.png)
 
 Finally head to the "Security & Privacy" tab
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](room-security-privacy.png)
 
 There is no best practice here, it depends entirely on your preferences and what
@@ -135,7 +147,7 @@ a group safe at the room level, please head to
 ## Advanced moderation
 
 Basic moderation is enough for small groups, but it tends not to scale too well
-as the number of people and rooms in a community grow. Indeed, the basic 
+as the number of people and rooms in a community grow. Indeed, the basic
 moderation decisions you take are only enforced room by room. If you wanted to
 ban someone from your entire community, you would have to ban them from all the
 rooms manually. Tedious, and not efficient!

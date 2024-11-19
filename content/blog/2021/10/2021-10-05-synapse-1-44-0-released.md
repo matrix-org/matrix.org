@@ -32,10 +32,10 @@ Additionally, the ModuleApi can now inspect IP and User Agent data, as well as c
 
 We've also been busy refactoring. For example:
 
-* Prometheus stats now distinguish between cache evictions due to entries expiring, and cache evictions due to the cache being full.
-* The `synapse.handlers`, `synapse.rest`, and `synapse.storage.databases.state` modules are now fully type annotated and checked by mypy, among others.
-* The user directory search code was cleaned up in preparation for future fixes.
-* Another half dozen pull requests were merged with an aim toward clarifying federated event authentication code (and associated logging).
+- Prometheus stats now distinguish between cache evictions due to entries expiring, and cache evictions due to the cache being full.
+- The `synapse.handlers`, `synapse.rest`, and `synapse.storage.databases.state` modules are now fully type annotated and checked by mypy, among others.
+- The user directory search code was cleaned up in preparation for future fixes.
+- Another half dozen pull requests were merged with an aim toward clarifying federated event authentication code (and associated logging).
 
 Lastly, this release has seen considerable work toward supporting [MSC2716: Incrementally importing history into existing rooms](https://github.com/matrix-org/matrix-doc/pull/2716), along with an update to match the current state of [MSC3231: Token authenticated registration](https://github.com/matrix-org/matrix-doc/pull/3231).
 

@@ -27,9 +27,9 @@ For Postgres, will give server admins 6 weeks to upgrade to a newer version, and
 
 We have multiple reasons, but broadly:-
 <ul>
- 	<li>We want to make use of new language features not supported in old versions. This will enable us to continue to improve the performance and maintainability of Synapse.</li>
- 	<li>Python 2.x overall will be <a href="https://pythonclock.org/">end of life'd at the end of the year</a>. <a href="https://www.postgresql.org/support/versioning/">Postgres 9.4's final release</a> will follow 2 months later on 13th February 2020.</li>
- 	<li>Since very few server admins still use these technologies on the wild, providing support is costly and we want to reduce our overall maintenance load.</li>
+  <li>We want to make use of new language features not supported in old versions. This will enable us to continue to improve the performance and maintainability of Synapse.</li>
+  <li>Python 2.x overall will be <a href="https://pythonclock.org/">end of life'd at the end of the year</a>. <a href="https://www.postgresql.org/support/versioning/">Postgres 9.4's final release</a> will follow 2 months later on 13th February 2020.</li>
+  <li>Since very few server admins still use these technologies on the wild, providing support is costly and we want to reduce our overall maintenance load.</li>
 </ul>
 
 ## La la la I am ignoring you - what will happen?

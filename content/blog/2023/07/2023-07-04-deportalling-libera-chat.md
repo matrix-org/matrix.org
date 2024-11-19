@@ -33,7 +33,6 @@ in cases where multiple protocols bridge into the same room on the Matrix side
 though are harder to manage than their portalled counterparts, and have limits
 to avoid large (100+ user) preexisting rooms being plumbed together.
 
-
 ## What happened?
 
 Bridging two incompatible protocols together is hard and requires constant
@@ -82,7 +81,6 @@ archive.matrix.org service. This is unfortunate, not least because we see some
 fundamental misunderstandings on what the service is doing and why.
 [Here is a more detailed post to explain](https://matrix.org/blog/2023/07/what-happened-with-the-archive/).
 
-
 ## So what does this mean?
 
 From August 2023, only plumbed rooms will be possible.  This means that unless
@@ -95,7 +93,6 @@ As a consequence, it will no longer be possible to use matrix.org as a bouncer i
 Libera and in order to reach a given room, chanop _must_ specifically configure the
 plumbed room. Additionally, some features will stop functioning, like topic
 synchronisation or kick propagation from Libera.
-
 
 ## What to do next?
 
@@ -110,7 +107,6 @@ room easier.
 Further down the line, Libera have floated an idea to implement a channel mode
 to let chanops opt-in to portalled bridging. This approach could reduce the
 overall burden on the chanop and reduce friction to interoperability.
-
 
 ## A word on the bigger picture
 

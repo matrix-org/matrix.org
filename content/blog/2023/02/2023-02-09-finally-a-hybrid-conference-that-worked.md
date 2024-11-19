@@ -31,7 +31,7 @@ but could attend FOSDEM online from its Matrix Space. Devrooms were broadcasted
 live into the Matrix rooms where devroom managers and speakers could interact
 with the online audience.
 
-In total, thousands of users joined us online, both locally and remotely as 
+In total, thousands of users joined us online, both locally and remotely as
 seen from the FOSDEM homeserver: an amazing audience given the possibility to be
 on site.
 
@@ -65,7 +65,6 @@ Florian followed with a talk about MatrixRTC to explore what Matrix can do
 beyond instant messaging
 
 {{ youtube_player(video_id="P--LwIB3deA") }}
-
 
 Then Matthew did an awesome demo of Third Room and “3D widgets” (user generated
 content) that can be embedded into its worlds. Of course with a nice “The Matrix
@@ -127,6 +126,7 @@ meet there. The least we can say is that our stand was busy. We ran out of
 stickers and medium size t-shirts early on Sunday morning, but above all we had
 plenty of interesting discussions.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/fosdem2023_stand_blurred.jpg)
 
 A few people discovered Matrix during FOSDEM and were blown away by messages

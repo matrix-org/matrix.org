@@ -21,7 +21,6 @@ Matrix 1.11 recommends that all servers evaluate their local ecosystem to determ
 
 Developers, and those curious, are encouraged to review the [Matrix 1.11 blog post](https://matrix.org/blog/2024/06/20/matrix-v1.11-release/) for details on the changes they’ll need to make in July to have near-zero matrix.org user impact, and for information about the recommended freeze approach.
 
-
 ## Timeline for matrix.org homeserver
 
 To assist developers and other server admins in testing their implementations, we will be updating the beta.matrix.org homeserver to enact the freeze as soon as code is available for that. We expect this to happen in July 2024. The matrix.org (non-beta) homeserver’s freeze will be started on ~~August 28th, 2024~~ **September 4th, 2024** during normal UK business hours.
@@ -29,7 +28,6 @@ To assist developers and other server admins in testing their implementations, w
 *Update August 14, 2024: Most of the ecosystem has already updated to support authenticated media with only a few bug fixes pending release. To give a little bit more buffer for these bug fixes to roll out, we've moved our scheduled date to September 4th, 2024.*
 
 All media uploaded and cached prior to the freeze will remain accessible on the unauthenticated endpoints and authenticated endpoints. Media uploaded and cached after the freeze will only be available through the authenticated endpoints, not the unauthenticated ones.
-
 
 ## Developer support
 

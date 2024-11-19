@@ -17,29 +17,29 @@ We decided that we want to fix this and so we have built and published a new ope
 
 The standard and code are all brand new and very much still in creation at this point, but we're releasing it early to get as much feedback and input from the community as early on as we possibly can. Right now our focus is on fully decentralised federated group messaging, but VoIP and identity management is coming together well too.  You can think of it as "making VoIP/IM as interoperable and flexible as email", or perhaps "the missing signalling layer for WebRTC", "XMPP for an HTTP world", or “what would happen if IRC, XMPP, SIP, SMTP, IMAP and NNTP had kids?” Here are some reasons we think that you should use Matrix:
 <ul>
-	<li><span style="font-size: 1rem; line-height: 1.714285714;">Simple pragmatic RESTful HTTP/JSON APIs.  No more XMPP or SIP stacks and wrestling XML streams or torture-testing SIP parsers.</span>
+ <li><span style="font-size: 1rem; line-height: 1.714285714;">Simple pragmatic RESTful HTTP/JSON APIs.  No more XMPP or SIP stacks and wrestling XML streams or torture-testing SIP parsers.</span>
 </li>
-	<li><span style="font-size: 1rem; line-height: 1.714285714;">No single points of control for channels of communication (unless you really want it for moderation or similar). Room state for a room is synchronised with eventual consistency over all participating Matrix servers - no single server controls the room.</span>
+ <li><span style="font-size: 1rem; line-height: 1.714285714;">No single points of control for channels of communication (unless you really want it for moderation or similar). Room state for a room is synchronised with eventual consistency over all participating Matrix servers - no single server controls the room.</span>
 </li>
-	<li><span style="font-size: 1rem; line-height: 1.714285714;">No more netsplits - history re-heals itself if the matrix fractures</span>
+ <li><span style="font-size: 1rem; line-height: 1.714285714;">No more netsplits - history re-heals itself if the matrix fractures</span>
 </li>
-	<li><span style="font-size: 1rem; line-height: 1.714285714;">All communication is group by default: 1:1 chat is just a subset of group chat.</span>
+ <li><span style="font-size: 1rem; line-height: 1.714285714;">All communication is group by default: 1:1 chat is just a subset of group chat.</span>
 </li>
-	<li><span style="font-size: 1rem; line-height: 1.714285714;">Multi-device aware: all state is stored and synchronised in realtime across all devices, and away-state and notifications are aware of multiple devices.</span>
+ <li><span style="font-size: 1rem; line-height: 1.714285714;">Multi-device aware: all state is stored and synchronised in realtime across all devices, and away-state and notifications are aware of multiple devices.</span>
 </li>
-	<li><span style="font-size: 1rem; line-height: 1.714285714;">Uses arbitrary 3rd party identifiers - doesn't rely on JIDs or SIP URIs for identity.</span>
+ <li><span style="font-size: 1rem; line-height: 1.714285714;">Uses arbitrary 3rd party identifiers - doesn't rely on JIDs or SIP URIs for identity.</span>
 </li>
-	<li><span style="font-size: 1rem; line-height: 1.714285714;">Share the same simple HTTP signalling channel for messaging and VoIP</span>
+ <li><span style="font-size: 1rem; line-height: 1.714285714;">Share the same simple HTTP signalling channel for messaging and VoIP</span>
 </li>
-	<li><span style="font-size: 1rem; line-height: 1.714285714;">Support more efficient transports if you want (e.g. low-bandwidth/low-roundtrip sync on mobile)</span>
+ <li><span style="font-size: 1rem; line-height: 1.714285714;">Support more efficient transports if you want (e.g. low-bandwidth/low-roundtrip sync on mobile)</span>
 </li>
-	<li><span style="font-size: 1rem; line-height: 1.714285714;">Built for mobile - e.g. support push notification and low-bandwidth/low-latency client-server transports if needed (in progress)</span>
+ <li><span style="font-size: 1rem; line-height: 1.714285714;">Built for mobile - e.g. support push notification and low-bandwidth/low-latency client-server transports if needed (in progress)</span>
 </li>
-	<li><span style="font-size: 1rem; line-height: 1.714285714;">TLS (HTTPS) by default, either with self-signed certs with published public keys or proper SSL CA signed certs (in progress)</span>
+ <li><span style="font-size: 1rem; line-height: 1.714285714;">TLS (HTTPS) by default, either with self-signed certs with published public keys or proper SSL CA signed certs (in progress)</span>
 </li>
-	<li><span style="font-size: 1rem; line-height: 1.714285714;">End-to-end PKI encryption (in progress)</span>
+ <li><span style="font-size: 1rem; line-height: 1.714285714;">End-to-end PKI encryption (in progress)</span>
 </li>
-	<li><span style="font-size: 1rem; line-height: 1.714285714;">Trusted federation of public identity servers available for publishing your PKI public keys and tracking your validated 3rd party IDs</span>
+ <li><span style="font-size: 1rem; line-height: 1.714285714;">Trusted federation of public identity servers available for publishing your PKI public keys and tracking your validated 3rd party IDs</span>
 </li>
 </ul>
 If this sounds good to you, then please take a look at the <a href="http://matrix.org/docs/spec">spec</a>, or our <a href="http://matrix.org/docs/howtos">tutorials</a>, or jump straight into playing with the <a href="http://matrix.org/docs/api">APIs</a>, or try running your own Matrix homeserver, or sign up to our <a href="http://matrix.org/mailman">mailing lists</a> - and whatever else, come swing by <a href="http://matrix.org/alpha">#matrix:matrix.org</a> and say hi!

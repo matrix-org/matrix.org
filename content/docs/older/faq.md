@@ -3,6 +3,7 @@ title = "FAQ"
 aliases = ["/faq", "/faq-ru/"]
 +++
 
+<!-- markdownlint-disable-next-line single-h1 -->
 # Frequently Asked Questions
 
 ## Intro
@@ -38,8 +39,9 @@ control their data and select the services and vendors they want to use.
 
 The aim is to provide an analogous ecosystem to email - one where you can
 communicate with pretty much anyone, without caring what app or server they are
-using, using whichever [client app](/ecosystem/clients) & [server
-](/ecosystem/servers) you chose, and use a neutral identity system like an
+using,
+using whichever [client app](/ecosystem/clients) & [server](/ecosystem/servers) you chose,
+and use a neutral identity system like an
 e-mail address or phone number to discover people to talk to.
 
 #### Why are you called Matrix?
@@ -47,35 +49,31 @@ e-mail address or phone number to discover people to talk to.
 We are called Matrix because we provide a structure in which all communication
 can be matrixed together.
 
-No, it’s nothing to do with the film (although [Third Room
-](https://thirdroom.io) builds virtual worlds on top of Matrix 😎).
+No, it’s nothing to do with the film (although
+[Third Room](https://thirdroom.io) builds virtual worlds on top of Matrix 😎).
 
 #### What does Matrix provide?
 
 * [Open Standard HTTP APIs](https://spec.matrix.org) for transferring JSON
   messages (e.g. instant messages, WebRTC signalling), including:
-  * [Client-Server API
-    ](https://spec.matrix.org/latest/#client-server-api-v1) - defines how Matrix
+    * [Client-Server API](https://spec.matrix.org/latest/#client-server-api-v1) - defines how Matrix
     compatible clients communicate with Matrix homeservers.
-  * [Server-Server API
-    ](https://spec.matrix.org/latest/server-server-api/) - defines how Matrix
+    * [Server-Server API](https://spec.matrix.org/latest/server-server-api/) - defines how Matrix
     homeservers exchange messages and synchronise history with each other.
-  * [Application Service API
-    ](https://spec.matrix.org/latest/application-service-api/) - defines how to
+    * [Application Service API](https://spec.matrix.org/latest/application-service-api/) - defines how to
     extend the functionality of Matrix with 'integrations' and bridge to other
     networks.
-  * [Modules
-    ](https://spec.matrix.org/v1.4/client-server-api/#modules) - specifies
+    * [Modules](https://spec.matrix.org/v1.4/client-server-api/#modules) - specifies
     features that must be implemented by particular classes of clients.
 * Open source implementations of:
-  * Client SDKs (Javascript, Web (React), iOS, Android, Rust)
-  * Homeservers (Synapse)
-  * Application Services (bridges to IRC, Slack, Skype, Lync and more...)
+    * Client SDKs (Javascript, Web (React), iOS, Android, Rust)
+    * Homeservers (Synapse)
+    * Application Services (bridges to IRC, Slack, Skype, Lync and more...)
 * The actual ecosystem and community of everyone running Matrix servers and
   services
 * Loads of 3rd party contributions of clients, SDKs, servers and services.
 * You can find the full list of Matrix enabled projects at
-  https://matrix.org/try-matrix
+  <https://matrix.org/try-matrix>
 
 ### Who and how?
 
@@ -95,7 +93,7 @@ goals.
 
 Matrix.org is currently funded by the community, through a combination of
 community support (via [Patreon](https://patreon.com/matrixdotorg), [Liberapay]
-(https://liberapay.com/matrixdotorg), Bitcoin and Ethereum), corporate
+(<https://liberapay.com/matrixdotorg>), Bitcoin and Ethereum), corporate
 sponsorship, and grant funding.
 
 Current Elliptic-level supporters on Patreon and corporate sponsors can be found
@@ -110,15 +108,14 @@ you can do so via:
 * Ethereum (address: 0xA5f9a4f9E024F6D727f7afdA9257e22329A97485)
 
 If you would like to sponsor the team as a corporation, or are interested in
-paying for prioritised or custom development, please [get in touch
-](https://matrix.org/contact).
+paying for prioritised or custom development, please [get in touch](https://matrix.org/contact).
 
 For the first three years of Matrix's development (2014-2017), most of the core
 contributors worked for [Amdocs](https://www.amdocs.com), who paid for them to
 work fulltime on Matrix. In July 2017, Amdocs considered the project to be
 sufficiently successful that it could now self-support and so stopped funding.
-The majority of the core team is now employed by [Element
-](https://element.io), an independent company set up to hire the team and
+The majority of the core team is now employed by [Element](https://element.io),
+an independent company set up to hire the team and
 support Matrix's development. Other contributors are funded by their own
 employers or donate their own time to the project.
 
@@ -150,7 +147,8 @@ patent licensing requirements.
 
 Matrix is also open source, meaning that we have released the source code of the
 reference servers, clients and services to the public domain under the [Apache
-Licence v2](https://www.apache.org/licenses/LICENSE-2.0.html), to encourage anyone and everyone to run their own servers and clients, and enhance them and
+Licence v2](https://www.apache.org/licenses/LICENSE-2.0.html),
+to encourage anyone and everyone to run their own servers and clients, and enhance them and
 contribute their enhancements as they see fit.
 
 #### What does federated mean?
@@ -214,19 +212,18 @@ Then...
 * You could even try to write a homeserver (but be warned, Matrix's architecture
   makes homeservers orders of magnitude harder than clients or bridges.)
 
-See [our contributor guide
-](https://matrix-org.github.io/synapse/latest/development/contributing_guide.html) for full details on how to contribute to the project. All are welcome!
+See [our contributor guide](https://matrix-org.github.io/synapse/latest/development/contributing_guide.html) for full
+details on how to contribute to the project. All are welcome!
 
 #### Where can I get support?
 
-The point of entry for everything matrix is [#matrix:matrix.org
-](https://matrix.to/#/#matrix:matrix.org) aka #matrix on irc.libera.chat.
+The point of entry for everything matrix is [#matrix:matrix.org](https://matrix.to/#/#matrix:matrix.org) aka #matrix on irc.libera.chat.
 
 If you're a developer and are looking to get involved with building something on
 Matrix, try [#matrix-dev:matrix.org](https://matrix.to/#/#matrix-dev:matrix.org).
 
-If you host a Synapse homeserver, you can get support in the [
-#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org) room.
+If you host a Synapse homeserver,
+you can get support in the [#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org) room
 
 #### How do I create a link to a Matrix room or user?
 
@@ -245,9 +242,7 @@ There are many clients available, ranging from the glossy mass-market to the gee
 
 The most popular and established client is Element, available on web, desktop, Android and iOS.
 
-To get a list of all the clients we're aware of, head to [the clients page
-](/ecosystem/clients)
-
+To get a list of all the clients we're aware of, head to [the clients page](/ecosystem/clients)
 
 #### What bridges to other networks are available?
 
@@ -284,7 +279,8 @@ through to reusable UI components.
 
 #### Can I write a Matrix homeserver?
 
-Yes. Matrix is just a spec, and implementations of the spec are very welcome! Synapse is the most well-distributed homeserver, but Dendrite and Conduit are
+Yes. Matrix is just a spec, and implementations of the spec are very welcome!
+Synapse is the most well-distributed homeserver, but Dendrite and Conduit are
 other projects aiming to implement the server component.
 
 #### Why HTTP? Isn't it bad? Why don't you use websockets/CoAP/HTTP2/etc?
@@ -406,8 +402,8 @@ on:
 [IRCv3](https://ircv3.net) exists and is addressing some of these issues; this
 is great news and we wish them well. It's almost a contradiction in terms to
 get competitive between openly interoperable communication projects - in fact
-there there already exist mature Matrix-IRC bridges. [matrix-appservice-irc
-](https://github.com/matrix-org/matrix-appservice-irc/) is currently used to
+there there already exist mature Matrix-IRC bridges.
+[matrix-appservice-irc](https://github.com/matrix-org/matrix-appservice-irc/) is currently used to
 bridge with [Libera.Chat](https://libera.chat) and many other IRC networks.
 
 #### What is the difference between Matrix and XMPP?
@@ -522,8 +518,8 @@ stage.
 
 #### What are spaces?
 
-Spaces are a collections of rooms. [#community:matrix.org
-](https://matrix.to/#/community:matrix.org) is the official matrix community
+Spaces are a collections of rooms. [#community:matrix.org](https://matrix.to/#/community:matrix.org)
+is the official matrix community
 space containing rooms managed by the core Matrix team.
 
 Spaces are the replacements for the deprecated communities which were also known
@@ -533,12 +529,12 @@ as groups. Other than groups a space itself is a Room
 
 #### How does Matrix actually work architecturally?
 
-For an introduction to the Matrix architecture, see 
+For an introduction to the Matrix architecture, see
 <https://spec.matrix.org/latest/#architecture>.
 
 #### What is a room?
 
-For a more thorough introduction see: 
+For a more thorough introduction see:
 <https://spec.matrix.org/latest/#room-structure>.
 
 A room is a conceptual place where users can send and receive events. Events are
@@ -610,7 +606,7 @@ Application Services and more.
 
 The spec is available to read on matrix.org.
 
-To contribute to the development of the Matrix Specification, see 
+To contribute to the development of the Matrix Specification, see
 <https://spec.matrix.org/proposals/>.
 
 #### Where is The Spec?
@@ -624,15 +620,14 @@ documentation as it is currently written](https://spec.matrix.org), then review
 [the process for new proposals](https://spec.matrix.org/proposals/). You should
 start by writing a publicly-accessible proposal describing your change.
 
-To see the proposals currently under discussion,join us in [
-#matrix-spec:matrix.org](https://matrix.to/#/#matrix-spec:matrix.org).
+To see the proposals currently under discussion,join us in [#matrix-spec:matrix.org](https://matrix.to/#/#matrix-spec:matrix.org)
 
 #### What is the process for adding Spec proposals?
 
-See the documentation at https://spec.matrix.org/proposals. In summary:
+See the documentation at <https://spec.matrix.org/proposals>. In summary:
 
 * Produce a publicly-accessible proposal describing your change
-* Make a new issue at https://github.com/matrix-org/matrix-spec-proposals/issues
+* Make a new issue at <https://github.com/matrix-org/matrix-spec-proposals/issues>
 , and include the metadata as described
 * Gather feedback as widely as possible from the community and core team on the
   proposal
@@ -648,7 +643,7 @@ make referencing them easier.
 
 MSC numbers are taken from GitHub issues on the matrix-doc repo. To see a list
 of all active MSCs, and to understand how to contribute your own, see
-https://spec.matrix.org/proposals.
+<https://spec.matrix.org/proposals>.
 
 ### VoIP
 
@@ -711,6 +706,7 @@ homeserver needs to be able to decide:
 
 ## Definitions
 
+<!-- markdownlint-disable line-length -->
 | Term              | Definition                                               |
 |-------------------|----------------------------------------------------------|
 | Client            | Users in Matrix use one or more clients to communicate. This could be any combination of a web client, a command line client, a mobile client - or embedded clients built into existing apps. It could even be a piece of hardware (e.g. a drone) that is Matrix enabled. |
@@ -737,3 +733,4 @@ homeserver needs to be able to decide:
 | bot               | A bot is an autonomous agent. In the context of matrix, it means software which is able to make automated posts in rooms. |
 | pubsub            | The publish-subscribe pattern describes an architecture in which message senders push messages to a location, without needing to know who the subscribers will be. For Matrix, this means a client can send a message to a room without knowing the members, and the members can read that message. |
 | Postgres          | While Synapse can be installed using Sqlite, Postgres is preferred for any significant use. |
+<!-- markdownlint-enable line-length -->
