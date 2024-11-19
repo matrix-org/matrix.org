@@ -5,6 +5,9 @@ title = "Matrix in full force at FOSDEM"
 [taxonomies]
 author = ["Thib"]
 category = ["Conferences", "FOSDEM"]
+
+[extra]
+image = "https://matrix.org/blog/img/matrix-fosdem.png"
 +++
 
 The Matrix.org Foundation and community are very happy to announce that this year, they will be in full force at FOSDEM, with a community event right before the conference, a booth to welcome everyone during the conference, and a dev room to explore topics in depth!
