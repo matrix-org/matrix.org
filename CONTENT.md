@@ -258,5 +258,15 @@ It should NOT contain blatent marketing text. We hold the right to ask for rewor
 
 ## Adding documentation
 
+Matrix.org provides a place to have documentation. Documentation is required to be on topic of the Matrix Protocol itself or how to get started using the protocol.
+
+We currently split the Documentation into these types:
+
+- Onboarding Documentation - Documentation for first time users
+- Community Documenation - Documentation which we consider is helpful to run a good community using Matrix tools. This can include guideance on things like moderation or how Matrix features benefit Communities.
+- Technical Documentation - Documentation that help people understanding to Matrix Protocol. This can range from a rough outline on how Matrix functions to guides on things like state resolution.
+
+Additionally to creating a documenation there comes a responsibility to the author. We require authors of a documentation page to be reachable or delegate a new contact point if they cant maintain it any further. We will tr at least once per year to reach out to an author to verify a documenation is still accurate. This may happen more often when we notice ourself that the documentation is likely stale. If there hasn't been a reply in a reasonable timeframe we hold the right to archive a documenation page without further warning as we cannot verify all documentation on a technical level. Therefor we rather list up to date maintained documentation rather than possibly stale documentation. These archived documentations can then be found at the [Older Documentation Section](https://matrix.org/docs/older/#all-past-documentation).
+
 ## Adding sponsors
 
