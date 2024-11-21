@@ -51,12 +51,14 @@ It is possible to add pictures to your posts in markdown. First you need to drop
 
 ```jinja
 {{ figure(
-    img="/blog/img/your-picture-name.png"
+    img="/blog/img/your-picture-name.avif"
     caption="A description of the picture")
 }}
 ```
 
 This so called shortcode ensures that images have a consistent look across posts.
+
+We prefer using avif or webp files when possible. However if this is not an option we also accept PNG files provided they are reasonable sized and the file size is appropriate for web usage.
 
 ### Embedding a YouTube player
 
@@ -81,6 +83,8 @@ If you want to add your own, drop it in the PNG format in [`/static/blog/img`](h
 [extra]
 image = "https://matrix.org/blog/img/YOUR-IMAGE.png"
 ```
+
+_Due to restrictions on the third-party consumers it is mandatory that we use PNG files here_
 
 ## Adding new projects to the ecosystem
 
@@ -214,7 +218,43 @@ _Note that this section is due to further figuring out. See also <https://github
 
 ### SDKs
 
+SDKs for Matrix can be found inside [`/content/ecosystem/sdks/sdks.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/sdks/sdks.toml).
+
+To add an sdk please use this template and append it to the `sdks.toml`:
+
+```toml
+[[sdks]]
+name = "My Matrix SDK"
+maintainer = "Your name or organisation"
+maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
+language = "The programminglanguage of your server. For example 'Python'"
+licence = "An spdx license code"
+repository = "github.com/example-org/example-repo"
+# In which type of application this SDK is meant to get used. This should be an array.
+# Possible values are "bridge", "bot", "client"
+purpose = ["bot", "bridge"]
+description = """
+A short description about the SDK.
+"""
+```
+
 ### Hosting providers
+
+Hosting provders are listed in [`/content/ecosystem/hosting/providers.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/hosting/providers.toml). It lists providers which provide Matrix components like servers or bots to customers. We require this section to only contain providers that do the actual hosting. Providers which either provide a setup script or only provide selfhosting should go into the in the future existing Distributions section instead.
+
+To add a hosting provider entry, add the following template to the `providers.toml`. Logos should be placed next to the the toml file. A logo should be in the SVG format. However if this is not available a PNG is acceptable provided it has sufficient resolution while also having reasonable filesize.
+
+```toml
+[[providers]]
+name = "The provider's name"
+image = "logo.svg"
+website = "https://example.com"
+operating_since = "2018"
+description = """
+What the service provides and any noteworthy limitations or features.
+It should NOT contain blatent marketing text. We hold the right to ask for rewording it or reject it.
+"""
+``` 
 
 ## Adding documentation
 
