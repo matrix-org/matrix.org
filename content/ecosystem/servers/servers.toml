@@ -11,11 +11,11 @@ room = "#synapse:matrix.org"
 [[servers]]
 name = "Dendrite"
 description = "Dendrite is a second-generation Matrix homeserver written in Go!"
-author = "Matrix.org team"
+author = "Element"
 maturity = "Beta"
 language = "Go"
-licence = "Apache-2.0"
-repository = "https://github.com/matrix-org/dendrite"
+licence = "AGPL-3.0-only OR Element Commercial License"
+repository = "https://github.com/element-hq/dendrite"
 room = "#dendrite:matrix.org"
 
 [[servers]]
