@@ -99,7 +99,7 @@ template = "ecosystem/client.html"
 [extra]
 thumbnail = "your-client-name.svg"
 maintainer = "Your name or organisation"
-maturity = "PICK ONE" Stable OR Beta OR Alpha OR Obsolete"
+maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 repo = "https://github.com/example-org/example-repo"
 matrix_room = "#your-matrix-room:example.com"
 licence = "PICK ONE"
@@ -153,7 +153,7 @@ summary = """
 A short description about your bridge
 """
 
-maturity = "PICK ONE" Stable OR Beta OR Alpha OR Obsolete"
+maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 language = "PICK ONE (please check for existing languages to avoid using different names)"
 license = "PICK ONE"
 docs = "https://docs.mybridge.example.com"
