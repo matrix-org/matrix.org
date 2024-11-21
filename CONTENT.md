@@ -1,16 +1,18 @@
+# How Content works on matrix.org
+
 The matrix.org website is powered by [Zola](https://www.getzola.org/), a [static site generator](https://en.wikipedia.org/wiki/Static_site_generator). It ingests content in rather human-friendly formats, and turns it into the beautiful matrix.org website we all love. The format you need to use depends on the type of content you want to add.
 
 This documentation is about helping you create new content that the static site generator will accept. To get your content actually deploy on matrix.org, you need to be familiar with git, GitHub and Pull Requests. If that's not the case, we suggest either finding someone who is and can help, or dropping us a line in the [Matrix.org Website chat room](https://matrix.to/#/#matrix.org-website:matrix.org).
 
 ## Publishing to the blog
 
-Articles on the blog are written in the markdown format. Markdown should generally be the same everywhere, but there are small variations around what you can or can't do with it. Zola supports the [CommonMark variant](https://commonmark.org/help/) of Markdown.
+Articles on the blog are written in the markdown format. Markdown should generally be the same everywhere, but there are small variations around what you can or can't do with it. Zola supports the [CommonMark variant](https://commonmark.org/help/) of Markdown. Note that Zola's Markdown parser is pedantic about links and requires to use `<>` around a link without title.
 
 All the blog posts are sorted in directories. They live in `/content/blog/YEAR/MONTH/`, with `YEAR` and `MONTH` being the year and month in digit format, e.g. [`/content/blog/2024/01/`](https://github.com/matrix-org/matrix.org/tree/main/content/blog/2024/01).
 
 One surprising bit about Zola is that both the `YEAR` (e.g. `2024`) and `MONTH` (e.g. `01`) need to have a `_index.md` with the following content to be rendered by the generator:
 
-```
+```markdown
 +++
 transparent = true
 render = false
@@ -24,7 +26,7 @@ In the frontmatter, make sure to format the date as `year-month-day` (e.g. `2024
 
 You can use the following template to create a new blog post:
 
-```
+```markdown
 +++
 date = "2024-01-22T12:30:00Z"
 title = "Exciting news from the Foundation!"
@@ -45,11 +47,16 @@ We are privacy-centric and don't want to track people individually, but we want 
 
 ### Adding pictures in your post
 
-It is possible to add pictures to your posts in markdown. First you need to drop the pictures in [`/static/blog/img`](https://github.com/matrix-org/matrix.org/tree/main/static/blog/img). Then, in the markdown file itself add the following line
+It is possible to add pictures to your posts in markdown. First you need to drop the pictures in [`/static/blog/img`](https://github.com/matrix-org/matrix.org/tree/main/static/blog/img). Then, in the markdown file itself add the following lines
 
+```jinja
+{{ figure(
+    img="/blog/img/your-picture-name.png"
+    caption="A description of the picture")
+}}
 ```
-![A description of the picture](/blog/img/your-picture-name.png)
-```
+
+This so called shortcode ensures that images have a consistent look across posts.
 
 ### Embedding a YouTube player
 
@@ -61,7 +68,7 @@ Copy the series of characters after the `v=` and before the first `&` that you m
 
 In your markdown file, add this line to embed the YouTube player in a way that respects the user consent.
 
-```
+```jinja
 {{ youtube_player(video_id="S1nBXjWWHoU") }}
 ```
 ### Adding a picture for the socials
@@ -70,7 +77,7 @@ You know the cool previews that are generated on socials (Mastodon, LinkedIn, an
 
 If you want to add your own, drop it in the PNG format in [`/static/blog/img`](https://github.com/matrix-org/matrix.org/tree/main/static/blog/img), and add the following lines to your frontmatter (between the two rows of `+++`):
 
-```
+```toml
 [extra]
 image = "https://matrix.org/blog/img/YOUR-IMAGE.png"
 ```
@@ -85,7 +92,7 @@ Matrix clients are listed in [`/content/ecosystem/clients`](https://github.com/m
 
 To add a client, add your client's logo (ideally in SVG format) as `your-client-name.svg` and a markdown file as `your-client-name.md` file (no space allowed in the file name) under [`/content/ecosystem/clients`](https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/clients) and fill it with the following template:
 
-```
+```markdown
 +++
 title = "My client name"
 template = "ecosystem/client.html"
@@ -130,7 +137,43 @@ Supercharge your communications with Example Client.
 - `featured` should be left to false. We are working on [processes to formalise which project should be featured or not](https://github.com/matrix-org/matrix.org/issues/1584).
 - For the `licence`, please use [one of the identifiers listed by the SPDX](https://spdx.org/licenses/)
 - All of the properties under `extra.packages` are optional: only add the installation methods your project supports!
+	- In case your option is not available please let us know by opening an issue.
+
 ### Bridges
+
+The Matrix Bridges are listed in [`/content/ecosystem/bridges`](https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/bridges). Inside of the folder you will find a folder for each third-party network. Within each network you can find a `bridges.toml` file which contains the information about individual bridges for the third-party network.
+
+To add a bridge, add the following template to the `bridges.toml` for the respective third-party network:
+
+```toml
+[[bridges]]
+name = "My bridge name"
+maintainer = "Your name or organisation"
+summary = """
+A short description about your bridge
+"""
+
+maturity = "PICK ONE" Stable OR Beta OR Alpha OR Obsolete"
+language = "PICK ONE (please check for existing languages to avoid using different names)"
+license = "PICK ONE"
+docs = "https://docs.mybridge.example.com"
+repo = "https://github.com/example-org/example-repo"
+room = "#your-matrix-room:example.com"
+featured = false # Keep this as false. This will be handled by the repo maintainers
+privilege.platform = "User" # Who can use/add the bridge on the third-party platform
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+
+# This can vary based on the network. Use Matrix terms here. When in doubt stick to this list.
+[bridges.supports]
+dm = true
+groups = true
+message_media = true
+mentions = true
+redactions = true
+reactions = true
+typing_notifications = true
+read_receipts = true
+```
 
 ### Servers
 
