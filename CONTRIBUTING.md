@@ -82,7 +82,7 @@ The tools we have at our disposal are:
 
 We try to keep a paper trail for all the decisions and implementation:
 
-- All of the changes on the website nees to happen [through a Pull Request](https://github.com/matrix-org/matrix.org/pulls)
+- All of the changes on the website need to happen [through a Pull Request](https://github.com/matrix-org/matrix.org/pulls)
   - The only exception to this rules are if we broke things preventing our usual workflow.
 - Pull Requests which do changes to existing content or add content outside of the blog should fix a documented and accepted [issue](https://github.com/matrix-org/matrix.org/pulls)
 - Issues are reviewed by the maintainers of the project (@thibaultamartin and @MTRNord as of now). Some discussion can happen in [#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website:matrix.org) but all decisions are logged in the issues themselves.

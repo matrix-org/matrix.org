@@ -177,7 +177,40 @@ read_receipts = true
 
 ### Servers
 
+Matrix Servers are listed in [`/content/ecosystem/servers/servers.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/servers/servers.toml). Each entry is a new section in this toml file.
+
+To add a server, add the following template to the end of the `servers.toml` and edit it according to your server
+
+```toml
+[[servers]]
+name = "My Matrix Server"
+description = "A Matrix server which can only reply status code 418"
+author = "Your name or organisation"
+maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
+language = "The programminglanguage of your server. For example 'Python'"
+licence = "An spdx license code"
+repository = "https://github.com/example-org/example-repo"
+room = "#your-matrix-room:example.com"
+```
+
 ### Integrations
+
+Matrix integrations are listed in [`/content/ecosystem/integrations/integrations.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/integrations/integrations.toml). A Matrix Integration can be for example a utility TUI but also Matrix Bots. Please see the description on the website itself to get a better feeling on the definition of Matrix Integrations.
+
+To add an integration, add the following template to the end of the `integrations.toml` and edit the fields according to your integration
+
+```toml
+[[integrations]]
+name = "My Matrix Integration"
+description = "A brief description on which things it is able to do."
+author = "Your name or organisation"
+language = "The programminglanguage of your server. For example 'Python'"
+licence = "An spdx license code"
+repository = "https://github.com/example-org/example-repo"
+room = "#your-matrix-room:example.com"
+```
+
+_Note that this section is due to further figuring out. See also <https://github.com/matrix-org/matrix.org/issues/1858>_
 
 ### SDKs
 
