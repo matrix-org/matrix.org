@@ -4,7 +4,7 @@ title = "Call for Participation to the FOSDEM 2025 Matrix Devroom"
 
 [taxonomies]
 author = ["Thib"]
-category = ["General"]
+category = ["General", "Conferences", "FOSDEM"]
 
 [extra]
 image = "https://matrix.org/blog/img/matrix-fosdem.png"
