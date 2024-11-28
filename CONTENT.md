@@ -276,5 +276,5 @@ The Documentation is expected to have a writing style. This means specifically t
 
 Last but not least we would like to have graphics in our documentation when it makes sense for the documentation. Specifically for Onboarding and Community Documentation this helps readers to imagine things more easily. For technical documentation however this is not always possible and is ok. However complicated flows should contain visualizations of this to help readers understand it.
 
-We are happy to review your documentation contributions and help you with any quetions that you may end up with.
+We are happy to review your documentation contributions and help you with any questions that you may end up with.
 
