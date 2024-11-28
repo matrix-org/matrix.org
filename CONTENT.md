@@ -268,5 +268,13 @@ We currently split the Documentation into these types:
 
 Additionally to creating a documentation there comes a responsibility to the author. We require authors of a documentation page to be reachable or delegate a new contact point if they cant maintain it any further. We will tr at least once per year to reach out to an author to verify a documentation is still accurate. This may happen more often when we notice ourself that the documentation is likely stale. If there hasn't been a reply in a reasonable timeframe we hold the right to archive a documentation page without further warning as we cannot verify all documentation on a technical level. Therefor we rather list up to date maintained documentation rather than possibly stale documentation. These archived documentations can then be found at the [Older Documentation Section](https://matrix.org/docs/older/#all-past-documentation).
 
-## Adding sponsors
+### What we expect from Documentation contributions
+
+Documentation on matrix.org should be documentation which is part of the 3 categories we defined above. If you think that there is a category missing then please first open an issue for us to discuss this.
+
+The Documentation is expected to have a writing style. This means specifically that we expect the documentation to be written in a neutral and personal tone. This means we prefer "To do X you want to do Y" over "To get to X one should do Y". Additionally to the tone we also expect a documentation page to be structured. think about headers to use which guide the reader and make it easy to find a section in the document.
+
+Last but not least we would like to have graphics in our documentation when it makes sense for the documentation. Specifically for Onboarding and Community Documentation this helps readers to imagine things more easily. For technical documentation however this is not always possible and is ok. However complicated flows should contain visualizations of this to help readers understand it.
+
+We are happy to review your documentation contributions and help you with any quetions that you may end up with.
 
