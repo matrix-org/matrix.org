@@ -20,6 +20,7 @@ threads = false
 sso = false
 multi_account = false
 multi_language = false
+[extra.packages]
 +++
 
 The only Matrix client for KaiOS, focusing on being light, fast and easy to use. The project is currently in alpha state. Basic chat works but a lot of features need to be worked out.
