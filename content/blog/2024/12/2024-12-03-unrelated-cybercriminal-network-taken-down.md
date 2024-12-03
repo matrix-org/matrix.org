@@ -1,6 +1,7 @@
 +++
 date = "2024-12-03"
 title = "An unrelated cybercriminal network named MATRIX was taken down"
+aliases = ["/blog/2024/12/a/"]
 
 [taxonomies]
 author = ["Thib"]
