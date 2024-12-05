@@ -7,7 +7,7 @@ author = ["Andrew Morgan"]
 category = ["GSOC"]
 
 [extra]
-image = "https://matrix.org/blog/wp-content/uploads/2015/01/logo1.png"
+image = "/blog/wp-content/uploads/2015/01/logo1.png"
 +++
 
 It’s that time of year again! Matrix.org is once again participating in the [Google Summer of Code](https://summerofcode.withgoogle.com/) program. We have been allocated four student slots by Google this year, and narrowing the 18 proposals we received down to just four was a very difficult task.
