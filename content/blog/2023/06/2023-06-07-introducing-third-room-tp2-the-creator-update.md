@@ -29,7 +29,7 @@ As a reminder: the Third Room team is a tiny band formed by Robert, Nate and Aja
 ### Introducing Web Scene Graph
 
 <div style="text-align: center">
-<a href="https://thirdroom.io/docs/guides/websg/"><img src="/blog/img/2023-06-07-websg.jpg" width="480" alt="WebSG"/></a>
+<a href="https://thirdroom.io/docs/guides/websg/"><img src="/blog/img/2023-06-07-websg.avif" width="480" alt="WebSG"/></a>
 </div>
 
 At the heart of Third Room TP2 is [Web Scene Graph (WebSG)](https://thirdroom.io/docs/guides/websg/) - our new API to let developers create their own spatial multiparty apps and experiences in Third Room. WebSG does to glTF what JavaScript and the DOM did to HTML - it makes it come alive. With WebSG, we’re building the first implementation of an open standard for interoperable programming of virtual worlds, with the hope of submitting it to the W3C as a general purpose building block of the Web.
@@ -79,7 +79,7 @@ But don’t worry - we’re not expecting folks to be writing C as a matter of c
 
 We’ve also bundled basic Matrix widget API support alongside WebSG, so WASM scripts in Third Room can send and receive Matrix events in the underlying chatroom (as well as directly sending messages between clients over WebRTC datachannels).  For instance, one of the commercial WebSG apps which Element has written on top of Third Room is a real-time air traffic simulator, which consumes location-share beacons from the underlying Matrix room (bridged from ADS-B data sources) and procedurally renders them in 3D or AR over a map of the region in question:
 
-![SFO](/blog/img/2023-06-07-sfo.jpg)
+![SFO](/blog/img/2023-06-07-sfo.avif)
 
 We’ve also added a native orbit viewer into Third Room, so from WebSG you can simply call `node.startOrbit()` on any node to temporarily switch into focusing on a given object (WASD to move; mousewheel to zoom; escape to exit).
 
@@ -142,21 +142,21 @@ Talking of docs, we’re proud to unveil a shiny new documentation website for T
     * The official [WebSG API](https://thirdroom.io/docs/websg-js/) reference documentation
     * The official reference for the various [glTF Extensions](https://thirdroom.io/docs/gltf/) used by Third Room (in progress).
 
-![Docs](/blog/img/2023-06-07-docs.png)
+![Docs](/blog/img/2023-06-07-docs.avif)
 
 ### Introducing the In-World Editor
 
 Aside from all the WebSG API excitement, another key area in this release is the ability to visualise and manipulate the glTF scene graph in real-time via the in-world editor.  At any time while using Third Room, you can now hit the backtick key ``` and bring up an overlay showing the current scene graph of the world - and go clicking through the nodes to inspect their current state, and experiment with editing them a bit.  Currently this requires you to be an admin in the room.  For instance, you can go in and mess around with the scene’s materials via the Resources tab of the scene graph panel and the Inspector panel on the right hand side:
 
-![Editor 1](/blog/img/2023-06-07-editor-1.png)
+![Editor 1](/blog/img/2023-06-07-editor-1.avif)
 
 …or you could go and move the geometry outright:
 
-![Editor 2](/blog/img/2023-06-07-editor-2.png)
+![Editor 2](/blog/img/2023-06-07-editor-2.avif)
 
 …or even bring up a [Monaco](https://microsoft.github.io/monaco-editor/) editor to directly edit the script controlling the world (if it’s JavaScript):
 
-![Editor 3](/blog/img/2023-06-07-editor-3.png)
+![Editor 3](/blog/img/2023-06-07-editor-3.avif)
 
 …and hit Save & Run and see your changes instantly take effect:
 
@@ -189,7 +189,7 @@ We’re working away on sorting this out one way or another - if it was working 
 
 In keeping with the focus on creators in this release, we’ve also added a new Discover view to Third Room, making it easier to find existing scenes and worlds.  A directory of curated content is published in a repository room ([MSC3948](https://github.com/ajbura/matrix-spec-proposals/blob/respository-room/proposals/3948-repository-room.md)) - by default #repository-room:thirdroom.io, and then hitting the compass icon in the side menu will let you create your own worlds based on existing scenes, or indeed discover and jump into existing worlds:
 
-![Discover](/blog/img/2023-06-07-discover.png)
+![Discover](/blog/img/2023-06-07-discover.avif)
 
 Meanwhile the Creator tab makes it even easier to get up and running creating new worlds. The Discover view now becomes the default view for new users, to help them onboard when they enter the app for the first time.
 
@@ -202,7 +202,7 @@ Here’s me & Amandine playing with it using two Quest Pros - on the left you ca
 
 WebXR *should* work out of the box on any good VR/AR headset, without having to install any additional software or being locked into any vendor’s app store. We even expect it to work with Apple’s Vision Pro headset, based on the [Safari 17 release notes](https://webkit.org/blog/14205/news-from-wwdc23-webkit-features-in-safari-17-beta/). This is the whole promise of the open Web, and we hope Third Room will provide an amazing open environment to create XR apps and experiences in future.
 
-![WebXR](/blog/img/2023-06-07-webxr.jpg)
+![WebXR](/blog/img/2023-06-07-webxr.avif)
 
 ### What remains?
 
