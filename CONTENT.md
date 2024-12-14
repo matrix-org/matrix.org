@@ -16,6 +16,7 @@ One surprising bit about Zola is that both the `YEAR` (e.g. `2024`) and `MONTH` 
 +++
 transparent = true
 render = false
+insert_anchor_links = "left"
 +++
 
 ```
@@ -73,6 +74,7 @@ In your markdown file, add this line to embed the YouTube player in a way that r
 ```jinja
 {{ youtube_player(video_id="S1nBXjWWHoU") }}
 ```
+
 ### Adding a picture for the socials
 
 You know the cool previews that are generated on socials (Mastodon, LinkedIn, and others) when you paste a link? Matrix.org supports them! By default if you don't specify any, it is going to use [this placeholder](https://github.com/matrix-org/matrix.org/blob/main/static/blog/img/matrix-logo.png) image.
@@ -134,14 +136,14 @@ Supercharge your communications with Example Client.
 ```
 
 - For the `maturity`, please pick one of
-	- `Stable` if your software has been running in production for a little while and if you are confident in the sustainability of the project
-	- `Beta` if there are rough edges but people won't lose any data
-	- `Alpha` if your software is still experimental
-	- `Obsolete` if your software is no longer maintained
+ 	- `Stable` if your software has been running in production for a little while and if you are confident in the sustainability of the project
+ 	- `Beta` if there are rough edges but people won't lose any data
+ 	- `Alpha` if your software is still experimental
+ 	- `Obsolete` if your software is no longer maintained
 - `featured` should be left to false. We are working on [processes to formalise which project should be featured or not](https://github.com/matrix-org/matrix.org/issues/1584).
 - For the `licence`, please use [one of the identifiers listed by the SPDX](https://spdx.org/licenses/)
 - All of the properties under `extra.packages` are optional: only add the installation methods your project supports!
-	- In case your option is not available please let us know by opening an issue.
+ 	- In case your option is not available please let us know by opening an issue.
 
 ### Bridges
 
@@ -254,7 +256,7 @@ description = """
 What the service provides and any noteworthy limitations or features.
 It should NOT contain blatant marketing text. We hold the right to ask for rewording it or reject it.
 """
-``` 
+```
 
 ## Adding documentation
 
@@ -277,4 +279,3 @@ The Documentation is expected to have a writing style. This means specifically t
 Last but not least we would like to have graphics in our documentation when it makes sense for the documentation. Specifically for Onboarding and Community Documentation this helps readers to imagine things more easily. For technical documentation however this is not always possible and is ok. However complicated flows should contain visualizations of this to help readers understand it.
 
 We are happy to review your documentation contributions and help you with any questions that you may end up with.
-
