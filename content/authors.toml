@@ -1,0 +1,30 @@
+[author.josh_simmons]
+name = "Josh Simmons"
+description = """
+
+"""
+aliases = ["Josh Simmons (m.org)"]
+mastodon = "@josh@josh.tel"
+
+[author.thib]
+name = "Thib"
+description = """
+
+"""
+aliases = ["Thib (m.org)"]
+mastodon = "@thibaultamartin@mamot.fr"
+
+[author.matthew]
+name = "Matthew Hodgson"
+description = """
+
+"""
+aliases = []
+mastodon = "@matthew@mastodon.matrix.org"
+
+[author.mtrnord]
+name = "MTRNord"
+description = """
+"""
+aliases = ["MTRNord (they/them)"]
+mastodon = "@mtrnord@mastodon.mtrnord.blog"

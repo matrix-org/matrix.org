@@ -7,11 +7,69 @@
             <h1>{{ taxonomy.name | capitalize }}</h1>
         </header>
         <div class="grid">
-            {% for term in terms %}
+            {% if taxonomy.name == "author" %}
+                {# Load the authors data #}
+                {% set authors = load_data(path="content/authors.toml") %}
+                {# Set the clean terms #}
+                {% set clean_terms = [] %}
+                {# Loop over the terms and only add terms of users which either have no entry in the authors.toml or only the name of an author but not the aliases #}
+                {% for term in terms %}
+                    {% set_global found = false %}
+                    {% set_global is_alias = false %}
+                    {% for key, author in authors.author %}
+                        {% if author.name == term.name %}
+                            {% set_global found = true %}
+                        {% endif %}
+                        {% if term.name in author.aliases %}
+                            {% set_global is_alias = true %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if not found %}
+                        {% if not is_alias %}
+                            {% set_global clean_terms = clean_terms | concat(with=term) %}
+                        {% endif %}
+                    {% endif %}
+                    {% if not is_alias and found %}
+                        {% set_global clean_terms = clean_terms | concat(with=term) %}
+                    {% endif %}
+                {% endfor %}
+
+                {# Sort the terms #}
+                {% set clean_terms = clean_terms | sort(attribute="name") %}
+            {% else %}
+                {# Filter out the terms #}
+                {% set clean_terms = terms %}
+            {% endif %}
+
+            {# Loop over the terms #}
+            {% for term in clean_terms %}
+
+            {# If the terms is an author we append the pages of the aliases to the author #}
+            {% if taxonomy.name == "author" %}
+                {% set_global merged_pages = term.pages %}
+                {% for key, author in authors.author %}
+                    {% if author.name == term.name or term.name in author.aliases %}
+                        {% set author_term = get_taxonomy_term(kind="author", term=author.name) %}
+                        {% set_global merged_pages = merged_pages | concat(with=author_term.pages) %}
+                        {% for alias in author.aliases %}
+                            {% set alias_term = get_taxonomy_term(kind="author", term=alias, required=false) %}
+                            {% if alias_term %}
+                                {% set_global merged_pages = merged_pages | concat(with=alias_term.pages) %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                {% set_global merged_pages = merged_pages | unique(attribute="title") | sort(attribute="date") | reverse %}
+            {% else %}
+                {% set_global merged_pages = term.pages %}
+            {% endif %}
+
+            {# Output the terms #}
+
             <div class="grid-container-third">
                 <h3>
                     <a href="{{ term.permalink | safe }}">{{ term.name }}</a>
-                    ({{ term.pages | length }})
+                    ({{ merged_pages | length }})
                 </h3>
                 {% if taxonomy.feed %}
                 <h4>
@@ -19,7 +77,7 @@
                 </h4>
                 {% endif %}
                 <ul>
-                    {% for page in term.pages | slice(end=4) %}
+                    {% for page in merged_pages | slice(end=4) %}
                     <li>
                         <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
                     </li>

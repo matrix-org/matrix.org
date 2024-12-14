@@ -10,6 +10,25 @@
 {{ throw(message="Please put author under the taxonomies area.") }}
 {%- endif -%}
 
+{% set authors = load_data(path="content/authors.toml") %}
+{% set author_details = authors.author %}
+{% set author_meta = [] %}
+{% for author_alias in page.taxonomies.author %}
+    {% set_global author_name = author_alias %}
+    {% for key, value in author_details %}
+        {% if value.name == author_alias or author_alias in value.aliases %}
+            {% set_global author_name = value.name %}
+            {% set_global author_meta = author_meta | concat(with=value) %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
+{% for author in author_meta %}
+    {% if author.mastodon %}
+<meta name="fediverse:creator" content="{{ author.mastodon }}" />
+    {% endif %}
+{% endfor %}
+
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -33,12 +52,18 @@
     ],
     {% endif %}
     "author": [
-    {% for author in page.taxonomies.author %}
-    {
-        "@type": "Person",
-        "name": "{{ author }}",
-        "url": "{{ config.base_url | safe }}/authors/{{ author | slugify }}"
-    }{% if not loop.last %},{% endif %}
+    {% for author_alias in page.taxonomies.author %}
+        {% set_global author_name = author_alias %}
+        {% for key, value in author_details %}
+            {% if value.name == author_alias or author_alias in value.aliases %}
+                {% set_global author_name = value.name %}
+            {% endif %}
+        {% endfor %}
+        {
+            "@type": "Person",
+            "name": "{{ author_name }}",
+            "url": "{{ config.base_url | safe }}/authors/{{ author_name | slugify }}"
+        }{% if not loop.last %},{% endif %}
     {% endfor %}
     ]
 }
@@ -59,11 +84,17 @@
             {%- if not loop.last %}, {% endif %}{% endfor %}
             {% endif %}
             —
-            {% for author in page.taxonomies.author %}
-                <a href="/author/{{ author | default (value=['unknown author']) | slugify }}">
-                    {{- author | default (value=["unknown author"]) -}}
+            {% for author_alias in page.taxonomies.author %}
+                {% set_global author_name = author_alias %}
+                {% for key, value in author_details %}
+                    {% if value.name == author_alias or author_alias in value.aliases %}
+                        {% set_global author_name = value.name %}
+                    {% endif %}
+                {% endfor %}
+                <a href="/author/{{ author_name | slugify }}">
+                    {{- author_name -}}
                 </a>
-            {%- if not loop.last %}, {% endif %}
+                {%- if not loop.last %}, {% endif %}
             {% endfor %}
         </span>
         {% if page.updated %}
