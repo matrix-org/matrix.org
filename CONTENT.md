@@ -57,7 +57,7 @@ It is possible to add pictures to your posts in markdown. First you need to drop
 }}
 ```
 
-This so called shortcode ensures that images have a consistent look across posts.
+This shortcode ensures that images have a consistent look across posts.
 
 We prefer using avif or webp files when possible. However if this is not an option we also accept PNG files provided they are reasonable sized and the file size is appropriate for web usage.
 
@@ -86,7 +86,7 @@ If you want to add your own, drop it in the PNG format in [`/static/blog/img`](h
 image = "https://matrix.org/blog/img/YOUR-IMAGE.png"
 ```
 
-_Due to restrictions on the third-party consumers it is mandatory that we use PNG files here_
+_Due to restrictions on the third-party consumers it is mandatory that we use PNG files here._
 
 ## Adding new projects to the ecosystem
 
@@ -108,7 +108,7 @@ maintainer = "Your name or organisation"
 maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 repo = "https://github.com/example-org/example-repo"
 matrix_room = "#your-matrix-room:example.com"
-licence = "PICK ONE"
+licence = "PICK ONE identifier from https://spdx.org/licenses/"
 latest_release = "2022-11-02"
 featured = false
 
@@ -136,14 +136,14 @@ Supercharge your communications with Example Client.
 ```
 
 - For the `maturity`, please pick one of
- 	- `Stable` if your software has been running in production for a little while and if you are confident in the sustainability of the project
- 	- `Beta` if there are rough edges but people won't lose any data
- 	- `Alpha` if your software is still experimental
- 	- `Obsolete` if your software is no longer maintained
+  - `Stable` if your software has been running in production for a little while and if you are confident in the sustainability of the project
+  - `Beta` if there are rough edges but people won't lose any data
+  - `Alpha` if your software is still experimental
+  - `Obsolete` if your software is no longer maintained
 - `featured` should be left to false. We are working on [processes to formalise which project should be featured or not](https://github.com/matrix-org/matrix.org/issues/1584).
 - For the `licence`, please use [one of the identifiers listed by the SPDX](https://spdx.org/licenses/)
 - All of the properties under `extra.packages` are optional: only add the installation methods your project supports!
- 	- In case your option is not available please let us know by opening an issue.
+  - In case your option is not available please let us know by opening an issue.
 
 ### Bridges
 
@@ -161,7 +161,7 @@ A short description about your bridge
 
 maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 language = "PICK ONE (please check for existing languages to avoid using different names)"
-license = "PICK ONE"
+license = "PICK ONE identifier from https://spdx.org/licenses/"
 docs = "https://docs.mybridge.example.com"
 repo = "https://github.com/example-org/example-repo"
 room = "#your-matrix-room:example.com"
@@ -193,8 +193,8 @@ name = "My Matrix Server"
 description = "A Matrix server which can only reply status code 418"
 author = "Your name or organisation"
 maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
-language = "The programminglanguage of your server. For example 'Python'"
-licence = "An spdx license code"
+language = "The programming language of your server. For example 'Python'"
+licence = "PICK ONE identifier from https://spdx.org/licenses/"
 repository = "https://github.com/example-org/example-repo"
 room = "#your-matrix-room:example.com"
 ```
@@ -211,7 +211,7 @@ name = "My Matrix Integration"
 description = "A brief description on which things it is able to do."
 author = "Your name or organisation"
 language = "The programminglanguage of your server. For example 'Python'"
-licence = "An spdx license code"
+licence = "PICK ONE identifier from https://spdx.org/licenses/"
 repository = "https://github.com/example-org/example-repo"
 room = "#your-matrix-room:example.com"
 ```
@@ -230,7 +230,7 @@ name = "My Matrix SDK"
 maintainer = "Your name or organisation"
 maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 language = "The programminglanguage of your server. For example 'Python'"
-licence = "An spdx license code"
+licence = "PICK ONE identifier from https://spdx.org/licenses/"
 repository = "github.com/example-org/example-repo"
 # In which type of application this SDK is meant to get used. This should be an array.
 # Possible values are "bridge", "bot", "client"
@@ -254,7 +254,7 @@ website = "https://example.com"
 operating_since = "2018"
 description = """
 What the service provides and any noteworthy limitations or features.
-It should NOT contain blatant marketing text. We hold the right to ask for rewording it or reject it.
+This page is meant to help end users find a hosting provider for their needs. For marketing opportunities, please reach out to managing-director@foundation.matrix.org
 """
 ```
 
@@ -265,17 +265,15 @@ Matrix.org provides a place to have documentation. Documentation is required to 
 We currently split the Documentation into these types:
 
 - Onboarding Documentation - Documentation for first time users
-- Community Documentation - Documentation which we consider is helpful to run a good community using Matrix tools. This can include guidance on things like moderation or how Matrix features benefit Communities.
+- Community Documentation - Documentation we consider helpful to run a healthy Matrix community. This includes guidance on moderation best practices, and how Matrix features benefit communities.
 - Technical Documentation - Documentation that help people understanding to Matrix Protocol. This can range from a rough outline on how Matrix functions to guides on things like state resolution.
 
-Additionally to creating a documentation there comes a responsibility to the author. We require authors of a documentation page to be reachable or delegate a new contact point if they cant maintain it any further. We will tr at least once per year to reach out to an author to verify a documentation is still accurate. This may happen more often when we notice ourself that the documentation is likely stale. If there hasn't been a reply in a reasonable timeframe we hold the right to archive a documentation page without further warning as we cannot verify all documentation on a technical level. Therefor we rather list up to date maintained documentation rather than possibly stale documentation. These archived documentations can then be found at the [Older Documentation Section](https://matrix.org/docs/older/#all-past-documentation).
+Creating a documentation comes with the responsibility to maintain it. We require authors of a documentation page to be reachable or delegate a new contact point if they cant maintain it any further. Obviously outdated documentation with unreachable authors will be listed in the [Older Documentation Section](https://matrix.org/docs/older/#all-past-documentation).
 
 ### What we expect from Documentation contributions
 
-Documentation on matrix.org should be documentation which is part of the 3 categories we defined above. If you think that there is a category missing then please first open an issue for us to discuss this.
+To keep documentation on matrix.org tidy and approachable, it needs to be sorted into one of the 3 categories defined above. If you think a new category is needed, please first open an issue so we can discuss it.
 
-The Documentation is expected to have a writing style. This means specifically that we expect the documentation to be written in a neutral and personal tone. This means we prefer "To do X you want to do Y" over "To get to X one should do Y". Additionally to the tone we also expect a documentation page to be structured. think about headers to use which guide the reader and make it easy to find a section in the document.
-
-Last but not least we would like to have graphics in our documentation when it makes sense for the documentation. Specifically for Onboarding and Community Documentation this helps readers to imagine things more easily. For technical documentation however this is not always possible and is ok. However complicated flows should contain visualizations of this to help readers understand it.
+Images make concepts easier to understand than walls of text. Screenshots make the documentation easier to follow in the onboarding and community sections. Diagrams and other illustrations can help break down more technical or complicated documentation.
 
 We are happy to review your documentation contributions and help you with any questions that you may end up with.

@@ -60,7 +60,7 @@ Git allows you to add this signoff automatically when using the `-s` flag to `gi
 
 ## What we are trying to achieve
 
-The Matrix Foundation is in charge of various activities revolving around Matrix. One of the most important activities to make Matrix a mainstream protocol is lowering the barrier to entry for the general public. The Matrix.org website is a critical step of the onboarding: this is what people will stumble upon when they look up “what is Matrix chat” or “chatting on Matrix” in a search engine.
+One key mission of the Foundation is to make Matrix a mainstream protocol. For this, onboarding needs to be made easy for new users. The Matrix.org website is a critical step in this journey: this is where people land when they look up "what is Matrix chat" or "chatting on Matrix" in a search engine.
 
 **The primary mission of the matrix.org website is to onboard various populations on Matrix, and turn them into supporters of the project.**
 
@@ -88,4 +88,3 @@ We try to keep a paper trail for all the decisions and implementation:
 - Issues are reviewed by the maintainers of the project (@thibaultamartin and @MTRNord as of now). Some discussion can happen in [#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website:matrix.org) but all decisions are logged in the issues themselves.
 
 We keep this paper trail to avoid having to review Pull Requests "fixing" things we don't need or want to be fixed. Of course we try to remain flexible where it makes sense, but want to stick to this process as much as possible.
-
