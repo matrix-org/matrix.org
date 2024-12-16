@@ -7,7 +7,7 @@ anyone can post small concise updates about their Matrix projects, events
 and happenings.
 Those updates are collected through the Matrix room
 [#thisweekinmatrix:matrix.org](https://matrix.to/#/%23thisweekinmatrix%3Amatrix.org)
-and published every Friday on the [matrix.org blog](/blog/twim).
+and published every Friday on the [matrix.org blog](/category/this-week-in-matrix/).
 It aims to allow the community to show off their work in the Matrix ecosystem.
 
 ## Prerequisites
