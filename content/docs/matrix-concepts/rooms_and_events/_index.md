@@ -154,7 +154,7 @@ would reject the change making Walter administrator of the room.
 
 Some homeserver implementations like Synapse have a non-standard [Admin API](https://matrix-org.github.io/synapse/latest/usage/administration/admin_api/index.html)
 and more particularly an [API to make someone the room admin](https://matrix-org.github.io/synapse/latest/admin_api/rooms.html#make-room-admin-api).
-This doesn't mean homeserver administrators can't take over rooms as they
+This doesn't mean homeserver administrators can take over rooms as they
 please.
 
 When Walter calls the Make Room Admin API, Synapse is going to control Alice's
