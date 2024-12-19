@@ -14,7 +14,7 @@ Today we launch a new fundraising drive, talk about the scope of the Foundation'
 
 At the end of 2022 Matthew and Amandine [sounded the alarm](https://matrix.org/blog/2022/12/25/the-matrix-holiday-update-2022/): the Foundation needed more support. To deliver that, they [launched the Foundation's membership program](https://matrix.org/blog/2022/12/01/funding-matrix-via-the-matrix-org-foundation/#introducing-foundation-memberships-and-the-governing-board). They also introduced open governance, and committed to hiring a Managing Director to act as a robust, neutral steward.
 
-**You can help: If you are already sold on Matrix, [become a member today](https://matrix.org/membership/).** To find out how the last year has gone, and how your support helps us to serve the Matrix ecosystem, read on. 
+**You can help: If you are already sold on Matrix, [become a member today](https://matrix.org/membership/).** To find out how the last year has gone, and how your support helps us to serve the Matrix ecosystem, read on.
 
 Over the last year, there are lots of positive, healthy signs for Matrix. New members like [Beeper](https://matrix.org/blog/2023/06/beeper-joins-the-foundation/) and [gematik](https://matrix.org/blog/2023/06/gematik-joins-the-foundation/) — and hundreds of individuals ​— boosted our annual revenues from £82K to £364K. The open network has grown from 80.3M to 115M addressable users. We've invested in long-term interoperability efforts at the IETF. And we've shifted focus from experiments to polish, usability, and advocacy.
 
@@ -26,7 +26,7 @@ You'll find a full accounting of our 2023 activity and finances in our first Ann
 
 ## An inflection point for Matrix
 
-We are incredibly proud of what we've accomplished in the last year. As Matrix approaches its 10th anniversary, we are arriving at an inflection point. To continue on this trajectory, we need your help. 
+We are incredibly proud of what we've accomplished in the last year. As Matrix approaches its 10th anniversary, we are arriving at an inflection point. To continue on this trajectory, we need your help.
 
 Element used to subsidize our activity, and still donates upwards of £3M in core development annually, but we are paying our own bills now. While we managed a 400+% increase in revenue to £364K last year, at £440K our expenses exceeded our revenue. As we enter our first full year of paying our own bills, the full cost of operating the Foundation at its current scope is projected to stabilize somewhere north of £900K in 2024. And the more we can raise beyond £900K, the less dependent the ecosystem is on Element.
 

@@ -28,34 +28,41 @@ set up a low bandwidth proxy server which can be put in front of any Matrix home
 Android device to speak MSC3079.
 
 Low bandwidth Matrix currently does not support web browsers due to their inability to send UDP
-traffic. You do _not_ need to be running a homeserver to follow this tutorial.
+traffic. You do *not* need to be running a homeserver to follow this tutorial.
 
 ## Setting up a low bandwidth proxy for your homeserver
 
 Prerequisites:
- - Go 1.13+
- - `openssl` to generate a self-signed DTLS certificate, or an existing certificate you want to use.
- - Linux or Mac user
+
+- Go 1.13+
+- `openssl` to generate a self-signed DTLS certificate, or an existing certificate you want to use.
+- Linux or Mac user
 
 Steps:
+
 - Clone the repo: `git clone https://github.com/matrix-org/lb.git`
 - Build the low bandwidth proxy: `go build ./cmd/proxy`
 - Generate a elliptic curve DTLS key/certificate: (we use curve keys as they are smaller than RSA
   keys, but both work.)
+
   ```bash
   openssl ecparam -name prime256v1 -genkey -noout -out private-key.pem
   openssl req -new -x509 -key private-key.pem -out cert.pem -days 365
   # you now have cert.pem and private-key.pem
   ```
+
 - Run it pointing at matrix.org:
+
   ```bash
   ./proxy -local 'https://matrix-client.matrix.org' \
   --tls-cert cert.pem --tls-key private-key.pem \
   --advertise "http://127.0.0.1:8008" \
   --dtls-bind-addr :8008
   ```
+
 - You should see something like this:
-  ```
+
+  ```txt
   INFO[0000] Listening on :8008/tcp to reverse proxy from http://127.0.0.1:8008 to https://matrix-client.matrix.org - HTTPS enabled: false 
   INFO[0000] Listening for DTLS on :8008 - ACK piggyback period: 5s
   ```
@@ -65,6 +72,7 @@ not LibreSSL which comes by default: `openssl version`. To use OpenSSL, `brew in
 then dumps the binary to `/usr/local/opt/openssl/bin/openssl`.
 
 To test it is working correctly:
+
 ```bash
 # build command line tools we can use to act as a low bandwidth client
 go build ./cmd/jc
@@ -77,19 +85,22 @@ go build ./cmd/coap
 ```
 
 If this doesn't work:
- - Check the proxy logs for errors (e.g bad hostname)
- - Try adding `-v` to `./coap` (e.g bad method or path)
- - Run the proxy with `SSLKEYLOGFILE=ssl.log` and inspect the decrypted traffic using Wireshark.
+
+- Check the proxy logs for errors (e.g bad hostname)
+- Try adding `-v` to `./coap` (e.g bad method or path)
+- Run the proxy with `SSLKEYLOGFILE=ssl.log` and inspect the decrypted traffic using Wireshark.
 
 Otherwise, congratulations! You now have a low bandwidth proxy! You can connect to your proxy just
 like you would to matrix.org or any other homeserver.
 
 ### Security considerations
+
 - The proxy acts as a man in the middle and can read all non-E2EE traffic, including login
   credentials. DO NOT USE UNTRUSTED LOW BANDWIDTH PROXY SERVERS. Only use proxy servers run by
   yourself or the homeserver admins.
 
 ### Further reading
+
 - The `proxy` [README](https://github.com/matrix-org/lb/tree/main/cmd/proxy)
 - `coap` [README](https://github.com/matrix-org/lb/tree/main/cmd/coap) and `jc`
   [README](https://github.com/matrix-org/lb/tree/main/cmd/jc)
@@ -101,48 +112,55 @@ while things are still experimental, here's a guide for how to build Element And
 yourself if you feel the urge.  This can be used as inspiration for other Matrix clients too.
 
 Prerequisites:
- - Android Studio
+
+- Android Studio
 
 Steps:
- - Clone the repo: `git clone https://github.com/vector-im/element-android.git`
- - Checkout `kegan/lb`: `git checkout kegan/lb`. This branch replaces all HTTP traffic going to
+
+- Clone the repo: `git clone https://github.com/vector-im/element-android.git`
+- Checkout `kegan/lb`: `git checkout kegan/lb`. This branch replaces all HTTP traffic going to
    `/_matrix/client/*` with LB traffic. `/_matrix/media` traffic is left untouched. This branch also
    disables TLS checks entirely so self-signed certificates will work.
- - Clone the low bandwidth repo if you haven't already:
+- Clone the low bandwidth repo if you haven't already:
    `git clone https://github.com/matrix-org/lb.git`
- - In the low bandwidth repo, build the mobile bindings:
-   ```
+- In the low bandwidth repo, build the mobile bindings:
+
+   ```bash
    go get golang.org/x/mobile/cmd/gomobile
    cd mobile
    # if gomobile isn't on your path, then ~/go/bin/gomobile
    gomobile bind -target=android
    ```
- - Copy the output files to a directory in the Element Android repo which Gradle will pick up:
-   ```
+
+- Copy the output files to a directory in the Element Android repo which Gradle will pick up:
+
+   ```bash
    mkdir $PATH_TO_ELEMENT_ANDROID_REPO/matrix-sdk-android/libs
    cp mobile-sources.jar $PATH_TO_ELEMENT_ANDROID_REPO/matrix-sdk-android/libs
    cp mobile.aar $PATH_TO_ELEMENT_ANDROID_REPO/matrix-sdk-android/libs
    ```
- - Open the project in Android Studio.
- - Build and run on a device/emulator.
- - Configure the proxy's `--advertise` address. If you are running on a local device, restart the
+
+- Open the project in Android Studio.
+- Build and run on a device/emulator.
+- Configure the proxy's `--advertise` address. If you are running on a local device, restart the
    proxy with an `--advertise` of your machines LAN IP e.g 192.168.1.2 instead of 127.0.0.1.
    If you are running on an emulator, restart the proxy with an `--advertise` of the
    [host IP](https://developer.android.com/studio/run/emulator-networking#networkaddresses):
    10.0.2.2. The URL scheme should be `https` not `http`, else image loading won't work as Element
    Android won't download media over `http`.
- - Login to your matrix.org account via the proxy with the `--advertise` address as the HS URL
+- Login to your matrix.org account via the proxy with the `--advertise` address as the HS URL
    e.g `https://192.168.1.2:8008` or `https://10.0.2.2:8008`. The port is important.
 
 To verify it is running via low bandwidth:
- - Install Wireshark.
- - Restart the proxy with the environment variable `SSLKEYLOGFILE=ssl.log`.
- - Run tcpdump on the right interface e.g: `sudo tcpdump -i en0 -s 0 -v port 8008 -w lb.pcap` 
- - Force stop the android app to forcibly close any existing DTLS connections.
- - Re-open the app.
- - Open `lb.pcap` in Wireshark and set `ssl.log` as the Pre-Master Secret log filename via
+
+- Install Wireshark.
+- Restart the proxy with the environment variable `SSLKEYLOGFILE=ssl.log`.
+- Run tcpdump on the right interface e.g: `sudo tcpdump -i en0 -s 0 -v port 8008 -w lb.pcap`
+- Force stop the android app to forcibly close any existing DTLS connections.
+- Re-open the app.
+- Open `lb.pcap` in Wireshark and set `ssl.log` as the Pre-Master Secret log filename via
    Preferences -> Protocols -> TLS -> Pre-Master Secret log filename.
- - Check there is DTLS/CoAP traffic.
+- Check there is DTLS/CoAP traffic.
 
 ## Performance
 
@@ -155,6 +173,7 @@ and receive the response, including connection setup:
 | CoAP+CBOR | 6 | 1440 |
 
 ## Limitations
+
 - CoAP [OBSERVE](https://datatracker.ietf.org/doc/html/rfc7641) is not enabled by default.
   This extension allows the server to push data to the client so the client doesn't need to
   long-poll. It is not yet enabled because of the risk of state synchronisation issues between the
@@ -171,4 +190,3 @@ and receive the response, including connection setup:
   network with so much data that the sync stream begins to fall behind. Future work will look
   to optimise the sync API.
 - The proxy currently doesn't implement the [low bandwidth response](https://github.com/matrix-org/matrix-doc/blob/kegan/low-bandwidth/proposals/3079-low-bandwidth-csapi.md#versioning) in `/versions`.
-

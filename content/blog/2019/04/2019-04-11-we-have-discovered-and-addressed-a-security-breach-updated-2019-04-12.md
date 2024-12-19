@@ -10,13 +10,13 @@ category = ["General"]
 <b>Update: for the full story here, please see <a href="https://matrix.org/blog/2019/05/08/post-mortem-and-remediations-for-apr-11-security-incident">the post mortem</a>.</b>
 <br/>
 
-## Here's what you need to know.
+## Here's what you need to know
 
 <strong>TL;DR:</strong> An attacker gained access to the servers hosting Matrix.org. The intruder had access to the production databases, potentially giving them access to unencrypted message data, password hashes and access tokens. As a precaution, if you're a matrix.org user you should <strong>change your password now</strong>.
 
 The matrix.org homeserver has been rebuilt and is running securely; bridges and other ancillary services (e.g. this blog) will follow as soon as possible. Modular.im homeservers have not been affected by this outage.
 
-### The security breach is not a Matrix issue.
+### The security breach is not a Matrix issue
 
 The hacker exploited a vulnerability in our production infrastructure (specifically a slightly outdated version of Jenkins). <strong>Homeservers other than matrix.org are unaffected.</strong>
 
@@ -52,9 +52,9 @@ Forensics are ongoing; so far we've found no evidence of large quantities of dat
 
 The target appeared to be internal credentials for onward exploits, not end user information from the matrix.org homeserver.
 
-### You might have lost access to your encrypted messages.
+### You might have lost access to your encrypted messages
 
-As we had to log out all users from matrix.org, if you do not have backups of your encryption keys you will not be able to read your encrypted conversation history.  However, if you use server-side encryption key backup (the default in Riot these days) or take manual key backups, you’ll be okay. 
+As we had to log out all users from matrix.org, if you do not have backups of your encryption keys you will not be able to read your encrypted conversation history.  However, if you use server-side encryption key backup (the default in Riot these days) or take manual key backups, you’ll be okay.
 
 This was a difficult choice to make. We weighed the risk of some users losing access to encrypted messages against that of all users' accounts being vulnerable to hijack via the compromised access tokens. We hope you can see why we made the decision to prioritise account integrity over access to encrypted messages, but we're sorry for the inconvenience this may have caused.
 
@@ -98,7 +98,7 @@ April 11th
 
 ## Update 2019-04-12
 
-At around 5am UTC on Apr 12, the attacker used a cloudflare API key to repoint DNS for matrix.org to a defacement website (https://github.com/matrixnotorg/matrixnotorg.github.io).
+At around 5am UTC on Apr 12, the attacker used a cloudflare API key to repoint DNS for matrix.org to a defacement website (<https://github.com/matrixnotorg/matrixnotorg.github.io>).
 The API key was known compromised in the original attack, and during the rebuild the key was theoretically replaced.  However, unfortunately
 only personal keys were rotated, enabling the defacement.  We are currently doublechecking that all compromised secrets have been rotated.
 
@@ -110,7 +110,7 @@ for everyone to change their password</b>.  We will shortly be messaging and ema
 to change their passwords.  We will also look at ways of non-destructively forcing a password reset at next login.
 
 The attacker has also posted github issues detailing some of their actions and suggested remediations at
-https://github.com/matrix-org/matrix.org/issues/created_by/matrixnotorg.
+<https://github.com/matrix-org/matrix.org/issues/created_by/matrixnotorg>.
 
 This confirms that GPG keys used for signing packages were compromised.  These keys are used for signing
 the synapse debian repository (AD0592FE47F0DF61), and releases of Riot/Web (E019645248E8F4A1).

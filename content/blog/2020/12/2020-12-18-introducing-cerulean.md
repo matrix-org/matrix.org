@@ -22,49 +22,49 @@ It turns out the answer is a firm “yes” - and as a result we’d like to pre
 
 Cerulean is unusual in many ways:
 
-*   It’s (currently) [a very minimal javascript app](https://github.com/matrix-org/cerulean) - only 2,500 lines of code.
-*   It has zero dependencies (other than React).
-    *   This is to show just how simple a fairly sophisticated Matrix client can be...
-    *   ...and so the code can be easily understood by folks unfamiliar with Matrix...
-    *   ...and so we can iterate fast while figuring out threading...
-    *   ...and because none of the SDKs support threading yet :D
-*   It relies on [MSC2836: Threading](https://github.com/matrix-org/matrix-doc/pull/2836) - our highly experimental Matrix Spec Change to extend relationships (as used by reaction & edit aggregations) to support free-form arbitrary depth threading.
-*   As such, **it only works on Dendrite**, as that’s where we’ve been experimenting with implementing MSC2836.  (We’re now running an [official public Dendrite server instance](https://matrix.org/blog/2020/12/15/dendrite-2020-progress-update) at dendrite.matrix.org though, which makes it easy to test - and our test Cerulean instance [https://cerulean.matrix.org](https://cerulean.matrix.org) points at it by default).
+* It’s (currently) [a very minimal javascript app](https://github.com/matrix-org/cerulean) - only 2,500 lines of code.
+* It has zero dependencies (other than React).
+    * This is to show just how simple a fairly sophisticated Matrix client can be...
+    * ...and so the code can be easily understood by folks unfamiliar with Matrix...
+    * ...and so we can iterate fast while figuring out threading...
+    * ...and because none of the SDKs support threading yet :D
+* It relies on [MSC2836: Threading](https://github.com/matrix-org/matrix-doc/pull/2836) - our highly experimental Matrix Spec Change to extend relationships (as used by reaction & edit aggregations) to support free-form arbitrary depth threading.
+* As such, **it only works on Dendrite**, as that’s where we’ve been experimenting with implementing MSC2836.  (We’re now running an [official public Dendrite server instance](https://matrix.org/blog/2020/12/15/dendrite-2020-progress-update) at dendrite.matrix.org though, which makes it easy to test - and our test Cerulean instance [https://cerulean.matrix.org](https://cerulean.matrix.org) points at it by default).
 
-This is **very much a proof of concept.  **We’re releasing it today as a sneak preview so that intrepid Matrix experimenters can play with it, and to open up the project for contributions! (PRs welcome - it should be dead easy to hack on!).  Also, we give no guarantees about data durability: both Cerulean and dendrite.matrix.org are highly experimental; do not trust them yet with important data; we reserve the right to delete it all while we iterate on the design.
+This is **very much a proof of concept.**We’re releasing it today as a sneak preview so that intrepid Matrix experimenters can play with it, and to open up the project for contributions! (PRs welcome - it should be dead easy to hack on!).  Also, we give no guarantees about data durability: both Cerulean and dendrite.matrix.org are highly experimental; do not trust them yet with important data; we reserve the right to delete it all while we iterate on the design.
 
 ### What can it do?
 
 So for the first cut, we’ve implemented the minimal features to make this something you can just about use and play with for real :)
 
-*   Home view (showing recent posts from folks you follow)
-*   Timeline view (showing the recent posts or replies from a given user)
-*   Thread view (showing a post and its replies as a thread)
-*   Live updating (It’s Matrix, after all! We’ve disabled it for guests though.)
-*   Posting plain text and images
-*   Fully decentralised thanks to Matrix (assuming you’re on Dendrite)
-*   Twitter-style “Vertical” threading (replies form a column; you indent when someone forks the conversation)
-*   HN/Reddit/Email-style “Horizontal” threading (each reply is indented; forks have the same indentation)
-*   Basic Registration & Login
-*   Guest support (slightly faked with non-guest users, as Dendrite’s guest support isn’t finished yet)
-*   Super-experimental proof-of-concept support for [decentralised reputation filtering](https://matrix.org/blog/2020/10/19/combating-abuse-in-matrix-without-backdoors)(!) 
+* Home view (showing recent posts from folks you follow)
+* Timeline view (showing the recent posts or replies from a given user)
+* Thread view (showing a post and its replies as a thread)
+* Live updating (It’s Matrix, after all! We’ve disabled it for guests though.)
+* Posting plain text and images
+* Fully decentralised thanks to Matrix (assuming you’re on Dendrite)
+* Twitter-style “Vertical” threading (replies form a column; you indent when someone forks the conversation)
+* HN/Reddit/Email-style “Horizontal” threading (each reply is indented; forks have the same indentation)
+* Basic Registration & Login
+* Guest support (slightly faked with non-guest users, as Dendrite’s guest support isn’t finished yet)
+* Super-experimental proof-of-concept support for [decentralised reputation filtering](https://matrix.org/blog/2020/10/19/combating-abuse-in-matrix-without-backdoors)(!)
 
 Obviously, there’s a huge amount of stuff needed for parity with a proper Twitter-style system:
 
-*   Configurable follows.  Currently the act of viewing someone’s timeline automatically follows them.  This is because Dendrite doesn’t peek over federation yet (but [it’s close](https://github.com/matrix-org/dendrite/pull/1391)), so you have to join a room to view its contents - and the act of viewing someone’s timeline room is how you follow them in Cerulean. 
-*   Likes (i.e. plain old Matrix reactions, although we might need to finally sort out federating them as aggregations rather than individually, if people use them like they use them on Twitter!)
-*   Retweets (dead easy)
-*   Pagination / infinite scrolling (just need to hook it up)
-*   Protect your posts (dead easy; you just switch your timeline room to invite-only!)
-*   Show (some) replies to messages in the Home view
-*   Show parent and sibling context as well as child context in the Thread view
-*   Mentions (we need to decide how to notify folks when they’re mentioned - perhaps Matrix’s push notifications should be extended to let you subscribe to keywords for public rooms you’re not actually in?)
-*   Notifications (although this is just because Dendrite doesn’t do notifs yet)
-*   Search (again, just needs to be implemented in Dendrite - although how do you search beyond the data in your current homeserver? Folks are used to global search)
-*   Hashtags (it’s just search, basically)
-*   Symlinks (see below)
-*   Figure out how to handle lost unthreaded messages (see below)
-*   Offline support? (if we were using a proper Matrix SDK, we’d hopefully get this for free, but currently Cerulean doesn’t store any state locally at all).
+* Configurable follows.  Currently the act of viewing someone’s timeline automatically follows them.  This is because Dendrite doesn’t peek over federation yet (but [it’s close](https://github.com/matrix-org/dendrite/pull/1391)), so you have to join a room to view its contents - and the act of viewing someone’s timeline room is how you follow them in Cerulean.
+* Likes (i.e. plain old Matrix reactions, although we might need to finally sort out federating them as aggregations rather than individually, if people use them like they use them on Twitter!)
+* Retweets (dead easy)
+* Pagination / infinite scrolling (just need to hook it up)
+* Protect your posts (dead easy; you just switch your timeline room to invite-only!)
+* Show (some) replies to messages in the Home view
+* Show parent and sibling context as well as child context in the Thread view
+* Mentions (we need to decide how to notify folks when they’re mentioned - perhaps Matrix’s push notifications should be extended to let you subscribe to keywords for public rooms you’re not actually in?)
+* Notifications (although this is just because Dendrite doesn’t do notifs yet)
+* Search (again, just needs to be implemented in Dendrite - although how do you search beyond the data in your current homeserver? Folks are used to global search)
+* Hashtags (it’s just search, basically)
+* Symlinks (see below)
+* Figure out how to handle lost unthreaded messages (see below)
+* Offline support? (if we were using a proper Matrix SDK, we’d hopefully get this for free, but currently Cerulean doesn’t store any state locally at all).
 
 ### How does it work?
 

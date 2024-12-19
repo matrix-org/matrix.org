@@ -24,20 +24,17 @@ We will likely do a _Matrix Live Live_, live streamed from the hackerspace The f
 
 A warm thank you to [Nordeck](https://nordeck.net/), [FUTO](https://futo.org/) and [Famedly](https://www.famedly.com/) who are sponsoring this event, allowing us to offer free drinks and pizzas to the audience! Massive thanks to the HSBXL gang, and to Kim and Yan who coordinated the organisation of the fringe event!
 
-
 ## Booth at FOSDEM
 
 We were granted a booth for Saturday 3 & Sunday 4 at FOSDEM, covering the whole conference. With a dozen volunteers on a stand from several organisations working on the Matrix ecosystem, we are more than ready to welcome you for a chat, to show you what cool things Matrix can do, or to help you around with Matrix. Come by our stand for a nice talk, or to buy some merch!
 
 You will be able to meet us, learn more about Matrix, or even talk about your projects with us in building K, level 2. The full list of stands is [published on FOSDEM’s website](https://fosdem.org/2024/stands/).
 
-
 ## Devroom at FOSDEM
 
 Finally, in addition to the BarCamp and the booth, we have a devroom on Sunday 4 afternoon, starting at 13:00 CET. State of Matrix, Matrix as a potential answer to Digital Market Act, widgets, moving communities, and more: we have a full schedule covering all the hot Matrix topics!
 
 You can find the [full schedule of the Matrix devroom on FOSDEM’s website](https://fosdem.org/2024/schedule/track/matrix/), and you can add it to your calendar automatically [with this ics](https://fosdem.org/2024/schedule/track/matrix.ics).
-
 
 ## Main track talk
 

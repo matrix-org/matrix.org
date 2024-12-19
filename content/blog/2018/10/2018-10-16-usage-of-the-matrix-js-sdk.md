@@ -19,12 +19,12 @@ Let's explore how we would make a very simple Matrix client, with only the abili
 
 This article will explore the <a href="/docs/spec/client_server/latest.html">Matrix Client-Server API</a>, making use of the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a>. Later articles may discuss making the underlying calls. Specifically we will cover:
 <ul>
- 	<li>login</li>
- 	<li>simple syncing</li>
- 	<li>listening for timeline events</li>
- 	<li>access the `MatrixInMemoryStore`</li>
- 	<li>sending messages to rooms</li>
- 	<li>how to respond to specific messages, as a bot would</li>
+  <li>login</li>
+  <li>simple syncing</li>
+  <li>listening for timeline events</li>
+  <li>access the `MatrixInMemoryStore`</li>
+  <li>sending messages to rooms</li>
+  <li>how to respond to specific messages, as a bot would</li>
 </ul>
 We'll use Node.js as our environment, though the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a> can also be used directly in the browser.
 

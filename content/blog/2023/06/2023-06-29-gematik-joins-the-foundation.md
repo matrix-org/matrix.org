@@ -19,7 +19,6 @@ We are now delighted to let the world know that they are doubling down on
 sovereignty and sustainability: gematik is the first organisation of the public
 sector to join the Matrix.org Foundation as a Silver member.
 
-
 ## Collaboration in the public sector
 
 Our friends at the [FSFE](https://fsfe.org) have been calling for software used
@@ -45,7 +44,6 @@ stack it builds TI-Messenger on. By supporting the Matrix.org Foundation,
 gematik contributes to the sustainability of the protocol powering the
 communications of the German healthcare system… but not exclusively.
 
-
 ## Sharing costs across public services, and with the private sector
 
 Matrix is an open standard, which means not only everyone can use it: when
@@ -67,7 +65,6 @@ well.**
 The Foundation plays a critical technical _and social_ role in this system: it
 centralises and curates contributions to the protocol so it remains unbiased,
 coherent, and efficient.
-
 
 ## This is just a beginning
 

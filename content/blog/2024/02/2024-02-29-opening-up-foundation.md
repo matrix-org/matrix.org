@@ -25,7 +25,6 @@ It is also meant to be a place where all the members can discuss topics that nee
 
 The Governing Board will help set the direction of the Foundation, so it can deliver on what matters the most to the ecosystem. For all the details on the Governing Board and its mission, please head to [Josh's excellent blog post](https://matrix.org/blog/2023/12/electing-our-first-governing-board). If you have an opinion on the direction the Foundation should follow, consider [becoming a member](https://matrix.org/membership/) and running for the board!
 
-
 ## More room for the community
 
 Joining the Governing Board is not the only way to contribute to the Matrix ecosystem. The Foundation hosts numerous projects, and directly contributes to some of them. But there are no guidelines regarding how a project becomes hosted or managed by the Foundation, nor any guidelines on who can gain or lose access to a repository.
@@ -36,7 +35,7 @@ We don't want to define processes _a priori_ and force them onto the project, cr
 
 We are starting with a couple of experiments: community member [MTRNord](https://mtrnord.blog/) and myself [Thib](https://ergaster.org) have [launched the Matrix.org Website Office Hours](https://matrix.org/blog/2024/02/website-office-hours/) to onboard everyone who wants to contribute to the website. Web development is a rather widespread skill, and it should be a good testbed to gauge our ability to onboard a diverse group of contributors. You should join us!
 
-A second initiative will be launched on a topic our community is full of energy and ideas about: a Trust & Safety working group, steered by myself. The working group will be tightly scoped to a single problem area, and tasked to come up with a single deliverable. We will spin up new working groups to tackle new problems. We will share the details of the first T&S working group in early April on this blog. You can [subscribe to our RSS feed](https://matrix.org/atom.xml) or follow us on our socials to stay tuned. 
+A second initiative will be launched on a topic our community is full of energy and ideas about: a Trust & Safety working group, steered by myself. The working group will be tightly scoped to a single problem area, and tasked to come up with a single deliverable. We will spin up new working groups to tackle new problems. We will share the details of the first T&S working group in early April on this blog. You can [subscribe to our RSS feed](https://matrix.org/atom.xml) or follow us on our socials to stay tuned.
 
 This experiment will establish a framework for collaborations on other important topics. This will help us make the Matrix ecosystem one that all individuals and organisations are able to contribute to.
 

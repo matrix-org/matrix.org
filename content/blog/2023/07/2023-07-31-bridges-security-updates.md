@@ -16,13 +16,13 @@ Today we are announcing security updates for several of our bridges.
 
 In addition we have released matrix-appservice-bridge [9.0.1](https://github.com/matrix-org/matrix-appservice-bridge/releases/tag/9.0.1) (and backported to [8.1.2](https://github.com/matrix-org/matrix-appservice-bridge/releases/tag/8.1.2)) which patches GHSA-vc7j-h8xg-fv5x.
 
-All mentioned bridges are affected by a vulnerability in the provisioning interfaces of these bridges. If you are unable to upgrade, please disable provisioning for now (which should be documented in the relevant bridge sample config). 
+All mentioned bridges are affected by a vulnerability in the provisioning interfaces of these bridges. If you are unable to upgrade, please disable provisioning for now (which should be documented in the relevant bridge sample config).
 
 <!-- more -->
 
 * [IRC bridge config](https://github.com/matrix-org/matrix-appservice-irc/blob/develop/config.sample.yaml#L520-L522)
     * Set `provisioning.enabled` to false.
-* [Slack bridge config](https://github.com/matrix-org/matrix-appservice-slack/blob/a9f555308fb7485ebb1df98e6c327808915f816f/config/config.sample.yaml#L163) 
+* [Slack bridge config](https://github.com/matrix-org/matrix-appservice-slack/blob/a9f555308fb7485ebb1df98e6c327808915f816f/config/config.sample.yaml#L163)
     * Set `provisioning.enabled` to false.
 * [Hookshot config](https://github.com/matrix-org/matrix-hookshot/blob/main/config.sample.yml#L192)
     * Remove the `widgets` resource (NOT provisioning)

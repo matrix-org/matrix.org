@@ -17,16 +17,12 @@ As ever, you can get the new update [here](https://github.com/matrix-org/synapse
 
 The changelog since 1.3.0 follows:
 
-Synapse 1.3.1 (2019-08-17)
-==========================
+## Synapse 1.3.1 (2019-08-17)
 
-Features
---------
+### Features
 
 - Drop hard dependency on `sdnotify` python package. ([\#5871](https://github.com/matrix-org/synapse/issues/5871))
 
-
-Bugfixes
---------
+### Bugfixes
 
 - Fix startup issue (hang on ACME provisioning) due to ordering of Twisted reactor startup. Thanks to @chrismoos for supplying the fix. ([\#5867](https://github.com/matrix-org/synapse/issues/5867))

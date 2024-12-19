@@ -32,17 +32,15 @@ Needless to say, Matrix is _extremely popular_ in OSS communities. Most people k
 
 We brought a box of 100 t-shirts and several thousands of stickers with us this year. Some t-shirt sizes were sold out on the first day, and by the end of the weekend we had sold everything. Lesson learnt: bring much more next year!
 
-
 ## A main track talk selected for the highlights
 
 Matrix is well on its way to become the one ubiquitous protocol that will finally open up the communication silos. During the past year, a lot has been going on. As a testament to Matrix maturity, the majority of our work was around polishing the rough edges and stabilising the protocol, rather than launching plenty of new features.
 
 In [his main track talk](https://fosdem.org/2024/schedule/event/fosdem-2024-3345-opening-up-communication-silos-with-matrix-2-0-and-the-eu-digital-markets-act/), Matthew covered the past year in Matrix, our implication in the Digital Markets Act (DMA), and how Matrix could possibly be part of the solution for WhatsApp to become interoperable and compliant with the regulation.
 
-{{ youtube_player(video_id="s5BrVVf0B1I") }} 
+{{ youtube_player(video_id="s5BrVVf0B1I") }}
 
 Both [Wired](https://www.wired.com/story/whatsapp-interoperability-messaging/) and [TechCrunch](https://techcrunch.com/2024/02/07/whatsapp-is-preparing-to-roll-out-third-party-chat-support/) picked up the news that Element has been experimenting with DMA interoperability with WhatsApp via Matrix.
-
 
 ## A packed devroom
 
@@ -59,7 +57,6 @@ The online side of the conference went very smoothly. It is a testament to the h
 Unsurprisingly, with roughly 7,980 signups online and 4,000 daily active users the online attendance is very far from the levels we have seen at the peak of the pandemic when FOSDEM couldn’t happen in person (plus we collectively forgot to publish the FOSDEM space URL anywhere!). Most people who wanted to attend FOSDEM were there in person, but we were here for people who couldn’t make it for whatever reason.
 
 More surprisingly, I spotted a certain number of people sitting down in the hallways on their phones and laptops, in the middle of one of the largest European open source conferences. They were not catching a break from the conference: they were _attending_ the conference online, even if they were on-site! With more than 10k visitors, some attendees couldn’t make it to the devrooms they wanted to attend… so they attended online. We even caught Amandine tuning into the EU Public Policy devroom from the Matrix devroom!
-
 
 ## You’re making this possible
 

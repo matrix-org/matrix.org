@@ -119,7 +119,6 @@ CSAE content and ends with authoritarian surveillance
 infrastructure](https://twitter.com/matthew_d_green/status/1392823038920564736).
 It is our duty to put a stop to this before it even begins.
 
-
 <small style="display: block; text-align: right">
 Twitter card image credit from <a href="https://film-grab.com/2010/10/04/brazil/#bwg644/39614">Brazil</a>, which feels all too familiar right now.
 </small>

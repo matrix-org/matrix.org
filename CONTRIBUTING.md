@@ -8,11 +8,20 @@ This is the repository for the matrix.org website.
 
 We ask that everybody who contributes to this project signs off their contributions, as explained below.
 
-We follow a simple 'inbound=outbound' model for contributions: the act of submitting an 'inbound' contribution means that the contributor agrees to license their contribution under the same terms as the project's overall 'outbound' license - in our case, this is Apache Software License v2 (see [LICENSE-Apache-2.0](./LICENSE-Apache-2.0)) for code and Creative Commons Attribution-ShareAlike 4.0 International (see [LICENSE-CC-BY-SA](./LICENSE-CC-BY-SA)) for other things, including text and graphics.
+We follow a simple 'inbound=outbound' model for contributions: the act of submitting an 'inbound' contribution means
+that the contributor agrees to license their contribution under the same terms as the project's overall
+'outbound' license - in our case, this is Apache Software License v2 (see [LICENSE-Apache-2.0](./LICENSE-Apache-2.0))
+for code and Creative Commons Attribution-ShareAlike 4.0 International (see [LICENSE-CC-BY-SA](./LICENSE-CC-BY-SA))
+for other things, including text and graphics.
 
-In order to have a concrete record that your contribution is intentional and you agree to license it under the same terms as the project's license, we've adopted the same lightweight approach used by the [Linux Kernel](https://www.kernel.org/doc/html/latest/process/submitting-patches.html), [Docker](https://github.com/docker/docker/blob/master/CONTRIBUTING.md), and many other projects: the [Developer Certificate of Origin](https://developercertificate.org/) (DCO). This is a simple declaration that you wrote the contribution or otherwise have the right to contribute it to Matrix:
+In order to have a concrete record that your contribution is intentional and you agree to license it under the same terms
+as the project's license, we've adopted the same lightweight approach used by the
+[Linux Kernel](https://www.kernel.org/doc/html/latest/process/submitting-patches.html),
+[Docker](https://github.com/docker/docker/blob/master/CONTRIBUTING.md), and many other projects:
+the [Developer Certificate of Origin](https://developercertificate.org/) (DCO).
+This is a simple declaration that you wrote the contribution or otherwise have the right to contribute it to Matrix:
 
-```
+```txt
 Developer Certificate of Origin
 Version 1.1
 
@@ -50,10 +59,12 @@ By making a contribution to this project, I certify that:
     this project or the open source license(s) involved.
 ```
 
-If you agree to this for your contribution, then all that's needed is to include the line in your commit or pull request comment:
+If you agree to this for your contribution, then all that's needed is to
+include the line in your commit or pull request comment:
 
-```
+```txt
 Signed-off-by: Your Name <your@email.example.org>
 ```
 
-Git allows you to add this signoff automatically when using the `-s` flag to `git commit`, which uses the name and email set in your `user.name` and `user.email` git configs.
+Git allows you to add this signoff automatically when using the `-s` flag to `git commit`, which uses the name and email
+set in your `user.name` and `user.email` git configs.

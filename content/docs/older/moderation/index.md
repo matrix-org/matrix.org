@@ -116,10 +116,8 @@ without changing any of the settings, you might set them to a negative power
 level, so they didn’t even meet the “Send messages” threshold of 0.
 
 For the full spec of power levels, please see:
-[https://matrix.org/docs/spec/client_server/latest.html#m-room-power-levels
-](https://matrix.org/docs/spec/client_server/latest.html#m-room-power-levels).
-If you’re wondering where the term comes from, you should [watch more anime
-](https://knowyourmeme.com/memes/power-level)...
+[https://matrix.org/docs/spec/client_server/latest.html#m-room-power-levels](https://matrix.org/docs/spec/client_server/latest.html#m-room-power-levels).
+If you’re wondering where the term comes from, you should [watch more anime](https://knowyourmeme.com/memes/power-level)...
 
 ### Kicking and banning users
 
@@ -223,8 +221,7 @@ a bad merge conflict resolution - a so-called
 2 onwards and room state should no longer diverge. However, many old rooms
 still use the original buggy v1 algorithm. It is possible to upgrade the room
 version in Element via the undocumented `/upgraderoom 6` command - but please
-note there are several[UX bugs
-](https://github.com/vector-im/element-web/labels/A-Room-Upgrades) which make
+note there are several[UX bugs](https://github.com/vector-im/element-web/labels/A-Room-Upgrades) which make
 this process a bit rough sometimes.
 
 ### Bridged rooms
@@ -260,7 +257,8 @@ semantics were required.
 ### Outstanding issues
 
 * Support for bulk redactions (looping over individual redactions is a viable workaround however)
-* Ability for room moderators to delete content from the media repository when redacting the event which refers to it. (this can be improved in future)
+* Ability for room moderators to delete content from the media repository when redacting the event which refers to it.
+  (this can be improved in future)
 * UI for setting server ACLs ([https://github.com/vector-im/Element-web/issues/7084](https://github.com/vector-im/Element-web/issues/7084))
 
 ### Moderation tooling
@@ -312,7 +310,7 @@ Deactivating users is done by calling the /deactivate API - see
 <https://github.com/matrix-org/synapse/blob/master/docs/admin_api/user_admin_api.rst#deactivate-account>
 for details. An example is:
 
-```
+```bash
 curl -X POST -H "Authorization: Bearer $token" "https://matrix.org/_synapse/admin/v1/deactivate/$user" --data '{}'
 ```
 
@@ -325,11 +323,13 @@ have the admin permissions to do so.
 
 Removing abusive rooms is done by calling the /shutdown_room API, e.g:
 
-```
+<!-- markdownlint-disable line-length -->
+```bash
 curl 'https://matrix.org/_synapse/admin/v1/shutdown_room/!roomid:matrix.org' \
 -H "Authorization: Bearer $token" -XPOST \
 -d'{"new_room_user_id": "@abuse:matrix.org", "message": "This room has been removed from the matrix.org homeserver due to violating the terms of use.", "room_name": "Room unavailable"}'
 ```
+<!-- markdownlint-enable line-length -->
 
 This removes all local users from the room, routing them into a new room
 (called ‘Room unavailable’ in this example), repoints any local aliases to the
@@ -341,7 +341,7 @@ through, and allow your users to reject the invite they had prior.
 Removing abusive content en masse from a room is done by calling
 the /admin/quarantine_media API, e.g.
 
-```
+```bash
 curl 'https://matrix.org/_synapse/admin/v1/quarantine_media/!room_id:matrix.org' -H "Authorization: Bearer $token" -XPOST
 ```
 
@@ -358,7 +358,8 @@ servers based on IP to handle abuse.
 Synapse exposes the history of a given user’s IP to the server admin via
 the /admin/whois API, for instance:
 
-```
+<!-- markdownlint-disable line-length -->
+```bash
 curl 'https://matrix.org/_synapse/admin/v1/whois/@test:matrix.org' -H "Authorization: Bearer $token" | jq .
 {
   "user_id": "@test:matrix.org",
@@ -380,6 +381,7 @@ curl 'https://matrix.org/_synapse/admin/v1/whois/@test:matrix.org' -H "Authoriza
   }
 }
 ```
+<!-- markdownlint-enable line-length -->
 
 See
 [https://github.com/matrix-org/synapse/blob/master/docs/admin_api/user_admin_api.rst#query-account](https://github.com/matrix-org/synapse/blob/master/docs/admin_api/user_admin_api.rst#query-account)
@@ -393,8 +395,7 @@ connection as early as possible.
 
 Synapse supports a module-like system which can be used to block servers from
 doing certain actions, such as sending invites to your users.
-[t2bot/synapse-simple-antispam
-](https://github.com/t2bot/synapse-simple-antispam) is one example of how this
+[t2bot/synapse-simple-antispam](https://github.com/t2bot/synapse-simple-antispam) is one example of how this
 works - see the code for a bit more information on what is possible. Although
 this won't prevent servers from interacting with your server, it can help with
 reducing the amount of spam/malicious content.
@@ -444,6 +445,7 @@ Directory view as an easter egg for server administrators - shift-clicking on
 the entry in the Room Directory will call the above API to remove the alias and
 the room from the directory.
 
+<!-- markdownlint-disable-next-line no-duplicate-heading -->
 ### Outstanding issues
 
 * In addition to the existing admin API, it would be good to have a server admin
@@ -570,11 +572,11 @@ rules to messaging providers - meaning that servers running in affected
 territories may be legally obligated to provide their users with content
 filtering tools of this nature.
 
-See [#matrix-reputation:matrix.org
-](https://matrix.to/#/#matrix-reputation:matrix.org) and
+See [#matrix-reputation:matrix.org](https://matrix.to/#/#matrix-reputation:matrix.org) and
 [https://docs.google.com/document/d/1rijGLs9-RJ9Mz2Yk5wWycMbErrCDK1VJkACdUPMN0-M/](https://docs.google.com/document/d/1rijGLs9-RJ9Mz2Yk5wWycMbErrCDK1VJkACdUPMN0-M/)
 for more details on this.
 
+<!-- markdownlint-disable-next-line no-duplicate-heading -->
 ### Outstanding issues
 
 * Ability for users to apply their own personal filters to content in Matrix
@@ -588,6 +590,5 @@ further refinements in future as detailed in the ‘outstanding issues’ sectio
 above (as of April 2019). As the Matrix.org team, In practice we use the
 features above to relatively successfully admin one of the largest servers on
 the network (matrix.org itself, with ~70K concurrent users), and to moderate
-one of the larger communities on the network ([+matrix:matrix.org
-](https://matrix.to/#/+matrix:matrix.org); ~30 rooms with over 10K users
-present).
+one of the larger communities on the network ([+matrix:matrix.org](https://matrix.to/#/+matrix:matrix.org);
+~30 rooms with over 10K users present).

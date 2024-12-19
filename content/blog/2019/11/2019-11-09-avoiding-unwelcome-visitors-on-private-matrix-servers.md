@@ -21,7 +21,7 @@ server is federated with the public Matrix network).
 In Synapse, this means ensuring that the following options are set correctly in
 your `homeserver.yaml`:
 
-```
+```yaml
 # If set to 'false', requires authentication to access the server's public rooms
 # directory through the client API. Defaults to 'true'.
 #
@@ -39,7 +39,7 @@ general internet and wider Matrix network.
 
 You can test whether your room directory is visible to arbitrary Matrix clients
 on the general internet by viewing a URL like
-https://sandbox.modular.im/_matrix/client/r0/publicRooms (but for your server). 
+<https://sandbox.modular.im/_matrix/client/r0/publicRooms> (but for your server).
 If it gives a "Missing access token" error, you are okay.
 
 You can test whether your room directory is visible to arbitrary Matrix servers
@@ -54,7 +54,9 @@ members of the public peeking into them (let alone joining them).
 
 Relying on security-by-obscurity is a very bad idea: all it takes is for someone
 to scan the whole internet for Matrix servers, and then trying to join (say)
-#finance on each discovered domain (either by signing up on that
+
+## finance on each discovered domain (either by signing up on that
+
 server or by trying to join over federation) to cause problems.
 
 Finally, if you don't want the general public reading your room directory,
@@ -69,6 +71,4 @@ directories with finer grained access control, etc) - but until this is sorted,
 please heed this advice.
 
 If you have concerns about randoms having managed to discover or join rooms
-which should have been private, please contact security@matrix.org.
-
-
+which should have been private, please contact <security@matrix.org>.

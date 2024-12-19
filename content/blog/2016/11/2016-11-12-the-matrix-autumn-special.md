@@ -17,11 +17,11 @@ You can tell when it's finished based on whether it's stopped logging about the 
 
 Other big changes in Synapse 0.18 were:
 <ul>
- 	<li>Adding the final APIs required to support end-to-end encryption: specifically, a new store-and-forward API called "to device messaging", which lets messages be passed between specific devices outside the context of a room or a room DAG. This is used for exchanging authentication tokens and sensitive end-to-end key data between devices (e.g. when a new device joins a room and needs to be looped in) and is not intended for general messaging.</li>
- 	<li>Changing how remote directory servers are queried. Rather than constantly spidering them via the secondary_directory_servers option (which was causing a load crisis on the matrix.org server, as everyone else in Matrix kept polling it for directory updates), clients can now set a 'server' parameter on the publicRooms request to ask their server to proxy the request through to a specific remote server. Element (the app formally known as Riot/Web) implements this already. This is a stopgap until we have a proper global room discovery database of some kind.</li>
- 	<li>Adding pagination support to the room directory API. We now have enough rooms in Matrix that downloading the full list every time the user searches for a room was getting completely untenable - we now support paginating and searching the list. Riot (now Element) and Riot-Android (now Element Android) are using the new APIs already.</li>
- 	<li>Basic support for 'direct room' semantics. When you create a room you can now state the intent for that room to be a 1:1 with someone via the is_direct parameter.</li>
- 	<li>Making the /notifications API work - this lets clients download a full list of all the notifications a user has been recently sent (highlights, mentions etc)</li>
+  <li>Adding the final APIs required to support end-to-end encryption: specifically, a new store-and-forward API called "to device messaging", which lets messages be passed between specific devices outside the context of a room or a room DAG. This is used for exchanging authentication tokens and sensitive end-to-end key data between devices (e.g. when a new device joins a room and needs to be looped in) and is not intended for general messaging.</li>
+  <li>Changing how remote directory servers are queried. Rather than constantly spidering them via the secondary_directory_servers option (which was causing a load crisis on the matrix.org server, as everyone else in Matrix kept polling it for directory updates), clients can now set a 'server' parameter on the publicRooms request to ask their server to proxy the request through to a specific remote server. Element (the app formally known as Riot/Web) implements this already. This is a stopgap until we have a proper global room discovery database of some kind.</li>
+  <li>Adding pagination support to the room directory API. We now have enough rooms in Matrix that downloading the full list every time the user searches for a room was getting completely untenable - we now support paginating and searching the list. Riot (now Element) and Riot-Android (now Element Android) are using the new APIs already.</li>
+  <li>Basic support for 'direct room' semantics. When you create a room you can now state the intent for that room to be a 1:1 with someone via the is_direct parameter.</li>
+  <li>Making the /notifications API work - this lets clients download a full list of all the notifications a user has been recently sent (highlights, mentions etc)</li>
 </ul>
 Spec for all of these new APIs are currently making their way into the official matrix spec; you can see the work in progress at <a href="/speculator">https://matrix.org/speculator</a>. Meanwhile, we're waiting for the last bits of the end-to-end encryption APIs to land there before releasing 0.3 of the Matrix spec, which should happen any day now.
 
@@ -41,25 +41,25 @@ Meanwhile, the biggest news in Matrixland has probably been the renaming of Vect
 
 Riot (now Element) itself is a fairly thin layer on top of the official client Matrix SDKs, and so 95% of the work for Riot (now Element) took the form of updates to <a href="https://github.com/matrix-org/matrix-js-sdk">matrix-js-sdk</a>, <a href="https://github.com/matrix-org/matrix-react-sdk">matrix-react-sdk</a>, <a href="https://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a>, <a href="https://github.com/matrix-org/matrix-ios-kit">matrix-ios-kit</a>, <a href="https://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a> and <a href="https://github.com/matrix-org/synapse">synapse</a> itself. There's been a tonne of changes here since June, but the main highlights are:
 <ul>
- 	<li>End-to-end encryption support landed in matrix-js-sdk and matrix-react-sdk (and thus Riot/Web (now Element)) and in dev on matrix-ios-sdk and matrix-android-sdk using the Olm and Megolm ratchets. More about this later.</li>
- 	<li>Hosted integrations, bots and bridges! More about this later too.</li>
- 	<li>Direct Message UI landed in Riot/Web (now Element) to tag rooms which exist for contacting a specific user. These get grouped now as the 'People' list in Riot (now Element). It's in dev on Riot/iOS (now Element (iOS)) & Android (now Element Android).</li>
- 	<li>Entirely new UI for starting conversations with people - no more creating a room and then inviting; you just say "i want to talk with Bob".</li>
- 	<li>Entirely new UI for inviting people into a room - no more confusion between searching the membership list and inviting users.</li>
- 	<li>FilePanel UI in Riot/Web (now Element) to instantly view all the attachments posted in a room</li>
- 	<li>NotificationPanel UI in Riot/Web (now Element) to instantly view all your missed notifications and mentions in a single place</li>
- 	<li>"Volume control" UI to have finer grained control over per-room notification noisiness</li>
- 	<li>Entirely re-worked Room Directory navigator - lazy-loading the directory from the server, and selecting rooms via bridge and remote server</li>
- 	<li>It's very exciting to see a wider audience discovering Matrix through Riot (now Element) - and Riot (now Element)'s usage stats have been growing steadily since launch, but there's still a lot of room for improvement.</li>
+  <li>End-to-end encryption support landed in matrix-js-sdk and matrix-react-sdk (and thus Riot/Web (now Element)) and in dev on matrix-ios-sdk and matrix-android-sdk using the Olm and Megolm ratchets. More about this later.</li>
+  <li>Hosted integrations, bots and bridges! More about this later too.</li>
+  <li>Direct Message UI landed in Riot/Web (now Element) to tag rooms which exist for contacting a specific user. These get grouped now as the 'People' list in Riot (now Element). It's in dev on Riot/iOS (now Element (iOS)) & Android (now Element Android).</li>
+  <li>Entirely new UI for starting conversations with people - no more creating a room and then inviting; you just say "i want to talk with Bob".</li>
+  <li>Entirely new UI for inviting people into a room - no more confusion between searching the membership list and inviting users.</li>
+  <li>FilePanel UI in Riot/Web (now Element) to instantly view all the attachments posted in a room</li>
+  <li>NotificationPanel UI in Riot/Web (now Element) to instantly view all your missed notifications and mentions in a single place</li>
+  <li>"Volume control" UI to have finer grained control over per-room notification noisiness</li>
+  <li>Entirely re-worked Room Directory navigator - lazy-loading the directory from the server, and selecting rooms via bridge and remote server</li>
+  <li>It's very exciting to see a wider audience discovering Matrix through Riot (now Element) - and Riot (now Element)'s usage stats have been growing steadily since launch, but there's still a lot of room for improvement.</li>
 </ul>
 Stuff on the horizon includes:
 <ul>
- 	<li>Formal beta-testing the full end-to-end encryption feature-set.</li>
- 	<li>Performance and optimisation work on all platforms - there are huge improvements to be had.</li>
- 	<li>Long-awaited poweruser features: 'dark' colour scheme; more whitespace-efficient layout; collapsing consecutive joins/parts...</li>
- 	<li>"Landing page" to help explain what's going on to new users and to show deployment-specific announcements and room lists.</li>
- 	<li>Support for arbitrary profile information.</li>
- 	<li>Threading.</li>
+  <li>Formal beta-testing the full end-to-end encryption feature-set.</li>
+  <li>Performance and optimisation work on all platforms - there are huge improvements to be had.</li>
+  <li>Long-awaited poweruser features: 'dark' colour scheme; more whitespace-efficient layout; collapsing consecutive joins/parts...</li>
+  <li>"Landing page" to help explain what's going on to new users and to show deployment-specific announcements and room lists.</li>
+  <li>Support for arbitrary profile information.</li>
+  <li>Threading.</li>
 </ul>
 Riot (now Element) releases are announced on <a href="https://matrix.to/#/#riot:matrix.org">#riot:matrix.org</a>, the <a href="https://medium.com/@RiotChat">Riot blog</a> and <a href="http://twitter.com/@RiotChat">Twitter</a> - keep your eyes peeled for updates!
 
@@ -95,23 +95,23 @@ You can read the full changelogs for 0.5.0 and 0.6.0 at <a href="https://github.
 
 matrix-appservice-irc 0.6.0
 <ul>
- 	<li>Debouncing quits and netsplits: if IRC users quit there can be a window where they are shown as just offline rather than leaving the room, avoiding join/part spam and creating unnecessary state events in Matrix.</li>
- 	<li>Topic bridging: IRC topics can now be bridged to Matrix!</li>
- 	<li>Support custom SSL CAs (thanks to @Waldteufel)</li>
- 	<li>Support custom media repository URLs</li>
- 	<li>Support the ability to quit your IRC user from the network entirely</li>
- 	<li>Fix rate limiting for traffic from privileged IRC users and services</li>
+  <li>Debouncing quits and netsplits: if IRC users quit there can be a window where they are shown as just offline rather than leaving the room, avoiding join/part spam and creating unnecessary state events in Matrix.</li>
+  <li>Topic bridging: IRC topics can now be bridged to Matrix!</li>
+  <li>Support custom SSL CAs (thanks to @Waldteufel)</li>
+  <li>Support custom media repository URLs</li>
+  <li>Support the ability to quit your IRC user from the network entirely</li>
+  <li>Fix rate limiting for traffic from privileged IRC users and services</li>
 </ul>
 matrix-appservice-irc 0.5.0:
 <ul>
- 	<li>Support throttling reconnections to IRC servers to avoid triggering abuse thresholds</li>
- 	<li>Support "Third party lookup": mapping from IRC users & rooms into Matrix IDs for discovery purposes</li>
- 	<li>Support rate-limiting membership entries to avoid triggering abuse thresholds</li>
- 	<li>Require permission of an IRC chanop when plumbing an IRC channel into a Matrix room</li>
- 	<li>Prevent routing loops by advisory m.room.bridging events</li>
- 	<li>Better error messages</li>
- 	<li>Sync chanmode +s correctly</li>
- 	<li>Fix IPv6 support</li>
+  <li>Support throttling reconnections to IRC servers to avoid triggering abuse thresholds</li>
+  <li>Support "Third party lookup": mapping from IRC users & rooms into Matrix IDs for discovery purposes</li>
+  <li>Support rate-limiting membership entries to avoid triggering abuse thresholds</li>
+  <li>Require permission of an IRC chanop when plumbing an IRC channel into a Matrix room</li>
+  <li>Prevent routing loops by advisory m.room.bridging events</li>
+  <li>Better error messages</li>
+  <li>Sync chanmode +s correctly</li>
+  <li>Fix IPv6 support</li>
 </ul>
 Next up is automating NickServ login, and generally continuing to make the IRC experience as good as we possibly can.
 
@@ -119,10 +119,10 @@ Next up is automating NickServ login, and generally continuing to make the IRC e
 
 Similarly, the Slack bridge has had loads of work. The main changes include:
 <ul>
- 	<li>Ability to dynamically bridge ("plumb") rooms on request</li>
- 	<li>Add Prometheus monitoring metrics</li>
- 	<li>Ability to discover slack team tokens via OAuth2</li>
- 	<li>Sync avatars both ways</li>
+  <li>Ability to dynamically bridge ("plumb") rooms on request</li>
+  <li>Add Prometheus monitoring metrics</li>
+  <li>Ability to discover slack team tokens via OAuth2</li>
+  <li>Sync avatars both ways</li>
 </ul>
 We're currently looking at shifting over to Slack's RTM (Real Time Messaging) API rather than using webhooks in order to get an even better fit with Slack and support bridging DMs, but the current setup is still very usable. For more details: <a href="https://github.com/matrix-org/matrix-appservice-slack">https://github.com/matrix-org/matrix-appservice-slack</a>.
 
@@ -233,15 +233,15 @@ The same weekend also featured TADHack Global - we were present at the London si
 
 Meanwhile, coming up on the horizon we have TADSummit in Lisbon next week, where we'll be giving an update on Matrix to the global Telco Application Developer community, and then the week after we'll be in Israel as part of the Geektime Techfest, Devfest and Chatbot Summit. So if you're in Lisbon or Tel Aviv do give us a ping on Matrix and come hang out!
 
-### Matrixing for fun and profit!
+### Matrixing for fun and profit
 
 If you've read this far, we're guessing you're hopefully quite interested in Matrix (or just skipping to the end ;).  Something we don't talk about as much as we should is that if you're interested in being paid to work on Matrix full time, we're always interested in expanding the core team.  Right now we're particularly looking for:
 <ul>
- 	<li>Experienced front-end developers who can help build the next generation of matrix-react-sdk and vector-web</li>
- 	<li>Professional tech-writers to help keep <a href="/docs/spec">The Spec</a> and tutorials and other docs updated and as kick-ass as possible</li>
- 	<li>Backend Python/Twisted or Golang wizards to help us improve and evolve Synapse</li>
- 	<li>Mobile developers (especially Android) to help keep the mobile SDKs and apps evolving as quickly as possible</li>
- 	<li>Integration fiends who'd like to be paid to build more bridges, bots and other integrations for the overall ecosystem!</li>
+  <li>Experienced front-end developers who can help build the next generation of matrix-react-sdk and vector-web</li>
+  <li>Professional tech-writers to help keep <a href="/docs/spec">The Spec</a> and tutorials and other docs updated and as kick-ass as possible</li>
+  <li>Backend Python/Twisted or Golang wizards to help us improve and evolve Synapse</li>
+  <li>Mobile developers (especially Android) to help keep the mobile SDKs and apps evolving as quickly as possible</li>
+  <li>Integration fiends who'd like to be paid to build more bridges, bots and other integrations for the overall ecosystem!</li>
 </ul>
 Most of the core team hangs out in London or Rennes (France), but we're also open to remote folks where it makes sense.  If this sounds interesting, please shoot us a mail to jobs@matrix.org.  Obviously it helps enormously if we already know you from the Matrix community, and you have a proven FOSS track record.
 
@@ -255,19 +255,19 @@ As you can see, things are accelerating quite nicely - and this is ignoring all
 
 Our plans over the next few months are going to involve:
 <ul>
- 	<li>Turning on end-to-end encryption by default for any rooms with private history - whilst ensuring it's as easy to write Matrix clients, bots and bridges as it ever was.</li>
- 	<li>Yet more scalability and performance work across the board, to ensure Synapse and the client SDKs can handle the growth curve we're seeing here</li>
- 	<li>Releasing 0.3.0 of the matrix spec itself.</li>
- 	<li>Making Riot (now Element)'s UX excellent.</li>
- 	<li>Editable messages.</li>
- 	<li>Threading.</li>
- 	<li>User groups, for applying permissions/invites etc to groups of users as well as individuals.</li>
- 	<li>Formalising the federation spec at last</li>
- 	<li>As many bots, bridges and other integrations as possible!</li>
- 	<li>Making VoIP/Video conferencing and calling awesome.</li>
- 	<li>More experiments with next-generation homeservers</li>
- 	<li>Starting to really think hard about decentralised identity and reputation/spam management</li>
- 	<li>...and a few new things we don't want to talk about yet ;)</li>
+  <li>Turning on end-to-end encryption by default for any rooms with private history - whilst ensuring it's as easy to write Matrix clients, bots and bridges as it ever was.</li>
+  <li>Yet more scalability and performance work across the board, to ensure Synapse and the client SDKs can handle the growth curve we're seeing here</li>
+  <li>Releasing 0.3.0 of the matrix spec itself.</li>
+  <li>Making Riot (now Element)'s UX excellent.</li>
+  <li>Editable messages.</li>
+  <li>Threading.</li>
+  <li>User groups, for applying permissions/invites etc to groups of users as well as individuals.</li>
+  <li>Formalising the federation spec at last</li>
+  <li>As many bots, bridges and other integrations as possible!</li>
+  <li>Making VoIP/Video conferencing and calling awesome.</li>
+  <li>More experiments with next-generation homeservers</li>
+  <li>Starting to really think hard about decentralised identity and reputation/spam management</li>
+  <li>...and a few new things we don't want to talk about yet ;)</li>
 </ul>
 If you've got this far - congratulations! Thanks for reading, and thank you for supporting the Matrix ecosystem.
 

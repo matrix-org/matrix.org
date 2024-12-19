@@ -16,8 +16,7 @@ Secondly, we have improved the security of pages served as part of the Single-Si
 
 We are not aware of either of these vulnerabilities being exploited in the wild, but we recommend that administrators upgrade as soon as possible. Those on Synapse 1.15.1 or earlier should upgrade to Synapse 1.15.2, while those who have already upgraded to Synapse 1.16.0rc1 should upgrade to 1.16.0rc2.
 
-Get the new releases from any of the usual sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md. 1.15.2 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.15.2), and 1.16.0rc2 is [here](https://github.com/matrix-org/synapse/releases/tag/v1.16.0rc2).
-
+Get the new releases from any of the usual sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>. 1.15.2 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.15.2), and 1.16.0rc2 is [here](https://github.com/matrix-org/synapse/releases/tag/v1.16.0rc2).
 
 Changelog for 1.15.2 follows:
 

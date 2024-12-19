@@ -19,15 +19,15 @@ That said, we've made some major progress this year anyway: the addition of Widg
 
 So what lies ahead?  It's hard to predict the level of progress we're going to make in the core team, as it really depends on long-term funding.  Whatever happens, one of our top priorities is to improve our governance so that everyone can better contribute in places that have historically been more blocked on the core team (i.e. the spec; synapse)... whilst still maintaining coherency across the project.  Ideally we'll end up with more folks pushing Matrix forwards from both the wider world and the core team however, and right now the main priorities are:
 <ul>
- 	<li>Phase 2 of Communities: letting users filter their current view of Matrix to rooms associated with a given subset of communities (if desired), for Slack/Discord-style semantics</li>
- 	<li>Fixing the remaining end-to-end encryption failures (although the majority of them have now been solved)</li>
- 	<li>Finalising proper UI/UX for end-to-end encryption (at last), including the option to transparently back up your room keys if desired.</li>
- 	<li>Dendrite Phase 1</li>
- 	<li>Performance in Riot (on all platforms)</li>
- 	<li>Editable messages</li>
- 	<li>Reactions</li>
- 	<li>Making widgets much more useful</li>
- 	<li>Paid integrations and hosting options to help avoid further funding nightmares.</li>
+  <li>Phase 2 of Communities: letting users filter their current view of Matrix to rooms associated with a given subset of communities (if desired), for Slack/Discord-style semantics</li>
+  <li>Fixing the remaining end-to-end encryption failures (although the majority of them have now been solved)</li>
+  <li>Finalising proper UI/UX for end-to-end encryption (at last), including the option to transparently back up your room keys if desired.</li>
+  <li>Dendrite Phase 1</li>
+  <li>Performance in Riot (on all platforms)</li>
+  <li>Editable messages</li>
+  <li>Reactions</li>
+  <li>Making widgets much more useful</li>
+  <li>Paid integrations and hosting options to help avoid further funding nightmares.</li>
 </ul>
 Looking at the bigger picture, what we'd really love for 2018 would be to finally get to a 1.0 release of the Matrix Spec (i.e. catching up on our massive backlog of merging unstable spec drafts & proposals into the spec) - and for Dendrite to start to replace Synapse as the reference home server from Matrix.org and become really ubiquitous, and for E2E encryption be turned on by default in private rooms.  Beyond the above list, we don't really have any other features urgently planned (threading, for instance, is on hold until we have the rest of the above sorted) - but we believe that if we stabilise everything we have today (plus that list), then there is no reason for Matrix to not fulfil its full potential as a true global open decentralised communications standard.  And then it's on to threading, P2P matrix, decentralised reputation and all that good stuff!
 

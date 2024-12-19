@@ -32,7 +32,7 @@ In retrospect, I think it would be smoother to generate some kind of dependency 
 ### You're at the mercy of your dependencies
 
 I think this is my single biggest takeaway from the process of adding annotations to Sydent.
-I'll admit the phrasing is melodramatic, but I think it rings true. 
+I'll admit the phrasing is melodramatic, but I think it rings true.
 
 Improving coverage boils down to giving the typechecker more information about your program. The more information it has, the more it can check—and the more errors it can spot. (Hopefully this doesn't make typing come across like a pyramid scheme.) If your dependencies aren't typed, mypy can't validate you're correctly providing inputs and correctly consuming outputs. You might have a bigger impact on overall typing coverage by annotating a dependency (directly or via stubs). I have a hunch that bugs are more likely in code that uses an external dependency: we're much more familiar with the details of our own source code compared to that of a third party we trust.
 
@@ -46,7 +46,7 @@ Twisted is Sydent's biggest dependency, and I certainly felt at its mercy! In pa
 
 Early into the process, mypy reported that calling the function [twisted.python.log.err](https://twistedmatrix.com/documents/current/api/twisted.python.log.html#err) was an error. It did so because I was running mypy in [--strict mode](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict). We'll talk more about why I did so and what this means [next time](https://matrix.org/blog/2021/12/17/type-coverage-for-sydent-evaluation); for now, it's enough to know that calling a function that isn't fully annotated from within a function that is constitutes an error under strict mode. `twisted` is partially annotated: many key modules and functions have type annotations, but others don't. I was reluctant to give up on `--strict`. Instead, I decided to stub the `err` function myself.
 
-A stub is a cut-down version of a python function, class or module which lives in a `.pyi` file. All implementation details are removed; only type annotations remain. Stubs are useful when you want to write annotations for code you don't control. The [typeshed](https://github.com/python/typeshed) library is probably the best example: a collection of third party stubs for the standard library, plus some popular third party packages. Microsoft's [python-type-stubs](https://github.com/microsoft/python-type-stubs) is another example. They'd also solve the problem I mentioned at the end of the [first part](https://matrix.org/blog/2021/12/03/type-coverage-for-sydent-motivation): I could use a stub to _teach_ mypy that `IResponse.headers` was a `Headers` object. 
+A stub is a cut-down version of a python function, class or module which lives in a `.pyi` file. All implementation details are removed; only type annotations remain. Stubs are useful when you want to write annotations for code you don't control. The [typeshed](https://github.com/python/typeshed) library is probably the best example: a collection of third party stubs for the standard library, plus some popular third party packages. Microsoft's [python-type-stubs](https://github.com/microsoft/python-type-stubs) is another example. They'd also solve the problem I mentioned at the end of the [first part](https://matrix.org/blog/2021/12/03/type-coverage-for-sydent-motivation): I could use a stub to _teach_ mypy that `IResponse.headers` was a `Headers` object.
 
 Writing a stub for `log.err` was straightforward, thanks mainly to Twisted's thorough documentation. I chose to write it by hand, rather than use [stubgen](https://mypy.readthedocs.io/en/stable/stubgen.html). I'd heard of the latter, but was reluctant to use it for a few reasons.
 
@@ -93,6 +93,7 @@ and later, [the IResponse](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25
         res: IResponse
         res = yield agent.request(method, uri, headers, bodyProducer)
 ```
+
 - In this example:
 
 - We yield a value `y: Deferred[Any]`.
@@ -113,18 +114,20 @@ async def bar() -> None:
     reveal_type(x)
 ```
 
-```
+```txt
 $ mypy example.py
 example.py:6: note: Revealed type is "typing.Coroutine[Any, Any, builtins.int]"
 example.py:7: note: Revealed type is "builtins.int*"
 ```
 
 Behind the scenes, I _think_ that `x = await foo()` is really using the same mechanism as the `inlineCallbacks` approach.
+
 - An `async def` function is really a generator function behind the scenes.
 - When we `await foo()`, we yield the expression `foo()`
 - Then the machinery running our coroutine `c` will call `c.send(x)` to resume execution, where `x` is the value produced by waiting for `foo()`.
 
 With the `await` form, mypy knows two things:
+
 - the value `foo()` which was yielded should be `Awaitable[T]`, and
 - the value `x` send to the coroutine should come from awaiting `foo()`, and therefore be of type `T`.
 
@@ -152,14 +155,11 @@ except StopIteration as e:
 
 All in all, the handling of `inlineCallbacks` is a situation specific to working with (older?) twisted code. It's still nice to understand what's going on behind the scenes though!
 
-
-
 #### `zope.interface.Interface`
 
 Twisted makes use of `zope`'s `Interface` to define a number of abstract interface classes. Speaking personally, I've not seen it used outside twisted, and I think that means it's not supported by much of the typechecking tooling. For example, I've definitely seen PyCharm struggle to realise that it's okay to pass a `Response` to a function which expects an `IResponse`! Here's a more complicated example where `PyCharm` isn't happy with me widening the type `LoggingHostnameEndpoint` to `IStreamClientEndpoint`, even though [the latter implements the former](https://github.com/matrix-org/sydent/blob/92ff7a878a25696365b10cc49e32f5cba32c5960/sydent/http/matrixfederationagent.py#L379-L380).
 
 ![Screenshot from pycharm showing a false positive warning](/blog/img/2021-12-10-pycharm-false-positive.png)
-
 
 Mypy out of the box doesn't play well with a zope `Interface` (nor does any other typechecker I tried). Fortunately, the excellent [mypy-zope](https://github.com/Shoobx/mypy-zope) plugin helps here: it teaches mypy that any class like `Response` which `@implements(IResponse)`  can be passed in place of an `IResponse`.
 
@@ -184,6 +184,7 @@ def decorator(input: F) -> F:
 ```
 
 The idea here is
+
 1. Use `Callable[..., Any]` to describe a generic function with no particular signature.
 2. Use that as a bound on a type variable `F`. At each usage of `@decorator`, mypy will deduce a more specific version of `F`, e.g. `Callable[[int], str]`.
 3. Within that usage of `@decorator`, `F` is fixed to that specific type. We use `-> F` to express that "we return a function with the same signature as the decoratee".
@@ -219,10 +220,9 @@ C(123).greeting()  # TypeError: can only concatenate str (not "int") to str
 
 Replacing the `Any` with `object` does allow mypy to spot the problem.
 
-```
+```txt
 error: Unsupported operand types for + ("str" and "object")  [operator]
 ```
-
 
 #### `# type: ignore` and `cast` sparingly
 
@@ -239,11 +239,10 @@ It's worth a read through the [module documentation](https://docs.python.org/3/l
 
 - [Protocol](https://docs.python.org/3/library/typing.html?highlight=typing%20protocol#typing.Protocol): lets you formalise duck typing. To use it, define a class that inherits from `Protocol`. Its methods and attributes are all stubs which describe what you require of objects belonging to this type. It's like an [abstract base class](https://docs.python.org/3/library/abc.html?highlight=abc#module-abc) or interface, but purely at typecheck time.
 - [Generic](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.Generic): define your own generic types. A bit of a slippery slope to type mania!
-- [Optional`](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.Optional): I use this all the time. It's always good to make your `None`s explicit!
+- [Optional`](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.Optional): I use this all the time. It's always good to make your`None`s explicit!
 - [NewType](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.NewType): I haven't had a chance to use it much. As I understand it, it's a way to define a "strong typedef". For example, we can use it to distinguish lengths from durations, even if they're both represented by a `float` at runtime.
 
 I want to call out two parts of `typing` in particular:
-
 
 #### [overload](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.overload)
 
@@ -295,7 +294,7 @@ if f(10) == 2:
 
 We can see that `f(10) == 1` and so the equality is always `False`: we'll never print the word "potato". Mypy can reason through this too, if we ask it nicely.
 
-```
+```bash
 $ mypy example.py
 Success: no issues found in 1 source file
 

