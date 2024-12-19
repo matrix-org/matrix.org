@@ -13,7 +13,7 @@ _This is the first of three posts on improving type coverage in Sydent. Join us 
 
 We recently worked on [improving Sydent's type coverage](https://github.com/matrix-org/sydent/issues/414): the proportion of its source code with explicit annotations denoting the kind of data that each variable, expression and return value is expected to hold. These annotations are optional, but if present, they allow tools like [mypy](https://mypy.readthedocs.io/en/stable/) to analyze your programs and spot entire classes of bugs _before_ you ship them! In this instance, we aimed to make Sydent pass `mypy --strict`, which [it now does](https://github.com/matrix-org/sydent/commit/7bdaac2774840e1f9697d30515f367c5c8c16866). Here's what the process looked like:
 
-![Coverage as measured by mypy. Precision and the number of typed expressions increase over the latter half of 2021.](/blog/img/TWGXKTFpjYxlbnHRkZFAzljQ.png)
+![Coverage as measured by mypy. Precision and the number of typed expressions increase over the latter half of 2021.](/blog/img/TWGXKTFpjYxlbnHRkZFAzljQ.avif)
 
 Two lines show two different measures of how well-typed the project is. The grey region covers our two-week sprint towards improving coverage; the earliest data point is from just before previous efforts to improve typing earlier in the year.
 
