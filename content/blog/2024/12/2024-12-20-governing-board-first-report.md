@@ -93,7 +93,7 @@ announce the Committees are up-and-running, and that we have a proposal system
 for new WGs.
 
 We also have a report from the Spec Core Team which they’ve asked us to share
-with you - you can [read that SCT report here](/assets/governance/governing-board/2024-11-15-sct-report.pdf).
+with you - you can [read that SCT report here](/assets/governance/governing-board/2024-11-15-spec-core-team-report.pdf).
 
 ### What’s next?
 
