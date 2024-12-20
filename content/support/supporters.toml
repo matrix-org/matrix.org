@@ -4,9 +4,9 @@ website = "https://element.io"
 logo = "element.svg"
 
 [[gold]]
-name = "Beeper"
-website = "https://beeper.com"
-logo = "beeper.svg"
+name = "Automattic"
+website = "https://automattic.com"
+logo = "automattic.svg"
 
 [[silver]]
 name = "Ercom"
