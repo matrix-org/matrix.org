@@ -107,7 +107,7 @@ These are the candidates who are now elected representatives:
 - Cleo Menenez Jr. (he/him), GNOME Foundation, Associate Member
 - Tobias Fella (he/him), KDE e.V., Associate Member
 - Neil Johnson (he/him), Element, Platinum Member
-- Brad Murray (he/him), Beeper, Gold Member
+- Brad Murray (he/him), Automattic (Beeper), Gold Member
 - Kevin Boos (he/him), Futurewei Technologies, Gold Member
 - Jan Kohnert (he/him), Gematik GmbH, Silver Member
 - Thor Arne Johansen, Verji Tech AS, Silver Member
