@@ -38,7 +38,7 @@ versions of these.
 The GB had its first official meeting on Nov 15th, and the topic of structure
 took up all of our time - this is key since that structure is blocking the work
 we want to do in various topic areas (which we’re calling Committees). There
-are detailed minutes [available here](TBD LINK from Josh) but here is a high
+are [detailed minutes available here](/assets/governance/governing-board/2024-11-15-meeting-minutes.pdf) but here is a high
 level summary - you’ll note that these all relate to the structure and norms of
 the GB:
 
@@ -93,7 +93,7 @@ announce the Committees are up-and-running, and that we have a proposal system
 for new WGs.
 
 We also have a report from the Spec Core Team which they’ve asked us to share
-with you - you can [read that here](LINK TBD from Josh)
+with you - you can [read that SCT report here](/assets/governance/governing-board/2024-11-15-sct-report.pdf).
 
 ### What’s next?
 
