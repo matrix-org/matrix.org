@@ -85,7 +85,7 @@ We’ve also added a native orbit viewer into Third Room, so from WebSG you can 
 
 Finally, to really show off WebSG at its best, we’ve gone and written a simple game of basketball in precisely [100 lines of code](https://github.com/matrix-org/thirdroom/blob/main/examples/basketball/js/basketball.js), and published a step-by-step tutorial ([Part 1](https://thirdroom.io/docs/guides/websg/basketball/part-1.html) covering Interactables, [Part 2](https://thirdroom.io/docs/guides/websg/basketball/part-2.html) covering Collisions and [Part 3](https://thirdroom.io/docs/guides/websg/basketball/part-3.html) covering Networking) so you can follow along at home.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/VimOoGCPWWw" title="Third Room Basketball Tutorial End Result" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{ youtube_player(video_id="bgGWswezi7M") }}
 
 <br/>
 
@@ -160,7 +160,7 @@ Aside from all the WebSG API excitement, another key area in this release is the
 
 …and hit Save & Run and see your changes instantly take effect:
 
-<iframe width="1280" height="751" src="https://www.youtube.com/embed/TWC6MpUh6KY" title="Third Room WebSG demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{ youtube_player(video_id="TWC6MpUh6KY") }}
 
 <br/>
 
@@ -237,7 +237,7 @@ However, funding the team to work full-time on Third Room is increasingly challe
 
 To try to spell out the opportunities and why it clearly makes sense for commercial players to invest in supporting Third Room development, we recently put together a quick enterprise demo reel (which also serves to demo everything mentioned above, albeit in a more businessy manner than normal). **If this resonates and your organisation is interested in funding Third Room - please contact [funding@matrix.org](mailto:funding@matrix.org) asap.**
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/cFKJ-IuGaKA" title="Third Room Enterprise Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{ youtube_player(video_id="cFKJ-IuGaKA") }}
 
 <br/>
 
