@@ -1,7 +1,7 @@
 +++
 title = "chooj"
 [extra]
-thumbnail = "https://chooj.app/screenshot.png"
+thumbnail = "https://matrix.org/ecosystem/clients/https://chooj.app/screenshot.png"
 maintainer = "Farooq Karimi Zadeh"
 licence = "GPL-3.0"
 language = "Typescript"
