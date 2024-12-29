@@ -25,4 +25,4 @@ multi_language = true
 webapp = "https://app.extera.xyz/"
 +++
 
-A Matrix client made in Material UI.
+A fork of Cinny in Material UI with customizable CSS, support for polls and captions.
