@@ -11,7 +11,7 @@ maturity = "Stable"
 repo = "https://github.com/officialdakari/Extera"
 website = "https://extera.xyz"
 matrix_room = "#extera:extera.xyz"
-featured = true
+featured = false
 [extra.features]
 e2ee = true
 spaces = true
