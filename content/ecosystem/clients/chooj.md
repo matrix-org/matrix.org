@@ -1,7 +1,7 @@
 +++
 title = "chooj"
 [extra]
-thumbnail = "https://chooj.app/screenshot.png"
+thumbnail = "chooj.png"
 maintainer = "Farooq Karimi Zadeh"
 licence = "GPL-3.0"
 language = "Typescript"
