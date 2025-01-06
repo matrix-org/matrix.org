@@ -1,13 +1,13 @@
 [[staff]]
-name = "Josh Simmons"
+name = "Robin Riley"
 title = "Managing Director"
-picture = "josh.jpg"
-email = "josh@foundation.matrix.org"
-website = "https://joshsimmons.com/"
-linkedin = "https://www.linkedin.com/in/joshsimmons/"
-fediverse = "https://josh.tel/@josh"
+picture = "robin.jpg"
+email = "robin@foundation.matrix.org"
+website = "https://robinriley.fyi/"
+linkedin = "https://www.linkedin.com/in/bluesomewhere/"
+fediverse = "https://social.riley.pub/@robin"
 bio = """
-Josh is a community organiser, web developer, nonprofit geek, and activist based in Petaluma, California. Best known for his time in leadership at the Open Source Initiative, Josh is also Vice President of Petaluma Pride, author of the Public Health Pledge, and an advisor to Independent Federated Trust & Safety (IFTAS). In the past, Josh has worked in community-facing roles focused on open source at Tidelift, Salesforce, Google, and O’Reilly Media.
+Robin is a community organiser, web developer, nonprofit geek, and activist based in Petaluma, California. Best known for their time in leadership at the Open Source Initiative, Robin is also on the board of Petaluma Pride, author of the Public Health Pledge, and an advisor to Independent Federated Trust & Safety (IFTAS). Robin has also been known as Josh Simmons. In the past, Robin has worked in community-facing roles focused on open source at Tidelift, Salesforce, Google, and O’Reilly Media.
 """
 
 [[staff]]
