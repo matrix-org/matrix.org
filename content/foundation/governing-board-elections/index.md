@@ -117,7 +117,7 @@ These are the candidates who are now elected representatives:
 - Richard van der Hoff (he/him), Spec Core Team
 - Travis Ralston (he/him), Spec Core Team
 
-And these elected representatives are joined by the Foundation's Managing Director, Josh Simmons (he/they), who represents the Foundation in an ex officio capacity.
+And these elected representatives are joined by the Foundation's Managing Director, Robin Riley (they/them), who represents the Foundation in an ex officio capacity.
 
 ## Nominees
 
