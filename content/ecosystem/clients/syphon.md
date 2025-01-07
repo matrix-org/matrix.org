@@ -3,7 +3,7 @@ title = "Syphon"
 [extra]
 thumbnail = "syphon.svg"
 maintainer = "Syphon Org"
-licence = "AGPL-3.0"
+licence = "AGPL-3.0-only"
 language = "Dart"
 latest_release = ""
 maturity = "Obsolete"

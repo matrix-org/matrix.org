@@ -43,7 +43,7 @@ description = "Ligase is a Cloud-native Matrix home server written in Golang."
 author = "Finogeeks team"
 maturity = "Obsolete"
 language = "Go"
-licence = "AGPLv3"
+licence = "AGPL-3.0-only"
 repository = "https://github.com/finogeeks/Ligase"
 
 [[servers]]
