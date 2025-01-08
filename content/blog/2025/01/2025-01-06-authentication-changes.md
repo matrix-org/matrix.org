@@ -16,6 +16,8 @@ Matrix Authentication Service is Matrix's next-generation authentication stack. 
 
 You can find all the technical details in Quentin's Matrix Conf talk, [Harder Better Faster Stronger Authentication with OpenID Connect](https://www.youtube.com/watch?v=wOW8keNafdE).
 
+<!-- more -->
+
 ## What's the impact
 
 Client developers need to ensure that their projects support [the requirements listed on areweoidcyet.com](https://areweoidcyet.com/#next-gen-auth-aware-clients) and, more precisely, the requirements listed in [MSC3824](https://github.com/matrix-org/matrix-spec-proposals/pull/3824).
