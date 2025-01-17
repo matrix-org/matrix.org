@@ -3,7 +3,7 @@ title = "Cinny"
 [extra]
 thumbnail = "cinny.svg"
 maintainer = "Ajay Bura"
-licence = "AGPL-3.0"
+licence = "AGPL-3.0-only"
 language = "Javascript"
 latest_release = "2023-02-20"
 maturity = "Stable"

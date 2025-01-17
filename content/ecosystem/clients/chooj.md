@@ -3,7 +3,7 @@ title = "chooj"
 [extra]
 thumbnail = "https://chooj.app/screenshot.png"
 maintainer = "Farooq Karimi Zadeh"
-licence = "GPL-3.0"
+licence = "GPL-3.0-only"
 language = "Typescript"
 latest_release = "2024-10-05"
 maturity = "Alpha"
