@@ -22,7 +22,7 @@ We organize an event before FOSDEM for the community to meet and talk about Matr
 
 It's an [unconference](https://en.wikipedia.org/wiki/Unconference)/[barcamp](https://en.wikipedia.org/wiki/BarCamp): come and bring your ideas, share them at the beginning of the event, and small groups will form spontaneously.
 
-Please note that the Matrix Community Event has [the same Health & Safety Policy as the Matrix Conference](/attend/#health-and-safety).
+Please note that the Matrix Community Event has [the same Health & Safety Policy as the Matrix Conference](https://2024.matrix.org/attend/#health-and-safety). Extremely briefly: You will need to wear a mask while indoors, except while eating and drinking.
 
 As last year, attending the event is free, and we're looking for sponsors to show their commitment to the ecosystem by refreshing our community with drinks and feeding it with pizzas! Of course, you will be credited in our event wrap-up post on matrix.org. We're open to additional ideas to get you the recognition you deserve.
 
