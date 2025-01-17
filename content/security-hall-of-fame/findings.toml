@@ -252,6 +252,15 @@ possible. Fixed in Element Desktop 1.9.7 and tracked as [GHSA-mjrg-9f8r-h3m7](ht
 project = "Element Desktop"
 
 [[findings]]
+date = "2022-01-30"
+reporter.name = "Samuel Dionne-Riel"
+reporter.link = "https://samuel.dionne-riel.com/"
+summary = """
+Contacted us about a potential command injection in matrix-appservice-irc. Fixed in [commit a6c99011](https://github.com/matrix-org/matrix-appservice-irc/pull/1756/commits/a6c99011fa8344cf0762869ad83853ff069104b8).
+"""
+project = "matrix-appservice-irc"
+
+[[findings]]
 date = "2021-11-18"
 reporter.name = "Oliver Behnke"
 reporter.link = "https://github.com/brevilo"
