@@ -28,6 +28,8 @@ As last year, attending the event is free, and we're looking for sponsors to sho
 
 **Join [the FOSDEM Barcamp room](https://matrix.to/#/#fosdem-2025-barcamp:matrix.org) if you're interested in the event, and reach out to [events-wg@foundation.matrix.org](mailto:events-wg@foundation.matrix.org?subject=%5BFOSDEM%5D%20ORG_NAME%20wants%20to%20sponsor%20the%20barcamp) to sponsor!**
 
+- 🕐️ Friday 31, 13:00 - 20:00 CET (local time)
+- 🏢 [HSBXL](https://hsbxl.be/enter/)
 
 ## Feb 1&2 - Booth
 
@@ -39,12 +41,25 @@ We're looking for volunteers to run the booth with us. This includes talking to 
 
 **Reach out to [events-wg@foundation.matrix.org](mailto:events-wg@foundation.matrix.org?subject=%5BFOSDEM%5D%20Volunteering%20for%20the%20booth) if you're interested in staffing the booth with us! We will work out together which slot works best for you. People who sign up before December 15 are entitled to a special edition T-shirt!**
 
+- 🕐️ Saturday 1 to Sunday 2, 09:00 - 18:00 CET (local time)
+- 🏢 Desk K.2.B4
+
+## Feb 2 - Main Track Talk
+
+Matthew's ["The Road to Mainstream Matrix" talk](https://fosdem.org/2025/schedule/event/fosdem-2025-6274-the-road-to-mainstream-matrix/) got accepted on the main track. It will happen right before the Devroom, fortunately in the same building!
+
+- 🕐️ Sunday 2, 12:00 - 12:50 CET (local time)
+- 🏢 Room K.1.105 (La Fontaine)
+
 ## Feb 2 - DevRoom
 
 Some topics are too complex to be discussed at a booth. Fortunately, we have a DevRoom on Sunday 2 afternoon to talk about topics in greater depth. Be it a technical talk about state resolution or a success story about how Matrix got deployed in your organization, we want to hear about it all!
 
 ![A picture of Matthew & Amandine presenting their slides. Amandine holds the microphone from Matthew. They're in front of slides spelling out "5 years from now, everyone will communicate via Matrix"](/blog/img/fosdem2024-devroom.jpg)
 
-**The [Call for Proposals](https://matrix.org/blog/2024/11/fosdem-cfp/) is still open, but be quick! It will close on December 1, and we can't bypass that deadline!**
+The [Call for Proposals](https://matrix.org/blog/2024/11/fosdem-cfp/) is now closed.
+
+- 🕐️ Sunday 2, 13:00 - 17:00 CET (local time)
+- 🏢 Room K.4201
 
 The whole team is looking forward to meeting you at FOSDEM!
