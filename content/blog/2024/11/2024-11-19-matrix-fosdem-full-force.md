@@ -60,7 +60,7 @@ Some topics are too complex to be discussed at a booth. Fortunately, we have a D
 The [Call for Proposals](https://matrix.org/blog/2024/11/fosdem-cfp/) is now closed.
 
 - 🕐️ Sunday 2, 13:00 - 17:00 CET (local time)
-- 🏢 Room K.4201
+- 🏢 Room K.4.201
 - 🗒️ The [schedule is here](https://fosdem.org/2025/schedule/track/matrix/)
 
 The whole team is looking forward to meeting you at FOSDEM!
