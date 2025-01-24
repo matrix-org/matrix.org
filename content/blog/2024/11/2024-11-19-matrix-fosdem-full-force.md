@@ -61,5 +61,6 @@ The [Call for Proposals](https://matrix.org/blog/2024/11/fosdem-cfp/) is now clo
 
 - 🕐️ Sunday 2, 13:00 - 17:00 CET (local time)
 - 🏢 Room K.4201
+- 🗒️ The [schedule is here](https://fosdem.org/2025/schedule/track/matrix/)
 
 The whole team is looking forward to meeting you at FOSDEM!
