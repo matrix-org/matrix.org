@@ -28,7 +28,7 @@ As last year, attending the event is free, and we're looking for sponsors to sho
 
 **Join [the FOSDEM Barcamp room](https://matrix.to/#/#fosdem-2025-barcamp:matrix.org) if you're interested in the event, and reach out to [events-wg@foundation.matrix.org](mailto:events-wg@foundation.matrix.org?subject=%5BFOSDEM%5D%20ORG_NAME%20wants%20to%20sponsor%20the%20barcamp) to sponsor!**
 
-- 🕐️ Friday 31, 13:00 - 20:00 CET (local time)
+- 🕐️ Friday 31, 13:00 - 21:00 CET (local time)
 - 🏢 [HSBXL](https://hsbxl.be/enter/)
 
 ## Feb 1&2 - Booth
