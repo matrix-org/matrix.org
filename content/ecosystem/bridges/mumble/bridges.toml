@@ -6,7 +6,7 @@ Bridges between one matrix room and a murmur channels.
 
 ICE is used to communicate with the Murmur server, matrix-nio is used for Matrix.
 """
-maturity = "Alpha"
+maturity = "Unmaintained"
 language = "Python"
 license = "MIT"
 docs = "https://github.com/karlpip/MandM-bridge#setup"

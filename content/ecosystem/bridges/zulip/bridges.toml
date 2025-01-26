@@ -2,7 +2,7 @@
 name = "MatrixZulipBridge"
 maintainer = "GearKite"
 summary = "A Matrix puppeting appservice bridge for Zulip"
-maturity = "Beta"
+maturity = "Unmaintained"
 language = "Python"
 license = "AGPL-3.0"
 repo = "https://github.com/GearKite/MatrixZulipBridge"

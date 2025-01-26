@@ -4,7 +4,7 @@ maintainer = "Tulir"
 summary = """
 A Matrix-WhatsApp puppeting bridge. Written in Go using [whatsmeow](https://github.com/tulir/whatsmeow)
 """
-maturity = "Beta"
+maturity = "Unmaintained"
 language = "Go"
 license = "AGPL-3.0-or-later"
 docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=whatsapp"

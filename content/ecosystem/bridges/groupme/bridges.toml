@@ -4,7 +4,7 @@ maintainer = "kfatehi"
 summary = """
 This is a Matrix bridge for GroupMe
 """
-maturity = "Beta"
+maturity = "Unmaintained"
 language = "TypeScript"
 license = "Apache-2.0"
 repo = "https://gitlab.com/robintown/mx-puppet-groupme"
@@ -12,6 +12,9 @@ room = "#mx-puppet-groupme:townsendandsmith.ml"
 featured = false
 privilege.platform = "User" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+note = """
+NOTE: This bridge is currently unmaintained. Use with caution as it may no longer be supported or updated.
+"""
 [bridges.supports]
 dm = true
 channels = true

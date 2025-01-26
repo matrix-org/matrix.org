@@ -8,7 +8,7 @@ with active development on new features as they arrive. Check the list below for
 
 The bridge is regularly hacked on and is accepting new PRs for bugfixes and features, come and get involved!
 """
-maturity = "Stable"
+maturity = "Unmaintained"
 language = "TypeScript"
 license = "Apache-2.0"
 docs = "https://matrix-appservice-slack.readthedocs.io/en/latest/getting_started/"
@@ -37,7 +37,7 @@ summary = """
 A Matrix-Slack puppeting bridge. Written in Go using a fork of
 [slack-go](https://github.com/slack-go/slack)
 """
-maturity = "Beta"
+maturity = "Unmaintained"
 language = "Go"
 license = "AGPL-3.0-or-later"
 docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=slack"
@@ -71,7 +71,7 @@ part of the [matrix-puppet-bridge](https://github.com/matrix-hacks/matrix-puppet
 suite of puppetting bridges. It can be used for existing chats, rather than
 initiating new ones.
 """
-maturity = "Beta"
+maturity = "Unmaintained"
 language = "Javascript"
 license = "Licence unknown"
 repo = "https://github.com/matrix-hacks/matrix-puppet-slack"
@@ -104,7 +104,7 @@ matrix together via (double)puppeting. Additionally a relay mode can be enabled.
 This bridge is part of the [mx-puppet-bridge](https://github.com/Sorunome/mx-puppet-bridge)
 suite of puppeting bridges.
 """
-maturity = "Alpha"
+maturity = "Unmaintained"
 language = "TypeScript"
 license = "Apache-2.0"
 docs = "https://gitlab.com/mx-puppet/slack/mx-puppet-slack#quick-start-using-docker"
