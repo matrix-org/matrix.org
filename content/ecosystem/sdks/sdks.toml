@@ -506,7 +506,7 @@ featured_in = []
 
 [[sdks]]
 name = "matrix-rust-sdk"
-maintainer = "poljar"
+maintainer = "The Matrix.org Foundation"
 maturity = "Stable"
 language = "Rust"
 licence = "Apache-2.0"
