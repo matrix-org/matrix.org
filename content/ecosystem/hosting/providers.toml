@@ -82,7 +82,7 @@ etke.cc is the only fully FOSS-based Matrix Hosting service. It's operated by a 
 name = "Ossrox"
 image = "ossrox.svg"
 website = "https://ossrox.org"
-operating_since = "TBC"
+operating_since = "2022"
 description = """
 - Hosted Homeservers
 
