@@ -5,7 +5,7 @@ summary = """
 An Android app that wraps [mautrix-imessage](https://github.com/tulir/mautrix-imessage)
 to bridge SMS from your Android phone to Matrix.
 """
-maturity = "Alpha"
+maturity = "Unmaintained"
 language = "Kotlin"
 license = "Apache-2.0"
 repo = "https://gitlab.com/beeper/android-sms"
@@ -24,7 +24,7 @@ history_from_android = true
 name = "mautrix-gmessages"
 maintainer = "Tulir"
 summary = "A Matrix-Google Messages puppeting bridge"
-maturity = "Beta"
+maturity = "Unmaintained"
 language = "Go"
 license = "AGPL-3.0-or-later"
 docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=gmessages"
@@ -53,7 +53,7 @@ one outgoing telephone number only. It is build on top of
 [matrix-spring-boot-sdk](https://github.com/benkuly/matrix-spring-boot-sdk) and
 written in Kotlin.
 """
-maturity = "Beta"
+maturity = "Unmaintained"
 language = "Kotlin"
 license = "AGPL-3.0-or-later"
 repo = "https://github.com/benkuly/matrix-sms-bridge"
