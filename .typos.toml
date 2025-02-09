@@ -1,7 +1,7 @@
 [files]
 extend-exclude = [
     # files thta make no sense to be searched for typos
-    "*.jpg", "*.js*", "*.json", "*.mov", "*.png", "*.svg", "*.asc",
+    "*.jpg", "*.js*", "*.json", "*.mov", "*.png", "*.svg", "*.asc", "*.mp4", "*.webm",
     "/static/jira",
     "/static/blog/wp-content/uploads/2016/07/predisclosure.signed.txt",
     # external typo that must be replicated for technical correctness
