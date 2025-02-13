@@ -208,8 +208,7 @@ Then...
 * [Critique what has been proposed](https://spec.matrix.org/proposals/).
 * Write [clients](/ecosystem/clients).
 * Write [bridges](/ecosystem/bridges)! Run bridges!
-* Nose around in [the repositories in our GitHub organizatio
-  n](https://github.com/matrix-org) and send us some pull requests to fix some
+* Nose around in [the repositories in our GitHub organization](https://github.com/matrix-org) and send us some pull requests to fix some
   bugs or add some features!
 * You could even try to write a homeserver (but be warned, Matrix's architecture
   makes homeservers orders of magnitude harder than clients or bridges.)
