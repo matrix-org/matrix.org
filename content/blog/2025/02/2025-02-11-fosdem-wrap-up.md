@@ -2,6 +2,9 @@
 date = "2025-02-13T12:00:00Z"
 title = "FOSDEM 2025 Wrap Up"
 
+[extra]
+image = "https://matrix.org/blog/img/fosdem-25-group-picture.png"
+
 [taxonomies]
 author = ["Thib"]
 category = ["FOSDEM"]
