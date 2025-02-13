@@ -15,11 +15,17 @@ With 8000 visitors, FOSDEM is primarily a place to share your work *with others*
 
 Because so many people are doing the trip to gather in a single city, it remains a good opportunity to gather your own community in a more intimate setting. This is precisely what [Fringe Events](https://fosdem.org/2025/fringe/) happening before or after FOSDEM are about.
 
-![](/blog/img/fosdem-25-group-picture.webp)
+{{ figure(
+    img="/blog/img/fosdem-25-group-picture.webp"
+    caption="Group photo of the people attending the fringe event")
+}}
 
 [Workadventure](https://workadventu.re?ref=matrix.org), [Nordeck](https://nordeck.net?ref=matrix.org) and [Famedly](https://www.famedly.com?ref=matrix.org) generously sponsored the 60 pizzas and €1500 worth of drinks at the event to keep us [refreshed](https://mamot.fr/@thibaultamartin/113924167366538711) and [fed](https://mamot.fr/@thibaultamartin/113924626402982834)! Our deepest gratitude to them and the Brussels Hackerspace [HSBXL](https://hsbxl.be/) for giving us a place to gather.
 
-![](/blog/img/fosdem-25-recording-talks.webp)
+{{ figure(
+    img="/blog/img/fosdem-25-recording-talks.webp"
+    caption="Recording of the barcamp session")
+}}
 
 The barcamp / unconference format we adopted allowed participants to mention what they were interested in talking or hearing about, with the help of Yan Minagawa who is a fantastic event facilitator!
 
@@ -31,7 +37,10 @@ The Matrix booth was located in the realtime communications corner, next to the 
 
 The booth was very crowded, we got plenty of enthusiastic visitors telling us what they love about Matrix, with occasional minor support requests. People have been overwhelmingly supportive and curious about the future of Matrix.
 
-![](/blog/img/fosdem-25-booth.webp)
+{{ figure(
+    img="/blog/img/fosdem-25-booth.webp"
+    caption="The Matrix.org Booth at Fosdem 2025")
+}}
 
 We gave away 100 T-shirts in less than a day, asking people for a donation to the Foundation in exchange for the T-shirt. If you didn't already, you can [make a donation today](http:///support/)!
 
