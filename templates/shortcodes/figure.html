@@ -1,4 +1,4 @@
 <figure style="height:100%;">
-    <img src="{{ img }}" alt="{{ caption }}" />
+    <img decoding="async" loading="lazy" src="{{ img }}" alt="{{ caption }}" />
     <figcaption>{{ caption | markdown | safe }}</figcaption>
 </figure>

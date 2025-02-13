@@ -25,6 +25,8 @@ taxonomies = [
 highlight_code = true
 highlight_theme = "visual-studio-dark"
 
+lazy_async_image = true
+
 [link_checker]
 skip_prefixes = [
     # This page is not a real page. You need to open https://circu.li/fdroid/repo/index-v1.json for a response
@@ -49,4 +51,3 @@ conference_location = "Berlin, Germany"
 
 governence_board_elections = false
 governence_board_elections_page = "/governing-board/elections/2024"
-

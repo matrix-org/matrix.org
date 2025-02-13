@@ -1,0 +1,56 @@
+{% extends "section.html" %}
+{% block content -%}
+{% set blog_section = get_section(path="blog/_index.md") %}
+<div class="content">
+    {% set_global all_pages = [] %}
+
+    {% for year_section_name in blog_section.subsections %}
+    {% set year_section = get_section(path=year_section_name) %}
+    {% set_global all_pages = all_pages | concat(with=year_section.pages) %}
+    {% endfor %}
+    {% set posts_by_year = all_pages | group_by(attribute="year") %}
+
+    {% set_global years = [] %}
+    {% for year, ignored in posts_by_year %}
+    {% set_global years = years | concat(with=year) %}
+    {% endfor %}
+
+    {% for year in years | sort | reverse %}
+    {% set posts = posts_by_year[year] | sort(attribute="date") | reverse %}
+    <h1>{{ year }}</h1>
+    <hr />
+    {% for page in posts %}
+    <article class="post">
+        <header>
+            <h1><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h1>
+            <span>
+                {{ page.date | date(format="%d.%m.%Y %H:%M") }}
+                {% if page.taxonomies.category -%}
+                —
+                {% for category in page.taxonomies.category %}
+                <a href="/category/{{ category | slugify }}">
+                    {{- category -}}
+                </a>
+                {%- if not loop.last %}, {% endif %}{% endfor %}
+                {% endif %}
+                —
+                {% for author in page.taxonomies.author %}
+                <a href="/author/{{ author | default(value=['unknown author']) | slugify }}">
+                    {{- author | default(value=["unknown author"]) -}}
+                </a>
+                {%- if not loop.last %}, {% endif %}
+                {% endfor %}
+            </span>
+            {% if page.updated -%}
+            <br>
+            <small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
+            {%- endif %}
+        </header>
+        <div>
+            {{ page.content | safe }}
+        </div>
+    </article>
+    {% endfor %}
+    {% endfor %}
+</div>
+{%- endblock content %}
