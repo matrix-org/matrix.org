@@ -42,7 +42,7 @@ The booth was very crowded, we got plenty of enthusiastic visitors telling us wh
     caption="The Matrix.org Booth at Fosdem 2025")
 }}
 
-We gave away 100 T-shirts in less than a day, asking people for a donation to the Foundation in exchange for the T-shirt. If you didn't already, you can [make a donation today](http:///support/)!
+We gave away 100 T-shirts in less than a day, asking people for a donation to the Foundation in exchange for the T-shirt. If you didn't already, you can [make a donation today](/support/)!
 
 This year the booth has been opened up to the broader ecosystem and volunteers, and that was a significant success. Many thanks to the whole roster: Dominik, Milton, [Sumner](https://sumnerevans.com/), [td](https://technodisaster.com/), [Nico](https://neko.dev), [Kim](https://matrix.to/#/@kim:sosnowkadub.de), [weeman](https://chaos.social/@weeman), [Nadine](https://www.linkedin.com/in/nadine-minagawa-2183954), Timo, [Anoa](https://matrix.to/#/@andrewm:element.io), [Greg](https://emeraldreverie.org/), [Bram](https://matrix.to/#/@bram:matrix.directory), [Robin T](https://robin.town/), stereo, BenP, Will, Neil, Florian and everyone who showed up at the booth to support the crew!
 
@@ -71,8 +71,8 @@ Thanks to all speakers and Yan Minagawa again for MCing the devroom!
 
 ## Community & Ecosystem
 
-If you're an individual and you can afford it, please [support the Foundation](http:///support) or [become a member](http:///membership) so we can keep organizing these events and spread the word about your favorite sovereign, decentralized and E2EE communications protocol.
+If you're an individual and you can afford it, please [support the Foundation](/support) or [become a member](/membership) so we can keep organizing these events and spread the word about your favorite sovereign, decentralized and E2EE communications protocol.
 
-If you're an organization and you rely on Matrix one way or another, please [become an organizational member](http:///membership) to ensure the Foundation can keep maintaining an unencumbered specification, protect the Matrix brand and community, and contribute to the efficiency of the protocol.
+If you're an organization and you rely on Matrix one way or another, please [become an organizational member](/membership) to ensure the Foundation can keep maintaining an unencumbered specification, protect the Matrix brand and community, and contribute to the efficiency of the protocol.
 
 Finally, if you missed us at FOSDEM, make sure to follow us on our socials to be informed of the next events we will organize or attend! Follow us either [on the fediverse](https://mastodon.matrix.org/@matrix), on [LinkedIn](https://www.linkedin.com/company/matrix-org/), on [Bluesky](https://bsky.app/profile/matrix.org) or even on the most decentralized of all, by subscribing to our [RSS feed](https://matrix.org/atom.xml).  
