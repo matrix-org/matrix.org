@@ -88,7 +88,7 @@ A fair criticism of the Foundation is that we haven’t shared publicly about wh
 
 ## How you can help
 
-#### As a user of Matrix
+### As a user of Matrix
 
 If you encounter harmful content on Matrix, you can report it in a few ways:
 
@@ -96,22 +96,22 @@ If you encounter harmful content on Matrix, you can report it in a few ways:
 * If you use another Matrix server, you can report to your server administrator from your client too.  
 * If you are not a Matrix user, or if you are a user on another homeserver who wants to let us know about harmful content on Matrix.org, you can email us at [abuse@matrix.org](mailto:abuse@matrix.org) with the information you have. Room IDs and user IDs are very helpful. Please don't send us screenshots of harmful content — we'll let you know if we need more information.
 
-#### If you run a Matrix server
+### If you run a Matrix server
 
 * Open registration is [disabled by default](https://github.com/matrix-org/synapse/commit/58367a9da2539abdbfe4dc817fba5b179b95334b) in Synapse, and we support that default. If your server offers open registration, you **must** invest in a safety team to provide appropriate moderation coverage, and mitigate the risks of allowing unknown users to use your server.  
 * Review who is signing up for your server, and the rooms that your server joins.  
 * Review reports from your users, and take action to remove harmful content they report. You should check your legal obligations in the country you host your server.  
 * Work with other server operators to share information about harmful rooms and users. You can reach out to our Safety team at [abuse@matrix.org](mailto:abuse@matrix.org) to start that conversation.
 
-#### Civil Society Groups, Academia and Industry Groups
+### Civil Society Groups, Academia and Industry Groups
 
 We welcome the help of civil society groups and academics working in this area. Please reach out to [abuse@matrix.org](mailto:abuse@matrix.org) with your contact details and area of interest, and we'll talk. We're very interested in bringing on trusted flaggers, so if you want to send us reports, please let us know. Challenging the spread of online harm needs all parts of the puzzle to work together, and we’re looking to be a good example of how tech can work for society. For industry groups, we’d love to work with you, to share experiences and to learn from each other. The barriers to entry for these groups are a challenge, and we’d welcome your help in participating.
 
-#### Law Enforcement
+### Law Enforcement
 
 Please check out our guidelines here: [https://matrix.org/legal/law-enforcement-guidelines/](https://matrix.org/legal/law-enforcement-guidelines/)
 
-#### Funding
+### Funding
 
 The tech industry under-invests in Safety. We’re trying to do things better, and Safety is the largest line item in the Foundation budget. This investment is despite the challenges we face in our [ongoing](https://matrix.org/blog/2024/12/25/the-matrix-holiday-special-2024/) attempts to [raise funds](https://matrix.org/blog/2024/01/2024-roadmap-and-fundraiser/) to support the development of Matrix [and](https://matrix.org/blog/2024/04/open-source-publicly-funded-service/) [open software generally](https://matrix.org/blog/2024/07/17/ngi-open-letter/). We rely on donations to operate. Big public and private organizations use the work we do, often without contributing back to support that work financially. It would be easy to sacrifice Trust & Safety spending given that set of economic constraints, but we’re trying to find a better path through. If you would like to fund our work on safety, please reach out to the Foundation at [funding@matrix.org](mailto:funding@matrix.org).
 
@@ -201,7 +201,7 @@ Eine berechtigte Kritik an der Stiftung lautet, dass wir nicht viel darüber ges
 
 ## Wie Sie helfen können
 
-#### Als Nutzer von Matrix
+### Als Nutzer von Matrix
 
 Wenn Sie auf Matrix auf schädliche Inhalte stoßen, können Sie diese auf verschiedene Weise melden:
 
@@ -209,21 +209,21 @@ Wenn Sie auf Matrix auf schädliche Inhalte stoßen, können Sie diese auf versc
 * Wenn Sie einen anderen Matrix-Server verwenden, können Sie die Meldung ebenfalls von Ihrem Client aus an Ihren Server-Administrator senden.  
 * Wenn Sie kein Matrix-Nutzer sind oder wenn Sie ein Nutzer auf einem anderen Homeserver sind und uns über schädliche Inhalte auf matrix.org informieren möchten, können Sie uns eine E-Mail mit den Informationen, die Sie haben, an <abuse@matrix.org> schicken. Raum- und Benutzerkennungen sind sehr hilfreich. Bitte schicken Sie uns keine Bildschirmfotos von schädlichen Inhalten \- wir werden Ihnen Bescheid geben, wenn wir weitere Informationen benötigen.
 
-#### Als Matrix Server Betreiber
+### Als Matrix Server Betreiber
 
 * Die offene Registrierung ist in Synapse [standardmäßig deaktiviert](https://github.com/matrix-org/synapse/commit/58367a9da2539abdbfe4dc817fba5b179b95334b), und wir unterstützen diese Voreinstellung. Wenn Ihr Server eine offene Registrierung anbietet, müssen Sie in ein Sicherheitsteam investieren, um eine angemessene Moderation zu gewährleisten und die Risiken zu minimieren, die entstehen, wenn Sie unbekannten Benutzern die Nutzung Ihres Servers erlauben.  
 * Überprüfen Sie, wer sich auf Ihrem Server anmeldet und in welchen Räumen Ihr Server Mitglied ist.  
 * Überprüfen Sie die Berichte Ihrer Nutzer und ergreifen Sie Maßnahmen, um gemeldete schädliche Inhalte zu entfernen. Überprüfen Sie Ihre rechtlichen Verpflichtungen in dem Land, in dem Sie Ihren Server betreiben.  
 * Arbeiten Sie mit anderen Serverbetreibern zusammen, um Informationen über schädliche Räume und Nutzer auszutauschen. Sie können sich an unser Trust & Safety Team unter [abuse@matrix.org](mailto:abuse@matrix.org) wenden, um dieses Gespräch zu beginnen.
 
-#### Zivilgesellschaftliche Gruppen, Wissenschaft und Industrieverbände
+### Zivilgesellschaftliche Gruppen, Wissenschaft und Industrieverbände
 
 Wir begrüßen die Unterstützung von Gruppen der Zivilgesellschaft und Akademikern, die in diesem Bereich arbeiten. Bitte wenden Sie sich an [abuse@matrix.org](mailto:abuse@matrix.org) und teilen Sie uns Ihre Kontaktdaten und Ihr Interessengebiet mit, damit wir uns austauschen können. Wir sind sehr daran interessiert, vertrauenswürdige Berichterstatter hinzuzuziehen. Wenn Sie uns also Berichte schicken möchten, lassen Sie es uns bitte wissen. Um die Ausbreitung von Online-Missbrauch zu bekämpfen, müssen alle Teile des Puzzles zusammenarbeiten, und wir wollen ein gutes Beispiel dafür sein, wie Technik für die Gesellschaft arbeiten kann. Wir würden gerne mit Branchengruppen zusammenarbeiten, Erfahrungen austauschen und voneinander lernen. Die Eintrittsbarrieren für diese Gruppen sind eine Herausforderung, und wir würden uns freuen, wenn Sie uns helfen würden, sie abzubauen.
 
-#### Strafverfolgungsbehörden
+### Strafverfolgungsbehörden
 
 Bitte lesen Sie unsere Leitlinien hier: [https://matrix.org/legal/law-enforcement-guidelines/](https://matrix.org/legal/law-enforcement-guidelines/)
 
-#### Finanzierung
+### Finanzierung
 
 Die Tech-Industrie investiert zu wenig in die Sicherheit. Wir versuchen, es besser zu machen, und Sicherheit ist der größte Posten im Haushalt der Stiftung. Diese Investition erfolgt trotz der Herausforderungen, denen wir uns bei unseren [ständigen](https://matrix.org/blog/2024/12/25/the-matrix-holiday-special-2024/) Versuchen [gegenübersehen](https://matrix.org/blog/2024/01/2024-roadmap-and-fundraiser/), [Mittel zur Unterstützung](https://matrix.org/blog/2024/01/2024-roadmap-and-fundraiser/) der Entwicklung von Matrix [und](https://matrix.org/blog/2024/04/open-source-publicly-funded-service/) [offener Software im Allgemeinen](https://matrix.org/blog/2024/07/17/ngi-open-letter/) aufzubringen. Wir sind für unseren Betrieb auf Spenden angewiesen. Große öffentliche und private Organisationen nutzen die von uns geleistete Arbeit, oft ohne einen finanziellen Beitrag zu leisten. Es wäre einfach, die Ausgaben für Vertrauen und Sicherheit angesichts dieser wirtschaftlichen Zwänge zu opfern, aber wir versuchen, einen besseren Weg zu finden. Wenn Sie unsere Arbeit im Bereich Sicherheit finanziell unterstützen möchten, wenden Sie sich bitte an die Stiftung unter [funding@matrix.org](mailto:funding@matrix.org).
