@@ -10,6 +10,9 @@
 <div class="bridges_implem">
     {% set bridges_data = load_data(path=section.path~"bridges.toml") %}
     {% for bridge in bridges_data.bridges %}
+	{% if bridge.note %}
+    <p class="bridge-note">{{ bridge.note }}</p>
+{% endif %}
     <div class="implementation-bg">
         <div class="implementation">
             <div class="leftcol">
@@ -18,6 +21,9 @@
                     <h3 id="{{ bridge.name | slugify }}">{{ bridge.name }}</h3>
                     <div class="maturity {{ bridge.maturity | lower }}">{{ bridge.maturity | title }}</div>
                 </div>
+		{% if bridge.note %}
+       			 <p class="bridge-note">{{ bridge.note }}</p>  <!-- Note block added here -->
+   		 {% endif %}
                 <p>{{ bridge.summary | markdown | safe }}</p>
                 <div class="project-links">
                     {% if bridge.docs %}
