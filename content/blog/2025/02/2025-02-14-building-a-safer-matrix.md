@@ -33,6 +33,8 @@ The largest use of our funding as a Foundation is spent on our full-time Safety 
 
 The humans who make up the Foundation Trust & Safety team are dedicated professionals who put their own mental health and happiness in jeopardy every day, reviewing harmful content added by people abusing the service we provide. Their work exposes them to harms including child sexual exploitation and abuse (CSEA), terrorist content, non-consensual intimate imagery (NCII), harassment, hate, deepfakes, fraud, misinformation, illegal pornography, drugs, firearms, spam, suicide, human trafficking and more. It’s a laundry list of the worst that humanity has to offer. The grim reality is that all online services have to deal with these problems, and to balance the work to detect and remove that content with the rights of their users. We’re committed to that work, and to supporting the Trust & Safety team to the best of our ability — we are very grateful for their sacrifice.
 
+<!-- more -->
+
 ### Safety Tooling on Matrix
 
 The Safety team tackles safety from two perspectives: keeping the users on the Matrix.org server safe, and helping to make the wider Matrix network as a whole safe, secure and private. For the latter, we contribute to the development of the Matrix specification, engage with the Matrix ecosystem, and consult with governments, law enforcement, civil society groups, academia and industry groups. We also invest in open source tooling to help the ecosystem with this problem. For the former, we employ a mix of proactive and reactive approaches to online harms.
