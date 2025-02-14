@@ -18,6 +18,8 @@ With 8000 visitors, FOSDEM is primarily a place to share your work *with others*
 
 Because so many people are doing the trip to gather in a single city, it remains a good opportunity to gather your own community in a more intimate setting. This is precisely what [Fringe Events](https://fosdem.org/2025/fringe/) happening before or after FOSDEM are about.
 
+<!-- more -->
+
 {{ figure(
     img="/blog/img/fosdem-25-group-picture.webp"
     caption="Group photo of the people attending the fringe event")
