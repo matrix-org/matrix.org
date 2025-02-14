@@ -34,12 +34,12 @@ the [`/messages`](https://spec.matrix.org/v1.5/client-server-api/#get_matrixclie
 
 [Improvements to event filtering on the client-server API](https://github.com/matrix-org/synapse/pull/14527) gave the matrix.org homeserver a first nice bump as visible on this graph:
 
-![](/blog/img/2022-12-07-apdex-filter-events-improvement.png)
+![](/blog/img/2022-12-07-apdex-filter-events-improvement.avif)
 
 Various optimizations around [fetching](https://github.com/matrix-org/synapse/pull/14491) [bundled](https://github.com/matrix-org/synapse/pull/14508)
 [aggregations](https://github.com/matrix-org/synapse/pull/14510) resulted in yet another nice improvement:
 
-[![](/blog/img/2022-12-07-bundled-aggregations-improvement.png)](/blog/img/2022-12-07-bundled-aggregations-improvement.png)
+[![](/blog/img/2022-12-07-bundled-aggregations-improvement.avif)](/blog/img/2022-12-07-bundled-aggregations-improvement.avif)
 
 Note that the graph from the first image, and the second graph from the second image are [apdexes](https://en.wikipedia.org/wiki/Apdex), which
 is a measure that shows improvement when it goes up (as opposed to e.g. response times, which improve
