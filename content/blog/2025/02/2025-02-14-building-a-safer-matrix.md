@@ -115,11 +115,10 @@ Please check out our guidelines here: [https://matrix.org/legal/law-enforcement-
 
 The tech industry under-invests in Safety. We’re trying to do things better, and Safety is the largest line item in the Foundation budget. This investment is despite the challenges we face in our [ongoing](https://matrix.org/blog/2024/12/25/the-matrix-holiday-special-2024/) attempts to [raise funds](https://matrix.org/blog/2024/01/2024-roadmap-and-fundraiser/) to support the development of Matrix [and](https://matrix.org/blog/2024/04/open-source-publicly-funded-service/) [open software generally](https://matrix.org/blog/2024/07/17/ngi-open-letter/). We rely on donations to operate. Big public and private organizations use the work we do, often without contributing back to support that work financially. It would be easy to sacrifice Trust & Safety spending given that set of economic constraints, but we’re trying to find a better path through. If you would like to fund our work on safety, please reach out to the Foundation at [funding@matrix.org](mailto:funding@matrix.org).
 
-<a id="german"></a>
+---
+<br />
 
-<br/><br/><br/>
-
-# Für mehr Schutz in Matrix
+# Für mehr Schutz in Matrix {#german}
 
 ## Einleitung
 
