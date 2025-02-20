@@ -69,7 +69,7 @@ However, these bridges require regular maintenance as the bridged platforms evol
 
 So unless the Foundation manages to raise $100,000 of funding by the end of March 2025, we will have to focus our resources on the critical lines of work, and consequently **we will have to shut down all the remaining bridges hosted by the Matrix.org Foundation. This includes bridges to Slack, XMPP, OFTC (IRC), and Snoonet (IRC).** We will also mark the software behind those bridges as archived, as we don't have the resources to accept new contributions.
 
-In practice, the Foundation needs an additional $610K in revenue to break-even, but this $100K would extend our runway 1 month while we work on landing grants and new members.** **To put this in context, we nearly doubled our revenue in 2024, reaching $561K, but it was also the first year in which we carried the full cost of our operations: $1.2M. To make ends meet, we liquidated $283K worth of cryptocurrency donations and ended the year with a $356K deficit. We are currently on target for $587K revenue in 2025, with a modest increase in expenses.
+In practice, the Foundation needs an additional $610K in revenue to break-even, but this $100K would extend our runway 1 month while we work on landing grants and new members. To put this in context, we nearly doubled our revenue in 2024, reaching $561K, but it was also the first year in which we carried the full cost of our operations: $1.2M. To make ends meet, we liquidated $283K worth of cryptocurrency donations and ended the year with a $356K deficit. We are currently on target for $587K revenue in 2025, with a modest increase in expenses.
 
 ## Growing the ecosystem and the network
 
