@@ -32,7 +32,6 @@ Without the Foundation and its programs, the Matrix protocol itself faces existe
 * Without a neutral entity as the custodian of the specification, the ecosystem would first shatter and then consolidate around the biggest (likely for-profit) actor.
 * Without advocacy, conferences, documentation and tutorials, Matrix would become a niche protocol used by a few enthusiasts for side projects, whilst big proprietary and siloed networks continue to hold the world’s communications.
 
-
 ## Implementing the vision
 
 But there is light at the end of the tunnel! Concretely, the Foundation delivers most of its value by fostering a healthy, fair and fertile ecosystem around Matrix. It needs to strike the right balance between:
