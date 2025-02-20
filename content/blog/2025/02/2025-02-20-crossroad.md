@@ -13,6 +13,8 @@ Our priorities remain to make Matrix a safer network, keep growing the ecosystem
 
 However, whether we will manage to get there is not fully a given.
 
+<!-- more -->
+
 ## The Foundation is key to the success of Matrix
 
 The Matrix.org Foundation has gone from depending entirely on Element, the company set up by the creators of Matrix, to having half of its budget covered by its [11 funding members](/support/), which is a great success on the road to financial independence! However half of the budget being covered means half of it isn’t. Or in other words: the Foundation is not yet sustainable, despite running on the strictest possible budget, and is burning through its (relatively small) reserves. And we are at the point where the end of the road is in sight.
