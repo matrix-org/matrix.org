@@ -57,7 +57,7 @@ We view the following programs as critical to the Foundation’s mission:
 
 * Maintaining the canonical, backwards compatible, stable [Matrix Spec](https://spec.matrix.org/latest/)
 * Developing protocol enhancements and Trust and Safety tooling, making the tools available to the ecosystem and moderating the servers under its control (typically Matrix.org) - [see our recent blog post](/blog/2025/02/building-a-safer-matrix/)
-* Running the Matrix.org homeserver as an initial home for newbies
+* Running the Matrix.org homeserver as an initial home for newcomers
 * Promoting the Matrix protocol via online content, conferences and meet-ups and other marketing strategies
 
 We might fine tune our approach, but we can't cease any of those programs without severe consequences for the ecosystem.
