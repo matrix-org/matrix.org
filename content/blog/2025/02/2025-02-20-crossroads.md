@@ -108,7 +108,7 @@ In short:
 
 **If you are an individual using Matrix,** you can help by **making a [donation](/support/#help-us) or becoming a [member](/membership/)**.
 
-**If you are a philanthropy or other funder**, you can help by getting in touch with us at [funding@matrix.org](mailto:funding@matrix.org) to discuss funding options. 
+**If you are a philanthropist or other funder**, you can help by getting in touch with us at [funding@matrix.org](mailto:funding@matrix.org) to discuss funding options. 
 
 It isn’t the [first](/blog/2022/12/01/funding-matrix-via-the-matrix-org-foundation/) [time](/blog/2024/04/open-source-publicly-funded-service/) we’ve rung the alarm bell, and it is no fun to beg for help. We are at a crossroads, where the vibrancy of the ecosystem and enthusiasm around Matrix is not reflected in the support the Foundation gets, and we are at risk of losing this common resource and all it offers.
 
