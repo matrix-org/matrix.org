@@ -29,14 +29,14 @@ website = "https://www.famedly.com/"
 logo = "famedly.svg"
 
 [[silver]]
-name = "Fractal Networks"
-website = "https://github.com/fractalnetworksco/"
-logo = "fractal-networks.svg"
-
-[[silver]]
 name = "Gematik"
 website = "https://www.gematik.de/"
 logo = "gematik.png"
+
+[[silver]]
+name = "Hintjen"
+website = "https://hintjen.com"
+logo = "hintjen.png"
 
 [[silver]]
 name = "IndieHosters"
