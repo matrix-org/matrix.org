@@ -19,6 +19,11 @@ website = "https://www.futurewei.com/"
 logo = "futurewei.png"
 
 [[silver]]
+name = "Blender Foundation"
+website = "https://www.blender.org/"
+logo = "blender.svg"
+
+[[silver]]
 name = "Fairkom"
 website = "https://www.fairkom.eu/"
 logo = "fairkom.svg"
@@ -37,6 +42,11 @@ logo = "gematik.png"
 name = "Hintjen"
 website = "https://hintjen.com"
 logo = "hintjen.png"
+
+[[silver]]
+name = "iKono Telecomunicaciones"
+website = "https://ikono.co/"
+logo = "ikono.png"
 
 [[silver]]
 name = "IndieHosters"
