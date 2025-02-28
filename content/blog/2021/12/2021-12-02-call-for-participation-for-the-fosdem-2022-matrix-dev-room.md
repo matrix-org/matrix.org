@@ -25,6 +25,7 @@ We want this devroom to be a space where the Matrix community can show its work,
 The talks will be pre-recorded in January. They will be played during FOSDEM, followed by a session of live Q&A depending on the format. During the playback of the talk, people will be able to comment and ask questions in the chat (via Matrix!).
 
 The talks can follow one of three formats:
+
 * 5 min lightning talk, ideal to showcase your project and make people want to have a look at it
 * 20 min talk + 10 min Q&A, for topics that can be covered briefly
 * 50 min talk + 10 min Q&A for more complex subjects which need more focus
@@ -39,6 +40,6 @@ Of course, the proposal must respect the FOSDEM terms as well:
 
 Proposals must be [submitted on FOSDEM's conference management system Pentabarf](https://penta.fosdem.org/submission/FOSDEM22) before December 17th 2021. If you are not used to Pentabarf, you can follow this [beginners guide to Pentabarf](https://eyskens.me/beginners-guide-to-pentabarf/).
 
-We expect to receive more requests than we have slots available. The devroom organisers (two community members and one core team rep) will be reviewing the proposals and accepting them based on the potential positive impact the project has on Matrix (as defined in by the Mission section of https://matrix.org/foundation).
+We expect to receive more requests than we have slots available. The devroom organisers (two community members and one core team rep) will be reviewing the proposals and accepting them based on the potential positive impact the project has on Matrix (as defined in by the Mission section of <https://matrix.org/foundation>).
 
 If a project proposal has been turned down, it doesn't mean we don't believe it has good potential. Maintainers are invited to join the [#twim:matrix.org](https://matrix.to/#/#twim:matrix.org) Matrix room to give it some visibility.

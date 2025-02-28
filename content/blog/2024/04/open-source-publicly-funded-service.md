@@ -26,7 +26,7 @@ There seems to be two types of problems: firstly, those who don’t understand w
 
 Then, perversely, the second problem emerges: FSFE’s well-intentioned “[Public Money, Public Code](https://publiccode.eu/)” campaign is often given to us as a reason to insist on funding features rather than maintenance.  This seems to be because procurement departments want to have something concrete to procure as a one-off, rather than making an ongoing commitment to keep the project secure, existing and healthy - and so focus on funding new features (or hiring their own staff to build their features) and ignore maintenance.  If you ever wondered why Element has so many weird and wonderful features (which are not always maintained as well as they might), this is part of the problem.  The problem is captured beautifully in [Tobie Langel’s excellent (and highly topical) talk](https://www.youtube.com/watch?v=oB-v2_YnrHk) from this year’s State of Open Con:
 
-
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/20240404-slide.png)
 
 However: we think there might (just might!) be a long-term solution in sight.
@@ -37,7 +37,7 @@ This funding should **NOT** be tied to specific feature development, but simply 
 
 Now, the good news is that some organisations are already trying to solve this problem:
 
-* [NLnet](https://nlnet.nl/) & [NGI](https://www.ngi.eu/about) are excellent in directing EU funding to smaller FOSS projects (e.g. funding [loads of Matrix community projects](https://www.google.com/search?q=site%3Ahttps%3A%2F%2Fnlnet.nl%2Fproject+matrix)), 
+* [NLnet](https://nlnet.nl/) & [NGI](https://www.ngi.eu/about) are excellent in directing EU funding to smaller FOSS projects (e.g. funding [loads of Matrix community projects](https://www.google.com/search?q=site%3Ahttps%3A%2F%2Fnlnet.nl%2Fproject+matrix)),
 * Similarly the [Prototype Fund](https://prototypefund.de/) is very helpful for smaller projects (e.g. funding bits of [Conduit](https://prototypefund.de/project/conduit/), [ThreeMatrix](https://prototypefund.de/project/threematrix-eine-bruecke-zwischen-threema-und-dem-matrix-protokoll/) and [alertrix](https://prototypefund.de/project/alertrix/))
 * [OpenSSF](https://openssf.org/about/charter/) is a Linux Foundation project focused on helping solve the problem
 * [Sovereign Tech Fund](https://www.sovereigntechfund.de/) similarly supports smaller projects to act as a digital public good

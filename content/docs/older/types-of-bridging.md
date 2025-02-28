@@ -34,9 +34,9 @@ Migrating rooms between a portal & plumbed room is currently a bit of a mess, as
 there’s not yet a way for users to remove portal rooms once they’re created, so
 you can end up with a mix of portal & plumbed users bridged into a room, which
 looks weird from both the Matrix and non-Matrix viewpoints.
-https://github.com/matrix-org/matrix-appservice-irc/issues/387 tracks this.
+<https://github.com/matrix-org/matrix-appservice-irc/issues/387> tracks this.
 
-## Types of bridges (simplest first):
+## Types of bridges (simplest first)
 
 ### Bridgebot-based bridges
 
@@ -46,7 +46,7 @@ bots - typically called MatrixBridge or MatrixBridge[123] etc.  These relay
 traffic on behalf of the users on the other side, but it’s a terrible
 experience as all the metadata about the messages and senders is lost.  This is
 how the [telematrix]
-(https://github.com/SijmenSchoon/telematrix) matrix<->telegram bridge currently
+(<https://github.com/SijmenSchoon/telematrix>) matrix<->telegram bridge currently
 works.
 
 ### Bot-API (aka Virtual user) based bridges
@@ -60,7 +60,7 @@ resulting virtual users aren’t real users on the remote system, so don’t hav
 presence/profile and can’t be tab-completed or direct-messaged etc.  They also
 have no way to receive typing notifs or other richer info which may not be
 available via bot APIs.  This is how the current [matrix-appservice-slack]
-(https://github.com/matrix-org/matrix-appservice-slack) bridge works.
+(<https://github.com/matrix-org/matrix-appservice-slack>) bridge works.
 
 ### Simple puppeted bridge
 
@@ -73,11 +73,9 @@ full semantics of the remote system are available to the bridge to expose into
 Matrix.  However, the bridge has to handle the authentication process to log
 the user into the remote bridge.
 
-This is essentially how the current [matrix-appservice-irc
-](https://github.com/matrix-org/matrix-appservice-irc) bridge works (if you
-configure it to log into the remote IRC network as your ‘real’ IRC nickname).
-[matrix-appservice-gitter
-](https://github.com/matrix-org/matrix-appservice-gitter) is being extended to
+This is essentially how the current [matrix-appservice-irc](https://github.com/matrix-org/matrix-appservice-irc) bridge
+works (if youconfigure it to log into the remote IRC network as your ‘real’ IRC nickname).
+[matrix-appservice-gitter](https://github.com/matrix-org/matrix-appservice-gitter) is being extended to
 support both puppeted and bridgebot-based operation. It’s how the experimental
 [matrix-appservice-tg](https://github.com/matrix-org/matrix-appservice-tg) bridge works.
 
@@ -108,8 +106,8 @@ being puppeted (see hybrid relaybot).
 
 [matrix-puppet-bridge](https://github.com/matrix-hacks/matrix-puppet-bridge) is
 a community project that tries to facilitate development of double-puppeted
-bridges, having done so, without a bridgebot feature, for [several networks
-](https://github.com/matrix-hacks/matrix-puppet-bridge#examples). A downside to
+bridges, having done so, without a bridgebot feature,
+for [several networks](https://github.com/matrix-hacks/matrix-puppet-bridge#examples). A downside to
 their approach is the assumption that an individual will run the bridge on
 their own homeserver, thus working around the problem of sharing auth
 credentials on a shared homeserver.
@@ -136,8 +134,8 @@ One-way bridging is rare, but can be used to represent a bridge that is bridging
 from the remote system into matrix. This is common when the remote system does
 not permit message posting, or is simply not capable of handling posting
 outside their system. The users bridged from the remote system often appear as
-virtual users in matrix, as is the case with [matrix-appservice-instagram
-](https://github.com/turt2live/matrix-appservice-instagram).
+virtual users in matrix,
+as is the case with [matrix-appservice-instagram](https://github.com/turt2live/matrix-appservice-instagram).
 
 ### Sidecar bridge
 

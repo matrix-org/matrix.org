@@ -66,7 +66,6 @@ Application services:
   by providing their application service ``access_token``.
 * Added exclusive namespace support to application services API.
 
-
 </pre>
 
 <pre>
@@ -83,7 +82,7 @@ Changes in Matrix Android SDK in 0.2.2 (2015-02-27)
 Improvements:
  * Exif management : the uploaded image is rotated according to the exif metadata
    (if the device has enough free memory).
- * Add a piechart while downloading an image 
+ * Add a piechart while downloading an image
  * Add JSON representation of a message (tap on its row, “Message details”
  * The public rooms list is now sorted according to the number of members.
 
@@ -103,7 +102,6 @@ Bug fixes:
  * Some user display names were their matrix IDs.
  * The room name/ topic were invalid when inviting to a room.
 
-
 </pre>
 
 <pre>
@@ -118,10 +116,10 @@ Improvements:
  * MXSession: Slightly randomise reconnection times by up to 3s to prevent all
    Matrix clients from retrying requests to the homeserver at the same time.
  * Improved logs
- 
+
 Bug fixes:
  * SYIOS-90 - iOS can receive & display messages multiple times when on bad connections
- 
+
 -----------------
  Matrix Console
 -----------------
@@ -129,12 +127,12 @@ Improvements:
  * Fixed warnings with 64bits builds.
  * Room history: Improve scrolling handling when keyboard appears.
  * Contacts: Prompt user when local contacts tab is selected if constact sync is disabled.
- 
+
 Bug fixes:
  * Fix crash when switching rooms while the event stream is resuming.
  * SYIOS-69 - On Screen Keyboard can end up hiding the most recent messages in a room.
  * SYIOS-98 - Crash when attempting to attach image on iPad
- 
+
 Changes in Matrix iOS SDK in 0.3.0 (2015-02-23)
 ===============================================
 
@@ -148,7 +146,7 @@ Breaks:
    read cached data from it. (SYIOS-62)
  * MXStore implementations must now implement [MXStore openWithCredentials].
  * All MXRestClient methods now return MXHTTPOperation objects.
- 
+
 Improvements:
  * Created the MXSession.notificationCenter component: it indicates when an event must be
    notified to the user according to user's push rules settings.
@@ -158,13 +156,12 @@ Improvements:
  * Created MXLogger to redirect NSLog to file and to log crashes or uncaught exception.
  * MXRestClient: Added [MXRestClient registerFallback].
  * Logs: Make all NSLog calls follows the same format.
- 
+
 Features:
  * SYIOS-40 - Any HTTP request can fail due to rate-limiting on the server, and need to be retried.
  * SYIOS-81 - Ability to send messages in the background.
- 
+
 Bug fixes:
  * SYIOS-67 - We should synthesise identicons for users with no avatar.
  * MXSession: Fixed crash when closing the MXSession before the end of initial Sync.
 </pre>
-

@@ -30,6 +30,7 @@ use.
 Clicking a `matrix.to` link you will open a new tab in your browser, showing you
 a UI that looks like the following.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](matrixto-HS.png)
 
 Click on accept, and you will be redirected to a preview of the room you're
@@ -37,6 +38,7 @@ trying to join, containing its name, address (on the format
 `#room-name:example.com`), and number of people currently in the room. Below
 this preview is a list of clients you can use to join the room.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](matrixto-client-choice.png)
 
 Since this documentation started with Element, let's carry on with it. You will
@@ -51,10 +53,12 @@ app.
 Depending on the privacy settings set by the administrators of the room, you may
 or may not be able to see a preview of the conversation.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](room-preview.png)
 
 Click on "Join the discussion": you can now participate in the room!
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](room-participate.png)
 
 ## Browsing the public directory
@@ -71,21 +75,25 @@ show you only rooms published on matrix.org's directory.
 To access the directory, click on the `+` in the left bar, and on "Join public
 room".
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](directory-menu.png)
 
 It will open a list of all the public rooms published in the directory of your
 provider.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](directory-list.png)
 
 The directory can be very large sometimes, and the rooms displayed at the top of
 the list may not be of interest to you. You can type a center of interest to see
 if someone has created a room for it already.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](directory-filtered.png)
 
 You can click "Join" to join the room, and voilà, you're in!
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](directory-joined.png)
 
 ## Spaces
@@ -94,6 +102,7 @@ A Space is a way to group several rooms together. If you are familiar with other
 platforms, Matrix Spaces are similar to Slack Workspaces or Discord Servers. It
 looks like the following.
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](space_home.png)
 
 To join a Space, you need to either know its address, or click on a matrix.to

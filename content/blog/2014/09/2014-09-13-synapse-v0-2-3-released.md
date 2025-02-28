@@ -29,13 +29,12 @@ python setup.py develop --user
 ./synctl start # to actually set it running
 </pre>
 
-and then head over to http://localhost:8008 to play with your very own Matrix homeserver!
+and then head over to <http://localhost:8008> to play with your very own Matrix homeserver!
 
-
-Changes in synapse 0.2.3 (2014-09-12)
-=====================================
+## Changes in synapse 0.2.3 (2014-09-12)
 
 Homeserver:
+
 * Fix bug where we stopped sending events to remote home servers if a
 user from that home server left, even if there were some still in the
 room.
@@ -44,6 +43,7 @@ rejecting events.
 * Many stability fixes
 
 Webclient:
+
 * Display room names and topics.
 * Allow setting/editing of room names and topics.
 * Display information about rooms on the main page.

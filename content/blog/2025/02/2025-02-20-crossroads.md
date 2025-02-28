@@ -86,7 +86,7 @@ We’ve also seen a clear change in how many users and organisations were adopti
 
 The Foundation would also love to support more public policy efforts, which give an opportunity to shape the world by educating regulators, like for the [Digital Markets Act](/blog/2022/03/29/how-do-you-implement-interoperability-in-a-dma-world/); or stronger involvement in standardisation: we had no choice but reduce the effort spent on participating in [MIMI, the IETF working group for instant messaging interoperability](https://datatracker.ietf.org/wg/mimi/about/) due to lack of resources.
 
-There is so much more that we could do to make Matrix better and realise its full potential. 
+There is so much more that we could do to make Matrix better and realise its full potential.
 
 ## So what now?
 
@@ -101,13 +101,13 @@ Because we believe that:
 
 In short:
 
-**If you are an organisation building on top of Matrix**, you can help by **becoming a [member](/membership/)**, which also gives you the opportunity to be eligible to participate in the Governing Board, and other perks. 
+**If you are an organisation building on top of Matrix**, you can help by **becoming a [member](/membership/)**, which also gives you the opportunity to be eligible to participate in the Governing Board, and other perks.
 
 **If you are an organisation buying Matrix services or products**, you can help by **ensuring that your vendor is financially contributing back to the project** or becoming a member yourself.
 
 **If you are an individual using Matrix,** you can help by **making a [donation](/support/#help-us) or becoming a [member](/membership/)**.
 
-**If you are a philanthropist or other funder**, you can help by getting in touch with us at [funding@matrix.org](mailto:funding@matrix.org) to discuss funding options. 
+**If you are a philanthropist or other funder**, you can help by getting in touch with us at [funding@matrix.org](mailto:funding@matrix.org) to discuss funding options.
 
 It isn’t the [first](/blog/2022/12/01/funding-matrix-via-the-matrix-org-foundation/) [time](/blog/2024/04/open-source-publicly-funded-service/) we’ve rung the alarm bell, and it is no fun to beg for help. We are at a crossroads, where the vibrancy of the ecosystem and enthusiasm around Matrix is not reflected in the support the Foundation gets, and we are at risk of losing this common resource and all it offers.
 

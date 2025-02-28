@@ -21,7 +21,7 @@ To ensure compatibility with existing servers, Synapse 1.42's [MSC3244: Room ver
 
 ## Handling Unknown Rooms
 
-Very rarely, users find themselves in rooms created with unstable or experimental room versions. Then, when Synapse removes support for these versions, bad things happen. The server no longer understands how to interact with that room version, which means *you* can't interact with that room. And if you can't interact with that room, you can't _leave_.
+Very rarely, users find themselves in rooms created with unstable or experimental room versions. Then, when Synapse removes support for these versions, bad things happen. The server no longer understands how to interact with that room version, which means *you* can't interact with that room. And if you can't interact with that room, you can't *leave*.
 
 In Synapse 1.42, rooms with unknown room versions are no longer returned down `/sync`. This prevents them from appearing in your client, though you may need to empty your client's cache and re-sync to see any effect.
 

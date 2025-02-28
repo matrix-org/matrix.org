@@ -10,7 +10,7 @@ category = ["GSOC"]
 
 This is part of a series of reports on the [*six* projects](https://summerofcode.withgoogle.com/organizations/6060943798173696) assigned to Matrix for Google Summer of Code 2020.
 
-[View project: 	Ruma procedural macro refactoring and more](https://summerofcode.withgoogle.com/organizations/6060943798173696/#4756651216732160)
+[View project:  Ruma procedural macro refactoring and more](https://summerofcode.withgoogle.com/organizations/6060943798173696/#4756651216732160)
 
 ----
 

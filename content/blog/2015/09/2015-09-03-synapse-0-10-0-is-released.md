@@ -17,30 +17,24 @@ The full changelog is below.
 
 To upgrade, go read <a href="https://github.com/matrix-org/synapse/blob/master/UPGRADE.rst">https://github.com/matrix-org/synapse/blob/master/UPGRADE.rst</a> - to install for the first time, go to <a href="https://github.com/matrix-org/synapse/blob/master/README.rst">https://github.com/matrix-org/synapse/blob/master/README.rst</a>.
 
-<code>
-Changes in synapse v0.10.0 (2015-09-03)
-=======================================
+## Changes in synapse v0.10.0 (2015-09-03)
 
 No change from release candidate.
 
-Changes in synapse v0.10.0-rc6 (2015-09-02)
-===========================================
+## Changes in synapse v0.10.0-rc6 (2015-09-02)
 
 * Remove some of the old database upgrade scripts.
 * Fix database port script to work with newly created sqlite databases.
 
-Changes in synapse v0.10.0-rc5 (2015-08-27)
-===========================================
+## Changes in synapse v0.10.0-rc5 (2015-08-27)
 
 * Fix bug that broke downloading files with ascii filenames across federation.
 
-Changes in synapse v0.10.0-rc4 (2015-08-27)
-===========================================
+## Changes in synapse v0.10.0-rc4 (2015-08-27)
 
 * Allow UTF-8 filenames for upload. (PR #259)
 
-Changes in synapse v0.10.0-rc3 (2015-08-25)
-===========================================
+## Changes in synapse v0.10.0-rc3 (2015-08-25)
 
 * Add ``--keys-directory`` config option to specify where files such as
   certs and signing keys should be stored in, when using ``--generate-config``
@@ -52,14 +46,14 @@ Changes in synapse v0.10.0-rc3 (2015-08-25)
 * Add helper utility to synapse to read and parse the config files and extract
   the value of a given key. For example::
 
+  ```bash
     $ python -m synapse.config read server_name -c homeserver.yaml
     localhost
+  ```
 
   (PR #246)
 
-
-Changes in synapse v0.10.0-rc2 (2015-08-24)
-===========================================
+## Changes in synapse v0.10.0-rc2 (2015-08-24)
 
 * Fix bug where we incorrectly populated the ``event_forward_extremities``
   table, resulting in problems joining large remote rooms (e.g.
@@ -67,9 +61,7 @@ Changes in synapse v0.10.0-rc2 (2015-08-24)
 * Reduce the number of times we wake up pushers by not listening for presence
   or typing events, reducing the CPU cost of each pusher.
 
-
-Changes in synapse v0.10.0-rc1 (2015-08-21)
-===========================================
+## Changes in synapse v0.10.0-rc1 (2015-08-21)
 
 Also see v0.9.4-rc1 changelog, which has been amalgamated into this release.
 
@@ -91,7 +83,6 @@ General:
 * Fix bug where we needlessly regenerated the full list of rooms an AS is
   interested in. (PR #232)
 * Add support for AS's to use v2_alpha registration API (PR #210)
-
 
 Configuration:
 
@@ -118,9 +109,7 @@ Demo Homeservers:
 * Fix starting the demo homeservers without rate-limiting enabled. (PR #182)
 * Fix enabling registration on demo homeservers (PR #223)
 
-
-Changes in synapse v0.9.4-rc1 (2015-07-21)
-==========================================
+## Changes in synapse v0.9.4-rc1 (2015-07-21)
 
 General:
 
@@ -135,7 +124,6 @@ General:
 * Improve performance by bulk inserting events where possible. (PR #193)
 * Improve performance by bulk verifying signatures where possible. (PR #194)
 
-
 Configuration:
 
 * Add support for including TLS certificate chains.
@@ -143,5 +131,3 @@ Configuration:
 Media Repository:
 
 * Add Content-Disposition headers to content repository responses. (SYN-150)
-
-</code>

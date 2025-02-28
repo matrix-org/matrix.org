@@ -44,10 +44,12 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 
 ### Client-Server API
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **Removed Endpoints**
 
 - Remove unused policy room sharing mechanism, as per [MSC3844](https://github.com/matrix-org/matrix-spec-proposals/pull/3844). ([#1196](https://github.com/matrix-org/matrix-spec/issues/1196))
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **Backwards Compatible Changes**
 
 - Add a `.m.rule.room.server_acl` push rule to match `m.room.server_acl` events, as per [MSC3786](https://github.com/matrix-org/matrix-spec-proposals/pull/3786). ([#1190](https://github.com/matrix-org/matrix-spec/issues/1190), [#1201](https://github.com/matrix-org/matrix-spec/issues/1201))
@@ -61,6 +63,7 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 - Add threading via `m.thread` relations, as per [MSC3440](https://github.com/matrix-org/matrix-spec-proposals/pull/3440), [MSC3816](https://github.com/matrix-org/matrix-spec-proposals/pull/3816), [MSC3856](https://github.com/matrix-org/matrix-spec-proposals/pull/3856), and [MSC3715](https://github.com/matrix-org/matrix-spec-proposals/pull/3715). ([#1254](https://github.com/matrix-org/matrix-spec/issues/1254))
 - Add per-thread notifications and read receipts, as per [MSC3771](https://github.com/matrix-org/matrix-spec-proposals/pull/3771) and [MSC3773](https://github.com/matrix-org/matrix-spec-proposals/pull/3773). ([#1255](https://github.com/matrix-org/matrix-spec/issues/1255))
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **Spec Clarifications**
 
 - Mention that the `/rooms/{roomId}/invite` endpoint will return a 200 response if the user is already invited to the room. ([#1084](https://github.com/matrix-org/matrix-spec/issues/1084))
@@ -77,10 +80,12 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 
 ### Server-Server API
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **Backwards Compatible Changes**
 
 - Add per-thread notifications and read receipts, as per [MSC3771](https://github.com/matrix-org/matrix-spec-proposals/pull/3771) and [MSC3773](https://github.com/matrix-org/matrix-spec-proposals/pull/3773). ([#1255](https://github.com/matrix-org/matrix-spec/issues/1255))
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **Spec Clarifications**
 
 - Add HTML anchors for object definitions in the formatted specification. ([#1174](https://github.com/matrix-org/matrix-spec/issues/1174))
@@ -89,16 +94,19 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 
 ### Application Service API
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **Breaking Changes**
 
 - Replace homeserver authorization approach with an `Authorization` header instead of `access_token` when talking to the application service, as per [MSC2832](https://github.com/matrix-org/matrix-spec-proposals/pull/2832). ([#1200](https://github.com/matrix-org/matrix-spec/issues/1200))
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **Spec Clarifications**
 
 - Add HTML anchors for object definitions in the formatted specification. ([#1174](https://github.com/matrix-org/matrix-spec/issues/1174))
 
 ### Identity Service API
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **Spec Clarifications**
 
 - Add HTML anchors for object definitions in the formatted specification. ([#1174](https://github.com/matrix-org/matrix-spec/issues/1174))
@@ -106,12 +114,14 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 
 ### Push Gateway API
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **Spec Clarifications**
 
 - Add HTML anchors for object definitions in the formatted specification. ([#1174](https://github.com/matrix-org/matrix-spec/issues/1174))
 
 ### Room Versions
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **Spec Clarifications**
 
 - For room versions 1 through 10, clarify that events with rejected `auth_events` must be rejected. ([#1137](https://github.com/matrix-org/matrix-spec/issues/1137))
@@ -124,10 +134,12 @@ No significant changes.
 
 ### Internal Changes/Tooling
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **Backwards Compatible Changes**
 
 - Add internal changes changelog section. ([#1194](https://github.com/matrix-org/matrix-spec/issues/1194))
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **Spec Clarifications**
 
 - Render HTML anchors for object definition tables. ([#1191](https://github.com/matrix-org/matrix-spec/issues/1191))

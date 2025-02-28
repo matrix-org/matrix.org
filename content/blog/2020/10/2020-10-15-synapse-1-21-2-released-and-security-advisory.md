@@ -17,13 +17,11 @@ Separately, we are advising any administrators who have not yet upgraded to Syna
 
 The changelog for 1.21.2 is as follows:
 
-Synapse 1.21.2 (2020-10-15)
-===========================
+## Synapse 1.21.2 (2020-10-15)
 
 Debian packages and Docker images have been rebuilt using the latest versions of dependency libraries, including authlib 0.15.1. Please see bugfixes below.
 
-Bugfixes
---------
+### Bugfixes
 
 - Fix rare bug where sending an event would fail due to a racey assertion. ([\#8530](https://github.com/matrix-org/synapse/issues/8530))
 - An updated version of the authlib dependency is included in the Docker and Debian images to fix an issue using OpenID Connect. See [\#8534](https://github.com/matrix-org/synapse/issues/8534) for details.

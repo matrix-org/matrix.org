@@ -23,30 +23,26 @@ Over the years, it’s fair to say that the core team has tried to strike a bala
 
 So, this year, we’ve ended up focused on one thing: getting the foundational Matrix featureset to better-than-mainstream quality, performance and stability.  We’ve dubbed the overall initiative Matrix 2.0, and kicked it off at [FOSDEM 2023](https://archive.fosdem.org/2023/schedule/event/matrix20/) with our [Matrix 2.0: How we’re making Matrix go vooooom](https://www.youtube.com/watch?v=eUPJ9zFV5IE) main-stage talk.
 
-
 ### The Road to Matrix 2.0
 
 Matrix 2.0 isn’t (yet) an actual versioned release of the Matrix specification - instead, it describes the various foundational projects needed to get quality, performance and stability up to and beyond that of today’s mainstream messaging apps.  These projects are:
 
-  * **Sliding Sync ([MSC3575](https://github.com/matrix-org/matrix-spec-proposals/pull/3575))**: the ability to instantly log in, launch and sync Matrix clients no matter how large or busy the account.
-  * **Native E2EE Group VoIP ([MSC3898](https://github.com/matrix-org/matrix-spec-proposals/pull/3898) + TBA)**: scalable video and voice conferencing and calling built natively on Matrix and so benefiting from Matrix’s end-to-end encryption.
-  * **Native OIDC ([MSC3861](https://github.com/matrix-org/matrix-spec-proposals/pull/3861))**: replacing Matrix’s historical authentication mechanisms with industry-standard Open ID Connect (giving us two factor authentication, multi-factor auth, passkeys, and radically simplifying auth implementations for both client and server developers).
-  * **Faster Remote Room Joins ([MSC3902](https://github.com/matrix-org/matrix-spec-proposals/pull/3902)**): letting servers rapidly join rooms on other servers by incrementally participating in the room.
+* **Sliding Sync ([MSC3575](https://github.com/matrix-org/matrix-spec-proposals/pull/3575))**: the ability to instantly log in, launch and sync Matrix clients no matter how large or busy the account.
+* **Native E2EE Group VoIP ([MSC3898](https://github.com/matrix-org/matrix-spec-proposals/pull/3898) + TBA)**: scalable video and voice conferencing and calling built natively on Matrix and so benefiting from Matrix’s end-to-end encryption.
+* **Native OIDC ([MSC3861](https://github.com/matrix-org/matrix-spec-proposals/pull/3861))**: replacing Matrix’s historical authentication mechanisms with industry-standard Open ID Connect (giving us two factor authentication, multi-factor auth, passkeys, and radically simplifying auth implementations for both client and server developers).
+* **Faster Remote Room Joins ([MSC3902](https://github.com/matrix-org/matrix-spec-proposals/pull/3902)**): letting servers rapidly join rooms on other servers by incrementally participating in the room.
 
 Over the course of the year Matrix 2.0 has gone from the initial demo on stage at FOSDEM to concrete implementations which users can play with today as announced in our [Matrix 2.0: The Future of Matrix](https://matrix.org/blog/2023/09/matrix-2-0/) post in September.  Since then, we’ve been busy polishing away.  On Sliding Sync, the [proxy](https://github.com/matrix-org/sliding-sync) has pretty much stabilised - although the protocol itself can and should be simplified before we think seriously about native implementations (in practice, having the server track room list ordering gets very fiddly when only clients can really determine the final ordering, due to E2EE).  [Element X](https://element.io/blog/element-x-ignition/) and [matrix-rust-sdk](https://github.com/matrix-org/matrix-rust-sdk) has been the main implementation driving forwards Sliding Sync and much of the other Matrix 2.0 work, for those itching to play with it.
 
 On Native Group VoIP: we’ve gone through many iterations over the year - starting off with Full Mesh calling (good for ~7 users per call); then switching to the experimental [waterfall](https://github.com/matrix-org/waterfall) Selective Forwarding Unit (SFU) to provide scalable but not-E2EE conferencing; and then switching to a hybrid solution using LiveKit to provide an E2EE-capable scalable SFU, but with the signalling and encryption all handled by Matrix.  Element Call is the main implementation driving forwards the underlying Matrix work here, and [Element Call Beta 3](https://element.io/blog/element-call-beta-3/) showed off the new LiveKit based implementation in July - which was then [integrated with Element X](https://element.io/blog/element-x-now-with-embedded-voip/) complete with end-to-end encryption in November.  There’s still some polishing remaining here, with a new layout engine in the wings for Element Call, and enabling full encrypted-per-sender conferencing by default in both Element Web and Element X, but it really feels like the hardest work is behind us now: the core team has been successfully doing all of its collaboration on [Element Call](https://call.element.io) for months now, like so:
 
-
 ![E2EE scalable Element Call](https://matrix.org/blog/img/20230921-element-call.png)
-
 
 On Open ID Connect: things are also shaping up well. This will be the first time that we’ve replaced a large chunk of the Matrix spec with something else, and in order to manage your account in Matrix 2.0-native clients like Element X homeserver admins will need to migrate their authentication to the new OIDC World using [matrix-authentication-service](https://github.com/matrix-org/matrix-authentication-service) (MAS).  There’s a great [blog post](https://matrix.org/blog/2023/09/better-auth/) from September which explains what this will entail - and since then, we even have the beginnings of [syn2mas](https://github.com/matrix-org/matrix-authentication-service/tree/main/tools/syn2mas): a migration script to migrate from Synapse-managed accounts to MAS-managed accounts (warning: still experimental).  The Matrix.org homeserver hasn’t been migrated yet (as we need to support social login first), but an increasing number of standalone Matrix servers are going OIDC-native, so arguably the migration has already begun!  We’ll keep [https://areweoidcyet.com](https://areweoidcyet.com) updated as the project progresses.
 
 Finally, the core of Faster Remote Room Joins (FRRJ) shipped in Synapse back in February. There’s still some major speedups that FRRJ could unlock, but the other tracks of Matrix 2.0 have been taking priority.
 
 So: Matrix 2.0 is palpably on the horizon - all that remains is polish on the example clients (Element X & Element Call), full support for migrating to OIDC, and landing the MSCs into the spec. For instance, Element X just added read receipts and (early) E2EE backup support in the last few days - the gap is closing! It’s worth noting that significant amounts of this work has been funded by BWI for [BwMessenger](https://messenger.bwi.de/) and [BundesMessenger](https://messenger.bwi.de/bundesmessenger): huge thanks to BWI for supporting core Matrix development by contracting Element.
-
 
 ### Levelling up on Encryption
 
@@ -62,7 +58,6 @@ Now that everyone’s (almost) converged on matrix-sdk-crypto, the next big proj
 
 Finally, work continues to progress at [matrix-dmls](https://gitlab.matrix.org/uhoreg/matrix-dmls) on supporting a decentralised dialect of Messaging Layer Security (MLS, [RFC9420](https://datatracker.ietf.org/doc/rfc9420/)) on top of Matrix as an alternative to our normal Olm/Megolm encryption, with recent work focused on making it play nice with matrix-sdk-crypto. [https://arewemlsyet.com](https://arewemlsyet.com) is the place to track updates (although it’s a bit overdue for an update).
 
-
 ### In other news
 
 Faced with limited funding and the decision to focus exclusively on stability, reliability and performance, there have inevitably been some major changes impacting the core team.
@@ -75,7 +70,6 @@ One of the biggest changes is that Element (the company formed by the core Matri
 The other major change is that we’ve had no choice but pause development on the majority of the core team’s next-generation Matrix projects.  We had high hopes of being able to secure dedicated funding for [Third Room](thirdroom.io) (especially after the awesome [Tech Preview 2: Creator Update](https://matrix.org/blog/2023/06/07/introducing-third-room-tp-2-the-creator-update/) in June), but the interested parties did not come through, and the team has now disbanded.  Meanwhile, P2P Matrix and Low Bandwidth Matrix is on hiatus until there’s dedicated funding - and Account Portability work is also temporarily paused in favour of commercial Element work, despite the fantastic progress made recently with Pseudo IDs ([MSC4014](https://github.com/matrix-org/matrix-spec-proposals/pull/4014)) and Cryptographic identifiers ([MSC4080](https://github.com/matrix-org/matrix-spec-proposals/pull/4080)).  Given P2P Matrix and Account Portability were the main projects driving Dendrite development recently, this may also cause a slow-down in Dendrite development, although Dendrite itself will still be maintained.
 
 Needless to say, this is far from an ideal situation: we sent up distress flares loud and clear at the beginning of [last year’s holiday update](https://matrix.org/blog/2022/12/25/the-matrix-holiday-update-2022/); and we’ve now had to shrink to focus exclusively on the core projects.  However, we’re optimistic that the tighter focus in the medium term will help us get back to the point where we can resume the longer-term projects - assuming that organisations (and individuals) dependent on Matrix [sign up to support the project.](https://matrix.org/support)
-
 
 ### Conclusion
 

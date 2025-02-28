@@ -32,9 +32,9 @@ Next: the faster-joins process requires some support from the resident server, a
 
 Finally, there are still quite a few things that don't work properly yet. We're tracking the list of things we need to fix as a [milestone](https://github.com/matrix-org/synapse/milestone/10) on the Synapse project, but to name a few:
 
- * You can't yet send messages during the "resynchronisation" phase ([synapse#12997](https://github.com/matrix-org/synapse/issues/12997)). Currently, you'll just get a spinner.
- * Similarly, attempts to leave the room ([synapse#12802](https://github.com/matrix-org/synapse/issues/12802)) will block until the resync completes.
- * Clients which don't support [lazy-loading room members](https://spec.matrix.org/v1.4/client-server-api/#lazy-loading-room-members) will *block* (ie, they won't receive any new events at all) during the resynchronisation process ([synapse#12989](https://github.com/matrix-org/synapse/issues/12989)). Most popular clients, including Element, Hydrogen, Fractal and FluffyChat *do* support lazy-loading, but a few (including Nheko) do not.
+* You can't yet send messages during the "resynchronisation" phase ([synapse#12997](https://github.com/matrix-org/synapse/issues/12997)). Currently, you'll just get a spinner.
+* Similarly, attempts to leave the room ([synapse#12802](https://github.com/matrix-org/synapse/issues/12802)) will block until the resync completes.
+* Clients which don't support [lazy-loading room members](https://spec.matrix.org/v1.4/client-server-api/#lazy-loading-room-members) will *block* (ie, they won't receive any new events at all) during the resynchronisation process ([synapse#12989](https://github.com/matrix-org/synapse/issues/12989)). Most popular clients, including Element, Hydrogen, Fractal and FluffyChat *do* support lazy-loading, but a few (including Nheko) do not.
 
 ## Turning it on
 

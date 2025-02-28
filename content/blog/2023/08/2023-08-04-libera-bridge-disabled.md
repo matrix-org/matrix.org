@@ -14,9 +14,3 @@ Following a series of stability issues, the [Libera.Chat team has requested that
 We send our sincere apologies to anyone caught up in this decision and unable to reach folks on the Libera side.
 
 We’ll get you back as soon as we can.
-
-
-
-
-
-

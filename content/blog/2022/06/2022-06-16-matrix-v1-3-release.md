@@ -49,12 +49,9 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 
 <strong>Deprecations</strong>
 
-
 - Deprecate the `sender_key` and `device_id` on `m.megolm.v1.aes-sha2` events, and the `sender_key` on `m.room_key_request` to-device messages, as per [MSC3700](https://github.com/matrix-org/matrix-spec-proposals/pull/3700). ([#1101](https://github.com/matrix-org/matrix-spec/issues/1101))
 
-
 <strong>Backwards Compatible Changes</strong>
-
 
 - Make `from` optional on `GET /_matrix/client/v3/messages` to allow requesting events from the start or end of the room history, as per [MSC3567](https://github.com/matrix-org/matrix-spec-proposals/pull/3567). ([#1002](https://github.com/matrix-org/matrix-spec/issues/1002))
 - Add refresh tokens, per [MSC2918](https://github.com/matrix-org/matrix-spec-proposals/pull/2918). ([#1056](https://github.com/matrix-org/matrix-spec/issues/1056), [#1113](https://github.com/matrix-org/matrix-spec/issues/1113))
@@ -63,9 +60,7 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 - Describe how relationships between events can be "aggregated", as per [MSC2675](https://github.com/matrix-org/matrix-spec-proposals/pull/2675) and [MSC3666](https://github.com/matrix-org/matrix-spec-proposals/pull/3666). ([#1062](https://github.com/matrix-org/matrix-spec/issues/1062))
 - Add support for a new `knock_restricted` join rule in supported room versions, as per [MSC3787](https://github.com/matrix-org/matrix-spec-proposals/pull/3787). ([#1099](https://github.com/matrix-org/matrix-spec/issues/1099))
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Clarify that the url field in `m.room.avatar` events is not required. ([#987](https://github.com/matrix-org/matrix-spec/issues/987))
 - Clarify that the `type` in user-interactive authentication can be omitted. ([#989](https://github.com/matrix-org/matrix-spec/issues/989))
@@ -85,19 +80,16 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 
 <strong>Backwards Compatible Changes</strong>
 
-
 - Add a `destination` property to the Authorization header, as per [MSC3383](https://github.com/matrix-org/matrix-spec-proposals/pull/3383). ([#1067](https://github.com/matrix-org/matrix-spec/issues/1067))
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Remove largely unused `origin` field from PDUs. ([#998](https://github.com/matrix-org/matrix-spec/issues/998))
 - Update various links which pointed to the old `matrix-doc` github repository. ([#1032](https://github.com/matrix-org/matrix-spec/issues/1032))
 - Clarify the format for the Authorization header. ([#1038](https://github.com/matrix-org/matrix-spec/issues/1038), [#1067](https://github.com/matrix-org/matrix-spec/issues/1067))
 - Clarify what a "valid event" means when performing checks on a received PDU. ([#1045](https://github.com/matrix-org/matrix-spec/issues/1045))
 - Clarify that `valid_until_ts` is in milliseconds, like other timestamps used in Matrix. ([#1055](https://github.com/matrix-org/matrix-spec/issues/1055))
-- Clarify that checks on PDUs should refer to the state *before* an event. ([#1070](https://github.com/matrix-org/matrix-spec/issues/1070))
+- Clarify that checks on PDUs should refer to the state _before_ an event. ([#1070](https://github.com/matrix-org/matrix-spec/issues/1070))
 - Clarify the historical handling of non-integer power levels. ([#1099](https://github.com/matrix-org/matrix-spec/issues/1099))
 - Fix various typos throughout the specification. ([#1110](https://github.com/matrix-org/matrix-spec/issues/1110))
 - Correct misleading text for `/send_join` response. ([#3703](https://github.com/matrix-org/matrix-spec-proposals/issues/3703))
@@ -106,7 +98,6 @@ MSCs are how the spec changes in the way it does - adding, fixing, and maintaini
 ### Application Service API
 
 <strong>Backwards Compatible Changes</strong>
-
 
 - Add timestamp massaging as per [MSC3316](https://github.com/matrix-org/matrix-spec-proposals/pull/3316). ([#1094](https://github.com/matrix-org/matrix-spec/issues/1094))
 
@@ -122,15 +113,12 @@ No significant changes.
 
 <strong>Backwards Compatible Changes</strong>
 
-
 - Add room version 10 as per [MSC3604](https://github.com/matrix-org/matrix-spec-proposals/pull/3604). ([#1099](https://github.com/matrix-org/matrix-spec/issues/1099))
 - Enforce integer power levels in room version 10 as per [MSC3667](https://github.com/matrix-org/matrix-spec-proposals/pull/3667). ([#1099](https://github.com/matrix-org/matrix-spec/issues/1099))
 - Add a `knock_restricted` join rule supported by room version 10 as per [MSC3787](https://github.com/matrix-org/matrix-spec-proposals/pull/3787). ([#1099](https://github.com/matrix-org/matrix-spec/issues/1099))
 - Update the default room version to 9 as per [MSC3589](https://github.com/matrix-org/matrix-spec-proposals/pull/3589). ([#3739](https://github.com/matrix-org/matrix-spec-proposals/issues/3739))
 
-
 <strong>Spec Clarifications</strong>
-
 
 - Improve readability and understanding of the state resolution algorithms. ([#1037](https://github.com/matrix-org/matrix-spec/issues/1037), [#1042](https://github.com/matrix-org/matrix-spec/issues/1042), [#1043](https://github.com/matrix-org/matrix-spec/issues/1043), [#1120](https://github.com/matrix-org/matrix-spec/issues/1120))
 - Improve readability of the authorization rules. ([#1050](https://github.com/matrix-org/matrix-spec/issues/1050))

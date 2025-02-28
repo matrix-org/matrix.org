@@ -36,7 +36,7 @@ Granted, the conditions for success isn't enough. We have work to do together in
 
 ### The journey ahead
 
-We must build the Foundation into a self-sustaining organization through fundraising and staffing. We must increase transparency and actualize self-governance. We must improve the diversity of contributors, both in terms of their lived experiences and who employs them. We must rise to the challenge of robust Trust & Safety on decentralized protocols in a chaotic world. 
+We must build the Foundation into a self-sustaining organization through fundraising and staffing. We must increase transparency and actualize self-governance. We must improve the diversity of contributors, both in terms of their lived experiences and who employs them. We must rise to the challenge of robust Trust & Safety on decentralized protocols in a chaotic world.
 
 These are all hard problems, but the solutions aren’t shrouded in mystery. It’s a matter of learning from our fellow travelers, coming together, putting in the time, and continuously building the capacity to tackle these things head on.
 
@@ -62,16 +62,20 @@ Josh Simmons, Managing Director of The Matrix.org Foundation
 
 > “I couldn't be more excited to see Josh Simmons chosen for the Matrix.org Foundation's first Managing Director. Josh is a dedicated open source community builder with a track record of personal accountability and integrity. Matrix.org's mission to provide reliable, decentralized, secure communications is a great match with Josh's personal mission to empower and protect software users while making sure that vulnerable communities — for whom privacy is paramount — are fully included.”
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **— Deb Nicholson, Executive Director of Python Software Foundation**
 
 > “This is a promising development. When I joined the Open Source Initiative as its first Executive Director, I stepped into an organization with renewed focus and energy thanks to Josh’s leadership. I know Josh will accomplish great things for the Matrix ecosystem.”
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **— Stefano Maffulli, Executive Director of Open Source Initiative**
 
 > “I've crossed paths with Josh in numerous ways throughout his career, most recently working with him on the North Bay Python conference and talking to him in his role with the Public Health Pledge. In each case, Josh was thoughtful and productive. I can't wait to see the great work he accomplishes with the Matrix community!”
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **— Karen Sandler, Executive Director of Software Freedom Conservancy**
 
 > “Josh is a quick study and a capable organizational leader. I saw him rapidly rise to the challenge for the Open Source Initiative, where he worked to mature the organization and served as a fierce advocate for the Open Source Definition even as industry titans sought to undermine it. Those are leadership qualities I welcome, particularly in the growing community of European open source foundations.”
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **— Mike Milinkovich, Executive Director of Eclipse Foundation**

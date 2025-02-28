@@ -17,7 +17,7 @@ Great techie discussions and debates down there, the stand was flooded with inte
 
 But he still found a few minutes to do a TV interview for SYSCon TV on Tuesday evening! :)
 
-[embed]http://youtu.be/JVq6S9V1Jcg[/embed]
+[embed]<http://youtu.be/JVq6S9V1Jcg[/embed>]
 
 ## TAD Summit (Istanbul, November 12-13)
 
@@ -25,9 +25,9 @@ Matrix was a partner at <a href="http://tadsummit.com/2014/">TAD Summit</a> in 
 
 Matthew's talk was fully recorded so just watch the video to get the real pitch!
 
-[embed]http://youtu.be/ER3g4-4bFYk?list=PLO-gJ4-4x_IIYVTuLmVr8iUedvVdduYY4[/embed]
+[embed]<http://youtu.be/ER3g4-4bFYk?list=PLO-gJ4-4x_IIYVTuLmVr8iUedvVdduYY4[/embed>]
 
-[embed]https://www.youtube.com/watch?v=As-5vVdXhu0[/embed]
+[embed]<https://www.youtube.com/watch?v=As-5vVdXhu0[/embed>]
 
 ## WebRTC World (San Jose, November 18-20)
 
@@ -46,4 +46,4 @@ And eventually, while Matthew and John were celebrating in San José (or flying 
 
 So if you speak French or are not afraid to only read from <a href="http://matrix.org/blog/wp-content/uploads/2014/11/2014-11-17.2-Matrix.pdf">the slides</a>, check out the video the team made of the pitch. The official one should be available soon!
 
-[embed]http://youtu.be/DyL9Ue0KlBU[/embed]
+[embed]<http://youtu.be/DyL9Ue0KlBU[/embed>]

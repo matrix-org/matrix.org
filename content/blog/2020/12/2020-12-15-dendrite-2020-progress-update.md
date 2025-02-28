@@ -76,7 +76,7 @@ Dendrite's [Sytest](https://github.com/matrix-org/sytest) compliance sits at:
 * **83%** compliance for Server-Server APIs, up from 26% in May 2020
 
 As you can see, these are significant leaps in the numbers of tests passing against
-Dendrite. 
+Dendrite.
 
 ## Experimental MSCs
 

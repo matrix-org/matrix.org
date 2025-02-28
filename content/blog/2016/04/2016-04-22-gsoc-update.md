@@ -7,7 +7,7 @@ author = ["Oddvar Lovaas"]
 category = ["GSOC"]
 +++
 
-As <a href="/blog/2016/03/08/matrix-in-google-summer-of-code/">previously announced</a>, Matrix is participating in <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a> (GSoC) 2016. We have had a <em>lot</em> of interest: lots of people joining Matrix to talk to us about their project ideas and a total of 38 project proposals. We have even had some code contributions to our various projects from people who discovered Matrix via GSoC! 
+As <a href="/blog/2016/03/08/matrix-in-google-summer-of-code/">previously announced</a>, Matrix is participating in <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a> (GSoC) 2016. We have had a <em>lot</em> of interest: lots of people joining Matrix to talk to us about their project ideas and a total of 38 project proposals. We have even had some code contributions to our various projects from people who discovered Matrix via GSoC!
 
 It's our first year as a GSoC mentoring organisation and we were only allocated two project slots. This means that we had the tough decision of choosing between some really good projects - and that means a lot of you who applied will unfortunately be left feeling disappointed. Selecting our two projects was very difficult, and we talked it over until we all agreed. Please remember that not being picked does not mean that your proposal was bad.
 

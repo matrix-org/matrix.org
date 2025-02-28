@@ -14,7 +14,7 @@ just read. Note that this article does not cover E2EE with matrix-nio.
 First create a new venv, and install matrix-nio via `pip`. On the command line,
 run:
 
-```
+```bash
 python3 -m venv env
 source env/bin/activate
 pip install matrix-nio
@@ -74,7 +74,7 @@ The remainder of this tutorial assumes you are running everything from an
 
 The response string should look like:
 
-```
+```txt
 Logged in as @pyconweb-bot:matrix.org, device id: ZBLAJHLKVP.
 ```
 
@@ -89,9 +89,8 @@ sync_response = await async_client.sync(30000)
 ```
 
 30000 means we will wait up to 30 seconds before returning. `sync_response` will
-now contain a Python object containing a mapping of the (JSON) [response from
-the Matrix homeserver
-](https://matrix.org/docs/spec/client_server/latest#get-matrix-client-r0-sync).
+now contain a Python object containing a mapping of the (JSON)
+[response from the Matrix homeserver](https://matrix.org/docs/spec/client_server/latest#get-matrix-client-r0-sync).
 We'll inspect this response in the next section.
 
 In fact, we expect there to be updates regularly, so let's create a very simple
@@ -110,8 +109,7 @@ loop again.
 
 ## Explore the sync response object
 
-`sync_response` [can contain multitudes
-](https://matrix.org/docs/spec/client_server/latest#get-matrix-client-r0-sync),
+`sync_response` [can contain multitudes](https://matrix.org/docs/spec/client_server/latest#get-matrix-client-r0-sync),
 depending on the rooms this user is part of, or has been part of.
 `sync_response.rooms.join` contains updates for the rooms which the current
 user is "joined to" (meaning, is a member of.)

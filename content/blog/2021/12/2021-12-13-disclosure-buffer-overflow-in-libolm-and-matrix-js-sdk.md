@@ -24,7 +24,7 @@ Client versions incorporating the fixes are:
 
 These releases mitigate a buffer overflow in `olm_session_describe`, a libolm debugging function used by matrix-js-sdk in its end-to-end encryption (E2EE) implementation. If you rely on matrix-js-sdk for E2EE, you are affected. This vulnerability has been assigned [CVE-2021-44538](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44538).
 
-Clients which do *not* use matrix-js-sdk for E2EE, like FluffyChat or Element Android / iOS, are _not_ affected.
+Clients which do *not* use matrix-js-sdk for E2EE, like FluffyChat or Element Android / iOS, are *not* affected.
 
 This issue has been present since the introduction of the `olm_session_describe` function in October 2019 (commits: [libolm](https://gitlab.matrix.org/matrix-org/olm/-/commit/39a1ee0b18f0fced6d7bc293cc9a46ea70ec9e96), [matrix-js-sdk](https://github.com/matrix-org/matrix-js-sdk/commit/e6699c5424a856a639baa6d6f78d44594baaf404)).
 

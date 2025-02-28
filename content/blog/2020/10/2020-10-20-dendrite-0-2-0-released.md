@@ -23,7 +23,7 @@ We're now in an impressively better place, and it's feeling way more stable now
 straight to 0.2.0.
 
 Now would be a great time for more intrepid explorers to try spinning up a
-server from https://github.com/matrix-org/dendrite and see how it feels - the
+server from <https://github.com/matrix-org/dendrite> and see how it feels - the
 more feedback the better.  And if you got scared off by weird bugs in 0.1.0,
 now's the right time to try it again!
 
@@ -34,18 +34,18 @@ Full changelog follows:
 ### Important
 
 * This release makes breaking changes for polylith deployments, since they now use the multi-personality binary rather than separate binary files
-  * Users of polylith deployments should revise their setups to use the new binary - see the Features section below
+    * Users of polylith deployments should revise their setups to use the new binary - see the Features section below
 * This release also makes breaking changes for Docker deployments, as are now publishing images to Docker Hub in separate repositories for monolith and polylith
-  * New repositories are as follows: [matrixdotorg/dendrite-monolith](https://hub.docker.com/repository/docker/matrixdotorg/dendrite-monolith) and [matrixdotorg/dendrite-polylith](https://hub.docker.com/repository/docker/matrixdotorg/dendrite-polylith)
-  * The new `latest` tag will be updated with the latest release, and new versioned tags, e.g. `v0.2.0`, will preserve specific release versions
-  * [Sample Compose configs](https://github.com/matrix-org/dendrite/tree/master/build/docker) have been updated - if you are running a Docker deployment, please review the changes
-  * Images for the client API proxy and federation API proxy are no longer provided as they are unsupported - please use [nginx](docs/nginx/) (or another reverse proxy) instead
+    * New repositories are as follows: [matrixdotorg/dendrite-monolith](https://hub.docker.com/repository/docker/matrixdotorg/dendrite-monolith) and [matrixdotorg/dendrite-polylith](https://hub.docker.com/repository/docker/matrixdotorg/dendrite-polylith)
+    * The new `latest` tag will be updated with the latest release, and new versioned tags, e.g. `v0.2.0`, will preserve specific release versions
+    * [Sample Compose configs](https://github.com/matrix-org/dendrite/tree/master/build/docker) have been updated - if you are running a Docker deployment, please review the changes
+    * Images for the client API proxy and federation API proxy are no longer provided as they are unsupported - please use [nginx](docs/nginx/) (or another reverse proxy) instead
 
 ### Features
 
 * Dendrite polylith deployments now use a special multi-personality binary, rather than separate binaries
-  * This is cleaner, builds faster and simplifies deployment
-  * The first command line argument states the component to run, e.g. `./dendrite-polylith-multi roomserver`
+    * This is cleaner, builds faster and simplifies deployment
+    * The first command line argument states the component to run, e.g. `./dendrite-polylith-multi roomserver`
 * Database migrations are now run at startup
 * Invalid UTF-8 in requests is now rejected (contributed by [Pestdoktor](https://github.com/Pestdoktor))
 * Fully read markers are now implemented in the client API (contributed by [Lesterpig](https://github.com/Lesterpig))

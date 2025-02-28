@@ -50,7 +50,7 @@ Work done:
 Work left:
 
 - [Implement guest access (#668)](https://github.com/matrix-org/dendrite/issues/668)
-  - This was removed from the plan for GSoC so work with higher priorities
+    - This was removed from the plan for GSoC so work with higher priorities
     according to the
     [milestone](https://github.com/matrix-org/dendrite/milestone/5) could be
     done first.
@@ -63,7 +63,7 @@ requests (`/sync` requests) and some other related requests from the clients._
 Work done:
 
 - [Add EDU support and typing notifications to /sync (#718)](https://github.com/matrix-org/dendrite/pull/718)
-  - EDU stands for Ephemeral Data Units; they are events carrying short-term
+    - EDU stands for Ephemeral Data Units; they are events carrying short-term
     status in the room, for example typing notifications.
 - [Implement "full\_state" query parameter for /sync (#751)](https://github.com/matrix-org/dendrite/pull/751)
 - ...and other fixes and improvements
@@ -80,7 +80,7 @@ handled._
 Work done:
 
 - [Implement event redaction (#768)](https://github.com/matrix-org/dendrite/pull/768)
-  - This also includes a relatively large chunk of changes in the Sync Server.
+    - This also includes a relatively large chunk of changes in the Sync Server.
 - [Fix permission and 404 response for alias deletion (#706)](https://github.com/matrix-org/dendrite/pull/706)
 - ...and other fixes and improvements
 
@@ -107,7 +107,7 @@ Work done:
 Work left:
 
 - Implementation of a "Most Recent Transaction Sender" In-Memory Cache
-  - There is a delay in this part of work because some dependency problems
+    - There is a delay in this part of work because some dependency problems
     took longer than expected to resolve, but this has been planned and will
     be worked on after GSoC.
 - Implementation of a component that handles backoff/retries for federation requests
@@ -115,14 +115,14 @@ Work left:
 ## General Fixes, Improvements, Maintenance Work
 
 - Data race fixes
-  - [Fix data races reported by go test -race ./... (#748)](https://github.com/matrix-org/dendrite/pull/748)
-  - [Fix data race in clientapi/routing/register.go (#787)](https://github.com/matrix-org/dendrite/pull/787)
+    - [Fix data races reported by go test -race ./... (#748)](https://github.com/matrix-org/dendrite/pull/748)
+    - [Fix data race in clientapi/routing/register.go (#787)](https://github.com/matrix-org/dendrite/pull/787)
 - Fixes for incorrect transaction ID scopes
-  - [Fix transaction IDs in transaction cache have global scope (#772)](https://github.com/matrix-org/dendrite/pull/772)
-  - [Associate transactions with session IDs instead of device IDs (#789)](https://github.com/matrix-org/dendrite/pull/789)
+    - [Fix transaction IDs in transaction cache have global scope (#772)](https://github.com/matrix-org/dendrite/pull/772)
+    - [Associate transactions with session IDs instead of device IDs (#789)](https://github.com/matrix-org/dendrite/pull/789)
 - Improvements for building/testing process
-  - [Refine config and docs for sytest (#714)](https://github.com/matrix-org/dendrite/pull/714)
-  - [Fix build conflict between docker environment and host (#598)](https://github.com/matrix-org/dendrite/pull/598)
+    - [Refine config and docs for sytest (#714)](https://github.com/matrix-org/dendrite/pull/714)
+    - [Fix build conflict between docker environment and host (#598)](https://github.com/matrix-org/dendrite/pull/598)
 
 ## Links to All Pull Requests
 

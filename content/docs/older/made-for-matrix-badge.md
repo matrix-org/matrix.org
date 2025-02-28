@@ -13,7 +13,7 @@ bot or service is made using the Matrix protocol.
 ![made for matrix](/docs/legacy/made-for-matrix.png)
 
 Use the preferred black badge in your marketing materials. When using the badge
-on your website, link the badge to https://matrix.org using the
+on your website, link the badge to <https://matrix.org> using the
 `target="_blank"` attribute.
 
 ## Inverted Badge

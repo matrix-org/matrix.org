@@ -112,7 +112,7 @@ patterns and ring the alarm or take action directly.
 
 To do it with a bot, you would need to invite the bot in each and every room
 where you want the monitoring to happen. An appservice is able to monitor all
-the _unencrypted_ events (messages sent/edited/redacted, people joining or 
+the _unencrypted_ events (messages sent/edited/redacted, people joining or
 leaving rooms) within its namespace.
 
 ### Bridges

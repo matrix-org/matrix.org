@@ -19,38 +19,28 @@ As ever, you can get the new update [here](https://github.com/matrix-org/synapse
 
 The changelog since 1.5.1 follows:
 
-Synapse 1.6.0 (2019-11-26)
-==========================
+## Synapse 1.6.0 (2019-11-26)
 
-Bugfixes
---------
+### Bugfixes
 
 - Fix phone home stats reporting. ([\#6418](https://github.com/matrix-org/synapse/issues/6418))
 
+## Synapse 1.6.0rc2 (2019-11-25)
 
-Synapse 1.6.0rc2 (2019-11-25)
-=============================
-
-Bugfixes
---------
+### Bugfixes
 
 - Fix a bug which could cause the background database update handler for event labels to get stuck in a loop raising exceptions. ([\#6407](https://github.com/matrix-org/synapse/issues/6407))
 
+## Synapse 1.6.0rc1 (2019-11-20)
 
-Synapse 1.6.0rc1 (2019-11-20)
-=============================
-
-Features
---------
+### Features
 
 - Add federation support for cross-signing. ([\#5727](https://github.com/matrix-org/synapse/issues/5727))
 - Increase default room version from 4 to 5, thereby enforcing server key validity period checks. ([\#6220](https://github.com/matrix-org/synapse/issues/6220))
 - Add support for outbound http proxying via http_proxy/HTTPS_PROXY env vars. ([\#6238](https://github.com/matrix-org/synapse/issues/6238))
 - Implement label-based filtering on `/sync` and `/messages` ([MSC2326](https://github.com/matrix-org/matrix-doc/pull/2326)). ([\#6301](https://github.com/matrix-org/synapse/issues/6301), [\#6310](https://github.com/matrix-org/synapse/issues/6310), [\#6340](https://github.com/matrix-org/synapse/issues/6340))
 
-
-Bugfixes
---------
+### Bugfixes
 
 - Fix LruCache callback deduplication for Python 3.8. Contributed by @V02460. ([\#6213](https://github.com/matrix-org/synapse/issues/6213))
 - Remove a room from a server's public rooms list on room upgrade. ([\#6232](https://github.com/matrix-org/synapse/issues/6232), [\#6235](https://github.com/matrix-org/synapse/issues/6235))
@@ -68,18 +58,14 @@ Bugfixes
 - Fix `to_device` stream ID getting reset every time Synapse restarts, which had the potential to cause unable to decrypt errors. ([\#6363](https://github.com/matrix-org/synapse/issues/6363))
 - Fix permission denied error when trying to generate a config file with the docker image. ([\#6389](https://github.com/matrix-org/synapse/issues/6389))
 
-
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Contributor documentation now mentions script to run linters. ([\#6164](https://github.com/matrix-org/synapse/issues/6164))
 - Modify CAPTCHA_SETUP.md to update the terms `private key` and `public key` to `secret key` and `site key` respectively. Contributed by Yash Jipkate. ([\#6257](https://github.com/matrix-org/synapse/issues/6257))
 - Update `INSTALL.md` Email section to talk about `account_threepid_delegates`. ([\#6272](https://github.com/matrix-org/synapse/issues/6272))
 - Fix a small typo in `account_threepid_delegates` configuration option. ([\#6273](https://github.com/matrix-org/synapse/issues/6273))
 
-
-Internal Changes
-----------------
+### Internal Changes
 
 - Add a CI job to test the `synapse_port_db` script. ([\#6140](https://github.com/matrix-org/synapse/issues/6140), [\#6276](https://github.com/matrix-org/synapse/issues/6276))
 - Convert EventContext to an attrs. ([\#6218](https://github.com/matrix-org/synapse/issues/6218))

@@ -26,12 +26,12 @@ While the formal outcomes of yesterday’s agreement haven’t been published ye
 (beyond [this press release](https://www.europarl.europa.eu/news/en/press-room/20220315IPR25504/deal-on-digital-markets-act-ensuring-fair-competition-and-more-choice-for-users)),
 our understanding is that the DMA will mandate:
 
-  * Gatekeepers will have to provide open and documented APIs to their
+* Gatekeepers will have to provide open and documented APIs to their
     services, on request, in order to facilitate interoperability (i.e. so
     that other services can communicate with their users).
-  * These APIs must preserve the same level of end-to-end encryption (if any)
+* These APIs must preserve the same level of end-to-end encryption (if any)
     to remote users as is available to local users.
-  * This applies to 1:1 messaging and file transfer in the short term, and
+* This applies to 1:1 messaging and file transfer in the short term, and
     group messaging, file-transfer, 1:1 VoIP and group VoIP in the longer
     term.
 

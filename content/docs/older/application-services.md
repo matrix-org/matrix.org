@@ -25,7 +25,7 @@ bot could not reserve the virtual user IDs it wanted to create, and could not
 lazily bridge arbitrary IRC rooms on-the-fly - and this spurred the development
 of Application Services.
 
-### Some of the features of the IRC application service we have since implemented include:
+### Some of the features of the IRC application service we have since implemented include
 
 - Specific channel-to-matrix room bridging : This is what the original IRC bot
   did. You can specify specific channels and specific room IDs, and messages
@@ -43,7 +43,7 @@ of Application Services.
   clients, which means IRC bans can be targeted at the Matrix user rather than
   the entire application service.
 
-### The use of the Application Services API means:
+### The use of the Application Services API means
 
 - The bot can reserve user IDs. This prevents humans from registering
   for @irc_... user IDs which would then clash with the operation of the bot.
@@ -57,7 +57,7 @@ of Application Services.
   IRC channel and create a room with that alias, allowing the join request to
   succeed.
 
-### Implementation details:
+### Implementation details
 
 - Written in Node.js, designed to be run using forever.
 - Built on the generic [matrix-appservice-node](https://github.com/matrix-org/matrix-appservice-node)
@@ -69,7 +69,7 @@ of Application Services.
 
 At present, the IRC application service is in beta, and is being run on #matrix
 and #matrix-dev. If you want to give it a go, [check it out on Github ]
-(https://github.com/matrix-org/matrix-appservice-irc)!
+(<https://github.com/matrix-org/matrix-appservice-irc>)!
 
 ## What Application services can do for you
 
@@ -126,7 +126,7 @@ if __name__ == "__main__":
 
 Set your new application service running on port 5000 with:
 
-```
+```bash
 python app_service.py
 ```
 
@@ -202,7 +202,7 @@ def query_alias(alias):
 
 This makes the application service lazily create a room with the requested alias
 whenever the HS queries the AS for the existence of that alias (when users try
-to join that room), allowing any room with the alias prefix #logged_ to be sent
+to join that room), allowing any room with the alias prefix #logged_to be sent
 to the AS. Now try joining the room "#logged_test2:localhost" and it will work
 as you'd expect.  You can see that if this were a real bridge, the AS would
 have checked for the existence of #logged_test2 in the remote network, and then
@@ -222,4 +222,9 @@ registered application services.  If you are bridging huge amounts of traffic,
 you may be better off having your bridge directly talk the Server-Server
 federation API rather than the simpler Application Service API.
 
-I hope this demonstrates how easy it is to create an application service, along with a few ideas of the kinds of things you can do with them. Obvious uses include build protocol bridges, search engines, invisible bots, etc. For more information on the AS HTTP API, check out the new [Application Service API](https://spec.matrix.org/latest/application-service-api/) section in the spec, or the raw drafts and spec in <https://github.com/matrix-org/matrix-doc/>.
+I hope this demonstrates how easy it is to create an application service,
+along with a few ideas of the kinds of things you can do with them.
+Obvious uses include build protocol bridges, search engines, invisible bots, etc.
+For more information on the AS HTTP API,
+check out the new [Application Service API](https://spec.matrix.org/latest/application-service-api/)
+section in the spec, or the raw drafts and spec in <https://github.com/matrix-org/matrix-doc/>.

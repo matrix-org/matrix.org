@@ -50,6 +50,7 @@ caches to speed things up by avoiding hitting the database (at the expense of
 RAM).  It looked like this:
 
 <div style="margin: auto; max-width: 640px;">
+<!-- markdownlint-disable-next-line no-alt-text -->
     <img src="/blog/img/2020-11-03-synapse1.png"/>
 </div>
 
@@ -64,7 +65,7 @@ These are append only sequences of rows, such as the events stream, typing
 stream, receipts stream, etc. When a new event arrives (for example) we write
 it to the events stream, and then notify anything waiting that there has been
 an update. The `/sync` endpoint, for instance, will wait for updates to streams
-and send them down to long-polling Matrix clients. 
+and send them down to long-polling Matrix clients.
 
 Streams support being added to concurrently, so have a concept of the
 “persisted up-to position”. This is the point where **all** rows before that
@@ -102,7 +103,7 @@ process with the event for it to persist the event.
 Eventually we ran out of stuff to move out of the main process that didn’t
 involve writing to the DB. To write stuff from other processes we needed a way
 for the workers to stream updates to each other. The easiest and most obvious
-way was to just use Redis and its pub/sub support. 
+way was to just use Redis and its pub/sub support.
 
 ![2020-11-03-synapse3.png](/blog/img/2020-11-03-synapse3.png)
 
@@ -136,14 +137,14 @@ This is more complicated than sharding the cache invalidation stream as the
 ordering of the events does matter; we send them down sync streams, in order,
 with a token that indicates where the sync stream is up to in the events
 stream. This means that workers need to be able to calculate a “persisted
-up-to position” when getting updates from different workers. 
+up-to position” when getting updates from different workers.
 
 The easiest way of doing that is to simply set the persisted up-to position as
 the minimum position received over federation from all active writers. This
 works, except events would only be processed after all other writers have
 subsequently written events (to advance the persisted position past the point
 at which the event was written), which can add a lot of latency depending on
-how often events are written. 
+how often events are written.
 
 A refinement is to note that if you have a persisted up-to position of 10,
 then receive updates at sequential positions 11, 12, 13 and 14, you know that
@@ -159,7 +160,7 @@ vector of positions - one per writer. This still allows answering the query of
 “get all events after token X” (as events are written with the position and
 the name of the writer). The persisted up-to position is then calculated by
 just tracking the last position seen to arrive over replication from each
-writer. 
+writer.
 
 This allows writing events from multiple workers, while ensuring that other
 workers can correctly keep track of a “persisted up-to position”. Then it's
@@ -234,7 +235,7 @@ users to arrive.
 ### Conclusion
 
 So there you have it: folks running massive homeservers (50K+ concurrent
-users) like Matrix.org (and *cough* various high profile public sector
+users) like Matrix.org (and _cough_ various high profile public sector
 deployments) are no longer held hostage by the bottleneck of the main synapse
 process and should feel free to experiment with setting up event persister
 workers to handle high traffic loads.  Otherwise, if you can spread your users
