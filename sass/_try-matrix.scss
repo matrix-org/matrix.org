@@ -9,7 +9,7 @@
             padding: 1rem;
         }
 
-        &.coloured {
+        &:nth-child(even) {
             background-color: #fafafa;
         }
     }
