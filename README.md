@@ -11,7 +11,7 @@ To discuss maintenance of this site, please come talk to the team in
 
 Due to historic growth and media the repository is quite large. Therefor we suggest the usage of `--filter=blob:none` when doing a fresh clone:
 
-```
+```shell
 git clone --filter=blob:none git@github.com:matrix-org/matrix.org.git
 ```
 
