@@ -16,11 +16,19 @@
                 {%- if not loop.last %}, {% endif %}{% endfor %}
                 {% endif %}
                 —
-                {% for author in page.taxonomies.author %}
-                <a href="/author/{{ author | default(value=['unknown author']) | slugify }}">
-                    {{- author | default(value=["unknown author"]) -}}
-                </a>
-                {%- if not loop.last %}, {% endif %}
+                {% set authors = load_data(path="content/authors.toml") %}
+                {% set author_details = authors.author %}
+                {% for author_alias in page.taxonomies.author %}
+                    {% set_global author_name = author_alias %}
+                    {% for key, value in author_details %}
+                        {% if value.name == author_alias or author_alias in value.aliases %}
+                            {% set_global author_name = value.name %}
+                        {% endif %}
+                    {% endfor %}
+                    <a href="/author/{{ author_name | slugify }}">
+                        {{- author_name -}}
+                    </a>
+                    {%- if not loop.last %}, {% endif %}
                 {% endfor %}
             </span>
             {% if page.updated -%}
