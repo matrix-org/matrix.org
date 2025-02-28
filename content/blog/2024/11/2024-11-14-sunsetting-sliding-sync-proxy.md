@@ -16,7 +16,7 @@ Simplified Sliding Sync [MSC4186](https://github.com/matrix-org/matrix-spec-prop
 
 The Matrix.org Foundation does not have the resources to keep up maintenance of the proxy service or its codebase, and plans to decommission the proxy from Mid-November and archive the sliding-sync repo.
 
-Recognising that the community needs time to adopt sliding sync natively, Element will keep client support for the old API (MSC3575) until the 17th of January, 2025. 
+Recognising that the community needs time to adopt sliding sync natively, Element will keep client support for the old API (MSC3575) until the 17th of January, 2025.
 
 <!-- more -->
 
@@ -28,10 +28,10 @@ Recognising that the community needs time to adopt sliding sync natively, Elemen
 
 ## What This Means for Users
 
-To continue enjoying the speed of Sliding Sync your homeserver and client must support the native Sliding Sync implementation (MSC4186). 
+To continue enjoying the speed of Sliding Sync your homeserver and client must support the native Sliding Sync implementation (MSC4186).
 
 At the time of writing, the latest versions of Synapse support native Sliding Sync, as do the Element X clients. There may be other server / client implementations that also have or are in the process of adding support.
-If you do use Element X apps, native Sliding Sync is used for every new login. For those currently using Element X through the proxy service, the app will prompt you to log out to switch to native Sliding Sync. While this migration is optional for now, it will become mandatory on the 21st of November for those on Matrix.org, when the proxy will be decommissioned. 
+If you do use Element X apps, native Sliding Sync is used for every new login. For those currently using Element X through the proxy service, the app will prompt you to log out to switch to native Sliding Sync. While this migration is optional for now, it will become mandatory on the 21st of November for those on Matrix.org, when the proxy will be decommissioned.
 Element X will discontinue support for the previous Sliding Sync implementation (MSC3575) entirely by January 17th.
 
 ## Guidance for Server & Client Developers

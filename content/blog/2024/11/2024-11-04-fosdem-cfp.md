@@ -27,7 +27,6 @@ We encourage people working on the Matrix protocol or building on it in an open 
 
 You must be available in person [in Brussels](https://fosdem.org/2025/practical/transportation/) to present your talk.
 
-
 ## Talk Details
 
 The talks can follow one of the two formats:
@@ -41,13 +40,11 @@ Of course, the proposal must respect the FOSDEM terms as well:
 
 > The conference language is English. All content must relate to Free and Open Source Software. By participating in the event you agree to the publication of your recordings, slides and other content provided under the same licence as all FOSDEM content (CC-BY).
 
-
 ## Code of Conduct
 
 All speakers and attendees agree that all of the presentations and discussions in our devroom are held under the guidelines set in the [FOSDEM Code of Conduct](https://fosdem.org/2025/practical/conduct/). We expect attendees, speakers, and volunteers to follow the CoC at all times.
 
 If you have any questions about the CoC or wish to have one of the devroom organisers review your presentation slides or any other content for CoC compliance, please email us and we will do our best to assist you.
-
 
 ## Submitting a Proposal
 

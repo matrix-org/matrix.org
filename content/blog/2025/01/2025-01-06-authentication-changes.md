@@ -38,4 +38,4 @@ The Matrix.org Foundation is open to re-enabling guests accounts once it has the
 
 We encourage developers using guest access for room information, such as topics, aliases, or member counts, to utilize the endpoint proposed by [MSC3266](https://github.com/matrix-org/matrix-spec-proposals/pull/3266). This endpoint is publicly accessible without authentication and can serve as an alternative resource until guest access is reinstated in a more robust form.
 
-We appreciate your understanding as we take these steps to enhance the user experience on Matrix.org. 
+We appreciate your understanding as we take these steps to enhance the user experience on Matrix.org.
