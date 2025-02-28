@@ -216,7 +216,7 @@ Desktop client for Matrix using Qt and C++17.
 > * feat: Automatic key requests and better key error dialog (Christian Pauly)
 > * fix: Styling and notification settings (Christian Pauly)
 > * fix: add missing command localizations (Christian Pauly)
-> ![](/blog/img/EHiFOtiHUqDdSfslEajVCmMf.png)
+> ![](/blog/img/EHiFOtiHUqDdSfslEajVCmMf.avif)
 
 ### Element ([website](https://element.io))
 

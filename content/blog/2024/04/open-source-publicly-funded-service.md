@@ -27,7 +27,7 @@ There seems to be two types of problems: firstly, those who don’t understand w
 Then, perversely, the second problem emerges: FSFE’s well-intentioned “[Public Money, Public Code](https://publiccode.eu/)” campaign is often given to us as a reason to insist on funding features rather than maintenance.  This seems to be because procurement departments want to have something concrete to procure as a one-off, rather than making an ongoing commitment to keep the project secure, existing and healthy - and so focus on funding new features (or hiring their own staff to build their features) and ignore maintenance.  If you ever wondered why Element has so many weird and wonderful features (which are not always maintained as well as they might), this is part of the problem.  The problem is captured beautifully in [Tobie Langel’s excellent (and highly topical) talk](https://www.youtube.com/watch?v=oB-v2_YnrHk) from this year’s State of Open Con:
 
 
-![](/blog/img/20240404-slide.png)
+![](/blog/img/20240404-slide.avif)
 
 However: we think there might (just might!) be a long-term solution in sight.
 
