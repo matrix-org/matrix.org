@@ -22,6 +22,7 @@ category = ["This Week in Matrix"]
 [Thib](https://matrix.to/#/@thib:ergaster.org) adds
 
 > For a balanced coveraged of the vulnerability, see the following articles:
+>
 > * [Matrix.org Foundation — Upgrade now to address E2EE vulnerabilities in matrix-js-sdk, matrix-ios-sdk and matrix-android-sdk2](https://matrix.org/blog/2022/09/28/upgrade-now-to-address-encryption-vulns-in-matrix-sdks-and-clients)
 > * [The original paper — Practically-exploitable Cryptographic Vulnerabilities in Matrix](https://nebuchadnezzar-megolm.github.io)
 > * [ars technica — Serious vulnerabilities in Matrix’s end-to-end encryption have been patched](https://arstechnica.com/information-technology/2022/09/matrix-patches-vulnerabilities-that-completely-subvert-e2ee-guarantees/)
@@ -42,7 +43,7 @@ category = ["This Week in Matrix"]
 >
 > **MSCs in Final Comment Period:**
 >
-> * _No MSCs are in FCP._
+> * *No MSCs are in FCP.*
 >
 > **Accepted MSCs:**
 >
@@ -63,12 +64,13 @@ category = ["This Week in Matrix"]
 >
 > When you invite a user to a room in Matrix, you send a membership state event of "invite" with their Matrix ID as a state key. This requires a high enough power level to "invite" users. If you would like to rescind this invite, you would send a second membership state event of "leave". A separate power level is required to the do the latter.
 >
-> There is an edge case whereas if you have the power level required to invite a user, but not set their membership to "leave" (aka _kicking_ them), then you wind up not being able to rescind an invite. This can be unwelcome, especially if you accidentally invited a user.
+> There is an edge case whereas if you have the power level required to invite a user, but not set their membership to "leave" (aka *kicking* them), then you wind up not being able to rescind an invite. This can be unwelcome, especially if you accidentally invited a user.
 >
 > This MSC aims to define rescinding an invite as a special case, with separate power level logic from the generic "set a user's membership to 'leave'" action - allowing anyone to rescind an invite they sent regardless of their current power level.
 >
 > Seems useful to me! If this is something that bothers you, feel free to weigh in on the proposal with feedback.
 >
+> <!-- markdownlint-disable-next-line no-alt-text -->
 > ![](89fdc6c4f5bd3c069ed2aeb7926e11790fb243a8.png)
 
 [jaller94](https://matrix.to/#/@jaller94:matrix.org) says
@@ -92,7 +94,7 @@ category = ["This Week in Matrix"]
 [Kegan](https://matrix.to/#/@kegan:matrix.org) says
 
 > The sliding sync proxy has seen a number of massive architectural changes to support horizontal scaling in a kubernetes-like environment. The intention is to run a version of this scalable proxy to support expected user loads on matrix.org.
-
+>
 > This is currently a work in progress, but the [majority of the work](https://github.com/matrix-org/sliding-sync/pull/49) is now complete, so watch this space! To get a high-level overview of the changes, take a look at the [scaling design doc](https://github.com/matrix-org/sliding-sync/blob/5a13a02e8c48d1b0cd450f99f15e5158043ccfeb/SCALING.md).
 
 ### Synapse ([website](https://github.com/matrix-org/synapse/))
@@ -117,8 +119,8 @@ Second generation Matrix homeserver
 > This week we released [Dendrite 0.10.0](https://github.com/matrix-org/dendrite/releases/tag/v0.10.0) which contains a number of significant improvements and fixes. If you are running a Dendrite server, please upgrade! Changes include:
 >
 > * High performance full-text searching has been added to Dendrite
->   * Search must be enabled in the [`search` section of the `sync_api` config](https://github.com/matrix-org/dendrite/blob/6348486a1365c7469a498101f5035a9b6bd16d22/dendrite-sample.monolith.yaml#L279-L290) before it can be used
->   * The search index is stored on the filesystem rather than the sync API database, so a path to a suitable storage location on disk must be configured
+>     * Search must be enabled in the [`search` section of the `sync_api` config](https://github.com/matrix-org/dendrite/blob/6348486a1365c7469a498101f5035a9b6bd16d22/dendrite-sample.monolith.yaml#L279-L290) before it can be used
+>     * The search index is stored on the filesystem rather than the sync API database, so a path to a suitable storage location on disk must be configured
 > * Sync requests should now complete faster and use considerably less database connections as a result of better transactional isolation
 > * The notifications code has been refactored to hopefully make notifications more reliable
 > * A new `/_dendrite/admin/refreshDevices/{userID}` admin endpoint has been added for forcing a refresh of a remote user's device lists without having to modify the database by hand
@@ -141,7 +143,7 @@ Minimal Android messenger powered by Matrix
 
 [adam](https://matrix.to/#/@adam:iswell.cool) reports
 
-> _A lightweight Android matrix client, focused on family and friends messaging._
+> *A lightweight Android matrix client, focused on family and friends messaging.*
 >
 > It's been a while since the last TWIM update, development is still progressing and the app is still small (1.84mb~ when delivered via app bundle)!
 >
@@ -154,7 +156,7 @@ Minimal Android messenger powered by Matrix
 > * Automatic Monday & Thursday release trains.
 > * A separate repository for [feature requests](https://github.com/ouchadam/small-talk-features)
 >
-> There's still a few big features missing like room history, verification and a form of markdown support but if you're feeling brave SmallTalk is in the _it's kinda usable_ phase, links below for trying it out!
+> There's still a few big features missing like room history, verification and a form of markdown support but if you're feeling brave SmallTalk is in the *it's kinda usable* phase, links below for trying it out!
 >
 > | [Google Play Beta](https://play.google.com/apps/testing/app.dapk.st) | [F-Droid via IzzySoft](https://apt.izzysoft.de/fdroid/index/apk/app.dapk.st) | [Repository](https://github.com/ouchadam/small-talk) | [Matrix room](https://app.element.io/#/room/#small-talk:iswell.cool) |
 
@@ -207,6 +209,7 @@ Matrix messaging app for GNOME written in Rust.
 
 > This week we tagged Fractal as 5.alpha1. This is our first release since Fractal has been rewritten to take advantage of GTK 4 and the Matrix Rust SDK. It is the result of eighteen months of work.
 > Currently supported features are:
+>
 > * Sending and receiving messages and files
 > * Sending files via Drag-n-Drop and pasting in the message entry
 > * Rendering of rich formatted (HTML) messages, as well as media
@@ -229,6 +232,7 @@ Matrix messaging app for GNOME written in Rust.
 > * Deactivating the account
 >
 > Major missing features are:
+>
 > * Notifications
 > * Read markers
 >
@@ -237,8 +241,10 @@ Matrix messaging app for GNOME written in Rust.
 >
 > We also published a blogpost about the security quick scan performed by Radically Open Security as part of the NLnet grant <https://blogs.gnome.org/jsparber/2022/09/27/fractal-security-audit/>
 >
+> <!-- markdownlint-disable-next-line no-alt-text -->
 > ![](3a48fa5b0fd4b0e1f67fdf5dd8c51c683a6b7573.png)
 >
+> <!-- markdownlint-disable-next-line no-alt-text -->
 > ![](fractal-sessions.png)
 
 ### Ement.el ([website](https://github.com/alphapapa/ement.el))
@@ -252,6 +258,7 @@ Matrix client for Emacs
 > Since the last announcement on TWIM, the following improvements have been made.  The most notable is the addition of the `ement-directory` commands that allow listing and searching public room directories.
 >
 > *Additions*
+>
 > * Command `ement-directory` shows a server's room directory.
 > * Command `ement-directory-search` searches a server's room directory.
 > * Command `ement-directory-next` fetches the next batch of rooms in a directory.
@@ -260,12 +267,14 @@ Matrix client for Emacs
 > * Option `ement-notify-mark-frame-urgent-predicates` marks the frame as urgent when (by default) a message mentions the local user or "@room" and the message's room has an open buffer.
 >
 > *Changes*
+>
 > * Read receipts are re-enabled.
 > * When determining whether a room is considered unread, non-message events like membership changes, reactions, etc. are ignored.  This fixes a bug that caused certain rooms that had no message events (like some bridged rooms) to appear as unread when they shouldn't have.
 > * The `ement-taxy-room-list` view no longer automatically refreshes the list if the region is active in the buffer.  (This allows the user to operate on multiple rooms without the contents of the buffer changing before completing the process.)
 > * Minor improvements to date/time headers.
 >
 > *Fixes*
+>
 > * Links to only rooms (as opposed to links to events in rooms) may be activated to join them.
 > * Read receipts mark the last completely visible event (rather than one that's only partially displayed).
 > * Prevent error when a room avatar image fails to load.
@@ -281,10 +290,9 @@ Secure and independent communication, connected via Matrix. Come talk with us in
 
 [Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) reports
 
-
 > * We’ve released a security update this week, [more info here](https://element.io/blog/important-security-update/). Please make sure to upgrade.
 > * Now you can create and join new Element Call powered rooms! Element Call rooms are available on [develop.element.io](http://develop.element.io/) so be sure to check it out.
->     - Head to; Settings → Labs → Enable Video Rooms Beta, and then enable Element Call video rooms.
+>     * Head to; Settings → Labs → Enable Video Rooms Beta, and then enable Element Call video rooms.
 > * We’re progressing on a new WYSIWYG composer. You’ll be able to avoid markdown (if you want) to craft and preview messages before sending them.
 > * Updates are being made on the new device manager, including the ability to rename sessions. The whole thing’s is a lot simpler
 > * There’s also a fix for the missing dot on the notification panel. The bell in the top right should now let you know if you have something new. 🔔
@@ -294,7 +302,6 @@ Secure and independent communication, connected via Matrix. Come talk with us in
 Secure and independent communication for iOS, connected via Matrix. Come talk with us in [#element-ios:matrix.org](https://matrix.to/#/#element-ios:matrix.org)!
 
 [Ștefan](https://matrix.to/#/@stefan.ceriu:matrix.org) says
-
 
 > * We’ve released a security update this week, more info [here](https://element.io/blog/important-security-update/). Please make sure to upgrade.
 > * There’s been several other bug fixes in iOS this week, including:
@@ -308,7 +315,6 @@ Secure and independent communication for Android, connected via Matrix. Come tal
 
 [Manu](https://matrix.to/#/@Manu:matrix.org) says
 
-
 > * We’ve released a security update this week, more info here. Please make sure to upgrade.
 > * There’s exciting work happening on deferring DM creation until the first message is sent.
 > * Also, improvements have been made to the new app layout. It’s available in Labs today but will be the default from the next release so be sure to check it out and let us know what you think?
@@ -318,7 +324,6 @@ Secure and independent communication for Android, connected via Matrix. Come tal
 Everything related to Element but not strictly bound to a client
 
 [Danielle](https://matrix.to/#/@daniellekirkwood:one.ems.host) announces
-
 
 > There have been security releases across our platforms this week; please make sure to upgrade to the following versions:
 >
@@ -410,6 +415,7 @@ Next-gen crypto-included SDK for developing Clients, Bots and Appservices; writt
 Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
 
 ### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+
 Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|
@@ -426,6 +432,7 @@ Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience th
 |10|matrix.netho.tk|2780|
 
 ### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+
 Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|

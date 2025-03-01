@@ -28,9 +28,9 @@ Quoting selectively:
 **So what does this mean if you are building an app that has a dependency on libolm?**
 
 * We have been public from the outset that that libolm's primitives are functionally correct, but not resilient to timing attacks
-  * [Repository issue](https://github.com/matrix-org/olm/issues/3)
-  * [Project README](https://gitlab.matrix.org/matrix-org/olm/-/blob/master/lib/crypto-algorithms/README.md)
-  * [An audit from NCC Group](https://matrix.org/blog/2016/11/21/matrix-s-olm-end-to-end-encryption-security-assessment-released-and-implemented-cross-platform-on-riot-at-last/)
+    * [Repository issue](https://github.com/matrix-org/olm/issues/3)
+    * [Project README](https://gitlab.matrix.org/matrix-org/olm/-/blob/master/lib/crypto-algorithms/README.md)
+    * [An audit from NCC Group](https://matrix.org/blog/2016/11/21/matrix-s-olm-end-to-end-encryption-security-assessment-released-and-implemented-cross-platform-on-riot-at-last/)
 * We do not believe this to be a high-severity issue for Matrix because an attack would require sending very large volumes of messages with very accurate timings targeting the same key material – while in practice Matrix implementations have short-lived AES key material (due to ratcheting), very noisy timings (due to traffic topology being client ↔ server ↔ server ↔ client, with persistence steps at each hop), as well as traffic rate-limiting. As a result, we do not believe that an attack over the network is feasible. It is possible that a local attack might work – but if the attacker has local access to your device, we consider you to already be compromised.
 * Even though it is a theoretical rather than practical weakness, we still wanted to fix it. We chose to do so with the shift to vodozemac, which provides both first-class, audited cryptographic primitives provided by Rust, while also avoiding the possibility of an entire class of weaknesses, such as the [buffer overflows](https://matrix.org/blog/2021/12/13/disclosure-buffer-overflow-in-libolm-and-matrix-js-sdk/) previously found and mitigated in libolm.
 
@@ -48,10 +48,12 @@ Note: The CVEs have since been edited post-submission to conflate libolm with th
 
 The good news is that if you are building on matrix-rust-sdk or matrix-js-sdk they are already vodozemac backed. However, libolm is still a dependency of both libraries, and it is worth explaining why.
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **matrix-rust-sdk**
 
 * libolm is used only in testing and is not an operational dependency (it is used to check that `PkEncryption` in matrix-sdk-crypto is compatible with libolm's). [We have updated](https://github.com/matrix-org/matrix-rust-sdk/pull/3860/files) its dependency specification to make this clearer. We do not intend to remove this dependency in the short term.
 
+<!-- markdownlint-disable-next-line no-emphasis-as-heading -->
 **matrix-js-sdk**
 
 * libolm is referenced [here](https://github.com/matrix-org/matrix-js-sdk/blob/c408c0d1d517eeac98c7ee11d99a6a8a874ecda5/src/crypto/backup.ts\#L666), as a hangover from recent work to migrate from libolm to vodozemac. This file will be [removed](https://github.com/element-hq/element-web/issues/26922).

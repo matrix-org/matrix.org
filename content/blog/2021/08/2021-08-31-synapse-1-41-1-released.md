@@ -25,7 +25,7 @@ Note that in both cases:
 
 - The private room's Room ID must be known to the attacker.
 - Another user on the attacker's homeserver must be a legitimate member of the target room.
-- The information disclosed is _already_ present in the database and thus legitimately known to the administrators of homeservers participating in the target room.
+- The information disclosed is *already* present in the database and thus legitimately known to the administrators of homeservers participating in the target room.
 
 We'd like to credit [0xkasper](https://twitter.com/0xkasper) for discovering and responsibly disclosing these issues.
 

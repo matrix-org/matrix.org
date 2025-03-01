@@ -65,6 +65,5 @@ url>/?loginToken=<some login token>`. If the user does not auth successfully,
 they will be informed in the browser.
 
 You will read the `loginToken` parameter from this response, and use it to login
-with the [token-based login flow
-](https://matrix.org/docs/spec/client_server/latest#token-based), thus obtaining
+with the [token-based login flow](https://matrix.org/docs/spec/client_server/latest#token-based), thus obtaining
 a mxid, access_token and device ID.

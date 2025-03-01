@@ -16,21 +16,17 @@ Aside from that the admin API continues to grow (this time device management) an
 
 We are receiving an increasing number of high quality PRs from the community, please keep them coming. Special thanks to [cg505](https://github.com/cg505), [dklimpel](https://github.com/dklimpel), [WGH](https://github.com/WGH), [olof](https://github.com/olof) and [ilmari](https://github.com/ilmari)
 
-Get 1.15.0 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.15.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
-
+Get 1.15.0 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.15.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 Changelog since v1.14.0
 
-Synapse 1.15.0 (2020-06-11)
-===========================
+## Synapse 1.15.0 (2020-06-11)
 
 No significant changes.
 
-Synapse 1.15.0rc1 (2020-06-09)
-==============================
+## Synapse 1.15.0rc1 (2020-06-09)
 
-Features
---------
+### Features
 
 - Advertise support for Client-Server API r0.6.0 and remove related unstable feature flags. ([\#6585](https://github.com/matrix-org/synapse/issues/6585))
 - Add an option to disable autojoining rooms for guest accounts. ([\#6637](https://github.com/matrix-org/synapse/issues/6637))
@@ -39,8 +35,7 @@ Features
 - Add support for generating thumbnails for WebP images. Previously, users would see an empty box instead of preview image. Contributed by @WGH-. ([\#7586](https://github.com/matrix-org/synapse/issues/7586))
 - Support the standardized `m.login.sso` user-interactive authentication flow. ([\#7630](https://github.com/matrix-org/synapse/issues/7630))
 
-Bugfixes
---------
+### Bugfixes
 
 - Allow new users to be registered via the admin API even if the monthly active user limit has been reached. Contributed by @dklimpel. ([\#7263](https://github.com/matrix-org/synapse/issues/7263))
 - Fix email notifications not being enabled for new users when created via the Admin API. ([\#7267](https://github.com/matrix-org/synapse/issues/7267))
@@ -57,16 +52,14 @@ Bugfixes
 - Advertise the `m.login.token` login flow when OpenID Connect is enabled. ([\#7631](https://github.com/matrix-org/synapse/issues/7631))
 - Fix bug in account data replication stream. ([\#7656](https://github.com/matrix-org/synapse/issues/7656))
 
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Update the OpenBSD installation instructions. ([\#7587](https://github.com/matrix-org/synapse/issues/7587))
 - Advertise Python 3.8 support in `setup.py`. ([\#7602](https://github.com/matrix-org/synapse/issues/7602))
 - Add a link to `#synapse:matrix.org` in the troubleshooting section of the README. ([\#7603](https://github.com/matrix-org/synapse/issues/7603))
 - Clarifications to the admin api documentation. ([\#7647](https://github.com/matrix-org/synapse/issues/7647))
 
-Internal Changes
-----------------
+### Internal Changes
 
 - Convert the identity handler to async/await. ([\#7561](https://github.com/matrix-org/synapse/issues/7561))
 - Improve query performance for fetching state from a PostgreSQL database. Contributed by @ilmari. ([\#7567](https://github.com/matrix-org/synapse/issues/7567))

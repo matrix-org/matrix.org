@@ -7,7 +7,7 @@ author = ["Oddvar Lovaas"]
 category = ["General"]
 +++
 
-Earlier this year we went to <a href="http://fosdem.org" title="FOSDEM">FOSDEM</a> - as reported in an <a href="http://matrix.org/blog/2015/02/04/back-from-fosdem/" title="earlier blog post">earlier blog post</a>. 
+Earlier this year we went to <a href="http://fosdem.org" title="FOSDEM">FOSDEM</a> - as reported in an <a href="http://matrix.org/blog/2015/02/04/back-from-fosdem/" title="earlier blog post">earlier blog post</a>.
 
 Both the recording equipment and the video team volunteers were new this year, so some problems were encountered, which means that our lightning talk video unfortunately was lost. However, our talk in the IoT-devroom is now available:
 
@@ -19,4 +19,4 @@ Your browser does not support the video tag.
 
 The slides are also <a href="http://matrix.org/blog/wp-content/uploads/2015/02/2015-02-01-Matrix-IoT-FOSDEM.pdf">available</a>. You can check out the slides from the <a href="http://matrix.org/blog/wp-content/uploads/2015/02/2015-01-31-Matrix_FOSDEM.pdf" title="lightning talk">lightning talk</a> as well.
 
-As always, questions and comments are very welcome in the <a href="/beta/#/room/#matrix:matrix.org" title="#matrix:matrix.org">#matrix:matrix.org</a> room! 
+As always, questions and comments are very welcome in the <a href="/beta/#/room/#matrix:matrix.org" title="#matrix:matrix.org">#matrix:matrix.org</a> room!

@@ -19,7 +19,6 @@ The mission of Third Room is to ensure that a truly open and equitable platform 
 
 Today, we’re incredibly excited to announce **Third Room Technology Preview 2: The Creator Update**.  As more and more 3D hardware enters the market, the race is on to provide tools to developers and creators so they can build on an open, vendor-agnostic platform - and in this update we’ve focused on building out the **scripting**, **editing** and **authoring** capabilities of Third Room to provide a solid platform for building and running collaborative 3D apps of any kind. Check out the new release at [https://thirdroom.io](https://thirdroom.io).
 
-
 <blockquote>
 As a reminder: the Third Room team is a tiny band formed by Robert, Nate and Ajay and operates outside of all the rest of our work on Matrix: the other 97% of our effort goes into making the core of Matrix amazing (particularly the underpinnings for Element X and the next generation of Matrix clients). However, Matrix is about more than just chat and VoIP, and Third Room provides an excellent showcase of Matrix’s abilities as a general purpose communication fabric.
 </blockquote>
@@ -40,7 +39,6 @@ WebSG isn’t just for manipulating scene graphs though - it also provides a who
 
 As a quick taster - a WebSG app to pulse a light in your scene can be as simple as this:
 
-
 ```js
 world.onload = () => {
     const directionalLight = world.findLightByName("DirectionalLight"); 
@@ -54,7 +52,6 @@ world.onload = () => {
 Third Room takes the JS and compiles it down to WASM using [QuickJS](https://bellard.org/quickjs/), and then executes it within a WASM sandbox - isolating it entirely from your other conversations and the rest of the Third Room. (In future, we’ll look to provide quota limits to ensure scripts don’t get greedy with resources).
 
 We also support a low-level C API for WebSG, letting you compile your own native code down to WASM - in C the same script looks like this:
-
 
 ```c
 #include <math.h>
@@ -73,7 +70,6 @@ export void websg_update(float_t dt, float_t time) {
     );
 }
 ```
-
 
 But don’t worry - we’re not expecting folks to be writing C as a matter of course; the reason to provide the low-level C API is so that in future we can easily provide Rust and Zig (or more!) bindings so folks can use their favourite native language to compile optimised WASM rather than using interpreted JavaScript.  That said, [procgen](https://github.com/matrix-org/thirdroom/blob/main/examples/procgen/c/src/procgen.c) is a fun C example of a procedurally generated Perlin noise blob which pulsates in response to local audio, as an idea of what you can do today if you’re willing to write some C!  There’s also a [JS version](https://github.com/matrix-org/thirdroom/blob/main/examples/procgen/js) of it too.
 
@@ -127,7 +123,7 @@ Talking of docs, we’re proud to unveil a shiny new documentation website for T
     * The official WebSG Tutorial - learn how to build a basketball game with WebSG!
         * [Part 1: Interactables](https://thirdroom.io/docs/guides/websg/basketball/part-1.html)
         * [Part 2: Collisions and UI](https://thirdroom.io/docs/guides/websg/basketball/part-2.html)
-        * [Part 3: Networking ](https://thirdroom.io/docs/guides/websg/basketball/part-3.html)(in progress)
+        * [Part 3: Networking](https://thirdroom.io/docs/guides/websg/basketball/part-3.html)(in progress)
     * [A guide to the Scene Graph itself](https://thirdroom.io/docs/guides/websg/scenegraph.html)
     * [A guide to manipulating meshes](https://thirdroom.io/docs/guides/websg/meshes.html) with WebSG
     * [A guide to materials](https://thirdroom.io/docs/guides/websg/materials.html) with WebSG
@@ -184,7 +180,6 @@ This means that right now networking is still somewhat up in the air: WebSG can 
 
 We’re working away on sorting this out one way or another - if it was working perfectly it wouldn’t be a Tech Preview, after all ;)
 
-
 ### Introducing the Discover page
 
 In keeping with the focus on creators in this release, we’ve also added a new Discover view to Third Room, making it easier to find existing scenes and worlds.  A directory of curated content is published in a repository room ([MSC3948](https://github.com/ajbura/matrix-spec-proposals/blob/respository-room/proposals/3948-repository-room.md)) - by default #repository-room:thirdroom.io, and then hitting the compass icon in the side menu will let you create your own worlds based on existing scenes, or indeed discover and jump into existing worlds:
@@ -192,7 +187,6 @@ In keeping with the focus on creators in this release, we’ve also added a new 
 ![Discover](/blog/img/2023-06-07-discover.png)
 
 Meanwhile the Creator tab makes it even easier to get up and running creating new worlds. The Discover view now becomes the default view for new users, to help them onboard when they enter the app for the first time.
-
 
 ### WebXR support
 
@@ -207,7 +201,6 @@ WebXR *should* work out of the box on any good VR/AR headset, without having to 
 ### What remains?
 
 While we’ve made extraordinary progress since the last release, there’s still a bunch of things remaining which is keeping Third Room as a Technology Preview.  Most important first:
-
 
 * Networking
     * As per the Networking section above, we need to rework Authoritative Networking so we have the final networking model in place, such that WebSG scripts execute deterministically in a single place with smooth but accurate interpolation on the participating clients. We also need to iterate a bit more on the final networking API so that anyone can build multi-user apps with ease.
@@ -227,7 +220,6 @@ While we’ve made extraordinary progress since the last release, there’s stil
     * Finally, last but not least, we need to start populating these worlds with some fun, beautiful, amazing apps and games.  The whole point of this release is to give creators the tools they need to start properly playing around, building on top of Third Room, and we really hope you’ll give it a go and get involved (not least as our bandwidth to do so within the core team is sorely limited).
 
 Hopefully the next release will be both the final tech preview and the first beta of the complete Third Room experience - but to get there, we need your feedback: please head over to [#thirdroom-dev:matrix.org](https://matrix.to/#/#thirdroom-dev:matrix.org) and tell us what you think!
-
 
 ### Funding Third Room
 

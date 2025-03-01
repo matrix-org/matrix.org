@@ -28,23 +28,23 @@ but suffice it to say that this is enormous news for the Matrix ecosystem as a
 whole.  In addition to transforming the Element app, on the Matrix side this
 means that there is now concrete funding secured to:
 
- * finish building out [P2P Matrix](https://matrix.org/blog/2021/05/06/introducing-the-pinecone-overlay-network)
+* finish building out [P2P Matrix](https://matrix.org/blog/2021/05/06/introducing-the-pinecone-overlay-network)
    and get it live (including finishing Dendrite, given our P2P work builds on Dendrite!)
 
- * implement [native decentralised E2EE voip/video conferencing](https://twitter.com/matrixdotorg/status/1419820122143961093) for Matrix
+* implement [native decentralised E2EE voip/video conferencing](https://twitter.com/matrixdotorg/status/1419820122143961093) for Matrix
 
- * fully build out our
+* fully build out our
    [relative decentralised reputation system](https://matrix.org/blog/2020/10/19/combating-abuse-in-matrix-without-backdoors)
    in order to combat abuse in Matrix.
 
 Obviously this is in addition to all the normal business-as-usual work going
 on in terms of:
 
- * getting [Spaces](https://element.io/blog/spaces-the-next-frontier/) out of beta
- * adding Threading to Element (yes, it's finally happening!)
- * speeding up room joins over federation
- * creating 'sync v3' to lazy-load all content and make the API super-snappy
- * lots of little long-overdue fun bits and pieces (yes, custom emoji, we're looking at you).
+* getting [Spaces](https://element.io/blog/spaces-the-next-frontier/) out of beta
+* adding Threading to Element (yes, it's finally happening!)
+* speeding up room joins over federation
+* creating 'sync v3' to lazy-load all content and make the API super-snappy
+* lots of little long-overdue fun bits and pieces (yes, custom emoji, we're looking at you).
 
 If you're wondering whether Protocol Labs' investment means that we'll be
 seeing more overlap between [IPFS](https://ipfs.io) and Matrix, then yes -

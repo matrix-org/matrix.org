@@ -31,8 +31,8 @@ This week also saw the release of [Sydent 2.5.0](https://github.com/matrix-org/s
 
 ## Everything Else
 
-* The Admin API to [create or modify accounts](https://matrix-org.github.io/synapse/v1.46/admin_api/user_admin_api.html#create-or-modify-account) now accepts a `user_type` field, allowing for accounts to be set as belonging to bots or support staff.
-* [Password auth providers](https://matrix-org.github.io/synapse/v1.46/modules/password_auth_provider_callbacks.html) can now be implemented using the new pluggable extension module APIs.
+- The Admin API to [create or modify accounts](https://matrix-org.github.io/synapse/v1.46/admin_api/user_admin_api.html#create-or-modify-account) now accepts a `user_type` field, allowing for accounts to be set as belonging to bots or support staff.
+- [Password auth providers](https://matrix-org.github.io/synapse/v1.46/modules/password_auth_provider_callbacks.html) can now be implemented using the new pluggable extension module APIs.
 
 Please see the Synapse [Release Notes](https://github.com/matrix-org/synapse/blob/v1.46.0/CHANGES.md) for a complete list of changes in this release.
 

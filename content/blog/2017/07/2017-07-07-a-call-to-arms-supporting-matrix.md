@@ -48,7 +48,7 @@ Despite the funding issue, the project really is going very well. Our vital stat
 
 And meanwhile, looking back at the last big update (<a href="/blog/2016/12/26/the-matrix-holiday-special-2016-edition/">Holiday Special 2016</a>), we can compare our progress with our goals for 2017 thus far:
 <ul>
- 	<li><em>Getting E2E Encryption out of beta ASAP.</em></li>
+  <li><em>Getting E2E Encryption out of beta ASAP.</em></li>
 </ul>
 This has progressed massively - we haven't really yelled about it yet, but latest https://riot.im/develop/ now finally implements the ability to share message keys between clients to let them decrypt older history and fix “unable to decrypt” errors (Mobile coming soon).  Meanwhile various root causes of “unable to decrypt” errors have been gradually eliminated; I can't actually remember the last time I saw one! Once key-sharing and improved device verification UX is fully tested and tuned we should be able to declare E2E out of beta.
 
@@ -57,7 +57,7 @@ This has progressed massively - we haven't really yelled about it yet, but lates
 > — Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/867719250194071552">May 25, 2017</a>
 
 <ul>
- 	<li><em>Ensuring we can scale beyond Synapse – i.e. implement Dendrite</em></li>
+  <li><em>Ensuring we can scale beyond Synapse – i.e. implement Dendrite</em></li>
 </ul>
 Likewise, Dendrite is on track: we've implemented all the Hard Stuff which forms the skeleton of Dendrite (core federation, message signing, /sync, message sending, media repository etc) - which takes us to over <a href="https://docs.google.com/spreadsheets/d/1tkMNpIpPjvuDJWjPFbw_xzNzOHBA-Hp50Rkpcr43xTw/edit">50% of Phase 1</a>. After phase 1, we will have an initial usable release for all the core functionality.  Synapse's performance has also improved enormously this year.
 
@@ -66,21 +66,21 @@ Likewise, Dendrite is on track: we've implemented all the Hard Stuff which forms
 > — Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/878279397106733056">June 23, 2017</a>
 
 <ul>
- 	<li><em>Getting as many bots and bridges into Matrix as possible, and doing everything we can to support them, host them and help them be as high quality as possible – making the public federated Matrix network as useful and diverse as possible.</em></li>
+  <li><em>Getting as many bots and bridges into Matrix as possible, and doing everything we can to support them, host them and help them be as high quality as possible – making the public federated Matrix network as useful and diverse as possible.</em></li>
 </ul>
 Bridges and bots continue - from the core team we have a ‘puppeting' Telegram bridge (<a href="https://github.com/matrix-org/matrix-appservice-tg">matrix-appservice-tg</a>), and from the wider community we have <a href="https://github.com/Half-Shot/matrix-appservice-discord">Discord</a>, <a href="https://github.com/matrix-hacks/matrix-puppet-skype">Skype</a>, <a href="https://github.com/matrix-hacks/matrix-puppet-signal">Signal</a>, new Rocket.Chat and more.  Getting them polished and live is certainly an area where we need more manpower though.
 <ul>
- 	<li><em>Supporting Riot's leap to the mainstream, ensuring Matrix has at least one killer app.</em></li>
+  <li><em>Supporting Riot's leap to the mainstream, ensuring Matrix has at least one killer app.</em></li>
 </ul>
 Riot has been <a href="https://medium.com/@RiotChat/riot-web-and-desktop-version-0-10-0-is-here-e6147f5f576f">sprouting</a> <a href="https://medium.com/@RiotChat/riot-web-0-11-is-here-3edbf9dbb7ed">new releases</a> every few weeks, with a huge emphasis on proving UX:
 <ul>
- 	<li style="padding-left: 30px;">an entirely new streamlined sign-up process</li>
- 	<li style="padding-left: 30px;">the new concept of home pages</li>
- 	<li style="padding-left: 30px;">a user directory search that actually works</li>
- 	<li style="padding-left: 30px;">internationalised to 27 languages</li>
- 	<li style="padding-left: 30px;">compact layout</li>
- 	<li style="padding-left: 30px;">loads of desktop improvements</li>
- 	<li style="padding-left: 30px;">piwik analytics support; etc.</li>
+  <li style="padding-left: 30px;">an entirely new streamlined sign-up process</li>
+  <li style="padding-left: 30px;">the new concept of home pages</li>
+  <li style="padding-left: 30px;">a user directory search that actually works</li>
+  <li style="padding-left: 30px;">internationalised to 27 languages</li>
+  <li style="padding-left: 30px;">compact layout</li>
+  <li style="padding-left: 30px;">loads of desktop improvements</li>
+  <li style="padding-left: 30px;">piwik analytics support; etc.</li>
 </ul>
 <img class="aligncenter size-large wp-image-2598" src="/blog/wp-content/uploads/2017/07/Screen-Shot-2017-07-06-at-16.12.28-1024x566.png" alt="" width="1024" height="566" />
 
@@ -88,43 +88,43 @@ There is still a lot of UX work to be done, but it's converging fast on being a 
 
 Meanwhile, a <a href="https://medium.com/@RiotChat/riot-im-unveils-the-next-generation-of-its-mobile-client-6b38e2227ee2">massive update to the iOS & Android apps</a> just landed yesterday, switching to an entirely new UI layout to separate People from Rooms, synchronized Read Markers, and more!
 <ul>
- 	<li><em>Adding the final major missing features:</em>
+  <li><em>Adding the final major missing features:</em>
 <ul>
- 	<li><em>Customisable User Profiles (this is almost done, actually)</em></li>
+  <li><em>Customisable User Profiles (this is almost done, actually)</em></li>
 </ul>
 </li>
 </ul>
 This is still hovering at ‘almost done', and will be needed for some of the implementation of Groups (see below)..
 <ul>
- 	<li><em>Groups (i.e. ability to define groups of users, and perform invites, powerlevels, etc. per-group as well as per-user)</em></li>
+  <li><em>Groups (i.e. ability to define groups of users, and perform invites, powerlevels, etc. per-group as well as per-user)</em></li>
 </ul>
 Groups are also in testing in Synapse too!  These will probably be the single biggest change to Matrix that we've seen since E2E encryption landed: it changes the dynamic of the whole network, given users can explicitly declare allegiance to different groups, which in turn have their own home pages and directories etc.  It lets users form communities, and declare their participation in those communities (if desired), and also lets rooms be grouped together.  One of our single biggest requests has been <a href="https://github.com/vector-im/riot-web/issues/2454">“subrooms”</a> and we're incredibly excited to see how well Groups solve this.
 <ul>
- 	<li><em>Threading</em></li>
+  <li><em>Threading</em></li>
 </ul>
 Sadly no progress on Threading so far this year.
 <ul>
- 	<li><em>Editable events (and Reactions)</em></li>
+  <li><em>Editable events (and Reactions)</em></li>
 </ul>
 We're hoping to get looking at this (at last!) once Groups are done.
 <ul>
- 	<li><em>Maturing and polishing the spec (we are way overdue a new release)</em></li>
+  <li><em>Maturing and polishing the spec (we are way overdue a new release)</em></li>
 </ul>
 You'll have noticed that in the “how many people work on Matrix?” stats above, we didn't mention anyone working on the Spec.  Because right now there isn't anyone explicitly maintaining it, unfortunately; updates are done best-effort when everyone's primary responsibilities allow it.  That said, there's quite a lot of good stuff currently <a href="/speculator/spec/HEAD/client_server/unstable.html">unreleased on HEAD.</a> This is something which is obviously critical to fix once we have sustainable funding sorted again.  We can only apologise to folks like the <a href="https://ruma.dev/">Ruma</a> developers who have suffered from the spec lag. :(
 <ul>
- 	<li><em>Improving VoIP – especially conferencing.</em></li>
+  <li><em>Improving VoIP – especially conferencing.</em></li>
 </ul>
 VoIP is improving lots on iOS, thanks to Denis Morozov's GSoC project, and meanwhile we have all new conferencing powered by Jitsi on the horizon in the next few weeks too.
 <ul>
- 	<li><em>Reputation/Moderation management (i.e. spam/abuse filtering).</em></li>
+  <li><em>Reputation/Moderation management (i.e. spam/abuse filtering).</em></li>
 </ul>
 Lots of thinking about this (see below), but no development yet.
 <ul>
- 	<li><em>Much-needed SDK performance work on matrix-{'{'}react,ios,android{'}'}-sdk.</em></li>
+  <li><em>Much-needed SDK performance work on matrix-{'{'}react,ios,android{'}'}-sdk.</em></li>
 </ul>
 About 40% of the desired performance work has happened here (although not all has gone live yet).
 <ul>
- 	<li><em>…and a few other things which would be premature to mention right now. :D</em></li>
+  <li><em>…and a few other things which would be premature to mention right now. :D</em></li>
 </ul>
 All will be revealed in the next week or two - but suffice it to say that Integrations are going to be getting a Lot More Useful™. :)
 

@@ -29,7 +29,7 @@ We're opting to follow the email model, where the act of sending an event (i.e. 
 
 This means that if a user invokes their right to erasure, we will need to ensure that their events will only ever be visible to users who already have a copy - and must __never__ be served to new users or the general public. Meanwhile, data which is no longer accessible by any user must of course be deleted entirely.
 
-In the email analogy: this is like saying that you cannot erase emails that you have sent other people; you cannot try to rewrite history as witnessed by others... but you can erase your emails from a public mail archive or search engine and stop them from being visible to anyone else. 
+In the email analogy: this is like saying that you cannot erase emails that you have sent other people; you cannot try to rewrite history as witnessed by others... but you can erase your emails from a public mail archive or search engine and stop them from being visible to anyone else.
 
 It is important to note that GDPR Erasure is _completely separate_ from the existing Matrix functionality of "redactions" which let users remove events from the room. A "redaction" today represents a request for the human-facing details of an event (message, join/leave, avatar change etc) to be removed.  Technically, there is no way to enforce a redaction over federation, but there is a "gentlemen's agreement" that this request will be honoured.
 
@@ -42,7 +42,6 @@ In practice, our core to-do list for Right to Erasure is:
 - Homeservers must delete media that nobody has access to any more. This is hard, as media is referenced by `mxc://` URLs which may be shared across multiple events (e.g. stickers or forwarded events, including E2E encrypted events), and moreover `mxc://` URLs aren't currently authorized.  As a first cut, we track which user uploaded the `mxc://` content, and if they erase themselves then the content will also be erased.
 - Homeservers must not serve up unredacted events over federation to users who were not in the room at the time. This poses some interesting problems in terms of the privacy implications of sharing MXIDs of erased users over federation - see "GDPR erasure of MXIDs" below.
 - Matrix must specify a way of informing both servers and clients (especially bots and bridges) of GDPR erasures (as distinct from redactions), so that they can apply the appropriate erasure semantics.
-
 
 #### GDPR erasure of Matrix IDs
 
@@ -114,6 +113,5 @@ GDPR mandates rules for all the personal data stored by a business, so there are
 ### Conclusion
 
 So, there you have it. We'll be tracking progress in github issues and an associated dashboard over the coming weeks; for now <https://github.com/matrix-org/synapse/issues/1941> (for Right to Erasure) or <https://github.com/vector-im/riot-meta/issues/149> (GDPR in general) is as good as place as any to gather feedback. Alternatively, feel free to comment on the original text of this blog post: <https://docs.google.com/document/d/1JTEI6RENnOlnCwcU2hwpg3P6LmTWuNS9S-ZYDdjqgzA>.
-
 
 It's worth noting that we feel that GDPR is an excellent piece of legislation from the perspective of forcing us to think more seriously about our privacy - it has forced us to re-prioritise all sorts of long-term deficiencies in Matrix (e.g. dependence on DNS; improving User Interactive authentication; improving logout semantics etc). There's obviously a lot of work to be done here, but hopefully it should all be worth it!

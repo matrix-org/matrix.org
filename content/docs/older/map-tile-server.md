@@ -177,6 +177,7 @@ Here's how it looks:
 The style file is quite simple. To describe a tile server on this machine,
 we need to create a file `style.json` like this:
 
+<!-- markdownlint-disable line-length -->
 ```json
 {
   "version": 8,
@@ -199,6 +200,7 @@ we need to create a file `style.json` like this:
   ]
 }
 ```
+<!-- markdownlint-enable line-length -->
 
 We need this file to be served up by the tile server, but that is easily done
 by slightly modifying the command we use to run it.
@@ -269,13 +271,13 @@ are due to their authors:
 * [Switch2OSM - The Basics](https://switch2osm.org/the-basics/) - explanation
   of some of the concepts
 * [Switch2OSM - serving tiles using a Docker container](https://switch2osm.org/serving-tiles/using-a-docker-container)
-  - the basis for most of the information in "Running the tile server" above
+    * the basis for most of the information in "Running the tile server" above
 * [openstreetmap-tile-server README](https://github.com/Overv/openstreetmap-tile-server/blob/master/README.md)
-  - lots of further detail on how to run the tile server
+    * lots of further detail on how to run the tile server
 
 Some other useful links:
 
 * [Location Guard Firefox Plugin](https://addons.mozilla.org/en-US/firefox/addon/location-guard/)
-  - allows setting a hard-coded location instead of sharing your real location.
+    * allows setting a hard-coded location instead of sharing your real location.
 * [Implementing Vector Tile Support in Libshumate](https://www.jwestman.net/2021/11/08/implementing-vector-tile-support-in-libshumate.html)
-  - explanation of some of the key ideas from James Westman
+    * explanation of some of the key ideas from James Westman

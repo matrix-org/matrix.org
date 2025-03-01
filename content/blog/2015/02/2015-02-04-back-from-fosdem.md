@@ -7,7 +7,7 @@ author = ["Oddvar Lovaas"]
 category = ["General"]
 +++
 
-<a href="http://fosdem.org" title="FOSDEM">FOSDEM</a> was great fun! Two days full of conferences and demos; lots of interesting technologies and interested people - and most of all: talking to so many new faces about Matrix and potential uses and integration ideas. 
+<a href="http://fosdem.org" title="FOSDEM">FOSDEM</a> was great fun! Two days full of conferences and demos; lots of interesting technologies and interested people - and most of all: talking to so many new faces about Matrix and potential uses and integration ideas.
 
 Both our lightning talk and IoT-devroom talk were completely filled up with huge queues outside (sorry folks), and our demos seemed to go down fairly well.  In fact several people <a href="/code">set up their own homeserver</a> and joined the federated network of Matrix servers during FOSDEM itself!
 

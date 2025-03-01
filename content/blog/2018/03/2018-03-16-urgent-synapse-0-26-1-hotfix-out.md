@@ -17,5 +17,5 @@ Sorry for the inconvenience.
 
 Bug fixes:
 <ul>
- 	<li>Fix bug where an invalid event caused server to stop functioning correctly, due to parsing and serializing bugs in ujson library.</li>
+  <li>Fix bug where an invalid event caused server to stop functioning correctly, due to parsing and serializing bugs in ujson library.</li>
 </ul>

@@ -14,6 +14,7 @@ This is the third in a series of three posts which discuss recent work to improv
 While the primary goal was to improve Sydent's coverage and robustness, to some extent this was an experiment too. How much could we get out of typing and static analysis, if we _really_ invested in thorough annotations? Sydent is a small project that would make for a good testbed! I decided my goal would be to get Sydent passing mypy under [--strict mode](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict). This is a command line option which turns on a number of extra checks (though not everything); it feels similar to passing `-Wall -Wextra -Werror` to `gcc`. It's a little extreme, but Sydent is a small project and this would be a good chance to see how hard it would be. In my view, the most useful options implied by strict mode were as follows.
 
 ### [--check-untyped-defs](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs)
+
 By default, mypy will only analyze the implementation of functions that are annotated. On the one hand, without annotations for inputs and the return type, it's going to be hard for mypy to thoroughly check the soundness of your function. On the other, it can still do good work with the type information it has from other sources. Mypy can
 
 - infer the type of literals, e.g. deducing `x: str` from  `x = "hello"`;
@@ -72,7 +73,7 @@ It was important to have some way to numerically evaluate our efforts to improve
 
 The most obvious metric is the number of total errors reported by mypy. Before the recent sprint, we had roughly 600 errors total.
 
-```
+```txt
 dmr on titan in sydent on  HEAD (3dde3ad) via 🐍 v3.9.7 (env)
 2021-11-08 12:35:37 ✔  $ mypy --strict sydent
 Found 635 errors in 59 files (checked 78 source files)
@@ -98,7 +99,7 @@ The precision for each module is broken down line-by-line and colour-coded accor
 
 This reproduces the index page from the `html` report as a plain text file. It's slightly easier to parse—that's how I got the data for the precision line graphs in [part one](https://matrix.org/blog/2021/12/03/type-coverage-for-sydent-motivation) of this series. That was a quick and dirty hack, though; a proper analysis of precision probably ought to read from the json or xml output formats. Here's a truncated sample:
 
-```
+```txt
 +-----------------------------------+-------------------+----------+
 | Module                            | Imprecision       | Lines    |
 +-----------------------------------+-------------------+----------+
@@ -120,7 +121,7 @@ This reproduces the index page from the `html` report as a plain text file. It's
 
 Selecting this option generate two reports: `any-exprs.txt` and `types-of-anys.txt`. The latter is interesting to understand where the `Anys` come from, but the former is more useful for quantifying the progress of typing. Another sample:
 
-```
+```txt
                   Name   Anys   Exprs   Coverage
 -------------------------------------------------
                 sydent      0       2    100.00%
@@ -136,7 +137,7 @@ sydent.config.database      0       8    100.00%
 
 The breakdown in `types-of-anys.txt` has more gory detail. I found the "Unimported" column particularly interesting: it lets us see how exposed we are to a lack of typing in our dependencies.
 
-```
+```txt
                              Name   Unannotated   Explicit   Unimported   Omitted Generics   Error   Special Form   Implementation Artifact
 -------------------------------------------------------------------------------------------------------------------------------------------
                            sydent             0          0            0                  0       0              0                         0
@@ -156,6 +157,7 @@ sydent.validators.msisdnvalidator             0          8            0         
 ### The meaning of precision
 
 There are two metrics I chose to focus on:
+
 - the proportion of "imprecise" lines across the project; I also used the complement, `precision = 100% - imprecision`, and
 - the proportion of expressions whose type is not `Any`.
 
@@ -167,7 +169,7 @@ These are plotted in the graph at the top of this writeup. I could see that prec
    - An expression that has type `Any` leads to precision `ANY`.
    - I _think_ an expression that [involves `Any` but is not `Any`](https://github.com/python/mypy/blob/2907a4dea939e20ff39ef7d9ff85ae1a199a0ee8/mypy/stats.py#L422-L423) counts as imprecise. For instance, `Dict[str, Any]`.
    - Remaining expressions have precision `PRECISE`.
-5. A line's precision is the worst of all its expressions' precisions.
+4. A line's precision is the worst of all its expressions' precisions.
    - `ANY` is worse than `IMPRECISE`, which is worse than `PRECISE`.
 
 The "imprecision" number reported by mypy counts the number of lines [classified as `IMPRECISE` or `ANY`](https://github.com/python/mypy/blob/3bdef9fe6d401f3d2e0cacf4964bd315550c3394/mypy/xml/mypy-txt.xslt#L77-L78).
@@ -184,7 +186,6 @@ It's worth highlighting the `typeshed` project, which maintains stubs for the st
 
 After the sprint to improve coverage, I spent a short amount of time trying the alternative type checkers out there. Mypy isn't the _only_ typechecker out there—other companies have built and open-sourced their own tools, with different strengths, weaknesses and goals. This is by no means an authoritative, exhaustive survey—just my quick notes.
 
-
 #### [Pyre](https://pyre-check.org/) (Facebook)
 
 - I couldn't work out how to configure paths to resolve import errors; in the end, I wasn't able to process much of Sydent's source code.
@@ -198,7 +199,8 @@ After the sprint to improve coverage, I spent a short amount of time trying the 
 - Didn't seem to recognise `getLogger` as being imported from `logging`. Not sure what happened there—maybe something wrong with its bundled version of `typeshed`?
 - In a few places, Sydent uses `urllib.parse.quote` but only imports `urllib`. We must be unintentionally relying on our dependencies to `import urllib.parse` somewhere! Mypy didn't complain about this; pyright did.
 - Seemed to give a better explanations of why complex types were incompatible. For example:
-  ```
+
+  ```txt
   /home/dmr/workspace/sydent/sydent/replication/pusher.py
      /home/dmr/workspace/sydent/sydent/replication/pusher.py:77:16 - error: Expression of type "DeferredList" cannot be assigned to return type "Deferred[List[Tuple[bool, None]]]"
        TypeVar "_DeferredResultT@Deferred" is contravariant
@@ -212,22 +214,25 @@ After the sprint to improve coverage, I spent a short amount of time trying the 
            Type "_KT@dict" is incompatible with constrained type variable "AnyStr"
          Type cannot be assigned to type "None" (reportGeneralTypeIssues)
   ```
+
   This would have been really helpful when interpreting mypy's error reports; I'd love to see something like it in mypy.
   Here's another example where I tried running against a Synapse file.
-  ```
+
+  ```txt
   /home/dmr/workspace/synapse/synapse/storage/databases/main/cache.py
   /home/dmr/workspace/synapse/synapse/storage/databases/main/cache.py:103:53 - error: Expression of type "list[tuple[Unknown, Tuple[Unknown, ...]]]" cannot be assigned to declared type "List[Tuple[int, _CacheData]]"
     TypeVar "_T@list" is invariant
       Tuple entry 2 is incorrect type
         Tuple size mismatch; expected 3 but received indeterminate number (reportGeneralTypeIssues)
   ```
+
   This is really valuable information. It's worth considering Pyright as an option to get a second opinion!
 - It looks like Pyright's name for `Any` is `Unknown`. I think that does a better job of emphasising that `Unknown` won't be type checked. I'd certainly be more reluctant to type `x: Unknown` versus `x: Any`!
 - Pyright is the machinery behind [Pylance](https://github.com/microsoft/pylance-release), which drives [VS Code's Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). That alone probably makes it worthy of more eyes.
 - Seemed like it was the best-placed alternative typechecker to challenge mypy (the de-facto standard).
 
-
 #### [Pytype](https://github.com/google/pytype) (Google)
+
 - Google internal? Seems to be maintained by one person semiregularly by "syncing" from Google.
 - Apparently contains a script [merge-pyi](https://github.com/google/pytype/tree/master/pytype/tools/merge_pyi) to annotate a source file given a stub file.
 - No support for TypedDict: as soon as it saw one in Sydent, it stopped all analysis.
@@ -262,9 +267,9 @@ Looking forward, I think we'd get a quick gain from ensuring that our smaller li
 
 I'd say the biggest outstanding hole is our processing of JSON objects. There's too much `Dict[str, Any]` flying around. The ideal for me would be to define `dataclass` or `attr.s` class `C`, and be able to deserialise a JSON object to `C`, including automatic (deep) type checking. [Pydantic](https://pydantic-docs.helpmanual.io/) sounds really close to what we want, but I'm told it will by default gladly interpret the json string `"42"` as the Python integer `42`, which isn't what we'd like. More investigation needed there. There are other avenues to explore too, like [jsonschema-typed](https://github.com/erickpeirson/jsonschema-typed), [typedload](https://pypi.org/project/typedload/) or [attrs-strict](https://github.com/bloomberg/attrs-strict).
 
-To end, I'd like to add a few personal thoughts. Having types available in the source code is definitely A Good Thing. But there is a part of me that wonders if it might have been worth writing our projects in a language which incorporates types from day one. There are always trade-offs, of course: runtime performance, build times, iteration speed, ease of onboarding new contributors, ease of deployment, availability of libraries, ability to shoot yourself in the foot... the list goes on. 
+To end, I'd like to add a few personal thoughts. Having types available in the source code is definitely A Good Thing. But there is a part of me that wonders if it might have been worth writing our projects in a language which incorporates types from day one. There are always trade-offs, of course: runtime performance, build times, iteration speed, ease of onboarding new contributors, ease of deployment, availability of libraries, ability to shoot yourself in the foot... the list goes on.
 
-On a more upbeat note, adding typing is a great way to get familiar with new source code. It involves a mixture of reading, cross-referencing, deduction, analysis, all across a wide variety of files. It'd be a _lot_ easier to type as you write from the get-go, but typing after the fact is still a worthy use of time and effort. 
+On a more upbeat note, adding typing is a great way to get familiar with new source code. It involves a mixture of reading, cross-referencing, deduction, analysis, all across a wide variety of files. It'd be a _lot_ easier to type as you write from the get-go, but typing after the fact is still a worthy use of time and effort.
 
 ----
 

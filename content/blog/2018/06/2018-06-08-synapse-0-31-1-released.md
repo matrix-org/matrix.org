@@ -26,5 +26,5 @@ We are not aware of it being actively exploited but please upgrade asap.
 
 Bug Fixes:
 <ul>
- 	<li>Fix event filtering in get_missing_events handler (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3371" data-error-text="Failed to load issue title" data-id="330608172" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3371">#3371</a>)</li>
+  <li>Fix event filtering in get_missing_events handler (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/3371" data-error-text="Failed to load issue title" data-id="330608172" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/3371">#3371</a>)</li>
 </ul>

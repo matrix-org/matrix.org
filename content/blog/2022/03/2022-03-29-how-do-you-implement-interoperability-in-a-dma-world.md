@@ -175,7 +175,9 @@ they’re unable to for whatever reason - e.g. their platform isn’t supported,
 or their government has blocked access, etc), or join BobChat yourself.
 
 <div style="text-align: center">
+<!-- markdownlint-disable-next-line no-alt-text -->
 <img src="/blog/img/2022-03-29-bob-invite.jpg"  />
+<!-- markdownlint-disable-next-line no-alt-text -->
 <img src="/blog/img/2022-03-29-bob-invite-b.png"  />
 </div>
 <br/>
@@ -187,6 +189,7 @@ use to open a given file extension (rather than the OS vendor hardcoding it
 to one of their own apps - another win for user rights [led by the EU](https://en.wikipedia.org/wiki/Microsoft_Corp._v._Commission)!).
 
 <div style="text-align: center">
+<!-- markdownlint-disable-next-line no-alt-text -->
 <img src="/blog/img/2022-03-29-bob-invite2.jpg" />
 </div>
 <br/>
@@ -248,6 +251,7 @@ WhatsApp&lt;->Matrix bridge before WhatsApp themselves did…)
 
 Architecturally, it could look like this:
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/2022-03-29-alice-bob.jpg)
 
 Or, more likely (given a dedicated bridge between two proprietary services
@@ -256,6 +260,7 @@ hosts the bridge), both services could run a bridge to a common open standard
 protocol like Matrix or XMPP instead (thus immediately enabling
 interoperability with everyone else connected to that network):
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/2022-03-29-alice-bob-bridged.jpg)
 
 Please note that while these examples show server-side bridges, in practice it
@@ -269,6 +274,7 @@ client on your phone which auths you with AliceChat and then sits in the
 background receiving messages and bridging them through to Matrix or XMPP,
 like this:
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/2022-03-29-alice-bob-clientside.jpg)
 
 Another possible architecture could be for the E2EE gatekeeper to expose their
@@ -279,6 +285,7 @@ doing a form of realtime
 [data liberation](https://en.wikipedia.org/wiki/Google_Data_Liberation_Front)
 from the closed service to an open system, looking something like this:
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/2022-03-29-alice-bob-clientside-apis.jpg)
 
 Finally, it's worth noting that when peer-to-peer decentralised protocols
@@ -327,6 +334,7 @@ interoperability and privacy if Bob is not on the same system as Alice
 warn Alice that the conversation is no longer end-to-end encrypted:
 
 <div style="text-align: center">
+<!-- markdownlint-disable-next-line no-alt-text -->
 <img src="/blog/img/2022-03-29-warning.jpg" />
 </div>
 <br/>
@@ -393,6 +401,7 @@ a spanning tree for each conversation to prevent forwarding loops.
 
 Here’s a deliberately twisty example to illustrate the above thought experiment:
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/blog/img/2022-03-29-alice-bob-charlie.jpg)
 
 There is also a risk of bridge proliferation here - in the worst case, every
@@ -426,4 +435,3 @@ we’ve grown used to a broken world where nothing can interconnect.  There are
 tractable ways to solve it in a way that empowers and informs the user - and
 the DMA has now given the industry the opportunity to demonstrate that it can
 work.
-

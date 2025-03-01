@@ -25,7 +25,6 @@ Subsequently WhatsApp [launched](https://engineering.fb.com/2024/03/06/security/
 
 Now, the good news is that we’ve subsequently been talking with WhatsApp to see if we could progress these points - and we’re happy to say that they’ve listened to us and we’ve made progress on the first 3 items:
 
-
 1. Meta recently [shared an update](https://about.fb.com/news/2024/09/an-update-on-how-were-building-safe-and-secure-third-party-chats-for-users-in-europe/) on the messaging interoperability user experience and will allow all EU users to be reachable by interoperable services by default. It’ll also give people the option of how they want to manage their inbox as well as a range of features like read receipts, typing indicators and reactions.
 
 2. We’ve come up with a plan with WhatsApp to reduce the amount of matrix user data we share with WhatsApp. WhatsApp’s interop solution however, doesn’t yet support multi-device conversations or shared conversation history like normal Matrix, which means that normal Matrix server-side synchronised history won’t work for these conversations.

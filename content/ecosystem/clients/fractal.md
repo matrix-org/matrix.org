@@ -23,4 +23,5 @@ multi_language = true
 flathub.app_id = "org.gnome.Fractal"
 +++
 
-A Matrix messaging app for GNOME, written in Rust. Its interface is optimized for collaboration in large groups, such as free software projects, and will fit all screens, big or small.
+A Matrix messaging app for GNOME, written in Rust. Its interface is optimized for collaboration in large groups,
+such as free software projects, and will fit all screens, big or small.

@@ -7,6 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["Tech"]
 +++
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 <a href="https://xkcd.com/1810"><img class="aligncenter wp-image-2297" src="/blog/wp-content/uploads/2017/03/xkcd1810-matrixified-v2-1024x842.png" width="753" height="619" /></a>
 <p id="types-of-bridging">Bridges come in many flavours, and we need consistent terminology within the Matrix community to ensure everyone (users, developers, core team) is on the same page. This post is primarily intended for bridge developers to refer to when building bridges.</p>
 <em>The most recent version of this document is <a href="/docs/guides/types-of-bridging.html">here</a> (<a href="https://github.com/matrix-org/matrix-doc/blob/master/supporting-docs/guides/2017-03-11-types-of-bridging.md">source</a>) but we're also posting it as a blog post for visibility.</em>
@@ -21,9 +22,9 @@ Bridges can register themselves as controlling chunks of room aliases namespace,
 
 Alternatively, an existing Matrix room can be can plumbed into one or more specific remote rooms by configuring a bridge (which can be run by anyone). For instance, #matrix:matrix.org is plumbed into #matrix on Freenode, matrixdotorg/#matrix on Slack, etc. Access control for Matrix users is necessarily managed by the Matrix side of the room. This is useful for using Matrix to link together different communities.
 
-Migrating rooms between a portal & plumbed room is currently a bit of a mess, as there's not yet a way for users to remove portal rooms once they're created, so you can end up with a mix of portal & plumbed users bridged into a room, which looks weird from both the Matrix and non-Matrix viewpoints. https://github.com/matrix-org/matrix-appservice-irc/issues/387 tracks this.
+Migrating rooms between a portal & plumbed room is currently a bit of a mess, as there's not yet a way for users to remove portal rooms once they're created, so you can end up with a mix of portal & plumbed users bridged into a room, which looks weird from both the Matrix and non-Matrix viewpoints. <https://github.com/matrix-org/matrix-appservice-irc/issues/387> tracks this.
 
-### Types of bridges (simplest first):
+### Types of bridges (simplest first)
 
 #### Bridgebot-based bridges
 

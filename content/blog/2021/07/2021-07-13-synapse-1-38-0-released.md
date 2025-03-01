@@ -15,7 +15,7 @@ Synapse 1.38.0 is out now!
 
 Synapse's database schema used `integer` columns in a few places where values could potentially overflow a maximum value of 2<sup>31</sup>. One such column is `events.stream_ordering`, which surpassed 2<sup>31</sup> on matrix.org last week.
 
-To prevent overflows, Synapse 1.38 will automatically convert several `integer` columns to `bigint` as a background update. While homeservers will function normally during this task, it could result in increased disk I/O for several hours or days. Note that **homeservers may need several gigabytes of free space** to successfully rebuild associated database indexes and complete the upgrade.
+To prevent overflows, Synapse 1.38 will automatically convert several `integer` columns to `bigint` as a background update. While homeservers will function normally during this task, it could result in increased disk I/O for several hours or days. Note that __homeservers may need several gigabytes of free space__ to successfully rebuild associated database indexes and complete the upgrade.
 
 See the [upgrade notes](https://matrix-org.github.io/synapse/v1.38/upgrade.html#upgrading-to-v1380) for more details.
 
@@ -39,4 +39,3 @@ A few other items worth calling out:
 These are just the highlights; please see the [Upgrade Notes](https://matrix-org.github.io/synapse/v1.38/upgrade.html#upgrading-to-v1380) and [Release Notes](https://github.com/matrix-org/synapse/blob/v1.38.0/CHANGES.md) for a complete list of changes in this release.
 
 Synapse is a Free and Open Source Software project, and we'd like to extend our thanks to everyone who contributed to this release, including [deepbluev7](https://github.com/deepbluev7), [dklimpel](https://github.com/dklimpel), [fkr](https://github.com/fkr), and [sideshowbarker](https://github.com/sideshowbarker)
-

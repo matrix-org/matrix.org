@@ -26,8 +26,8 @@ If Pinecone works out, our intention is to collaborate with the libp2p and IPFS 
 
 Today we're releasing the source code for our current early implementation of Pinecone — you can [get it from GitHub](https://github.com/matrix-org/pinecone) right now! It's very experimental still and not very well optimised yet, but it is the foundation of our latest mobile P2P Matrix demos, which support P2P Matrix over both **Bluetooth Low Energy** mesh networks, **multicast DNS** discovery within a LAN, and/or by routing through **static Pinecone peers** on the Internet:
 
-* Android: https://appdistribution.firebase.dev/i/394600067ea8ba37
-* iOS: https://testflight.apple.com/join/Tgh2MEk6
+* Android: <https://appdistribution.firebase.dev/i/394600067ea8ba37>
+* iOS: <https://testflight.apple.com/join/Tgh2MEk6>
 
 Building a routing overlay is only the first step in the journey towards P2P Matrix. We will also be looking closely in the coming months at improving the Matrix federation protocol to work well in mixed-connectivity scenarios (rather than the full mesh approach used today) as well as decentralised identities, hybrid deployments with existing homeservers and getting Dendrite (the Matrix homeserver which is embedded into the current P2P demos) more stable and feature-complete.
 

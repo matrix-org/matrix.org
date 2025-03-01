@@ -21,6 +21,7 @@ So, precisely why are we feeling so happy right now?
 <!-- more -->
 
 ### Matrix 2.0
+
 Matrix 2.0 is the project to ensure that Matrix can be used to build apps which outcompete the incumbent legacy mainstream communication apps.  Since announcing the project at FOSDEM 2023, we’ve been hard at work iterating on:
 
 * Sliding Sync, providing instant sync, instant login and instant launch.
@@ -116,13 +117,12 @@ Now, we’re deliberately releasing this as a fairly early draft from the Spec C
 
 Meanwhile, the other big new project on the horizon is State Resolution v3.  Old-timers may remember that when we launched Matrix 1.0, one of the big changes was the arrival of State Resolution v2 ([MSC1442](https://github.com/matrix-org/matrix-spec-proposals/blob/erikj/state_res_msc/proposals/1442-state-resolution.md)), which fixed various nasty issues in the original merge conflict resolution algorithm Matrix uses to keep servers in sync with each other.  Now, State Res v2 has subsequently served us relatively well (especially relative to State Res v1), but there have still been a few situations where rooms have [state reset](https://github.com/matrix-org/synapse/issues/8629) unexpectedly – and we’re currently in the process of chasing them down and proposing some refinements to the algorithm.  There’s nothing to see yet, although part of the work here has been to dust off [TARDIS](https://github.com/matrix-org/tardis), our trusty Time Agnostic Room DAG Inspection Service, to help visualise different scenarios and compare different resolution algorithms.  So watch this space for some very pretty explanations once v3 lands!
 
-![](/blog/img/2024-12-25-tardis.png)
+![A screenshot of TARDIS which visualises the DAG of rooms and allows understanding how the DAG of a specific room is currently set up.](/blog/img/2024-12-25-tardis.png)
 
-### Happy New Year!
+### Happy New Year
 
 Matrix feels like it entered a whole new era in 2024 – with the Foundation properly spreading its wings, hosting The Matrix Conference, operationalising the Governing Board, and Matrix uptake exploding across the public sector of 20+ countries.  Funding continues to be an existential risk, but as Matrix continues to accelerate we’re hopeful that more organisations who depend on Matrix will lean in to support the Foundation and ensure Matrix continues to prosper.
 
 Meanwhile, 2025 is shaping up to be really exciting. It feels like we’ve come out of the darkness of the last few years with a 2.0 which is better than we could have possibly hoped, and I can’t wait to see where it goes from here!
 
 Thanks to everyone for supporting the project - especially if you are a member of the Foundation (and if not, [please join here!](http://matrix.org/membership)). We hope you have a fantastic end of the year; see you on the other side, and thanks for flying Matrix :)
-

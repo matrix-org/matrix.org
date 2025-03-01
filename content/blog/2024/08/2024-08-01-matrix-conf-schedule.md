@@ -10,6 +10,7 @@ category = ["Conference"]
 image = "https://matrix.org/img/matrix-conference-opengraph.png"
 +++
 
+<!-- markdownlint-disable-next-line no-alt-text -->
 ![](/img/matrix-conference-opengraph.png)
 
 We imagined The Matrix Conference as a gathering place for hackers, project managers, digital sovereignty leaders, and innovators. I’m proud to announce that we definitely succeeded in building a schedule covering that range of topics!
@@ -25,7 +26,6 @@ The conference will occur between September 19th and 22nd at [Mitosis Labs in Be
 - **Sunday 22** will be dedicated to sprints: sessions where the attendees can gather to work together on ideas that emerged during the conference in a more relaxed atmosphere.
 
 Tip: You can also view the schedule through pretalx-interoperable apps on your phone, such as [Giggity](https://ggt.gaa.st/#url=https://cfp.matrix.org/matrixconf2024/schedule/export/schedule.xml) on Android.
-
 
 We are particularly excited about the lineup of speakers:
 

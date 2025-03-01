@@ -20,4 +20,3 @@ There are no special upgrade instructions for 1.28.0. See the [full changelog](h
 Synapse is a Free and Open Source Software project, and we'd like to extend our thanks to everyone who contributed to this release, including [arya2331](https://github.com/arya2331), [auscompgeek](https://github.com/auscompgeek), [bubu](https://github.com/bubu), [compu42](https://github.com/compu42), [dklimpel](https://github.com/dklimpel), [dykstranet](https://github.com/dykstranet), and [shadowjonathan](https://github.com/shadowjonathan).
 
 We'd also like to thank [yoric](https://github.com/Yoric) for thoroughly reviewing and re-organizing the Synapse [CONTRIBUTING.md](https://github.com/matrix-org/synapse/blob/v1.28.0/CONTRIBUTING.md) file.
-

@@ -7,28 +7,23 @@ author = ["Oddvar Lovaas"]
 category = ["General"]
 +++
 
-Today, we are releasing Synapse version 0.11.0. In the last week, we have had two release candidates, and this release also includes changes in v0.10.1-rc1 from October. 
+Today, we are releasing Synapse version 0.11.0. In the last week, we have had two release candidates, and this release also includes changes in v0.10.1-rc1 from October.
 
 New features include a new Search API and better options for logging in (CAS and login fallback support) - thanks to Steven for contributing CAS support. We also introduce room tagging and as usual, there are plenty of improvements and fixes. For the full info, see the changelog below.
 
 To upgrade, go read <a href="https://github.com/matrix-org/synapse/blob/master/UPGRADE.rst">https://github.com/matrix-org/synapse/blob/master/UPGRADE.rst</a> - to install for the first time, go to <a href="https://github.com/matrix-org/synapse/blob/master/README.rst">https://github.com/matrix-org/synapse/blob/master/README.rst</a>.
 
-
-<code>
-Changes in synapse v0.11.0 (2015-11-17)
-=======================================
+## Changes in synapse v0.11.0 (2015-11-17)
 
 * Change CAS login API (PR #349)
 
-Changes in synapse v0.11.0-rc2 (2015-11-13)
-===========================================
+## Changes in synapse v0.11.0-rc2 (2015-11-13)
 
 * Various changes to /sync API response format (PR #373)
 * Fix regression when setting display name in newly joined room over federation (PR #368)
 * Fix problem where /search was slow when using SQLite (PR #366)
 
-Changes in synapse v0.11.0-rc1 (2015-11-11)
-===========================================
+## Changes in synapse v0.11.0-rc1 (2015-11-11)
 
 * Add Search API (PR #307, #324, #327, #336, #350, #359)
 * Add 'archived' state to v2 /sync API (PR #316)
@@ -43,8 +38,7 @@ Changes in synapse v0.11.0-rc1 (2015-11-11)
 * Fix bug where we hosted static content in the incorrect place (PR #329)
 * Fix bug where we didn't increment retry interval for remote servers (PR #343)
 
-Changes in synapse v0.10.1-rc1 (2015-10-15)
-===========================================
+## Changes in synapse v0.10.1-rc1 (2015-10-15)
 
 * Add support for CAS, thanks to Steven Hammerton (PR #295, #296)
 * Add support for using macaroons for access_token (PR #256, #229)
@@ -58,5 +52,3 @@ Changes in synapse v0.10.1-rc1 (2015-10-15)
 * Allow users to redact their own sent events (PR #262)
 * Use tox for tests (PR #247)
 * Split up syutil into separate libraries (PR #243)
-
-</code>

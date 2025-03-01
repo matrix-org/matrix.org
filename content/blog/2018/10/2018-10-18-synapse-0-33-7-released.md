@@ -34,26 +34,26 @@ The configuration parser will try to detect the situation where <code>email.tem
 #### Features
 
 <ul>
- 	<li>Ship the example email templates as part of the package (<a href="https://github.com/matrix-org/synapse/issues/4052" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4052/hovercard" aria-describedby="hovercard-aria-description">#4052</a>)</li>
- 	<li>Add support for end-to-end key backup (MSC1687) (<a href="https://github.com/matrix-org/synapse/issues/4019" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4019/hovercard" aria-describedby="hovercard-aria-description">#4019</a>)</li>
+  <li>Ship the example email templates as part of the package (<a href="https://github.com/matrix-org/synapse/issues/4052" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4052/hovercard" aria-describedby="hovercard-aria-description">#4052</a>)</li>
+  <li>Add support for end-to-end key backup (MSC1687) (<a href="https://github.com/matrix-org/synapse/issues/4019" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4019/hovercard" aria-describedby="hovercard-aria-description">#4019</a>)</li>
 </ul>
 
 #### Bugfixes
 
 <ul>
- 	<li>Fix bug which made get_missing_events return too few events (<a href="https://github.com/matrix-org/synapse/issues/4045" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4045/hovercard" aria-describedby="hovercard-aria-description">#4045</a>)</li>
- 	<li>Fix bug in event persistence logic which caused 'NoneType is not iterable' (<a href="https://github.com/matrix-org/synapse/issues/3995" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3995/hovercard" aria-describedby="hovercard-aria-description">#3995</a>)</li>
- 	<li>Fix exception in background metrics collection (<a href="https://github.com/matrix-org/synapse/issues/3996" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3996/hovercard" aria-describedby="hovercard-aria-description">#3996</a>)</li>
- 	<li>Fix exception handling in fetching remote profiles (<a href="https://github.com/matrix-org/synapse/issues/3997" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3997/hovercard" aria-describedby="hovercard-aria-description">#3997</a>)</li>
- 	<li>Fix handling of rejected threepid invites (<a href="https://github.com/matrix-org/synapse/issues/3999" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3999/hovercard" aria-describedby="hovercard-aria-description">#3999</a>)</li>
- 	<li>Workers now start on Python 3. (<a href="https://github.com/matrix-org/synapse/issues/4027" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4027/hovercard" aria-describedby="hovercard-aria-description">#4027</a>)</li>
- 	<li>Synapse now starts on Python 3.7. (<a href="https://github.com/matrix-org/synapse/issues/4033" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4033/hovercard" aria-describedby="hovercard-aria-description">#4033</a>)</li>
+  <li>Fix bug which made get_missing_events return too few events (<a href="https://github.com/matrix-org/synapse/issues/4045" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4045/hovercard" aria-describedby="hovercard-aria-description">#4045</a>)</li>
+  <li>Fix bug in event persistence logic which caused 'NoneType is not iterable' (<a href="https://github.com/matrix-org/synapse/issues/3995" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3995/hovercard" aria-describedby="hovercard-aria-description">#3995</a>)</li>
+  <li>Fix exception in background metrics collection (<a href="https://github.com/matrix-org/synapse/issues/3996" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3996/hovercard" aria-describedby="hovercard-aria-description">#3996</a>)</li>
+  <li>Fix exception handling in fetching remote profiles (<a href="https://github.com/matrix-org/synapse/issues/3997" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3997/hovercard" aria-describedby="hovercard-aria-description">#3997</a>)</li>
+  <li>Fix handling of rejected threepid invites (<a href="https://github.com/matrix-org/synapse/issues/3999" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/3999/hovercard" aria-describedby="hovercard-aria-description">#3999</a>)</li>
+  <li>Workers now start on Python 3. (<a href="https://github.com/matrix-org/synapse/issues/4027" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4027/hovercard" aria-describedby="hovercard-aria-description">#4027</a>)</li>
+  <li>Synapse now starts on Python 3.7. (<a href="https://github.com/matrix-org/synapse/issues/4033" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4033/hovercard" aria-describedby="hovercard-aria-description">#4033</a>)</li>
 </ul>
 
 ### Internal Changes
 
 <ul>
- 	<li>Log exceptions in looping calls (<a href="https://github.com/matrix-org/synapse/issues/4008" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4008/hovercard" aria-describedby="hovercard-aria-description">#4008</a>)</li>
- 	<li>Optimisation for serving federation requests (<a href="https://github.com/matrix-org/synapse/issues/4017" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4017/hovercard" aria-describedby="hovercard-aria-description">#4017</a>)</li>
- 	<li>Add metric to count number of non-empty sync responses (<a href="https://github.com/matrix-org/synapse/issues/4022" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4022/hovercard" aria-describedby="hovercard-aria-description">#4022</a>)</li>
+  <li>Log exceptions in looping calls (<a href="https://github.com/matrix-org/synapse/issues/4008" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4008/hovercard" aria-describedby="hovercard-aria-description">#4008</a>)</li>
+  <li>Optimisation for serving federation requests (<a href="https://github.com/matrix-org/synapse/issues/4017" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4017/hovercard" aria-describedby="hovercard-aria-description">#4017</a>)</li>
+  <li>Add metric to count number of non-empty sync responses (<a href="https://github.com/matrix-org/synapse/issues/4022" data-hovercard-type="pull_request" data-hovercard-url="/matrix-org/synapse/pull/4022/hovercard" aria-describedby="hovercard-aria-description">#4022</a>)</li>
 </ul>

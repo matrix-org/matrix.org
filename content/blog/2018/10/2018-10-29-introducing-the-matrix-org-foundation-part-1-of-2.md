@@ -21,12 +21,12 @@ Now, it's important to understand that <strong>this process is not finished </
 
 In practice, what this means is that in the first phase, today's Foundation gives us:
 <ul>
- 	<li>A UK <strong>non-profit company</strong> - technically incorporated as a <a href="https://en.wikipedia.org/wiki/Private_company_limited_by_guarantee">private company, limited by guarantee</a>.</li>
- 	<li><strong>Guardians</strong>, whose role is to be legally responsible for ensuring that the Foundation (and by extension the Spec Core Team) keeps on mission and neutrally protects the development of Matrix.  Matrix's Guardians form the Board of Directors of the Foundation, and will provide a 'checks and balances' mechanism between each other to ensure that all Guardians act in the best interests of the protocol and ecosystem.<br/ ><br />For the purposes of initially setting up the Foundation, the initial Guardians are Matthew & Amandine - but in the coming weeks we're expecting to appoint at least three independent Guardians in order to ensure that the current team form a minority on the board and ensure the neutrality of the Foundation relative to Matthew & Amandine's day jobs at New Vector.The profile we're looking for in Guardians are: folks who are independent of the commercial Matrix ecosystem (and especially independent from <a href="https://vector.im">New Vector</a>), and may even not be members of today's Matrix community, but who are deeply aligned with the mission of the project, and who are respected and trusted by the wider community to uphold the guiding principles of the Foundation and keep the other Guardians honest.</li>
- 	<li>An immutable <strong>asset lock</strong>, to protect the intellectual property of the Foundation and prevent it from ever being sold or transferred elsewhere.</li>
- 	<li>An immutable <strong>mission lock</strong>, which defines the Foundation's mission as a non-profit neutral guardian of the Matrix standard, with an initial formal goal of finalising the open governance process.  To quote article 4 from the initial Articles of Association:
+  <li>A UK <strong>non-profit company</strong> - technically incorporated as a <a href="https://en.wikipedia.org/wiki/Private_company_limited_by_guarantee">private company, limited by guarantee</a>.</li>
+  <li><strong>Guardians</strong>, whose role is to be legally responsible for ensuring that the Foundation (and by extension the Spec Core Team) keeps on mission and neutrally protects the development of Matrix.  Matrix's Guardians form the Board of Directors of the Foundation, and will provide a 'checks and balances' mechanism between each other to ensure that all Guardians act in the best interests of the protocol and ecosystem.<br/ ><br />For the purposes of initially setting up the Foundation, the initial Guardians are Matthew & Amandine - but in the coming weeks we're expecting to appoint at least three independent Guardians in order to ensure that the current team form a minority on the board and ensure the neutrality of the Foundation relative to Matthew & Amandine's day jobs at New Vector.The profile we're looking for in Guardians are: folks who are independent of the commercial Matrix ecosystem (and especially independent from <a href="https://vector.im">New Vector</a>), and may even not be members of today's Matrix community, but who are deeply aligned with the mission of the project, and who are respected and trusted by the wider community to uphold the guiding principles of the Foundation and keep the other Guardians honest.</li>
+  <li>An immutable <strong>asset lock</strong>, to protect the intellectual property of the Foundation and prevent it from ever being sold or transferred elsewhere.</li>
+  <li>An immutable <strong>mission lock</strong>, which defines the Foundation's mission as a non-profit neutral guardian of the Matrix standard, with an initial formal goal of finalising the open governance process.  To quote article 4 from the initial Articles of Association:
 <ul>
- 	<li>
+  <li>
 <div class="page" title="Page 8">
 <div class="layoutArea">
 <div class="column">4. The objects of the Foundation are for the benefit of the community as a whole to:</div>
@@ -41,15 +41,15 @@ In practice, what this means is that in the first phase, today's Foundation give
 </div></li>
 </ul>
 </li>
- 	<li>You can read the initial <a href="/blog/wp-content/uploads/2018/10/Constitution.pdf">Articles of Association</a> here (although all the rest of it is fairly generic legal boilerplate for a non-profit company at this point which hasn't yet been tuned; the Matrix-specific stuff is Article 4 as quoted above).  You can also see the initial details of the Foundation straight from the horse's mouth over at <a href="https://beta.companieshouse.gov.uk/company/11648710">https://beta.companieshouse.gov.uk/company/11648710</a>.</li>
+  <li>You can read the initial <a href="/blog/wp-content/uploads/2018/10/Constitution.pdf">Articles of Association</a> here (although all the rest of it is fairly generic legal boilerplate for a non-profit company at this point which hasn't yet been tuned; the Matrix-specific stuff is Article 4 as quoted above).  You can also see the initial details of the Foundation straight from the horse's mouth over at <a href="https://beta.companieshouse.gov.uk/company/11648710">https://beta.companieshouse.gov.uk/company/11648710</a>.</li>
 </ul>
 Then, in the <strong>next and final phase</strong>, what remains is to:
 <ul>
- 	<li>Appoint 3+ more Guardians (see above).</li>
- 	<li>Finalise<a href="https://github.com/matrix-org/matrix-doc/issues/1318"> MSC1318</a> and incorporate the appropriate bits into the Articles of Associations (AoA).  (We might literally edit MSC1318 directly into the final AoA, to incorporate as much input as possible from the full community)</li>
- 	<li>Tune the boilerplate bits of the AoA to incorporate the conclusions of<a href="https://github.com/matrix-org/matrix-doc/issues/1318"> MSC1318</a>.</li>
- 	<li>Register the Foundation as a <a href="https://www.gov.uk/government/organisations/office-of-the-regulator-of-community-interest-companies">Community Interest Company</a>, to further anchor the Foundation as being for the benefit of the wider community.</li>
- 	<li>Perform an Asset Transfer of any and all Matrix.org property from New Vector to the Foundation (especially the Matrix.org domain and branding, and donations directed to Matrix.org).</li>
+  <li>Appoint 3+ more Guardians (see above).</li>
+  <li>Finalise<a href="https://github.com/matrix-org/matrix-doc/issues/1318"> MSC1318</a> and incorporate the appropriate bits into the Articles of Associations (AoA).  (We might literally edit MSC1318 directly into the final AoA, to incorporate as much input as possible from the full community)</li>
+  <li>Tune the boilerplate bits of the AoA to incorporate the conclusions of<a href="https://github.com/matrix-org/matrix-doc/issues/1318"> MSC1318</a>.</li>
+  <li>Register the Foundation as a <a href="https://www.gov.uk/government/organisations/office-of-the-regulator-of-community-interest-companies">Community Interest Company</a>, to further anchor the Foundation as being for the benefit of the wider community.</li>
+  <li>Perform an Asset Transfer of any and all Matrix.org property from New Vector to the Foundation (especially the Matrix.org domain and branding, and donations directed to Matrix.org).</li>
 </ul>
 So there you have it! It's been a long time in coming, and huge thanks to everyone for their patience and support in getting to this point, but finally The Matrix.org Foundation exists.  Watch this space over the coming weeks as we announce the Guardians and finish bootstrapping the Foundation into its final long-term form!  Meanwhile, any questions: come ask in <a href="https://matrix.to/#/#matrix-spec-process:matrix.org">#matrix-spec-process:matrix.org</a> or in the blog comments here.
 
