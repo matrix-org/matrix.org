@@ -1,0 +1,25 @@
+{
+    "ignores": [
+        // False positive due to multiple languages
+        "content/blog/2025/02/2025-02-14-building-a-safer-matrix.md"
+    ],
+    "config": {
+        "default": true,
+        "MD007": {
+            "indent": 4,
+            "start_indent": 4
+        },
+        "MD041": false,
+        "MD033": false,
+        "MD051": false,
+        // We want to eventually maybe have a line length but it is too much work at this time.
+        /*"MD013": {
+            "line_length": 120
+        },*/
+        "MD013": {
+            // Temporary disabled until we can fix the line length issue
+            "line_length": 1200000
+        },
+        "MD024": false
+    }
+}
