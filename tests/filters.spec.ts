@@ -18,14 +18,21 @@ test('can select filters on ecosystem pages', async ({ page }) => {
     const allButton = page.getByRole('button', { name: 'all' })
     await allButton.scrollIntoViewIfNeeded()
     await allButton.click()
-    await page.locator("#filter-platform").click()
+    // Firefox somehow is very odd?! It doesn't click the button on the first try
+    await page.locator("#filter-platform").click({ clickCount: 2 })
+    await expect(page.locator("#filters-overlay")).toBeHidden()
+    await expect(page.locator("#filter-platform-menu")).toBeHidden()
+
     const clients = await page.locator("#all-clients").all()
     for (const client of clients) {
         await expect(client).toBeHidden()
     }
 
-    await page.locator("#filter-platform").click()
-    await page.getByRole('button', { name: 'none' }).click()
+    // Firefox tries to skip it?!
+    await page.locator("#filter-platform").click({ force: true })
+    const noneButton = page.getByRole('button', { name: 'none' })
+    await noneButton.scrollIntoViewIfNeeded()
+    await noneButton.click()
     await page.locator("#filter-platform").click()
     for (const client of clients) {
         await expect(client).toBeVisible()
