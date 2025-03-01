@@ -5,7 +5,7 @@ summary = """
 A Matrix-QQ puppeting bridge based on [MiraiGo](https://github.com/Mrs4s/MiraiGo)
 and [mautrix-go](https://github.com/mautrix/go).
 """
-maturity = "Alpha"
+maturity = "Unmaintained"
 language = "Go"
 license = "AGPL-3.0-or-later"
 repo = "https://github.com/duo/matrix-qq"

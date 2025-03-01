@@ -9,7 +9,7 @@ You can get the [code on GitHub](https://github.com/matrix-org/matrix-appservice
 Supports dynamically bridging IRC channels on demand, synchronised user-lists,
 and other goodness.
 """
-maturity = "Stable"
+maturity = "Unmaintained"
 language = "Javascript"
 license = "Apache-2.0"
 docs = "https://matrix-org.github.io/matrix-appservice-irc/latest/bridge_setup"
@@ -29,7 +29,7 @@ maintainer = "hifi"
 summary = """
 A bouncer-style Matrix IRC bridge.
 """
-maturity = "Stable"
+maturity = "Unmaintained"
 language = "Python"
 license = "MIT"
 docs = "https://github.com/hifi/heisenbridge#pypi"
@@ -38,6 +38,7 @@ room = "#heisenbridge:vi.fi"
 featured = false
 privilege.platform = "User" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+
 [bridges.supports]
 dm = true
 replies = true
