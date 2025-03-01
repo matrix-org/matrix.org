@@ -6,24 +6,28 @@ test('can select filters on ecosystem pages', async ({ page }) => {
 
     // Check if platform filter works
     await page.locator("#filter-platform").scrollIntoViewIfNeeded()
-    await page.locator("#filters-overlay").isHidden()
-    await page.locator("#filter-platform-menu").isHidden()
-    await page.locator("#filter-platform").click()
-    await page.locator("#filters-overlay").isVisible()
-    await page.locator("#filter-platform-menu").isVisible()
+    await expect(page.locator("#filters-overlay")).toBeHidden()
+    await expect(page.locator("#filter-platform-menu")).toBeHidden()
+    // Wait a bit for the page to load
+    await page.waitForTimeout(1000)
+    await page.locator("#filter-platform").click({ force: true })
+    await expect(page.locator("#filters-overlay")).toBeVisible()
+    await expect(page.locator("#filter-platform-menu")).toBeVisible()
 
     // Check if platform filter can be used
-    await page.getByRole('button', { name: 'all' }).click()
+    const allButton = page.getByRole('button', { name: 'all' })
+    await allButton.scrollIntoViewIfNeeded()
+    await allButton.click()
     await page.locator("#filter-platform").click()
     const clients = await page.locator("#all-clients").all()
     for (const client of clients) {
-        await client.isHidden()
+        await expect(client).toBeHidden()
     }
 
     await page.locator("#filter-platform").click()
     await page.getByRole('button', { name: 'none' }).click()
     await page.locator("#filter-platform").click()
     for (const client of clients) {
-        await client.isVisible()
+        await expect(client).toBeVisible()
     }
 });
