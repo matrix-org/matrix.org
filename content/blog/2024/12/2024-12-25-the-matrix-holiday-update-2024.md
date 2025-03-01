@@ -117,7 +117,7 @@ Now, we’re deliberately releasing this as a fairly early draft from the Spec C
 
 Meanwhile, the other big new project on the horizon is State Resolution v3.  Old-timers may remember that when we launched Matrix 1.0, one of the big changes was the arrival of State Resolution v2 ([MSC1442](https://github.com/matrix-org/matrix-spec-proposals/blob/erikj/state_res_msc/proposals/1442-state-resolution.md)), which fixed various nasty issues in the original merge conflict resolution algorithm Matrix uses to keep servers in sync with each other.  Now, State Res v2 has subsequently served us relatively well (especially relative to State Res v1), but there have still been a few situations where rooms have [state reset](https://github.com/matrix-org/synapse/issues/8629) unexpectedly – and we’re currently in the process of chasing them down and proposing some refinements to the algorithm.  There’s nothing to see yet, although part of the work here has been to dust off [TARDIS](https://github.com/matrix-org/tardis), our trusty Time Agnostic Room DAG Inspection Service, to help visualise different scenarios and compare different resolution algorithms.  So watch this space for some very pretty explanations once v3 lands!
 
-![](/blog/img/2024-12-25-tardis.png)
+![A screenshot of TARDIS which visualises the DAG of rooms and allows understanding how the DAG of a specific room is currently set up.](/blog/img/2024-12-25-tardis.png)
 
 ### Happy New Year
 
