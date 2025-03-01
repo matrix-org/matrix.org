@@ -10,10 +10,10 @@
     "author": "The Matrix.org Foundation and Contributors",
     "license": "Apache-2.0",
     "devDependencies": {
-        "@playwright/test": "^1.43.1",
-        "@types/node": "^20.12.7"
+        "@playwright/test": "^1.50.1",
+        "@types/node": "^22.13.8"
     },
     "dependencies": {
-        "@axe-core/playwright": "^4.9.0"
+        "@axe-core/playwright": "^4.10.1"
     }
 }

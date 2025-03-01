@@ -6,17 +6,17 @@ test('can select hovermenu', async ({ page, isMobile }) => {
     await page.goto('/');
 
     await page.getByLabel('Ecosystem').hover();
-    const submenu = page.locator(".section-submenu");
+    const submenu = page.locator(".section-wrap:has(label:has-text('Ecosystem')) .section-submenu");
 
     const elements = await submenu.all();
 
-    await expect(page.locator(".section-submenu")).toBeVisible()
+    await expect(submenu).toBeVisible()
     for (const element of elements) {
         await expect(element).toBeVisible()
 
         // Ensure the elements itself can be hovered
         await element.hover()
-        await expect(page.locator(".section-submenu")).toBeVisible()
+        await expect(submenu).toBeVisible()
         await expect(element).toBeVisible()
     }
 });
@@ -28,11 +28,11 @@ test('can select mobile menu', async ({ page, isMobile }) => {
     await page.locator(".dropdown-button").click();
 
     await page.getByLabel('Ecosystem').click();
-    const submenu = page.locator(".section-submenu");
+    const submenu = page.locator(".section-wrap:has(label:has-text('Ecosystem')) .section-submenu");
 
     const elements = await submenu.all();
 
-    await expect(page.locator(".section-submenu")).toBeVisible()
+    await expect(submenu).toBeVisible()
     for (const element of elements) {
         await expect(element).toBeVisible()
     }
