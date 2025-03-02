@@ -40,7 +40,7 @@ There are nine different constituency groups that are allocated seats on the Gov
 
 ## Schedule
 
-![A visual election timeline for this year: Announcements on April 15, Nominations begin April 20, Campaigning begins April 27, Voting begins May 18, and Results announced on June 3.](/blog/img/2024-election-timeline.png)
+![A visual election timeline for this year: Announcements on April 15, Nominations begin April 20, Campaigning begins April 27, Voting begins May 18, and Results announced on June 3.](/blog/img/2024-election-timeline.avif)
 
 ### Announcement (April 15)
 
