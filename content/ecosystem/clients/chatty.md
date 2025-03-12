@@ -3,7 +3,7 @@ title = "chatty"
 [extra]
 thumbnail = "chatty.svg"
 maintainer = ""
-licence = "GNU GPLv3"
+licence = "GPL-3.0-or-later"
 language = "C"
 latest_release = "2024-07-07"
 maturity = "beta"

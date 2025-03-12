@@ -3,7 +3,7 @@ title = "Commet"
 [extra]
 thumbnail = "commet.svg"
 maintainer = "Airyz"
-licence = "AGPL-3.0"
+licence = "AGPL-3.0-only"
 language = "Dart"
 latest_release = "2024-05-10"
 maturity = "Alpha"

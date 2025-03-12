@@ -11,11 +11,11 @@ room = "#synapse:matrix.org"
 [[servers]]
 name = "Dendrite"
 description = "Dendrite is a second-generation Matrix homeserver written in Go!"
-author = "Matrix.org team"
+author = "Element"
 maturity = "Beta"
 language = "Go"
-licence = "Apache-2.0"
-repository = "https://github.com/matrix-org/dendrite"
+licence = "AGPL-3.0-only OR Element Commercial License"
+repository = "https://github.com/element-hq/dendrite"
 room = "#dendrite:matrix.org"
 
 [[servers]]
@@ -43,7 +43,7 @@ description = "Ligase is a Cloud-native Matrix home server written in Golang."
 author = "Finogeeks team"
 maturity = "Obsolete"
 language = "Go"
-licence = "AGPLv3"
+licence = "AGPL-3.0-only"
 repository = "https://github.com/finogeeks/Ligase"
 
 [[servers]]
@@ -127,7 +127,7 @@ maturity = "Alpha"
 language = "C"
 licence = "MIT"
 repository = "https://git.telodendria.io/Telodendria/Telodendria"
-room = "#telodendria-general:bancino.net"
+room = "#general:synapse.telodendria.io"
 
 [[servers]]
 name = "conduwuit"
