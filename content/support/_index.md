@@ -6,7 +6,8 @@ extra.summary = """
 If you believe in our mission and want to contribute to Matrix
 as a common good, you can support our work financially. Join the thousands of
 people who support open, decentralised and secure communication. If you work for
-an organisation which supports donations via Benevity, we support that too!
+an organisation which supports donations via Benevity, our code is
+826-B_4AN2ZDBMVK
 """
 +++
 
