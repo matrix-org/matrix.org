@@ -11,17 +11,17 @@ The Governing Board is an advisory board that is made up of elected representati
 There are nine different constituency groups that are allocated seats on the Governing Board, across three categories:
 
 * **Community representatives**
-  * 4 seats for Individual Members – these are people who currently provide financial support to the Foundation.
-  * 3 seats for Ecosystem Members – these are FOSS projects and communities around Matrix.
-  * 2 seats for Associate Members – these are FOSS foundations, academic institutions, and other communities that are aligned with key parts of our mission.
+  * 4 seats for Individual Members — these are people who currently provide financial support to the Foundation.
+  * 3 seats for Ecosystem Members — these are FOSS projects and communities around Matrix.
+  * 2 seats for Associate Members — these are FOSS foundations, academic institutions, and other communities that are aligned with key parts of our mission.
 * **Funder representatives**
-  * 4 seats for Platinum Members – these organisations sponsor at the highest level.
+  * 4 seats for Platinum Members — these organisations sponsor at the highest level.
   * 3 seats for Gold Members — these organisations sponsor at a high level.
   * 2 seats for Silver Members — these organisations sponsor at a level commensurate with the size of their organisation.
 * **Foundation representatives**
-  * 3 seats for Guardians – these are the members of the Foundation's board of directors.
-  * 2 seats for the Spec Core Team – these are the members of the Spec Core Team that looks after the spec.
-  * Managing Director – this is the Foundation's head of staff.
+  * 3 seats for Guardians — these are the members of the Foundation's board of directors.
+  * 2 seats for the Spec Core Team — these are the members of the Spec Core Team that looks after the spec.
+  * Managing Director — this is the Foundation's head of staff.
 
 Elections are being held in the second quarter of each calendar year, alternating halves of the Constituency Groups representatives on the Governing Board as per the following calendar:
 
