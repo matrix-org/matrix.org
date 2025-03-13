@@ -19,9 +19,9 @@ There are nine different constituency groups that are allocated seats on the Gov
   * 3 seats for Gold Members — these organisations sponsor at a high level.
   * 2 seats for Silver Members — these organisations sponsor at a level commensurate with the size of their organisation.
 * **Foundation representatives**
-  * 3 seats for Guardians — these are the members of the Foundation's board of directors.
-  * 2 seats for the Spec Core Team — these are the members of the Spec Core Team that looks after the spec.
-  * Managing Director — this is the Foundation's head of staff.
+  * 3 seats for [Guardians](/foundation/about#the-guardians) — these are the members of the Foundation's board of directors.
+  * 2 seats for [the Spec Core Team](/foundation/about#the-spec-core-team) — these are the members of the Spec Core Team that looks after the spec.
+  * [Managing Director](/foundation/about#managing-director) — this is the Foundation's head of staff.
 
 Elections are being held in the second quarter of each calendar year, alternating halves of the Constituency Groups representatives on the Governing Board as per the following calendar:
 

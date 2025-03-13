@@ -3,7 +3,7 @@
     {% for staff in staff_data.staff %}
     <div class="staff {% if loop.index % 2 != 0 %}reverse{% endif %}">
         <div class="staff-details">
-            <h4 class="staff-name">{{ staff.name }}, {{ staff.title }}</h4>
+            <h4 class="staff-name" id="{{ staff.title | slugify }}">{{ staff.name }}, {{ staff.title }}</h4>
             <p>{{ staff.bio }}</p>
             <ul class="socials">
                 {% if staff.email %}<li><a href="mailto:{{ staff.email }}">Email</a></li>{% endif %}
