@@ -20,10 +20,16 @@
                 <div class="section-submenu">
                     {% for subsection_path in section.subsections %}
                     {% set subsection = get_section(path=subsection_path) %}
+                    <!-- We ignore subsections with "navigation" key being false in the metadata. Note this variable may be unset -->
+                    {% if subsection.extra.navigation is not defined or subsection.extra.navigation %}
                     <a href="{{ subsection.path }}">{{ subsection.title }}</a>
+                    {% endif %}
                     {% endfor %}
                     {% for page in section.pages %}
+                    <!-- We ignore subsections with "navigation" key being false in the metadata. Note this variable may be unset -->
+                    {% if page.extra.navigation is not defined or page.extra.navigation %}
                     <a href="{{ page.path }}">{{ page.title }}</a>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>

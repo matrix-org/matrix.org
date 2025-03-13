@@ -1,0 +1,14 @@
+[[working_groups]]
+name = "Website Working Group"
+summary = "Editoral and technical oversight of the main websites and socials"
+description = """
+The website working group is responsible for the editorial and technical oversight of the main Matrix websites and social media channels.
+This includes the main matrix.org website, Event website, and the various social media channels.
+The group is responsible for ensuring that the websites are up to date, accurate, and reflect the current state of the Matrix ecosystem.
+The group is not responsible for domain-specific content of other Teams like the spec.matrix.org website, matrix.org Homeserver related configuraions or the legal and security sections of the website.
+
+Note that this is not the complete list of responsibilities, but a high level overview.
+"""
+members = ["Thib", "HarHarLinks", "MTRNord"]
+matrix_room_alias = "#matrix.org-website:matrix.org"
+committee = "Community"

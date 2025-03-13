@@ -1,0 +1,116 @@
+.working-group-content {
+    font-size: 1.25rem;
+    font-weight: lighter;
+    line-height: 1.5;
+}
+
+.working_group {
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.75;
+
+    header {
+        hr {
+            margin: 0.125rem;
+        }
+    }
+
+    .summary {
+        font-size: 1.25rem;
+        font-weight: 300;
+        margin-bottom: 0.5rem;
+    }
+
+    .description {
+        p {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        width: min-content;
+        gap: 0.5rem;
+
+        cursor: pointer;
+        user-select: none;
+        border: 1px solid black;
+        border-radius: 0.25rem;
+        background-color: white;
+        padding: 0.5rem;
+
+        transition: fill 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+
+        svg {
+            /* Center the icon vertically next to the text */
+            vertical-align: middle;
+            width: 0.9rem;
+            height: 0.9rem;
+            display: inline-block;
+
+            path {
+                fill: #000000;
+                transition: fill 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+        }
+
+        span {
+            white-space: nowrap;
+            font-size: 1rem;
+            line-height: 1;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+
+            transition: fill 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        &:hover {
+            span {
+                color: white;
+            }
+
+            background-color: black;
+            border-color: black;
+
+            path {
+                fill: #ffffff;
+            }
+        }
+    }
+
+    .comittee-pill {
+        border-radius: 0.25rem;
+        color: white;
+        padding: 0.5rem;
+        text-align: center;
+        font-size: 0.75rem;
+        font-weight: 500;
+        vertical-align: middle;
+        margin-left: 0.5rem;
+
+        background-color: #6c757d;
+
+        &.community {
+            background-color: #007bff;
+        }
+
+        &.governence {
+            background-color: #28a745;
+        }
+
+        &.trust-and-safety {
+            background-color: #dc3545;
+        }
+
+        &.finance {
+            background-color: #ffc107;
+        }
+    }
+}
