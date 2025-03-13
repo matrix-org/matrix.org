@@ -11,13 +11,13 @@
     {% set working_groups = load_data(path=wg_path, format="toml") %}
 
     {% for wg in working_groups.working_groups %}
-    {% if wg.committee == "Community" %}
+    {% if wg.committee == "Community Committee" %}
     {% set committee_id = "community" %}
-    {% elif wg.committee == "Governance" %}
+    {% elif wg.committee == "Governance Committee" %}
     {% set committee_id = "governance" %}
-    {% elif wg.committee == "Trust & Safety" %}
+    {% elif wg.committee == "Trust & Safety Committee" %}
     {% set committee_id = "trust-and-safety" %}
-    {% elif wg.committee == "Finance & Fundraising" %}
+    {% elif wg.committee == "Finance & Fundraising Committee" %}
     {% set committee_id = "finance" %}
     {% endif %}
 
