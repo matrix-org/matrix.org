@@ -23,7 +23,7 @@ There are nine different constituency groups that are allocated seats on the Gov
   * 2 seats for the Spec Core Team – these are the members of the Spec Core Team that looks after the spec.
   * Managing Director – this is the Foundation's head of staff.
 
-Elections are being held in the second quarter of each calendar year, alternating halves of the Consituency Groups representatives on the Governing Board as per the following calendar:
+Elections are being held in the second quarter of each calendar year, alternating halves of the Constituency Groups representatives on the Governing Board as per the following calendar:
 
 * April-June 2024, and any subsequent even-numbered years: Guardians, SCT, Platinum and Ecosystem
 * April-June 2025, and any subsequent odd-numbered years: Gold, Silver, Individual, Associate

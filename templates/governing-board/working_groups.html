@@ -17,13 +17,13 @@
     {% set committee_id = "governance" %}
     {% elif wg.committee == "Trust & Safety" %}
     {% set committee_id = "trust-and-safety" %}
-    {% elif wg.comittee == "Finance & Fundraising" %}
+    {% elif wg.committee == "Finance & Fundraising" %}
     {% set committee_id = "finance" %}
     {% endif %}
 
     <section class="working_group">
         <header>
-            <h2>{{ wg.name }} <span class="comittee-pill {{ committee_id }}">{{ wg.committee
+            <h2>{{ wg.name }} <span class="committee-pill {{ committee_id }}">{{ wg.committee
                     }}</span>
                 <hr />
         </header>
