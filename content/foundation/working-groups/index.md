@@ -1,5 +1,5 @@
 +++
-title = "Governing Board Working Groups"
+title = "Working Groups"
 template = "governing-board/working_groups.html"
 weight = 4
 extra.summary = """
