@@ -44,6 +44,7 @@
         flex-direction: row;
         width: min-content;
         gap: 0.5rem;
+        height: 100%;
 
         cursor: pointer;
         user-select: none;
@@ -92,6 +93,41 @@
                 fill: #ffffff;
             }
         }
+
+        &.inverted {
+            background-color: black;
+            border-color: black;
+
+            span {
+                color: white;
+            }
+
+            path {
+                fill: #ffffff;
+            }
+
+            &:hover {
+                span {
+                    color: black;
+                }
+
+                background-color: white;
+                border-color: black;
+
+                path {
+                    fill: #000000;
+                }
+            }
+        }
+    }
+
+    .button-group {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: row;
+        gap: 0.5rem;
+        margin-top: 1rem;
     }
 
     .committee-pill {
