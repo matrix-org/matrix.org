@@ -120,6 +120,14 @@ The current chairs of the Governing Board are:
 <div class="two-column">
 <div>
 
+### Governing Board
+
+* Greg Sutcliffe (he/him) — Chair
+* Kim Brose (he/him) — Vice Chair
+
+</div>
+<div>
+
 ### Governance Committee
 
 * Bram van den Heuvel (he/they) — Chair
