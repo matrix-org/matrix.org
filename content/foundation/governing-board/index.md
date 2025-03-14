@@ -110,6 +110,46 @@ The current elected representatives are:
 
 </div>
 
+## Current Chairs of the Governing Board
+
+The current chairs of the Governing Board are:
+
+<div class="two-column">
+<div>
+
+### Governance Committee
+
+* Bram van den Heuvel (he/they) — Chair
+* Sumner Evans — Vice Chair
+
+</div>
+<div>
+
+### Community Committee
+
+* Sumner Evans — Chair
+* Nicolas Werner (he/him) — Vice Chair
+
+</div>
+<div>
+
+### Finance Committee
+
+* Robin Riley — Chair
+* Kevin Boos (he/him) — Vice Chair
+
+</div>
+<div>
+
+### Trust & Safety Committee
+
+* J.B. Crawford — Chair
+* Nicolas Werner (he/him) — Vice Chair
+
+</div>
+
+</div>
+
 ## Where can I reach the Governing Board?
 
 The Governing Board has a dedicated room on Matrix, [#governing-board-office:matrix.org](https://matrix.to/#/#governing-board-office:matrix.org), where you can reach out to them.
