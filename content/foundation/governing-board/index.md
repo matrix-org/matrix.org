@@ -100,6 +100,13 @@ The current elected representatives are:
 * Travis Ralston (he/him)
 
 </div>
+<div>
+
+### Managing Director
+
+* Robin Riley
+
+</div>
 
 </div>
 
