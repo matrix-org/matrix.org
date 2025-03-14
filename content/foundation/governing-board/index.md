@@ -23,6 +23,9 @@ There are nine different constituency groups that are allocated seats on the Gov
   * 2 seats for [the Spec Core Team](/foundation/about#the-spec-core-team) — these are the members of the Spec Core Team that looks after the spec.
   * [Managing Director](/foundation/about#managing-director) — this is the Foundation's head of staff.
 
+To become a member, support the Foundation, be eligible to vote (in the Individual Members category), and even to stand as a candidate, please see our [Membership Page](/membership).
+If you're part of an organisation or community that wants to be part of the Board, please use [this form](https://cryptpad.fr/form/#/2/form/view/j1+wOJVZWyrDKvGP-G1r-zEOI3a52j5Y22brxhrdcmM/) or [reach out to us](/contact) to discuss.
+
 Elections are being held in the second quarter of each calendar year, alternating halves of the Constituency Groups representatives on the Governing Board as per the following calendar:
 
 * April-June 2024, and any subsequent even-numbered years: Guardians, SCT, Platinum and Ecosystem
