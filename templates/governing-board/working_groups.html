@@ -29,7 +29,10 @@
         </header>
         <p class="summary">{{ wg.summary }}</p>
         <div class="description">
-            <p class="members"><strong>Members:</strong> {{ wg.members | join(sep=", ") }}</p>
+            <div class="members">
+                <p><strong>Members:</strong> {{ wg.members | join(sep=", ") }}</p>
+                <p><strong>Sponsor:</strong> {{ wg.sponsor }}</p>
+            </div>
             <p>{{ wg.description | markdown(inline=true) | safe }}</p>
             <a href="https://matrix.to/#/{{ wg.matrix_room_alias }}" class="button"><svg viewBox="0 0 32 32"
                     xmlns="http://www.w3.org/2000/svg">

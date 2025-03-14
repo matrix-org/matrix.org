@@ -12,6 +12,7 @@ Note that this is not the complete list of responsibilities, but a high level ov
 members = ["Thib", "HarHarLinks", "MTRNord"]
 matrix_room_alias = "#matrix.org-website:matrix.org"
 committee = "Community Committee"
+sponsor = "HarHarLinks"
 
 [[working_groups]]
 name = "Events Working Group"
@@ -22,3 +23,4 @@ The Events working group the main organising team of the official events hosted 
 members = ["Yan", "Nadine", "Thib", "Robin", "HarHarLinks"]
 matrix_room_alias = "#events-wg:matrix.org"
 committee = "Community Committee"
+sponsor = "HarHarLinks"
