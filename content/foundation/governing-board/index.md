@@ -11,7 +11,7 @@ The Governing Board is an advisory board that is made up of elected representati
 There are nine different constituency groups that are allocated seats on the Governing Board, across three categories:
 
 * **Community representatives**
-  * 4 seats for Individual Members — these are people who currently provide financial support to the Foundation.
+  * 4 seats for Individual Members — these are people who currently provide individual financial support to the Foundation.
   * 3 seats for Ecosystem Members — these are FOSS projects and communities around Matrix.
   * 2 seats for Associate Members — these are FOSS foundations, academic institutions, and other communities that are aligned with key parts of our mission.
 * **Funder representatives**
