@@ -1,0 +1,26 @@
+[[working_groups]]
+name = "Website Working Group"
+summary = "Editoral and technical oversight of the main websites and socials"
+description = """
+The website working group is responsible for the editorial and technical oversight of the main Matrix websites and social media channels.
+This includes the main matrix.org website, conference website, and the various social media channels.
+The group is responsible for ensuring that the websites are up to date, accurate, and reflect the current state of the Matrix ecosystem.
+The group is not responsible for domain-specific content of other teams like the spec.matrix.org website, matrix.org Homeserver related configurations or the legal and security sections of the website.
+
+Note that this is not the complete list of responsibilities, but a high level overview.
+"""
+members = ["Thib", "HarHarLinks", "MTRNord"]
+matrix_room_alias = "#matrix.org-website:matrix.org"
+committee = "Community Committee"
+sponsor = "HarHarLinks"
+
+[[working_groups]]
+name = "Events Working Group"
+summary = "Organising the Foundation's official events and appearances at conferences"
+description = """
+The Events working group the main organising team of the official events hosted by the Foundation, such as the Matrix Conference or co-hosting FOSDEM Fringe, as well as official appearances at other conferences, e.g. the FOSDEM booth and devroom. The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the Matrix Community Summit, or the FrOSCon Matrix Community devroom, and tries to foster an ecosystem of decentralised events and user groups.
+"""
+members = ["Yan", "Nadine", "Thib", "Robin", "HarHarLinks"]
+matrix_room_alias = "#events-wg:matrix.org"
+committee = "Community Committee"
+sponsor = "HarHarLinks"

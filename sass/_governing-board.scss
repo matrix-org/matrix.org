@@ -1,0 +1,11 @@
+.two-column {
+    display: block;
+}
+
+
+@media (min-width: 768px) {
+    .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
