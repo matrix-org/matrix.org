@@ -2,7 +2,7 @@
 name = "matrix-wechat"
 maintainer = "Duo"
 summary = "A Matrix-Wechat puppeting bridge based on [mautrix-go](https://github.com/mautrix/go)."
-maturity = "Alpha"
+maturity = "Unmaintained"
 language = "Go"
 license = "AGPL-3.0-or-later"
 repo = "https://github.com/duo/matrix-wechat"
