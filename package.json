@@ -1,0 +1,19 @@
+{
+    "name": "matrix.org",
+    "version": "1.0.0",
+    "private": true,
+    "main": "index.js",
+    "scripts": {
+        "test": "playwright test",
+        "serve": "zola serve"
+    },
+    "author": "The Matrix.org Foundation and Contributors",
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "@playwright/test": "^1.50.1",
+        "@types/node": "^22.13.8"
+    },
+    "dependencies": {
+        "@axe-core/playwright": "^4.10.1"
+    }
+}
