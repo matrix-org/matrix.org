@@ -1,0 +1,93 @@
+{
+    "version": "v1.0.0",
+
+    "entity": {
+        "type": "organisation",
+        "role": "owner",
+        "name": "The Matrix.org Foundation",
+        "email": "managing-director@foundation.matrix.org",
+        "description": "Neutral custodian of the Matrix community assets",
+        "webpageUrl": {
+            "url": "https://matrix.org"
+        }
+    },
+
+    "projects": [{
+        "guid": "morg-server",
+        "name": "matrix.org homeserver",
+        "description": "The matrix.org homeserver used for the general public to get onboarded easily on Matrix for free",
+        "webpageUrl": {
+            "url": "https://matrix.org"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/matrix-org/matrix.org",
+            "wellKnown": "https://github.com/matrix-org/matrix.org/blob/main/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:Apache-2.0"],
+        "tags": ["community", "instant-messaging", "communication"]
+    }],
+
+    "funding": {
+        "channels": [{
+            "guid": "bank",
+            "type": "bank",
+            "address": "managing-director@foundation.marix.org",
+            "description": "Bank account of the matrix.org Foundation"
+        },{
+            "guid": "donorbox",
+            "type": "payment-provider",
+            "address": "https://donorbox.org/keep-matrix-exciting",
+            "description": "DonorBox"
+        },{
+            "guid": "liberapay",
+            "type": "payment-provider",
+            "address": "https://liberapay.com/matrixdotorg",
+            "description": "Liberapay"
+
+        },{
+            "guid": "patreon",
+            "type": "payment-provider",
+            "address": "https://www.patreon.com/matrixdotorg",
+            "description": "Patreon"
+        }],
+
+        "plans": [{
+            "guid": "membership-individual",
+            "status": "active",
+            "name": "Individual membership",
+            "description": "",
+            "amount": 60,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["donorbox", "liberapay", "patreon"]
+        },{
+            "guid": "membership-silver",
+            "status": "active",
+            "name": "Silver membership",
+            "description": "",
+            "amount": 80000,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["bank"]
+        },{
+            "guid": "membership-gold",
+            "status": "active",
+            "name": "Gold membership",
+            "description": "",
+            "amount": 200000,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["bank"]
+        },{
+            "guid": "membership-platinum",
+            "status": "active",
+            "name": "Platinum membership",
+            "description": "",
+            "amount": 500000,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["bank"]
+        }]
+
+    }
+}
