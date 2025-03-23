@@ -5,7 +5,7 @@ summary = """
 An Email to Matrix bridge. 1 room = 1 mailbox.
 Postmoogle is an actual SMTP server that allows you to send and receive emails on your matrix server.
 """
-maturity = "Stable"
+maturity = "Unmaintained"
 language = "Go"
 license = "GPL-3.0"
 docs = "https://gitlab.com/etke.cc/postmoogle/-/blob/main/README.md"
