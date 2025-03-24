@@ -14,8 +14,8 @@
 
     "projects": [{
         "guid": "morg-server",
-        "name": "matrix.org homeserver",
-        "description": "The matrix.org homeserver used for the general public to get onboarded easily on Matrix for free",
+        "name": "Matrix.org homeserver",
+        "description": "The Matrix.org homeserver used for the general public to get onboarded easily on Matrix for free.",
         "webpageUrl": {
             "url": "https://matrix.org"
         },
@@ -24,7 +24,7 @@
             "wellKnown": "https://github.com/matrix-org/matrix.org/blob/main/.well-known/funding-manifest-urls"
         },
         "licenses": ["spdx:Apache-2.0"],
-        "tags": ["community", "instant-messaging", "communication"]
+        "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots"]
     }],
 
     "funding": {
