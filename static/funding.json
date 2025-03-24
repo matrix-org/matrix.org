@@ -38,6 +38,20 @@
         },
         "licenses": ["spdx:Apache-2.0"],
         "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots", "documentation"]
+    },{
+        "guid": "morg-mjolnir",
+        "name": "Mjolnir",
+        "description": "A moderation tool for Matrix. This also represents the other efforts of the Foudation to provide moderation tooling to the ecosystem.",
+        "webpageUrl": {
+            "url": "https://github.com/matrix-org/mjolnir",
+            "wellKnown": "https://github.com/matrix-org/mjolnir/blob/main/.well-known/funding-manifest-urls"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/matrix-org/mjolnir",
+            "wellKnown": "https://github.com/matrix-org/mjolnir/blob/main/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:Apache-2.0"],
+        "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots", "documentation"]
     }],
 
     "funding": {
