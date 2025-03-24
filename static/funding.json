@@ -25,6 +25,19 @@
         },
         "licenses": ["spdx:Apache-2.0"],
         "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots"]
+    },{
+        "guid": "morg-website",
+        "name": "Matrix.org website",
+        "description": "The Matrix.org website documents what Matrix is, informs newcomers how to use it and how to manage a community on it, maintains an overview about available implementations and other related projects, publishes news from the ecosystem, and more.",
+        "webpageUrl": {
+            "url": "https://matrix.org"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/matrix-org/matrix.org",
+            "wellKnown": "https://github.com/matrix-org/matrix.org/blob/main/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:Apache-2.0"],
+        "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots", "documentation"]
     }],
 
     "funding": {
