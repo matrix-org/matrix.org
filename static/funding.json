@@ -15,7 +15,7 @@
     "projects": [{
         "guid": "morg-server",
         "name": "Matrix.org homeserver",
-        "description": "The Matrix.org homeserver used for the general public to get onboarded easily on Matrix for free.",
+        "description": "The Matrix.org homeserver used for the general public to get onboarded easily on Matrix for free. Operating the server costs $240k US.",
         "webpageUrl": {
             "url": "https://matrix.org"
         },
@@ -28,7 +28,7 @@
     },{
         "guid": "morg-website",
         "name": "Matrix.org website",
-        "description": "The Matrix.org website documents what Matrix is, informs newcomers how to use it and how to manage a community on it, maintains an overview about available implementations and other related projects, publishes news from the ecosystem, and more.",
+        "description": "The Matrix.org website documents what Matrix is, informs newcomers how to use it and how to manage a community on it, maintains an overview about available implementations and other related projects, publishes news from the ecosystem, and more. Maintaining the website costs $10k US on top of a lot of volunteer work.",
         "webpageUrl": {
             "url": "https://matrix.org"
         },
@@ -41,7 +41,7 @@
     },{
         "guid": "morg-mjolnir",
         "name": "Mjolnir",
-        "description": "A moderation tool for Matrix. This also represents the other efforts of the Foudation to provide moderation tooling to the ecosystem.",
+        "description": "A moderation tool for Matrix. This also represents the other efforts of the Foudation to provide moderation tooling to the ecosystem. The 'Trust & Safety' efforts of the Foundation, including server moderators and tool development, costs $360k US.",
         "webpageUrl": {
             "url": "https://github.com/matrix-org/mjolnir",
             "wellKnown": "https://github.com/matrix-org/mjolnir/blob/main/.well-known/funding-manifest-urls"
