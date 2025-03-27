@@ -24,7 +24,21 @@
             "wellKnown": "https://github.com/matrix-org/matrix.org/blob/main/.well-known/funding-manifest-urls"
         },
         "licenses": ["spdx:Apache-2.0"],
-        "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots"]
+        "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots", "api", "server"]
+    },{
+        "guid": "morg-spec",
+        "name": "Matrix Specification",
+        "description": "Matrix defines a set of open APIs for decentralised communication, suitable for securely publishing, persisting and subscribing to data over a global open federation of servers with no single point of control. Uses include Instant Messaging (IM), Voice over IP (VoIP) signalling, Internet of Things (IoT) communication, and bridging together existing communication silos - providing the basis of a new open real-time communication ecosystem. While the work of the Spec Core Team is volunteer work, the Matrix.org Foundation spends around $100k US to enable this work through its organisition, by providing infrastructure, and by employing the Director of Standards Development to ensure momentum.",
+        "webpageUrl": {
+            "url": "https://spec.matrix.org",
+            "wellKnown": "https://spec.matrix.org/unstable/.well-known/funding-manifest-urls"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/matrix-org/matrix-spec",
+            "wellKnown": "https://github.com/matrix-org/matrix-spec/blob/main/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:Apache-2.0"],
+        "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots", "api", "documentation"]
     },{
         "guid": "morg-website",
         "name": "Matrix.org website",
