@@ -66,6 +66,20 @@
         },
         "licenses": ["spdx:Apache-2.0"],
         "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots", "documentation"]
+    },{
+        "guid": "morg-hookshot",
+        "name": "Hookshot",
+        "description": "Hookshot is a versatile application that allows connecting and integrating Matrix with all kinds of services. Started as a bridge between Matrix and multiple project management services, such as GitHub, GitLab and JIRA, it has grown to support any inbound webhooks by gaining its scripting engine that can reformat the incoming payload into an arbitrary Matrix event. It also supports outbound weebhooks to send Matrix events to other services, and can read RSS and atom feeds, announcing any news to the Matrix room. Hookshot is currently developed on a volunteer basis with an effort equivalent to $20k US.",
+        "webpageUrl": {
+            "url": "https://github.com/matrix-org/matrix-hookshot",
+            "wellKnown": "https://github.com/matrix-org/matrix-hookshot/blob/main/.well-known/funding-manifest-urls"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/matrix-org/matrix-hookshot",
+            "wellKnown": "https://github.com/matrix-org/matrix-hookshot/blob/main/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:Apache-2.0"],
+        "tags": ["community", "instant-messaging", "communication", "bots", "api"]
     }],
 
     "funding": {
