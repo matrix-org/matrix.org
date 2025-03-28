@@ -35,7 +35,7 @@
         },
         "repositoryUrl": {
             "url": "https://github.com/matrix-org/matrix-spec",
-            "wellKnown": "https://github.com/matrix-org/matrix-spec/blob/main/.well-known/funding-manifest-urls"
+            "wellKnown": "https://github.com/matrix-org/matrix-spec/blob/main/static/.well-known/funding-manifest-urls"
         },
         "licenses": ["spdx:Apache-2.0"],
         "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots", "api", "documentation"]
