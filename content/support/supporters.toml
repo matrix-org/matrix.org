@@ -54,6 +54,11 @@ website = "https://indie.host"
 logo = "indiehosters.png"
 
 [[silver]]
+name = "SSH"
+website = "https://ssh.com"
+logo = "ssh.png"
+
+[[silver]]
 name = "Verji Tech AS"
 website = "https://verji.no/en"
 logo = "verji.svg"
