@@ -1,0 +1,148 @@
+{
+    "version": "v1.0.0",
+
+    "entity": {
+        "type": "organisation",
+        "role": "owner",
+        "name": "The Matrix.org Foundation",
+        "email": "managing-director@foundation.matrix.org",
+        "description": "Neutral custodian of the Matrix community assets",
+        "webpageUrl": {
+            "url": "https://matrix.org"
+        }
+    },
+
+    "projects": [{
+        "guid": "morg-server",
+        "name": "Matrix.org homeserver",
+        "description": "The Matrix.org homeserver used for the general public to get onboarded easily on Matrix for free. Operating the server costs $240k US.",
+        "webpageUrl": {
+            "url": "https://matrix.org"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/matrix-org/matrix.org",
+            "wellKnown": "https://github.com/matrix-org/matrix.org/blob/main/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:Apache-2.0"],
+        "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots", "api", "server"]
+    },{
+        "guid": "morg-spec",
+        "name": "Matrix Specification",
+        "description": "Matrix defines a set of open APIs for decentralised communication, suitable for securely publishing, persisting and subscribing to data over a global open federation of servers with no single point of control. Uses include Instant Messaging (IM), Voice over IP (VoIP) signalling, Internet of Things (IoT) communication, and bridging together existing communication silos - providing the basis of a new open real-time communication ecosystem. While the work of the Spec Core Team is volunteer work, the Matrix.org Foundation spends around $100k US to enable this work through its organisition, by providing infrastructure, and by employing the Director of Standards Development to ensure momentum.",
+        "webpageUrl": {
+            "url": "https://spec.matrix.org",
+            "wellKnown": "https://spec.matrix.org/unstable/.well-known/funding-manifest-urls"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/matrix-org/matrix-spec",
+            "wellKnown": "https://github.com/matrix-org/matrix-spec/blob/main/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:Apache-2.0"],
+        "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots", "api", "documentation"]
+    },{
+        "guid": "morg-website",
+        "name": "Matrix.org website",
+        "description": "The Matrix.org website documents what Matrix is, informs newcomers how to use it and how to manage a community on it, maintains an overview about available implementations and other related projects, publishes news from the ecosystem, and more. Maintaining the website costs $10k US on top of a lot of volunteer work.",
+        "webpageUrl": {
+            "url": "https://matrix.org"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/matrix-org/matrix.org",
+            "wellKnown": "https://github.com/matrix-org/matrix.org/blob/main/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:Apache-2.0"],
+        "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots", "documentation"]
+    },{
+        "guid": "morg-mjolnir",
+        "name": "Mjolnir",
+        "description": "A moderation tool for Matrix. This also represents the other efforts of the Foudation to provide moderation tooling to the ecosystem. The 'Trust & Safety' efforts of the Foundation, including server moderators and tool development, costs $360k US.",
+        "webpageUrl": {
+            "url": "https://github.com/matrix-org/mjolnir",
+            "wellKnown": "https://github.com/matrix-org/mjolnir/blob/main/.well-known/funding-manifest-urls"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/matrix-org/mjolnir",
+            "wellKnown": "https://github.com/matrix-org/mjolnir/blob/main/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:Apache-2.0"],
+        "tags": ["community", "instant-messaging", "communication", "privacy", "security", "bots", "documentation"]
+    },{
+        "guid": "morg-hookshot",
+        "name": "Hookshot",
+        "description": "Hookshot is a versatile application that allows connecting and integrating Matrix with all kinds of services. Started as a bridge between Matrix and multiple project management services, such as GitHub, GitLab and JIRA, it has grown to support any inbound webhooks by gaining its scripting engine that can reformat the incoming payload into an arbitrary Matrix event. It also supports outbound weebhooks to send Matrix events to other services, and can read RSS and atom feeds, announcing any news to the Matrix room. Hookshot is currently developed on a volunteer basis with an effort equivalent to $20k US.",
+        "webpageUrl": {
+            "url": "https://github.com/matrix-org/matrix-hookshot",
+            "wellKnown": "https://github.com/matrix-org/matrix-hookshot/blob/main/.well-known/funding-manifest-urls"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/matrix-org/matrix-hookshot",
+            "wellKnown": "https://github.com/matrix-org/matrix-hookshot/blob/main/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:Apache-2.0"],
+        "tags": ["community", "instant-messaging", "communication", "bots", "api"]
+    }],
+
+    "funding": {
+        "channels": [{
+            "guid": "bank",
+            "type": "bank",
+            "address": "managing-director@foundation.marix.org",
+            "description": "Bank account of the matrix.org Foundation"
+        },{
+            "guid": "donorbox",
+            "type": "payment-provider",
+            "address": "https://donorbox.org/keep-matrix-exciting",
+            "description": "DonorBox"
+        },{
+            "guid": "liberapay",
+            "type": "payment-provider",
+            "address": "https://liberapay.com/matrixdotorg",
+            "description": "Liberapay"
+
+        },{
+            "guid": "patreon",
+            "type": "payment-provider",
+            "address": "https://www.patreon.com/matrixdotorg",
+            "description": "Patreon"
+        }],
+
+        "plans": [{
+            "guid": "membership-individual",
+            "status": "active",
+            "name": "Individual membership",
+            "description": "For individuals who want to support the Foundation's work and run for a seat on its Governing Board. More information at https://matrix.org/membership",
+            "amount": 60,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["donorbox", "liberapay", "patreon"]
+        },{
+            "guid": "membership-silver",
+            "status": "active",
+            "name": "Silver membership",
+            "description": "For small companies and organisations who want to support the Foundation's work and run for a seat on its Governing Board. More information at https://matrix.org/membership",
+            "amount": 80000,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["bank"]
+        },{
+            "guid": "membership-gold",
+            "status": "active",
+            "name": "Gold membership",
+            "description": "For companies and organisations who want to support the Foundation's work. Includes the Silver membership benefits and the ability to publish a success story on the Matrix.org blog. More information at https://matrix.org/membership",
+            "amount": 200000,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["bank"]
+        },{
+            "guid": "membership-platinum",
+            "status": "active",
+            "name": "Platinum membership",
+            "description": "For big companies and organisations who want to support the Foundation's work and those who build heavily on Matrix. Includes the Gold membership benefits, a press release, and a dedicated Matrix Live episode. More information at https://matrix.org/membership",
+            "amount": 500000,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["bank"]
+        }]
+
+    }
+}
