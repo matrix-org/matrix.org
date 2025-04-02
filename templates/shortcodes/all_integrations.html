@@ -2,7 +2,7 @@
 <div class="projects-card-deck">
     {% for integration in integrations_data.integrations %}
     <div class="project-card">
-        <h3>{{ integration.name }}</h3>
+        <h2>{{ integration.name }}</h2>
         <span>{{ integration.description | safe }}</span>
         <div class="server-links">
             {% if integration.repository %}
