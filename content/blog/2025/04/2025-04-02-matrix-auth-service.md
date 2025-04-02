@@ -28,7 +28,7 @@ This is incredibly exciting, reflecting 4 years of work on next-generation auth,
 
 ### The account management interface
 
-You will be able to manage you account on a **dedicated interface at [account.matrix.org](https://account.matrix.org)** (accessible through your client or browser), where you can:
+You will be able to manage your account on a **dedicated interface at [account.matrix.org](https://account.matrix.org)** (accessible through your client or browser), where you can:
 
 * See and delete your devices.
 * Update your contact information, like your email address.
