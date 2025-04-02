@@ -44,7 +44,7 @@ MAS comes with a significant refactoring of how authentication works on Matrix. 
 
 ![](/blog/img/mas-grant-access.webp)
 
-### Improved registration exprience
+### Improved registration experience
 
 Regardless of the client you use, the new registration and login experience makes it clear where your account lives, and it supports next-generation clients like Element X.
 
