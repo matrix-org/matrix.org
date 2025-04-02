@@ -7,48 +7,56 @@ author = ["Quentin"]
 category = ["General"]
 +++
 
-**On Monday 7th of April 2025 at 7am UTC, we will migrate the Matrix.org homeserver's authentication system over to MAS (Matrix Authentication Service) in order to benefit from Next-generation authentication.** 
+**On Monday 7th of April 2025 at 7am UTC, we will migrate the Matrix.org homeserver's authentication system over to MAS (Matrix Authentication Service) in order to benefit from Next-generation authentication.**
 
-The migration will involve up to one hour of downtime. 
+The migration will involve up to one hour of downtime.
 
-[MSC3861](https://github.com/matrix-org/matrix-spec-proposals/pull/3861) (Next-generation auth for Matrix, based on OAuth 2.0/OIDC) and its dependent MSCs have progressed sufficiently that the Foundation is confident in MAS and the new next-generation auth APIs.  Specifically, all the MSCs are now in or have passed Final Comment Period (FCP) with disposition to merge! 🎉
+[MSC3861](https://github.com/matrix-org/matrix-spec-proposals/pull/3861) (Next-generation auth for Matrix, based on OAuth 2.0/OIDC) and its dependent MSCs have progressed sufficiently that the Foundation is confident in MAS and the new next-generation auth APIs.Specifically, all the MSCs are now in or have passed Final Comment Period (FCP) with disposition to merge! 🎉
 
-We expect the MSCs to finish FCP and get merged into the next spec release.  The full list of core Next-gen Auth MSCs is:
+We expect the MSCs to finish FCP and get merged into the next spec release.The full list of core Next-gen Auth MSCs is:
 
-* [MSC3861: Next-generation auth for Matrix, based on OAuth 2.0/OIDC](https://github.com/matrix-org/matrix-spec-proposals/pull/3861)  
-* [MSC2964: Usage of OAuth 2.0 authorization code grant and refresh token grant](https://github.com/matrix-org/matrix-spec-proposals/pull/2964)  
-* [MSC2965: OAuth 2.0 Authorization Server Metadata](https://github.com/matrix-org/matrix-spec-proposals/pull/2965)  
-* [MSC2966: Usage of OAuth 2.0 Dynamic Client Registration in Matrix](https://github.com/matrix-org/matrix-spec-proposals/pull/2966)  
-* [MSC2967: API scopes](https://github.com/matrix-org/matrix-spec-proposals/pull/2967)  
+* [MSC3861: Next-generation auth for Matrix, based on OAuth 2.0/OIDC](https://github.com/matrix-org/matrix-spec-proposals/pull/3861)
+* [MSC2964: Usage of OAuth 2.0 authorization code grant and refresh token grant](https://github.com/matrix-org/matrix-spec-proposals/pull/2964)
+* [MSC2965: OAuth 2.0 Authorization Server Metadata](https://github.com/matrix-org/matrix-spec-proposals/pull/2965)
+* [MSC2966: Usage of OAuth 2.0 Dynamic Client Registration in Matrix](https://github.com/matrix-org/matrix-spec-proposals/pull/2966)
+* [MSC2967: API scopes](https://github.com/matrix-org/matrix-spec-proposals/pull/2967)
 * [MSC4254: Usage of RFC7009 Token Revocation for Matrix client logout](https://github.com/matrix-org/matrix-spec-proposals/pull/4254)
 
 This is incredibly exciting, reflecting 4 years of work on next-generation auth, and brings with it a new account management interface, additional security, and a better registration experience.
 
+<!-- more -->
+
 ### The account management interface
 
-You will be able to manage you account on a **dedicated interface at account.matrix.org** (accessible through your client or browser), where you can:  
+You will be able to manage you account on a **dedicated interface at account.matrix.org** (accessible through your client or browser), where you can:
 
-* See and delete your devices.  
-* Update your contact information, like your email address.  
+* See and delete your devices.
+* Update your contact information, like your email address.
 * Change your password and deactivate your account.
 
-![](/blog/img/mas-devices.webp)
+<div style="display: grid;place-content:center;">
+<img src="/blog/img/mas-devices.webp" />
+</div>
 
 ### Improved security
 
 MAS comes with a significant refactoring of how authentication works on Matrix. Without breaking compatibility with the former authentication API, it brings several benefits
 
-* Now, only your server will be able to see your account credentials! No more typing your password in every client you’d like to log in to.  
-* Restricted access to sensitive operations, like deactivating your account.  
-* Clearer view of which clients are using your account.  
+* Now, only your server will be able to see your account credentials! No more typing your password in every client you’d like to log in to.
+* Restricted access to sensitive operations, like deactivating your account.
+* Clearer view of which clients are using your account.
 
-![](/blog/img/mas-grant-access.webp)
+<div style="display: grid;place-content:center;">
+<img src="/blog/img/mas-grant-access.webp" />
+</div>
 
 ### Improved registration experience
 
 Regardless of the client you use, the new registration and login experience makes it clear where your account lives, and it supports next-generation clients like Element X.
 
-![](/blog/img/mas-create-account.webp)
+<div style="display: grid;place-content:center;">
+<img src="/blog/img/mas-create-account.webp" />
+</div>
 
 
 ## Impact
