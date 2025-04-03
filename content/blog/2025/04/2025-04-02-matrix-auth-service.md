@@ -4,7 +4,7 @@ title = "Matrix.org will migrate to MAS on Apr 7th 2025"
 
 [taxonomies]
 author = ["Quentin"]
-category = ["General"]
+category = ["matrix.org homeserver"]
 +++
 
 **On Monday 7th of April 2025 at 7am UTC, we will migrate the Matrix.org homeserver's authentication system over to MAS (Matrix Authentication Service) in order to benefit from Next-generation authentication.**
