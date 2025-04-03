@@ -86,7 +86,7 @@
         "channels": [{
             "guid": "bank",
             "type": "bank",
-            "address": "managing-director@foundation.marix.org",
+            "address": "managing-director@foundation.matrix.org",
             "description": "Bank account of the matrix.org Foundation"
         },{
             "guid": "donorbox",
