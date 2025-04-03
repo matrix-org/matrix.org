@@ -6,7 +6,7 @@ A Matrix-Facebook Messenger puppeting bridge. Written in Python using
 [maufbapi](https://github.com/mautrix/facebook/tree/master/maufbapi) and
 [mautrix-python](https://matrix.org/docs/projects/sdk/mautrix-python.html).
 """
-maturity = "Obsolete"
+maturity = "Unmaintained"
 language = "Python"
 license = "AGPL-3.0-or-later"
 docs = "https://docs.mau.fi/bridges/python/setup.html?bridge=facebook"
@@ -35,7 +35,7 @@ maintainer = "Tulir"
 summary = """
 A Matrix-Facebook Messenger and Instagram DM puppeting bridge.
 """
-maturity = "Alpha"
+maturity = "Unmaintained"
 language = "Go"
 license = "AGPL-3.0-or-later"
 docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=meta"
