@@ -13,8 +13,8 @@
   Referrer-Policy: strict-origin-when-cross-origin
 
 
-# Allow ACAO for well-known client
-/.well-known/matrix/client
+# Allow ACAO for well-known records
+/.well-known/matrix/*
   Access-Control-Allow-Origin: *
 
 # Add content type for jira archive
