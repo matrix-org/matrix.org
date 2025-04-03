@@ -65,7 +65,7 @@ Regardless of the client you use, the new registration and login experience make
 
 Your current sessions will remain active after the migration has taken effect. In other words, you will not be logged out of your clients.
 
-We’re providing backwards compatibility for existing Matrix clients - this does not remove the stable Matrix 1.14 APIs. You can read more about the impact on clients in our previously published blog article - [Authentication changes on Matrix.org](https://matrix.org/blog/2025/01/06/authentication-changes/).
+We’re providing backwards compatibility for existing Matrix clients - this does not remove the stable pre-Matrix 2.0 APIs. You can read more about the impact on clients in our previously published blog article - [Authentication changes on Matrix.org](https://matrix.org/blog/2025/01/06/authentication-changes/).
 
 ## This is only the beginning!
 
