@@ -43,7 +43,7 @@ The move to MAS provides enormous improvements to security and usability:
 
 If you’re wondering what the new world of Next Gen Auth looks like, but don’t want to mess around logging in to a new client - fear not, for we have videos!
 
-Here’s an example of native Next Gen Auth in Element Web logging into the shiny new matrix.org system:
+Here’s an example of native Next Gen Auth in Element X iOS logging into the shiny new matrix.org system:
 
 {{ youtube_player(video_id="K5dxgNN1Vmc") }}
 
