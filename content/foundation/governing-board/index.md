@@ -165,6 +165,10 @@ The current chairs of the Governing Board are:
 
 The Governing Board has a dedicated room on Matrix, [#governing-board-office:matrix.org](https://matrix.to/#/#governing-board-office:matrix.org), where you can reach out to them.
 
+## Publications and News
+
+The Governing Board as a whole meets (at least) twice a year and subsequently publish a report about its activities on the Matrix.org blog. You can find them and other posts concerning the Governing Board using the [Governing Board category filter](https://matrix.org/category/governing-board/) of the blog.
+
 ## Committees
 
 There are currently 4 Committees:
