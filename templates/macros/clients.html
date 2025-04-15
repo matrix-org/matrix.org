@@ -1,8 +1,8 @@
 {% macro classes(client) %}
-{% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
+{% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org or client.packages.other_ios_link %}
 platform-ios
 {% endif %}
-{% if client.packages.google_play_store.app_id %}
+{% if client.packages.google_play_store.app_id or client.packages.other_android_link %}
 platform-android
 {% endif %}
 {% if client.packages.flathub.app_id %}
@@ -61,6 +61,10 @@ licence-{{ client.licence | slugify }}
 {% if packages.webapp %}
 <a href="{{ packages.webapp }}"><img src="/assets/stores/use_in_browser.svg" alt="Use in your browser" /></a>
 {% endif %}
+{% if packages.other_ios_link %}
+<a href="{{ packages.other_ios_link }}"><img
+        src="/assets/stores/download_for_ios.svg" alt="Download for iOS" /></a>
+{% endif %}
 {% if packages.apple_app_store %}
 <a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"><img
         src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
@@ -73,11 +77,15 @@ licence-{{ client.licence | slugify }}
 <a href="https://play.google.com/store/apps/details?id={{ packages.google_play_store.app_id }}"><img
         src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
 {% endif %}
+{% if packages.other_android_link %}
+<a href="{{ packages.other_android_link }}"><img
+        src="/assets/stores/download_for_android.svg" alt="Download for Android" /></a>
+{% endif %}
 {% endmacro %}
 
 {% macro platforms(packages) %}
-{% if packages.apple_app_store %}<div class="platform-pill">iOS</div>{% endif %}
-{% if packages.google_play_store or packages.f_droid %}<div class="platform-pill">Android</div>{% endif %}
+{% if packages.apple_app_store or packages.other_ios_link %}<div class="platform-pill">iOS</div>{% endif %}
+{% if packages.google_play_store or packages.f_droid or packages.other_android_link%}<div class="platform-pill">Android</div>{% endif %}
 {% if packages.windows_installer %}<div class="platform-pill">Windows</div>{% endif %}
 {% if packages.macos_installer %}<div class="platform-pill">macOS</div>{% endif %}
 {% if packages.flathub or packages.other_linux_link %}<div class="platform-pill">Linux</div>{% endif %}
