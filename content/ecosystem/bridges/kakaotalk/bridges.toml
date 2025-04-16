@@ -6,7 +6,7 @@ A Matrix-KakaoTalk puppeting bridge based on
 [mautrix-python](https://github.com/mautrix/python) that uses
 [node-kakao](https://github.com/storycraft/node-kakao) as its backend.
 """
-maturity = "Beta"
+maturity = "Unmaintained"
 language = "Python, Node"
 license = "AGPL-3.0-or-later"
 repo = "https://src.miscworks.net/fair/matrix-appservice-kakaotalk.git"
