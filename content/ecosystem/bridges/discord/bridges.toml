@@ -100,7 +100,7 @@ license = "AGPL-3.0-or-later"
 docs = "https://gitdab.com/cadence/out-of-your-element/src/branch/main/docs"
 repo = "https://gitdab.com/cadence/out-of-your-element"
 room = "#out-of-your-element:cadence.moe"
-featured = true
+featured = false
 privilege.platform = "Manage Server role" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
 [bridges.supports]
