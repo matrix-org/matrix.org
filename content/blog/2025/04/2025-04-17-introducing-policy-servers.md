@@ -19,7 +19,6 @@ The Foundation intends to offer a policy server to room admins, but we hope that
 
 ## Get involved
 
-
 [MSC4284](https://github.com/matrix-org/matrix-spec-proposals/pull/4284) is now open to support this work. Please get involved in the MSC, and help us to improve this addition to safety tooling for the network. We’d especially like to see implementations for non-Synapse servers.
 
-Folks who run communities on Matrix who would like to test our policy server, reach out to us at abuse@matrix.org, using the subject `policy-server-alpha`.
+Folks who run communities on Matrix who would like to test our policy server, reach out to us at [abuse@matrix.org](mailto:abuse@matrix.org?subject=policy-server-alpha), using the subject `policy-server-alpha`.
