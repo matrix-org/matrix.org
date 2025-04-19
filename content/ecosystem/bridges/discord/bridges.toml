@@ -115,4 +115,4 @@ redactions = true
 editing = true
 reactions = true
 presence = true
-typing_notifications = true
+typing_notifications = false  # only d->m at this time
