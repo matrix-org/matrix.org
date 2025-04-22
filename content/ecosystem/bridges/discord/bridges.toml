@@ -2,7 +2,7 @@
 name = "matrix-appservice-discord"
 maintainer = "Matrix.org Foundation"
 summary = "This project bridges Discord to Matrix via the Application Service API"
-maturity = "Beta"
+maturity = "Obsolete"
 language = "TypeScript"
 license = "Apache-2.0"
 docs = "https://github.com/matrix-org/matrix-appservice-discord#end-user-documentation"
@@ -69,7 +69,7 @@ heroku or similar and don't have their own server. **NOTE: This is unmaintained
 and might break in the future due to Discord changes.**
 
 """
-maturity = "Alpha"
+maturity = "Obsolete"
 language = "Python"
 license = "MIT"
 repo = "https://github.com/git-bruh/matrix-discord-bridge"

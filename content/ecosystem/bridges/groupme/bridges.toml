@@ -4,7 +4,7 @@ maintainer = "kfatehi"
 summary = """
 This is a Matrix bridge for GroupMe
 """
-maturity = "Beta"
+maturity = "Obsolete"
 language = "TypeScript"
 license = "Apache-2.0"
 repo = "https://gitlab.com/robintown/mx-puppet-groupme"

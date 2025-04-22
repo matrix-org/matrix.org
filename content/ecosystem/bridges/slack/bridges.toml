@@ -71,7 +71,7 @@ part of the [matrix-puppet-bridge](https://github.com/matrix-hacks/matrix-puppet
 suite of puppetting bridges. It can be used for existing chats, rather than
 initiating new ones.
 """
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Javascript"
 license = "Licence unknown"
 repo = "https://github.com/matrix-hacks/matrix-puppet-slack"
@@ -104,7 +104,7 @@ matrix together via (double)puppeting. Additionally a relay mode can be enabled.
 This bridge is part of the [mx-puppet-bridge](https://github.com/Sorunome/mx-puppet-bridge)
 suite of puppeting bridges.
 """
-maturity = "Alpha"
+maturity = "Obsolete"
 language = "TypeScript"
 license = "Apache-2.0"
 docs = "https://gitlab.com/mx-puppet/slack/mx-puppet-slack#quick-start-using-docker"
