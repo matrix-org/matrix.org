@@ -28,6 +28,7 @@
 
     border: 1px solid #D2D2D2;
     border-radius: 16px;
+    text-decoration: none;
 
     img {
         margin: 0;
@@ -68,6 +69,7 @@
         border-radius: 9999px;
         padding-inline: .5rem;
         color: var(--color-text);
+        text-decoration: none;
     }
 }
 
@@ -253,6 +255,7 @@
         display: flex;
         align-items: center;
         gap: .2rem;
+        text-decoration: none;
 
         border: 1px solid var(--color-text);
         color: var(--color-text);
