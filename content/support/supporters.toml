@@ -54,6 +54,11 @@ website = "https://indie.host"
 logo = "indiehosters.png"
 
 [[silver]]
+name = "LiveKit"
+website = "https://livekit.io"
+logo = "livekit.svg"
+
+[[silver]]
 name = "SSH"
 website = "https://ssh.com"
 logo = "ssh.png"
