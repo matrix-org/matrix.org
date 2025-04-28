@@ -49,7 +49,7 @@ There are currently no term limits, but term limits are a best practice in open 
 
 ## Who can nominate
 
-You must be a member of one of the constituency groups in order to nominate yourself or someone else to be a candidate in the election. By far our largest constituency group are Individual Members, who number in the 100’s. If you have donated at least $60 USD to the Foundation since April 20, 2024 on [Donorbox](https://donorbox.org/keep-matrix-exciting), then you are eligible to nominate and vote.
+You must be a member of one of the constituency groups in order to nominate yourself or someone else to be a candidate in the election. By far our largest constituency group are Individual Members, who number in the 100’s. If you have donated at least $60 USD to the Foundation since April 20, 2024 on [Donorbox](https://donorbox.org/keep-matrix-exciting), then you are eligible to nominate and vote. You must donate before the election period begins, as we cannot change voter rolls after that.
 
 All nominees must have consented to nomination _before being nominated_ and must be a community member in good standing. That means they must have a clean track record with respect to our [Code of Conduct](https://matrix.org/legal/code-of-conduct/). We want our Governing Board to be a clearing house for a variety of priorities and perspectives, and to be able to hold space for each other even when there are disagreements.
 
