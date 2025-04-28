@@ -94,6 +94,6 @@ We will update this blog post with a link to a nomination form and a template do
 
 All nominations should be submitted through the form, though anyone who has technical difficulties can fill out the template document and email it to [elections@foundation.matrix.org](mailto:elections@foundation.matrix.org).
 
-For discussion related to the Governing Board and the elections, we encourage people to drop by the [Office of the Governing Board(#governing-board-office:matrix.org)](https://matrix.to/#/#governing-board-office:matrix.org).
+For discussion related to the Governing Board and the elections, we encourage people to drop by the [Office of the Governing Board (#governing-board-office:matrix.org)](https://matrix.to/#/#governing-board-office:matrix.org).
 
 Thank you for your ongoing support, and good luck to all the candidates in the upcoming elections!
