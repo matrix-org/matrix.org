@@ -9,7 +9,7 @@ category = ["Foundation", "Elections", "Governing Board"]
 
 Today we kick off the second [Governing Board](https://matrix.org/foundation/governing-board/) election season for the Matrix.org Foundation! We start with a two week nomination period that opens on Saturday, May 3rd and closes on Friday, May 16th. This year’s deadlines are anchored to the UTC timezone, rather than the [AOE](https://en.wikipedia.org/wiki/Anywhere_on_Earth) approach that we used with mixed results last year.
 
-We’ll be doing our best to reach out to every constituent group to let them know they are eligible to nominate candidates for the election.
+We’ll be doing our best to reach out to everyone in the Gold, Silver, Individual, and Associate Member constituent groups to let them know they are eligible to nominate candidates for the election.
 
 **_If you are interested in nominating someone – or yourself – to be a candidate in this election, read this post in its entirety._**
 
