@@ -1,6 +1,5 @@
 +++
 date = "2025-04-28"
-updated = "2025-04-28"
 title = "Announcing the 2025 Governing Board elections"
 
 [taxonomies]
