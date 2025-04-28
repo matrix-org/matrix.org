@@ -80,7 +80,7 @@ Congratulations! All of the winners will be announced on June 16th, but since th
 
 All elected representatives will be added to a private mailing list and Matrix room so that they can introduce themselves and communicate in between meetings. I will be reaching out to every elected representative to meet one-on-one, get acquainted, and answer questions before we convene for their first Governing Board meeting.
 
-The Governing Board meets as a full board twice a year, for at least 90 minutes each time, and meetings are facilitated by the duly elected Chair or Vice Chair. Expect one meeting before the end of the year, and another before the next election.
+The Governing Board meets as a full board at least twice a year, for at least 90 minutes each time, and meetings are facilitated by the duly elected Chair or Vice Chair. Expect one meeting before the end of the year, and another before the next election.
 
 You are likely to receive a packet of materials before each meeting which you will be expected to have reviewed. Most meetings will be held online, though we may convene meetings in-person, such as at The Matrix Conference. We will make every effort to make in-person meetings accessible to remote participants, and no official business will ever happen without appropriate notice, quorum, and minutes.
 
