@@ -8,8 +8,8 @@ Postmoogle is an actual SMTP server that allows you to send and receive emails o
 maturity = "Stable"
 language = "Go"
 license = "GPL-3.0"
-docs = "https://gitlab.com/etke.cc/postmoogle/-/blob/main/README.md"
-repo = "https://gitlab.com/etke.cc/postmoogle"
+docs = "https://github.com/etkecc/postmoogle/blob/main/README.md"
+repo = "https://github.com/etkecc/postmoogle"
 room = "#postmoogle:etke.cc"
 featured = false
 privilege.platform = "Admin" # Free text
