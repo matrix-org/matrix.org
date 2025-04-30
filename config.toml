@@ -13,6 +13,7 @@ build_search_index = false
 default_language = "en"
 
 generate_feeds = true
+feed_filenames = ["atom.xml", "rss.xml"]
 
 taxonomies = [
     { name = "author", feed = false, paginate_by = 10 },
@@ -49,4 +50,3 @@ conference_location = "Berlin, Germany"
 
 governence_board_elections = false
 governence_board_elections_page = "/governing-board/elections/2024"
-
