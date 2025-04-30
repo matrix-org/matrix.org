@@ -19,6 +19,11 @@ website = "https://www.futurewei.com/"
 logo = "futurewei.png"
 
 [[silver]]
+name = "Blender Foundation"
+website = "https://www.blender.org/"
+logo = "blender.svg"
+
+[[silver]]
 name = "Fairkom"
 website = "https://www.fairkom.eu/"
 logo = "fairkom.svg"
@@ -29,19 +34,34 @@ website = "https://www.famedly.com/"
 logo = "famedly.svg"
 
 [[silver]]
-name = "Fractal Networks"
-website = "https://github.com/fractalnetworksco/"
-logo = "fractal-networks.svg"
-
-[[silver]]
 name = "Gematik"
 website = "https://www.gematik.de/"
 logo = "gematik.png"
 
 [[silver]]
+name = "Hintjen"
+website = "https://hintjen.com"
+logo = "hintjen.png"
+
+[[silver]]
+name = "iKono Telecomunicaciones"
+website = "https://ikono.co/"
+logo = "ikono.png"
+
+[[silver]]
 name = "IndieHosters"
 website = "https://indie.host"
 logo = "indiehosters.png"
+
+[[silver]]
+name = "LiveKit"
+website = "https://livekit.io"
+logo = "livekit.svg"
+
+[[silver]]
+name = "SSH"
+website = "https://ssh.com"
+logo = "ssh.png"
 
 [[silver]]
 name = "Verji Tech AS"

@@ -6,6 +6,8 @@ extra.summary = """
 The list of candidates and their information.
 """
 weight = 2
+# Hidden from navigation. The links are still accessible.
+extra.navigation = false
 +++
 
 Announcements are posted on our blog, our social channels, as well as in the [Office of the Matrix.org Foundation](https://matrix.to/#/#foundation-office:matrix.org) room and the [Matrix News](https://matrix.to/#/#matrix-news:matrix.org) room.
@@ -26,7 +28,7 @@ The Governing Board is an advisory board that is made up of elected representati
 There are nine different constituency groups that are allocated seats on the Governing Board, across three categories:
 
 * **Community representatives**
-  * 4 seats for Individual Members – these are people who currently provide financial support to the Foundation.
+  * 4 seats for Individual Members – these are people who currently provide individual financial support to the Foundation.
   * 3 seats for Ecosystem Members – these are FOSS projects and communities around Matrix.
   * 2 seats for Associate Members – these are FOSS foundations, academic institutions, and other communities that are aligned with key parts of our mission.
 * **Funder representatives**
@@ -97,25 +99,25 @@ We intend to charter committees – such as for finance, which would review our 
 
 These are the candidates who are now elected representatives:
 
-- Andy Balaam (he/him), Individual Member
-- Greg Sutcliffe (he/him), Individual Member
-- J.B. Crawford (they/them), Individual Member
-- Sumner Evans, Individual Member
-- Bram van den Heuvel (he/they), Elm SDK, Ecosystem Member
-- Kim Brose (he/him), Matrix Community Events, Ecosystem Member
-- Nicolas Werner (he/him), Nheko-Reborn, Ecosystem Member
-- Cleo Menenez Jr. (he/him), GNOME Foundation, Associate Member
-- Tobias Fella (he/him), KDE e.V., Associate Member
-- Neil Johnson (he/him), Element, Platinum Member
-- Brad Murray (he/him), Automattic (Beeper), Gold Member
-- Kevin Boos (he/him), Futurewei Technologies, Gold Member
-- Jan Kohnert (he/him), Gematik GmbH, Silver Member
-- Thor Arne Johansen, Verji Tech AS, Silver Member
-- Amandine Le Pape (she/her), Guardian
-- Matthew Hodgson (he/him), Guardian
-- Ross Schulman, Guardian
-- Richard van der Hoff (he/him), Spec Core Team
-- Travis Ralston (he/him), Spec Core Team
+* Andy Balaam (he/him), Individual Member
+* Greg Sutcliffe (he/him), Individual Member
+* J.B. Crawford (they/them), Individual Member
+* Sumner Evans, Individual Member
+* Bram van den Heuvel (he/they), Elm SDK, Ecosystem Member
+* Kim Brose (he/him), Matrix Community Events, Ecosystem Member
+* Nicolas Werner (he/him), Nheko-Reborn, Ecosystem Member
+* Cleo Menenez Jr. (he/him), GNOME Foundation, Associate Member
+* Tobias Fella (he/him), KDE e.V., Associate Member
+* Neil Johnson (he/him), Element, Platinum Member
+* Brad Murray (he/him), Automattic (Beeper), Gold Member
+* Kevin Boos (he/him), Futurewei Technologies, Gold Member
+* Jan Kohnert (he/him), Gematik GmbH, Silver Member
+* Thor Arne Johansen, Verji Tech AS, Silver Member
+* Amandine Le Pape (she/her), Guardian
+* Matthew Hodgson (he/him), Guardian
+* Ross Schulman, Guardian
+* Richard van der Hoff (he/him), Spec Core Team
+* Travis Ralston (he/him), Spec Core Team
 
 And these elected representatives are joined by the Foundation's Managing Director, Robin Riley (they/them), who represents the Foundation in an ex officio capacity.
 

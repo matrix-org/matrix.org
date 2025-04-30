@@ -13,5 +13,7 @@ However, if you prefer email, or have a need to be more direct:
   commercial queries
 - [security@matrix.org](mailto:security@matrix.org) to disclose security issues.
   Also see our [Security Disclosure Policy](/security-disclosure-policy/)
+- [funding@matrix.org](mailto:funding@matrix.org) for organisational sponsorship and funding
+  queries
 
 You can find our staff members, and contact details for some of them, in the [About](/about/) section.
