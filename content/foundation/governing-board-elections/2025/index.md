@@ -56,7 +56,7 @@ If you want to be a candidate in the election, there are a few things you should
 * Candidates who are nominated by an organizational member will have their affiliation listed.
 * We expect candidates to provide a short bio and a short statement, collectively covering qualifications and priorities. Candidates may also provide a link to an extended statement or platform on their personal blog or website.
 * You are encouraged to make yourself available for conversation with members of your constituency group.
-* The period for campaigning runs from May 17th to May 30th. Please note our [community Code of Conduct](https://matrix.org/legal/code-of-conduct/) while campaigning.
+* The period for campaigning runs from May 17th to May 30th. Please note our [community Code of Conduct](/legal/code-of-conduct/) while campaigning.
 
 ### Campaigning (May 17)
 
