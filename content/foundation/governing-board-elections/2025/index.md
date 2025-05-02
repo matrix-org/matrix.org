@@ -32,7 +32,7 @@ This page is focused on the 2025 election cycle. We encourage you to [learn more
 
 [We kickstarted the election process](/blog/2025/04/election-announcement/) in a blog post announcing the schedule, eligibility, and conditions of the vote.
 
-This year, we are running elections for the following constituency groups:
+This year, we are running elections for the following [constituency groups](/foundation/governing-board/):
 
 * Gold Members
 * Silver Members
