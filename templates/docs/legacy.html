@@ -1,5 +1,7 @@
 {% extends "page.html" %}
+{% import "macros/banner.html" as banner %}
 {% block content %}
+{{ banner::banner() }}
 <article class="content">
     <header>
         <div class="legacy-doc-warning {% if page.extra.new_doc %}outdated{% endif %}">
