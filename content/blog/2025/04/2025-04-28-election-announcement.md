@@ -7,7 +7,9 @@ author = ["Robin Riley"]
 category = ["Foundation", "Elections", "Governing Board"]
 +++
 
-Today we kick off the second [Governing Board](https://matrix.org/foundation/governing-board/) election season for the Matrix.org Foundation! We start with a two week nomination period that opens on Saturday, May 3rd and closes on Friday, May 16th. This year’s deadlines are anchored to the UTC timezone, rather than the [AOE](https://en.wikipedia.org/wiki/Anywhere_on_Earth) approach that we used with mixed results last year.
+Today we kick off the second [Governing Board](/foundation/governing-board/) election season for the Matrix.org Foundation!
+We start with a two week nomination period that opens on Saturday, May 3rd and closes on Friday, May 16th.
+This year’s deadlines are anchored to the UTC timezone, rather than the [AOE](https://en.wikipedia.org/wiki/Anywhere_on_Earth) approach that we used with mixed results last year.
 
 We’ll be doing our best to reach out to everyone in the Gold, Silver, Individual, and Associate Member constituent groups to let them know they are eligible to nominate candidates for the election.
 
@@ -39,7 +41,7 @@ Here is the composition of seats on the Governing Board:
 |3 Ecosystem Members|3 Gold Members|2 Spec Core Team Members|
 |2 Associate Members|2 Silver Members|Managing Director|
 
-[Learn how to become a member](https://matrix.org/membership/) and [see a list of our current organizational members](https://matrix.org/support/).
+[Learn how to become a member](/membership/) and [see a list of our current organizational members](/support/).
 
 We will be seating candidates for half of the constituency groups in 2025, namely: Gold, Silver, Individual, and Associate Members.
 
@@ -51,7 +53,9 @@ There are currently no term limits, but term limits are a best practice in open 
 
 You must be a member of one of the constituency groups in order to nominate yourself or someone else to be a candidate in the election. By far our largest constituency group are Individual Members, who number in the 100’s. If you have donated at least $60 USD to the Foundation since April 20, 2024 on [Donorbox](https://donorbox.org/keep-matrix-exciting), then you are eligible to nominate and vote. You must donate before the election period begins, as we cannot change voter rolls after that.
 
-All nominees must have consented to nomination _before being nominated_ and must be a community member in good standing. That means they must have a clean track record with respect to our [Code of Conduct](https://matrix.org/legal/code-of-conduct/). We want our Governing Board to be a clearing house for a variety of priorities and perspectives, and to be able to hold space for each other even when there are disagreements.
+All nominees must have consented to nomination _before being nominated_ and must be a community member in good standing.
+That means they must have a clean track record with respect to our [Code of Conduct](/legal/code-of-conduct/).
+We want our Governing Board to be a clearing house for a variety of priorities and perspectives, and to be able to hold space for each other even when there are disagreements.
 
 ## Who can vote
 
@@ -67,12 +71,12 @@ All of the candidates will be listed on an elections page here on our website wh
 
 If you want to be a candidate in the election, there are a few things you should know:
 
-* All candidates will be listed on our website, grouped by the constituency group. ([See last year's election center here.](https://matrix.org/foundation/governing-board-elections/))
+* All candidates will be listed on our website, grouped by the constituency group. ([See last year's election center here.](/foundation/governing-board-elections/2024/))
 * We do not require people to use their “legal name.”
 * Candidates who are nominated by an organizational member will have their affiliation listed.
 * We expect candidates to provide a short bio and a short statement, collectively covering qualifications and priorities. Candidates may also provide a link to an extended statement or platform on their personal blog or website.
 * You are encouraged to make yourself available for conversation with members of your constituency group.
-* The period for campaigning runs from May 17th to May 30th. Please note our [community Code of Conduct](https://matrix.org/legal/code-of-conduct/) while campaigning.
+* The period for campaigning runs from May 17th to May 30th. Please note our [community Code of Conduct](/legal/code-of-conduct/) while campaigning.
 
 ## What to expect if you win
 
