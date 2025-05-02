@@ -58,6 +58,8 @@ If you want to be a candidate in the election, there are a few things you should
 * You are encouraged to make yourself available for conversation with members of your constituency group.
 * The period for campaigning runs from May 17th to May 30th. Please note our [community Code of Conduct](/legal/code-of-conduct/) while campaigning.
 
+For reference, you can find last year's nominations on our [2024 election center](/foundation/governing-board-elections/2024/) page.
+
 ### Campaigning (May 17)
 
 The campaign period is an opportunity for candidates to share more about themselves and their priorities. We encourage candidates to engage with the rest of the ecosystem, and in particular those who are part of the same constituency group.
