@@ -6,8 +6,6 @@ extra.summary = """
 The list of candidates and their information.
 """
 weight = 2
-# Hidden from navigation. The links are still accessible.
-extra.navigation = false
 +++
 
 Announcements are posted on our blog, our social channels, as well as in the [Office of the Matrix.org Foundation](https://matrix.to/#/#foundation-office:matrix.org) room and the [Matrix News](https://matrix.to/#/#matrix-news:matrix.org) room.
@@ -54,7 +52,7 @@ Nominations for the 2024 elections are complete, and you can [find the nominees 
 
 You must be a member of one of the constituency groups in order to nominate yourself or someone else to be a candidate in the election. By far our largest constituency group are Individual Members, who number in the 100’s. If you have donated at least $60 USD to the Foundation since April 20, 2023, on any of Donorbox, Patreon, or Liberapay, then you are eligible to nominate and vote.
 
-Eligible members can proceed to nominations using the Cryptpad below, or download [this PDF nomination form](https://matrix.org/media/2024-nomination-form.pdf) and send it to [elections@foundation.matrix.org](mailto:elections@foundation.matrix.org).
+Eligible members can proceed to nominations using the Cryptpad below, or download [this PDF nomination form](/media/2024-nomination-form.pdf) and send it to [elections@foundation.matrix.org](mailto:elections@foundation.matrix.org).
 
 All nominations are subject to review in accordance with our bylaws. We will email you to confirm receipt within 2 business days, and we will publish our elections landing page with all of the nominees, and other details, on April 27th.
 
@@ -65,7 +63,7 @@ If you want to be a candidate in the election, there are a few things you should
 * Candidates who are nominated by an organizational member will have their affiliation listed.
 * We expect candidates to provide a short bio and a short statement, collectively covering qualifications and priorities.
 * You are encouraged to make yourself available for conversation with members of your constituency group.
-* The period for campaigning runs from April 27th to May 17th. Please note our [community Code of Conduct](https://matrix.org/legal/code-of-conduct/) while campaigning.
+* The period for campaigning runs from April 27th to May 17th. Please note our [community Code of Conduct](/legal/code-of-conduct/) while campaigning.
 
 ### Campaigning (April 27)
 

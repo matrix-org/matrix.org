@@ -107,7 +107,7 @@ The current elected representatives are:
 
 ### Managing Director
 
-* Robin Riley
+* Robin Riley (they/them)
 
 </div>
 
@@ -146,7 +146,7 @@ The current chairs of the Governing Board are:
 
 ### Finance Committee
 
-* Robin Riley — Chair
+* Robin Riley (they/them) — Chair
 * Kevin Boos (he/him) — Vice Chair
 
 </div>
