@@ -41,7 +41,7 @@ This year, we are running elections for the following constituency groups:
 
 ### Nominations (May 3)
 
-You must be a member of one of the constituency groups in order to nominate yourself or someone else to be a candidate in the election.
+You must be a member of one of the constituency groups in order to nominate yourself or someone else to be a candidate in the election. If you intend to nominate someone else, you need to get their consent ahead of time.
 
 By far our largest constituency group are Individual Members, who number in the 100’s. If you have donated at least $60 USD to the Foundation since April 20, 2024 on [Donorbox](https://donorbox.org/keep-matrix-exciting), then you are eligible to nominate and vote. You must donate before the election period begins, as we cannot change voter rolls after that.
 
