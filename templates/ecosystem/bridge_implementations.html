@@ -1,5 +1,7 @@
 {% extends "section.html" %}
+{% import "macros/banner.html" as banner %}
 {% block content %}
+{{ banner::banner() }}
 <div class="page-header">
     <div class="hero-block">
         <h1>{{ section.title }}</h1>

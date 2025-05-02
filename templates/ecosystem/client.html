@@ -1,9 +1,11 @@
 {% extends "page.html" %}
+{% import "macros/banner.html" as banner %}
 {% import "macros/clients.html" as clients %}
 {% block head_extra %}
 <meta name="description" content="{{ page.content | replace(from=" <p>", to="") | replace(from="</p>", to="") }}">
 {% endblock head_extra %}
 {% block content %}
+{{ banner::banner() }}
 {% if page.extra.thumbnail %}
 {% set thumbnail = page.extra.thumbnail %}
 {% else %}
