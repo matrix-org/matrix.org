@@ -72,7 +72,7 @@ Thanks to a proactive member of the community, we have [a dedicated Matrix space
 
 ### Voting (May 31)
 
-The voting period will run from May 31st to June 13th. All eligible voters will receive an email from [OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections.
+The voting period will run from **May 31st to June 13th**. All eligible voters will receive an email from [OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections.
 
 All members of each constituency group are entitled to vote on the candidates within that constituency group. If you believe you are eligible to participate but have not heard from us, first check the inbox and spam folders of the email address you have on file with us through Donorbox. [Please email us](mailto:elections@foundation.matrix.org) if you have any questions.
 
