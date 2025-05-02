@@ -1,4 +1,5 @@
 {% extends "skel.html" %}
+{% import "macros/banner.html" as banner %}
 {% block head_extra %}
 <meta name="description"
     content="The homepage of the matrix.org website. Chat securely with your family, friends, community, or build great apps with Matrix!">
@@ -6,48 +7,7 @@
 {% endblock head_extra %}
 {% block content %}
 
-{% if config.extra.banner %}
-<div id="information-banner">
-    {% if config.extra.conference_state == "cfp" %}
-    <p>We are happy to launch <a href="{{ config.extra.conference_website }}">The Matrix Conference</a> on {{
-        config.extra.conference_dates }} in
-        {{ config.extra.conference_location }}. <a href="{{ config.extra.conference_website }}">Learn more</a> about it,
-        or <a href="https://cfp.matrix.org">submit a
-            proposal</a>!</p>
-    {% elif config.extra.conference_state == "awaiting_schedule" %}
-    <p>We are happy to launch <a href="{{ config.extra.conference_website }}">The Matrix Conference</a> on {{
-        config.extra.conference_dates }} in
-        {{ config.extra.conference_location }}. <a href="{{ config.extra.conference_website }}">Learn more</a> about it,
-        <a href="{{ config.extra.conference_website }}/register/">buy a
-            ticket</a>!
-    </p>
-    {% elif config.extra.conference_state == "scheduled" %}
-    <p>We are happy to launch <a href="{{ config.extra.conference_website }}">The Matrix Conference</a> on {{
-        config.extra.conference_dates }} in
-        {{ config.extra.conference_location }}. <a href="{{ config.extra.conference_website }}">Learn more</a> about it,
-        <a href="{{ config.extra.conference_website }}/register/">buy a
-            ticket</a>, or <a href="{{ config.extra.conference_website }}/schedule/">check the schedule</a>!
-    </p>
-    {% elif config.extra.conference_state == "no_tickets" %}
-    <p>We are happy to launch <a href="{{ config.extra.conference_website }}">The Matrix Conference</a> on {{
-        config.extra.conference_dates }} in
-        {{ config.extra.conference_location }}. <a href="{{ config.extra.conference_website }}">Learn more</a> about it,
-        or <a href="{{ config.extra.conference_website }}/schedule/">check the schedule</a>!</p>
-    {% elif config.extra.conference_state == "live" %}
-    <p><a href="{{ config.extra.conference_website }}">The Matrix Conference</a> is Live.
-        <a href="{{ config.extra.conference_website }}/watch/">Check the livestreams</a>!
-    </p>
-    {% elif config.extra.conference_state == "watch-recordings" %}
-    <p><a href="{{ config.extra.conference_website }}">The Matrix Conference</a> is over and the recordings are here!.
-        <a href="{{ config.extra.conference_website }}/watch/">Check out the recordings</a>!
-    </p>
-    {% endif %}
-    {% if config.extra.governence_board_elections %}
-    <p>We are holding our Governing Board elections. Find all the information <a
-            href="{{ governence_board_elections_page }}">on the elections page.</a></p>
-    {% endif %}
-</div>
-{% endif %}
+{{ banner::banner() }}
 <div id="frontpage">
     <div id="hero" class="section">
         <div class="hero_content">

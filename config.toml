@@ -38,7 +38,7 @@ skip_anchor_prefixes = [
 ]
 
 [extra]
-banner = false
+banner = true
 
 # Possible states: "cfp", "awaiting_schedule", "scheduled", "no_tickets", "live", "watch-recordings", "none"
 # None is used when elections instead are used
@@ -48,5 +48,5 @@ conference_website = "https://2024.matrix.org"
 conference_dates = "Sep 19-22"
 conference_location = "Berlin, Germany"
 
-governence_board_elections = false
-governence_board_elections_page = "/governing-board/elections/2024"
+governing_board_elections = true
+governing_board_elections_page = "/foundation/governing-board-elections/2025/"
