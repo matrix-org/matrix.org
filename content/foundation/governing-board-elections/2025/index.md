@@ -6,8 +6,6 @@ extra.summary = """
 The list of candidates and their information.
 """
 weight = 2
-# Hidden from navigation. The links are still accessible.
-# extra.navigation = false
 +++
 
 Announcements are posted on our blog, our social channels, as well as in the [Office of the Matrix.org Foundation](https://matrix.to/#/#foundation-office:matrix.org) room, the [Office of the Governing Board](https://matrix.to/#/#governing-board-office:matrix.org) room, and the [Matrix News](https://matrix.to/#/#matrix-news:matrix.org) room.
