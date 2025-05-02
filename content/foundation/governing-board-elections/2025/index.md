@@ -80,9 +80,9 @@ We will hold an election for all of the four constituencies even if a given cons
 
 ### Results (June 16)
 
-Results will be announced on June 16th. All elected representatives will be added to a private mailing list and Matrix room so that they can introduce themselves and communicate in between meetings. The Foundation's Managing Director will be reaching out to every elected representative to meet one-on-one, get acquainted, and answer questions before we convene for our first Governing Board meeting.
+Results will be announced on June 16th. All elected representatives will be added to a private mailing list and Matrix room so that they can introduce themselves and communicate in between meetings. The Foundation's Managing Director and the Governing Board's Chair and/or Vice Chair will be reaching out to every elected representative to get new members onboarded as quickly as possible.
 
-The Governing Board will meet as a full board at least twice a year, for at least 90 minutes each time. Expect one meeting before the end of the year, and another before the next election.
+The Governing Board will meet as a full board at least twice a year, for at least 90 minutes each time. We'll aim to have a meeting shortly after the election, and you can expect one meeting before the end of the year and another before the next election.
 
 Members of the Governing Board are likely to receive a packet of materials before each meeting which they will be expected to have reviewed. Most meetings will be held online, though we may convene meetings in-person, such as at The Matrix Conference. We will make every effort to make in-person meetings accessible to remote participants, and no official business will ever happen without appropriate notice, quorum, and minutes.
 
