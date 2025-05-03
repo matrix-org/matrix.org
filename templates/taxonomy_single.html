@@ -24,17 +24,21 @@
                 <h2><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h2>
                 <span>
                     {{ page.date | date(format="%d.%m.%Y %H:%M") }}
-                    {% if page.taxonomies.category -%}
+                    {% if page.taxonomies.category %}
                     —
-                    <a href="/category/{{ page.taxonomies.category | first | slugify }}">
-                        {{ page.taxonomies.category | first }}
+                    {% for category in page.taxonomies.category %}
+                    <a href="/category/{{ category | slugify }}">
+                        {{- category -}}
                     </a>
-                    {% endif -%}
+                    {%- if not loop.last %}, {% endif %}{% endfor %}
+                    {% endif %}
                     —
-                    <a
-                        href="/author/{{ page.taxonomies.author | default(value=['unknown author']) | first | slugify }}">
-                        {{ page.taxonomies.author | default (value=["unknown author"]) | first }}
+                    {% for author in page.taxonomies.author %}
+                    <a href="/author/{{ author | default (value=['unknown author']) | slugify }}">
+                        {{- author | default (value=["unknown author"]) -}}
                     </a>
+                    {%- if not loop.last %}, {% endif %}
+                    {% endfor %}
                 </span>
                 {% if page.updated -%}
                 <br>
