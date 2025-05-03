@@ -5,7 +5,7 @@ path = "/blog/2024/10/29/matrixconf"
 
 [taxonomies]
 author = ["Josh Simmons"]
-category = ["Conference"]
+category = ["The Matrix Conference", "Conferences"]
 +++
 
 PHEW! One month later and I’m still buzzing from [the inaugural Matrix Conference](https://2024.matrix.org/) in Berlin. This was the first time we’ve gathered such a broad cross-section of the ecosystem both upstream and downstream, bringing together contributors, vendors, and end-users in the same place at the same time.

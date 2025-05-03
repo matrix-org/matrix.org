@@ -5,7 +5,7 @@ updated = "2024-06-18T15:00:00Z"
 
 [taxonomies]
 author = ["Thib"]
-category = ["Conference"]
+category = ["The Matrix Conference", "Conferences"]
 
 [extra]
 image = "https://matrix.org/img/matrix-conference-opengraph.png"
