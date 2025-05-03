@@ -8,8 +8,9 @@
     <div class="content">
         <header>
             <h1>{{ term.name }}</h1>
+            {% set taxonomy = load_data(path="taxonomy.toml") %}
             {{ term.pages | length }} posts tagged with "{{ term.name }}" <a href="/{{ taxonomy.name }}">(See all {{
-                taxonomy.name | capitalize
+                taxonomy.plurals[taxonomy.name] | default(value=taxonomy.name)
                 }})</a>
             {% if taxonomy.feed %}
             <h2>
