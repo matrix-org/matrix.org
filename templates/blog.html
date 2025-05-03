@@ -11,7 +11,7 @@
                 {{ page.date | date(format="%d.%m.%Y %H:%M") }}
                 {% if page.taxonomies.category -%}
                 —
-                {% for category in page.taxonomies.category %}
+                {% for category in page.taxonomies.category | sort %}
                 <a href="/category/{{ category | slugify }}">
                     {{- category -}}
                 </a>
