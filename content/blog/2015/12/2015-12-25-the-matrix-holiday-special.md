@@ -4,7 +4,7 @@ path = "/blog/2015/12/25/the-matrix-holiday-special"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["Events"]
+category = ["General", "Holiday Special"]
 +++
 
 Hi all,
@@ -14,6 +14,8 @@ We've been pretty bad at updating the blog over the last few months with all the
 As a result, there's a huge backlog of really cool stuff we should have talked about. Hopes of writing an Advent Calendar series of blog posts also went out the window as we set Christmas as an arbitrary deadline for loads of work on Synapse, the Matrix Spec and matrix-react-sdk.
 
 So, to try to break the impasse, here's a slightly unorthodox whistle-stop tour of all the amazing blogposts we *would* have written if we'd had time. And perhaps some of them will actually expand into full write-ups when we have more time to spare in the future :)
+
+<!-- more -->
 
 ## End to End Encryption Update
 

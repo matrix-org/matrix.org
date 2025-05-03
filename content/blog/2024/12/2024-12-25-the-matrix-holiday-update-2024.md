@@ -4,7 +4,7 @@ path = "/blog/2024/12/25/the-matrix-holiday-special-2024"
 
 [taxonomies]
 author = ["Matthew Hodgson", "Josh Simmons"]
-category = ["General"]
+category = ["General", "Holiday Special"]
 
 [extra]
 image = "https://matrix.org/blog/img/matrix-logo.png"
