@@ -4,7 +4,7 @@ path = "/blog/2021/12/02/call-for-participation-for-the-fosdem-2022-matrix-dev-r
 
 [taxonomies]
 author = ["Thib"]
-category = ["General"]
+category = ["Events", "FOSDEM"]
 
 [extra]
 image = "https://matrix.org/blog/img/2021-01-04-fosdem.jpg"
