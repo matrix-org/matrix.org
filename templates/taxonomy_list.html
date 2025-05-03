@@ -24,9 +24,11 @@
                         <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
                     </li>
                     {% endfor %}
+                    {% if term.pages | length > 4 %}
                     <li>
-                        <a href="{{ term.permalink | safe }}">...more "{{ term.name }}" posts</a>
+                        <a href="{{ term.permalink | safe }}">... all "{{ term.name }}" posts</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
             {% endfor %}
