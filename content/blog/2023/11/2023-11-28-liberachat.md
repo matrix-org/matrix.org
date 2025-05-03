@@ -1,6 +1,6 @@
 +++
 date = "2023-11-28"
-title = "Shutting down the Matrix bridge to Libera Chat"
+title = "Shutting down the Matrix bridge to Libera.Chat"
 path = "/blog/2023/11/28/shutting-down-bridge-to-libera-chat"
 
 [taxonomies]
