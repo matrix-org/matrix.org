@@ -75,26 +75,29 @@
             align-items: center;
         }
 
-        .nav-links:not(.primary) {
-            position: relative;
 
-            &::after {
-                content: "";
-                position: absolute;
-                /*I have no idea why its 105% here? It seems to be better aligned?*/
-                left: calc(105% - var(--bar-width));
-                max-width: calc(100% - (var(--bar-width)));
-                bottom: -5px;
-                width: 0;
-                height: 2px;
-                z-index: -10;
-                background: linear-gradient(to right, var(--matrix-pink), var(--matrix-blue));
-                transition: width 0.3s ease;
-            }
+        @media screen and (min-width: 767px) {
+            .nav-links:not(.primary) {
+                position: relative;
 
-            &:hover::after,
-            &.current::after {
-                width: var(--bar-width);
+                &::after {
+                    content: "";
+                    position: absolute;
+                    /*I have no idea why its 105% here? It seems to be better aligned?*/
+                    left: calc(105% - var(--bar-width));
+                    max-width: calc(100% - (var(--bar-width)));
+                    bottom: -5px;
+                    width: 0;
+                    height: 2px;
+                    z-index: -10;
+                    background: linear-gradient(to right, var(--matrix-pink), var(--matrix-blue));
+                    transition: width 0.3s ease;
+                }
+
+                &:hover::after,
+                &.current::after {
+                    width: var(--bar-width);
+                }
             }
         }
 
@@ -110,6 +113,12 @@
 
             &:hover {
                 color: #0082f3;
+            }
+
+            @media screen and (max-width: 767px) {
+                &.current {
+                    color: #0082f3
+                }
             }
 
             &.primary {
