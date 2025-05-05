@@ -21,6 +21,7 @@
                 <ul>
                     {% for page in term.pages | slice(end=4) %}
                     <li>
+                        {{ page.date | date(format="%Y-%m-%d") }}:
                         <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
                     </li>
                     {% endfor %}
