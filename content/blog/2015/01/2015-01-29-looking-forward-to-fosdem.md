@@ -4,7 +4,7 @@ path = "/blog/2015/01/29/looking-forward-to-fosdem"
 
 [taxonomies]
 author = ["Oddvar Lovaas"]
-category = ["General"]
+category = ["Events", "FOSDEM"]
 +++
 
 This weekend, Matrix is heading to FOSDEM (Free and Open Source Software Developers' European Meeting) in Brussels, Belgium. We will be hosting two events: a <a href="https://fosdem.org/2015/schedule/event/matrix/" title="lightning talk">lightning talk</a> on Saturday at 16:30 in room H.2215 (Ferrer), and an <a href="https://fosdem.org/2015/schedule/event/deviot04/" title="IoT devroom talk">IoT devroom talk</a> on Sunday morning at 11:00 in room H.2213.

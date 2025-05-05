@@ -4,7 +4,7 @@ path = "/blog/2020/01/02/on-privacy-versus-freedom"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["Thoughts"]
+category = ["Thoughts", "Privacy"]
 +++
 
 A few years ago, back when Matrix was originally implementing end-to-end encryption, we asked Moxie (the project lead for Signal) whether he’d ever consider connecting Signal (then TextSecure) to Matrix.  After all, one of Matrix’s goals is to be an interoperability layer between other communication silos, and one of the reasons for us using Signal’s Double Ratchet Algorithm for Matrix’s encryption was to increase our chances of one day connecting with other apps using the same algorithm (Signal, WhatsApp, Google Allo, Skype, etc).  Moxie politely declined, and then a few months later wrote “[The ecosystem is moving](https://signal.org/blog/the-ecosystem-is-moving/)” to elaborate his thoughts on why he feels he “no longer believes that it is possible to build a competitive federated messenger at all.”

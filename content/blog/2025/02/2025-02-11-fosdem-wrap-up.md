@@ -7,7 +7,7 @@ image = "https://matrix.org/blog/img/fosdem-25-group-picture.png"
 
 [taxonomies]
 author = ["Thib"]
-category = ["FOSDEM"]
+category = ["FOSDEM", "Events"]
 +++
 
 The Matrix.org Foundation and its growing community were once again present at the biggest OSS conference in Europe, and it's been a tremendous success! It was an opportunity for us to gather, share ideas and debate about ongoing topics, meet the broader FOSS community and present our work.

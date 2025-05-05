@@ -4,7 +4,7 @@ path = "/blog/2015/02/04/back-from-fosdem"
 
 [taxonomies]
 author = ["Oddvar Lovaas"]
-category = ["General"]
+category = ["Events", "FOSDEM"]
 +++
 
 <a href="http://fosdem.org" title="FOSDEM">FOSDEM</a> was great fun! Two days full of conferences and demos; lots of interesting technologies and interested people - and most of all: talking to so many new faces about Matrix and potential uses and integration ideas. 

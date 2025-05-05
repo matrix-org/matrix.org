@@ -1,6 +1,6 @@
 +++
 date = "2023-07-04T16:00:00Z"
-title = "Deportalling from Libera Chat"
+title = "Deportalling from Libera.Chat"
 
 [taxonomies]
 author = ["Neil Johnson"]

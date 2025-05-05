@@ -4,7 +4,7 @@ path = "/blog/2021/02/15/how-we-hosted-fosdem-2021-on-matrix"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["General"]
+category = ["Events", "FOSDEM"]
 
 [extra]
 image = "https://matrix.org/blog/img/2021-01-04-fosdem.jpg"

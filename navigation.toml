@@ -25,5 +25,5 @@ footer_external = [
     { image = "mastodon.svg", alt = "Mastodon", href = "https://mastodon.matrix.org/@matrix" },
     { image = "twitter.svg", alt = "Twitter", href = "https://twitter.com/matrixdotorg" },
     { image = "youtube.svg", alt = "YouTube", href = "https://www.youtube.com/channel/UCVFkW-chclhuyYRbmmfwt6w" },
-    { image = "rss.svg", alt = "RSS", href = "/atom.xml" },
+    { image = "rss.svg", alt = "Atom Feed", href = "/atom.xml" },
 ]

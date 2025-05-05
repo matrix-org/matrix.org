@@ -4,7 +4,7 @@ path = "/blog/2022/11/16/call-for-participation-for-the-fosdem-2023-matrix-devro
 
 [taxonomies]
 author = ["Thib"]
-category = ["General"]
+category = ["Events", "FOSDEM"]
 +++
 
 This year, the Matrix.org Foundation is excited to host the first ever
