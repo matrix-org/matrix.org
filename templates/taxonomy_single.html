@@ -24,7 +24,7 @@
             <header>
                 <h2><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h2>
                 <span>
-                    {{ page.date | date(format="%d.%m.%Y %H:%M") }}
+                    {{ page.date | date(format="%Y-%m-%d %H:%M") }}
                     {% if page.taxonomies.category %}
                     —
                     {% for category in page.taxonomies.category | sort %}
@@ -43,7 +43,7 @@
                 </span>
                 {% if page.updated -%}
                 <br>
-                <small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
+                <small>Last update: {{ page.updated | date(format="%Y-%m-%d %H:%M") }}</small>
                 {%- endif %}
             </header>
             <div>

@@ -51,7 +51,7 @@
     <header>
         <h1>{{ page.title }}</h1>
         <span>
-            {{ page.date | date(format="%d.%m.%Y %H:%M") }}
+            {{ page.date | date(format="%Y-%m-%d %H:%M") }}
             {% if page.taxonomies.category %}
             —
             {% for category in page.taxonomies.category | sort %}
@@ -69,7 +69,7 @@
             {% endfor %}
         </span>
         {% if page.updated %}
-        <br><small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
+        <br><small>Last update: {{ page.updated | date(format="%Y-%m-%d %H:%M") }}</small>
         {% endif %}
     </header>
     <div class="post-main">
