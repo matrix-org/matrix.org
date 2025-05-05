@@ -10,7 +10,7 @@
         {% if link.section %}
         {% set href = "/" ~ link.section ~ "/" %}
         {% set section = get_section(path=link.section ~ "/_index.md") %}
-        <div class="section-wrap">
+        <div class="section-wrap nav-links">
             <input id="{{ link.section }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true"
                 {{ util::current_checked(if_path_starts_with="/" ~ link.section) }}>
             <label for="{{ link.section }}-submenu-checkbox" class="submenu-title">{{ link.title }} <div class="arrow">
@@ -20,13 +20,15 @@
                 <div class="section-submenu">
                     {% for subsection_path in section.subsections %}
                     {% set subsection = get_section(path=subsection_path) %}
-                    {# We ignore subsections with "navigation" key being false in the metadata. Note this variable may be unset #}
+                    {# We ignore subsections with "navigation" key being false in the metadata. Note this variable may
+                    be unset #}
                     {% if subsection.extra.navigation is not defined or subsection.extra.navigation %}
                     <a href="{{ subsection.path }}">{{ subsection.title }}</a>
                     {% endif %}
                     {% endfor %}
                     {% for mypage in section.pages %}
-                    {# We ignore subsections with "navigation" key being false in the metadata. Note this variable may be unset #}
+                    {# We ignore subsections with "navigation" key being false in the metadata. Note this variable may
+                    be unset #}
                     {% if mypage.extra.navigation is undefined or mypage.extra.navigation %}
                     <a href="{{ mypage.path }}">{{ mypage.title }}</a>
                     {% endif %}
@@ -36,7 +38,7 @@
         </div>
         {% else %}
         <a href="{{ link.href }}" class="{% if link.primary %}primary{% endif %}
-            {{ util::current_class(if_path_starts_with=link.href) }}">
+            {{ util::current_class(if_path_starts_with=link.href) }} nav-links">
             {{ link.title }}
         </a>
         {% endif %}

@@ -3,6 +3,8 @@
     z-index: 1000;
     --header-padding: 1.5dvw;
     --header-vertical-padding: 8px;
+    --matrix-pink: #ae7fe9;
+    --matrix-blue: #75f4f4;
 
     display: flex;
     width: 100%;
@@ -53,6 +55,8 @@
     nav {
         display: flex;
 
+        --bar-width: 70%;
+
         @media screen and (max-width: 767px) {
             position: fixed;
             z-index: 800;
@@ -71,6 +75,29 @@
             align-items: center;
         }
 
+        .nav-links:not(.primary) {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                /*I have no idea why its 105% here? It seems to be better aligned?*/
+                left: calc(105% - var(--bar-width));
+                max-width: calc(100% - (var(--bar-width)));
+                bottom: -5px;
+                width: 0;
+                height: 2px;
+                z-index: -10;
+                background: linear-gradient(to right, var(--matrix-pink), var(--matrix-blue));
+                transition: width 0.3s ease;
+            }
+
+            &:hover::after,
+            &.current::after {
+                width: var(--bar-width);
+            }
+        }
+
         a {
             color: #fff;
             font-size: 1.125rem;
@@ -82,10 +109,6 @@
             padding: var(--header-vertical-padding) var(--header-padding);
 
             &:hover {
-                color: #0082f3;
-            }
-
-            &.current {
                 color: #0082f3;
             }
 
@@ -166,6 +189,14 @@
     }
 
     @media screen and (min-width: 768px) {
+
+        /*Required to transition from display none*/
+        @starting-style {
+            .section-submenu {
+                opacity: 0;
+            }
+        }
+
         .section-wrap {
             position: relative;
             align-self: stretch;
@@ -184,12 +215,16 @@
         }
 
         .section-submenu {
+            transition: opacity 0.4s, display 0.4s ease;
+            /*Required to transition from display none*/
+            transition-behavior: allow-discrete;
             background: #fff;
             border: 1px solid #f4f4f4;
             border-radius: 6px;
+            margin-top: 9px;
             padding-inline: 1rem;
             padding-block: 0.75rem;
-            
+
             display: flex;
             flex-direction: column;
 
