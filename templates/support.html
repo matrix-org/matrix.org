@@ -4,7 +4,7 @@
 <meta name="description" content="{{ section.extra.summary }}">
 {% endblock head_extra %}
 {% block content %}
-{% set supporters = load_data(path="content/support/supporters.toml") %}
+
 <div class="page-header support">
     <div class="hero-block">
         <h1>{{ section.title }}</h1>
@@ -32,38 +32,7 @@
         </p>
         <a href="/membership" class="call-to-action">Become a member</a>
     </div>
-    <div id="supporters">
-        <div class="supporters-section" id="platinum-supporters">
-            <h2>Platinum Members</h2>
-            <div class="cards">
-               {{ supporters_macros::case_insensitive_sort_supporters(supporters=supporters.platinum) }}
-            </div>
-        </div>
-        <div class="supporters-section" id="gold-supporters">
-            <h2>Gold Members</h2>
-            <div class="cards">
-              {{ supporters_macros::case_insensitive_sort_supporters(supporters=supporters.gold) }}
-            </div>
-        </div>
-        <div class="supporters-section" id="silver-supporters">
-            <h2>Silver Members</h2>
-            <div class="cards">
-                {{ supporters_macros::case_insensitive_sort_supporters(supporters=supporters.silver) }}
-            </div>
-        </div>
-        <div class="supporters-section" id="ecosystem-supporters">
-            <h2>Ecosystem Members</h2>
-            <div class="cards">
-                {{ supporters_macros::case_insensitive_sort_supporters(supporters=supporters.ecosystem) }}
-            </div>
-        </div>
-        <div class="supporters-section" id="associate-supporters">
-            <h2>Associate Members</h2>
-            <div class="cards">
-                {{ supporters_macros::case_insensitive_sort_supporters(supporters=supporters.associate) }}
-            </div>
-        </div>
-    </div>
+
     <div id="the-spec">
         <div class="content">
             <div>
