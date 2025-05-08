@@ -1,86 +1,302 @@
-header {
+// header {
+//     margin-bottom: 1em;
+
+//     h1 {
+//         margin-bottom: 0;
+//     }
+
+//     .metadata {
+//         font-size: .8rem;
+//     }
+// }
+
+// .docs-body {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: row;
+//     // flex-grow: 1;
+//     --docs-menu-width: 18rem;
+// }
+
+// .docs-menu {
+//     position: sticky;
+//     top: var(--navbar-height);
+//     height: calc(100vh - var(--navbar-height));
+//     overflow-y: auto;
+//     background-color: #fff;
+//     border-right: 1px solid var(--borders-color);
+//     width: var(--docs-menu-width);
+//     flex-shrink: 0;
+//     align-self: flex-start;
+
+//     box-sizing: border-box;
+//     // padding-block-start: var(--navbar-height);
+//     inset-block: 0;
+//     inset-inline-start: 0;
+//     overflow-y: auto;
+//     background-color: #fff;
+//     border-right: 1px solid var(--borders-color);
+//     max-width: var(--docs-menu-width);
+
+//     .docs-menu-inner {
+//         padding: 1.5rem;
+//     }
+
+//     @media (max-width: 767px) {
+//         /*
+//         This trick is added because Chrome on Android doesn't re-calculate the
+//         height of the viewport before the user stops scrolling. We're
+//         artificially making the panel higher than it is
+//         */
+//         --panel-bottom-trick: 300px;
+//         position: fixed;
+//         border-right: unset;
+//         max-width: unset;
+//         width: 100%;
+//         inset-block: var(--navbar-height) calc(-1 * var(--panel-bottom-trick));
+//         inset-inline-start: 0;
+//         inset-inline-end: 0;
+//         inset-block-end: calc(-1 * var(--panel-bottom-trick));
+//         padding-block-end: calc(var(--panel-bottom-trick) + 5rem);
+//         z-index: 990;
+//     }
+
+//     .submenu-checkbox {
+//         display: none;
+
+//         &:not(:checked)~.section-submenu-wrap {
+//             display: none;
+//         }
+
+//         &:not(:checked)~.submenu-title {
+//             .arrow {
+//                 background-image: url("/assets/down-arrow.svg");
+//                 width: 1rem;
+//                 height: 1rem;
+//                 margin: auto 0;
+//             }
+//         }
+
+//         &:checked~.submenu-title {
+//             .arrow {
+//                 background-image: url("/assets/up-arrow.svg");
+//                 width: 1rem;
+//                 height: 1rem;
+//                 margin: auto 0;
+//             }
+//         }
+//     }
+
+//     .submenu-title {
+//         display: flex;
+//         flex-direction: row;
+//         gap: .8rem;
+
+//         font-size: 1.2rem;
+//         font-weight: 700;
+
+//         cursor: pointer;
+//         user-select: none;
+//     }
+
+//     ul {
+//         padding-inline-start: 0;
+//         list-style: none;
+
+//         li {
+//             margin-inline-start: 1em;
+//             margin-block: .5em;
+
+//             ul {
+//                 border-left: 1px solid #bbb;
+
+//                 li:hover {
+//                     color: var(--color-link);
+//                     text-decoration: underline;
+//                 }
+//             }
+//         }
+
+
+//         a {
+//             color: var(--color-text);
+//         }
+//     }
+// }
+
+// .docs-content {
+//     // padding-inline-start: calc(var(--docs-menu-width) + 3rem + .5rem);
+//     padding-inline-start: 3.5rem;
+//     flex-grow: 1;
+//     min-width: 0; // Prevents flex item overflow issues
+//     padding: 1.5rem;
+
+//     @media (max-width: 767px) {
+//         margin-inline: auto;
+//         padding-inline: .5rem;
+//     }
+
+//     article p img {
+//         max-width: 100%;
+//         margin-inline: auto;
+//         display: block; 
+//     }
+// }
+
+// #docs-menu-button {
+//     position: fixed;
+//     display: none;
+//     z-index: 991;
+
+//     @media (max-width: 767px) {
+//         display: inline-block;
+//     }
+
+//     bottom: 2rem;
+//     left: 50%;
+//     transform: translateX(-50%);
+    
+//     background-color: #000;
+//     color: #fff;
+//     border: transparent;
+//     border-radius: 9999px;
+//     padding: .5rem 2rem;
+//     box-shadow: 0 2px 2px #666;
+// }
+
+// #docs-menu-checkbox:checked~#docs-menu-button {
+//     background-color: #333;
+// }
+
+// #docs-menu-checkbox:not(:checked)~.docs-menu {
+//     @media (max-width: 767px) {
+//         display: none;
+//     }
+// }
+
+// #docs-menu-checkbox:checked~.docs-content {
+//     @media (max-width: 767px) {
+//         display: none;
+//     }
+// }
+
+// .mjolnir_button {
+//     border: 1px solid rgb(217, 217, 217);
+//     border-radius: 1000px;
+//     padding: 0 .4rem;
+//     background-color: rgb(242, 247, 252);
+// }
+
+// figure {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 1rem;
+
+//     margin-inline: 0;
+//     padding: 1rem;
+
+//     border: 1px solid #dedede;
+//     border-radius: 4px;
+
+//     img {
+//         max-width: 100%;
+//         max-height: 100%;
+//     }
+
+//     figcaption {
+//         font-size: .8rem;
+//         text-align: center;
+//     }
+// }
+
+// .hidden {
+//     display: none;
+// }
+
+header { 
     margin-bottom: 1em;
-
-    h1 {
-        margin-bottom: 0;
-    }
-
-    .metadata {
-        font-size: .8rem;
-    }
 }
 
-.docs-body {
+header h1 {
+    margin-bottom: 0;
+}
+
+header .metadata {
+    font-size: .8rem;
+}
+
+
+.docs-body { 
     width: 100%;
     display: flex;
     flex-direction: row;
-
-    --docs-menu-width: 18rem;
+    flex-grow: 1; 
+    --docs-menu-width: 18rem; 
 }
 
+
 .docs-menu {
-    position: fixed;
-    padding-block-start: var(--navbar-height);
-    inset-block: 0;
-    inset-inline-start: 0;
+    position: sticky;
+    top: var(--navbar-height);
+    height: calc(100vh - var(--navbar-height));
     overflow-y: auto;
     background-color: #fff;
     border-right: 1px solid var(--borders-color);
-    max-width: var(--docs-menu-width);
+    width: var(--docs-menu-width); 
+    flex-shrink: 0; 
+    align-self: flex-start; 
+    box-sizing: border-box;
+
+    
+    @media (max-width: 767px) {
+        
+        position: fixed; 
+        /* This trick is added because Chrome on Android doesn't re-calculate the height of the viewport before the user stops scrolling. We're artificially making the panel higher than it is */
+        /* This is a workaround for mobile browsers that don't recalculate viewport height on scroll */
+       
+        --panel-bottom-trick: 300px;
+        border-right: unset;
+        max-width: unset; 
+        width: 100%; 
+        inset-block: var(--navbar-height) calc(-1 * var(--panel-bottom-trick));
+        inset-inline-start: 0;
+        inset-inline-end: 0;
+        padding-block-end: calc(var(--panel-bottom-trick) + 5rem);
+        z-index: 990;
+       
+    }
 
     .docs-menu-inner {
         padding: 1.5rem;
     }
 
-    @media (max-width: 767px) {
-        /*
-        This trick is added because Chrome on Android doesn't re-calculate the
-        height of the viewport before the user stops scrolling. We're
-        artificially making the panel higher than it is
-        */
-        --panel-bottom-trick: 300px;
-        border-right: unset;
-        max-width: unset;
-        inset-inline-end: 0;
-        inset-block-end: calc(-1 * var(--panel-bottom-trick));
-        padding-block-end: calc(var(--panel-bottom-trick) + 5rem);
-        z-index: 990;
-    }
-
+    
     .submenu-checkbox {
         display: none;
-
-        &:not(:checked)~.section-submenu-wrap {
-            display: none;
-        }
-
-        &:not(:checked)~.submenu-title {
-            .arrow {
-                background-image: url("/assets/down-arrow.svg");
-                width: 1rem;
-                height: 1rem;
-                margin: auto 0;
-            }
-        }
-
-        &:checked~.submenu-title {
-            .arrow {
-                background-image: url("/assets/up-arrow.svg");
-                width: 1rem;
-                height: 1rem;
-                margin: auto 0;
-            }
-        }
+    }
+    .submenu-checkbox:not(:checked)~.section-submenu-wrap {
+        display: none;
+    }
+    .submenu-checkbox:not(:checked)~.submenu-title .arrow {
+        background-image: url("/assets/down-arrow.svg");
+        width: 1rem;
+        height: 1rem;
+        margin: auto 0;
+    }
+    .submenu-checkbox:checked~.submenu-title .arrow {
+        background-image: url("/assets/up-arrow.svg");
+        width: 1rem;
+        height: 1rem;
+        margin: auto 0;
     }
 
     .submenu-title {
         display: flex;
         flex-direction: row;
         gap: .8rem;
-
         font-size: 1.2rem;
         font-weight: 700;
-
         cursor: pointer;
         user-select: none;
     }
@@ -88,61 +304,68 @@ header {
     ul {
         padding-inline-start: 0;
         list-style: none;
-
-        li {
-            margin-inline-start: 1em;
-            margin-block: .5em;
-
-            ul {
-                border-left: 1px solid #bbb;
-
-                li:hover {
-                    color: var(--color-link);
-                    text-decoration: underline;
-                }
-            }
-        }
-
-
-        a {
-            color: var(--color-text);
-        }
+    }
+    ul li {
+        margin-inline-start: 1em;
+        margin-block: .5em;
+    }
+    ul li ul {
+        border-left: 1px solid #bbb;
+    }
+    ul li ul li:hover {
+        color: var(--color-link);
+        text-decoration: underline;
+    }
+    a {
+        color: var(--color-text);
+        text-decoration: none;
+    }
+    a:hover {
+        color: var(--color-link);
     }
 }
 
 .docs-content {
-    padding-inline-start: calc(var(--docs-menu-width) + 3rem + .5rem);
+    flex-grow: 1; 
+    padding: 1.5rem ; 
+    // padding-inline-start: 3.5rem;
+    min-width: 0; 
 
     @media (max-width: 767px) {
         margin-inline: auto;
         padding-inline: .5rem;
+       
     }
 
     article p img {
         max-width: 100%;
         margin-inline: auto;
+        display: block; 
     }
 }
+
 
 #docs-menu-button {
     position: fixed;
     display: none;
-    z-index: 991;
-
-    @media (max-width: 767px) {
-        display: inline-block;
-    }
-
+    z-index: 991; 
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-
     background-color: #000;
     color: #fff;
     border: transparent;
     border-radius: 9999px;
     padding: .5rem 2rem;
     box-shadow: 0 2px 2px #666;
+
+    @media (max-width: 767px) {
+        display: inline-block;
+    }
+}
+
+#docs-menu-checkbox { 
+    display: none; 
 }
 
 #docs-menu-checkbox:checked~#docs-menu-button {
@@ -157,9 +380,10 @@ header {
 
 #docs-menu-checkbox:checked~.docs-content {
     @media (max-width: 767px) {
-        display: none;
+        display: none; 
     }
 }
+
 
 .mjolnir_button {
     border: 1px solid rgb(217, 217, 217);
@@ -173,22 +397,20 @@ figure {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-
     margin-inline: 0;
     padding: 1rem;
-
     border: 1px solid #dedede;
     border-radius: 4px;
+}
 
-    img {
-        max-width: 100%;
-        max-height: 100%;
-    }
+figure img {
+    max-width: 100%;
+    max-height: 100%; 
+}
 
-    figcaption {
-        font-size: .8rem;
-        text-align: center;
-    }
+figure figcaption {
+    font-size: .8rem;
+    text-align: center;
 }
 
 .hidden {
