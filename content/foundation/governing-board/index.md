@@ -6,7 +6,7 @@ The Governing Board is an advisory board that is made up of elected representati
 """
 +++
 
-The Governing Board is an advisory board that is made up of elected representatives from all across the Matrix ecosystem. The role of the Governing Board is to offer guidance and support to the Guardians, Foundation staff, and Spec Core Team. It is organized under [these bylaws](/media/2024-04-governing-board-terms-of-reference.pdf) (v1.2, last updated April 2024).
+The Governing Board is an advisory board that is made up of elected representatives from all across the Matrix ecosystem. The role of the Governing Board is to offer guidance and support to the Guardians, Foundation staff, and Spec Core Team. It is organized under [these bylaws](/media/2025-04-governing-board-terms-of-reference.pdf) (v1.3, last updated April 2025).
 
 There are nine different constituency groups that are allocated seats on the Governing Board, across three categories:
 
@@ -107,7 +107,7 @@ The current elected representatives are:
 
 ### Managing Director
 
-* Robin Riley
+* Robin Riley (they/them)
 
 </div>
 
@@ -146,7 +146,7 @@ The current chairs of the Governing Board are:
 
 ### Finance Committee
 
-* Robin Riley — Chair
+* Robin Riley (they/them) — Chair
 * Kevin Boos (he/him) — Vice Chair
 
 </div>

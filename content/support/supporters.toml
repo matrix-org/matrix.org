@@ -34,6 +34,11 @@ website = "https://www.famedly.com/"
 logo = "famedly.svg"
 
 [[silver]]
+name = "Filament"
+website = "https://filament.dm/"
+logo = "filament.svg"
+
+[[silver]]
 name = "Gematik"
 website = "https://www.gematik.de/"
 logo = "gematik.png"
@@ -52,6 +57,11 @@ logo = "ikono.png"
 name = "IndieHosters"
 website = "https://indie.host"
 logo = "indiehosters.png"
+
+[[silver]]
+name = "infra.run"
+website = "https://infra.run"
+logo = "infra.run.svg"
 
 [[silver]]
 name = "LiveKit"

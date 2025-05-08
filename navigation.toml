@@ -4,7 +4,7 @@ header = [
     { title = "Blog", href = "/blog/" },
     { title = "Docs", href = "/docs/" },
     { title = "Ecosystem", section = "ecosystem" },
-    { title = "Donate", href = "/support" },
+    { title = "Support us", href = "/support" },
     { title = "Try Matrix", href = "/try-matrix/", primary = true },
 ]
 
