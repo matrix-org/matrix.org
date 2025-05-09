@@ -97,7 +97,7 @@ Most of the work of the Governing Board happens in its Committees and their Work
 
 We will update this blog post with a link to a nomination form and a template document on Friday, May 2nd. We’ll be reaching out to everyone who is eligible and whose contact information we have to let them know. We’ll also be announcing it on our social channels.
 
-All nominations should be submitted through the [form](https://cryptpad.fr/form/#/2/form/view/7a4+m2eSNxmdPGf5kWh4GQ6i2wzUK315LdNJyBoAVsc/), though anyone who has technical difficulties can fill out the template document and email it to [elections@foundation.matrix.org](mailto:elections@foundation.matrix.org).
+All nominations should be submitted through the [form](https://cryptpad.fr/form/#/2/form/view/7a4+m2eSNxmdPGf5kWh4GQ6i2wzUK315LdNJyBoAVsc/), though anyone who has technical difficulties can fill out the [template document](/media/2025-nomination-form.pdf) and email it to [elections@foundation.matrix.org](mailto:elections@foundation.matrix.org).
 
 For discussion related to the Governing Board and the elections, we encourage people to drop by the [Office of the Governing Board (#governing-board-office:matrix.org)](https://matrix.to/#/#governing-board-office:matrix.org).
 
