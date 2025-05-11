@@ -45,7 +45,7 @@ You must be a member of one of the constituency groups in order to nominate your
 
 By far our largest constituency group are Individual Members, who number in the 100’s. If you have donated at least $60 USD to the Foundation since April 20, 2024 on [Donorbox](https://donorbox.org/keep-matrix-exciting), then you are eligible to nominate and vote. You must donate before the election period begins, as we cannot change voter rolls after that.
 
-Eligible members can proceed to nominations using [the Cryptpad nomination form](https://cryptpad.fr/form/#/2/form/view/7a4+m2eSNxmdPGf5kWh4GQ6i2wzUK315LdNJyBoAVsc/).
+Eligible members can proceed to nominations using [the Cryptpad nomination form](https://cryptpad.fr/form/#/2/form/view/7a4+m2eSNxmdPGf5kWh4GQ6i2wzUK315LdNJyBoAVsc/) or email the filled out [pdf form](/media/2025-nomination-form.pdf).
 
 All nominations are subject to review in accordance with our bylaws. We will email you to confirm receipt within 2 business days, and we will publish all of the nominees, and other details, here on this page on May 17th.
 
