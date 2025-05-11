@@ -324,25 +324,34 @@
         #bridge_visual {
             position: absolute;
             top: 100px;
-            left: calc(60dvw - 800px);
+            @media (max-width: 767px) {
+                top: 25px; // container padding
+            }
+            left: min(max(20%, calc(50% - 600px)), calc(50% - (var(--bridge-visual-width) / 2) - 300px));
 
-            width: 240px;
+            --bridge-visual-width: 240px;
+            width: var(--bridge-visual-width);
             height: 287px;
         }
 
         #homeserver {
             position: absolute;
             bottom: 50px;
-            left: calc(60dvw - 800px);
+            left: min(max(20%, calc(50% - 600px)), calc(50% - (var(--homeserver-width) / 2) - 300px));
 
-            width: 230px;
+            --homeserver-width: 230px;
+            width: var(--homeserver-width);
             height: 235px;
         }
 
         #federation_visual {
             position: absolute;
-            right: calc(60dvw - 800px);
             bottom: 75px;
+            right: min(max(12%, calc(50% - 650px)), calc(50% - (var(--federation-visual-width) / 2) - 300px));
+
+            --federation-visual-width: 457px;
+            width: var(--federation-visual-width);
+            height: 880px;
         }
 
         .call-to-action {
