@@ -4,7 +4,7 @@ title = "Matrix in full force at FOSDEM"
 
 [taxonomies]
 author = ["Thib"]
-category = ["Conferences", "FOSDEM"]
+category = ["Events", "FOSDEM"]
 
 [extra]
 image = "https://matrix.org/blog/img/matrix-fosdem.png"

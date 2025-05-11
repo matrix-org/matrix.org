@@ -6,7 +6,7 @@ path = "/blog/2023/02/09/finally-a-hybrid-conference-that-worked"
 
 [taxonomies]
 author = ["Thib"]
-category = ["conferences", "fosdem"]
+category = ["FOSDEM", "Events"]
 
 [extra]
 image = "https://matrix.org/blog/img/fosdem2023_stand_blurred.jpg"

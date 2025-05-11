@@ -4,7 +4,7 @@ path = "/blog/2019/02/04/matrix-at-fosdem-2019"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["In the News"]
+category = ["Events", "FOSDEM"]
 
 [extra]
 image = "https://matrix.org/blog/wp-content/uploads/2019/02/DyaWzqGW0AAk9pd.jpg"

@@ -7,7 +7,9 @@ author = ["Oddvar Lovaas"]
 category = ["Events"]
 +++
 
-<a href="http://www.uppersideconferences.com/webrtc/"><img src="/blog/wp-content/uploads/2015/12/a4webrtc_2015_v2.jpg" alt="a4webrtc_2015_v2" width="300" height="424" class="alignleft size-full wp-image-1419" /></a>Matrix will again be represented at the <a href="http://www.uppersideconferences.com/webrtc/">WebRTC Conference & Expo</a> in Paris. Daniel and myself are catching the Eurostar tomorrow afternoon, and the conference will start early Wednesday morning with a panel about WebRTC for Mobile, where Daniel is one of the participants.
+<a href="http://www.uppersideconferences.com/webrtc/"><img src="/blog/wp-content/uploads/2015/12/a4webrtc_2015_v2.jpg" alt="a4webrtc_2015_v2" width="300" height="424" class="alignleft size-full wp-image-1419" /></a>
+
+Matrix will again be represented at the <a href="http://www.uppersideconferences.com/webrtc/">WebRTC Conference & Expo</a> in Paris. Daniel and myself are catching the Eurostar tomorrow afternoon, and the conference will start early Wednesday morning with a panel about WebRTC for Mobile, where Daniel is one of the participants.
 
 I'm sure we will have three days full of interesting talks and discussions (see the <a href="http://www.uppersideconferences.com/webrtc/webrtc_2015_program_day_1.html">full schedule here</a>). There will be demos as well, and Matrix is (of course!) also joining the demo competition. We hope to see many familiar faces - and hopefully meet some new ones as well!
 

@@ -4,7 +4,7 @@ path = "/blog/2019/12/24/the-2019-matrix-holiday-update"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["General"]
+category = ["General", "Holiday Special"]
 +++
 
 Hi all,
@@ -13,7 +13,9 @@ Every year we do an annual wrap-up and retrospective of all the things happening
 
 That said, it’s hard to know where to start - Matrix accelerated more than ever before in 2019, and there’s been progress on pretty much all battlefronts.  So as a different format, let’s take the [stuff we said we had planned for 2019](https://matrix.org/blog/2018/12/25/the-2018-matrix-holiday-special#2019) from the end of last year’s update and see what we actually achieved...
 
-#### 2019: the immediate priorities
+<!-- more -->
+
+## 2019: the immediate priorities
 
 So, our immediate priorities for 2019 were:
 
@@ -62,7 +64,7 @@ The good news on E2E encryption is that we’ve been making solid progress throu
 
 That takes us to the end of the stuff we planned to prioritise in 2019 - but what about the more speculative medium-term stuff which was on the menu this time last year?
 
-#### 2019: the medium-term priorities
+## 2019: the medium-term priorities
 
 *   _Reworking and improving Communities/Groups._
 
@@ -145,7 +147,7 @@ We’ve just started looking at implementing these seriously via [MSC1228](https
 
 So that sums up progress on the medium term menu - as you can see, a bunch actually happened; a bunch made progress; a few didn’t happen at all.
 
-#### 2019: the longer-term priorities
+## 2019: the longer-term priorities
 
 Finally, on the longer term radar:
 
@@ -179,7 +181,7 @@ Sadly no progress here :(
 
 So, of all the myriad things on our radar for 2019 (as of Dec 2018), hopefully this gives some idea of where we hit the mark.
 
-#### 2019: the unpredictable bits
+## 2019: the unpredictable bits
 
 However, there’s also a tonne of other stuff which happened which wasn’t explicitly on the radar.  On the synapse side, we finished fully migrating from Python 2 to Python 3, and started using asyncio and all the latest Python 3 goodies!  We finally [implemented configurable history retention](https://github.com/matrix-org/synapse/pull/6358) for servers and rooms! We even implemented [self-destructing messages](https://github.com/matrix-org/synapse/pull/6409) in Synapse (not that Riot exposes them yet). And there has been loads of optimisation and performance work since 1.0 landed in June.
 
@@ -191,7 +193,7 @@ Meanwhile, mainstream uptake of Matrix has properly taken off, with the French G
 
 Alongside all this, [Mozilla announced](https://matrix.org/blog/2019/12/19/welcoming-mozilla-to-matrix/) they are replacing the Moznet IRC network with Matrix; [KDE joined Matrix](https://matrix.org/blog/2019/02/20/welcome-to-matrix-kde/) in Feb, [Wikimedia](https://phabricator.wikimedia.org/T230531) is getting set up on their server, and more and more massive players (including the largest in the world) keep getting in touch to find out how they can best get onboard Matrix - it’s incredibly exciting.  It also means that we were able to [raise capital](https://matrix.org/blog/2019/10/10/new-vector-raises-8-5-m-to-accelerate-matrix-riot-modular/) to keep folks employed to work on Matrix fulltime via [New Vector](https://vector.im) and scale up [Modular.im](https://modular.im) as a paid hosting platform - which massively helps support core Matrix development.
 
-#### 2020
+## 2020
 
 All that remains now is to make some predictions for 2020.  Our main priorities are:
 

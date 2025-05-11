@@ -5,7 +5,7 @@ path = "/blog/2021/01/04/taking-fosdem-online-via-matrix"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["General"]
+category = ["Events", "FOSDEM"]
 
 [extra]
 image = "https://matrix.org/blog/img/2021-01-04-fosdem.jpg"

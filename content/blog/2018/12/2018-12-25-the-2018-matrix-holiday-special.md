@@ -4,7 +4,7 @@ path = "/blog/2018/12/25/the-2018-matrix-holiday-special"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["General"]
+category = ["General", "Holiday Special"]
 +++
 
 Hi all,
@@ -19,6 +19,7 @@ It's fair to say that 2018 has been a pretty crazy year.  We have had one overr
 
 Well, in parallel with this we've also seen adoption of Matrix accelerating ahead of our dev plan at an unprecedented speed: with France selecting Matrix to power the communication infrastructure of its whole public sector - first <a href="/blog/2018/04/26/matrix-and-riot-confirmed-as-the-basis-for-frances-secure-instant-messenger-app/">trialling over the summer</a>, and now <a href="https://twitter.com/matrixdotorg/status/1070392608801910784">confirmed for full roll-out</a> as of a few weeks ago.  Meanwhile there are several other similar-sized projects on the horizon which we can't talk about yet.  We've had the growing pains of establishing <a href="https://vector.im">New Vector</a> as a startup in order to hire the core team and support these projects.  We've launched <a href="https://modular.im">Modular</a> to provide professional-quality SaaS Matrix hosting for the wider community and help fund the team.  And most importantly, we've also been establishing the non-profit <a href="/blog/2018/10/29/introducing-the-matrix-org-foundation-part-1-of-2/">Matrix.org Foundation</a> to formalise the open governance of the Matrix protocol and protect and isolate it from any of the for-profit work.
 
+<!-- more -->
 
 However: things have just about come together.  Almost all the spec work for 1.0 is done and we are now aiming to get a 1.0 released in time by the end of January (in time for FOSDEM).  Meanwhile Synapse has improved massively in terms of performance and stability (not least having migrated over to <a href="/blog/2018/12/21/porting-synapse-to-python-3/">Python 3</a>); Riot's spectacular redesign is now <a href="https://medium.com/@RiotChat/redesign-experimenters-needed-afa7c2d4c858">available for testing</a> right now; E2E encryption is more stable than ever with the usability rework <a href="https://github.com/matrix-org/matrix-js-sdk/compare/develop...uhoreg:e2e_cross-signing">landing</a> as we speak.  And we've even got a full rewrite of Riot/Android in the wings.
 

@@ -4,7 +4,7 @@ path = "/blog/2014/12/24/matrix-wins-best-innovation-award-at-webrtc-paris"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["Events"]
+category = ["Events", "News"]
 +++
 
 Last week we had a great time attending WebRTC Conference Expo Paris 2014 - chatting to lots of new folks about Matrix; speaking in the "To Build or Not To Build" panel discussion; giving a general presentation on Matrix, and participating in the Demo shoot-out.

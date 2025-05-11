@@ -4,7 +4,7 @@ path = "/blog/2022/08/15/the-matrix-summer-special-2022"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["General"]
+category = ["General", "Holiday Special"]
 
 [extra]
 image = "https://matrix.org/blog/img/matrix-summer.jpg"
@@ -17,6 +17,8 @@ At the end of each year it’s been traditional to do a big review of everything
 This year is turning out to be slightly different, however.  Our plans for 2022 are particularly ambitious: to force a step change in improving Matrix’s performance and usability so that we firmly transition from our historical “make it work” and “make it work right” phases into “**making it fast**”.  Specifically: to succeed, Matrix **has** to succeed in powering apps which punch their weight in terms of performance and usability against the proprietary centralised alternatives of WhatsApp, Discord, Slack and friends.
 
 We’ve seen an absolute tonne of work happening on this so far this year… and somehow the end results all seem to be taking concrete shape at roughly the same time, despite summer traditionally being the quietest point of the year.  The progress is super exciting and we don’t want to wait until things are ready to enthuse about them, and so we thought it’d be fun to do a spontaneous Summer Special gala blog post so that everyone can follow along and see how things are going!
+
+<!-- more -->
 
 ## Making it fast
 

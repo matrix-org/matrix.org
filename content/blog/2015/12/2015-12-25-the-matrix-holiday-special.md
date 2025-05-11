@@ -4,16 +4,18 @@ path = "/blog/2015/12/25/the-matrix-holiday-special"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["Events"]
+category = ["General", "Holiday Special"]
 +++
 
 Hi all,
 
-We've been pretty bad at updating the blog over the last few months with all the progress that's been happening with Matrix.  Whilst Matrix rooms like #matrix:matrix.org and #matrix-dev:matrix.org have been very active (and our <a href="https://twitter.com/matrixdotorg">twitter account</a> too), in general we've ended up spending way too much time actually writing software and not enough time talking about it, at least here. When a blog goes quiet it normally means that either the authors have got bored, or they're too busy building cool stuff to keep it updated. I'm happy to say that option 2 is the case here!
+We've been pretty bad at updating the blog over the last few months with all the progress that's been happening with Matrix. Whilst Matrix rooms like #matrix:matrix.org and #matrix-dev:matrix.org have been very active (and our <a href="https://twitter.com/matrixdotorg">twitter account</a> too), in general we've ended up spending way too much time actually writing software and not enough time talking about it, at least here. When a blog goes quiet it normally means that either the authors have got bored, or they're too busy building cool stuff to keep it updated. I'm happy to say that option 2 is the case here!
 
 As a result, there's a huge backlog of really cool stuff we should have talked about. Hopes of writing an Advent Calendar series of blog posts also went out the window as we set Christmas as an arbitrary deadline for loads of work on Synapse, the Matrix Spec and matrix-react-sdk.
 
 So, to try to break the impasse, here's a slightly unorthodox whistle-stop tour of all the amazing blogposts we *would* have written if we'd had time. And perhaps some of them will actually expand into full write-ups when we have more time to spare in the future :)
+
+<!-- more -->
 
 ## End to End Encryption Update
 

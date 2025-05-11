@@ -4,7 +4,7 @@ path = "/blog/2022/02/07/hosting-fosdem-2022-on-matrix"
 
 [taxonomies]
 author = ["Thib"]
-category = ["General"]
+category = ["Events", "FOSDEM", "News"]
 +++
 
 Last year was the first time FOSDEM was hosted on Matrix, and it was generally a huge success - and so the FOSDEM team trusted us again this year and we’re happy to say that it seems to have gone really well! This year’s FOSDEM was massive once again, featuring 654 speakers, 731 events, and 103 tracks.
