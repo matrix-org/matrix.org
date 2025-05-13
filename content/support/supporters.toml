@@ -24,6 +24,11 @@ website = "https://www.blender.org/"
 logo = "blender.svg"
 
 [[silver]]
+name = "Discourse"
+website = "https://discourse.org/"
+logo = "discourse.svg"
+
+[[silver]]
 name = "Fairkom"
 website = "https://www.fairkom.eu/"
 logo = "fairkom.svg"
