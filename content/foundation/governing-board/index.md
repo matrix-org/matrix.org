@@ -161,6 +161,10 @@ The current chairs of the Governing Board are:
 
 </div>
 
+## Governing Board Bylaws, Processes, and Norms
+
+The Governing Board documents it's processes [here](/foundation/governing-board/bylaws/01-introduction)
+
 ## Where can I reach the Governing Board?
 
 The Governing Board has a dedicated room on Matrix, [#governing-board-office:matrix.org](https://matrix.to/#/#governing-board-office:matrix.org), where you can reach out to them.
