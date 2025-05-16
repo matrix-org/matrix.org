@@ -107,7 +107,7 @@ this is just the start, because we’re still getting to grips with our new
 processes. Once we have it all down, this is going to (I strongly hope) be a
 force for good in the Matrix ecosystem.
 
-### What’s next for the Governing Board?
+## What’s next for the Governing Board?
 
 Well, I’m glad you asked. Right now, we need to publish the committee reports
 that went into the meeting - given we have a shiny new [board section of the
