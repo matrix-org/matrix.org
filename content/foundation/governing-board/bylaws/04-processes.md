@@ -27,9 +27,8 @@ those three to be a Board member, a Sponsor to act as liaison with the Board
 and facilitate the work being done.
 
 Therefore, those interested in creating a Working Group are encouraged to
-contact the Board to find a Sponsor - your constituency representatives would
-be a good place to look for such support to start with (TBD add a link to
-explain constituencies here).
+contact the Board to find a Sponsor - your [constituency representatives](/foundation/governing-board/#elected-representatives)
+would be a good place to look for such support to start with.
 
 If the Sponsor Board Member agrees with the idea, they will discuss initial
 membership of the new Working Group and a rough draft of its potential charter
