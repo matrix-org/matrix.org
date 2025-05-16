@@ -85,8 +85,8 @@ governance of the board, but will have advice/input for wider scope matters
   * This is understood as a starting point, not a final destination. These will
     be living documents that we will update as required, especially as we try
     these processes and expectations out for real
-  * These will get added to the [Matrix Governing Board
-    site](https://matrix.org/foundation/governing-board) shortly
+  * These are canonically maintained and published through the [Matrix Governing Board
+    site](https://matrix.org/foundation/governing-board/#bylaws-processes-and-norms)
   * Some areas already identified for work (probably by the Governance
     Committee) in terms of Working Group operation and clarity on some terms
 * Goals for 6-12 months
