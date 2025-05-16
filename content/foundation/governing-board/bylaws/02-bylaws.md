@@ -88,7 +88,7 @@ for communication, documentation, and voting.
 
 For the detailed process of proposing and creating new committees, please refer
 to the 'Committee Creation Process' section in 
-[**Processes**](../04-processes).
+[**Processes**](../04-processes/#committee-creation-process).
 
 ### Committee Chair and Vice Chair Expectations
 
@@ -127,7 +127,7 @@ and generally do their best to make their work public where possible.
 
 For the detailed process of proposing and creating new Working Groups, please
 refer to the 'Working Group Creation Process' section in
-[**Processes**](../04-processes).
+[**Processes**](../04-processes/#working-group-creation-process).
 
 ### Working Group Sponsors Expectations
 
