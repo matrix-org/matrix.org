@@ -135,6 +135,15 @@ with the exception of the TOR, which requires formal amendment from the
 Guardians. These documents are currently v1.0 and were last modified on
 2025-05-09.
 
+## Committees
+
+There are currently 4 Committees:
+
+* Community
+* Governance
+* Trust & Safety
+* Finance & Fundraising
+
 ## Current Chairs of the Governing Board
 
 The current chairs of the Governing Board are:
@@ -190,15 +199,6 @@ The Governing Board has a dedicated room on Matrix, [#governing-board-office:mat
 ## Publications and News
 
 The Governing Board as a whole meets (at least) twice a year and subsequently publish a report about its activities on the Matrix.org blog. You can find them and other posts concerning the Governing Board using the [Governing Board category filter](https://matrix.org/category/governing-board/) of the blog.
-
-## Committees
-
-There are currently 4 Committees:
-
-* Community
-* Governance
-* Trust & Safety
-* Finance & Fundraising
 
 ## Working Groups
 
