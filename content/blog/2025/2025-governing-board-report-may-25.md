@@ -19,7 +19,7 @@ that’s been going on with the ones we have!
 
 <!-- more -->
 
-### What’s been happening?
+## What’s been happening?
 
 There wasn’t a lot to report on in the last edition, but my goodness, that’s
 not the case this time! As a reminder - we’re a new Board, this is the first
