@@ -2,8 +2,6 @@
 title = "Governing Board: Social Contract"
 +++
 
-# Matrix Governing Board: Social Contract
-
 As members of the **Matrix Governing Board**, we are committed to fostering a
 productive, respectful, and transparent environment in which we can collaborate
 effectively. These social norms will guide our internal interactions and also
@@ -11,7 +9,7 @@ set expectations for how we communicate externally.
 
 ---
 
-#### **Board-Internal Norms:**
+## **Board-Internal Norms**
 
 1. **Create Space for Productive Exploration:**
 
@@ -112,7 +110,7 @@ set expectations for how we communicate externally.
 
 ---
 
-#### **Board-External Norms:**
+## **Board-External Norms**
 
 1. **Official Meeting Summaries:**
 

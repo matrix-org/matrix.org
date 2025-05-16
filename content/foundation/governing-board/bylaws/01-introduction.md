@@ -2,8 +2,6 @@
 title = "Governing Board Docs: Introduction & Terms of Reference"
 +++
 
-# Matrix Governing Board: Introduction & Reference to TOR
-
 These documents cover the Matrix Governing Board, its purpose, operations, and
 processes. The content is divided into the following sections:
 
@@ -22,4 +20,4 @@ processes. The content is divided into the following sections:
 The Governance Committee is responsible for adapting these documents as needed,
 with the exception of the TOR, which requires formal amendment from the
 Guardians. These documents are currently v1.0 and were last modified on
-2025-05-09
+2025-05-09.

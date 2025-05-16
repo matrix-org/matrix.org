@@ -2,12 +2,10 @@
 title = "Governing Board: Processes"
 +++
 
-# Matrix Governing Board: Processes
-
 This section describes the practical procedures for decision-making, proposals,
 conflict resolution, transparency, and other operational matters.
 
-### Committee Creation Process
+## Committee Creation Process
 
 Board members are encouraged to propose new committees, provided there is a
 clear scope and at least three interested members. Any Board member can propose
@@ -15,7 +13,7 @@ a new committee in the Board Discussions forum. The proposal must include an
 initial draft charter, which should be defined before the committee is created.
 A simple majority vote of the Board is sufficient to create the committee.
 
-### Working Group Creation Process
+## Working Group Creation Process
 
 We intend for the community to be able to propose new Working Groups, as the
 community has many talented and knowledgable members - but we do not wish for
@@ -43,7 +41,7 @@ Group will be created and place under an appropriate Committee, and will report
 it’s activities & recommendations to that Committee. It’s first task would be
 to refine the initial rough charter, and have it ratified bythe Committee.
 
-### Chair Re-election Process
+## Chair Re-election Process
 
 If a Chair of a Committee or the Board is not re-elected during the election
 cycle (or wishes to step down), the following process shall be followed in
@@ -71,7 +69,7 @@ Chairs.
 4. **Board Notification**: The outgoing Chair shall notify the Board of the
    handover meeting, and the Board shall be invited to attend.
 
-### Sponsor Re-election Process
+## Sponsor Re-election Process
 
 If a Sponsor of a Working Group is not re-elected during the election cycle (or
 wishes to step down), the following process shall be followed in order to
@@ -98,12 +96,12 @@ incoming Sponsor.
    Working Group of the handover meeting, and the Working Group shall be invited
    to attend.
 
-### Board Member Removal Process
+## Board Member Removal Process
 
 If a Board Member is not meeting the expectations of the role, the following
 process shall be followed to remove them from the Board:
 
-**Standard Removal Process**
+### Standard Removal Process
 
 If a Board Member is not meeting the expectations of the role, but is not
 actively harmful, the following process shall be followed to remove them from
@@ -130,7 +128,7 @@ the Board:
    proceed with the handover without their input. The Board shall be provided with
    a written handover report.
 
-**Emergency Removal Process**
+### Emergency Removal Process
 
 In exceptional circumstances, the Board Chair and the Vice Chair (acting
 jointly) or the Guardians may remove a Board Member without following the

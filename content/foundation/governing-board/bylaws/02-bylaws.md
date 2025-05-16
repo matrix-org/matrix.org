@@ -2,8 +2,6 @@
 title = "Governing Board: Bylaws & Expectations"
 +++
 
-# Matrix Governing Board: Bylaws and Expectations
-
 This document contains the detailed rules and expectations for the operation of
 the Matrix Governing Board, including membership, meetings, elections, roles,
 responsibilities, and behavioral standards. All content must be consistent with
