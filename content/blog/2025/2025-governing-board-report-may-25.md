@@ -46,7 +46,7 @@ appreciate those people) then we’ll be failing as a board.
 That’s the high-level view - we’re now operational, and you can start to expect
 more from the various Committees and Working Groups going forward.
 
-### Governing Board Meeting report May 2025
+## Governing Board Meeting report May 2025
 
 On May 9th the Governing Board met for its second ever formal meeting, and
 first of 2025. Below are the edited highlights of the meeting:
