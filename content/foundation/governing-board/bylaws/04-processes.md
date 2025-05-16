@@ -39,7 +39,7 @@ of the Board for discussion.
 Ultimately, if the Board approve the initial members and scope, the Working
 Group will be created and place under an appropriate Committee, and will report
 it’s activities & recommendations to that Committee. It’s first task would be
-to refine the initial rough charter, and have it ratified bythe Committee.
+to refine the initial rough charter, and have it ratified by the Committee.
 
 ## Chair Re-election Process
 

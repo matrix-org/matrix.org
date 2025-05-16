@@ -56,13 +56,13 @@ are expected to:
 
 Given the size of the Governing Board, most of the actual working of the board
 will take place through committees. Committees usually chair Working Groups,
-which are open to broader community participation
+which are open to broader community participation.
 
 Committees are the primary working units of the Board. Board members are
 expected to participate in Committees, which consist of three or more members
 and must have a Chair and a Vice Chair. Upon creation, each Committee selects a
 provisional Chair, creates a charter, and establishes a meeting or discussion
-cadence/process. . New Committees are expected to be infrequent, and proposed
+cadence/process. New Committees are expected to be infrequent, and proposed
 by at least 3 Board members. Proposals for new Committees must include an
 initial draft charter and be presented in the Board Discussions forum; a simple
 majority vote of the Board is sufficient to create a Committee.
@@ -88,7 +88,7 @@ for communication, documentation, and voting.
 
 For the detailed process of proposing and creating new committees, please refer
 to the 'Committee Creation Process' section in 
-[**Processes**](../bylaws/04-processes).
+[**Processes**](../04-processes).
 
 ### Committee Chair and Vice Chair Expectations
 
@@ -127,7 +127,7 @@ and generally do their best to make their work public where possible.
 
 For the detailed process of proposing and creating new Working Groups, please
 refer to the 'Working Group Creation Process' section in
-[**Processes**](../bylaws/04-processes).
+[**Processes**](../04-processes).
 
 ### Working Group Sponsors Expectations
 
