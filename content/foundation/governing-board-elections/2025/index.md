@@ -14,7 +14,7 @@ We encourage you to read our [membership page](/membership/) and announcements:
 
 * 2025-04 [Announcing the 2025 Governing Board elections](/blog/2025/04/election-announcement)
 
-Read on for our [election schedule](#schedule) and more information about the election process. We will be posting the list of candidates on this page at the end of the nomination period.
+Read on for our [election schedule](#schedule), all of [nominees](#nominees), and more information about the election process.
 
 ## What is the Governing Board
 
@@ -40,6 +40,8 @@ This year, we are running elections for the following [constituency groups](/fou
 * Associate Members
 
 ### Nominations (May 3)
+
+Nominations for the 2025 elections are complete, and you can [find the nominees below](#nominees).
 
 You must be a member of one of the constituency groups in order to nominate yourself or someone else to be a candidate in the election. If you intend to nominate someone else, you need to get their consent ahead of time.
 
@@ -91,3 +93,7 @@ Members of the Governing Board are likely to receive a packet of materials befor
 While the Governing Board is an advisory board, members are encouraged to play a role in helping to carry out the activities that support the staff in delivering on the Foundation’s collective remit, such as coalescing priorities to share with the Spec Core Team and connecting with contributors and funders to implement proposals.
 
 The Governing Board has a number of Committees and Working Groups which meet and work in between Governing Board meetings. These are where the bulk of the activity will take place since the board, which may have up to 24 members, is quite large.
+
+## Nominees
+
+We are honored to present the nominees for the Governing Board elections, and are grateful to everyone who has raised their hands. We are positively overwhelmed by the enthusiasm and vision expressed by our nominees.
