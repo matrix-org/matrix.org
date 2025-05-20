@@ -72,7 +72,18 @@ name = "Tobias Fella"
 pronouns = "he/him"
 project = "KDE e.V."
 bio = """Tobias is a KDE contributor whose interest in open standards led him to start developing NeoChat, KDE's Matrix client. As part of his involvement in NeoChat, he is also one of the core developers of libQuotient, a C++ library for developing Matrix clients, where he's recently been focusing on implementing the library's encryption capabilities. Tobias has been involved in Open Source development since 2019, by developing applications like an RSS feed reader and a podcast player, and by being a GSoC mentor. He lives in Berlin and works on GnuPG professionally."""
-platform_statement = """As a representative of the Free Software organizations using Matrix, my focus is on areas vital to ensure that Matrix is the obvious choice for FOSS organizations. This means concentrating on three areas: - Ensuring that the specification facilitates implementations that offer a high-quality UX, fulfilling users' expectations for a modern instant messaging platform. - Having powerful community management capabilities - this involves, for example, evolving spaces to be a way of managing permissions and configuration across all of a community's rooms. - Improving trust and safety, for example through improved community management tooling and client-side safety features. Finally, there's a large non-technical aspect to this: Making Matrix the go-to platform for communities and individual projects requires collaboration, planning, discussions and helping each other. The foundation should facilitate having these discussions and help with onboarding new projects that want to use matrix as their communication platform."""
+platform_statement = """
+As a representative of the Free Software organizations using Matrix, my focus is on areas vital to ensure that Matrix is the obvious choice for FOSS organizations.
+This means concentrating on three areas:
+- Ensuring that the specification facilitates implementations that offer a high-quality UX, fulfilling users' expectations for a modern instant messaging platform.
+- Having powerful community management capabilities
+- this involves, for example, evolving spaces to be a way of managing permissions and configuration across all of a community's rooms.
+- Improving trust and safety, for example through improved community management tooling and client-side safety features.
+
+Finally, there's a large non-technical aspect to this:
+Making Matrix the go-to platform for communities and individual projects requires collaboration, planning, discussions and helping each other.
+The foundation should facilitate having these discussions and help with onboarding new projects that want to use matrix as their communication platform.
+"""
 
 
 [[individual_members]]
@@ -80,7 +91,17 @@ name = "Andy Balaam"
 pronouns = "he/him"
 extended_platform = "https://artificialworlds.net/blog/2025/05/07/standing-again-for-matrix-governing-board/"
 bio = """I am a contributor to many Free/Open Source projects, including in Matrix. I am a sustainer of the Software Freedom Conservancy. I am known as a highly collaborative team member. I am an employee of Element, meaning it is in my interest for Element to prosper. I hope my long history outside Element will help me balance that, and I will remove myself from decisions where I see a potential conflict. Element is a critical supporter of Matrix, founded to make Matrix successful, so I expect few conflicts. (If you disagree, you should probably vote against me!)"""
-platform_statement = """I think human thriving requires a conscious focus on nurturing our communities towards being more accepting of difference and more kind to each other. Modern environments often work against this, and we should resist them. We should start with an assumption of good faith, and protect each other from harm. These two principles are often in conflict! I am an enthusiastic supporter of Matrix because I want a world where everyone can communicate privately with their friends and family and others, free of snooping and manipulation by powerful individual companies. My priorities: * I want people to thrive. Trustworthy technology is a small but significant part of that, and I have an ambition for Matrix to be safe, inclusive, private, and available to all. * I want Matrix to last. When I look at the success of the Linux project, I see years of steady work paying off in the long term. I think Matrix should take the same approach: steadily working on creating an excellent open standard and excellent implementations of it. * For Matrix to last, the foundation needs financial independence. I'd like to see the foundation fund development, supporting safety, maintenance and high quality."""
+platform_statement = """
+I think human thriving requires a conscious focus on nurturing our communities towards being more accepting of difference and more kind to each other.
+Modern environments often work against this, and we should resist them.
+We should start with an assumption of good faith, and protect each other from harm.
+These two principles are often in conflict!
+I am an enthusiastic supporter of Matrix because I want a world where everyone can communicate privately with their friends and family and others, free of snooping and manipulation by powerful individual companies.
+My priorities:
+* I want people to thrive. Trustworthy technology is a small but significant part of that, and I have an ambition for Matrix to be safe, inclusive, private, and available to all.
+* I want Matrix to last. When I look at the success of the Linux project, I see years of steady work paying off in the long term. I think Matrix should take the same approach: steadily working on creating an excellent open standard and excellent implementations of it.
+* For Matrix to last, the foundation needs financial independence. I'd like to see the foundation fund development, supporting safety, maintenance and high quality.
+"""
 
 [[individual_members]]
 name = "Gnuxie"
@@ -92,7 +113,25 @@ platform_statement = """We need to continue to make progress towards achieving t
 name = "Greg Sutcliffe"
 pronouns = "he/him"
 bio = """Greg has been active in the Matrix community for years, and in FOSS for 20 years. He's been a sysadmin, a developer, a community architect, and a data scientist. He's lead multiple communities, including Ansible, Foreman, and is also the current Chair of the Matrix Governing Board. He also games, bakes, 3d prints, and volunteers with local charities."""
-platform_statement = """Hello! My name is Greg (aka Gwmngilfen), and I'm honoured to have served as the Chair of the Board for the past year. I've been part of Matrix for years, and I've seen both the energy of our community *and* the need for sovereign messaging systems. I am running for re-election because we're not done, and I want to help. During our first year, the Board has: - Defined and ratified it's initial processes - Set up it's operating structure of Committees and Working Groups - Created a number of new Working Groups and started getting results from them - Created some initial recommendations to the Foundation This is exactly what we wanted from the Board - that it could serve as a way to focus the immense talent & passion of our community on the problems in front of us. I'm proud to have had a hand in shaping it. If re-elected, my goal is continue that work. The Board is now operational, but it's only really started delivering any results in the last few months. We need to accelerate that work now, get comfortable with our new processes, get integrated with the Foundation, and start providing the advice & insight we were created for. I'd like to be re-elected so I can help to do that - to finish building what we've started this year. You can make that happen. Thanks! Greg"""
+platform_statement = """
+Hello!
+My name is Greg (aka Gwmngilfen), and I'm honoured to have served as the Chair of the Board for the past year.
+I've been part of Matrix for years, and I've seen both the energy of our community *and* the need for sovereign messaging systems.
+I am running for re-election because we're not done, and I want to help.
+During our first year, the Board has:
+- Defined and ratified it's initial processes
+- Set up it's operating structure of Committees and Working Groups
+- Created a number of new Working Groups and started getting results from them
+- Created some initial recommendations to the Foundation
+
+This is exactly what we wanted from the Board - that it could serve as a way to focus the immense talent & passion of our community on the problems in front of us.
+I'm proud to have had a hand in shaping it.
+If re-elected, my goal is continue that work.
+The Board is now operational, but it's only really started delivering any results in the last few months.
+We need to accelerate that work now, get comfortable with our new processes, get integrated with the Foundation, and start providing the advice & insight we were created for.
+I'd like to be re-elected so I can help to do that - to finish building what we've started this year.
+You can make that happen. Thanks! Greg
+"""
 
 
 [[individual_members]]
