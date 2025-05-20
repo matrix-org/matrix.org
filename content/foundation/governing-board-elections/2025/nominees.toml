@@ -64,8 +64,8 @@ project = "Verji Tech AS"
 bio = """
 """
 platform_statement = """
+None submitted.
 """
-
 
 [[associate_members]]
 name = "Tobias Fella"
@@ -84,7 +84,6 @@ Finally, there's a large non-technical aspect to this:
 Making Matrix the go-to platform for communities and individual projects requires collaboration, planning, discussions and helping each other.
 The foundation should facilitate having these discussions and help with onboarding new projects that want to use matrix as their communication platform.
 """
-
 
 [[individual_members]]
 name = "Andy Balaam"
@@ -133,7 +132,6 @@ I'd like to be re-elected so I can help to do that - to finish building what we'
 You can make that happen. Thanks! Greg
 """
 
-
 [[individual_members]]
 name = "J. B. Crawford"
 pronouns = "they/them"
@@ -152,6 +150,7 @@ name = "Paul Lackner"
 bio = """
 """
 platform_statement = """
+None submitted.
 """
 
 [[individual_members]]
