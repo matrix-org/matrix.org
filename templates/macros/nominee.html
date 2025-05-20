@@ -8,6 +8,9 @@
     {% if individual.platform_statement %}
     <h4>Platform Statement</h4>
     {{ individual.platform_statement | markdown() | safe }}
+    {% if individual.extended_platform %}
+    <p><a href="{{ individual.extended_platform | safe }}" target="_blank">Read this candidate's extended platform.</a></p>
+    {% endif %}
     {% endif %}
 </details>
 {% endmacro %}
@@ -23,6 +26,9 @@
     {% if representative.platform_statement %}
     <h4>Platform Statement</h4>
     {{ representative.platform_statement | markdown() | safe }}
+    {% if representative.extended_platform %}
+    <p><a href="{{ representative.extended_platform | safe }}" target="_blank">Read this candidate's extended platform.</a></p>
+    {% endif %}
     {% endif %}
 </details>
 {% endmacro %}
