@@ -132,8 +132,8 @@ processes. The content is divided into the following sections:
 
 The Governance Committee is responsible for adapting these documents as needed,
 with the exception of the TOR, which requires formal amendment from the
-Guardians. These documents are currently v1.0 and were last modified on
-2025-05-09. The canonical versions of the bylaws and expectations, social contract,
+Guardians. These documents are currently v1.0.1 and were last modified on
+2025-05-21. The canonical versions of the bylaws and expectations, social contract,
 and processes are the markdown sources available through the matrix
 [website's git repo](https://github.com/matrix-org/matrix.org/tree/main/content/foundation/governing-board/bylaws).
 

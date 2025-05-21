@@ -16,8 +16,8 @@ A simple majority vote of the Board is sufficient to create the committee.
 ## Working Group Creation Process
 
 We intend for the community to be able to propose new Working Groups, as the
-community has many talented and knowledgable members - but we do not wish for
-additional loads to be placed upon the Board without it’s approval, and we want
+community has many talented and knowledgeable members - but we do not wish for
+additional loads to be placed upon the Board without its approval, and we want
 to ensure that new Working Groups have some support rather than being a
 one-person idea.
 
@@ -35,12 +35,24 @@ membership of the new Working Group and a rough draft of its potential charter
 with the initiator(s). Finally the Sponsor brings the proposal up with the rest
 of the Board for discussion.
 
-Ultimately, if the Board approve the initial members and scope, the Working
-Group will be created and place under an appropriate Committee, and will report
-it’s activities & recommendations to that Committee. It’s first task would be
+Ultimately, if the Board approves the initial members and scope, the Working
+Group will be created and placed under an appropriate Committee, and will report
+its activities & recommendations to that Committee. Its first task would be
 to refine the initial rough charter, and have it ratified by the Committee.
 
-## Chair Re-election Process
+## Chair Election Process
+
+When a Chair or Vice Chair position needs to be filled, the following process
+applies:
+
+1. **Notification Period**: The Board shall be notified that a position needs
+   to be filled, and nominations requested. This will generally last 1-2 weeks.
+2. **Election Period**: The Board / Committee will start a Discourse poll. This
+   will be a ranked-choice vote on the nominees, with the winner taking the
+   post (if one post is open) or the top two taking the posts (winner is Chair,
+   2nd is Vice Chair).
+
+### Chair Re-election Process
 
 If a Chair of a Committee or the Board is not re-elected during the election
 cycle (or wishes to step down), the following process shall be followed in
@@ -55,7 +67,7 @@ Chairs.
 2. **Transition Period**: The outgoing Chair shall have four weeks to complete
    all outstanding tasks and hand over to the incoming Chair. During this period,
    the outgoing Chair shall:
-    * Work with the committee to select a new Chair.
+    * Work with the Committee/Board to select a new Chair.
     * Ensure all ongoing work is completed, or delegated to other Board members
       where possible.
     * Document all relevant information and tasks to be completed.
@@ -142,7 +154,7 @@ action.
    Member, outlining the specific reasons for the removal. If appropriate, the
    Board shall also schedule a call or discussion with the Board Member to discuss
    the reasons for the removal, and to work together to develop a plan to address
-   the issues.  As part of this notification, the Board shall also:
+   the issues. As part of this notification, the Board shall also:
    * immediately suspend the Board Member's access to Matrix Foundation
      systems, repositories and infrastructure;
    * suspend the Board Member's voting rights until the situation is resolved;

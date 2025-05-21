@@ -46,9 +46,9 @@ set expectations for how we communicate externally.
 
    * The [**Discourse Forum**](https://matrix.discourse.group) is the official,
      primary place for our Board’s discussions and decision-making. While other
-     communication channels (e.g., chat) may be used for informal discussions,
-     **Board members should be active on the forum** to ensure that decisions are
-     made with transparency and all members are fully informed.  
+     communication channels (e.g., chat, Google Drive, etc) may be used for informal
+     discussions & collaboration, **Board members should be active on the forum** to
+     ensure that decisions are made with transparency and all members are fully informed.
    * The **Discourse Forum** will relay new topics & posts to the **Governing
      Board Matrix room** to try and keep members informed.  
    * This forum should serve as the **central hub** for documentation,

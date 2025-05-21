@@ -93,8 +93,8 @@ to the 'Committee Creation Process' section in
 ### Committee Chair and Vice Chair Expectations
 
 Committee chairs are facilitators, their job is to enable the Committee to keep
-moving, create/retire Working Groups, and recommend reports to the Board and
-the Foundation. Chairs are expected to:
+moving, work with Sponsors on Working Groups, and recommend reports to the Board
+and the Foundation. Chairs are expected to:
 - be responsive to the Committee's members and to the broader Governing Board.
 - lead their committee in a fair, transparent, and accountable manner.
 - report up to the Board Chair on a regular basis to keep the Board informed of
@@ -113,15 +113,20 @@ Committee. Anyone in good standing may participate in a Working Group.
 Membership is expected to ebb and flow; what matters is clarity of purpose (the
 Charter), progress (meeting minutes), and outstanding tasks.
 
-Working Groups must have at least three members, including a Chair and a Vice
-Chair. Upon creation, each Working Group selects a provisional Chair, creates a
-charter, and sets up a meeting or discussion cadence/process. Working Groups
-belong to one Committee, but may work closely with several Committees. 
+Working Groups must have at least three members initially. Upon
+creation, each Working Group selects a provisional Chair, creates a
+charter, and sets up a meeting or discussion cadence/process.
+Working Groups belong to one Committee, but may work closely with
+several Committees.
 
-Working Groups are expected to maintain a dedicated Matrix room and Discourse
-category for communication, documentation, and voting. In order to ensure
-transparency and accountability, Working Groups should take notes in meetings
-and generally do their best to make their work public where possible.
+Working Groups must have a dedicated public Matrix room (which will
+be listed on
+[the Working Groups webpage](https://matrix.org/foundation/working-groups/)
+and the [Working Groups Matrix space](https://matrix.to/#/#matrix-wgs:matrix.org))
+and have access to a Discourse category for communication with the Board,
+documentation, and voting. In order to ensure transparency and
+accountability, Working Groups should take notes in meetings and
+generally do their best to make their work public where possible.
 
 ### Proposing New Working Groups
 
@@ -148,6 +153,16 @@ thing. The community will naturally have various people interested in different
 topics. What matters is that the Working Group is clear on its purpose (the
 Charter), its progress (the meeting minutes), and its outstanding tasks. This
 will allow prospective members to contribute.
+
+Some Working Groups will need a more formal membership process, because of the
+access or responsibilities they deal with. It is acceptable for the Working
+Group to define this for themselves, providing:
+
+1. They document the process (ideally publicly on their Working
+   Group website page on matrix.org, but at least for the Board)
+2. The process does not loosen the existing restrictions on
+   participating with the Foundation in general (i.e. members should
+   be in good standing and aim to improve Matrix as a whole)
 
 ### Working Group Chairs and Vice Chairs Expectations
 
@@ -186,7 +201,7 @@ but one should strive for these qualities:
 * High integrity  
 * Adaptable
 
-Vice Chairs (or the Board and of Committees) are able to act in the stead of
+Vice Chairs (of the Board and of Committees) are able to act in the stead of
 the Chair whenever the Chair is not available (ideally with notice and
 permission from the Chair). In the event that a Chair is not re-elected (or
 steps down), the Vice Chair is likely the best candidate to be named as the new
