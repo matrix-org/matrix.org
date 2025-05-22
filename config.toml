@@ -42,11 +42,11 @@ banner = true
 
 # Possible states: "cfp", "awaiting_schedule", "scheduled", "no_tickets", "live", "watch-recordings", "none"
 # None is used when elections instead are used
-conference_state = "none"
+conference_state = "cfp"
 
-conference_website = "https://2024.matrix.org"
-conference_dates = "Sep 19-22"
-conference_location = "Berlin, Germany"
+conference_website = "https://2025.matrix.org"
+conference_dates = "Oct 15-18"
+conference_location = "Strasbourg, France"
 
-governing_board_elections = true
+governing_board_elections = false
 governing_board_elections_page = "/foundation/governing-board-elections/2025/"
