@@ -159,10 +159,10 @@ access or responsibilities they deal with. It is acceptable for the Working
 Group to define this for themselves, providing:
 
 1. They document the process (ideally publicly on their Working
-   Group website page on matrix.org, but at least for the Board)
+   Group website page on matrix.org, but at least for the Board).
 2. The process does not loosen the existing restrictions on
    participating with the Foundation in general (i.e. members should
-   be in good standing and aim to improve Matrix as a whole)
+   be in good standing and aim to improve Matrix as a whole).
 
 ### Working Group Chairs and Vice Chairs Expectations
 
