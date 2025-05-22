@@ -39,6 +39,11 @@ website = "https://www.famedly.com/"
 logo = "famedly.svg"
 
 [[silver]]
+name = "Federated Computer"
+website = "https://www.federated.computer/"
+logo = "federated_computer.png"
+
+[[silver]]
 name = "Filament"
 website = "https://filament.dm/"
 logo = "filament.svg"
