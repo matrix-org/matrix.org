@@ -61,11 +61,20 @@ healthcare landscape."""
 [[silver_members]]
 name = "Thor Arne Johansen"
 project = "Verji Tech AS"
-bio = """
-"""
-platform_statement = """
-None submitted.
-"""
+bio = """Thor Arne is an Architect/Developer/Manager with 25+ years of experience in the industry. Co-founder of Verji Tech AS, a Norwegian company building Verji, a communications solution based on Matrix.
+
+Passionate about technology, and thrive where people, technology, and business meet. After graduating from California State University his professional career involve: Developing hardware, recovering data from crashed hard drives, and developing commercial software for school management systems.
+
+Currently Thor Arne is heading up the tech. efforts in Verji Tech
+
+Privately Thor Arne enjoys the great outdoors with his family, sci-fi, series binging, and hanging out with friends."""
+platform_statement = """While the Matrix Ecosystem at its core embrace FOSS, we truly believe that FOSS is very much "compatible" with for-profit businesses such as Verji Tech AS.
+
+As a commercial for-profit company building on Matrix; we have a very real and profound interest in the success and sustainability of the Matrix community (technology, talent and governance). A key factor will be to work towards achieving a symbiosis where commercial companies can reap very concrete and quantifiable benefits by contributing to Matrix.
+
+Contributions and benefits come in many forms, and an important goal of the foundation and the Governing Board must be to stimulate contributions which benefit Matrix in the long term. "Cash-for-features" type contributions may have undeniable logic for the contributor. But unless parts of the contributions are funneled back into the Foundation it is not sustainable.
+
+So finding models which mutually benefit the contributor, the Foundation, and the Matrix ecosystem, is a very important challenge which the GB should actively address."""
 
 [[associate_members]]
 name = "Tobias Fella"
