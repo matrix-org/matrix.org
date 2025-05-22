@@ -9,16 +9,6 @@ website = "https://automattic.com"
 logo = "automattic.svg"
 
 [[silver]]
-name = "Ercom"
-website = "https://ercom.com/"
-logo = "ercom.svg"
-
-[[gold]]
-name = "Futurewei Technologies"
-website = "https://www.futurewei.com/"
-logo = "futurewei.png"
-
-[[silver]]
 name = "Blender Foundation"
 website = "https://www.blender.org/"
 logo = "blender.svg"
@@ -27,6 +17,11 @@ logo = "blender.svg"
 name = "Discourse"
 website = "https://discourse.org/"
 logo = "discourse.svg"
+
+[[silver]]
+name = "Ercom"
+website = "https://ercom.com/"
+logo = "ercom.svg"
 
 [[silver]]
 name = "Fairkom"
