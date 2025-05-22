@@ -45,7 +45,7 @@ banner = true
 conference_state = "cfp"
 
 conference_website = "https://2025.matrix.org"
-conference_cfp = "https://cfp.2025.matrix.org"
+conference_cfp = "https://cfp.2025.matrix.org/matrix-conf-2025/cfp"
 conference_dates = "Oct 15-18"
 conference_location = "Strasbourg, France"
 
