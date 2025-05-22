@@ -8,7 +8,7 @@ category = ["Events", "Conference"]
 +++
 
 
-The [Matrix.org](http://Matrix.org) Foundation is happy to announce that the [Matrix Conference 2025](https://2025.matrix.org/) will be held at [Kaleidoscoop](https://www.kaleidos.coop/) in Strasbourg, France, from October 15 to 18!
+The Matrix.org Foundation is happy to announce that the [Matrix Conference 2025](https://2025.matrix.org/) will be held at [Kaleidoscoop](https://www.kaleidos.coop/) in Strasbourg, France, from October 15 to 18!
 
 Last year the Conference was completely sold out, with more than 200 decision makers, experts and enthusiasts joining us for this very first edition! The rooms were so full, and we had such a long waiting list that we've decided to extend our capacity this year to 300 attendees, with flexibility for more.
 
