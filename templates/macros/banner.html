@@ -5,7 +5,7 @@
     <p>We are happy to launch <a href="{{ config.extra.conference_website }}">The Matrix Conference</a> on {{
         config.extra.conference_dates }} in
         {{ config.extra.conference_location }}. <a href="{{ config.extra.conference_website }}">Learn more</a> about it,
-        or <a href="https://cfp.matrix.org">submit a
+        or <a href="{{ config.extra.conference_cfp }}">submit a
             proposal</a>!</p>
     {% elif config.extra.conference_state == "awaiting_schedule" %}
     <p>We are happy to launch <a href="{{ config.extra.conference_website }}">The Matrix Conference</a> on {{
