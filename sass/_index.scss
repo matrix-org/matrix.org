@@ -430,9 +430,16 @@
     }
 }
 
-#information-banner {
+.information-banner {
     width: 100%;
     padding: .4em 1em;
-    background-color: #ffcb006b;
     text-align: center;
+}
+
+#conference-banner {
+    background-color: #A6FFA1;
+}
+
+#election-banner {
+    background-color: #FFE994;
 }
