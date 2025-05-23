@@ -4,7 +4,7 @@ path = "/blog/2018/08/31/so-long-half-shot-thanks-for-all-the-bridges"
 
 [taxonomies]
 author = ["Ben Parsons"]
-category = ["Thoughts"]
+category = ["Thoughts", "Bridges"]
 +++
 
 Thank you to Half-Shot for all your work on Bridges over the last months and beyond. Today is your last day, but I'm sure we'll see you again before long. Text below is from Half-Shot.

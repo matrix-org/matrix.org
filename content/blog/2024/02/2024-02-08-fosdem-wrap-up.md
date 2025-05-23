@@ -4,7 +4,7 @@ title = "FOSDEM 2024 Wrap Up"
 
 [taxonomies]
 author = ["Thib"]
-category = ["FOSDEM"]
+category = ["FOSDEM", "Events"]
 
 [extra]
 image = "https://matrix.org/blog/img/fosdem2024-devroom.jpg"

@@ -4,7 +4,7 @@ path = "/blog/2019/06/11/synapse-1-0-0-released"
 
 [taxonomies]
 author = ["Neil Johnson"]
-category = ["General", "Releases", "In the News"]
+category = ["General", "Releases", "News"]
 +++
 
 Well here it is: Synapse 1.0.

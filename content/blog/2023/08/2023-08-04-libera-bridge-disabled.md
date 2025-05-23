@@ -3,7 +3,7 @@ date = "2023-08-04T22:30:00Z"
 title = "Libera.Chat bridge temporarily unavailable."
 
 [taxonomies]
-author = ["Neil"]
+author = ["Neil Johnson"]
 category = ["Bridges"]
 +++
 

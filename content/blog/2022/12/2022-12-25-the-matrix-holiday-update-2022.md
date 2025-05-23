@@ -4,7 +4,7 @@ path = "/blog/2022/12/25/the-matrix-holiday-update-2022"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["General"]
+category = ["General", "Holiday Special"]
 
 [extra]
 image = "https://matrix.org/blog/img/matrix-logo.png"
@@ -19,6 +19,8 @@ On one hand, the network has doubled in size (44.1M to 80.3M visible matrix IDs)
 On the other hand, only a handful of these initiatives have resulted in funding reaching the core Matrix team. **This is directly putting core Matrix development at risk.** We are witnessing a classic tragedy of the commons. We’ve released all the foundational code of Matrix as permissively-licensed open source and got it to the point that anyone can successfully run it at scale themselves. The network is expanding exponentially. But in return, it transpires that the vast majority of these commercial deployments fail to contribute financially to the Matrix Foundation - whether by donating directly or supporting indirectly by working with [Element](https://element.io), who fund the vast majority of core Matrix development today.
 
 In short: folks love the amazing decentralised encrypted comms utopia of Matrix.  But organisations also love that they can use it without having to pay anyone to develop or maintain it. **This is completely unsustainable**, and Element is now *literally* unable to fund the entirety of the Matrix Foundation on behalf of everyone else - and has had to lay off some of the folks working on the core team as a result.
+
+<!-- more -->
 
 The only viable solution to this is for organisations building on Matrix to contribute to sharing the costs of maintaining Matrix’s core projects.  We made [a proposal](https://matrix.org/blog/2022/12/01/funding-matrix-via-the-matrix-org-foundation) to address this a few weeks ago, which we’ll iterate on further in the new year to find an approach which both empowers the community and encourages organisations to participate.  In the interim, if you are an organisation who’s building on Matrix and you want the project to continue to flourish, **please** mail [funding@matrix.org](mailto:funding@matrix.org) to discuss how you can support the foundations that you are depending on.
 

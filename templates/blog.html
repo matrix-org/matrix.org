@@ -8,10 +8,10 @@
         <header>
             <h1><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h1>
             <span>
-                {{ page.date | date(format="%d.%m.%Y %H:%M") }}
+                {{ page.date | date(format="%Y-%m-%d") }}
                 {% if page.taxonomies.category -%}
                 —
-                {% for category in page.taxonomies.category %}
+                {% for category in page.taxonomies.category | sort %}
                 <a href="/category/{{ category | slugify }}">
                     {{- category -}}
                 </a>
@@ -27,7 +27,7 @@
             </span>
             {% if page.updated -%}
             <br>
-            <small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
+            <small>Last update: {{ page.updated | date(format="%Y-%m-%d %H:%M") }}</small>
             {%- endif %}
         </header>
         <div>

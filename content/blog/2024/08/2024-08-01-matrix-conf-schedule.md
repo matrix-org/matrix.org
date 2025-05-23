@@ -4,7 +4,7 @@ title = "The Matrix Conference Has an Exciting Lineup"
 
 [taxonomies]
 author = ["Thib"]
-category = ["Conference"]
+category = ["The Matrix Conference", "Events"]
 
 [extra]
 image = "https://matrix.org/img/matrix-conference-opengraph.png"

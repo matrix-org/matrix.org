@@ -4,7 +4,7 @@ path = "/blog/2018/02/05/3d-video-calling-with-matrix-webrtc-and-webvr-at-fosdem
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["General"]
+category = ["Events", "FOSDEM"]
 +++
 
 <strong>TL;DR: We built a proof-of-concept for <a href="https://fosdem.org/2018/schedule/event/matrix_webvr/">FOSDEM</a> of the world's first(?) 3D video calling using Matrix and the iPhone X... and it looks like this!!</strong>
