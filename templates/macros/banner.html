@@ -1,6 +1,7 @@
 {% macro banner() %}
 {% if config.extra.banner %}
-<div id="information-banner">
+{% if config.extra.conference_state != "none" %}
+<div class="information-banner" id="conference-banner">
     {% if config.extra.conference_state == "cfp" %}
     <p>We are happy to launch <a href="{{ config.extra.conference_website }}">The Matrix Conference</a> on {{
         config.extra.conference_dates }} in
@@ -35,10 +36,13 @@
         <a href="{{ config.extra.conference_website }}/watch/">Check out the recordings</a>!
     </p>
     {% endif %}
-    {% if config.extra.governing_board_elections %}
+</div>
+{% endif %}
+{% if config.extra.governing_board_elections %}
+<div class="information-banner" id="election-banner">
     <p>We are holding our Governing Board elections. Find all the information <a
             href="{{ config.extra.governing_board_elections_page }}">on the elections page.</a></p>
-    {% endif %}
 </div>
+{% endif %}
 {% endif %}
 {% endmacro %}
