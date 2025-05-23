@@ -24,7 +24,7 @@
             <header>
                 <h2><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h2>
                 <span>
-                    {{ page.date | date(format="%Y-%m-%d %H:%M") }}
+                    {{ page.date | date(format="%Y-%m-%d") }}
                     {% if page.taxonomies.category %}
                     —
                     {% for category in page.taxonomies.category | sort %}

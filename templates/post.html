@@ -51,7 +51,7 @@
     <header>
         <h1>{{ page.title }}</h1>
         <span>
-            {{ page.date | date(format="%Y-%m-%d %H:%M") }}
+            {{ page.date | date(format="%Y-%m-%d") }}
             {% if page.taxonomies.category %}
             —
             {% for category in page.taxonomies.category | sort %}
