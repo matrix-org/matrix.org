@@ -49,5 +49,5 @@ conference_cfp = "https://cfp.2025.matrix.org/matrix-conf-2025/cfp"
 conference_dates = "Oct 15-18"
 conference_location = "Strasbourg, France"
 
-governing_board_elections = false
+governing_board_elections = true
 governing_board_elections_page = "/foundation/governing-board-elections/2025/"
