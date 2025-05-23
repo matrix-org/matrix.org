@@ -1,5 +1,5 @@
 +++
-date = "2025-05-22T13:00:00Z"
+date = "2025-05-23T08:00:00Z"
 title = "Announcing the Matrix Conference 2025"
 
 [taxonomies]
@@ -12,11 +12,17 @@ The Matrix.org Foundation is happy to announce that the [Matrix Conference 2025]
 
 Last year the Conference was completely sold out, with more than 200 decision makers, experts and enthusiasts joining us for this very first edition! The rooms were so full, and we had such a long waiting list that we've decided to extend our capacity this year to 300 attendees, with flexibility for more.
 
-![A picture of a sign on a door spelling out "At Max Capacity, sorry" with a sad emoji.](/blog/img/full-capacity.webp)
+We would like to thank our Anchor Sponsor [Element](https://element.io/) for their dedication to the Matrix ecosystem and to the success of the Conference! Thank you, Element, for enabling us to make the Conference happen!
+
+<div style="display: flex; justify-content: center; padding-block: 3rem;">
+    <a href="https://element.io"><img src="/blog/img/element-full-logo.svg" /></a>
+</div>
 
 <!-- more -->
 
 Last year we also received many good proposals that we couldn't fit into our schedule. This year we're adding an extra conference day so we don't miss out on great talks!
+
+![A picture of a sign on a door spelling out "At Max Capacity, sorry" with a sad emoji.](/blog/img/full-capacity.webp)
 
 * **Wednesday 15 October** will be a BarCamp: an informal workshop-like day where attendees can join, pitch a topic they want to discuss, and vote for topics they have an interest in.  
 * **Thursday 16 to Saturday 18 October** will be the three core conference days, with several tracks on topics ranging from Matrix in the Public Sector, Matrix for Sovereignty, Matrix Internals, Governance, and more.
