@@ -1,6 +1,7 @@
 +++
 date = "2025-05-16T18:00:00Z"
 title = "Matrix Governing Board report, May 2025" 
+path = "/blog/2025/2025-governing-board-report-may-25"
 
 [taxonomies]
 author = ["Matrix Governing Board", 'Greg "Gwmngilfen" Sutcliffe']
