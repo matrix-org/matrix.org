@@ -1,6 +1,6 @@
 <div>
     {% set guardians_data = load_data(path="content/foundation/about/guardians.toml") %}
-    {% for guardian in guardians_data.guardians %}
+    {% for guardian in guardians_data.guardians | sort(attribute="name") %}
     <div class="guardian {% if loop.index % 2 != 0 %}reverse{% endif %}">
         <div class="guardian-details">
             <h4 class="guardian-name">{{ guardian.name }}</h4>
