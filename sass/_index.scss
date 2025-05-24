@@ -326,6 +326,10 @@
             top: 100px;
             left: calc(60dvw - 800px);
 
+            @media (min-width: 2000px) {
+                left: 20dvw;
+            }
+
             width: 240px;
             height: 287px;
         }
@@ -335,6 +339,10 @@
             bottom: 50px;
             left: calc(60dvw - 800px);
 
+            @media (min-width: 2000px) {
+                left: 20dvw;
+            }
+
             width: 230px;
             height: 235px;
         }
@@ -343,6 +351,10 @@
             position: absolute;
             top: calc(200px - 4dvw);
             right: calc(60dvw - 800px);
+
+            @media (min-width: 2000px) {
+                right: 20dvw;
+            }
         }
 
         .call-to-action {
