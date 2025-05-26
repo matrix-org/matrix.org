@@ -233,25 +233,6 @@ repository = "https://gitlab.com/anton.molyboha/pipe2matrix"
 room = "#pipe2matrix:rendezvous.anton.molyboha.me"
 
 [[integrations]]
-name = "radicale-auth-matrix"
-description = """
-Matrix authentication plugin for Radicale
-"""
-maintainer = "etke.cc"
-language = "Python"
-licence = "LGPL-3.0-only"
-repository = "https://github.com/etkecc/radicale-auth-matrix"
-
-[[integrations]]
-name = "go-msc1929"
-language = "Go"
-licence = "LGPL-3.0-only"
-repository = "https://github.com/etkecc/go-msc1929"
-description = """
-Golang client for MSC1929 (/.well-known/matrix/support)
-"""
-
-[[integrations]]
 name = "Draupnir"
 description = """
 A moderation tool for Matrix.

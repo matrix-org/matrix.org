@@ -673,3 +673,29 @@ featured_in = []
 description = """
 Simple shell script SDK for the Matrix Client‑Server API. Works in any POSIX-compliant shell.
 """
+
+[[sdks]]
+name = "radicale-auth-matrix"
+description = """
+Matrix authentication plugin for Radicale
+"""
+maintainer = "etke.cc"
+maturity = "Stable"
+language = "Python"
+purpose = ["auth"]
+fetured_in = []
+licence = "LGPL-3.0-only"
+repository = "https://github.com/etkecc/radicale-auth-matrix"
+
+[[sdks]]
+name = "go-msc1929"
+maintainer = "etke.cc"
+maturity = "Stable"
+purpose = ["client", "bot"]
+featured_in = []
+language = "Go"
+licence = "LGPL-3.0-only"
+repository = "https://github.com/etkecc/go-msc1929"
+description = """
+Golang client for MSC1929 (/.well-known/matrix/support)
+"""
