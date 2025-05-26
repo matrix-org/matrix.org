@@ -13,7 +13,7 @@ room = "#emm:etke.cc"
 [[integrations]]
 name = "baibot"
 description = """
-🤖 A Matrix bot for using diffent capabilities (text-generation, text-to-speech, speech-to-text, image-generation, etc.) of AI / Large Language Models (OpenAI, Anthropic, etc.)
+🤖 A Matrix bot for using different capabilities (text-generation, text-to-speech, speech-to-text, image-generation, etc.) of AI / Large Language Models (OpenAI, Anthropic, etc.)
 """
 maintainer = "etke.cc"
 language = "Rust"
