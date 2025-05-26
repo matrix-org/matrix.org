@@ -6,9 +6,20 @@ A CLI tool that joins the room and exports last N messages to the file(-s) you s
 """
 maintainer = "etke.cc"
 language = "Go"
-licence = "GPL-3.0-or-later"
-repository = "https://gitlab.com/etke.cc/emm"
+licence = "AGPL-3.0-only"
+repository = "https://github.com/etkecc/emm"
 room = "#emm:etke.cc"
+
+[[integrations]]
+name = "baibot"
+description = """
+🤖 A Matrix bot for using different capabilities (text-generation, text-to-speech, speech-to-text, image-generation, etc.) of AI / Large Language Models (OpenAI, Anthropic, etc.)
+"""
+maintainer = "etke.cc"
+language = "Rust"
+licence = "AGPL-3.0-only"
+repository = "https://github.com/etkecc/baibot"
+room = "#baibot:etke.cc"
 
 [[integrations]]
 name = "Hemppa"
@@ -30,7 +41,7 @@ A Matrix helpdesk bot
 maintainer = "etke.cc"
 language = "Go"
 licence = "AGPL-3.0-only"
-repository = "https://gitlab.com/etke.cc/honoroit"
+repository = "https://github.com/etkecc/honoroit"
 room = "#honoroit:etke.cc"
 
 [[integrations]]
@@ -84,8 +95,8 @@ Demo instance: https://matrixrooms.info
 """
 maintainer = "etke.cc"
 language = "Go"
-licence = "GPL-3.0-only"
-repository = "https://gitlab.com/etke.cc/mrs/api"
+licence = "AGPL-3.0-only"
+repository = "https://github.com/etkecc/mrs"
 room = "#mrs:etke.cc"
 
 [[integrations]]
@@ -206,8 +217,8 @@ and some other info (like exit status) to matrix room.
 """
 maintainer = "etke.cc"
 language = "Go"
-licence = "MIT"
-repository = "https://gitlab.com/etke.cc/ttm"
+licence = "AGPL-3.0-only"
+repository = "https://github.com/etkecc/ttm"
 room = "#ttm:etke.cc"
 
 [[integrations]]
@@ -228,9 +239,8 @@ Matrix authentication plugin for Radicale
 """
 maintainer = "etke.cc"
 language = "Python"
-licence = "AGPL-3.0-only"
-repository = "https://gitlab.com/etke.cc/radicale-auth-matrix"
-room = "#source:etke.cc"
+licence = "LGPL-3.0-only"
+repository = "https://github.com/etkecc/radicale-auth-matrix"
 
 [[integrations]]
 name = "Draupnir"
