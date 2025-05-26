@@ -6,9 +6,20 @@ A CLI tool that joins the room and exports last N messages to the file(-s) you s
 """
 maintainer = "etke.cc"
 language = "Go"
-licence = "GPL-3.0-or-later"
+licence = "AGPL-3.0-only"
 repository = "https://github.com/etkecc/emm"
 room = "#emm:etke.cc"
+
+[[integrations]]
+name = "baibot"
+description = """
+🤖 A Matrix bot for using diffent capabilities (text-generation, text-to-speech, speech-to-text, image-generation, etc.) of AI / Large Language Models (OpenAI, Anthropic, etc.)
+"""
+maintainer = "etke.cc"
+language = "Rust"
+licence = "AGPL-3.0-only"
+repository = "https://github.com/etkecc/baibot"
+room = "#baibot:etke.cc"
 
 [[integrations]]
 name = "Hemppa"
@@ -84,8 +95,8 @@ Demo instance: https://matrixrooms.info
 """
 maintainer = "etke.cc"
 language = "Go"
-licence = "GPL-3.0-only"
-repository = "https://github.com/etkecc/mrs/api"
+licence = "AGPL-3.0-only"
+repository = "https://github.com/etkecc/mrs"
 room = "#mrs:etke.cc"
 
 [[integrations]]
@@ -206,7 +217,7 @@ and some other info (like exit status) to matrix room.
 """
 maintainer = "etke.cc"
 language = "Go"
-licence = "MIT"
+licence = "AGPL-3.0-only"
 repository = "https://github.com/etkecc/ttm"
 room = "#ttm:etke.cc"
 
@@ -228,9 +239,17 @@ Matrix authentication plugin for Radicale
 """
 maintainer = "etke.cc"
 language = "Python"
-licence = "AGPL-3.0-only"
+licence = "LGPL-3.0-only"
 repository = "https://github.com/etkecc/radicale-auth-matrix"
-room = "#source:etke.cc"
+
+[[integrations]]
+name = "go-msc1929"
+language = "Go"
+licence = "LGPL-3.0-only"
+repository = "https://github.com/etkecc/go-msc1929"
+description = """
+Golang client for MSC1929 (/.well-known/matrix/support)
+"""
 
 [[integrations]]
 name = "Draupnir"
