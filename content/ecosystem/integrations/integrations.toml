@@ -7,7 +7,7 @@ A CLI tool that joins the room and exports last N messages to the file(-s) you s
 maintainer = "etke.cc"
 language = "Go"
 licence = "GPL-3.0-or-later"
-repository = "https://gitlab.com/etke.cc/emm"
+repository = "https://github.com/etkecc/emm"
 room = "#emm:etke.cc"
 
 [[integrations]]
@@ -30,7 +30,7 @@ A Matrix helpdesk bot
 maintainer = "etke.cc"
 language = "Go"
 licence = "AGPL-3.0-only"
-repository = "https://gitlab.com/etke.cc/honoroit"
+repository = "https://github.com/etkecc/honoroit"
 room = "#honoroit:etke.cc"
 
 [[integrations]]
@@ -85,7 +85,7 @@ Demo instance: https://matrixrooms.info
 maintainer = "etke.cc"
 language = "Go"
 licence = "GPL-3.0-only"
-repository = "https://gitlab.com/etke.cc/mrs/api"
+repository = "https://github.com/etkecc/mrs/api"
 room = "#mrs:etke.cc"
 
 [[integrations]]
@@ -207,7 +207,7 @@ and some other info (like exit status) to matrix room.
 maintainer = "etke.cc"
 language = "Go"
 licence = "MIT"
-repository = "https://gitlab.com/etke.cc/ttm"
+repository = "https://github.com/etkecc/ttm"
 room = "#ttm:etke.cc"
 
 [[integrations]]
@@ -229,7 +229,7 @@ Matrix authentication plugin for Radicale
 maintainer = "etke.cc"
 language = "Python"
 licence = "AGPL-3.0-only"
-repository = "https://gitlab.com/etke.cc/radicale-auth-matrix"
+repository = "https://github.com/etkecc/radicale-auth-matrix"
 room = "#source:etke.cc"
 
 [[integrations]]
