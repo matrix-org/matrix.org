@@ -69,10 +69,10 @@ The campaign period is an opportunity for candidates to share more about themsel
 Thanks to a proactive member of the community, we have [a dedicated Matrix space](https://matrix.to/#/#governing-board-nominee-campaigning-bonfire:matrix.org) with rooms for candidates and constituents to communicate with one another:
 
 * [All nominees](https://matrix.to/#/#gbncb-all:matrix.org)
-* [Gold Member nominees](https://matrix.to/#/#gbncb-gold:matrix.org)
-* [Silver Member nominees](https://matrix.to/#/#gbncb-silver:matrix.org)
-* [Associate Member nominees](https://matrix.to/#/#gbncb-associate:matrix.org)
-* [Individual Member nominees](https://matrix.to/#/#gbncb-individual:matrix.org)
+* [Gold Member nominees](https://matrix.to/#/#gbnc-gold:matrix.org)
+* [Silver Member nominees](https://matrix.to/#/#gbnc-silver:matrix.org)
+* [Associate Member nominees](https://matrix.to/#/#gbnc-associate:matrix.org)
+* [Individual Member nominees](https://matrix.to/#/#gbnc-individual:matrix.org)
 
 ### Voting (May 31)
 
