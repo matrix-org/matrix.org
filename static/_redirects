@@ -107,6 +107,10 @@
 # Unbreaking Synapse links, see https://github.com/matrix-org/synapse/issues/15825
 /docs/projects/try-matrix-now.html /ecosystem/clients
 
+# Prevent in-browser redirect by doing a server side redirect instead for docs
+/docs /docs/chat_basics/matrix-for-im/
+/docs/ /docs/chat_basics/matrix-for-im/
+
 #####################################################
 ## Dynamic redirects (100 limit, first match wins) ##
 ##      Keep these below the static redirects      ##
