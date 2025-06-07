@@ -1,6 +1,6 @@
 +++
 title = "Matrix.org Foundation Privacy Policy"
-version = "3.1.0"
+version = "3.2.0"
 +++
 
 Please read this document carefully before accessing or using this service.
@@ -12,7 +12,7 @@ Please read this document carefully before accessing or using this service.
 Most Privacy Policy documents are unreadable. They are written by lawyers and for lawyers, and in our opinion are not very effective.
 Data protection and privacy are important, and we want you to understand the issues involved. For that reason we decided to use plain English instead as much as possible, to make our terms as clear as possible.
 
-When you read 'the Matrix.org homeserver' or 'the Service' below, it refers to the services made available at https://matrix.org which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
+When you read 'the Matrix.org homeserver' or 'the Service' below, it refers to the services made available at [matrix.org](matrix.org) which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
 
 The public Matrix Network is a decentralised and openly federated communication network. This means that user messages are replicated on each participant's server and messages posted to a room are visible to all participants including in some cases any new joiners. This is further explained at 2.3.
 
@@ -120,8 +120,18 @@ We collect information about you when you register for an account. This informat
 * Your email address (if you choose to provide it)
 * Your verified telephone number (if you choose to provide it)
 * Your username and password is used to authenticate your access to the Service and to uniquely identify you within the Service.
-* Your password is stored until you change it or your account is deactivated (see 2.5 for details on how passwords are handled securely). Your username is stored indefinitely to avoid account recycling.
-* Your email address and/or telephone number, if you choose to provide them, are used so that other users can look up your Matrix ID from these identifiers. We will also use your email address to let you reset your password if you forget it, and to send you notifications about missed messages from users trying to contact you on Matrix if you enable the option. We may also send you infrequent urgent messages about platform updates.
+* Your password hashes stored until your account is deactivated (see 2.5 for details on how passwords are handled securely). Your username is stored indefinitely to avoid account recycling.
+* When you've registered your account and what SSO links you might have (i.e. 'Facebook ID', 'Google ID', etc.)
+
+Additionally, we collect data associated with each of your sessions, specifically:
+* When it was created
+* When it finished (so we retain 'finished' sessions)
+* When it was last active
+* The last seen IP for it
+* the user agent we saw when it got created
+* which client you used
+
+Your email address and/or telephone number, if you choose to provide them, are used so that other users can look up your Matrix ID from these identifiers via the Matrix.org Identity Server. We will also use your email address to let you reset your password if you forget it, and to send you notifications about missed messages from users trying to contact you on Matrix if you enable the option. We may also send you infrequent urgent messages about platform updates.
 
 #### 2.2.1.2 Content you provide through using the Service
 
@@ -203,7 +213,7 @@ If you request an invoice, we also collect:
 * City
 * Country
 
-For more information on Pretix, who support us with event ticketing, please see their Privacy Policy here: https://pretix.eu/about/en/privacy
+For more information on Pretix, who support us with event ticketing, please see their [Privacy Policy](https://pretix.eu/about/en/).
 
 **Pretalx** – specifically with regards to event speakers, we collect:
 
@@ -218,7 +228,7 @@ For more information on Pretix, who support us with event ticketing, please see 
 * Twitter handle
 * Other media (e.g., a text box where speakers can link to their website or any other relevant content)
 
-For more information on Pretalx, who support us with event scheduling, please see their Privacy Policy here: https://pretalx.com/p/privacy
+For more information on Pretalx, who support us with event scheduling, please see their [Privacy Policy](https://pretalx.com/p/privacy). 
 
 #### 2.2.2 Information we collect automatically as you use the Service:
 
@@ -234,7 +244,7 @@ Currently, we log the IP addresses of everyone who accesses the Service. This da
 
 We use the privacy-preserving website analytics solution Plausible. Plausible allows us to understand how our website is used, without the use of cookies or other tracking technologies. Your use of the matrix.org website is not associated with any persistent identifiers or cross-site tracking and no personal data is collected about you. 
 
-For full details on how Plausible processes data please refer to their Privacy Policy: https://plausible.io/data-policy
+For full details on how Plausible processes data please refer to their [Privacy Policy](https://plausible.io/data-policy). 
 
 ### 2.3 What information is shared with third-parties and why?
 
@@ -304,7 +314,7 @@ It is our policy to not change passwords on your behalf. This is ultimately to p
 
 ### 2.7 Our commitment to children's privacy
 
-We never knowingly collect or maintain information in the Service from those we know are under 16, and no part of the Service is structured to attract anyone under 16. If you are under 16, please do not use the Service.
+We never knowingly collect or maintain information in the Service from those we know are under 18, and no part of the Service is structured to attract anyone under 18. If you are under 18, please do not use the Service.
 
 ### 2.8 How can I access or correct my information?
 
@@ -337,13 +347,13 @@ We never share what we see with other users or the general public.
 
 ### 2.11 Who else has access to my data?
 
-Element is a Processor of your data, managing the homeserver on behalf of the Matrix.org Foundation. We host the majority of the Service in Mythic Beasts data centres. Here’s Mythic Beast’s privacy policy: https://www.mythic-beasts.com/terms/privacy
+Element is a Processor of your data, managing the homeserver on behalf of the Matrix.org Foundation. We host the majority of the Service in Mythic Beasts data centres. Here’s Mythic Beast’s [privacy policy](https://www.mythic-beasts.com/terms/privacy).
 
-We host some Services in in UpCloud data centres. Here's UpCloud's privacy policy: https://upcloud.com/privacy-policy/. UpCloud controls physical access to their locations.
+We host some Services in in UpCloud data centres. Here's UpCloud's [privacy policy](https://upcloud.com/privacy-policy/). UpCloud controls physical access to their locations.
 
-We store some files shared through the Service on Amazon Web Services (AWS). Amazon employees have access to this data. Here's Amazon's privacy policy: https://aws.amazon.com/privacy/. Amazon controls physical access to their locations.
+We store some files shared through the Service on Amazon Web Services (AWS). Amazon employees have access to this data. Here's Amazon's [privacy policy](https://aws.amazon.com/privacy/). Amazon controls physical access to their locations.
 
-We use Cloudflare to mitigate the risk of DDoS attacks. Here's CloudFlare's privacy policy: https://www.cloudflare.com/privacypolicy/
+We use Cloudflare to mitigate the risk of DDoS attacks. Here's CloudFlare's [privacy policy](https://www.cloudflare.com/privacypolicy/).
 
 Physical access to our offices and locations use typical physical access restrictions.
 
@@ -369,7 +379,7 @@ Please act in good faith towards our users' privacy and data during your disclos
 
 ## Making a Complaint
 
-We try to meet the highest standards when collecting and using personal information. For this reason, we take any complaints we receive about this very seriously. We encourage people to bring it to our attention at [dpo@matrix.org](dpo@matrix.org) if they think that our collection or use of information is unfair, misleading or inappropriate. We would also welcome any suggestions for improving our procedures.
+We try to meet the highest standards when collecting and using personal information. For this reason, we take any complaints we receive about this very seriously. We encourage people to bring it to our attention at [dpo@matrix.org](mailto:dpo@matrix.org) if they think that our collection or use of information is unfair, misleading or inappropriate. We would also welcome any suggestions for improving our procedures.
 
 If you want to make a complaint about the way we have processed your personal information to the supervisory authority, you can contact the ICO (the statutory body which oversees data protection law) at https://www.ico.org.uk/concerns.
 
@@ -390,5 +400,6 @@ If you want to make a complaint about the way we have processed your personal in
 - 3.1.0 - include references to archive.matrix.org and room visibility settings - July 2023
 - 3.1.1 - include details on Plausible and Donorbox - February 2024
 - 3.1.2 - include details on Pretix and Pretalx for event management - August 2024
+- 3.2.0 - update 2.2.1 in light of MAS migration. Fix links. Update minimum age of use in light of DSA requirements - June 2025
 
 **A note to other startups**: this document was heavily inspired by Balsamiq's plain English ToS document. We were impressed by their championing of plain English, and wanted to reproduce that as much as possible in our own legal documentation. Feel free to draw similar inspiration from this document, though be sure to get any documents you produce checked over by a lawyer. Good luck!
