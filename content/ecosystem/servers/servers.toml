@@ -137,3 +137,12 @@ maturity = "Obsolete"
 language = "Rust"
 licence = "Apache-2.0"
 repository = "https://github.com/girlbossceo/conduwuit"
+
+[[servers]]
+name = "ejabberd"
+description = "Robust, Ubiquitous and Massively Scalable Messaging Platform (XMPP, MQTT, SIP Server, Matrix)"
+author = "Process One"
+maturity = "Alpha"
+language = "Erlang"
+licence = "GNU GPL v2 or later"
+repository = "https://github.com/processone/ejabberd"
