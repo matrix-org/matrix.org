@@ -12,7 +12,7 @@ Please read this document carefully before accessing or using this service.
 Most Privacy Policy documents are unreadable. They are written by lawyers and for lawyers, and in our opinion are not very effective.
 Data protection and privacy are important, and we want you to understand the issues involved. For that reason we decided to use plain English instead as much as possible, to make our terms as clear as possible.
 
-When you read 'the Matrix.org homeserver' or 'the Service' below, it refers to the services made available at [matrix.org](matrix.org) which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
+When you read 'the Matrix.org homeserver' or 'the Service' below, it refers to the services made available at [matrix.org](/) which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
 
 The public Matrix Network is a decentralised and openly federated communication network. This means that user messages are replicated on each participant's server and messages posted to a room are visible to all participants including in some cases any new joiners. This is further explained at 2.3.
 
@@ -120,7 +120,7 @@ We collect information about you when you register for an account. This informat
 * Your email address (if you choose to provide it)
 * Your verified telephone number (if you choose to provide it)
 * Your username and password is used to authenticate your access to the Service and to uniquely identify you within the Service.
-* Your password hashes stored until your account is deactivated (see 2.5 for details on how passwords are handled securely). Your username is stored indefinitely to avoid account recycling.
+* Your password hashes stored until your account is deactivated (see 2.6 for details on how passwords are handled securely). Your username is stored indefinitely to avoid account recycling.
 * When you've registered your account and what SSO links you might have (i.e. 'Facebook ID', 'Google ID', etc.)
 
 Additionally, we collect data associated with each of your sessions, specifically:
@@ -213,7 +213,7 @@ If you request an invoice, we also collect:
 * City
 * Country
 
-For more information on Pretix, who support us with event ticketing, please see their [Privacy Policy](https://pretix.eu/about/en/).
+For more information on Pretix, who support us with event ticketing, please see their [Privacy Policy](https://pretix.eu/about/en/privacy).
 
 **Pretalx** – specifically with regards to event speakers, we collect:
 
@@ -228,7 +228,7 @@ For more information on Pretix, who support us with event ticketing, please see 
 * Twitter handle
 * Other media (e.g., a text box where speakers can link to their website or any other relevant content)
 
-For more information on Pretalx, who support us with event scheduling, please see their [Privacy Policy](https://pretalx.com/p/privacy). 
+For more information on Pretalx, who support us with event scheduling, please see their [Privacy Policy](https://pretalx.com/p/privacy).
 
 #### 2.2.2 Information we collect automatically as you use the Service:
 
@@ -244,7 +244,7 @@ Currently, we log the IP addresses of everyone who accesses the Service. This da
 
 We use the privacy-preserving website analytics solution Plausible. Plausible allows us to understand how our website is used, without the use of cookies or other tracking technologies. Your use of the matrix.org website is not associated with any persistent identifiers or cross-site tracking and no personal data is collected about you. 
 
-For full details on how Plausible processes data please refer to their [Privacy Policy](https://plausible.io/data-policy). 
+For full details on how Plausible processes data please refer to their [Privacy Policy](https://plausible.io/data-policy).
 
 ### 2.3 What information is shared with third-parties and why?
 
