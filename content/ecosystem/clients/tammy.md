@@ -9,7 +9,7 @@ repo = "https://gitlab.com/connect2x/tammy"
 matrix_room = "#tammy:imbitbu.de"
 licence = "Apache-2.0"
 latest_release = "2024-11-01"
-featured = false
+featured = true
 [extra.features]
 e2ee = true
 spaces = false
