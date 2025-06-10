@@ -9,6 +9,16 @@ repository = "https://github.com/element-hq/synapse"
 room = "#synapse:matrix.org"
 
 [[servers]]
+name = "Tuwunel"
+description = "Enterprise successor to conduwuit, the high-performance and feature-rich fork of Conduit."
+author = "Jason Volk & June Clementine Strawberry"
+maturity = "Stable"
+language = "Rust"
+licence = "Apache-2.0"
+repository = "https://github.com/matrix-construct/tuwunel"
+room = "#tuwunel:matrix.org"
+
+[[servers]]
 name = "Dendrite"
 description = "Dendrite is a second-generation Matrix homeserver written in Go!"
 author = "Element"
