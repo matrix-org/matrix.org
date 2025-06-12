@@ -54,7 +54,7 @@ In order to meet these requirements we have proposed [MSC4286](https://github.co
 
 ### I am already supporting the Foundation by paying an individual membership, will I have to pay for a premium plan too?
 
-No, individual members of the Foundation will get access to the premium features at no extra cost. This benefit will be implemented as part of the process of migrating existing accounts to the free plan. 
+No, [individual members](/membership) of the Foundation will get access to the premium features at no extra cost. This benefit will be implemented as part of the process of migrating existing accounts to the free plan. 
 
 ### What else will be changing?
 
