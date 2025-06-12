@@ -15,7 +15,7 @@ As we need to take more concrete steps to improve the financial situation of the
 
 ## The full story
 
-We have been communicating on the lack of funds in the Foundation for a while now, the latest being [here](/blog/2025/02/crossroads/). And whilst we’ve been working hard to gather new members and are happy to see the number of logos increasing (thank you all for seeing the need for Matrix to stay independent and safe, and the value in supporting it!), none of the big players in the ecosystem have actually committed to one of the higher membership tiers, so we need to find other ways towards sustainability. 
+We have been communicating on the lack of funds in the Foundation for a while now, the latest being [here](/blog/2025/02/crossroads/). And whilst we’ve been working hard to gather new members and are happy to see the [number of logos increasing](/support/#supporters) (thank you all for seeing the need for Matrix to stay independent and safe, and the value in supporting it!), none of the big players in the ecosystem have actually committed to one of the higher membership tiers, so we need to find other ways towards sustainability.
 
 Today, only 50% of the costs of the Foundation are covered by its revenues (donations and memberships). 20% of the Foundation’s expenditure goes towards hosting the matrix.org free and public homeserver. If we add in the cost of the moderation work done by the Trust and Safety team, the total share of the costs attributable to the matrix.org homeserver account for 50% of all expenditure.
 
