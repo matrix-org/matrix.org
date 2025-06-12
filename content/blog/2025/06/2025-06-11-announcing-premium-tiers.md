@@ -46,7 +46,14 @@ Yes. The plan management will be handled via the [My Account](https://account.ma
 
 ### I am a Matrix client developer, do I need to do anything?
 
-Assuming that your client already supports [Server Notices](https://spec.matrix.org/v1.14/client-server-api/#server-notices), the only complication introduced by the change is for applications distributed via the Apple App Store. Apple places [restrictions](https://developer.apple.com/app-store/review/guidelines/#in-app-purchase) on how payments are implemented by iOS (et al) apps.
+There are two considerations from a Matrix client point of view:
+
+- support for the [Server Notices](https://spec.matrix.org/v1.14/client-server-api/#server-notices) feature
+- if the client is distributed via the Apple App Store, then support for [MSC4286](https://github.com/matrix-org/matrix-spec-proposals/pull/4286)
+
+If the client doesn't show server notices at all then, whilst the client will remain usable with the matrix.org homeserver, your users will have a degraded UX as they won't receive notifications when encountering usage limits.
+
+Apple places [restrictions](https://developer.apple.com/app-store/review/guidelines/#in-app-purchase) on how payments are implemented by iOS (et al) apps that are distributed via the App Store.
 
 We expect that most, if not all, apps that fall within scope would be classified as what Apple calls “[Free Stand-alone Apps](https://developer.apple.com/app-store/review/guidelines/#free-stand-alone-apps)”. Such apps do not need to use in-app purchases so long as “there is no purchasing inside the app, or calls to action for purchase outside of the app”.
 
