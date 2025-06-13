@@ -38,8 +38,6 @@ As you can see, 20% of the Foundation’s expenditure goes towards hosting the m
 
 We’ve kept the matrix.org homeserver around so far, despite its costs, as we consider it essential to seed the network in support of the nurturing part of the Foundation’s mission: despite Matrix being decentralised by design, users need a trusted place to create a free Matrix account to try it out in the first place.
 
-> The Matrix.org Foundation exists to act as a neutral custodian for Matrix and to nurture it as efficiently as possible as a single unfragmented standard, for the greater benefit of the whole ecosystem, not benefiting or privileging any single player or subset of players.
-
 However, we can’t continue to bear the cost of the server as is, and before we get to the extreme position of being forced to turn it off leaving its 370k monthly active users in the awkward position of finding a new home for their account, we’ve decided to try to alleviate some of these costs by setting-up a freemium offering and proposing premium plans in addition to the free ones. The goal is to get the server to an at least financially break-even position. If, by any chance, it was ending up profitable, the profit would directly be invested in [Trust and Safety](/blog/2025/02/building-a-safer-matrix/), or other new programmes which can support the ecosystem. As a reminder, the Foundation is a Community Interest Company, i.e. a limited company which operates to provide a benefit to the community it serves rather than private profit.
 
 
