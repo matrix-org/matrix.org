@@ -17,21 +17,22 @@ As we need to take more concrete steps to improve the financial situation of the
 
 We have been communicating on the lack of funds in the Foundation for a while now, the latest being [here](/blog/2025/02/crossroads/). And whilst we’ve been working hard to gather new members and are happy to see the [number of logos increasing](/support/#supporters) (thank you all for seeing the need for Matrix to stay independent and safe, and the value in supporting it!), none of the big players in the ecosystem have actually committed to one of the higher membership tiers, so we need to find other ways towards sustainability.
 
-As explained before, the Foundation’s mission can basically be summarised by 4 main goals:
+The [Foundation’s mission](/foundation/about/#mission) can basically be summarised by 4 main goals:
 1. Ensure the specification of the protocol stays canonical and unencumbered, to avoid fragmentation and being overridden by a single player.
 2. Ensure that all players in the ecosystem are at a level playing field, helping them succeed by giving them visibility and listening to their needs.
 3. Promote the Matrix standard, as the value of Matrix is directly proportional to the size of the public network and how much it is used and commercialised.
 4. Ensure the public network is safe by building moderation tools that can be used by the server admins, for the sake of our users and making sure the network is attractive.
 
-In practice, it means that we are spend money on:
-- A small team of developers and moderators, to develop Trust & Safety tooling, moderate the matrix.org server and redirect people who do not understand the decentralised nature of Matrix reporting abuse to us towards the appropriate server admins.
-- The infrastructure of the matrix.org homeserver, including the SRE team, who are on call for it, and the support team.
+In practice, it means that we are currently spending money on:
+- A small team of developers and moderators, to develop Trust & Safety tooling, moderate the matrix.org server, and redirect people who do not understand the decentralised nature of Matrix reporting abuse to us towards the appropriate server admins.
+- The infrastructure of the matrix.org homeserver, including the SRE team, who are on call to keep it running, and the support team.
 - Organise and sponsor events to promote and evangelise the protocol.
-- A tiny team to run the whole thing, including the support of external contractors for the administrative side (finance, legal, tax). The staff works on governance (organising the governing board elections, running the meetings, liaising between the different teams), raises money and brings members in, manages social media and liaise with the community, keeps the website up and up to date, publishes TWIMs and blogs, organises the events, etc. This team whose day job is to keep the Foundation running is also supported by a lot of volunteer (and sometimes sponsored by employer) time from the Governing Board and its Working Groups, the Spec Core team, the Guardians, and other external staff.
+- A tiny team to run the Foundation itself, including the support of external contractors for the administrative side (finance, legal, tax). The staff works on governance (organising the governing board elections, running the meetings, liaising between the different teams), raises money and brings members in, manages social media and liaises with the community, keeps the website up and up to date, publishes TWIMs and blogs, organises the events, etc. This team whose day job is to keep the Foundation running is also supported by a lot of volunteer (and sometimes sponsored by employer) time from the Governing Board and its Working Groups, the Spec Core team, the Guardians, and other external staff.
 
-We haven’t got to the point of publishing the public financial report (although it should be almost finalised now), because we are frantically trying to focus on closing the financial gap, but here is an overview of the split of expenditures in the last year:
+We haven’t gotten to the point of publishing the public financial report (although it should be almost finalised now), because we are frantically trying to focus on closing the financial gap, but here is an overview of the split of expenditures in the last year:
 
-![](/blog/img/foundation-expenses-graph.png)
+![A pie chart showing the Foundation's expenses: 30% Trust & Safety, 20% Server Infrastructure, 14.2% Management, 12.5% Events, 20% Other staff, 2.5% Other expenses](/blog/img/foundation-expenses-graph.png)
+
 
 As you can see, 20% of the Foundation’s expenditure goes towards hosting the matrix.org free and public homeserver. If we add in the cost of the moderation work done by the Trust and Safety team, the total share of the costs attributable to the matrix.org homeserver account for almost 50% of all expenditure. Meanwhile, today, only 50% of the spending of the Foundation is covered by its revenues (donations and memberships), and we are working hard towards reducing this gap.
 
