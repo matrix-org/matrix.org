@@ -1,5 +1,5 @@
 +++
-date = "2025-06-12"
+date = "2025-06-13T14:00:00Z"
 title = "Introducing premium accounts to fund the matrix.org homeserver"
 
 [taxonomies]
