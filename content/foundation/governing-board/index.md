@@ -119,7 +119,7 @@ The current elected representatives are:
 These documents cover the Matrix Governing Board, its purpose, operations, and
 processes. The content is divided into the following sections:
 
-- [**Terms of Reference (TOR)**](https://matrix.org/media/2025-04-governing-board-terms-of-reference.pdf):
+- [**Terms of Reference (TOR)**](/media/2025-04-governing-board-terms-of-reference.pdf):
   The immutable basis for the Governing Board. The TOR outline the Board's
   purpose, mandate, and authority.
 - [**Bylaws and Expectations**](./bylaws/02-bylaws): The comprehensive rules,
