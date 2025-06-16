@@ -41,9 +41,9 @@ The current elected representatives are:
 ### Individual Members
 
 * Andy Balaam (he/him)
+* Gnuxie (she/her)
 * Greg Sutcliffe (he/him)
 * J.B. Crawford (they/them)
-* Sumner Evans
 
 </div>
 <div>
@@ -59,8 +59,8 @@ The current elected representatives are:
 
 ### Associate Members
 
-* Cleo Menenez Jr. (he/him), GNOME Foundation
 * Tobias Fella (he/him), KDE e.V.
+* And one vacant seat
 
 </div>
 <div>
@@ -68,6 +68,7 @@ The current elected representatives are:
 ### Platinum Members
 
 * Neil Johnson (he/him), Element
+* Three vacant seats
 
 </div>
 <div>
@@ -75,15 +76,15 @@ The current elected representatives are:
 ### Gold Members
 
 * Brad Murray (he/him), Automattic (Beeper)
-* Kevin Boos (he/him), Futurewei Technologies
+* Two vacant seats
 
 </div>
 <div>
 
 ### Silver Members
 
+* Christian Kußowski (he/him), Famedly
 * Jan Kohnert (he/him), Gematik GmbH
-* Thor Arne Johansen, Verji Tech AS
 
 </div>
 <div>
@@ -118,7 +119,7 @@ The current elected representatives are:
 These documents cover the Matrix Governing Board, its purpose, operations, and
 processes. The content is divided into the following sections:
 
-- [**Terms of Reference (TOR)**](https://matrix.org/media/2024-04-governing-board-terms-of-reference.pdf):
+- [**Terms of Reference (TOR)**](/media/2025-04-governing-board-terms-of-reference.pdf):
   The immutable basis for the Governing Board. The TOR outline the Board's
   purpose, mandate, and authority.
 - [**Bylaws and Expectations**](./bylaws/02-bylaws): The comprehensive rules,
@@ -164,14 +165,14 @@ The current chairs of the Governing Board are:
 ### Governance Committee
 
 * Bram van den Heuvel (he/they) — Chair
-* Sumner Evans — Vice Chair
+* Vacant seat — Vice Chair
 
 </div>
 <div>
 
 ### Community Committee
 
-* Sumner Evans — Chair
+* Vacant seat — Chair
 * Nicolas Werner (he/him) — Vice Chair
 
 </div>
@@ -180,7 +181,7 @@ The current chairs of the Governing Board are:
 ### Finance Committee
 
 * Robin Riley (they/them) — Chair
-* Kevin Boos (he/him) — Vice Chair
+* Vacant seat — Vice Chair
 
 </div>
 <div>
