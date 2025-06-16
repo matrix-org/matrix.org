@@ -13,8 +13,9 @@ Announcements are posted on our blog, our social channels, as well as in the [Of
 We encourage you to read our [membership page](/membership/) and announcements:
 
 * 2025-04 [Announcing the 2025 Governing Board elections](/blog/2025/04/election-announcement)
+* 2025-06 [Introducing newly elected Governing Board representatives](/blog/2025/06/election-results)
 
-Read on for our [election schedule](#schedule), all of [nominees](#nominees), and more information about the election process.
+Read on for our [election schedule](#schedule), our current [elected representatives](#elected-representatives), all of the [nominees](#nominees), and more information about the election process.
 
 ## What is the Governing Board
 
@@ -76,7 +77,7 @@ Thanks to a proactive member of the community, we have [a dedicated Matrix space
 
 ### Voting (May 31)
 
-The voting period will run from **May 31st to June 13th**. All eligible voters will receive an email from [OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections.
+Voting is complete and ran till June 13th. All eligible voters should have received an email from [OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections.
 
 All members of each constituency group are entitled to vote on the candidates within that constituency group. If you believe you are eligible to participate but have not heard from us, first check the inbox and spam folders of the email address you have on file with us through Donorbox. [Please email us](mailto:elections@foundation.matrix.org) if you have any questions.
 
@@ -84,7 +85,9 @@ We will hold an election for all of the four constituencies even if a given cons
 
 ### Results (June 16)
 
-Results will be announced on June 16th. All elected representatives will be added to a private mailing list and Matrix room so that they can introduce themselves and communicate in between meetings. The Foundation's Managing Director and the Governing Board's Chair and/or Vice Chair will be reaching out to every elected representative to get new members onboarded as quickly as possible.
+[All of the winners were announced](/blog/2025/06/election-results) on June 16th.
+
+All elected representatives will be added to a private mailing list and Matrix room so that they can introduce themselves and communicate in between meetings. The Foundation's Managing Director and the Governing Board's Chair and/or Vice Chair will be reaching out to every elected representative to get new members onboarded as quickly as possible.
 
 The Governing Board will meet as a full board at least twice a year, for at least 90 minutes each time. We'll aim to have a meeting shortly after the election, and you can expect one meeting before the end of the year and another before the next election.
 
@@ -93,6 +96,19 @@ Members of the Governing Board are likely to receive a packet of materials befor
 While the Governing Board is an advisory board, members are encouraged to play a role in helping to carry out the activities that support the staff in delivering on the Foundation’s collective remit, such as coalescing priorities to share with the Spec Core Team and connecting with contributors and funders to implement proposals.
 
 The Governing Board has a number of Committees and Working Groups which meet and work in between Governing Board meetings. These are where the bulk of the activity will take place since the board, which may have up to 24 members, is quite large.
+
+## Elected representatives
+
+Below is a list of this year's candidates who are now elected representatives. Visit the [Governing Board information page](/foundation/governing-board/) for a complete list of elected representatives regardless of which year they were elected.
+
+* Andy Balaam (he/him), Individual Member
+* Gnuxie (she/her), Individual Member
+* Greg Sutcliffe (he/him), Individual Member
+* J.B. Crawford (they/them), Individual Member
+* Tobias Fella (he/him), KDE e.V., Associate Member
+* Brad Murray (he/him), Automattic (Beeper), Gold Member
+* Jan Kohnert (he/him), Gematik GmbH, Silver Member
+* Christian Kußowski (he/him), Famedly, Silver Member
 
 ## Nominees
 
