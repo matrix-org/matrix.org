@@ -21,6 +21,8 @@ Our Governing Board has 8 constituencies that have elected representatives. Last
 
 This year we are seating representatives for the following constituencies: [Individual Members](https://opavote.com/results/5202655923666944), Associate Members, [Silver Members](https://opavote.com/results/5206099480805376), and Gold Members. Because we had fewer candidates than seats for Associate and Gold Members, we did not run elections in those categories.
 
+## Elected representatives
+
 These are the elected representatives for each of those constituencies:
 
 Individual Members
