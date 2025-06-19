@@ -1,4 +1,4 @@
 <figure style="height:100%;">
-    <img src="{{ img }}" alt="{{ caption }}" />
+    <img src="{{ img }}" {% if alt %}alt="{{ alt }}{% endif %}" />
     <figcaption>{{ caption | markdown | safe }}</figcaption>
 </figure>
