@@ -1,5 +1,6 @@
 +++
-title = "Matrix.org Homeserver Terms and Conditions"
+title = "Terms and Conditions"
+aliases = ["/legal/terms-and-conditions"]
 +++
 
 Please read this document carefully before accessing or using this service.
