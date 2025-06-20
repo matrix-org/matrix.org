@@ -24,9 +24,23 @@ How to check this depends on the client or app you use. Typically you need to cl
 
 Here are some examples of how it looks in some common apps:
 
-![Profile](/images/official/client1.png)
-![Avatar](/images/official/client3.png)
-![Tooltip](/images/official/client2.png)
+<div style="display:flex; flex-direction:row; flex-wrap: wrap; gap: 8px; align-items: baseline; justify-content: center;">
+{{ figure(
+    img="/images/official/client1.png"
+    alt="Element Web's right panel"
+    caption="")
+}}
+{{ figure(
+    img="/images/official/client3.png"
+    alt="Cinny's user info popup"
+    caption="")
+}}
+{{ figure(
+    img="/images/official/client2.png"
+    alt="Element Web's tooltip on the avatar"
+    caption="")
+}}
+</div>
 
 ## What should I do if the user ID doesn’t match?
 
