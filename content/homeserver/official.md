@@ -26,17 +26,17 @@ Here are some examples of how it looks in some common apps:
 
 <div style="display:flex; flex-direction:row; flex-wrap: wrap; gap: 8px; align-items: baseline; justify-content: center;">
 {{ figure(
-    img="/images/official/client1.png"
+    img="/images/homeserver/official/client1.png"
     alt="Element Web's right panel"
     caption="")
 }}
 {{ figure(
-    img="/images/official/client3.png"
+    img="/images/homeserver/official/client3.png"
     alt="Cinny's user info popup"
     caption="")
 }}
 {{ figure(
-    img="/images/official/client2.png"
+    img="/images/homeserver/official/client2.png"
     alt="Element Web's tooltip on the avatar"
     caption="")
 }}
