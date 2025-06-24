@@ -15,6 +15,7 @@ footer_internal = [
     { title = "Security Hall of Fame", href = "/security-hall-of-fame" },
     { title = "Code of Conduct", href = "/legal/code-of-conduct" },
     { title = "Legal", href = "/legal" },
+    { title = "Law Enforcement Guidelines", href = "/legal/law-enforcement-guidelines" },
     { title = "Contact", href = "/contact" },
     { title = "Site Source", href = "https://github.com/matrix-org/matrix.org/" },
 ]
