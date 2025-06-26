@@ -7,7 +7,7 @@ author = ["Matthew"]
 category = ["This Week in Matrix"]
 +++
 
-We’ve noticed a fair bit of confusion (aka misinformation) around Secure Borders Gateways (SBGs) recently, which this blog post aims to clarify.
+We’ve noticed a fair bit of confusion (aka misinformation) around Secure Border Gateways (SBGs) recently, which this blog post aims to clarify.
 
 First off, Secure Border Gateways are not defined in the Matrix specification. The term is actually a product name from Element, rather than anything intrinsic to Matrix.
 
