@@ -11,7 +11,7 @@ We’ve noticed a fair bit of confusion (aka misinformation) around Secure Borde
 
 First off, Secure Border Gateways are not defined in the Matrix specification. The term is actually a product name from Element, rather than anything intrinsic to Matrix.
 
-However the concept of a border gateway is well established. In a Matrix world, it means any kind of **application-layer firewall** which intercepts APIs between Matrix components in order to provide defence-in-depth or apply additional policy rules, to bring an extra \- **but optional \-** layer of control within a federation. It is, in short, an optional way to provide more control over federated traffic.
+However the concept of a border gateway is well established. In a Matrix world, it means any kind of [**application-layer firewall**](https://en.wikipedia.org/wiki/Application-level_gateway) which intercepts APIs between Matrix components in order to provide defence-in-depth or apply additional policy rules, to bring an extra \- **but optional \-** layer of control within a federation. It is, in short, an optional way to provide more control over federated traffic.
 
 So conceptually it’s the Matrix equivalent to application layer gateways for email. Without them, email works absolutely fine, and always has. However, it’s still a desirable optional extra for some enterprise deployments. For instance, it can help protect both server misconfigurations or buggy servers: literally providing defence-in-depth in traditional ‘castle and keep’ style.
 
