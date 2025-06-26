@@ -16,7 +16,7 @@ image = "https://matrix.org/blog/img/gsoc.png"
 
 ### R Midhun Suresh: *Right Sidebar for Hydrogen client*
 
-> R Midhun Suresh from the Mar Baselios College of Engineering & Technology in Trivandrum, India will be working on Hydrogen this summer, mentored by Bruno Windels. He will be working on adding a right panel to the room view, including a member list and room information. He will be blogging at https://midhunsureshr.github.io throughout the project.
+> R Midhun Suresh from the Mar Baselios College of Engineering & Technology in Trivandrum, India will be working on Hydrogen this summer, mentored by Bruno Windels. He will be working on adding a right panel to the room view, including a member list and room information. He will be blogging at <https://midhunsureshr.github.io> throughout the project.
 
 ### Devin Ragotzy: *Ruma's Automated Checks*
 
@@ -49,7 +49,7 @@ kitsune added:
 
 > Hi there, I'm Callum, a Londoner who'll be starting a physics degree in September. For GSoC I'll be working on adding Token Authenticated Registration to Matrix. This will allow homeserver admins to restrict who can sign-up by requiring a token to be submitted during registration. I run a small homeserver for friends and family, but don't have the resources to make registration public, so I have wanted this feature integrated into Matrix servers and clients for quite a while! I'll be working with Nico, anoa, and red_sky to write an MSC, implement the server side in Synapse, and the client side in Nheko. Thanks to the mentors and Matrix.org for the opportunity to work on this!
 
-You can follow along with this project's progress throughout the program at https://calcuode.com/matrix-gsoc/.
+You can follow along with this project's progress throughout the program at <https://calcuode.com/matrix-gsoc/>.
 
 Nico, mentor added:
 

@@ -17,7 +17,7 @@ We've also included a temporary fix to address alias abuse. The idea is that unt
 Finally, as of this release Synapse validates ```client_secret``` parameters in the Client-Server API as per the spec. See [#6766](https://github.com/matrix-org/synapse/issues/6766) for details.
 
 
-Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.10.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.10.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 
 Changelog since Synapse 1.9.0

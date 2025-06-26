@@ -84,7 +84,7 @@ namespaces:
 To test everything is working correctly, go ahead and explicitly create a room with the alias "#logged_test:localhost" and send a message into the room: the HS will relay the message to the AS by PUTing to /transactions/&lt;tid&gt; and you should see your AS print the event on the terminal. This will monitor any room which has an alias prefix of "#logged_", but it won't lazily create room aliases if they don't already exist. This means it will only log messages in the room you created before: #logged_test:localhost. Try joining the room "#logged_test2:localhost" without creating it, and it will fail. Let's fix that and add in lazy room creation:
 <pre>@app.route("/rooms/&lt;alias&gt;")
 def query_alias(alias):
-    alias_localpart = alias.split(":")[0][1:]
+    alias_localpart = alias.split[":"](0)[1:]
     requests.post(
         # NB: "TOKEN" is the as_token referred to in registration.yaml
         "<a href="http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN" target="_blank">http://localhost:8008/_matrix/client/api/v1/createRoom?access_token=TOKEN</a>",

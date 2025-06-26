@@ -18,7 +18,7 @@ The second one prevented profile updates from being correctly propagated across 
 
 Sorry if you have been bitten!
 
-Get 1.19.1 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.19.1) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get 1.19.1 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.19.1) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 Changelog since v1.19.0
 

@@ -34,7 +34,7 @@ Migrating rooms between a portal & plumbed room is currently a bit of a mess, as
 there’s not yet a way for users to remove portal rooms once they’re created, so
 you can end up with a mix of portal & plumbed users bridged into a room, which
 looks weird from both the Matrix and non-Matrix viewpoints.
-https://github.com/matrix-org/matrix-appservice-irc/issues/387 tracks this.
+<https://github.com/matrix-org/matrix-appservice-irc/issues/387> tracks this.
 
 ## Types of bridges (simplest first):
 
@@ -46,7 +46,7 @@ bots - typically called MatrixBridge or MatrixBridge[123] etc.  These relay
 traffic on behalf of the users on the other side, but it’s a terrible
 experience as all the metadata about the messages and senders is lost.  This is
 how the [telematrix]
-(https://github.com/SijmenSchoon/telematrix) matrix<->telegram bridge currently
+(<https://github.com/SijmenSchoon/telematrix>) matrix<->telegram bridge currently
 works.
 
 ### Bot-API (aka Virtual user) based bridges
@@ -60,7 +60,7 @@ resulting virtual users aren’t real users on the remote system, so don’t hav
 presence/profile and can’t be tab-completed or direct-messaged etc.  They also
 have no way to receive typing notifs or other richer info which may not be
 available via bot APIs.  This is how the current [matrix-appservice-slack]
-(https://github.com/matrix-org/matrix-appservice-slack) bridge works.
+(<https://github.com/matrix-org/matrix-appservice-slack>) bridge works.
 
 ### Simple puppeted bridge
 

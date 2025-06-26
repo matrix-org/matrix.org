@@ -29,7 +29,7 @@ python setup.py develop --user
 ./synctl start # to actually set it running
 </pre>
 
-and then head over to http://localhost:8008 to play with your very own Matrix homeserver!
+and then head over to <http://localhost:8008> to play with your very own Matrix homeserver!
 
 
 Changes in synapse 0.2.3 (2014-09-12)

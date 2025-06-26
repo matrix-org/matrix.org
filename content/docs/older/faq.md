@@ -75,7 +75,7 @@ No, it’s nothing to do with the film (although [Third Room
   services
 * Loads of 3rd party contributions of clients, SDKs, servers and services.
 * You can find the full list of Matrix enabled projects at
-  https://matrix.org/try-matrix
+  <https://matrix.org/try-matrix>
 
 ### Who and how?
 
@@ -95,7 +95,7 @@ goals.
 
 Matrix.org is currently funded by the community, through a combination of
 community support (via [Patreon](https://patreon.com/matrixdotorg), [Liberapay]
-(https://liberapay.com/matrixdotorg), Bitcoin and Ethereum), corporate
+(<https://liberapay.com/matrixdotorg>), Bitcoin and Ethereum), corporate
 sponsorship, and grant funding.
 
 Current Elliptic-level supporters on Patreon and corporate sponsors can be found
@@ -628,10 +628,10 @@ To see the proposals currently under discussion,join us in [
 
 #### What is the process for adding Spec proposals?
 
-See the documentation at https://spec.matrix.org/proposals. In summary:
+See the documentation at <https://spec.matrix.org/proposals>. In summary:
 
 * Produce a publicly-accessible proposal describing your change
-* Make a new issue at https://github.com/matrix-org/matrix-spec-proposals/issues
+* Make a new issue at <https://github.com/matrix-org/matrix-spec-proposals/issues>
 , and include the metadata as described
 * Gather feedback as widely as possible from the community and core team on the
   proposal
@@ -647,7 +647,7 @@ make referencing them easier.
 
 MSC numbers are taken from GitHub issues on the matrix-doc repo. To see a list
 of all active MSCs, and to understand how to contribute your own, see
-https://spec.matrix.org/proposals.
+<https://spec.matrix.org/proposals>.
 
 ### VoIP
 

@@ -18,8 +18,8 @@ Heads up that yesterday at 12:00 ET, the Mozilla IRC network was switched off
 after over 22 years of valiant service, and the [mozilla.org Matrix instance is
 now in full production](http://exple.tive.org/blarg/2020/02/20/synchronous-messaging-were-live/).
 You can get at it via the Riot instance at
-https://chat.mozilla.org, by pointing your client at
-https://mozilla.modular.im, or by joining rooms on the mozilla.org server over
+<https://chat.mozilla.org>, by pointing your client at
+<https://mozilla.modular.im>, or by joining rooms on the mozilla.org server over
 federation via its room directory.
 
 We'd like to thank Mozilla again for putting their faith in Matrix, and are
