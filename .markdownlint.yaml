@@ -1,40 +1,40 @@
 default: false
 
-# heading-increment: true
-# heading-style: true
-# ul-style: true
-# list-indent: true
-# ul-indent: true
+heading-increment: false
+heading-style: false
+ul-style: false
+list-indent: false
+ul-indent: false
 no-reversed-links: true
-# no-missing-space-atx: true
-# no-multiple-space-atx: true
-# blanks-around-headings: true
-# heading-start-left: true
-# single-h1: true
-# no-multiple-space-blockquote: true
-# no-blanks-blockquote: true
-# ol-prefix: true
-# list-marker-space: true
-# blanks-around-fences: true
-# blanks-around-lists: true
+no-missing-space-atx: false
+no-multiple-space-atx: false
+blanks-around-headings: false
+heading-start-left: false
+single-h1: false
+no-multiple-space-blockquote: false
+no-blanks-blockquote: false
+ol-prefix: false
+list-marker-space: false
+blanks-around-fences: false
+blanks-around-lists: false
 no-bare-urls: true
-# hr-style: true
-# no-space-in-emphasis: true
-# no-space-in-code: true
-# no-space-in-links: true
-# no-empty-links: true
+hr-style: false
+no-space-in-emphasis: false
+no-space-in-code: false
+no-space-in-links: false
+no-empty-links: false
 no-alt-text: false
-# code-block-style: true
-# code-fence-style: true
+code-block-style: false
+code-fence-style: false
 # emphasis-style:
 #   style: underscore
 # strong-style:
 #   style: consistent
-# reference-links-images: true
+reference-links-images: false
 # table-pipe-style:
 #   style: consistent
-# table-column-coune: true
-# blanks-around-tables: true
+table-column-coune: false
+blanks-around-tables: false
 
 fix: false
 gitignore: true
