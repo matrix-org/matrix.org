@@ -4,7 +4,7 @@ title = "Demystifying SBGs"
 
 [taxonomies]
 author = ["Matthew"]
-category = ["This Week in Matrix"]
+category = ["General"]
 +++
 
 We’ve noticed a fair bit of confusion (aka misinformation) around Secure Border Gateways (SBGs) recently, which this blog post aims to clarify.
