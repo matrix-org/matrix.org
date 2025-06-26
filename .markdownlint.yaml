@@ -23,7 +23,7 @@ no-bare-urls: true
 # no-space-in-code: true
 # no-space-in-links: true
 # no-empty-links: true
-no-alt-text: true
+no-alt-text: false
 # code-block-style: true
 # code-fence-style: true
 # emphasis-style:
