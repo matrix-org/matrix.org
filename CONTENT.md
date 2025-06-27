@@ -127,8 +127,11 @@ windows_installer = "https://example.com/download"
 macos_installer = "https://example.com/download"
 google_play_store.app_id = "com.example.app"
 f_droid.app_id = "com.example.app"
+other_android_link = "https://example.com/download.apk"
 apple_app_store = { app_id = "id1234567890", org = "example" }
+other_ios_link = "https://example.com/download"
 flathub.app_id = "com.example.app"
+other_linux_link = "https://example.com/download"
 webapp = "https://chat.example.com"
 +++
 
