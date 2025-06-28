@@ -1,10 +1,11 @@
 +++
 title = "The Matrix Holiday Special 2020"
+date = "2020-12-25T04:26:00Z"
 path = "/blog/2020/12/25/the-matrix-holiday-special-2020"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["General"]
+category = ["General", "Holiday Special"]
 
 [extra]
 image = "https://matrix.org/blog/img/matrix-logo.png"
@@ -12,7 +13,9 @@ image = "https://matrix.org/blog/img/matrix-logo.png"
 
 Hi all,
 
-Over the years it’s become a tradition to write an end-of-year wrap-up on Christmas Eve, reviewing all the things the core Matrix team has been up over the year, and looking forwards to the next (e.g. here’s [last year’s edition](https://matrix.org/blog/2019/12/24/the-2019-matrix-holiday-update)).  These days there’s so much going on in Matrix it’s impossible to cover it all (and besides, we now have [This Week In Matrix](https://matrix.org/blog/category/this-week-in-matrix) and better blogging in general to cover events as they happen).  So here’s a quick overview of the highlights:
+Over the years it’s become a tradition to write an end-of-year wrap-up on Christmas Eve, reviewing all the things the core Matrix team has been up over the year, and looking forwards to the next (e.g. here’s [last year’s edition](https://matrix.org/blog/2019/12/24/the-2019-matrix-holiday-update)).  These days there’s so much going on in Matrix it’s impossible to cover it all (and besides, we now have [This Week In Matrix](https://matrix.org/blog/category/this-week-in-matrix) and better blogging in general to cover events as they happen). So here’s a quick overview of the highlights:
+
+<!-- more -->
 
 Looking back at our [plans for 2020](https://matrix.org/blog/2019/12/24/the-2019-matrix-holiday-update#2020) in last year’s wrap-up, amazingly it seems we pretty much achieved what we set out to do.  Going through the bulletpoints in order:
 

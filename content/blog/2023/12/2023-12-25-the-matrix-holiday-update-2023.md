@@ -5,7 +5,7 @@ aliases = ["/blog/2022/12/25/the-matrix-holiday-update-2023"]
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["General"]
+category = ["General", "Holiday Special"]
 
 [extra]
 image = "https://matrix.org/blog/img/matrix-logo.png"
@@ -18,6 +18,8 @@ Hi all,
 On the governance side, we are in an incredibly exciting new era with [Josh joining the Matrix.org Foundation](https://matrix.org/blog/2023/10/26/hello-world/) as its first ever Managing Director (and employee!), with a mandate to cement sustainable funding for Matrix as an independent foundation, governed by the forthcoming elected [open Governance Board](https://matrix.org/blog/2023/12/electing-our-first-governing-board/).  Now, **Matrix needs funding more than ever** - but rather than turning the entirety of this post into a plea for donations, I’m going to let Josh fly the flag in the coming weeks. Meanwhile, if you want Matrix to keep existing (especially if you’re an organisation who builds on Matrix) **[please join the Foundation](https://matrix.org/membership/) and [donate](https://matrix.org/support).**
 
 On the technical side: the theme of the year has been one of focus: extreme, overdue, focus.
+
+<!-- more -->
 
 Over the years, it’s fair to say that the core team has tried to strike a balance between building the core foundational technology of Matrix (the spec, a stable server implementation, client SDKs, end-to-end encryption, VoIP, etc)... and long-term forward-looking projects designed to futureproof Matrix (e.g. Account Portability, P2P Matrix, Dendrite, Hydrogen) and/or inspire developers to build on Matrix for more than just chat (e.g. Third Room, Applications Beyond Chat).  In retrospect, this was wildly optimistic: we underestimated the amount of remaining work needed to polish the foundational tech to mainstream quality - and despite Matrix uptake going through the roof, this hasn’t translated into sufficient funding to have the luxury to support folks to proactively work on next-gen projects (or foundational projects, for that matter).
 

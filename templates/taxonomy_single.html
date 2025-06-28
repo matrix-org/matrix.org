@@ -8,12 +8,13 @@
     <div class="content">
         <header>
             <h1>{{ term.name }}</h1>
+            {% set taxonomy = load_data(path="taxonomy.toml") %}
             {{ term.pages | length }} posts tagged with "{{ term.name }}" <a href="/{{ taxonomy.name }}">(See all {{
-                taxonomy.name | capitalize
+                taxonomy.plurals[taxonomy.name] | default(value=taxonomy.name)
                 }})</a>
             {% if taxonomy.feed %}
             <h2>
-                <small><a href="{{ term.permalink | safe }}atom.xml">Atom Feed</a></small>
+                <small><a href="{{ term.permalink | safe }}atom.xml"><img width="10px" height="10px" src="/assets/rss.svg" alt="Atom"> Category Atom Feed</a></small>
             </h2>
             {% endif %}
         </header>
@@ -23,22 +24,26 @@
             <header>
                 <h2><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h2>
                 <span>
-                    {{ page.date | date(format="%d.%m.%Y %H:%M") }}
-                    {% if page.taxonomies.category -%}
+                    {{ page.date | date(format="%Y-%m-%d") }}
+                    {% if page.taxonomies.category %}
                     —
-                    <a href="/category/{{ page.taxonomies.category | first | slugify }}">
-                        {{ page.taxonomies.category | first }}
+                    {% for category in page.taxonomies.category | sort %}
+                    <a href="/category/{{ category | slugify }}">
+                        {{- category -}}
                     </a>
-                    {% endif -%}
+                    {%- if not loop.last %}, {% endif %}{% endfor %}
+                    {% endif %}
                     —
-                    <a
-                        href="/author/{{ page.taxonomies.author | default(value=['unknown author']) | first | slugify }}">
-                        {{ page.taxonomies.author | default (value=["unknown author"]) | first }}
+                    {% for author in page.taxonomies.author %}
+                    <a href="/author/{{ author | default (value=['unknown author']) | slugify }}">
+                        {{- author | default (value=["unknown author"]) -}}
                     </a>
+                    {%- if not loop.last %}, {% endif %}
+                    {% endfor %}
                 </span>
                 {% if page.updated -%}
                 <br>
-                <small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
+                <small>Last update: {{ page.updated | date(format="%Y-%m-%d %H:%M") }}</small>
                 {%- endif %}
             </header>
             <div>

@@ -9,19 +9,19 @@ website = "https://automattic.com"
 logo = "automattic.svg"
 
 [[silver]]
-name = "Ercom"
-website = "https://ercom.com/"
-logo = "ercom.svg"
-
-[[gold]]
-name = "Futurewei Technologies"
-website = "https://www.futurewei.com/"
-logo = "futurewei.png"
-
-[[silver]]
 name = "Blender Foundation"
 website = "https://www.blender.org/"
 logo = "blender.svg"
+
+[[silver]]
+name = "Discourse"
+website = "https://discourse.org/"
+logo = "discourse.svg"
+
+[[silver]]
+name = "Ercom"
+website = "https://ercom.com/"
+logo = "ercom.svg"
 
 [[silver]]
 name = "Fairkom"
@@ -32,6 +32,11 @@ logo = "fairkom.svg"
 name = "Famedly"
 website = "https://www.famedly.com/"
 logo = "famedly.svg"
+
+[[silver]]
+name = "Federated Computer"
+website = "https://www.federated.computer/"
+logo = "federated_computer.png"
 
 [[silver]]
 name = "Filament"
@@ -67,6 +72,11 @@ logo = "infra.run.svg"
 name = "LiveKit"
 website = "https://livekit.io"
 logo = "livekit.svg"
+
+[[silver]]
+name = "Rocket.Chat"
+website = "https://www.rocket.chat/"
+logo = "rocketchat.svg"
 
 [[silver]]
 name = "SSH"

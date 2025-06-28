@@ -4,7 +4,7 @@ path = "/blog/2016/02/03/fosdem-16-retrospective"
 
 [taxonomies]
 author = ["Oddvar Lovaas"]
-category = ["Events"]
+category = ["FOSDEM", "Events"]
 +++
 
 <img src="/blog/wp-content/uploads/2016/02/stand.jpg" alt="stand" width="1024" height="576" class="aligncenter size-full wp-image-1493" />

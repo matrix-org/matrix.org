@@ -15,6 +15,7 @@ footer_internal = [
     { title = "Security Hall of Fame", href = "/security-hall-of-fame" },
     { title = "Code of Conduct", href = "/legal/code-of-conduct" },
     { title = "Legal", href = "/legal" },
+    { title = "Law Enforcement Guidelines", href = "/legal/law-enforcement-guidelines" },
     { title = "Contact", href = "/contact" },
     { title = "Site Source", href = "https://github.com/matrix-org/matrix.org/" },
 ]
@@ -25,5 +26,5 @@ footer_external = [
     { image = "mastodon.svg", alt = "Mastodon", href = "https://mastodon.matrix.org/@matrix" },
     { image = "twitter.svg", alt = "Twitter", href = "https://twitter.com/matrixdotorg" },
     { image = "youtube.svg", alt = "YouTube", href = "https://www.youtube.com/channel/UCVFkW-chclhuyYRbmmfwt6w" },
-    { image = "rss.svg", alt = "RSS", href = "/atom.xml" },
+    { image = "rss.svg", alt = "Atom Feed", href = "/atom.xml" },
 ]

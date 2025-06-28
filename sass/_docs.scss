@@ -19,12 +19,8 @@ header {
 
 .docs-menu {
     position: sticky;
-    top: var(--navbar-height);  
+    top: var(--navbar-height);
     height: calc(100vh - var(--navbar-height));
-    width: var(--docs-menu-width);
-    flex-shrink: 0;
-    align-self: flex-start;
-    box-sizing: border-box;
     overflow-y: auto;
     background-color: #fff;
     border-right: 1px solid var(--borders-color);
@@ -115,7 +111,8 @@ header {
 }
 
 .docs-content {
-    padding-inline-start:3.5rem ;
+    padding-inline-start: 3.5rem;
+
     @media (max-width: 767px) {
         margin-inline: auto;
         padding-inline: .5rem;

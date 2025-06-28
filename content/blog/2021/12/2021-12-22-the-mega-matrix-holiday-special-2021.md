@@ -6,7 +6,7 @@ path = "/blog/2021/12/22/the-mega-matrix-holiday-special-2021"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["General"]
+category = ["General", "Holiday Special"]
 
 [extra]
 image = "https://matrix.org/blog/img/matrix-logo.png"
@@ -17,6 +17,8 @@ Hi all,
 If you’re reading this - congratulations; you made it through another year :)  Every winter we sit down and review Matrix’s progress over the last twelve months, and look forward to the next - for it’s all too easy to get lost in the day-to-day development and fail to realise how much the overall project is evolving, especially when it’s one as large and ambitious as Matrix!
 
 Looking back at 2021, it’s unbelievable how much stuff has been going on in the core team (as you can tell by the length of this post - sorry!).  There’s been a really interesting mix of activity too - between massive improvements to the core functionality and baseline features that Matrix provides, and also major breakthroughs on next generation work.  But first, let’s check out what’s been happening in the wider ecosystem…
+
+<!-- more -->
 
 ## The Matrix Ecosystem
 

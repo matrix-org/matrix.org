@@ -1,0 +1,25 @@
+{% macro case_insensitive_sort_supporters(supporters) %}
+    {# Step 1: Extract all supporter names in lower case #}
+    {% set lower_names = [] %}
+    {% for supporter in supporters %}
+        {% set_global lower_names = lower_names | concat(with=[supporter.name | lower]) %}
+    {% endfor %}
+
+    {# Step 2: Sort lower-case names #}
+    {% set sorted_lower_names = lower_names | sort %}
+
+    {# Step 3: Re-match sorted names with original supporter objects #}
+    {% for lower_name in sorted_lower_names %}
+        {% for supporter in supporters %}
+            {% if supporter.name | lower == lower_name %}
+                {% set_global current_supporter = supporter %}
+                {% break %}
+            {% endif %}
+        {% endfor %}
+
+        <a href="{{ current_supporter.website }}" target="_blank" class="supporters-card">
+            <img src="/support/{{ current_supporter.logo }}" alt="{{ current_supporter.name }}'s logo">
+            <span>{{ current_supporter.name }}</span>
+        </a>
+    {% endfor %}
+{% endmacro %}

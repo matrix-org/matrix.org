@@ -4,12 +4,14 @@ path = "/blog/2016/11/12/the-matrix-autumn-special"
 
 [taxonomies]
 author = ["Matthew Hodgson"]
-category = ["In the News", "GSOC"]
+category = ["In the News", "GSOC", "Holiday Special"]
 +++
 
 Another season has passed; the leaves are dropping from the trees in the northern hemisphere (actually, in the time it's taken us to finish this post, most of them have dropped :-/) and once again the Matrix team has been hacking away too furiously to properly update the blog. So without further delay here's an update on all things Matrix!
 
-### Synapse 0.18
+<!-- more -->
+
+## Synapse 0.18
 
 Back in September, we forgot to properly announce the 0.18 release of Synapse! This is a major oversight given that 0.18 was a huge update with some critical performance improvements, but hopefully everyone has upgraded by now anyway. If not, there's never been a better time to <a href="https://github.com/matrix-org/synapse">run your own homeserver</a>! The main improvement is that the Matrix room state updates are now stored as deltas in the database rather than snapshots, which reduces the size of the database footprint by around 5 - 7x. The first time you run synapse after upgrading to 0.18 it will go through your database deleting all the historical data, after which you can VACUUM the db to reclaim the freed diskspace.
 
@@ -27,7 +29,7 @@ Spec for all of these new APIs are currently making their way into the official 
 
 To find out more and get upgraded if you haven't already, please check out <a href="https://github.com/matrix-org/synapse/releases/tag/v0.18.3">the full changelog</a>.
 
-### Synapse scalability
+## Synapse scalability
 
 Something which we've been quietly adding over the last 6 months is support for running large synapse deployments like the Matrix.org homeserver. Matrix.org has around 500K accounts on it, 50k rooms, and relays around 500K messages per day and obviously the community expects it to have good performance and availability (even though we'd prefer if you ran your own server, for obvious reasons!)
 
@@ -35,7 +37,7 @@ The current scaling approach for this is called 'Workers' - where we've split ou
 
 You can read more about the architecture and how to run your Synapse in worker-mode over at <a href="https://github.com/matrix-org/synapse/blob/master/docs/workers.rst">https://github.com/matrix-org/synapse/blob/master/docs/workers.rst</a>.
 
-### Starting a Riot (now Element)
+## Starting a Riot (now Element)
 
 Meanwhile, the biggest news in Matrixland has probably been the renaming of Vector as Riot (now Element) and the 'mass market' launch of Riot as a flagship Matrix client at the <a href="http://pulverhwc.evolero.com/monage">MoNage</a> conference on Sept 19th in Boston. The reasons for renaming Vector have been done to death by now and hopefully folks have got over the shock, but the rationale is to have a more distinctive and memorable (and controversial!) name, which is more aligned with the idea of returning control of communication back to the people :) Amandine has the full story over at the <a href="https://medium.com/@RiotChat/lets-riot-f5b0aa99dc8e">Riot blog</a>.
 
@@ -63,13 +65,13 @@ Stuff on the horizon includes:
 </ul>
 Riot (now Element) releases are announced on <a href="https://matrix.to/#/#riot:matrix.org">#riot:matrix.org</a>, the <a href="https://medium.com/@RiotChat">Riot blog</a> and <a href="http://twitter.com/@RiotChat">Twitter</a> - keep your eyes peeled for updates!
 
-### End to End Encryption
+## End to End Encryption
 
 Full cross-platform end-to-end encryption is incredibly close now, with the develop branches of iOS & Android SDKs and Riot (now Element) currently in internal testing as of Nov 7 - expect a Big Announcement very shortly.  We're very optimistic based on how the initial implementation on Riot/Web (now Element)has been behaving so far.
 
 When E2E first landed on Riot/Web (now Element) in September we were missing mobile support, encrypted attachments, encrypted VoIP signalling, and the ability to retrieve encrypted history on new devices - as well as a formal audit of the underlying <a href="/docs/spec/olm.html">Olm</a> and <a href="/docs/spec/megolm.html">Megolm</a> libraries. Since then things have progressed enormously with most of the core team working since September on filling in the gaps, as well as getting audited and fixing all the weird and wonderful edge cases that the audit showed up. All the missing stuff has been landing on the develop branches over the last few weeks, with encrypted attachments landing on web on Nov 10; encrypted VoIP landing on Nov 11; etc. Watch this space for news on the upcoming cross-platform public beta!
 
-### Hosted Integrations and introducing go-neb
+## Hosted Integrations and introducing go-neb
 
 One of the new features which arrived in Riot (now Element) is the ability to add "single click" integrations (i.e. bots, bridges, application services) into rooms from Riot/Web (now Element) by clicking the "Manage Integrations" button in Room Settings. These integrations are hosted for free by Riot (now Element) in its production infrastructure (codenamed Scalar), but all the actual bots/bridges/services themselves are normal opensource Matrix apps and you can of course run them yourself too.
 
@@ -81,13 +83,13 @@ If you like Go and you like Matrix, we'd strongly suggest having a go (hah) at a
 
 If Matrix is to provide a good FOSS alternative to systems like Slack it's critical to have a large array of available integrations, so we really hope that the community will help us grow the list!
 
-### Building Bridges
+## Building Bridges
 
 There have been vast improvements to bridging over the last few months, including the ability to "plumb" bridges into arbitrary rooms (letting you link a single Matrix room through to multiple remote networks). Like go-neb, Riot (now Element) is providing free bridge hosting with the ability to add to rooms with a "single click" via the Manage Integrations button in Room Settings. For now, Riot (now Element) is hosting any bridges built on the <a href="https://github.com/matrix-org/matrix-appservice-bridge">matrix-appservice-bridge</a> codebase.
 
 In short, this means that any user can go and take an existing Matrix room and link it through to Slack, IRC, Gitter, and more.
 
-#### matrix-appservice-irc
+### matrix-appservice-irc
 
 Huge amounts of work have gone into improving the IRC bridge - both adding new features to try to give the most IRC-friendly experience when bridging into IRC, as well as lots of maintenance and performance work to ensure that the matrix.org hosted bridges can scale to the large amounts of traffic we're seeing going through Freenode and others. We've also added hosted bridges for OFTC and Snoonet, and turned on connecting via IPv6 by default for networks which support it.
 
@@ -115,7 +117,7 @@ matrix-appservice-irc 0.5.0:
 </ul>
 Next up is automating NickServ login, and generally continuing to make the IRC experience as good as we possibly can.
 
-#### matrix-appservice-slack
+### matrix-appservice-slack
 
 Similarly, the Slack bridge has had loads of work. The main changes include:
 <ul>
@@ -126,13 +128,13 @@ Similarly, the Slack bridge has had loads of work. The main changes include:
 </ul>
 We're currently looking at shifting over to Slack's RTM (Real Time Messaging) API rather than using webhooks in order to get an even better fit with Slack and support bridging DMs, but the current setup is still very usable. For more details: <a href="https://github.com/matrix-org/matrix-appservice-slack">https://github.com/matrix-org/matrix-appservice-slack</a>.
 
-#### matrix-appservice-gitter
+### matrix-appservice-gitter
 
 The Gitter bridge has provided a lot of inspiration for the more recent work on the Slack bridge. Right now it provides straightforward bridging into Gitter rooms, albeit proxied via a 'matrixbot' user on the Gitter side. We're currently looking at letting also users authenticate using their Gitter credentials so they are bridged through to their 'real' Gitter user - watch this space. For more details: <a href="https://github.com/matrix-org/matrix-appservice-gitter">https://github.com/matrix-org/matrix-appservice-gitter</a>.
 
-### Community updates
+## Community updates
 
-#### matrix-ircd
+### matrix-ircd
 
 matrix-ircd is a rewrite of the old PTO project (<a href="http://pto.im">pto.im</a>): a Rust application that turns Matrix into a single great big decentralised IRC network. PTO itself has unfortunately been on hiatus and is rather bitrotted, so Erik from the core Matrix Team picked it up to see if it could be resurrected. This ended up turning into a complete rewrite (switching from mio to tokio etc), and the new project can be found at <a href="https://github.com/matrix-org/matrix-ircd">https://github.com/matrix-org/matrix-ircd</a>.
 
@@ -140,22 +142,22 @@ matrix-ircd really is an incredibly promising way of getting folks onto Matrix, 
 
 The project is currently alpha but provides a good functioning base to extend, and Erik's explicitly asking for help from the Rust and Matrix community to fill in all the missing features. If you're interested in helping, please come talk on <a href="https://matrix.to/#/#matrix-ircd:matrix.org">#matrix-ircd:matrix.org</a>!.
 
-#### matrix-appservice-gitter-twisted
+### matrix-appservice-gitter-twisted
 
 Not to be confused with the Node-based <a href="https://github.com/matrix-org/matrix-appservice-gitter">matrix-appservice-gitter</a>, <a href="https://github.com/remram44/matrix-appservice-gitter-twisted">matrix-appservice-gitter-twisted</a> is an entirely separate project written in Python/Twisted by Remram (Remi Rampin) that has the opposite architecture: rather than bridging existing rooms into Matrix, matrix-appservice-gitter-twisted lets you provide your Gitter credentials and acts instead as a Gitter client, bridging your personal view of a Gitter room into a private Matrix room just for you.
 
 This obviously has some major advantages (your actions on Gitter use your real Gitter account rather than a bot), and some disadvantages too (you can't use Matrix features when interacting with other Matrix users in the same room, and the Gitter channel itself is not decentralised into Matrix). However, it's a really cool example of how the other model can work - and within the core team, we've been arguing back and forth for ages now on whether normal bridges or "sidecar" bridges like this one are a more preferable architecture. Thanks to Remram's work we can try both side by side! Go check it out at <a href="https://github.com/remram44/matrix-appservice-gitter-twisted">https://github.com/remram44/matrix-appservice-gitter-twisted</a>.
 
-#### telematrix
+### telematrix
 
 Telematrix is Telegram&lt;-&gt;Matrix bridge, written by Sijmen Schoon using python3 and asyncio. Right now it's a fairly early alpha hardcoded to bridge a specific Telegram channel into a specific Matrix room, but it works and in use and could be an excellent base for folks interested in a more comprehensive Matrix/Telegram bridge. Go check it out at <a href="https://github.com/SijmenSchoon/telematrix">https://github.com/SijmenSchoon/telematrix</a>
 <img class="aligncenter wp-image-1832" src="/blog/wp-content/uploads/2016/11/telematrix-1024x828.png" alt="telematrix" width="641" height="518" />
 
-#### Ruma
+### Ruma
 
 Meanwhile, the Ruma project to write a Matrix homeserver in Rust has been progressing steadily, with more and more checkboxes appearing on the <a href="https://github.com/ruma/ruma/blob/master/STATUS.md">status page</a>, with significant new contributions from mujx and farodin91. The best way to keep track of Ruma is to read Jimmy's excellent <a href="https://ruma.dev/news/">This Week in Ruma</a> updates and of course hang out on <a href="https://matrix.to/#/#ruma:matrix.org">#ruma:matrix.org</a>.
 
-#### NaChat
+### NaChat
 
 An entirely new client on the block since the last update is <a href="http://github.com/ralith/nachat">NaChat</a>, written by Ralith. NaChat is a pure cross-platform Qt/C++ desktop client written from the ground up, supporting local history synchronisation, excellent performance, native Qt theming, and generally being a lean and mean Matrix client machine. It's still alpha, but it's easy to build and a lot of fun to play with.
 
@@ -163,13 +165,13 @@ An entirely new client on the block since the last update is <a href="http://git
 
 Please give a spin, encourage Ralith to finish the <a href="https://github.com/ralith/nachat/tree/timeline-view-rewrite">timeline-view-rewrite</a> branch (which is probably the one you want to be running!), and come hang out on <a href="https://matrix.to/#/#nachat:matrix.org">#nachat:matrix.org</a>.
 
-#### Quaternion
+### Quaternion
 
 Meanwhile, the <a href="https://github.com/fxrh/quaternion">Quaternion</a> Qt/QML desktop client and its <a href="https://github.com/fxrh/libqmatrixclient">libqmatrixclient</a> library has been making sure and steady progress, with fxrh, kitsune, maralorn and others working away at it. The difference with NaChat here is using QML rather than native Qt widgets, and a focus on more advanced UX features like a custom infinite-scrolling scrollbar widget, unread message notifications, and read-up-to markers.  Recent developments include the <a href="https://github.com/Fxrh/Quaternion/releases/tag/v0.0.1">first official release (0.0.1)</a> on Sept 12, official Windows builds, lots of work on implementing better Read-up-to Markers, scrolling behaviour etc. Again, it's worth keeping a checkout of Quaternion handy and playing with the client - it's loads of fun!
 
 <img class="aligncenter size-large wp-image-1829" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-12-at-12.12.48-1024x535.png" alt="screen-shot-2016-11-12-at-12-12-48" width="1024" height="535" />
 
-### Google Summer of Code 2016 Retrospective
+## Google Summer of Code 2016 Retrospective
 
 The summer is long gone now, and along with it Google Summer of Code. This was the first year we've <a href="https://summerofcode.withgoogle.com/archive/2016/organizations/6552738187968512/">participated in GSoC</a>, and it was an incredible experience - both judging all the applications, and then working with Aviral Dasgupta and Will Hunt (Half-Shot) who joined the core team as part of their GSoC endeavours.
 
@@ -181,7 +183,7 @@ Finally, as a bit of a wildcard, we discovered the other day that there was also
 
 Either way, it's been a pleasure to work with the GSoC community and we owe Aviral and Half-Shot (and Waqee!) a huge debt of gratitude for spending their summers (and more!) hacking away improving Matrix. So, thanks Google for making GSoC possible and thanks to the GSoCers for all their contributions, effort & enthusiasm! Watch this space for updates on RTE, new-autocomplete and the twitter bridge going live...
 
-### Matrix in the news
+## Matrix in the news
 
 Just in case you missed them, there have been a couple of high profile articles flying around about Matrix recently - we made the <a href="http://www.linux-magazine.com/Issues/2016/189/Matrix">front cover of Linux Magazine in August</a> with a comprehensive review of Matrix and Vector (now Riot (now Element)). Then when we launched Riot (now Element) itself we got a cautiously <a href="https://techcrunch.com/2016/09/19/riot-wants-to-be-like-slack-but-with-the-flexibility-of-an-underlying-open-source-platform/">positive write-up from Mike Butcher at Techcrunch</a>. We also wrote an guest column for Techcrunch about the <a href="https://techcrunch.com/2016/10/09/a-decentralized-web-would-give-power-back-to-the-people-online/">importance of bringing power back to the people via decentralisation</a>, which got a surprising amount of attention on <a href="https://news.ycombinator.com/item?id=12670958">HackerNews</a> and elsewhere.
 
@@ -191,7 +193,7 @@ More recently, we were lucky enough to get an <a href="https://www.youtube.com/w
 
 Huge thanks to everyone who's been nice enough to spread the word of Matrix!
 
-### Matrix In Real Life
+## Matrix In Real Life
 
 Finally, we've been present at a slew of different events. In August we attended FOSSCON again in Philadelphia to give a general update on Matrix to the Freenode community...
 
@@ -233,7 +235,7 @@ The same weekend also featured TADHack Global - we were present at the London si
 
 Meanwhile, coming up on the horizon we have TADSummit in Lisbon next week, where we'll be giving an update on Matrix to the global Telco Application Developer community, and then the week after we'll be in Israel as part of the Geektime Techfest, Devfest and Chatbot Summit. So if you're in Lisbon or Tel Aviv do give us a ping on Matrix and come hang out!
 
-### Matrixing for fun and profit!
+## Matrixing for fun and profit!
 
 If you've read this far, we're guessing you're hopefully quite interested in Matrix (or just skipping to the end ;).  Something we don't talk about as much as we should is that if you're interested in being paid to work on Matrix full time, we're always interested in expanding the core team.  Right now we're particularly looking for:
 <ul>
@@ -245,7 +247,7 @@ If you've read this far, we're guessing you're hopefully quite interested in Ma
 </ul>
 Most of the core team hangs out in London or Rennes (France), but we're also open to remote folks where it makes sense.  If this sounds interesting, please shoot us a mail to jobs@matrix.org.  Obviously it helps enormously if we already know you from the Matrix community, and you have a proven FOSS track record.
 
-### Conclusion
+## Conclusion
 
 Apologies once again for an overdue and overlong update, but hopefully this gives a good taste of how Matrix is progressing. Just to give a different datapoint: this graph is quite interesting - showing the volume of events per day sent by native (i.e. non-bridged) Matrix users visible to the matrix.org homeserver since we turned the service on back in 2014:
 

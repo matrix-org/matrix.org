@@ -4,7 +4,7 @@ title = "Policy and regulation update 2024: Matrix and the GDPR"
 
 [taxonomies]
 author = ["Denise Almeida"]
-category = ["Foundation", "Compliance"]
+category = ["Foundation", "Compliance", "EU"]
 +++
 
 If you have been following the matrix.org blog for some time, you will know that we’ve never been ones to shy away from complex topics like public policy and its impacts on Matrix. With this blog post series, our aim is to introduce a more regular cadence to our regulatory updates and to be more transparent about where we are focusing our efforts in this area.
