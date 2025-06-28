@@ -19,7 +19,7 @@ Please pay special attention to the security advisory in the changelog, TL;DR ma
 
 Also, note that once Synapse 1.13.0 is released, the default branch will change to being `develop` rather than `master`. Again more details follow in the changelog.
 
-Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.12.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.12.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 
 Changelog since Synapse 1.11.1
@@ -43,7 +43,7 @@ described in
 and
 [CVE-2020-10109](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10109).
 For a good introduction to this class of request-smuggling attacks, see
-https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn.
+<https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn>.
 
 We are not aware of these vulnerabilities being exploited in the wild, and
 do not believe that they are exploitable with current versions of any reverse

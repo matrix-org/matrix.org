@@ -642,7 +642,7 @@ here again adapt the labels to your own domain.
       - traefik.http.routers.synapse.tls.certresolver=letls
 ```
 
-We can try to reach https://matrix.example.org… and it should answer!
+We can try to reach <https://matrix.example.org…> and it should answer!
 
 ![Synapse serving its static page, behind nginx](/docs/legacy/understanding-synapse-hosting-nginx.png "Synapse serving its static page, behind nginx")
 

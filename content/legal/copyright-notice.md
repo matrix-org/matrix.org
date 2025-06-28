@@ -36,7 +36,7 @@ London
 United Kingdom
 EC4R 1AG
 
-By email: dmca@matrix.org
+By email: <dmca@matrix.org>
 
 If you fail to comply with all of the requirements of Section 512(c)(3) of the DMCA, your DMCA Notice may not be effective.
 

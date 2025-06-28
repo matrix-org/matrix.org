@@ -16,7 +16,7 @@ category = ["This Week in Matrix"]
 ## Dept of Spec 📜
 
 {% details(summary="[uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) reports") %}
-  > Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+  > Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at <https://matrix.org/docs/spec/proposals>.
   > 
   > 
   > ## MSC Status
@@ -59,7 +59,7 @@ Synapse is a Matrix homeserver implementation developed by the matrix.org core t
 > * Adding support for compression to federation responses.
 > * Improving performance of sending messages in rooms with thousands of local users.
 > 
-> Plus a host of bugfixes and other changes to make Synapse faster and leaner! Take a look. https://github.com/matrix-org/synapse/releases/tag/v1.66.0. In addition, work continues on fast room joins-stay tuned, as we are getting closer to the finish line.
+> Plus a host of bugfixes and other changes to make Synapse faster and leaner! Take a look. <https://github.com/matrix-org/synapse/releases/tag/v1.66.0>. In addition, work continues on fast room joins-stay tuned, as we are getting closer to the finish line.
 
 ### Dendrite ([website](https://github.com/matrix-org/dendrite))
 
@@ -248,10 +248,10 @@ Cinny is a Matrix client focused on simplicity, elegance and security
 > 
 > You can read more about the vulnerability at [Security releases: matrix-js-sdk 19.4.0](https://matrix.org/blog/2022/08/31/security-releases-matrix-js-sdk-19-4-0-and-matrix-react-sdk-3-53-0).
 > 
-> Find more about Cinny at https://cinny.in/
-> Join our space at: https://matrix.to/#/#cinny-space:matrix.org
-> Github: https://github.com/ajbura/cinny
-> Twitter: https://twitter.com/@cinnyapp
+> Find more about Cinny at <https://cinny.in/>
+> Join our space at: <https://matrix.to/#/#cinny-space:matrix.org>
+> Github: <https://github.com/ajbura/cinny>
+> Twitter: <https://twitter.com/@cinnyapp>
 
 ## Dept of Non Chat Clients 🎛️
 
@@ -335,7 +335,7 @@ Synapse Maintenance Container – Docker container with tools for synapse & post
 > * monthly:
 >   - vacuum the database
 > 
-> Source: https://gitlab.com/mb-saces/synatainer
+> Source: <https://gitlab.com/mb-saces/synatainer>
 > 
 > Room: [#synatainer:c-base.org](https://matrix.to/#/#synatainer:c-base.org)
 
@@ -377,7 +377,7 @@ Synapse Maintenance Container – Docker container with tools for synapse & post
 > 
 > ### Next DWeb Camp
 > 
-> Planning for next camp(s) has begun. To participate, check out [#decentralizedweb-general:matrix.org](https://matrix.to/#/#decentralizedweb-general:matrix.org) & https://getdweb.net/get-involved
+> Planning for next camp(s) has begun. To participate, check out [#decentralizedweb-general:matrix.org](https://matrix.to/#/#decentralizedweb-general:matrix.org) & <https://getdweb.net/get-involved>
 
 ## Dept of Interesting Projects 🛰️
 
@@ -405,7 +405,7 @@ The one mobile-first, decentralized community organizing app
 
 [Eric Migicovsky](https://matrix.to/#/@eric:beeper.com) says
 
-> Oh and as a fun side project we are building a real Beeper beeper. It might be the very first dedicated Matrix device? It’s basically a Blackberry for Matrix, with an e-paper display (same tech as Pebble) 🙂 https://twitter.com/ericmigi/status/1558137599893524480 If you are a hacker who wants to build something with it, I have a few extra that I might be able to give out. Send me a message with a convincing argument 😉
+> Oh and as a fun side project we are building a real Beeper beeper. It might be the very first dedicated Matrix device? It’s basically a Blackberry for Matrix, with an e-paper display (same tech as Pebble) 🙂 <https://twitter.com/ericmigi/status/1558137599893524480> If you are a hacker who wants to build something with it, I have a few extra that I might be able to give out. Send me a message with a convincing argument 😉
 > 
 > ![](beeperhw1.jpg)
 

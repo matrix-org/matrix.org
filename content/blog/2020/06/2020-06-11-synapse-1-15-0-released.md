@@ -16,7 +16,7 @@ Aside from that the admin API continues to grow (this time device management) an
 
 We are receiving an increasing number of high quality PRs from the community, please keep them coming. Special thanks to [cg505](https://github.com/cg505), [dklimpel](https://github.com/dklimpel), [WGH](https://github.com/WGH), [olof](https://github.com/olof) and [ilmari](https://github.com/ilmari)
 
-Get 1.15.0 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.15.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get 1.15.0 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.15.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 
 Changelog since v1.14.0

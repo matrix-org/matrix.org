@@ -34,7 +34,7 @@ room.
 ![add a password to a jitsi room](/docs/legacy/jitsi-add-password.png)
 
 Next, we configured the Jitsi Meet server to stream to YouTube, and also made 
-the stream available directly via a video control on https://stream.matrix.org.
+the stream available directly via a video control on <https://stream.matrix.org>.
 
 Note that we did not make the call itself available for the entire audience to 
 join - this would likely have been a impossible moderation task, and would not 

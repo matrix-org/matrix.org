@@ -16,7 +16,7 @@ The big changes are:
 * Lots of nice usability refinements to webclient - e.g. per-message notifications; cursor-key history navigation; faster room loading
 * More bugfixes and stability fixes on the homeserver
 
-Please reload the page if you're lurking on http://matrix.org/alpha to pull in the new webclient.
+Please reload the page if you're lurking on <http://matrix.org/alpha> to pull in the new webclient.
 
 If you're running a homeserver - please upgrade with a quick <code>git pull && ./synctl restart</code>.
 

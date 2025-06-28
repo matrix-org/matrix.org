@@ -17,7 +17,7 @@ Some admins will rejoice that we have added a ```/health``` end point to every c
 
 Finally 1.19.0 contains improvements to the Admin API allowing the admin to optionally purge rooms on deletion.
 
-Get the new releases from any of the usual sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md. 1.19.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.19.0).
+Get the new releases from any of the usual sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>. 1.19.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.19.0).
 
 
 Changelog for 1.19.0 follows:

@@ -47,7 +47,7 @@ But in general, the mini-hackathon was a success and it was great fun to be able
 If you're crazy enough to want to try to run the bot yourself, then it should actually be quite simple to get up and running:
 
 <code> # grab synapse if you don't have it already
-git clone https://github.com/matrix-org/synapse.git synapse-develop
+git clone <https://github.com/matrix-org/synapse.git> synapse-develop
 cd synapse-develop
 
 # you'll need the develop branch, as we haven't released a build with vertobot in it yet

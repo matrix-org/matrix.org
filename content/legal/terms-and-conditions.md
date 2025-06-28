@@ -10,7 +10,7 @@ Please read this document carefully before accessing or using this service.
 
 Most Terms of Use and Privacy Policy documents are unreadable. They are written by lawyers and for lawyers, and in our opinion are not very effective.
 
-We decided to use plain English as much as possible, to make our terms as clear as possible. We are always looking to improve, so please send us feedback on this document to legal@matrix.org.
+We decided to use plain English as much as possible, to make our terms as clear as possible. We are always looking to improve, so please send us feedback on this document to <legal@matrix.org>.
 
 When you read 'the Matrix.org homeserver' or 'the Service' below, it refers to the services made available at **Matrix.org** which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
 

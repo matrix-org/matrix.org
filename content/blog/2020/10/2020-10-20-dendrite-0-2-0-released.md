@@ -23,7 +23,7 @@ We're now in an impressively better place, and it's feeling way more stable now
 straight to 0.2.0.
 
 Now would be a great time for more intrepid explorers to try spinning up a
-server from https://github.com/matrix-org/dendrite and see how it feels - the
+server from <https://github.com/matrix-org/dendrite> and see how it feels - the
 more feedback the better.  And if you got scared off by weird bugs in 0.1.0,
 now's the right time to try it again!
 

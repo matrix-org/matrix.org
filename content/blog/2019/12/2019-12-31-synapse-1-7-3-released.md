@@ -11,7 +11,7 @@ Hi all,
 
 We've just released Synapse 1.7.3 - an important bug fix to address a class of failures due to malformed events.  We've seen this in the wild over the last few days, so we'd recommend updating as soon as possible, especially if you are having problems federating.
 
-Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.7.3) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.7.3) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 The changelog since 1.7.2 is:
 

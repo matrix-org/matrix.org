@@ -7,7 +7,7 @@ aliases = ["/docs/guides/client-server-api"]
 
 If you haven't already, get a homeserver up and running on
 `https://localhost:8448` - e.g. by following the instructions at
-https://github.com/matrix-org/synapse/blob/master/INSTALL.md
+<https://github.com/matrix-org/synapse/blob/master/INSTALL.md>
 
 ## Accounts
 
@@ -175,7 +175,7 @@ An event is some interesting piece of data that a client may be interested in.
 It can be a message in a room, a room invite, etc. There are many different
 ways of getting events, depending on what the client already knows.
 
-https://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix.org/tree/master/jekyll/_posts/howtos/jsfiddles/event_stream
+<https://jsfiddle.net/gh/get/jquery/1.8.3/matrix-org/matrix.org/tree/master/jekyll/_posts/howtos/jsfiddles/event_stream>
 
 ### Getting all state
 

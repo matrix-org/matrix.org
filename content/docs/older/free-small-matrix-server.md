@@ -21,8 +21,8 @@ Freenom can be tricky to renew for free after the first year. A Matrix server
 cannot be [migrated] from one domain to another, so you might want to get a
 longer-lived one.
 
-- https://tld-list.com/ - find cheap domains, look at renewal fees also
-- https://www.namecheap.com/promos/99-cent-domain-names/ - cheap first year
+- <https://tld-list.com/> - find cheap domains, look at renewal fees also
+- <https://www.namecheap.com/promos/99-cent-domain-names/> - cheap first year
 
 You also need to specify subdomains (which is why most dynamic dns services
 aren't sufficient). To do this I added the domain on the free [Cloudflare] plan.
@@ -161,7 +161,7 @@ matrix_coturn_turn_external_ip_address: $instance_external_ip_address
 
 ## Done!
 
-Point your browser to https://element.$domain or use [another
+Point your browser to <https://element.$domain> or use [another
 client](https://matrix.org/clients).
 
 ## Maintenance

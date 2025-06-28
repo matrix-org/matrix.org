@@ -10,7 +10,7 @@ category = ["General"]
 image = "https://matrix.org/blog/img/matrix-logo.png"
 +++
 
-> Note: This was originally posted on https://blog.neko.dev/posts/matrix-year-in-review-2022.html , which also includes some small info boxes about each projects, which got lost in the translation.
+> Note: This was originally posted on <https://blog.neko.dev/posts/matrix-year-in-review-2022.html> , which also includes some small info boxes about each projects, which got lost in the translation.
 
 As we send off 2022 with a bang, it makes sense to look back on what we did this year and where we want to go next year. In its holiday special post, the Matrix Foundation has been focusing on the core team's work. This post is focusing on the achievements of the community outside of the Matrix Foundation.
 

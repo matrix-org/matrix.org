@@ -11,7 +11,7 @@ A small patch release to fix regressions introduced in v1.11.0 and v1.12.0.
 
 Update 1.12.3 is a fast follow release from 1.12.2
 
-Get 1.12.3 (not 1.12.2) from [github](https://github.com/matrix-org/synapse/releases/tag/v1.12.3) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get 1.12.3 (not 1.12.2) from [github](https://github.com/matrix-org/synapse/releases/tag/v1.12.3) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 
 Changelog since v1.12.0

@@ -20,7 +20,7 @@ Highlights of 1.21.1 include:-
 
 We've also made some improvements to SSO and added new admin APIs.
 
-Get the new releases from any of the usual sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md. 1.21.1 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.21.1)
+Get the new releases from any of the usual sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>. 1.21.1 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.21.1)
 
 
 The changelog for 1.21.1 is as follows:

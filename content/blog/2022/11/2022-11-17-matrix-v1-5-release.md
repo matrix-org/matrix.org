@@ -122,7 +122,7 @@ No significant changes.
 <strong>Backwards Compatible Changes</strong>
 
 
-- Update docsy theme to v0.5.0 + matrix.org modifications (https://github.com/matrix-org/docsy/commit/a0032f8db919a6c67ba6cdef2c455f105b6272a2). ([#1295](https://github.com/matrix-org/matrix-spec/issues/1295))
+- Update docsy theme to v0.5.0 + matrix.org modifications (<https://github.com/matrix-org/docsy/commit/a0032f8db919a6c67ba6cdef2c455f105b6272a2>). ([#1295](https://github.com/matrix-org/matrix-spec/issues/1295))
 
 
 <strong>Spec Clarifications</strong>

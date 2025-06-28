@@ -11,7 +11,7 @@ Synapse 1.9.0 contains a bunch of new admin APIs as well as bug fixes to existin
 
 Aside from that it is worth noting that we have officially dropped support for SQLite versions < 3.11. Though more generally we would recommend that all admins [migrate to Postgres](https://github.com/matrix-org/synapse/blob/release-v1.9.0/docs/postgres.md) for anything other than test and evaluation purposes.
 
-Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.9.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.9.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 
 Changelog since Synapse 1.8.0

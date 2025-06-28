@@ -70,7 +70,7 @@ We strongly recommend checking out the videos which have all been published at 
 
 ## Matrix.to
 
-Not the most exciting thing ever, but heads up that there's a simple site up at <a href="https://matrix.to">https://matrix.to</a> to provide a way of doing client-agnostic links to content in Matrix.  For instance, rather than linking specifically into an app like Vector, you can now say <a href="https://matrix.to/#/#matrix:matrix.org">https://matrix.to/#/#matrix:matrix.org</a> to go there via whatever app you choose.  This is basically a bootstrapping process towards having proper mx:// URLs in circulation, but given mx:// doesn't exist yet, https://matrix.to hopefully provides a useful step in the right direction :)
+Not the most exciting thing ever, but heads up that there's a simple site up at <a href="https://matrix.to">https://matrix.to</a> to provide a way of doing client-agnostic links to content in Matrix.  For instance, rather than linking specifically into an app like Vector, you can now say <a href="https://matrix.to/#/#matrix:matrix.org">https://matrix.to/#/#matrix:matrix.org</a> to go there via whatever app you choose.  This is basically a bootstrapping process towards having proper mx:// URLs in circulation, but given mx:// doesn't exist yet, <https://matrix.to> hopefully provides a useful step in the right direction :)
 
 PRs very welcome at <a href="https://github.com/matrix-org/matrix.to">https://github.com/matrix-org/matrix.to</a>.
 

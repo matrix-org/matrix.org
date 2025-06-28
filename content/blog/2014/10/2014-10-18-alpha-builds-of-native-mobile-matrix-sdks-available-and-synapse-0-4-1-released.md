@@ -43,7 +43,7 @@ This release includes changes to the federation protocol and client-server API
 that is not backwards compatible.
 
 The Matrix specification has been moved to a separate git repository:
-http://github.com/matrix-org/matrix-doc
+<http://github.com/matrix-org/matrix-doc>
 
 You will also need an updated syutil and config. See UPGRADES.rst.
 

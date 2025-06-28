@@ -11,7 +11,7 @@ category = ["Releases"]
 A small patch release containing features and bugs to support the upcoming launch of cross signing. We are very close now :)
 
 
-Get 1.12.4 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.12.4) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get 1.12.4 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.12.4) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 
 Changelog since v1.12.3

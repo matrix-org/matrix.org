@@ -37,7 +37,7 @@ job: {'{'}
   name: "synapse"
 
   target_group: {'{'}
-    target: "http://localhost:9092/"
+    target: "<http://localhost:9092/>"
   {'}'}
 {'}'}
 </pre>

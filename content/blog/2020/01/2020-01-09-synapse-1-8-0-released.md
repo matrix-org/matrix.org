@@ -11,7 +11,7 @@ Synapse 1.8.0 has arrived, it contains a whole host of bug fixes and tweaks, mos
 
 More generally we are spending a lot of time  improving the e2ee experience ahead of switching on e2ee by default, so watch this space.
 
-Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.8.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.8.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 
 Synapse 1.8.0 (2020-01-09)
@@ -93,6 +93,6 @@ Internal Changes
 - Simplify event creation code by removing redundant queries on the `event_reference_hashes` table. ([\#6629](https://github.com/matrix-org/synapse/issues/6629))
 - Fix errors when `frozen_dicts` are enabled. ([\#6642](https://github.com/matrix-org/synapse/issues/6642))
 
-Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.8.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.8.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 

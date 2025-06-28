@@ -98,7 +98,7 @@ April 11th
 
 ## Update 2019-04-12
 
-At around 5am UTC on Apr 12, the attacker used a cloudflare API key to repoint DNS for matrix.org to a defacement website (https://github.com/matrixnotorg/matrixnotorg.github.io).
+At around 5am UTC on Apr 12, the attacker used a cloudflare API key to repoint DNS for matrix.org to a defacement website (<https://github.com/matrixnotorg/matrixnotorg.github.io>).
 The API key was known compromised in the original attack, and during the rebuild the key was theoretically replaced.  However, unfortunately
 only personal keys were rotated, enabling the defacement.  We are currently doublechecking that all compromised secrets have been rotated.
 
@@ -110,7 +110,7 @@ for everyone to change their password</b>.  We will shortly be messaging and ema
 to change their passwords.  We will also look at ways of non-destructively forcing a password reset at next login.
 
 The attacker has also posted github issues detailing some of their actions and suggested remediations at
-https://github.com/matrix-org/matrix.org/issues/created_by/matrixnotorg.
+<https://github.com/matrix-org/matrix.org/issues/created_by/matrixnotorg>.
 
 This confirms that GPG keys used for signing packages were compromised.  These keys are used for signing
 the synapse debian repository (AD0592FE47F0DF61), and releases of Riot/Web (E019645248E8F4A1).

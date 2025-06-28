@@ -16,7 +16,7 @@ The second caused Synapse not to start when configured with certain password aut
 
 Sorry if you have been bitten!
 
-Get 1.15.1 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.15.1) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get 1.15.1 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.15.1) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 
 Changelog since v1.15.0

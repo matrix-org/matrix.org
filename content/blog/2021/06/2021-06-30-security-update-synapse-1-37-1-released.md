@@ -19,7 +19,7 @@ We're happy to say that Synapse 1.37.1 [fixes this](https://github.com/matrix-or
 
 **Also, we highly recommend that you disable open registration or, if you keep it enabled, use SSO or require email validation to avoid abusive signups. Empirically adding a CAPTCHA is not enough. Otherwise you may find your server blocked all over the place if it is hosting spambots.**
 
-**Finally, if your server has open registration, PLEASE check whether spambots have been registered on your server, and deactivate them.  Once deactivated, you will need to contact abuse@matrix.org to request that blocks on your server are removed**.
+**Finally, if your server has open registration, PLEASE check whether spambots have been registered on your server, and deactivate them.  Once deactivated, you will need to contact <abuse@matrix.org> to request that blocks on your server are removed**.
 
 Your best bet for spotting and neutralising dormant spambots is to review signups on your homeserver over the past 3-5 days and deactivate suspicious users. We do not recommend relying solely on lists of suspicious IP addresses for this task, as the distributed nature of the attack means any such list is likely to be incomplete or include shared proxies which may also catch legitimate users.
 
