@@ -46,6 +46,8 @@ We're excited to announce that our plan to conquer the world worked. We are ever
 We are privacy-centric and don't want to track people individually, but we want to make sure we still have a positive impact. In our apps, we allow people to express their frustration whenever something doesn't work.
 ```
 
+**Important:** Before selecting categories, please refer to the [Blog Categories](#blog-categories) section below for the complete list of available categories and their usage guidelines. Using consistent categories helps readers find relevant content and improves the overall browsability of the blog.
+
 ### Adding pictures in your post
 
 It is possible to add pictures to your posts in markdown. First you need to drop the pictures in [`/static/blog/img`](https://github.com/matrix-org/matrix.org/tree/main/static/blog/img). Then, in the markdown file itself add the following lines
@@ -60,6 +62,237 @@ It is possible to add pictures to your posts in markdown. First you need to drop
 This shortcode ensures that images have a consistent look across posts.
 
 We prefer using avif or webp files when possible. However if this is not an option we also accept PNG files provided they are reasonable sized and the file size is appropriate for web usage.
+
+## Blog Categories
+
+To improve the browsability and organization of the Matrix.org blog, all posts should be categorized using one or more of the predefined categories below. These categories help readers find relevant content and maintain consistency across the blog.
+
+### Primary Categories
+
+**This Week in Matrix**
+- The weekly community roundup posts
+- Updates on Matrix ecosystem developments
+- Community project highlights and news
+- Use: `category = ["This Week in Matrix"]`
+
+**General**
+- Announcements and major news from Matrix.org
+- Philosophy and vision posts
+- General Matrix ecosystem updates that don't fit other categories
+- Matrix adoption stories and use cases
+- Use: `category = ["General"]`
+
+**Foundation**
+- Updates from the Matrix.org Foundation
+- Governance announcements
+- Foundation policy changes
+- Organizational updates
+- Use: `category = ["Foundation"]`
+
+**Releases**
+- Synapse server releases
+- Spec releases
+- Major client releases
+- Important bridge releases
+- Use: `category = ["Releases"]`
+
+### Technical Categories
+
+**Tech**
+- Deep technical discussions
+- Protocol improvements
+- Technical tutorials and guides
+- Architecture explanations
+- Performance improvements
+- Use: `category = ["Tech"]`
+
+**Security**
+- Security advisories and updates
+- Vulnerability disclosures
+- Security research and improvements
+- Privacy enhancements
+- Use: `category = ["Security"]`
+
+**Spec**
+- Matrix specification updates
+- Spec development discussions
+- MSC (Matrix Spec Change) announcements
+- Protocol evolution
+- Use: `category = ["Spec"]`
+
+**Bridges**
+- Bridge announcements and updates
+- New bridge releases
+- Bridge tutorials and guides
+- Integration stories
+- Use: `category = ["Bridges"]`
+
+### Community Categories
+
+**Events**
+- Conference announcements
+- Meetup information
+- Hackathon announcements
+- Community events
+- Use: `category = ["Events"]`
+
+**Conference** (often combined with Events)
+- Specific conference-related content
+- Talk announcements
+- Conference recaps
+- Use: `category = ["Events", "Conference"]`
+
+**FOSDEM**
+- FOSDEM-specific content
+- Call for proposals
+- Event recaps
+- Use: `category = ["FOSDEM", "Events"]`
+
+**GSOC**
+- Google Summer of Code related posts
+- Student project announcements
+- GSoC progress updates and final reports
+- Use: `category = ["GSOC"]`
+
+### Specialized Categories
+
+**Tutorials**
+- Step-by-step guides
+- How-to articles
+- Educational content for developers
+- Best practices guides
+- Use: `category = ["Tutorials"]`
+
+**Research**
+- Academic research involving Matrix
+- Research partnerships
+- Technical research findings
+- Use: `category = ["Research"]`
+
+**Policy**
+- Legal and policy discussions
+- Compliance topics
+- Regulatory updates
+- Use: `category = ["Policy"]`
+
+**Trust & Safety**
+- Moderation improvements
+- Safety features
+- Community guidelines
+- Abuse prevention
+- Use: `category = ["Trust & Safety"]`
+
+**Governing Board**
+- Governing Board meeting reports
+- Board election announcements
+- Governance decisions
+- Use: `category = ["Governing Board"]`
+
+**Elections**
+- Board elections
+- Community voting
+- Election results
+- Use: `category = ["Elections"]`
+
+### Legacy and Occasional Categories
+
+**Holiday Special**
+- Annual holiday roundup posts
+- Seasonal updates
+- Use: `category = ["Holiday Special"]`
+
+**Thoughts**
+- Opinion pieces
+- Position statements
+- Commentary on industry topics
+- Use: `category = ["Thoughts"]`
+
+**In the News**
+- Matrix mentions in external media
+- Third-party coverage
+- Industry recognition
+- Use: `category = ["In the News"]`
+
+**Merch**
+- Merchandise announcements
+- Store updates
+- Use: `category = ["Merch"]`
+
+**matrix.org homeserver**
+- Specific updates about the matrix.org homeserver
+- Service announcements
+- Infrastructure updates
+- Use: `category = ["matrix.org homeserver"]`
+
+**Advocacy**
+- Advocacy efforts and campaigns
+- Policy advocacy work
+- Digital rights initiatives
+- Use: `category = ["Advocacy"]`
+
+**Compliance**
+- Regulatory compliance updates
+- Standards compliance
+- Legal compliance matters
+- Use: `category = ["Compliance"]`
+
+**Cryptography**
+- Cryptographic developments
+- Encryption algorithm updates
+- Crypto research and improvements
+- Use: `category = ["Cryptography"]`
+
+**DMA**
+- Digital Markets Act related content
+- EU DMA compliance
+- Interoperability requirements
+- Use: `category = ["DMA"]`
+
+**Encryption**
+- End-to-end encryption updates
+- Encryption key management
+- Encryption implementation details
+- Use: `category = ["Encryption"]`
+
+**EU**
+- European Union related content
+- EU policy discussions
+- European regulatory updates
+- Use: `category = ["EU"]`
+
+**Guides**
+- User guides and walkthroughs
+- Setup and configuration guides
+- Best practice guides
+- Use: `category = ["Guides"]`
+
+**News**
+- General news and updates
+- Industry news mentions
+- Ecosystem news
+- Use: `category = ["News"]`
+
+**Privacy**
+- Privacy feature announcements
+- Privacy policy updates
+- Privacy research and improvements
+- Use: `category = ["Privacy"]`
+
+**The Matrix Conference**
+- Matrix Conference announcements
+- Conference-specific content
+- Conference recaps and highlights
+- Use: `category = ["The Matrix Conference"]`
+
+### Multiple Categories
+
+Posts can and should use multiple categories when appropriate. Common combinations include:
+
+- `["Foundation", "Elections", "Governing Board"]` - Board election results
+- `["Events", "Conference"]` - Conference announcements
+- `["Releases", "Spec"]` - Specification releases
+- `["Tech", "Security"]` - Technical security improvements
+- `["General", "Foundation"]` - Major foundation announcements
 
 ### Embedding a YouTube player
 
