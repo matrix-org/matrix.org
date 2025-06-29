@@ -234,24 +234,6 @@ Posts can and should use multiple categories when appropriate. Common combinatio
 - `["Tech", "Security"]` - Technical security improvements
 - `["General", "Foundation"]` - Major foundation announcements
 
-### Category Usage Guidelines
-
-1. **Always use at least one primary category** - Every post should have General, Foundation, Releases, or This Week in Matrix
-2. **Be specific when possible** - Use Tech instead of General for technical content
-3. **Use multiple categories judiciously** - Typically 1-3 categories max
-4. **Maintain consistency** - Check existing posts for precedent
-5. **Update this guide** - If you need a new category, update this documentation first
-
-### Reviewing Existing Posts
-
-When reviewing or updating existing blog posts, consider:
-- Are the categories still appropriate?
-- Could the post benefit from more specific categorization?
-- Are there missing categories that would improve discoverability?
-- Do the categories match the actual content?
-
-This categorization system should be applied to all new posts and can be used to retroactively improve the organization of existing content.
-
 ### Embedding a YouTube player
 
 Embedding the YouTube Player loads cookies from youtube.com. This is fairly invasive in terms of privacy, and breaches the GDPR since we don't have a cookie banner to get visitor's consent to do so.
