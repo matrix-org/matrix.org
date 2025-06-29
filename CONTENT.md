@@ -224,6 +224,66 @@ To improve the browsability and organization of the Matrix.org blog, all posts s
 - Infrastructure updates
 - Use: `category = ["matrix.org homeserver"]`
 
+**Advocacy**
+- Advocacy efforts and campaigns
+- Policy advocacy work
+- Digital rights initiatives
+- Use: `category = ["Advocacy"]`
+
+**Compliance**
+- Regulatory compliance updates
+- Standards compliance
+- Legal compliance matters
+- Use: `category = ["Compliance"]`
+
+**Cryptography**
+- Cryptographic developments
+- Encryption algorithm updates
+- Crypto research and improvements
+- Use: `category = ["Cryptography"]`
+
+**DMA**
+- Digital Markets Act related content
+- EU DMA compliance
+- Interoperability requirements
+- Use: `category = ["DMA"]`
+
+**Encryption**
+- End-to-end encryption updates
+- Encryption key management
+- Encryption implementation details
+- Use: `category = ["Encryption"]`
+
+**EU**
+- European Union related content
+- EU policy discussions
+- European regulatory updates
+- Use: `category = ["EU"]`
+
+**Guides**
+- User guides and walkthroughs
+- Setup and configuration guides
+- Best practice guides
+- Use: `category = ["Guides"]`
+
+**News**
+- General news and updates
+- Industry news mentions
+- Ecosystem news
+- Use: `category = ["News"]`
+
+**Privacy**
+- Privacy feature announcements
+- Privacy policy updates
+- Privacy research and improvements
+- Use: `category = ["Privacy"]`
+
+**The Matrix Conference**
+- Matrix Conference announcements
+- Conference-specific content
+- Conference recaps and highlights
+- Use: `category = ["The Matrix Conference"]`
+
 ### Multiple Categories
 
 Posts can and should use multiple categories when appropriate. Common combinations include:
