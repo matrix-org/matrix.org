@@ -18,7 +18,7 @@ Note: You can't send a message to this room.
 
 ## How can I tell that this is the official account in my Matrix client or app?
 
-You can verify that the message is from the official account by checking the Matrix user ID of the sender. The user ID should match <code>@sender:matrix.org</code> exactly.
+You can verify that the message is from the official account by checking the Matrix user ID of the sender. The user ID should match <code>@server:matrix.org</code> exactly.
 
 How to check this depends on the client or app you use. Typically you need to click or tap the profile or avatar of the user.
 
