@@ -42,9 +42,9 @@ banner = true
 
 # Possible states: "cfp", "awaiting_schedule", "scheduled", "no_tickets", "live", "watch-recordings", "none"
 # None is used when elections instead are used
-conference_state = "cfp"
+conference_state = "awaiting_schedule"
 
-conference_website = "https://2025.matrix.org"
+conference_website = "https://conference.matrix.org"
 conference_cfp = "https://cfp.2025.matrix.org/matrix-conf-2025/cfp"
 conference_dates = "Oct 15-18"
 conference_location = "Strasbourg, France"
