@@ -3,11 +3,6 @@ title = "Matrix.org Foundation Privacy Policy"
 version = "3.2.0"
 +++
 
-+++
-title = "Matrix.org Foundation Privacy Policy"
-version = "3.2.0"
-+++
-
 Please read this document carefully before accessing or using this service.
 
 ## 1. Introduction
