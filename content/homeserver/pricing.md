@@ -2,7 +2,7 @@
 title = "Matrix.org Homeserver Pricing"
 +++
 
-One of the missions of the Matrix.org Foundation is to nurture and grow the ecosystem and the network. To support this mission, the Foundation provides the public Matrix.org homeserver as an easy entry point for those wanting to create their first Matrix account and join the network. The Matrix.org homeserver has played a key role in the growth of the ecosystem since the project started in 2014.
+One of the missions of the Matrix.org Foundation is to nurture and grow the ecosystem and the network. To support this mission, the Foundation provides the public matrix.org homeserver as an easy entry point for those wanting to create their first Matrix account and join the network. The matrix.org homeserver has played a key role in the growth of the ecosystem since the project started in 2014.
 
 To help pay for the costs associated with providing a public homeserver, the Foundation is introducing premium accounts as announced in the blog post [here](/blog/2025/06/funding-homeserver-premium).
 
@@ -14,7 +14,7 @@ Where a user is not currently on a plan they may be changed to a free plan in th
 
 Matrix is a decentralised network by design, and the goal is to give the users the ability to choose where they would like to create their accounts, as it then gives them control over where their data is stored and who is looking after them.
 
-This means that you don’t have to be using the Matrix.org homeserver. You could choose to use another shared homeserver or you could have your own dedicated homeserver.
+This means that you don’t have to be using the matrix.org homeserver. You could choose to use another shared homeserver or you could have your own dedicated homeserver.
 
 For those that want to have their own homeserver the Foundation maintains a list of [known hosting providers](/ecosystem/hosting/) that might be suitable for your needs.
 
