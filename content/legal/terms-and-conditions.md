@@ -141,7 +141,7 @@ Some jurisdictions prohibit the exclusion or limitation of liability for consequ
 
 ## 6. Payment
 
-6.1 Access to paid Usage Plans and services is subject to the payment of fees in accordance with the pricing published at the time of purchase or as otherwise communicated to you [here](https://matrix.org/homeserver-pricing/).
+6.1 Access to paid Usage Plans and services is subject to the payment of fees in accordance with the pricing published at the time of purchase or as otherwise communicated to you [here](/homeserver/pricing/).
 
 6.2 Fees are payable in advance for the term of the selected Usage Plan and are non-refundable. The subscription to the selected Usage Plan will automatically renew for successive rolling periods equal to the original term. You may cancel your subscription at any time by submitting the online cancellation form. Cancellation will prevent automatic renewal, but your Usage Plan will remain active up to the end of the prepaid term.
 
