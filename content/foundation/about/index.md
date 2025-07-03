@@ -111,7 +111,7 @@ experts and the founding Matrix team to ensure the project stays on track.
 
 ### Legal Details
 
-* The Matrix.org Foundation C.I.C is registered in the UK as Company
+* The Matrix.org Foundation C.I.C. is registered in the UK as Company
   [#11648710](https://beta.companieshouse.gov.uk/company/11648710)
 * The official articles of association of the Foundation may be
   downloaded [here](/media/2019-06-10%20-%20Matrix.org%20Foundation%20CIC%20Articles%20of%20Association.pdf)
