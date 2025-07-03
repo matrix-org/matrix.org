@@ -22,9 +22,9 @@ Where you read Matrix.org,  Matrix.org Foundation C.I.C., The Matrix.org Foundat
 
 The Matrix protocol is licensed by the Matrix.org Foundation which makes it available to third parties who set up their own homeserver. This privacy policy does not apply to such Matrix servers run by anyone else - Matrix is an open network like the Web and this agreement only applies to the server (Matrix.org) provided by Element.
 
-Matrix.org is the Data Controller for the Service and works with [Element](element.io) as a Processor for data processing, hosting and management purposes. We can be contacted as per the details below:
+Matrix.org is the Data Controller for the Service and works with [Element](https://element.io) as a Processor for data processing, hosting and management purposes. We can be contacted as per the details below:
 
-Email: [dpo@matrix.org](mailto:dpo@matrix.org)
+Email: <dpo@matrix.org>
 
 Postal address:
 
@@ -34,7 +34,7 @@ London
 United Kingdom
 EC4R 1AG
 
-Should you have other questions or concerns about this document, please send us an email at [dpo@matrix.org](mailto:dpo@matrix.org).
+Should you have other questions or concerns about this document, please send us an email at <dpo@matrix.org>.
 
 ### 1.2 This is a living document
 
@@ -73,7 +73,7 @@ You have rights in relation to the personal data we hold about you. Some of thes
 1. The right to object
 1. Rights in relation to automated decision making and profiling.
 
-We may ask for proof of identity before responding to your request. For more details about these rights, please see the guidance provided by the ICO. If you have any questions or are unsure how to exercise your rights, please contact us at [dpo@matrix.org](mailto:dpo@matrix.org).
+We may ask for proof of identity before responding to your request. For more details about these rights, please see the guidance provided by the ICO. If you have any questions or are unsure how to exercise your rights, please contact us at <dpo@matrix.org>.
 
 #### 2.1.3 Right to erasure
 
@@ -123,7 +123,7 @@ We collect information about you when you register for an account. This informat
 * Your email address (if you choose to provide it)
 * Your verified telephone number (if you choose to provide it)
 * Your username and password is used to authenticate your access to the Service and to uniquely identify you within the Service.
-* Your password hashes stored until your account is deactivated (see 2.6 for details on how passwords are handled securely). Your username is stored indefinitely to avoid account recycling.
+* Your password hash is stored until your account is deactivated (see 2.6 for details on how passwords are handled securely). Your username is stored indefinitely to avoid account recycling.
 * When you've registered your account and what SSO links you might have (i.e. 'Facebook ID', 'Google ID', etc.)
 * Type of account (i.e. free or paid)
 
@@ -306,7 +306,7 @@ If you become aware of any unauthorised use of your account or any other breach 
 
 If you forget your password (and you have registered an email address) you can use the password reset facility to reset it.
 
-You can manage your account by using a Matrix client such as Element, FluffyChat, Hydrogen and many others. Click [here](matrix.org/ecosystem/clients) for a comprehensive list of Matrix clients.
+You can manage your account by using a Matrix client such as Element, FluffyChat, Hydrogen and many others. Click [here](https://matrix.org/ecosystem/clients) for a comprehensive list of Matrix clients.
 
 It is our policy to not change passwords on your behalf. This is ultimately to protect your privacy and the integrity of your account.
 
@@ -329,7 +329,7 @@ Rooms have different visibility settings which are determined by the room admini
 * `shared`: people need to join the room to see the history, but will then see the history up to when this visibility setting was set (the change is not retroactive).
 * `world_readable`: everyone can see the room history without even joining the room.
 
-If you share information in a room set to world_readable this might be available to people outside the Matrix ecosystem and indexed by search engines, via projects such as [archive.matrix.org](archive.matrix.org). Please ensure that you double check the settings of each room before you participate and always avoid sharing personal and sensitive data in unencrypted rooms.
+If you share information in a room set to world_readable this might be available to people outside the Matrix ecosystem and indexed by search engines, via projects such as [archive.matrix.org](https://archive.matrix.org). Please ensure that you double check the settings of each room before you participate and always avoid sharing personal and sensitive data in unencrypted rooms.
 
 In encrypted rooms, the data is stored in our databases but the encryption keys are stored only on your devices or by yourself. Users can optionally backup an encrypted copy of their keys on the Service to aid recovery if they lose all their keys and devices. This key backup is encrypted by a recovery key that only the user has access to. Element (the company, employees, and contractors) are unable to read your message content in our database. If you lose access to your encryption keys, you lose access to your messages forever.
 
@@ -377,7 +377,7 @@ Please act in good faith towards our users' privacy and data during your disclos
 
 ## Making a Complaint
 
-We try to meet the highest standards when collecting and using personal information. For this reason, we take any complaints we receive about this very seriously. We encourage people to bring it to our attention at [dpo@matrix.org](mailto:dpo@matrix.org) if they think that our collection or use of information is unfair, misleading or inappropriate. We would also welcome any suggestions for improving our procedures.
+We try to meet the highest standards when collecting and using personal information. For this reason, we take any complaints we receive about this very seriously. We encourage people to bring it to our attention at <dpo@matrix.org> if they think that our collection or use of information is unfair, misleading or inappropriate. We would also welcome any suggestions for improving our procedures.
 
 If you want to make a complaint about the way we have processed your personal information to the supervisory authority, you can contact the ICO (the statutory body which oversees data protection law) at <https://www.ico.org.uk/concerns>.
 
