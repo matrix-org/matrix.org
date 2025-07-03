@@ -118,7 +118,7 @@ We collect information about you when you input it into the Service or otherwise
 We collect information about you when you register for an account. This information is kept to a minimum on purpose, and is restricted to:
 
 * Username
-* Password
+* Password hash
 * Display Name (if you choose to provide one)
 * Your email address (if you choose to provide it)
 * Your verified telephone number (if you choose to provide it)
@@ -184,7 +184,7 @@ We use Donorbox to collect donations from individuals and organisations. By dona
 * Your email address
 * Your Matrix ID (optional)
 
-Donorbox manages payment processing via Stripe. You can review their Privacy Policy here.
+Donorbox manages payment processing via Stripe. You can review their Privacy Policy [here](https://donorbox.org/privacy).
 
 **2.2.1.4 Information collected for Event Management**
 
