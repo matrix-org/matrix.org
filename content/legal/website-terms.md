@@ -157,4 +157,4 @@ A waiver of any right or remedy under these Terms of Use or by law is only effec
 * 1.2.1 - minor updates - July 2020  
 * 1.2.2 - minor updates - August 2022  
 * 2.0.0 - clarifications around the relationship between the Matrix.org Foundation and Element - June 2023  
-* 3.0.0 – major update to align with Digital Services Act and Online Safety Act , separate the terms for the matrix.org website and the Matrix homeserver, and update the Foundation’s registered address  – July 2025
+* 3.0.0 – major update to align with Digital Services Act and Online Safety Act , separate the terms for the matrix.org website and the matrix.org homeserver, and update the Foundation’s registered address  – July 2025
