@@ -181,7 +181,7 @@ You agree that you shall not:
 
 * Use the Service for any unlawful purposes or in support of illegal activities under UK/EU law. By using the Service, you agree to comply with all applicable laws governing your online conduct and content.
 
-* Act in a way that is in violation of our [Code of Conduct](https://matrix.org/legal/code-of-conduct) in rooms that are part of the Matrix Space ([.team:matrix.org](https://matrix.to/#/#team:matrix.org)).
+* Act in a way that is in violation of our [Code of Conduct](https://matrix.org/legal/code-of-conduct) in rooms that are part of the Matrix Space ([#team:matrix.org](https://matrix.to/#/#team:matrix.org)).
 
 * Violate the rights of The Foundation, Element (i.e., New Vector Limited and any affiliated company) or any third party (including rights of privacy and publicity) or abuse, defame, harass, stalk or threaten another.
 
