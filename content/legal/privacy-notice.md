@@ -14,7 +14,7 @@ Please read this document carefully before accessing or using this service.
 Most Privacy Policy documents are unreadable. They are written by lawyers and for lawyers, and in our opinion are not very effective.
 Data protection and privacy are important, and we want you to understand the issues involved. For that reason we decided to use plain English instead as much as possible, to make our terms as clear as possible.
 
-When you read 'the Matrix.org homeserver' or 'the Service' below, it refers to the services made available at <matrix.org> which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
+When you read 'the Matrix.org homeserver' or 'the Service' below, it refers to the services made available at [matrix.org](/) which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
 
 The public Matrix Network is a decentralised and openly federated communication network. This means that user messages are replicated on each participant's server and messages posted to a room are visible to all participants including in some cases any new joiners. This is further explained at 2.3.
 
