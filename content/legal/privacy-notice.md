@@ -28,10 +28,10 @@ Email: <dpo@matrix.org>
 
 Postal address:
 
-The Matrix.org Foundation
-10 Queen Street Place
-London
-United Kingdom
+The Matrix.org Foundation  
+10 Queen Street Place  
+London  
+United Kingdom  
 EC4R 1AG
 
 Should you have other questions or concerns about this document, please send us an email at <dpo@matrix.org>.
