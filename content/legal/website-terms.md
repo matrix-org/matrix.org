@@ -3,6 +3,8 @@ title = "Matrix.org Website Terms of Use"
 version = "3.1.0"
 +++
 
+Effective date of 21 July 2025
+
 ## 1. Introduction
 
 ### 1.1 English, not Legalese
