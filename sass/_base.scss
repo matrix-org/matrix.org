@@ -196,6 +196,17 @@ pre table {
     border-collapse: collapse;
 }
 
+:not(pre)>table {
+    border-collapse: collapse;
+    border: 1px solid #000000;
+
+    td,
+    th {
+        padding: .5rem;
+        border: 1px solid #000000;
+    }
+}
+
 /* The black block on pages at the top. */
 .page-header {
     display: flex;

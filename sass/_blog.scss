@@ -19,14 +19,18 @@ article.post {
     table {
         table-layout: fixed;
         border-spacing: 0;
+        border: unset;
+        border-collapse: unset;
 
         th {
+            border: unset;
             border-top: 1px solid var(--borders-color);
         }
 
         td,
         th {
             padding: .5rem;
+            border: unset;
             border-bottom: 1px solid var(--borders-color);
         }
 
