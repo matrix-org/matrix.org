@@ -22,7 +22,7 @@ For those that want to have their own homeserver the Foundation maintains a list
 
 Details of pricing have not yet been finalised, but will be published here once usage plans will be made available.
 
-Pricing may change over time, as described in the [Homeserver Terms](/legal/terms-and-conditions).
+Pricing may change over time, as described in the [Homeserver Terms](/legal/terms-and-conditions#6-payment).
 
 ## Usage limits
 
