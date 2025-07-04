@@ -11,7 +11,7 @@ Hello world,
 
 Synapse 0.3.3 was released today, concentrating on both feature & stability improvements on the webclient.  The big news is that 1:1 video calling via WebRTC is implemented (although we're still working on some stability issues, and Synapse doesn't support TURN yet.  This will be coming in the next few days however!).
 
-Play with the demo server at http://matrix.org/alpha, or update your own homeserver with a <code>git pull && ./synctl restart</code> or by cloning a new checkout with <code>git clone https://github.com/matrix-org/synapse.git</code>
+Play with the demo server at <http://matrix.org/alpha>, or update your own homeserver with a <code>git pull && ./synctl restart</code> or by cloning a new checkout with <code>git clone https://github.com/matrix-org/synapse.git</code>
 
 --Matthew
 

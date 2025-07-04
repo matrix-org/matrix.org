@@ -11,7 +11,7 @@ Hi all,
 
 We've released Synapse 0.19.3-rc2 as 0.19.3 with no changes. This is a slightly unusual release, as 0.19.3-rc2 dates from March 13th and <a href="https://github.com/matrix-org/synapse/compare/672dcf5...d101488">a lot of stuff</a> has landed on the develop branch since then - however, we'll be releasing that as 0.20.0 once it's ready. Instead, 0.19.3 has a set of intermediary performance and bug fixes; the only new feature is a set of admin APIs kindly contributed by <a href="https://github.com/morteza-araby">@morteza-araby</a>.
 
-The changelog follows - please upgrade from https://github.com/matrix-org/synapse or your OS packages as normal :)
+The changelog follows - please upgrade from <https://github.com/matrix-org/synapse> or your OS packages as normal :)
 
 ### Changes in synapse v0.19.3 (2017-03-20)
 

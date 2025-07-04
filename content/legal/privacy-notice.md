@@ -12,7 +12,7 @@ Please read this document carefully before accessing or using this service.
 Most Privacy Policy documents are unreadable. They are written by lawyers and for lawyers, and in our opinion are not very effective.
 Data protection and privacy are important, and we want you to understand the issues involved. For that reason we decided to use plain English instead as much as possible, to make our terms as clear as possible.
 
-When you read 'the Matrix.org homeserver' or 'the Service' below, it refers to the services made available at https://matrix.org which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
+When you read 'the Matrix.org homeserver' or 'the Service' below, it refers to the services made available at <https://matrix.org> which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
 
 The public Matrix Network is a decentralised and openly federated communication network. This means that user messages are replicated on each participant's server and messages posted to a room are visible to all participants including in some cases any new joiners. This is further explained at 2.3.
 
@@ -39,7 +39,7 @@ Should you have other questions or concerns about this document, please send us 
 
 This is a living document. With your help, we want to make it the best in the industry.
 
-If you read something that rubs you the wrong way, or if you think of something that should be added, please get in touch! We're all ears! Email dpo@matrix.org and we'll chat.
+If you read something that rubs you the wrong way, or if you think of something that should be added, please get in touch! We're all ears! Email <dpo@matrix.org> and we'll chat.
 We don't amend this document for any specific users or use case, but if your proposed changes apply to all of our users, we'll be happy to update it for everyone. Scroll to the bottom to see the history so far.
 
 We will likely improve this document over time and we will take steps to inform our users about any updates. By continuing to use the Service, you will implicitly accept the changes we make. If updates to this document are ever associated with significant changes to the way we collect our process your data, we will promptly notify you.
@@ -99,7 +99,7 @@ Each case will be decided based on the factors listed above. In most situations 
 
 #### 2.1.3 Data portability
 
-Under GDPR you have a right to request a copy of your data in a commonly-accepted format. If you would like a copy of your data, please send a request over Matrix to dpo@matrix.org. In the future we will provide a better interface for this!
+Under GDPR you have a right to request a copy of your data in a commonly-accepted format. If you would like a copy of your data, please send a request over Matrix to <dpo@matrix.org>. In the future we will provide a better interface for this!
 
 #### 2.2 What Information Do You Collect About Me and Why?
 
@@ -160,7 +160,7 @@ We have selected Printful to provide our shopfront. By purchasing from our shop,
 * Your delivery address
 * IP addressed and cookies
 
-For further details, please refer directly to Printful's privacy policy: https://www.printful.com/policies/privacy 
+For further details, please refer directly to Printful's privacy policy: <https://www.printful.com/policies/privacy> 
 
 **Stripe and Paypal**
 
@@ -171,7 +171,7 @@ We use Stripe and Paypal to handle payment processing for the merchandise shop. 
 
 Stripe and/or Paypal takes care of all payment processing, so The Matrix.org Foundation and its employees will never see your payment details.
 
-Here is Stripe's Privacy Policy: https://stripe.com/privacy-shield-policy and Paypal's: https://www.paypal.com/webapps/mpp/ua/privacy-full
+Here is Stripe's Privacy Policy: <https://stripe.com/privacy-shield-policy> and Paypal's: <https://www.paypal.com/webapps/mpp/ua/privacy-full>
 
 **Donorbox**
 
@@ -181,7 +181,7 @@ We use Donorbox to collect donations from individuals and organisations. By dona
 * Your email address
 * Your Matrix ID (optional)
 
-Donorbox manages payment processing via Stripe. You can review their Privacy Policy here: https://donorbox.org/privacy
+Donorbox manages payment processing via Stripe. You can review their Privacy Policy here: <https://donorbox.org/privacy>
 
 **2.2.1.4 Information collected for Event Management**
 
@@ -203,7 +203,7 @@ If you request an invoice, we also collect:
 * City
 * Country
 
-For more information on Pretix, who support us with event ticketing, please see their Privacy Policy here: https://pretix.eu/about/en/privacy
+For more information on Pretix, who support us with event ticketing, please see their Privacy Policy here: <https://pretix.eu/about/en/privacy>
 
 **Pretalx** – specifically with regards to event speakers, we collect:
 
@@ -218,7 +218,7 @@ For more information on Pretix, who support us with event ticketing, please see 
 * Twitter handle
 * Other media (e.g., a text box where speakers can link to their website or any other relevant content)
 
-For more information on Pretalx, who support us with event scheduling, please see their Privacy Policy here: https://pretalx.com/p/privacy
+For more information on Pretalx, who support us with event scheduling, please see their Privacy Policy here: <https://pretalx.com/p/privacy>
 
 #### 2.2.2 Information we collect automatically as you use the Service:
 
@@ -234,7 +234,7 @@ Currently, we log the IP addresses of everyone who accesses the Service. This da
 
 We use the privacy-preserving website analytics solution Plausible. Plausible allows us to understand how our website is used, without the use of cookies or other tracking technologies. Your use of the matrix.org website is not associated with any persistent identifiers or cross-site tracking and no personal data is collected about you. 
 
-For full details on how Plausible processes data please refer to their Privacy Policy: https://plausible.io/data-policy
+For full details on how Plausible processes data please refer to their Privacy Policy: <https://plausible.io/data-policy>
 
 ### 2.3 What information is shared with third-parties and why?
 
@@ -294,7 +294,7 @@ We never store password data in plain text; instead they are stored hashed (with
 
 It is your sole responsibility to keep your user name, password and other sensitive information confidential. Actions taken using your credentials shall be deemed to be actions taken by you, with all consequences including service termination, civil and criminal penalties.
 
-If you become aware of any unauthorised use of your account or any other breach of security, you must notify Element immediately by sending an email to [security@matrix.org](mailto:security@matrix.org). Suspicious devices can be deleted using the User Settings management tools in a Matrix client such as https://element.io/app, and users should manage good password hygiene (e.g. using a password manager) and change their password if they believe their account is compromised.
+If you become aware of any unauthorised use of your account or any other breach of security, you must notify Element immediately by sending an email to [security@matrix.org](mailto:security@matrix.org). Suspicious devices can be deleted using the User Settings management tools in a Matrix client such as <https://element.io/app>, and users should manage good password hygiene (e.g. using a password manager) and change their password if they believe their account is compromised.
 
 If you forget your password (and you have registered an email address) you can use the password reset facility to reset it.
 
@@ -308,7 +308,7 @@ We never knowingly collect or maintain information in the Service from those we 
 
 ### 2.8 How can I access or correct my information?
 
-You can access all that we collect about you by using any compatible Matrix client (such as https://element.io/app) and managing your User Settings. You can request a download of a copy of all your data as per section 2.1.3.
+You can access all that we collect about you by using any compatible Matrix client (such as <https://element.io/app>) and managing your User Settings. You can request a download of a copy of all your data as per section 2.1.3.
 
 ### 2.9 Who can see my messages and files?
 
@@ -337,13 +337,13 @@ We never share what we see with other users or the general public.
 
 ### 2.11 Who else has access to my data?
 
-Element is a Processor of your data, managing the homeserver on behalf of the Matrix.org Foundation. We host the majority of the Service in Mythic Beasts data centres. Here’s Mythic Beast’s privacy policy: https://www.mythic-beasts.com/terms/privacy
+Element is a Processor of your data, managing the homeserver on behalf of the Matrix.org Foundation. We host the majority of the Service in Mythic Beasts data centres. Here’s Mythic Beast’s privacy policy: <https://www.mythic-beasts.com/terms/privacy>
 
-We host some Services in in UpCloud data centres. Here's UpCloud's privacy policy: https://upcloud.com/privacy-policy/. UpCloud controls physical access to their locations.
+We host some Services in in UpCloud data centres. Here's UpCloud's privacy policy: <https://upcloud.com/privacy-policy/>. UpCloud controls physical access to their locations.
 
-We store some files shared through the Service on Amazon Web Services (AWS). Amazon employees have access to this data. Here's Amazon's privacy policy: https://aws.amazon.com/privacy/. Amazon controls physical access to their locations.
+We store some files shared through the Service on Amazon Web Services (AWS). Amazon employees have access to this data. Here's Amazon's privacy policy: <https://aws.amazon.com/privacy/>. Amazon controls physical access to their locations.
 
-We use Cloudflare to mitigate the risk of DDoS attacks. Here's CloudFlare's privacy policy: https://www.cloudflare.com/privacypolicy/
+We use Cloudflare to mitigate the risk of DDoS attacks. Here's CloudFlare's privacy policy: <https://www.cloudflare.com/privacypolicy/>
 
 Physical access to our offices and locations use typical physical access restrictions.
 
@@ -363,7 +363,7 @@ All of our users' data for the Service currently resides in the same database cl
 
 ### 2.13 What should I do if I find a security vulnerability in the Service?
 
-If you have discovered a security concern, please email us at security@matrix.org. We'll work with you to make sure that we understand the scope of the issue, and that we fully address your concern. We consider correspondence sent to security@matrix.org our highest priority, and work to address any issues that arise as quickly as possible.
+If you have discovered a security concern, please email us at <security@matrix.org>. We'll work with you to make sure that we understand the scope of the issue, and that we fully address your concern. We consider correspondence sent to <security@matrix.org> our highest priority, and work to address any issues that arise as quickly as possible.
 
 Please act in good faith towards our users' privacy and data during your disclosure. White hat security researchers are always appreciated.
 
@@ -371,7 +371,7 @@ Please act in good faith towards our users' privacy and data during your disclos
 
 We try to meet the highest standards when collecting and using personal information. For this reason, we take any complaints we receive about this very seriously. We encourage people to bring it to our attention at [dpo@matrix.org](dpo@matrix.org) if they think that our collection or use of information is unfair, misleading or inappropriate. We would also welcome any suggestions for improving our procedures.
 
-If you want to make a complaint about the way we have processed your personal information to the supervisory authority, you can contact the ICO (the statutory body which oversees data protection law) at https://www.ico.org.uk/concerns.
+If you want to make a complaint about the way we have processed your personal information to the supervisory authority, you can contact the ICO (the statutory body which oversees data protection law) at <https://www.ico.org.uk/concerns>.
 
 ## Document History
 

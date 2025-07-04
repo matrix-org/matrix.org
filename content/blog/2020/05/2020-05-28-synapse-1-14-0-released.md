@@ -19,7 +19,7 @@ You'll also find support for [rooms v6](https://matrix.org/docs/spec/rooms/v6). 
 
 As an aside we continue to be very happy with using Redis for worker inter-communication and will likely recommend it for production use in the coming weeks.
 
-Get 1.14.0 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.14.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get 1.14.0 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.14.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 
 Changelog since v1.13.0

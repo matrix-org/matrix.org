@@ -15,7 +15,7 @@ The main change is to introduce an experimental API [MSC2432](https://github.com
 
 We've also changed the default power levels for new rooms so that room upgrades and ACLs require you to be an Admin (PL100), and invites in public rooms now require you to be a moderator (PL50).
 
-Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.11.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.11.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 
 Synapse 1.11.0 (2020-02-21)
