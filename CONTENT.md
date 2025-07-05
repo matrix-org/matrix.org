@@ -41,10 +41,19 @@ category = ["Foundation"]
 
 We're excited to announce that our plan to conquer the world worked. We are everywhere, and people seem to be happy about it!
 
+<!-- more -->
+
 ## Our positive impact
 
 We are privacy-centric and don't want to track people individually, but we want to make sure we still have a positive impact. In our apps, we allow people to express their frustration whenever something doesn't work.
 ```
+
+### "Continue reading..." marker
+
+The blog overview page <https://matrix.org/blog/> and [taxonomy pages](https://www.getzola.org/documentation/content/taxonomies/) for categories <https://matrix.org/category/> and authors <https://matrix.org/author/> include blog posts verbatim by default.
+To keep these overviews tidy and easy to browse, we add the `<!-- more -->` to the markdown source of the page.
+This marker tells Zola where to stop and put a link to the individual post instead, resulting in only a teaser being shown on the overview pages.
+After the first section or 1-2 paragraphs is often a good place for this.
 
 ### Adding pictures in your post
 
