@@ -24,4 +24,4 @@ apple_app_store = { app_id = "id1083446067", org = "vector" }
 flathub.app_id = "im.riot.Riot"
 +++
 
-Element Classic is a previous-generation mobile client that is still receiving security updates but is not developed further.
+The previous-generation Element mobile client that is still receiving security updates but is not developed further.
