@@ -19,7 +19,7 @@
   - [ ] Use the right level of headings: The page title will use a level 1 headings, so your headings should use level 2 and below.
   - [ ] Use internal links: when linking to another page on <https://matrix.org>, use absolute `[label](/target)` or relative `[label](subpage)` links.
 - For blog posts:
-  - [ ] Verify the date. If there are multiple blog posts published on the same day, it is important to set times for both so they appear in the right order.
+  - [ ] Verify the date and post ordering on the `/blog` page, especially for multiple posts on the same day. Prefer UTC format, e.g. `2025-12-01T14:00:00Z` for Dec 1st, 2025, 2pm UTC.
   - [ ] Set the correct author and category. Browse existing ones at <https://matrix.org/author/> and <https://matrix.org/category/> to match them.
 - [ ] Let us know if you are contributing in a specific role, such as on behalf of an organisation or team, [for example](https://github.com/matrix-org/matrix.org/pull/2788).
 - [ ] Let us know if your PR is time-sensitive in any way.
