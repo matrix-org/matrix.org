@@ -64,7 +64,7 @@ Send your preservation requests to [abuse@matrix.org](mailto:abuse@matrix.org).
 
 ### Reporting Terms of Service Violations
 
-If you believe that a user or room is violating our [Terms and Conditions](https://matrix.org/legal/terms-and-conditions), please report this information via [abuse@matrix.org](mailto:abuse@matrix.org) providing as much information as possible, and we will take action as appropriate. 
+If you believe that a user or room is violating our [Terms](https://matrix.org/legal/terms-and-conditions), please report this information via [abuse@matrix.org](mailto:abuse@matrix.org) providing as much information as possible, and we will take action as appropriate. 
 
 We do not remove content based on disagreements, allegations or breaches of rules related to specific communities. Removal of content will only occur when it breaches our [Terms](https://matrix.org/legal/terms-and-conditions). We may refer information about accounts sharing illegal content to the relevant authorities.
 

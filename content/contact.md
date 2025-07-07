@@ -9,9 +9,10 @@ For direct inquiries about the following topics, please email us:
 
 - [abuse@matrix.org](mailto:abuse@matrix.org) if you need to urgently report
   abuse on the platform. See also our [Code of Conduct](/legal/code-of-conduct/) and the
-  Matrix.org Homeserver Terms and Conditions (specifically [[1]](/legal/terms-and-conditions/#6-2-illegal-content)
-  and [[2]](https://matrix.org/legal/terms-and-conditions/#1-4-breach-of-terms)).
+  Matrix.org Homeserver Terms (specifically [[1]](/legal/terms-and-conditions/#7-3-illegal-and-regulated-content)
+  and [[2]](/legal/terms-and-conditions/#1-3-breach-of-terms)).
 - [support@matrix.org](mailto:support@matrix.org) for more general support and
+- [billing-support@matrix.org](mailto:billing-support@matrix.org) for support with your matrix.org homeserver [premium account](/homeserver/pricing).
   commercial queries.
 - [security@matrix.org](mailto:security@matrix.org) to disclose security issues.
   Also see our [Security Disclosure Policy](/security-disclosure-policy/).
