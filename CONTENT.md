@@ -62,8 +62,9 @@ It is possible to add pictures to your posts in markdown. First you need to drop
 ```jinja
 {{ figure(
     img="/blog/img/your-picture-name.avif"
-    caption="A description of the picture")
-}}
+    caption="A description of the picture"          # can be set to an empty string
+    alt="A picture description for screen readers"  # optional, should only be used when leaving the caption empty
+) }}
 ```
 
 This shortcode ensures that images have a consistent look across posts.
