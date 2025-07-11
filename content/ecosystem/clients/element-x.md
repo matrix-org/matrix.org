@@ -4,7 +4,7 @@ template = "ecosystem/client.html"
 [extra]
 thumbnail = "element-x.svg"
 maintainer = "Element"
-maturity = "Beta"
+maturity = "Stable"
 repo = "https://github.com/element-hq"
 matrix_room = "#element-x-ios:matrix.org"
 licence = "Apache-2.0"
@@ -24,4 +24,4 @@ google_play_store.app_id = "io.element.android.x"
 apple_app_store = { app_id = "id1631335820", org = "vector" }
 +++
 
-Element X is pioneering the Matrix 2.0 implementation, notably supporting fast sync with sliding sync.
+Next generation Element on mobile with native OIDC, sliding sync and Matrix RTC for calls.

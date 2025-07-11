@@ -1,12 +1,12 @@
 +++
-title = "Element Web / Desktop"
+title = "Element Classic"
 template = "ecosystem/client.html"
 [extra]
-thumbnail = "element.svg"
+thumbnail = "element-classic.svg"
 maintainer = "Element"
 maturity = "Stable"
 repo = "https://github.com/element-hq"
-matrix_room = "#element-web:matrix.org"
+matrix_room = "#element-ios:matrix.org"
 licence = "Apache-2.0"
 latest_release = "2022-11-02"
 featured = true
@@ -20,10 +20,9 @@ sso = true
 multi_account = false
 multi_language = true
 [extra.packages]
-windows_installer = "https://element.io/download"
-macos_installer = "https://element.io/download"
-flathub.app_id = "im.riot.Riot"
-webapp = "https://app.element.io"
+google_play_store.app_id = "im.vector.app"
+f_droid.app_id = "im.vector.app"
+apple_app_store = { app_id = "id1083446067", org = "vector" }
 +++
 
-A glossy web and desktop client with an emphasis on performance and usability.
+Previous generation mobile app. Supported, but not developed further.
