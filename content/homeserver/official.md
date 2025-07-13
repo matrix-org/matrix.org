@@ -2,13 +2,13 @@
 title = "Matrix.org (Official Account)"
 +++
 
-## Who is the Matrix.org (Official Account) <code>@server:matrix.org</code>?
+## Who is the Matrix.org (Official Account) `@server:matrix.org`?
 
-The Matrix.org Foundation uses <code>@server:matrix.org</code> to message users on the matrix.org homeserver. It is a special account, used to send information from the server to registered users.
+The Matrix.org Foundation uses `@server:matrix.org` to message users on the matrix.org homeserver. It is a special account, used to send information from the server to registered users.
 
-<div style="text-align: center; padding: .4em 1em; background-color: #ffcb006b;">
+{% notice_box() %}
 We will <b>never</b> ask for your personal information or password
-</div>
+{% end %}
 
 ## Why am I in a room called Matrix.org (Official Account)?
 
@@ -18,7 +18,7 @@ Note: You can't send a message to this room.
 
 ## How can I tell that this is the official account in my Matrix client or app?
 
-You can verify that the message is from the official account by checking the Matrix user ID of the sender. The user ID should match <code>@server:matrix.org</code> exactly.
+You can verify that the message is from the official account by checking the Matrix user ID of the sender. The user ID should match `@server:matrix.org` exactly.
 
 How to check this depends on the client or app you use. Typically you need to click or tap the profile or avatar of the user.
 
