@@ -6,7 +6,7 @@ This Week in Matrix (TWIM) is a weekly digest on the blog in which
 anyone can post small concise updates about their Matrix projects, events
 and happenings.
 Those updates are collected through the Matrix room
-[#thisweekinmatrix:matrix.org](https://matrix.to/#/%23thisweekinmatrix%3Amatrix.org)
+[#thisweekin:matrix.org](https://matrix.to/#/#thisweekin:matrix.org)
 and published every Friday on the [matrix.org blog](/category/this-week-in-matrix/).
 It aims to allow the community to show off their work in the Matrix ecosystem.
 
@@ -21,9 +21,8 @@ can decline entries related to dangerous or unethical software.
 
 ## Publishing
 
-For publishing to TWIM all you need is a Matrix account and participate in the
-[#thisweekinmatrix:matrix.org](https://matrix.to/#/#thisweekinmatrix:matrix.org)
-Matrix room.
+For publishing to TWIM all you need is a Matrix account and [participate](/docs/chat_basics/public-rooms/#joining-a-specific-room)
+in the [#thisweekin:matrix.org](https://matrix.to/#/#thisweekin:matrix.org) Matrix room.
 
 After joining you should start your post with a mention of the user "TWIM".
 The easiest way to do this is to use your client's mention completion feature.
