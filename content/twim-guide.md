@@ -43,6 +43,10 @@ At times, sending media to Matrix rooms moderated by the Matrix Foundation may b
 for moderation reasons. If this is the case, please reach out to the TWIM editors via chat.
 {% end %}
 
+By submitting content to TWIM, you agree to publishing it under the [matrix.org website's
+licenses](https://github.com/matrix-org/matrix.org/blob/main/LICENSE.md).
+Videos will be uploaded to the [Matrixdotorg](https://www.youtube.com/@Matrixdotorg) YouTube channel.
+
 ## How to Write a Good Entry
 
 Writing a good entry can be challenging. Below are some recommendations
