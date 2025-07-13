@@ -143,3 +143,100 @@ You can also take a look at the same configuration file to see which reaction ha
 which meaning. It can help us to choose the correct category for your project.
 However, note that ultimately the TWIM editors are the ones deciding
 on the category for a project.
+
+## Appendix: The TWIM-Process
+
+{% notice_box() %}
+This section documents the process "behind the scenes" for anyone interested.
+Reading the above info is sufficient to ensure writing a great TWIM entry.
+Please approach the <a href="https://matrix.to/#/#matrix.org-website:matrix.org">Website and Content Working Group</a>
+with any questions or ideas about TWIM and its process.
+{% end %}
+
+This Week in Matrix is part of the outreach programme of the Matrix Foundation.
+
+The Matrix Foundation hosts the [TWIM Matrix room](https://matrix.to/#/#twim:matrix.org) for the purpose of
+communicating with the wider ecosystem and allowing everyone to announce Matrix-related news to be published
+in the weekly digest.
+
+TWIM is compiled, edited, and published by the [Website and Content Working Group](/foundation/working-groups).
+To ensure enough bandwidth for regular publications, Foundation staff is part of this group.
+The current members of this team are based in Europe, hence most of the work happens during
+European working hours (i.e. CE(S)T "Paris time").
+
+The team is aided by the aforementioned TWIM helper bot, a [Hebbot](https://github.com/haecker-felix/hebbot)
+instance configured via the [twim-config](https://github.com/matrix-org/twim-config) repository
+and deployed with the help of the Foundation's SRE team.
+It uses the Matrix account `@this-week-in:matrix.org`.
+
+With few exceptions, such as the Christmas holiday season, or during Conferences,
+TWIM is published every Friday by the following process.
+
+The Website and Content WG usually internally determines the editor for the week ahead of time
+in order to ensure there will be a TWIM during any given week, even considering holidays etc.
+They also determine a reviewer, who ideally is also a member of the Working Group, since a review from
+someone with commit access is needed to merge to the matrix.org website Git repository.
+
+On Friday morning, the editor for the week announces via `@room` ping to the TWIM room
+that TWIM will be published that day, reminding readers of this guide and the submission deadline.
+While submissions are open 24/7 and this deadline only determines whether an announcement
+goes into this or the next edition, we have found that reminding teams in time to report news
+fits their workflow, and regular bleeding edge progress updates help making the Matrix
+ecosystem lively.
+
+Over the course of the day (and the week), the editor watches submissions as they are sent
+and categorises them using emoji or in case of frequent projects even text labels as defined in the
+[twim-config](https://github.com/matrix-org/twim-config).
+The other editors (also defined in the twim-config) may help out with this.
+
+The editors also try to keep an eye on submissions being properly picked up by the TWIM bot ([see above](#publishing)).
+
+Sometimes, the TWIM editors may be aware of a team having news to share, such as very regular submissions
+like the weekly spec update from the Spec Core Team, or giving a shout-out to another publication.
+When this submission has not happened yet as the submission deadline draws near, the editors might remind
+the respective teams of their news.
+Similarly, a submitter may sometimes have (publicly or privately) asked the editors to extend the submission
+deadline so they can finish writing their entry.
+Whether such a request is granted depends entirely on the editor and their circumstances.
+
+The regular deadline is 17:00 CE(S)T "Paris time" and submitting in time will ensure your news get
+included in the blog if you have followed the above steps successfully.
+If you operate in a time zone that makes it difficult to keep to this time frame on the same day,
+if may thus be advisable to share your news on the preceding (European) day.
+Sometimes life happens and the editors have to announce an earlier deadline on a best effort basis,
+but this is extremely rare.
+Usually, submissions will close at or shortly after 17:00.
+It is possible depending on the circumstances of the editor that submissions also remain open for a while longer.
+Whichever is the case, the editor will announce the fact that submissions have been closed via
+impersonating the TWIM bot.
+
+After closing the entries, the editor does a last manual best-effort check if all submissions have
+been collected by the bot and assigned the right project or category, fixing any stragglers.
+Finally, the editor `!render`s the bot's digest to Markdown and adds it to a feature branch of
+the website repository to finish it up:
+- configure the right `path` in the metadata
+- add Matrix Live video embed and title
+- poll the ping stats and include them in the post
+- add any images to the repo and write `alt` text for accessibility
+- upload any videos to YouTube and embed them in the post
+- verify Markdown correctness regarding e.g. headings, links
+
+The blog post is pushed to a new pull request on the matrix.org website repository and a review requested
+from the week's assigned reviewer.
+The repository's contribution guidelines apply.
+In parallel to the human review, the website CI also runs an automatic review to help spot
+spelling mistakes, Markdown errors, and the like.
+The CI also builds and posts a preview of the website which can be used by reviewers to verify the result.
+
+Once everything looks good, the pull request is merged.
+While the CI builds and publishes the post on the website, the editor comes up with a 1-2 line teaser summary
+of the digest's contents, mentioning the most interesting or significant changes.
+They also consider factors such as time sensitivity of news (e.g. security updates) and repetitiveness
+(e.g. naming different projects week-to-week).
+After the website updated and everything looks good, the editor posts the summary and link to the TWIM room
+using a `@room` ping, as well as to social media.
+After some minutes have passed, the editor checks that the RSS bot announced it also to
+the [Matrix News](https://matrix.to/#/#matrix-news:matrix.org) room, or does so manually if not.
+
+Finally, the editor `!clear`s the now published entries from the TWIM bot, making sure to re-add any
+submissions that arrived in the meantime using the `⭕` reaction.
