@@ -28,6 +28,9 @@ After joining you should start your post with a mention of the user "TWIM".
 The easiest way to do this is to use your client's mention completion feature.
 After that mention, everything contained in the message will be part of the entry.
 
+We collect submissions with help of the [TWIM bot](https://github.com/haecker-felix/hebbot)
+`@this-week-in:matrix.org`, who will confirm having received your entry if everything went well.
+
 Images and other media are supported as well. To add them you should react with
 `⭕` on your media file. Please make sure to do this right after submitting your text so it gets added
 to the correct entry and not to another project of yours.
