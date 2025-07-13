@@ -1,0 +1,20 @@
+{% extends "section.html" %}
+{% import "macros/banner.html" as banner %}
+{% block content %}
+{{ banner::banner() }}
+<div class="content">
+    <header>
+        <h1>{{ section.title }}</h1>
+    </header>
+
+    <ul>
+    {% for subsection_path in section.subsections %}
+    {% set subsection = get_section(path=subsection_path) %}
+        <li><a href="{{ subsection.path }}">{{ subsection.title }}</a> &ndash; {{ subsection.extra.summary }}</li>
+    {% endfor %}
+    {% for page in section.pages %}
+        <li><a href="{{ page.path }}">{{ page.title }}</a> &ndash; {{ page.extra.summary }}</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
