@@ -31,6 +31,9 @@ After that mention, everything contained in the message will be part of the entr
 We collect submissions with help of the [TWIM bot](https://github.com/haecker-felix/hebbot)
 `@this-week-in:matrix.org`, who will confirm having received your entry if everything went well.
 
+The digest gets published on Friday evening, so make sure to post your submission before
+entries close around 17:00 Paris time.
+
 Images and other media are supported as well. To add them you should react with
 `⭕` on your media file. Please make sure to do this right after submitting your text so it gets added
 to the correct entry and not to another project of yours.
