@@ -54,7 +54,7 @@ to help the editors by lowering their workload when publishing the post.
 
 ### Submitting Multiple Entries
 
-If you want to share news about more than one project, please submit individial entries, one for each project.
+If you want to share news about more than one project, please submit individual entries, one for each project.
 This allows us to sort and categorise your entries appropriately, since this is done on a
 per-message basis.
 
