@@ -27,7 +27,6 @@ in the [#thisweekin:matrix.org](https://matrix.to/#/#thisweekin:matrix.org) Matr
 After joining you should start your post with a mention of the user "TWIM".
 The easiest way to do this is to use your client's mention completion feature.
 After that mention, everything contained in the message will be part of the entry.
-If you want to post more than one project please submit individual entries, one for each project.
 
 Images and other media are supported as well. To add them you should react with
 `⭕` on your media file. Please make sure to do this right after submitting your text so it gets added
@@ -37,6 +36,21 @@ to the correct entry and not to another project of yours.
 
 Writing a good entry can be challenging. Below are some recommendations
 to help the editors by lowering their workload when publishing the post.
+
+### Submitting Multiple Entries
+
+If you want to share news about more than one project, please submit individial entries, one for each project.
+This allows us to sort and categorise your entries appropriately, since this is done on a
+per-message basis.
+
+### Editing an Entry
+
+Matrix supports editing messages, and our TWIM bot also supports reading them.
+
+If you need to change something in your entry, the simplest way is usually to edit it
+through your Matrix client.
+If for some reason that does not work for you, deleting the previous entry and submitting
+a new one works just as well.
 
 ### Markdown
 
