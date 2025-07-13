@@ -54,8 +54,8 @@ a new one works just as well.
 
 ### Markdown
 
-The bot expects markdown as part of the plaintext event body. Please use a client which
-sends the markdown formatted text in the "plaintext" body. While we currently accept other formats as well,
+The bot expects Markdown as part of the plaintext event body. Please use a client which
+sends the Markdown formatted text in the "plaintext" body. While we currently accept other formats as well,
 it will add manual work for a human to format the post.
 
 ### Do Not Treat TWIM as a Changelog
@@ -86,7 +86,7 @@ so all the boilerplate can get added to your post automatically.
 As the [TWIM helper bot](https://github.com/haecker-felix/hebbot) takes messages
 as verbatim, it is helpful to the editors to use the right header level.
 
-We recommend `H3` (`###` in markdown) for the project title and `H4` (`####`in markdown)
+We recommend `H3` (`###` in Markdown) for the project title and `H4` (`####`in Markdown)
 for all titles below it. This way there is only minor human interaction necessary or none
 at all.
 
@@ -103,7 +103,7 @@ Most matrix clients will not automatically emit the CommonMark the site
 generator expects for these links. If you are able to add them around your links,
 it will help us in making sure your links will be clickable on the blog.
 
-This is unnecessary if you are using a markdown link with text, such as:
+This is unnecessary if you are using a Markdown link with text, such as:
 `You can find our guidelines [here](https://matrix.org/twim-guide/).`.
 
 ## Reactions and Adding a Project to the Bot
