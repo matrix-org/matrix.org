@@ -13,6 +13,9 @@ You can reach it by entering `matrix.org` in the server selector of your client 
 This section of the website collects all the related information about the service on the following subpages:
 
 - [What is the "Matrix.org (Official Account)"?](official)
-- [Pricing](pricing)
+- [Matrix.org Homeserver Pricing](pricing)
+
+You can find the legal documents related to usage of the matrix.org homeserver here:
+
 - [Terms and Conditions](/legal/terms-and-conditions)
 - [Privacy Policy](/legal/privacy-notice/)
