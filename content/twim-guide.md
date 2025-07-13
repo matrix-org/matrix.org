@@ -38,6 +38,11 @@ Images and other media are supported as well. To add them you should react with
 `⭕` on your media file. Please make sure to do this right after submitting your text so it gets added
 to the correct entry and not to another project of yours.
 
+{% notice_box() %}
+At times, sending media to Matrix rooms moderated by the Matrix Foundation may be prohibited
+for moderation reasons. If this is the case, please reach out to the TWIM editors via chat.
+{% end %}
+
 ## How to Write a Good Entry
 
 Writing a good entry can be challenging. Below are some recommendations
