@@ -19,8 +19,10 @@ threads = false
 sso = false
 multi_account = false
 multi_language = true
+
 [extra.packages]
 google_play_store.app_id = "io.element.android.x"
+f_droid.app_id = "io.element.android.x"
 apple_app_store = { app_id = "id1631335820", org = "vector" }
 +++
 
