@@ -10,12 +10,13 @@ You can learn more about homeservers, the principle of federation, and how Matri
 
 [The Matrix.org Foundation](/foundation/about) offers the matrix.org homeserver as an easy entry point for anyone wanting to try out Matrix.
 You can reach it by entering `matrix.org` in the server selector of your client when [registering](/docs/chat_basics/matrix-for-im/#creating-a-matrix-account).
-This section of the website collects all the related information about the service on the following subpages:
+
+This section of the website collects all the related information about the matrix.org homeserver on the following subpages:
 
 - [What is the "Matrix.org (Official Account)"?](official)
 - [Matrix.org Homeserver Pricing](pricing)
 
 You can find the legal documents related to usage of the matrix.org homeserver here:
 
-- [Terms and Conditions](/legal/terms-and-conditions)
+- [Homeserver Terms](/legal/terms-and-conditions/)
 - [Privacy Policy](/legal/privacy-notice/)
