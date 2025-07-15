@@ -9,7 +9,7 @@ repo = "https://github.com/element-hq"
 matrix_room = "#element-ios:matrix.org"
 licence = "Apache-2.0"
 latest_release = "2022-11-02"
-featured = true
+featured = false
 [extra.features]
 e2ee = true
 spaces = true
