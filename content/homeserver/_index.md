@@ -16,7 +16,15 @@ This section of the website collects all the related information about the matri
 - [What is the "Matrix.org (Official Account)"?](official)
 - [Matrix.org Homeserver Pricing](pricing)
 
-You can find the legal documents related to usage of the matrix.org homeserver here:
+You can find the [legal documents](/legal) related to usage of the matrix.org homeserver here:
 
-- [Homeserver Terms](/legal/terms-and-conditions/)
-- [Privacy Policy](/legal/privacy-notice/)
+- [Homeserver Terms](/legal/terms-and-conditions)
+- [Privacy Policy](/legal/privacy-notice)
+- [Copyright Notice](/legal/copyright-notice)
+- [Law Enforcement Guidelines](/legal/law-enforcement-guidelines)
+
+Other useful links:
+
+- For the latest news and information about the homeserver see the [blog](/category/matrix-org-homeserver)
+- [System status](https://status.matrix.org) and incidents
+- For support please see the [Contact](/contact) page
