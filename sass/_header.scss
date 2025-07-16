@@ -202,7 +202,7 @@
         }
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1149px) {
         .section-submenu {
             padding-left: 1em;
             display: flex;
@@ -222,7 +222,7 @@
 #site-header-dropdown-checkbox {
     display: none;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1149px) {
         &:checked~.dropdown-button {
             background-color: #000;
         }
