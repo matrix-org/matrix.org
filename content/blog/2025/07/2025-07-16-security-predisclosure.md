@@ -15,6 +15,8 @@ Given the security implications of a federation protocol vulnerability, we’ve 
 
 These vulnerabilities have been addressed via MSCs which have been shared, reviewed and are in the final comment period (disposition merge) with the Spec Core Team and server implementor community, under embargo.  This will result in an off-cycle Matrix spec release (1.16) introducing a new room version (**12**) to address the vulnerabilities in question, requiring a room upgrade of existing rooms.  Having given server and room admins time to upgrade, we are then planning to un-embargo the MSCs and complement tests on Friday Jul 25th 2025 at 17:00 UTC.
 
+**CLARIFICATION, Jul 16 17:30 UTC**: Room admins should plan to upgrade rooms at their convenience, similar to previous security-related room version upgrades (e.g. v1 to v2).  Much like installing an operating system patch, sooner is better, but as these are not Critical Severity vulnerabilities, there is no requirement for room admins to upgrade rooms immediately on Jul 22nd. For instance, the Matrix.org Foundation will likely upgrade its public rooms at some point after Jul 25th (having given server admins a chance to upgrade, and having given any server implementations running late a chance to release).  N.B. Only rooms which include users on potentially malicious servers (e.g. publicly joinable rooms on untrusted federations) are vulnerable.
+
 **Important information for client developers:**
 
 * Client developers should review [MSC4291: “Room IDs as hashes of the create event”](https://github.com/matrix-org/matrix-spec-proposals/blob/matthew/msc4291/proposals/4291-room-ids-as-hashes.md) to ensure their clients can accept the new proposed format of room IDs.
@@ -27,7 +29,7 @@ This has been an exceptionally complicated project to coordinate and its securit
 
 We’ll follow up with more details next Tuesday (assuming the disclosure timeline doesn’t slip).
 
-Thanks all for your time, patience and understanding while we ship this protocol upgrade (the first coordinated upgrade since Matrix 1.0 back in 2020!)
+Thanks all for your time, patience and understanding while we ship this protocol upgrade (the first coordinated upgrade since [Matrix 1.0](https://matrix.org/blog/2019/03/15/matrix-1-0-https-arewereadyyet-com/) back in 2019!)
 
 Matthew
 
