@@ -19,7 +19,7 @@ These vulnerabilities have been addressed via MSCs which have been shared, revie
 
 **Important information for client developers:**
 
-* Client developers should review [MSC4291: “Room IDs as hashes of the create event”](https://github.com/matrix-org/matrix-spec-proposals/blob/matthew/msc4291/proposals/4291-room-ids-as-hashes.md) to ensure their clients can accept the new proposed format of room IDs.
+* Client developers should review [MSC4291: “Room IDs as hashes of the create event”](https://github.com/matrix-org/matrix-spec-proposals/blob/matthew/msc4291/proposals/4291-room-ids-as-hashes.md) to ensure their clients can accept the new proposed format of room IDs, and no longer expects `content.predecessor.event_id` in `m.room.create` events.
 
 * One of the other changes coming in v12 is that room creators will be privileged over other users in the room. Therefore clients which restrict user behaviour based on power level will need to be updated to be aware that room creators effectively have infinite power level. Creators are **not** listed in the users block of the `m.room.power_levels` event, and are instead defined as the `sender` field of the `m.room.create` event, or entries in a new optional `additional_creators` array field in the `content` of the create event. Full details will be released in the MSCs when embargo lifts.
 
