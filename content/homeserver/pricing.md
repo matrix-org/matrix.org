@@ -1,5 +1,6 @@
 +++
 title = "Matrix.org Homeserver Pricing"
+weight = 20
 +++
 
 One of the missions of the Matrix.org Foundation is to nurture and grow the ecosystem and the network. To support this mission, the Foundation provides the public matrix.org homeserver as an easy entry point for those wanting to create their first Matrix account and join the network. The matrix.org homeserver has played a key role in the growth of the ecosystem since the project started in 2014.
