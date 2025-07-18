@@ -16,11 +16,7 @@
 
     background-color: #000;
 
-    @media screen and (min-width: 768px) {
-        padding-right: 10px;
-    }
-
-    @media screen and (min-width: 1000px) {
+    @media screen and (min-width: 1150px) {
         padding-right: 20px;
     }
 
@@ -45,7 +41,7 @@
         display: flex;
         align-items: center;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 1150px) {
             display: none;
         }
     }
@@ -53,7 +49,7 @@
     nav {
         display: flex;
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 1149px) {
             position: fixed;
             z-index: 800;
             top: 5.937rem;
@@ -67,7 +63,7 @@
             overflow-y: auto;
         }
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 1150px) {
             align-items: center;
         }
 
@@ -75,7 +71,7 @@
             color: #fff;
             font-size: 1.125rem;
 
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 1149px) {
                 font-size: 1.5rem;
             }
 
@@ -98,12 +94,12 @@
                 padding-inline: clamp(1em, 3dvw, 2em);
                 margin-inline: .5rem;
 
-                @media screen and (max-width: 767px) {
+                @media screen and (max-width: 1149px) {
                     margin-block: 1.2rem;
                     text-align: center;
                 }
 
-                @media screen and (min-width: 768px) {
+                @media screen and (min-width: 1150px) {
                     &:not(:last-child) {
                         margin-right: 12px;
                     }
@@ -115,7 +111,7 @@
             opacity: 0;
             position: absolute;
 
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 1149px) {
                 &:not(:checked)~.section-submenu-wrap {
                     display: none;
                 }
@@ -143,7 +139,7 @@
         }
 
         .submenu-title {
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 1149px) {
                 display: flex;
                 flex-direction: row;
                 gap: 1rem;
@@ -162,10 +158,14 @@
 
         label {
             cursor: pointer;
+
+            a {
+                padding: 0;
+            }
         }
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1150px) {
         .section-wrap {
             position: relative;
             align-self: stretch;
@@ -189,7 +189,7 @@
             border-radius: 6px;
             padding-inline: 1rem;
             padding-block: 0.75rem;
-            
+
             display: flex;
             flex-direction: column;
 
@@ -202,7 +202,7 @@
         }
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1149px) {
         .section-submenu {
             padding-left: 1em;
             display: flex;
@@ -222,7 +222,7 @@
 #site-header-dropdown-checkbox {
     display: none;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1149px) {
         &:checked~.dropdown-button {
             background-color: #000;
         }

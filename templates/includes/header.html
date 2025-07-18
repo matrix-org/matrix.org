@@ -13,7 +13,9 @@
         <div class="section-wrap">
             <input id="{{ link.section }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true"
                 {{ util::current_checked(if_path_starts_with="/" ~ link.section) }}>
-            <label for="{{ link.section }}-submenu-checkbox" class="submenu-title">{{ link.title }} <div class="arrow">
+            <label for="{{ link.section }}-submenu-checkbox" class="submenu-title">
+            <a href="/{{ link.section }}">
+                {{ link.title }}</a> <div class="arrow">
                 </div></label>
 
             <div class="section-submenu-wrap">
