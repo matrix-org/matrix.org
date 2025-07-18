@@ -13,8 +13,8 @@ You can reach it by entering `matrix.org` in the server selector of your client 
 
 This section of the website collects all the related information about the matrix.org homeserver on the following subpages:
 
-- [What is the "Matrix.org (Official Account)"?](official)
-- [Matrix.org Homeserver Pricing](pricing)
+- [What is the "Matrix.org (Official Account)"?](/homeserver/official)
+- [Matrix.org Homeserver Pricing](/homeserver/pricing)
 
 You can find the [legal documents](/legal) related to usage of the matrix.org homeserver here:
 
