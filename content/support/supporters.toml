@@ -159,6 +159,11 @@ website = "https://thunderbird.net/"
 logo = "thunderbird.svg"
 
 [[ecosystem]]
+name = "< polycule >"
+website = "https://polycule.im/"
+logo = "polycule.svg"
+
+[[ecosystem]]
 name = "Trixnity"
 website = "https://trixnity.gitlab.io/trixnity"
 logo = "trixnity.png"
