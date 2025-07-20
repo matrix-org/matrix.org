@@ -36,6 +36,8 @@ Elections are being held in the second quarter of each calendar year, alternatin
 The current elected representatives are:
 
 <div class="two-column">
+<div class="category-group" data-category="Community Representatives">
+<div class="group-content">
 <div>
 
 ### Individual Members
@@ -63,6 +65,11 @@ The current elected representatives are:
 * And one vacant seat
 
 </div>
+</div>
+</div>
+
+<div class="category-group" data-category="Funder Representatives">
+<div class="group-content">
 <div>
 
 ### Platinum Members
@@ -87,6 +94,11 @@ The current elected representatives are:
 * Jan Kohnert (he/him), Gematik GmbH
 
 </div>
+</div>
+</div>
+
+<div class="category-group" data-category="Foundation Representatives">
+<div class="group-content">
 <div>
 
 ### Guardians
@@ -110,6 +122,8 @@ The current elected representatives are:
 
 * Robin Riley (they/them)
 
+</div>
+</div>
 </div>
 
 </div>
@@ -151,7 +165,7 @@ There are currently 4 Committees:
 
 The current chairs of the Governing Board are:
 
-<div class="two-column">
+<div class="two-column chairs-section">
 <div>
 
 ### Governing Board
