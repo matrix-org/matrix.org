@@ -4,10 +4,10 @@ title = "How we discovered, and recovered from, Postgres corruption on the matri
 
 [taxonomies]
 author = ["Richard van der Hoff"]
-category = ["General"]
+category = ["General", "matrix.org homeserver"]
 +++
 
-Greetings from Element's backend/SRE team, who run the matrix.org homeserver on behalf of the Matrix.org Foundation.
+Greetings from Element's backend/SRE team, who run the [`matrix.org` homeserver](https://matrix.org/homeserver) on behalf of the Matrix.org Foundation.
 
 Recently users of the `matrix.org` homeserver began [seeing problems where rooms would simply stop working](https://status.matrix.org/incidents/8gljb3gtlv11). Operations such as sending a new message, or joining the room as a new member, would fail for mysterious reasons. Where an error message was shown at all, it tended to be something cryptic like "No create event in auth events".
 
@@ -24,6 +24,8 @@ The `matrix.org` homeserver is backed by a large PostgreSQL database instance. P
 The nature of this corruption was such that it had little or no effect at first. However, a background maintenance task which removes old, unreferenced data from this table recently started working on the corrupted region. Due to the corrupt index, the maintenance task incorrectly removed *active* data from the table, in effect corrupting rooms.
 
 Having identified the problem, we rebuilt the corrupted index, and then restored the data that had been incorrectly removed, from database backups.
+
+<!-- more -->
 
 ## Initial investigations, or "what exactly is a state group?"
 
@@ -257,7 +259,7 @@ First, some timeframes. We know for certain that corruption happened *after* Jan
 
 The one thing we can be sure it's *not* is a bug in Synapse or PgCat: there is no way that an application should be able to cause internal corruption within a Postgres database.
 
-One possiblity is a Postgres bug, but Postgres is an extremely robust piece of software, and the Postgres team treats corruption bugs extremely seriously. We were using Postgres 10.12 in January 2021, and we've looked through the Postgres release notes for every version since then, and not found any bug fixes that would fit this pattern.
+One possibility is a Postgres bug, but Postgres is an extremely robust piece of software, and the Postgres team treats corruption bugs extremely seriously. We were using Postgres 10.12 in January 2021, and we've looked through the Postgres release notes for every version since then, and not found any bug fixes that would fit this pattern.
 
 It's worth noting that Postgres relies heavily on its underlying filesystem, as well as the device drivers and hardware, to behave correctly: in particular, if the filesystem claims that data has been persisted, it really has been persisted. Problems in this area are far from unknown — back in 2018, the Postgres team discovered that their 20-year-old assumptions about how `fsync` worked were incorrect ([wiki page](https://wiki.postgresql.org/wiki/Fsync_Errors), [FOSDEM presentation](https://archive.fosdem.org/2019/schedule/event/postgresql_fsync/)). But the fixes to that were backported to Postgres 10.7 so that problem can't explain this corruption.
 
