@@ -7,7 +7,7 @@ author = ["Richard van der Hoff"]
 category = ["General", "matrix.org homeserver"]
 +++
 
-Greetings from Element's backend/SRE team, who run the [`matrix.org` homeserver](https://matrix.org/homeserver) on behalf of the Matrix.org Foundation.
+Greetings from Element's backend/SRE team, who run the [`matrix.org` homeserver](@/homeserver/_index.md) on behalf of the Matrix.org Foundation.
 
 Recently users of the `matrix.org` homeserver began [seeing problems where rooms would simply stop working](https://status.matrix.org/incidents/8gljb3gtlv11). Operations such as sending a new message, or joining the room as a new member, would fail for mysterious reasons. Where an error message was shown at all, it tended to be something cryptic like "No create event in auth events".
 
