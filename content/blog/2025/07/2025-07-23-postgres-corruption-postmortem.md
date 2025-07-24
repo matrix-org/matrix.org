@@ -47,7 +47,7 @@ Things get a bit more complicated at `H` and `I`: both Yellow and Blue try to ch
 
 ![State-groups diagram](/blog/img/stategroups.png)
 
-Now, when we started investigating the rooms where people had reported problems, we found clear signs of corrupted state groups. For example, the state in some of the state groups in affected rooms were completely empty. As I said earlier, the room's create event is always part of the state of a room, and it can never change, so finding state groups whose state does not at least include a create event was a big red flag.
+Now, when we started investigating the rooms where people had reported problems, we found clear signs of corrupted state groups. For example, the state in some of the state groups in affected rooms was completely empty. As I said earlier, the room's create event is always part of the state of a room, and it can never change, so finding state groups whose state does not at least include a create event was a big red flag.
 
 This also gives a clue to the meaning of that error I mentioned earlier: when we decide whether to accept an event into the room, we check the state of the room. One of the things we check for is the presence of a create event: "No create event in auth events" means Synapse rejected the new event because there was no create event in the room state.
 
