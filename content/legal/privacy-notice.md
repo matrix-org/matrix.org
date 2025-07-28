@@ -3,7 +3,7 @@ title = "Matrix.org Foundation Privacy Policy"
 version = "3.2.0"
 +++
 
-Effective date of 4 August 2025
+Effective date of 7 August 2025
 
 Please read this document carefully before accessing or using this service.
 

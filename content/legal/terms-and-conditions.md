@@ -3,7 +3,7 @@ title = "Matrix.org Homeserver Terms"
 version = "3.0.0"
 +++
 
-Effective date of 4 August 2025
+Effective date of 7 August 2025
 
 These Homeserver Terms ('Homeserver Terms') govern your use and access of the Service (as defined below). Please read this document carefully before accessing or using the Service. By accessing or using the Service in any way, whether you have created a Matrix account on the Matrix.org homeserver, or whether you are accessing content federated from the Matrix.org homeserver to another Matrix homeserver, you agree to and are bound by these Homeserver Terms.
 
