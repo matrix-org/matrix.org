@@ -35,7 +35,9 @@ Where a user account has been allocated to a plan the following usage limits app
 |Speed at which you can invite others to a room|Standard|10 times faster|
 |Ability to create public rooms|Not available|Available|
 
-Usage limits may change over time as we refine the offering.
+<br>
+
+In accordance with our terms, fair usage limits of 500MB per day, up to a limit of 2GB per month currently apply to all accounts. These limits may be reviewed and change over time as we refine our offering.
 
 ## FAQs
 
