@@ -37,7 +37,7 @@ Where a user account has been allocated to a plan the following usage limits app
 
 <br>
 
-In accordance with our terms, fair usage limits of 500MB per day, up to a limit of 2GB per month currently apply to all accounts. These limits may be reviewed and change over time as we refine our offering.
+In accordance with [our terms](@/legal/terms-and-conditions.md#7-2-data-limits), fair usage limits of 500MB per day, up to a limit of 2GB per month currently apply to all accounts. These limits may be reviewed and change over time as we refine our offering.
 
 ## FAQs
 
