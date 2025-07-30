@@ -1,0 +1,19 @@
+categories:
+  - name: Clients
+        description: The Matrix ecosystem is vibrant. Whatever platform you use, someone has probably already developed a client for it.
+        url: https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/clients
+  - name: Hosting
+        description: Everyone can host their Matrix server, but not everybody wants to. These are the providers the Matrix.org Foundation knows about.
+        url: https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/hosting
+  - name: Servers
+        description: Advanced users may want to run a homeserver by themselves for more independence and sovereignty. Here are the servers advanced users can run.
+        url: https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/servers
+  - name: Bridges
+        description: Bridges allow you to connect Matrix to a third-party platform, and interact seamlessly.
+        url: https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/bridges
+  - name: Integrations
+        description: Useful integrations for more productive or fun conversations in the Matrix ecosystem.
+        url: https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/integrations
+  - name: SDKs
+        descriptions: Develop great apps, bots, and bridges. Focus on what you do best. Let the SDKs do all the heavy lifting.
+        url: https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/sdks
