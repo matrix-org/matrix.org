@@ -31,7 +31,7 @@ Where a user account has been allocated to a plan the following usage limits app
 
 |Usage|Free plan|Premium plan|
 |-|-|-|
-|Size of attachment that can be sent|1MB maximum|100MB maximum|
+|Size of attachment that can be sent|10MB maximum|100MB maximum|
 |Speed at which you can invite others to a room|Standard|10 times faster|
 |Ability to create [public](https://spec.matrix.org/latest/client-server-api/#mroomjoin_rules) rooms|Not available|Available|
 
