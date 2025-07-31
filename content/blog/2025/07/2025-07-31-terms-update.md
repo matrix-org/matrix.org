@@ -4,7 +4,7 @@ title = "Matrix.org (Official Account) and Terms updates"
 
 [taxonomies]
 author = ["Amandine Le Pape"]
-category = ["Legal"]
+category = ["matrix.org homeserver"]
 +++
 
 Users of the Matrix.org homeserver have recently received – or will shortly receive as the notifications are rolled out progressively – an invite from a user called *Matrix.org (Official Account).* Those checking the room will have noticed that it announces upcoming changes to our the Matrix.org Homeserver Terms and Conditions.
