@@ -35,7 +35,7 @@ Where a user account has been allocated to a plan the following usage limits app
 |Speed at which you can invite others to a room|Standard|10 times faster|
 |Ability to create [public](https://spec.matrix.org/latest/client-server-api/#mroomjoin_rules) rooms|Not available|Available|
 
-In accordance with [our terms](@/legal/terms-and-conditions.md#7-2-data-limits), fair usage limits of 500MB per day, up to a limit of 2GB per month currently apply to all accounts.
+In accordance with [our terms](/legal/terms-and-conditions.md#7-2-data-limits), fair usage limits of 500MB per day, up to a limit of 2GB per month currently apply to all accounts.
 
 These limits may be reviewed and change over time as we refine our offering.
 
