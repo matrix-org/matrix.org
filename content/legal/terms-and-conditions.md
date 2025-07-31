@@ -3,7 +3,9 @@ title = "Matrix.org Homeserver Terms"
 version = "3.0.0"
 +++
 
-Effective date of 7 August 2025
+Effective date for existing users shall be 14th August 2025
+
+These Homeserver Terms shall automatically apply to new accounts created from the 31st July 2025
 
 These Homeserver Terms ('Homeserver Terms') govern your use and access of the Service (as defined below). Please read this document carefully before accessing or using the Service. By accessing or using the Service in any way, whether you have created a Matrix account on the Matrix.org homeserver, or whether you are accessing content federated from the Matrix.org homeserver to another Matrix homeserver, you agree to and are bound by these Homeserver Terms.
 
@@ -15,7 +17,11 @@ Our Contact Information:
 
 Email: [support@matrix.org](mailto:support@matrix.org)
 
-Postal address: The Matrix.org Foundation (the ‘Foundation’), 14 Turnham Green Terrace Mews, London, United Kingdom, W4 1QU
+Postal address:  
+The Matrix.org Foundation (the ‘Foundation’),  
+14 Turnham Green Terrace Mews,  
+London,  
+United Kingdom, W4 1QU
 
 ## 1. Introduction
 
@@ -24,6 +30,8 @@ Postal address: The Matrix.org Foundation (the ‘Foundation’), 14 Turnham Gre
 Where you read The Matrix.org Foundation C.I.C., The Matrix.org Foundation, The Matrix Foundation, or the Foundation, it refers to the Community Interest Company incorporated on 29 October 2018 to be the neutral custodian of the Matrix protocol: The Matrix.org Foundation C.I.C., and their agents.
 
 **These Homeserver Terms do not apply to Matrix servers run by anyone else - Matrix is an open network like the Web and these Homeserver Terms only apply to the homeserver provided by the Foundation.**
+
+If your account is not hosted in a server controlled by the Foundation but is involved in rooms federated with the [Matrix.org](http://Matrix.org) Homeserver, these Homeserver Terms will govern any moderation actions taken in relation to those rooms. We may also prevent your account or server from interacting with [Matrix.org](http://Matrix.org) Homeserver accounts as part of our ongoing Trust & Safety efforts, which are detailed further in clause 7.3.
 
 ### 1.2 This is a living document
 
@@ -79,7 +87,7 @@ We may pre-screen user messages or files to prevent spam and other abuse, and we
 
 You are solely and entirely responsible for all of your messages and files that you post or otherwise submit via the Service. You shall assume all risks associated with the use of said content including any reliance on its accuracy, completeness or usefulness. The Foundation does not guarantee the accuracy, integrity or quality of your messages or files.
 
-For further details on our approach to IP and copyright, please refer to our [copyright notice](https://matrix.org/legal/copyright-notice).
+For further details on our approach to IP and copyright, please refer to our [copyright notice](/legal/copyright-notice).
 
 ### 3.2 User Content
 
@@ -87,9 +95,9 @@ The Foundation does not accept liability for any user-uploaded content. When we 
 
 We use proactive technologies on the Matrix.org server to detect illegal content. These include:
 
-* Scanning unencrypted media with Cloudflare's CSAM scanning tool  
-* Hash list matching unencrypted media  
-* URL matching  
+* Scanning unencrypted media with Cloudflare's CSAM scanning tool
+* Hash list matching unencrypted media
+* URL matching
 * room name and topic filtering
 * display name filtering
 * message filtering in unencrypted rooms
@@ -162,36 +170,29 @@ Some jurisdictions prohibit the exclusion or limitation of liability for consequ
 You agree that you shall not:
 
 * Use or attempt to gain unauthorised access to or use another's account, password, data, or computer systems or networks connected to the Matrix.org homeserver, whether through malicious attacks, password mining or any other means.
-
 * Access or attempt to access any material that you are not authorised to access.
-
-* Submit or transmit any material that violates or infringes the rights of others including, without limitation, patent, trademark, trade secret, copyright, publicity, or other proprietary rights. Please see our [Copyright Notice](https://matrix.org/legal/copyright-notice) for further details.
-
+* Submit or transmit any material that violates or infringes the rights of others including, without limitation, patent, trademark, trade secret, copyright, publicity, or other proprietary rights. Please see our [Copyright Notice](/legal/copyright-notice) for further details.
 * Disrupt or interfere with the security of, or otherwise cause harm to, the Matrix.org homeserver, systems resources, accounts, passwords, servers or networks connected to or accessible through the Service or any affiliated or linked sites.
-
 * Use the Service to transmit unsolicited or bulk communications to anyone at all, be they users of the Service, federated Matrix homeservers, or connected on a bridged network.
-
 * Post or otherwise submit any software, programs or files in a manner that is intended to cause harm to or disruption of another's equipment, software or other property, including any corrupted files, time bombs, Trojan horses, viruses and worms.
-
 * Disrupt, interfere with or inhibit any other user from using and enjoying the Service.
-
 * Access or use the Service in any manner that could damage, disable, overburden or impair any server we run or the network(s) connected to the Service.
-
 * Violate any applicable laws or regulations related to the access to or use of the Service, or engage in any activity prohibited by the Homeserver Terms.
-
 * Use the Service for any unlawful purposes or in support of illegal activities under UK/EU law. By using the Service, you agree to comply with all applicable laws governing your online conduct and content.
-
-* Act in a way that is in violation of our [Code of Conduct](https://matrix.org/legal/code-of-conduct) in rooms that are part of the Matrix Space ([#team:matrix.org](https://matrix.to/#/#team:matrix.org)).
-
+* Act in a way that is in violation of our [Code of Conduct](/legal/code-of-conduct) in rooms that are part of the Matrix Space ([#team:matrix.org](https://matrix.to/#/#team:matrix.org)).
 * Violate the rights of The Foundation, Element (i.e., New Vector Limited and any affiliated company) or any third party (including rights of privacy and publicity) or abuse, defame, harass, stalk or threaten another.
 
 Materials and services provided by third parties are governed by separate agreements accompanying such materials and services. The Foundation offers no guarantees and assumes no responsibility or liability of any type with respect to the third-party services, including any liability resulting from incompatibility between a third-party service, the Matrix.org service or another third-party service. You agree that you will not hold the Foundation responsible or liable with respect to the third-party services.
 
-### 7.2. Data Limits
+### 7.2. Data Limits and Fair Usage
 
 Your use of the Service is subject to the usage limits associated with your assigned or selected (as applicable) Usage Plan, as updated from time to time [here](/homeserver/pricing). These limits include, but are not limited to individual transfer size limits, and cumulative data usage. The Foundation may make changes to usage limits or other material aspects of a Usage Plan from time to time. Where such changes are material and may adversely affect your use of the Service, we will give you reasonable prior notice specifying the effective date of the change. If you do not agree to the change, you may terminate your Usage Plan with effect from the date the change takes effect. Continued use of the Service after that date will constitute your acceptance of the updated terms.
 
 Where your usage exceeds the applicable limits, further uploads, transfers, or other usage may be restricted, blocked, or otherwise fail until usage returns within the permitted thresholds of your Usage Plan, or your Usage Plan is upgraded.
+
+Where your usage contravenes or otherwise conflicts with the intended use of the Service as described in these Terms, we may, in our sole discretion and subject to prior notification (where practicable), require you to upgrade your membership tier, or suspend or terminate access in accordance with clause 1.3.
+
+You are responsible for monitoring your use of the Service against applicable limits. We may audit usage and adjust thresholds from time to time to ensure the continued availability and stability of the Service for all users.
 
 ### 7.3 Illegal and Regulated Content
 
@@ -222,7 +223,7 @@ We proactively monitor the Service for illegal content, including but not limite
 * foreign interference offences
 * animal cruelty
 
-Any forms of illegal content are strictly prohibited in the Service. Distribution of illegal content will result in immediate account sanctions (including immediate suspension or termination). If you encounter this type of content, please share the details in an email to <abuse@matrix.org>.
+Any forms of illegal content are strictly prohibited in the Service. Distribution of illegal content will result in immediate account sanctions (including immediate suspension or termination). If you encounter this type of content, please share the details in an email to [abuse@matrix.org](mailto:abuse@matrix.org).
 
 ## 8. Encryption
 
@@ -237,21 +238,15 @@ The Service may include links that will take you to other sites outside of the S
 The Matrix.org service is provided by Element under these Homeserver Terms  "as is" without warranty of any kind, either express, implied, statutory or otherwise, including, but not limited to, the implied warranties of title, non-infringement, merchantability or fitness for a particular purpose. Without limiting the foregoing, Element makes no warranty that:
 
 1. the Service will meet your requirements;
-
 2. the Service will be uninterrupted, timely, secure, or error-free;
-
 3. the quality of the Service will meet your expectations; and
-
 4. any errors or defects in the Service will be corrected.
 
 You acknowledge and agree that:
 
 1. The Foundation does not control, endorse, or accept responsibility for any materials or services offered by third parties (except where stated otherwise), including third-party vendors and third parties accessible through linked sites;
-
 2. The Foundation makes no representations or warranties whatsoever about any such third parties, their materials or services;
-
 3. any dealings you may have with such third parties are at your own risk; and
-
 4. The Foundation shall not be liable or responsible for any materials or services offered by third parties.
 
 The Matrix.org Foundation does not control or endorse the materials or message content found in any rooms or communities. To the maximum extent permitted by law, the Foundation will have no liability related to user materials arising under intellectual property rights, libel, privacy, publicity, obscenity or other laws. The Foundation also disclaims all liability with respect to the misuse, loss, modification or unavailability of any user messages or files, except to the extent such issues arise directly from our failure to exercise reasonable skill and care in providing the Service.
@@ -287,3 +282,4 @@ You may also be subject to additional terms and conditions that may apply when y
 * 1.2.2 - minor updates - August 2022
 * 2.0.0 - clarifications around the relationship between the Foundation and Element - June 2023
 * 3.0.0 - major update to align with Digital Services Act and Online Safety Act, separate the terms for the matrix.org website and the Matrix homeserver, and update the Foundation’s registered address  – July 2025
+* 3.1.0 - clarification of applicability of terms and fair usage clauses - July 2025
