@@ -179,7 +179,7 @@ You agree that you shall not:
 * Access or use the Service in any manner that could damage, disable, overburden or impair any server we run or the network(s) connected to the Service.
 * Violate any applicable laws or regulations related to the access to or use of the Service, or engage in any activity prohibited by the Homeserver Terms.
 * Use the Service for any unlawful purposes or in support of illegal activities under UK/EU law. By using the Service, you agree to comply with all applicable laws governing your online conduct and content.
-* Act in a way that is in violation of our [Code of Conduct](/legal/code-of-conduct) in rooms that are part of the Matrix Space ([#team:matrix.org](https://matrix.to/#/#team:matrix.org)).
+* Act in a way that is in violation of our [Code of Conduct](@/legal/code-of-conduct.md) in rooms that are part of the Matrix Space ([#team:matrix.org](https://matrix.to/#/#team:matrix.org)).
 * Violate the rights of The Foundation, Element (i.e., New Vector Limited and any affiliated company) or any third party (including rights of privacy and publicity) or abuse, defame, harass, stalk or threaten another.
 
 Materials and services provided by third parties are governed by separate agreements accompanying such materials and services. The Foundation offers no guarantees and assumes no responsibility or liability of any type with respect to the third-party services, including any liability resulting from incompatibility between a third-party service, the Matrix.org service or another third-party service. You agree that you will not hold the Foundation responsible or liable with respect to the third-party services.
