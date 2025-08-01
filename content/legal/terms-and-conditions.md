@@ -87,7 +87,7 @@ We may pre-screen user messages or files to prevent spam and other abuse, and we
 
 You are solely and entirely responsible for all of your messages and files that you post or otherwise submit via the Service. You shall assume all risks associated with the use of said content including any reliance on its accuracy, completeness or usefulness. The Foundation does not guarantee the accuracy, integrity or quality of your messages or files.
 
-For further details on our approach to IP and copyright, please refer to our [copyright notice](/legal/copyright-notice).
+For further details on our approach to IP and copyright, please refer to our [copyright notice](@/legal/copyright-notice.md).
 
 ### 3.2 User Content
 
