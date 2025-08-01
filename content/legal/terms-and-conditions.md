@@ -31,7 +31,7 @@ Where you read The Matrix.org Foundation C.I.C., The Matrix.org Foundation, The 
 
 **These Homeserver Terms do not apply to Matrix servers run by anyone else - Matrix is an open network like the Web and these Homeserver Terms only apply to the homeserver provided by the Foundation.**
 
-If your account is not hosted in a server controlled by the Foundation but is involved in rooms federated with the [Matrix.org](http://Matrix.org) Homeserver, these Homeserver Terms will govern any moderation actions taken in relation to those rooms. We may also prevent your account or server from interacting with [Matrix.org](http://Matrix.org) Homeserver accounts as part of our ongoing Trust & Safety efforts, which are detailed further in clause 7.3.
+If your account is not hosted in a server controlled by the Foundation but is involved in rooms federated with the Matrix.org Homeserver, these Homeserver Terms will govern any moderation actions taken in relation to those rooms. We may also prevent your account or server from interacting with Matrix.org Homeserver accounts as part of our ongoing Trust & Safety efforts, which are detailed further in clause 7.3.
 
 ### 1.2 This is a living document
 
