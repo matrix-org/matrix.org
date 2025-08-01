@@ -1,5 +1,5 @@
 [[working_groups]]
-name = "Website and Content Working Group"
+name = "Website and Content"
 summary = "Editoral and technical oversight of the main websites and socials"
 description = """
 The website and content working group is responsible for the editorial and technical oversight of the main Matrix websites and social media channels.
@@ -15,7 +15,7 @@ committee = "Community Committee"
 sponsor = "HarHarLinks"
 
 [[working_groups]]
-name = "Events Working Group"
+name = "Events"
 summary = "Organising the Foundation's official events and appearances at conferences"
 description = """
 The Events working group is the main organising team of the official events hosted by the Foundation, such as the Matrix Conference or co-hosting FOSDEM Fringe, as well as official appearances at other conferences, e.g. the FOSDEM booth and devroom. The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the Matrix Community Summit, or the FrOSCon Matrix Community devroom, and tries to foster an ecosystem of decentralised events and user groups.
@@ -24,3 +24,30 @@ members = ["Yan", "Nadine", "Thib", "Robin", "HarHarLinks", "The one with the br
 matrix_room_alias = "#events-wg:matrix.org"
 committee = "Community Committee"
 sponsor = "HarHarLinks"
+
+[[working_groups]]
+name = "Trust & Safety Research & Documentation"
+summary = "Documenting and Researching the state of Trust and Safety in the ecosystem"
+description = """
+To make appropriate decisions, the T&S committee needs to know about the state of T&S in the wider ecosystem. It needs to have insights into current challenges, solutions and initiatives.
+On the other hand the community can also benefit from having some of that information documented.
+The T&S R&D WG is a tool to help with that. It includes a wider set of individuals and reports their research results to the T&S committee. The WG is also encouraged to enhance the documentation on matrix.org to help communities and users on Matrix moderate their rooms.
+The T&S committee might sometimes ask the WG for help in researching specific topics in more detail to guide their decisions.
+"""
+members = ["Nico", "Cat", "Niko", "SFaulken", "Gnuxie"]
+matrix_room_alias = "#tns-rnd-wg-office:neko.dev"
+committee = "Trust & Safety Committee"
+sponsor = "Nico"
+
+[[working_groups]]
+name = "Room Directory"
+summary = "Help maintain the room directory on the matrix.org homeserver"
+description = """
+The purpose of the room directory working group is to implement the matrix.org room directory policy, as described in that policy.
+
+Additionally the working group might propose improvements to the policy, which the T&S committee will then vote on.
+"""
+members = ["Nico", "Sky"]
+matrix_room_alias = "#room-dir-wg-office:neko.dev"
+committee = "Trust & Safety Committee"
+sponsor = "Nico"
