@@ -31,7 +31,7 @@ summary = "Documenting and Researching the state of Trust and Safety in the ecos
 description = """
 To make appropriate decisions, the T&S committee needs to know about the state of T&S in the wider ecosystem. It needs to have insights into current challenges, solutions and initiatives.
 On the other hand the community can also benefit from having some of that information documented.
-The T&S R&D WG is a tool to help with that. It includes a wider set of individuals and reports their research results to the T&S committee. The WG is also encouraged to enhance the documentation on matrix.org to help communities and users on Matrix moderate their rooms.
+The T&S R&D WG is a tool to help with that. It includes a wider set of individuals and reports their research results to the T&S committee. The WG is also encouraged to enhance the [documentation](/docs) on the Matrix.org website to help communities and users on Matrix moderate their rooms.
 The T&S committee might sometimes ask the WG for help in researching specific topics in more detail to guide their decisions.
 """
 members = ["Nico", "Cat", "Niko", "SFaulken", "Gnuxie"]
