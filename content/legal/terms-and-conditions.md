@@ -171,7 +171,7 @@ You agree that you shall not:
 
 * Use or attempt to gain unauthorised access to or use another's account, password, data, or computer systems or networks connected to the Matrix.org homeserver, whether through malicious attacks, password mining or any other means.
 * Access or attempt to access any material that you are not authorised to access.
-* Submit or transmit any material that violates or infringes the rights of others including, without limitation, patent, trademark, trade secret, copyright, publicity, or other proprietary rights. Please see our [Copyright Notice](/legal/copyright-notice) for further details.
+* Submit or transmit any material that violates or infringes the rights of others including, without limitation, patent, trademark, trade secret, copyright, publicity, or other proprietary rights. Please see our [Copyright Notice](@/legal/copyright-notice.md) for further details.
 * Disrupt or interfere with the security of, or otherwise cause harm to, the Matrix.org homeserver, systems resources, accounts, passwords, servers or networks connected to or accessible through the Service or any affiliated or linked sites.
 * Use the Service to transmit unsolicited or bulk communications to anyone at all, be they users of the Service, federated Matrix homeservers, or connected on a bridged network.
 * Post or otherwise submit any software, programs or files in a manner that is intended to cause harm to or disruption of another's equipment, software or other property, including any corrupted files, time bombs, Trojan horses, viruses and worms.
