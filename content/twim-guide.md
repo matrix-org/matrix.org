@@ -175,7 +175,7 @@ TWIM is published every Friday by the following process.
 The Website and Content WG usually internally determines the editor for the week ahead of time
 in order to ensure there will be a TWIM during any given week, even considering holidays etc.
 They also determine a reviewer, who ideally is also a member of the Working Group, since a review from
-someone with commit access is needed to merge to the matrix.org website Git repository.
+someone with commit access is needed to merge to the [matrix.org website Git repository](https://github.com/matrix-org/matrix.org/).
 
 On Friday morning, the editor for the week announces via `@room` ping to the TWIM room
 that TWIM will be published that day, reminding readers of this guide and the submission deadline.
@@ -217,8 +217,8 @@ the website repository to finish it up:
 - configure the right `path` in the metadata
 - add Matrix Live video embed and title
 - poll the ping stats and include them in the post
-- add any images to the repo and write `alt` text for accessibility
-- upload any videos to YouTube and embed them in the post
+- add any submitted images to the repo and write `alt` text for accessibility
+- upload any submitted videos to YouTube and embed them in the post
 - verify Markdown correctness regarding e.g. headings, links
 
 The blog post is pushed to a new pull request on the matrix.org website repository and a review requested
