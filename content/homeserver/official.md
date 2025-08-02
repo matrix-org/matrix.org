@@ -8,7 +8,7 @@ weight = 10
 The Matrix.org Foundation uses `@server:matrix.org` to message users on the matrix.org homeserver. It is a special account, used to send information from the server to registered users.
 
 {% notice_box() %}
-We will <b>never</b> ask for your personal information or password
+We will **never** ask for your personal information or password
 {% end %}
 
 ## Why am I in a room called Matrix.org (Official Account)?
