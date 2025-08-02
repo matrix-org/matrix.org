@@ -27,19 +27,20 @@ Here are some examples of how it looks in some common apps:
 
 <div style="display:flex; flex-direction:row; flex-wrap: wrap; gap: 8px; align-items: baseline; justify-content: center;">
 {{ figure(
-    img="/images/homeserver/official/client1.png"
-    alt="Element Web's right panel"
-    caption="")
+    img="/images/homeserver/official/client1.avif"
+    caption="Element Web's right panel")
 }}
 {{ figure(
-    img="/images/homeserver/official/client3.png"
-    alt="Cinny's user info popup"
-    caption="")
+    img="/images/homeserver/official/client3.avif"
+    caption="Cinny's user info popup")
 }}
 {{ figure(
-    img="/images/homeserver/official/client2.png"
-    alt="Element Web's tooltip on the avatar"
-    caption="")
+    img="/images/homeserver/official/client2.avif"
+    caption="Element Web's tooltip on the avatar")
+}}
+{{ figure(
+    img="/images/homeserver/official/client4.avif"
+    caption="Tammy's user info page")
 }}
 </div>
 
