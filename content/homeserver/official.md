@@ -41,6 +41,11 @@ Here are some examples of how it looks in some common apps:
     alt="Element Web's tooltip on the avatar"
     caption="")
 }}
+{{ figure(
+    img="/images/homeserver/official/client4.avif"
+    alt="Tammy's user info page"
+    caption="")
+}}
 </div>
 
 ## What should I do if the user ID doesn’t match?
