@@ -149,7 +149,7 @@ on the category for a project.
 {% notice_box() %}
 This section documents the process "behind the scenes" for anyone interested.
 Reading the above info is sufficient to ensure writing a great TWIM entry.
-Please approach the <a href="https://matrix.to/#/#matrix.org-website:matrix.org">Website and Content Working Group</a>
+Please approach the [Website and Content Working Group](https://matrix.to/#/#matrix.org-website:matrix.org)
 with any questions or ideas about TWIM and its process.
 {% end %}
 
