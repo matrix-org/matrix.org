@@ -48,3 +48,11 @@ Here are some examples of how it looks in some common apps:
 If you receive a message pretending to be the official account, you should report the message immediately. If you are a matrix.org user, you can use the "report user" function in your app or client to let us know.
 
 If your client doesn't provide a way to do this, or if you are on a different homeserver, then please email us at [abuse@matrix.org](mailto:abuse@matrix.org) with the details.
+
+## Why does the official account room show as unencrypted/not encrypted?
+
+Depending on the Matrix client being used, it may show the room as being "not encrypted" or something similar.
+
+This is expected as the official account room does not make use of the [End-to-End Encryption](https://spec.matrix.org/latest/client-server-api/#end-to-end-encryption) feature of Matrix.
+
+This is because the messages in the official account room are only ever sent by the server to you, and are already protected by secure HTTPS encryption during transmission making them end-to-end encrypted at the transport layer. Therefore, additional Matrix-level encryption is not needed for these messages.
