@@ -51,8 +51,10 @@ If your client doesn't provide a way to do this, or if you are on a different ho
 
 ## Why does the official account room show as "not encrypted"?
 
-Depending on the Matrix client being used, it may show the room as being "not encrypted" or something similar. This is expected.
+Depending on the Matrix client being used, it may show the room as being "not encrypted" or something similar.
 
-This is because the messages in the official account room are only ever sent by the server to you, and are already protected by secure HTTPS encryption during transmission making them end-to-end encrypted at the transport layer.
+This is expected.
+
+The reason this is okay is because the messages in the official account room are only ever sent by the server to you, and are already protected by secure HTTPS encryption during transmission making them end-to-end encrypted at the transport layer.
 
 Therefore, it is not necessary to use the [End-to-End Encryption](https://spec.matrix.org/latest/client-server-api/#end-to-end-encryption) feature of Matrix for this room.
