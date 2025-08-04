@@ -445,6 +445,13 @@
 #information-banner {
     width: 100%;
     padding: .4em 1em;
-    background-color: #ffcb006b;
+    background-color: var(--notice-box-color);
     text-align: center;
+}
+
+.notice-box {
+    text-align: center;
+    padding: .4em 1em;
+    margin-bottom: 1rem;
+    background-color: var(--notice-box-color);
 }
