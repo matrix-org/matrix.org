@@ -49,10 +49,10 @@ If you receive a message pretending to be the official account, you should repor
 
 If your client doesn't provide a way to do this, or if you are on a different homeserver, then please email us at [abuse@matrix.org](mailto:abuse@matrix.org) with the details.
 
-## Why does the official account room show as unencrypted/not encrypted?
+## Why does the official account room show as "not encrypted"?
 
-Depending on the Matrix client being used, it may show the room as being "not encrypted" or something similar.
+Depending on the Matrix client being used, it may show the room as being "not encrypted" or something similar. This is expected.
 
-This is expected as the official account room does not make use of the [End-to-End Encryption](https://spec.matrix.org/latest/client-server-api/#end-to-end-encryption) feature of Matrix.
+This is because the messages in the official account room are only ever sent by the server to you, and are already protected by secure HTTPS encryption during transmission making them end-to-end encrypted at the transport layer.
 
-This is because the messages in the official account room are only ever sent by the server to you, and are already protected by secure HTTPS encryption during transmission making them end-to-end encrypted at the transport layer. Therefore, additional Matrix-level encryption is not needed for these messages.
+Therefore, it is not necessary to use the [End-to-End Encryption](https://spec.matrix.org/latest/client-server-api/#end-to-end-encryption) feature of Matrix for this room.
