@@ -168,13 +168,22 @@ Group to define this for themselves, providing:
 
 The role of (Vice) Chair in a Working Group is not expected to be onerous. The
 Board Sponsor will help with necessary process-related work such as reporting
-to the Committee Chair, and (if needed) drafting minutes. Most work in a
-Working Group is consensus driven, and in any case voting is difficult because
-of the fluid nature of the membership.
+to the Committee Chair, and (if needed) drafting minutes. The role of a Chair
+is a process role: it does not give the Chair special powers, but the
+responsibility to ensure the work of the Working Group is organized well.
 
-Where a consensus cannot be reached, the Chair can ask the Board Sponsor to
-help resolve the issue - likely by asking the Committee to decide on the
-direction needed.
+The Chair is responsible that the Working Group sticks to the charter, that
+regular meetings are set up and minutes of them kept, and that reports are given
+to the sponsor. The goal is to keep the Working Group active, drive consensus,
+and thus enable steady progress. A Working Group may name a Vice Chair in order
+to have someone to share this responsibility. Having this responsibility does
+not mean the Chair is expected to do all these tasks themselves, but only that
+they get done reliably - work can be delegated to any member.
+
+Most work in a Working Group is consensus driven, and in any case voting is
+difficult because of the fluid nature of the membership. Where a consensus
+cannot be reached, the Chair can ask the Board Sponsor to help resolve the
+issue - likely by asking the Committee to decide on the direction needed.
 
 ## 6. Chair & Vice Chair of the Governing Board
 
