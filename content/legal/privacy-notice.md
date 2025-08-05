@@ -324,7 +324,7 @@ Rooms have different visibility settings which are determined by the room admini
 * `shared`: people need to join the room to see the history, but will then see the history up to when this visibility setting was set (the change is not retroactive).  
 * `world_readable`: everyone can see the room history without even joining the room.
 
-If you share information in a room set to world\_readable this might be available to people outside the Matrix ecosystem and indexed by search engines. Please ensure that you double check the settings of each room before you participate and always avoid sharing personal and sensitive data in unencrypted rooms.
+If you share information in a room set to `world_readable` this might be available to people outside the Matrix ecosystem and indexed by search engines. Please ensure that you double check the settings of each room before you participate and always avoid sharing personal and sensitive data in unencrypted rooms.
 
 In encrypted rooms, the data is stored in our databases but the encryption keys are stored only on your devices or by yourself. Users can optionally backup an encrypted copy of their keys on the Service to aid recovery if they lose all their keys and devices. This key backup is encrypted by a recovery key that only the user has access to. [Element](https://element.io) (the company, including its employees and contractors) are unable to read your message content in our database. If you lose access to your encryption keys, you lose access to your messages forever.
 
