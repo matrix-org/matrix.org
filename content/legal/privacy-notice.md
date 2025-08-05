@@ -182,7 +182,7 @@ We use [Donorbox](https://donorbox.org/) to collect donations from individuals a
 
 [Donorbox](https://donorbox.org/) manages payment processing via [Stripe](https://stripe.com/). You can review their Privacy Policy [here](https://donorbox.org/privacy).
 
-**2.2.1.4 Information collected for Event Management**
+#### 2.2.1.4 Information collected for Event Management
 
 For events held by the Foundation, we collect information through services such as Pretix and Pretalx. This information includes:
 
@@ -220,7 +220,7 @@ For more information on Pretix, who support us with event ticketing, please see 
 
 For more information on Pretalx, who support us with event scheduling, please see their Privacy Policy.
 
-**2.2.1.4 Information collected for paid plans**
+#### 2.2.1.4 Information collected for paid plans
 
 We need to collect additional information on your account to manage paid plans. This is essentially a flag to identify your account as being on a free or paid plan. Payment details are processed by [Stripe](https://stripe.com/). Additionally, we use [Xero](https://www.xero.com/) to automate our tax obligations.
 
