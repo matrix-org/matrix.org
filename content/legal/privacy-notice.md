@@ -270,9 +270,9 @@ It may not be technically possible to support your management of your data once 
 
 Access control settings, requests to remove messages by "redactions" or remove personal data under GDPR Article 17 Right to Erasure (Right to be Forgotten) are shared to bridging services, which are expected to honour them to the best of their ability. Be aware that not all bridged networks or bridges support the necessary technical capabilities to limit, remove or erase messages. If this is not acceptable to you, please do not use bridged rooms.
 
-###### *2.3.1.3 Integration services (bots and widgets)*
+###### 2.3.1.3 Integration services (bots and widgets)
 
-The [matrix.org](https://matrix.org) homeserver provides a range of integrations in the form of Widgets (miniature web applications accessed as part of a Matrix Client) and Bots (automated participants in rooms).
+The [matrix.org homeserver](@/homeserver/about.md) provides a range of integrations in the form of Widgets (miniature web applications accessed as part of a Matrix Client) and Bots (automated participants in rooms).
 
 Bots and Widgets currently have access to all the messages and files in any room in which they participate, although we are adding a more sophisticated access control system.
 
@@ -303,7 +303,7 @@ If you become aware of any unauthorised use of your account or any other breach 
 
 If you forget your password (and you have registered an email address) you can use the password reset facility to reset it. It is our policy to not change passwords on your behalf. This is ultimately to protect your privacy and the integrity of your account.
 
-You can manage your account by using a Matrix client such as Element, FluffyChat, Hydrogen and many others. Click [here](https://matrix.org/ecosystem/clients) for a comprehensive list of Matrix clients.
+You can manage your account by using a Matrix client such as Element, FluffyChat, Hydrogen and many others. Click [here](@/ecosystem/clients/_index.md) for a comprehensive list of Matrix clients.
 
 ### 2.7 Our commitment to children's privacy
 
@@ -315,7 +315,7 @@ You can access all the information we collect about you by using any compatible 
 
 ### 2.9 Who can see my messages and files?
 
-In unencrypted and encrypted rooms, users connecting to the [matrix.org](https://matrix.org) homeserver (directly or over federation) will be able to see messages and files according to the access permissions configuration of the relevant room. This data is stored in the format it was received on our servers, and can be viewed by [Element](https://element.io) engineers (employees and contractors) under the conditions outlined below.
+In unencrypted and encrypted rooms, users connecting to the [matrix.org homeserver](@/homeserver/about.md) (directly or over federation) will be able to see messages and files according to the access permissions configuration of the relevant room. This data is stored in the format it was received on our servers, and can be viewed by [Element](https://element.io) engineers (employees and contractors) under the conditions outlined below.
 
 Rooms have different visibility settings which are determined by the room administrators. The history visibility possibilities are the following, by increasing order of openness (least open first):
 
