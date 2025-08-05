@@ -248,7 +248,7 @@ For full details on how Plausible processes data please refer to their [Privacy 
 
 We may share your information when working with our suppliers in order to provide the Service.
 
-In addition, the [matrix.org](https://matrix.org) homeserver is a decentralised and open service. This means that, to support communication between users on different homeservers or different messaging platforms, your username, display name and messages and files are sometimes shared with other services that are connected with the [matrix.org](https://matrix.org) homeserver.
+In addition, the [matrix.org homeserver](@/homeserver/about.md) is a decentralised and open service. This means that, to support communication between users on different homeservers or different messaging platforms, your username, display name and messages and files are sometimes shared with other services that are connected with the [matrix.org homeserver](@/homeserver/about.md).
 
 ##### 2.3.1.1 Federation
 
