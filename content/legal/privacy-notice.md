@@ -224,7 +224,7 @@ For more information on Pretalx, who support us with event scheduling, please se
 
 We need to collect additional information on your account to manage paid plans. This is essentially a flag to identify your account as being on a free or paid plan. Payment details are processed by [Stripe](https://stripe.com/). Additionally, we use [Xero](https://www.xero.com/) to automate our tax obligations.
 
-Additionally, we have three first party session cookies that are exclusively used to provide the plan management screens and subscription functions. The names of the cookies are `checkoutSession`, `checkoutAction` and `appleInApp.`
+Additionally, we have three first party session cookies that are exclusively used to provide the plan management screens and subscription functions. The names of the cookies are `checkoutSession`, `checkoutAction` and `appleInApp`.
 
 #### 2.2.2 Information we collect automatically as you use the Service
 
