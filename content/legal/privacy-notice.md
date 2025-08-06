@@ -238,7 +238,7 @@ Currently, we log the IP addresses of everyone who accesses the Service. This da
 
 **Analytics information**
 
-We use the privacy-preserving website analytics solution Plausible. Plausible allows us to understand how our website is used, without the use of cookies or other tracking technologies. Your use of the [matrix.org](https://matrix.org) website is not associated with any persistent identifiers or cross-site tracking and no personal data is collected about you.
+We use the privacy-preserving website analytics solution Plausible. Plausible allows us to understand how our website is used, without the use of cookies or other tracking technologies. Your use of the [matrix.org website](/) is not associated with any persistent identifiers or cross-site tracking and no personal data is collected about you.
 
 For full details on how Plausible processes data please refer to their [Privacy Policy](https://plausible.io/data-policy).
 
