@@ -303,7 +303,7 @@ If you become aware of any unauthorised use of your account or any other breach 
 
 If you forget your password (and you have registered an email address) you can use the password reset facility to reset it. It is our policy to not change passwords on your behalf. This is ultimately to protect your privacy and the integrity of your account.
 
-You can manage your account by using a Matrix client such as Element, FluffyChat, Hydrogen and many others. Click [here](@/ecosystem/clients/_index.md) for a comprehensive list of Matrix clients.
+You can manage your account by using a Matrix client such as Element, FluffyChat and many others. Click [here](@/ecosystem/clients/_index.md) for a comprehensive list of Matrix clients.
 
 ### 2.7 Our commitment to children's privacy
 
