@@ -41,7 +41,11 @@ These limits may be reviewed and change over time as we refine our offering.
 
 ## FAQs
 
-For now, please refer to the [blog post](/blog/2025/06/funding-homeserver-premium) to answer your questions.
+Please find the answers to some questions below. For anything else please refer to the [blog post](/blog/2025/06/funding-homeserver-premium) to answer your questions.
+
+### Can an account on the Free usage plan upgrade a public room?
+
+Yes, an account on the Free usage plan can upgrade a public room using the [room upgrade API](https://spec.matrix.org/latest/client-server-api/#post_matrixclientv3roomsroomidupgrade).
 
 ## Support
 
