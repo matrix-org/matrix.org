@@ -43,6 +43,20 @@ These limits may be reviewed and change over time as we refine our offering.
 
 Please find the answers to some questions below. For anything else please refer to the [blog post](@/blog/2025/06/2025-06-11-funding-homeserver-premium.md) to answer your questions.
 
+### What types of data count towards the fair usage limits?
+
+The following usage by matrix.org homeserver accounts currently contribute towards the limits:
+
+- media/files that your Matrix clients send (includes thumbnails where applicable) via the [media upload API](https://spec.matrix.org/v1.15/client-server-api/#post_matrixmediav3upload)
+- previews of links that your Matrix client requests via the [URL preview API](https://spec.matrix.org/v1.15/client-server-api/#get_matrixclientv1mediapreview_url)
+- any other usage that stores data in the local [media/content repository](https://spec.matrix.org/v1.15/client-server-api/#content-repository) on your behalf
+
+Some (non-exhaustive) examples of things that do not currently count towards the limits:
+
+- media/files that you receive from other users in a room (whether on the matrix.org homeserver or another federated homeserver)
+- the contents of messages/events that you send and receive (other than the media/file attachments above)
+- the HTTPS data transfer to/from the matrix.org homeserver
+
 ### Can an account on the Free usage plan upgrade a public room?
 
 Yes, an account on the Free usage plan can upgrade a public room using the [room upgrade API](https://spec.matrix.org/v1.15/client-server-api/#post_matrixclientv3roomsroomidupgrade).
