@@ -96,7 +96,7 @@ The Personal Data contained in a state event is usually limited to the username,
 
 Each case will be decided based on the factors listed above. In most situations we will not erase state events. In extreme situations, where not erasing state events will place people at material risk of harm, we may choose to erase state events or remove the entire conversation.
 
-#### 2.1.3 Data portability
+#### 2.1.4 Data portability
 
 Under GDPR you have a right to request a copy of your data in a commonly-accepted format. If you would like a copy of your data, please send a request over Matrix to [dpo@matrix.org](mailto:dpo@matrix.org). In the future we will provide a better interface for this!
 
@@ -220,7 +220,7 @@ For more information on Pretix, who support us with event ticketing, please see 
 
 For more information on Pretalx, who support us with event scheduling, please see their Privacy Policy.
 
-#### 2.2.1.4 Information collected for paid plans
+#### 2.2.1.5 Information collected for paid plans
 
 We need to collect additional information on your account to manage paid plans. This is essentially a flag to identify your account as being on a free or paid plan. Payment details are processed by [Stripe](https://stripe.com/). Additionally, we use [Xero](https://www.xero.com/) to automate our tax obligations.
 
@@ -270,7 +270,7 @@ It may not be technically possible to support your management of your data once 
 
 Access control settings, requests to remove messages by "redactions" or remove personal data under GDPR Article 17 Right to Erasure (Right to be Forgotten) are shared to bridging services, which are expected to honour them to the best of their ability. Be aware that not all bridged networks or bridges support the necessary technical capabilities to limit, remove or erase messages. If this is not acceptable to you, please do not use bridged rooms.
 
-###### 2.3.1.3 Integration services (bots and widgets)
+##### 2.3.1.3 Integration services (bots and widgets)
 
 The [matrix.org homeserver](@/homeserver/about.md) provides a range of integrations in the form of Widgets (miniature web applications accessed as part of a Matrix Client) and Bots (automated participants in rooms).
 
@@ -360,11 +360,11 @@ In the event that we sell or buy any business or assets, we may disclose your pe
 
 If we or substantially all of our assets are acquired by a third party, personal data held by us about our users will be one of the transferred assets.
 
-### 2.12 How is my data protected from another user's data?
+### 2.13 How is my data protected from another user's data?
 
 All of our users' data for the Service currently resides in the same database cluster which is due to the nature of our Service. We use software best practices to guarantee that only people who you designate as viewers of your data can access it. In other words, we segment our user data via software. We do our best and are very confident we're doing a good job at it, but, like every other service that hosts their user data on the same database, we cannot guarantee that it is immune to a sophisticated attack.
 
-### 2.13 What should I do if I find a security vulnerability in the Service?
+### 2.14 What should I do if I find a security vulnerability in the Service?
 
 If you have discovered a security concern, please email us at [security@matrix.org](mailto:security@matrix.org). We'll work with you to make sure that we understand the scope of the issue, and that we fully address your concern. We consider correspondence sent to [security@matrix.org](mailto:security@matrix.org) our highest priority, and work to address any issues that arise as quickly as possible.
 
