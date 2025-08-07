@@ -41,7 +41,7 @@ These limits may be reviewed and change over time as we refine our offering.
 
 ## FAQs
 
-Please find the answers to some questions below. For anything else please refer to the [blog post](/blog/2025/06/funding-homeserver-premium) to answer your questions.
+Please find the answers to some questions below. For anything else please refer to the [blog post](@/blog/2025/06/2025-06-11-funding-homeserver-premium.md) to answer your questions.
 
 ### Can an account on the Free usage plan upgrade a public room?
 
