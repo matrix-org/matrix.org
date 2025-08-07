@@ -47,6 +47,8 @@ Please find the answers to some questions below. For anything else please refer 
 
 Yes, an account on the Free usage plan can upgrade a public room using the [room upgrade API](https://spec.matrix.org/latest/client-server-api/#post_matrixclientv3roomsroomidupgrade).
 
+However, a Free account will not be able to do a more advanced "client driven" room upgrade where a new room is created first and then a tombstone event sent to the old room.
+
 ## Support
 
 If you are on the premium plan then you can get support via email at [billing-support@matrix.org](mailto:billing-support@matrix.org).
