@@ -33,7 +33,6 @@ Where a user account has been allocated to a plan the following usage limits app
 |-|-|-|
 |Size of attachment that can be sent|10MB maximum|100MB maximum|
 |Speed at which you can invite others to a room|Standard|10 times faster|
-|Ability to create [public](https://spec.matrix.org/latest/client-server-api/#mroomjoin_rules) rooms|Not available|Available|
 
 In accordance with [our terms](@/legal/terms-and-conditions.md#7-2-data-limits-and-fair-usage), fair usage limits of 500MB per 24 hour period, up to a limit of 2GB per 28 days, currently apply to all accounts. These limits will vary for Free and Premium usage plans in the future. You can view your current usage in the [Plan](https://account.matrix.org/account?action=org.matrix.plan_management) section of the My Account screens.
 
