@@ -31,9 +31,9 @@ html {
 
 body {
     margin: 0;
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     background-color: #fff;
     color: var(--color-text);
 
@@ -52,11 +52,6 @@ body {
         "Segoe UI Symbol";
 
     line-height: 1.75;
-}
-
-main {
-    flex: 1;
-    padding-top: var(--navbar-height);
 }
 
 a {
