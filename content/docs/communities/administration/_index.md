@@ -83,12 +83,12 @@ non-comprehensive list, please PR to add your client!
 - Sending room upgrades
   - Element Web -> where/how?
   - Fractal
-  - Neochat
+  - NeoChat
   - FluffyChat
 - Following Tombstones to the new room
   - Element Web
   - Fractal
-  - Neochat, probably
+  - NeoChat
   - FluffyChat, probably
   - Tammy
   - Nheko
