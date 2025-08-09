@@ -67,33 +67,53 @@ This is a non-exhaustive list of recommendations to consider when planning a roo
 Which of these cases apply to your room depends on your specific setup, for example size of your community.
 For more background information and reasoning about the recommendations, see the "[Limitations](#limitations-and-things-to-consider)" section further below.
 
-**Choose the "right" account on the "right" server** to execute your upgrade.  
+**Choose the "right" account on the "right" homeserver** to execute your upgrade.  
 The choice of the account starting the upgrade implies the homeserver that will perform the upgrade.
+Here are some important factors to guide your choice:
 
 1. Upgrading a room means that the room members need to receive the info about the upgrade and then join the new room.
-   The server performing the upgrade by necessity becomes the center of attention here for a while, acting as a gateway to the new room in a sense.
-   It thus makes sense to choose a server that is fast and well connected so it can handle all the joins following the room upgrade itself well.
-   If your community is centered around a certain server, it probably makes sense use that one.
-2. You as well as users on other servers may have set up [aliases](https://spec.matrix.org/latest/client-server-api/#room-aliases) - shareable addresses to find the room that are hosted by a specific server.
-   By definition, a server can thus only update aliases itself hosts.
+   The homeserver performing the upgrade by necessity becomes the center of attention here for a while, acting as a gateway to the new room in a sense.
+   It thus makes sense to choose a homeserver that is fast and well connected so it can handle all the joins following the room upgrade itself well.
+   If your community is centered around a certain homeserver, it probably makes sense use that one.
+2. You as well as users on other homeservers may have set up [aliases](https://spec.matrix.org/latest/client-server-api/#room-aliases) - shareable addresses to find the room that are hosted by a specific homeserver.
+   By definition, a homeserver can thus only update aliases itself hosts.
    Thus only aliases on the same homeserver will be transferred automatically.
-   However you can (and should) always update the aliases on other servers after the upgrade.
+   However you can (and should) always update the aliases on other homeservers after the upgrade.
 3. If your community is using a space to organise its rooms, the user upgrading a room needs at least enough access to the parent space to update the reference from the old to the upgraded room.
-4. Room version 12 introduces some changes to room ownership semantics, such as irrevokable full control of the room.
+4. Room version 12 introduces some changes to room ownership semantics, such as [irrevokable full control](https://github.com/matrix-org/matrix-spec-proposals/pull/4289) of the room.
    Using a separate service account to execute the upgrade means that this account will be the creator of the new room with the special access rights.
    It being a special account means you can manage access to it among your admins independently of the rules Matrix imposes on you.
+   You could also consider setting up multiple such accounts across multiple homeservers as [`additional_creators`](https://github.com/matrix-org/matrix-spec-proposals/pull/4289), in case one of them becomes unavailable.
 
-- ensure your bots and integrations are reconfigured to the new room
-  - particularly moderation tooling
-  - consider if you need to copy some room state over, e.g. hookshot configuration
-- if your old room was published in the public room directory, you might have to update the reference to the new room manually
-- plan with rate limits
-  - servers will only allow you to create so many new rooms within a certain time, so you might get stuck half-way if you have many rooms. a workaround would be to use a special account that your server admin has excepted from this rate limiting. for example, your moderation bot account is a good candidate for this.
-  - servers will only allow you to send a certain amount of invites as well as only allow users to join proactively at a certain rate
-  - if your community has a lot of rooms that are being upgraded, you might consider sending follow-up pings to the old rooms to make sure everyone got notified about every room, since it is easy to lose a room due to the different notification and rate limiting mechanics in play
-- remind your users that they may need to "complete" the update on their side
-  - e.g. their non-canonical spaces, room directories, external aliases
-- send a message linking to the new room into the old room to support clients without support for room upgrades (see list below). you might consider pining the message, using a room ping, etc.
+**Bots and integrations** may require additional manual migration steps.  
+After upgrading, ensure your bots and integrations are reconfigured to the new room.
+This is particularly important for any moderation tooling you are using, such as [mjolnir](@/docs/communities/moderation/_index.md#your-community-s-security-guard) or [draupnir](https://the-draupnir-project.github.io/draupnir-documentation/).
+Check if your integrations need a configuration update, e.g. supplying them with the new room ID, and check that they have joined the upgraded room.
+Some integrations also store state in Matrix rooms, so consider if you need to recreate or copy some room state over, as is the case for example with [Hookshot](https://matrix-org.github.io/matrix-hookshot/latest/usage/room_configuration.html) configuration.
+
+**The [published room directory](https://spec.matrix.org/latest/client-server-api/#published-room-directory)** is a per-homeserver index of advertised rooms.  
+Similarly to aliases, each homeserver can only update its own room directory.
+If your old room was published in the room directory, you might have to update the reference to the new room manually, especially on those homeservers that did not perform the upgrade.
+
+**Rate limits** might apply to your upgrade in several different ways.  
+This means that certain actions such as creating a room can only be done a few times before needing to wait.
+
+1. Homeservers will only allow you to create a certain amount of new rooms within a certain time, so you might get stuck half-way if you have many rooms to upgrade.
+   Using a special account as mentioned above can work around this: some servers allow their admins to specify accounts that are exempt from rate limits.
+   For example, your moderation bot account can be a good candidate for this, as it usually already has exemptions so it can execute many moderation actions in a short amount of time.
+2. Homeservers will only allow you to send a certain amount of invites as well as
+3. only allow users to join public rooms at a certain rate. It may make sense for your community to inform your users about this up front.
+4. Homeservers will only allow to join a single user to join a certain amount of rooms at a time.
+   If your community has a lot of rooms that are being upgraded, you users might receive a lot of room upgrade notifications asking them to join the upgraded room, but they might get rate-limited depending on *their* homeserver's configuration.
+   You might thus consider sending follow-up pings to the old rooms to make sure everyone got notified about every room and followed the upgrade successfully, since it is easy to lose a room due to the different notification and rate limiting mechanics in play.
+
+**Communicate the upgrade plans** to your users.  
+There are several situations that users will need to handle on the "receiving" side.
+For example, there might be aliases, room directories, and spaces referencing your room, which you might not even be aware of and that will need to be updated by the respective users.
+
+There are also some [clients that do not have support](#following-tombstones-to-the-new-room) to find and join the upgraded room from the old room.
+You send a manual message into the old room with a link to the new room as a workaround for these users.
+You might consider pinning the message, using a room ping, renaming the old room, and similar methods to make sure your users are aware of the upgrade.
 
 ### Limitations and things to consider
 
