@@ -67,12 +67,22 @@ This is a non-exhaustive list of recommendations to consider when planning a roo
 Which of these cases apply to your room depends on your specific setup, for example size of your community.
 For more background information and reasoning about the recommendations, see the "[Limitations](#limitations-and-things-to-consider)" section further below.
 
-- use the "right" account on the "right" server
-  - the server should be fast and well connected
-  - if your community is centered around a certain server, probably use that one
-  - only aliases on the same homeserver will be transferred automatically
-  - consider romo v12 creator semantics: use a service account the access to which you can control outside of the rules of matrix
-  - if your community is using a canonical space, the one upgrading the room needs at least enough access to the parent space to update the reference from the old to the upgraded room
+**Choose the "right" account on the "right" server** to execute your upgrade.  
+The choice of the account starting the upgrade implies the homeserver that will perform the upgrade.
+
+1. Upgrading a room means that the room members need to receive the info about the upgrade and then join the new room.
+   The server performing the upgrade by necessity becomes the center of attention here for a while, acting as a gateway to the new room in a sense.
+   It thus makes sense to choose a server that is fast and well connected so it can handle all the joins following the room upgrade itself well.
+   If your community is centered around a certain server, it probably makes sense use that one.
+2. You as well as users on other servers may have set up [aliases](https://spec.matrix.org/latest/client-server-api/#room-aliases) - shareable addresses to find the room that are hosted by a specific server.
+   By definition, a server can thus only update aliases itself hosts.
+   Thus only aliases on the same homeserver will be transferred automatically.
+   However you can (and should) always update the aliases on other servers after the upgrade.
+3. If your community is using a space to organise its rooms, the user upgrading a room needs at least enough access to the parent space to update the reference from the old to the upgraded room.
+4. Room version 12 introduces some changes to room ownership semantics, such as irrevokable full control of the room.
+   Using a separate service account to execute the upgrade means that this account will be the creator of the new room with the special access rights.
+   It being a special account means you can manage access to it among your admins independently of the rules Matrix imposes on you.
+
 - ensure your bots and integrations are reconfigured to the new room
   - particularly moderation tooling
   - consider if you need to copy some room state over, e.g. hookshot configuration
