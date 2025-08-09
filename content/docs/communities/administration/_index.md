@@ -33,29 +33,42 @@ Affected rooms should be upgraded within a reasonable time frame.
 
 ### How to upgrade a room
 
-- We recommend to read this chapter first in its entirety and make a plan before starting to execute any upgrades. Room upgrades are a bit messy due to their nature and you want to get them right first try to cause as little friction as possible.
-- Clients that support upgrading rooms may offer a button or similar in UI. Might depend on your homeserver allowing this.
-- Sometimes you might be able to choose the room version, but usually the default room version defined by the server is used.
-- If you really need to upgrade before your homeserver admin recommends it by updating the server's config (TODO: add info for homeserver admins on how to do this?), then you can use e.g. Element Web's `/upgraderoom <version>` chat command after enabling the developer tools (TODO: link to Element web docs?)
-- Recommendations
-  - for reasoning about this, see the "Limitations" section
-  - ensure your bots and integrations are reconfigured to the new room
-    - particularly moderation tooling
-    - consider if you need to copy some room state over, e.g. hookshot configuration
-  - use the "right" account on the "right" server
-    - the server should be fast and well connected
-    - if your community is centered around a certain server, probably use that one
-    - only aliases on the same homeserver will be transferred automatically
-    - consider romo v12 creator semantics: use a service account the access to which you can control outside of the rules of matrix
-    - if your community is using a canonical space, the one upgrading the room needs at least enough access to the parent space to update the reference from the old to the upgraded room
-  - if your old room was published in the public room directory, you might have to update the reference to the new room manually
-  - plan with rate limits
-    - servers will only allow you to create so many new rooms within a certain time, so you might get stuck half-way if you have many rooms. a workaround would be to use a special account that your server admin has excepted from this rate limiting. for example, your moderation bot account is a good candidate for this.
-    - servers will only allow you to send a certain amount of invites as well as only allow users to join proactively at a certain rate
-    - if your community has a lot of rooms that are being upgraded, you might consider sending follow-up pings to the old rooms to make sure everyone got notified about every room, since it is easy to lose a room due to the different notification and rate limiting mechanics in play
-  - remind your users that they may need to "complete" the update on their side
-    - e.g. their non-canonical spaces, room directories, external aliases
-  - send a message linking to the new room into the old room to support clients without support for room upgrades (see list below). you might consider pining the message, using a room ping, etc.
+{% notice_box() %}
+We recommend to read this chapter first in its entirety and make a plan before starting to execute any upgrades.
+Room upgrades are not a frictionless process and you want to get it right first try to cause as little friction to your community as possible.
+{% end %}
+
+Executing a room upgrade in its entirety, including establishing the link between the rooms, requires the executing user to have a sufficient amount of rights ("[power level](https://spec.matrix.org/latest/client-server-api/#mroompower_levels)" to send a [`m.room.tombstone`](https://spec.matrix.org/latest/client-server-api/#server-behaviour-19) event) in the room that they want to upgrade.
+Clients that [support upgrading rooms](#sending-room-upgrades) usually offer a button or similar in their UI, but whether a button is shown may depend on your [homeserver](@/docs/matrix-concepts/elements-of-matrix/_index.md#homeserver) allowing you to upgrade from a specific room version.
+Sometimes the client UI might allow you to choose the target room version, but usually the default room version defined by the server is used.
+
+If you really need to upgrade before your homeserver admin recommends it by updating the [server's configuration](https://spec.matrix.org/latest/client-server-api/#mroom_versions-capability), then you can use e.g. Element Web's `/upgraderoom <version>` chat command after enabling the developer tools (see [Element docs](https://docs.element.io/latest/element-support/frequently-asked-questions/?h=devtools#matrix-general)).
+
+While the [Matrix specification](https://spec.matrix.org/v1.15/client-server-api/#server-behaviour-19) is not overly strict about it, your homeserver will execute the room upgrade on a best effort basis, trying to create the new room with settings matching the old room.
+The decentralised nature of Matrix can lead to circumstances that cannot be covered automatically by your homeserver.
+We suggest considering the following recommendations to mitigate this.
+
+#### Recommendations
+
+This is a non-exhaustive list of recommendations to consider when planning a room upgrade.
+- for reasoning about this, see the "Limitations" section
+- use the "right" account on the "right" server
+  - the server should be fast and well connected
+  - if your community is centered around a certain server, probably use that one
+  - only aliases on the same homeserver will be transferred automatically
+  - consider romo v12 creator semantics: use a service account the access to which you can control outside of the rules of matrix
+  - if your community is using a canonical space, the one upgrading the room needs at least enough access to the parent space to update the reference from the old to the upgraded room
+- ensure your bots and integrations are reconfigured to the new room
+  - particularly moderation tooling
+  - consider if you need to copy some room state over, e.g. hookshot configuration
+- if your old room was published in the public room directory, you might have to update the reference to the new room manually
+- plan with rate limits
+  - servers will only allow you to create so many new rooms within a certain time, so you might get stuck half-way if you have many rooms. a workaround would be to use a special account that your server admin has excepted from this rate limiting. for example, your moderation bot account is a good candidate for this.
+  - servers will only allow you to send a certain amount of invites as well as only allow users to join proactively at a certain rate
+  - if your community has a lot of rooms that are being upgraded, you might consider sending follow-up pings to the old rooms to make sure everyone got notified about every room, since it is easy to lose a room due to the different notification and rate limiting mechanics in play
+- remind your users that they may need to "complete" the update on their side
+  - e.g. their non-canonical spaces, room directories, external aliases
+- send a message linking to the new room into the old room to support clients without support for room upgrades (see list below). you might consider pining the message, using a room ping, etc.
 
 ### Limitations and things to consider
 
