@@ -11,13 +11,24 @@ authors = ["T&S R&D WG", "Website & Content WG"]
 
 ### What's a room upgrade? (Why) should I upgrade my room?
 
-- Rooms have certain way of working that are bound to room versions
-- Rooms can have other settings that are fixed and cannot be changed in hindsight (e.g. e2ee, room creator)
-- Demoting admins (sub room v12) or removing creators (room v12+)
-- The Matrix way to handle this is to create a new room with the desired settings and create a link between old and new room. The old room is then considered "upgraded" to the new room.
-- Split rooms, see chapter below?
-- The current reason at hand is room v12 releasing to fix a security issue (in which cases is this relevant? as far as we know rooms that may contain malicious homeservers, i.e. primarily public rooms)
-- Room upgrades can only be executed by users with sufficient powerlevel
+Rooms are a central concept to Matrix: they are where messages between users are exchanged.
+To facilitate this, there are certain rules which determine how a room works from basics like ID formats to algorithms about how certain events interact with each other.
+Such a set of rules is assigned a "[room version](https://spec.matrix.org/latest/rooms/)" so that when the rules need to get updated, it does not mess with the expectations already established in an existing room.
+Nevertheless, it is often desirable to eventually migrate the existing room to the new room version to be able to enjoy the new features or fixes.
+The Matrix way to handle this is to create a new room with the desired settings and create a link between old and new room.
+The old room is then considered "[upgraded](https://spec.matrix.org/latest/client-server-api/#room-upgrades)" to the new room.
+
+Beyond this main use case, there are some additional cases where you might want to replace an existing room with a new room.
+For example, rooms can have certain settings that are fixed and cannot be changed in hindsight.
+This includes for example enabling end-to-end encryption, or determining the room creator.
+Similarly, this process could be used in rooms up to version 12 to remove admins from a room or to adjust creators from room version 12 onwards.
+
+<!-- TODO: Fixing split rooms, see chapter below? -->
+
+On August 11th 2025 there is a [planned](@/blog/2025/07/2025-07-16-security-predisclosure.md) coordinated security release intoducing the new room version 12, with a security disclosure following on August 14th.
+Affected rooms should be upgraded within a reasonable time frame.
+
+<!-- in which cases is this relevant? as far as we know rooms that may contain malicious homeservers, i.e. primarily public rooms -->
 
 ### How to upgrade a room
 
