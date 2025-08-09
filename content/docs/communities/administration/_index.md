@@ -38,12 +38,25 @@ We recommend to read this chapter first in its entirety and make a plan before s
 Room upgrades are not a frictionless process and you want to get it right first try to cause as little friction to your community as possible.
 {% end %}
 
+**Prerequisites:**  
 Executing a room upgrade in its entirety, including establishing the link between the rooms, requires the executing user to have a sufficient amount of rights ("[power level](https://spec.matrix.org/latest/client-server-api/#mroompower_levels)" to send a [`m.room.tombstone`](https://spec.matrix.org/latest/client-server-api/#server-behaviour-19) event) in the room that they want to upgrade.
-Clients that [support upgrading rooms](#sending-room-upgrades) usually offer a button or similar in their UI, but whether a button is shown may depend on your [homeserver](@/docs/matrix-concepts/elements-of-matrix/_index.md#homeserver) allowing you to upgrade from a specific room version.
+
+**Upgrading:**  
+Clients that [support upgrading rooms](#sending-room-upgrades) usually offer a button or similar in their UI when an upgrade is available.
 Sometimes the client UI might allow you to choose the target room version, but usually the default room version defined by the server is used.
 
-If you really need to upgrade before your homeserver admin recommends it by updating the [server's configuration](https://spec.matrix.org/latest/client-server-api/#mroom_versions-capability), then you can use e.g. Element Web's `/upgraderoom <version>` chat command after enabling the developer tools (see [Element docs](https://docs.element.io/latest/element-support/frequently-asked-questions/?h=devtools#matrix-general)).
+If the option is missing unexpectedly, it is possible that the combination of your client's UI and your [homeserver](@/docs/matrix-concepts/elements-of-matrix/_index.md#homeserver)'s configuration does not recommend an upgrade at this time.
+Read on to learn how to upgrade anyway.
 
+**Advanced upgrading:**  
+There are some reasons why your client might not be showing you the upgrading UI despite an upgrade being available, including:
+- Your homeserver implementation or admin doesn't recommend it, via the [server's configuration](https://spec.matrix.org/latest/client-server-api/#mroom_versions-capability).
+- Your client only recommends upgrading from or between certain versions.
+
+In these cases you can use e.g. Element Web's `/upgraderoom <version>` chat command after [enabling the developer tools](https://docs.element.io/latest/element-support/frequently-asked-questions/?h=devtools#matrix-general).
+You can also downgrade and sidegrade in this way.
+
+**Limitations:**  
 While the [Matrix specification](https://spec.matrix.org/v1.15/client-server-api/#server-behaviour-19) is not overly strict about it, your homeserver will execute the room upgrade on a best effort basis, trying to create the new room with settings matching the old room.
 The decentralised nature of Matrix can lead to circumstances that cannot be covered automatically by your homeserver.
 We suggest considering the following recommendations to mitigate this.
