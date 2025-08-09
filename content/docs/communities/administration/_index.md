@@ -64,7 +64,9 @@ We suggest considering the following recommendations to mitigate this.
 #### Recommendations
 
 This is a non-exhaustive list of recommendations to consider when planning a room upgrade.
-- for reasoning about this, see the "Limitations" section
+Which of these cases apply to your room depends on your specific setup, for example size of your community.
+For more background information and reasoning about the recommendations, see the "[Limitations](#limitations-and-things-to-consider)" section further below.
+
 - use the "right" account on the "right" server
   - the server should be fast and well connected
   - if your community is centered around a certain server, probably use that one
