@@ -19,6 +19,7 @@ The Matrix way to handle this is to create a new room with the desired settings 
 The old room is then considered "[upgraded](https://spec.matrix.org/latest/client-server-api/#room-upgrades)" to the new room.
 
 Beyond this main use case, there are some additional cases where you might want to replace an existing room with a new room.
+Matrix does not prescribe an order in which to upgrade, so "room downgrades" or "room sidegrades" are possible using the same process.
 For example, rooms can have certain settings that are fixed and cannot be changed in hindsight.
 This includes for example enabling end-to-end encryption, or determining the room creator.
 Similarly, this process could be used in rooms up to version 12 to remove admins from a room or to adjust creators from room version 12 onwards.
