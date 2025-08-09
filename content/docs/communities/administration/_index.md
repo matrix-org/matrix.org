@@ -89,20 +89,24 @@ Affected rooms should be upgraded within a reasonable time frame.
 
 ### Clients supporting room upgrades
 
-non-comprehensive list, please PR to add your client!
+The following lists are not comprehensive.
+If your client supports room upgrades, please consider [contributing](https://github.com/matrix-org/matrix.org/blob/main/content/docs/communities/administration/_index.md) to this list.
 
-- Sending room upgrades
-  - Element Web -> where/how?
-  - Fractal
-  - NeoChat
-  - FluffyChat
-- Following Tombstones to the new room
-  - Element Web
-  - Fractal
-  - NeoChat
-  - FluffyChat, probably
-  - Tammy
-  - Nheko
+#### Sending room upgrades
+
+- Element Web/Desktop
+- Fractal
+- NeoChat
+- FluffyChat
+
+#### Following Tombstones to the new room
+
+- Element Web/Desktop
+- Fractal
+- NeoChat
+- FluffyChat, probably
+- Tammy
+- Nheko
 
 ### Changes in room v12?
 
