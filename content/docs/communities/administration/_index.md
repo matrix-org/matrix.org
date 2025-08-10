@@ -65,7 +65,6 @@ We suggest considering the following recommendations to mitigate this.
 
 This is a non-exhaustive list of recommendations to consider when planning a room upgrade.
 Which of these cases apply to your room depends on your specific setup, for example size of your community.
-For more background information and reasoning about the recommendations, see the "[Limitations](#limitations-and-things-to-consider)" section further below.
 
 **Choose the "right" account on the "right" homeserver** to execute your upgrade.  
 The choice of the account starting the upgrade implies the homeserver that will perform the upgrade.
@@ -115,35 +114,6 @@ There are also some [clients that do not have support](#following-tombstones-to-
 You send a manual message into the old room with a link to the new room as a workaround for these users.
 You might consider pinning the message, using a room ping, renaming the old room, and similar methods to make sure your users are aware of the upgrade.
 
-### Limitations and things to consider
-
-- Matrix does not tightly define what clients or servers do when using the room upgrade function (link to spec)
-- ...
-- Rate limits
-  - for executing upgrades (room creation)
-  - for inviting users
-  - for users (re-)joining proactively
-- Upgrading spaces
-- Upgrading rooms in spaces
-  - spaces you own
-  - spaces others own you know nothing about
-- Moving external aliases that may not be visible to you
-- Moving over integrations with external references to the room (bridges? Moderation bots? Webhooks?)
-- Migrating certain room state (e.g. custom state events)
-- Certain room state getting carried over unintentionally (e.g. bans)
-- Restricted room join references? Does anybody care about those?
-- Published Room directory
-  - on other servers
-  - when the room directory is not writable by users
-- Cover clients that do not support tombstones -> need to send a link, pin, etc in the old room that links to the new one
-- Making old rooms read-only
-  - Some clients make rooms read-only when they see a tombstone even when technically that's not the case
-- Can upgrades be undone? (Bell cant be unrung but you can fight over it.)
-- funkyness causing both old and new version of a room appearing in the room list?
-- losing room upgrades in the noise of many notifications and with possible rate limiting
-- Upgrading invite only rooms
-  - pro tip: set join rule to restricted by the predecessor
-
 ### Clients supporting room upgrades
 
 The following lists are not comprehensive.
@@ -188,11 +158,6 @@ The Matrix community has created some tooling to aid with performing room upgrad
 - <https://gitea.blesmrt.net/mikaela/scripts/src/branch/master/bash/matrix-upgrade-room.bash>
 - <https://github.com/FSG-Cat/Cats-PS-Collection/releases/tag/FMA_v1.0>
 - <https://codeberg.org/Apothecary/apothecary-upgrade/src/branch/main/upgrades.py>
-
-### Split rooms
-
-- how to fix a split room using room upgrades?
-- https://aminda.eu/matrix/#what-are-state-resets
 
 ### References and further reading
 
