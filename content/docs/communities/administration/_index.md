@@ -101,8 +101,8 @@ This means that certain actions such as creating a room can only be done a few t
 1. Homeservers will only allow you to create a certain amount of new rooms within a certain time, so you might get stuck half-way if you have many rooms to upgrade.
    Using a special account as mentioned above can work around this: some servers allow their admins to specify accounts that are exempt from rate limits.
    For example, your moderation bot account can be a good candidate for this, as it usually already has exemptions so it can execute many moderation actions in a short amount of time.
-2. Homeservers will only allow you to send a certain amount of invites as well as
-3. only allow users to join public rooms at a certain rate. It may make sense for your community to inform your users about this up front.
+2. Homeservers will only allow you to send a certain amount of invites as well as...
+3. ...only allow users to join public rooms at a certain rate. It may make sense for your community to inform your users about this up front.
 4. Homeservers will only allow to join a single user to join a certain amount of rooms at a time.
    If your community has a lot of rooms that are being upgraded, you users might receive a lot of room upgrade notifications asking them to join the upgraded room, but they might get rate-limited depending on *their* homeserver's configuration.
    You might thus consider sending follow-up pings to the old rooms to make sure everyone got notified about every room and followed the upgrade successfully, since it is easy to lose a room due to the different notification and rate limiting mechanics in play.
@@ -138,8 +138,6 @@ You might consider pinning the message, using a room ping, renaming the old room
 - Cover clients that do not support tombstones -> need to send a link, pin, etc in the old room that links to the new one
 - Making old rooms read-only
   - Some clients make rooms read-only when they see a tombstone even when technically that's not the case
-- Matrix.org premium accounts
-  - free users will be able to upgrade public rooms (<https://matrix.to/#/!sWpnrYUMmaBrlqfRdn:matrix.org/%24G6iZU-2eJu5QQgdxu5yMX2aXza642UKMCxyvLjpMMEI?via=matrix.org&via=t2l.io&via=element.io>)
 - Can upgrades be undone? (Bell cant be unrung but you can fight over it.)
 - funkyness causing both old and new version of a room appearing in the room list?
 - losing room upgrades in the noise of many notifications and with possible rate limiting
@@ -158,7 +156,7 @@ If your client supports room upgrades, please consider [contributing](https://gi
 - NeoChat
 - FluffyChat
 
-#### Following Tombstones to the new room
+#### Following tombstones to the new room
 
 - Element Web/Desktop
 - Fractal
