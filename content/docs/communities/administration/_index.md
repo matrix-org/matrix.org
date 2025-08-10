@@ -29,7 +29,7 @@ Similarly, this process could be used in rooms up to version 12 to remove admins
 On August 11th 2025 there is a [planned](@/blog/2025/07/2025-07-16-security-predisclosure.md) coordinated security release intoducing the new room version 12, with a security disclosure following on August 14th.
 Affected rooms should be upgraded within a reasonable time frame.
 
-<!-- in which cases is this relevant? as far as we know rooms that may contain malicious homeservers, i.e. primarily public rooms -->
+<!-- TODO: in which cases is this relevant? as far as we know rooms that may contain malicious homeservers, i.e. primarily public rooms -->
 
 ### How to upgrade a room
 
@@ -177,8 +177,21 @@ If your client supports room upgrades, please consider [contributing](https://gi
 
 ### Tools and scripts
 
+The Matrix community has created some tooling to aid with performing room upgrades which you might find useful.
+
+- <https://gist.github.com/turt2live/a99c8e794d6115d4ddfaadb72aabf063>
+- <https://gitea.blesmrt.net/mikaela/scripts/src/branch/master/bash/matrix-upgrade-room.bash>
+- <https://github.com/FSG-Cat/Cats-PS-Collection/releases/tag/FMA_v1.0>
+- <https://codeberg.org/Apothecary/apothecary-upgrade/src/branch/main/upgrades.py>
+
 ### Split rooms
 
 - how to fix a split room using room upgrades?
+- https://aminda.eu/matrix/#what-are-state-resets
 
 ### References and further reading
+
+Community admins are documenting their experiences about upgrading rooms which can be useful as additional references.
+
+- <https://gadgetbridge.org/blog/managing-a-public-end-to-end-room-on-matrix-lessons-learned/#the-room-upgrade-may-2025>
+- <https://aminda.eu/matrix/#what-exactly-is-room-upgrading>
