@@ -156,6 +156,11 @@ If your client supports room upgrades, please consider [contributing](https://gi
 - NeoChat
 - FluffyChat
 
+{{ figure(
+    img="upgrade-command.avif"
+    caption="Executing an upgrade using the `/upgraderoom <version>` command in Element Web."
+) }}
+
 #### Following tombstones to the new room
 
 - Element Web/Desktop
