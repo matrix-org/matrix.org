@@ -140,15 +140,14 @@ If your client supports room upgrades, please consider [contributing](https://gi
 - Tammy
 - Nheko
 
-### Changes in room v12?
+### Significant changes between room versions
 
-- new concept of creators with infinite PL that cannot be dropped means new semantics
-- suggest that communities use a (multiple?) system account(s) the access to which can be managed externally, e.g. when community leadership changes. has additional benefits of rate limits
+You can find comprehensive information about the differences between room versions in the [Matrix specification](https://spec.matrix.org/latest/rooms/).
+Here is a short summary of some significant changes.
 
-### How to upgrade a room (advanced)
+#### Upgrading to room version 12
 
-- aka client driven upgrades
-- step by step guide on how to plan a manual upgrade as comprehensively as possible
+Find a summary of the most relevant changes in the [security pre-disclosure](@/blog/2025/07/2025-07-16-security-predisclosure.md) on the blog.
 
 ### Tools and scripts
 
