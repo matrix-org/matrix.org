@@ -21,7 +21,7 @@ The Matrix way to handle this is to create a new room with the desired settings 
 The old room is then considered [upgraded](https://spec.matrix.org/latest/client-server-api/#room-upgrades) to the new room.
 
 {% notice_box() %}
-On August 11th 2025 there is a [planned](@/blog/2025/07/2025-07-16-security-predisclosure.md) coordinated security release intoducing the new room version 12, with a security disclosure following on August 14th.
+On August 11th 2025 there was a [planned](@/blog/2025/08/2025-08-11-security-release.md) coordinated security release introducing the new room version 12, with a security disclosure following on August 14th.
 If you are responsible for public rooms, you should make a plan to upgrade those rooms. The rest of this guide will help you to build that plan.
 {% end %}
 
