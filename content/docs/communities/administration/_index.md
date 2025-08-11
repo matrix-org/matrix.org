@@ -139,6 +139,7 @@ If your client supports room upgrades, please consider [contributing](https://gi
 - Element Web/Desktop
 - Fractal
 - NeoChat
+- Quaternion
 - FluffyChat
 
 {{ figure(
@@ -151,6 +152,7 @@ If your client supports room upgrades, please consider [contributing](https://gi
 - Element Web/Desktop
 - Fractal
 - NeoChat
+- Quaternion
 - FluffyChat
 - Tammy
 - Nheko
