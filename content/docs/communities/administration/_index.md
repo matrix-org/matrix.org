@@ -46,6 +46,7 @@ You want to get it right first try to cause as little friction to your community
 #### Prerequisites
 
 When you upgrade a room, the user performing the upgrade needs the permission ("[power level](@/docs/communities/moderation/_index.md#power-levels)") to send a [`m.room.tombstone`](https://spec.matrix.org/latest/client-server-api/#server-behaviour-19) event.
+This might be named differently in client UI, e.g. "Upgrade the room" in Element Web.
 
 #### Upgrading 
 
@@ -57,7 +58,7 @@ Read on to learn how to upgrade anyway.
 
 #### Advanced upgrading  
 
-There are some reasons why your client might not be showing you the upgrading UI despite an upgrade being available, including:
+There are some reasons why your client might not be showing you the upgrading UI despite an upgrade being possible, including:
 - Your homeserver implementation or admin doesn't advertise support for the room version, via the [homeserver's configuration](https://spec.matrix.org/latest/client-server-api/#mroom_versions-capability).
 - Your client only recommends upgrading from or between certain versions.
 
@@ -66,14 +67,14 @@ You can also downgrade and sidegrade in this way.
 
 #### Limitations
 
-While the [Matrix specification](https://spec.matrix.org/v1.15/client-server-api/#server-behaviour-19) is not strict about it, your homeserver will perform the room upgrade on a best effort basis, trying to create the new room with settings matching the old room.
+While the [Matrix specification](https://spec.matrix.org/v1.15/client-server-api/#server-behaviour-19) is not strict about it, your homeserver will typically perform the room upgrade on a best effort basis, trying to create the new room with settings matching the old room.
 The decentralised nature of Matrix can lead to circumstances that your homeserver cannot automatically mitigate.
 The following recommendations can help.
 
 ### Recommendations
 
 This is a non-exhaustive list of recommendations to consider when planning a room upgrade.
-Which of these cases apply to your room depends on your specific setup, for example size of your community.
+Which of these cases apply to your room depends on your specific setup, for example the size of your community.
 
 #### Choose the right account
 
@@ -88,8 +89,8 @@ Here are some important factors to guide your choice:
 2. Users may have set up [aliases](https://spec.matrix.org/latest/client-server-api/#room-aliases) - shareable addresses to find the room that are hosted by a specific homeserver.
    By definition, a homeserver can only update aliases that it hosts.
    Only aliases on the upgrading homeserver transfer automatically.
-   However, you can (and should) always update the aliases on other homeservers after the upgrade.
-3. If your community is using a space to organise its rooms, the user upgrading a room needs at least enough access to the parent space to update the reference from the old to the upgraded room.
+   However, you can (and should) always update the aliases on other homeservers after the upgrade, using respective accounts on these servers.
+3. If your community is using a space to organise its rooms, the user upgrading a room needs at least enough permissions in the parent space to update the reference from the old to the upgraded room.
 4. Room version 12 introduces some changes to room ownership semantics, such as [irrevocable full control](https://github.com/matrix-org/matrix-spec-proposals/pull/4289) of the room.
    For communities, you should use a long-lived, trusted account, such as a moderation bot account, to upgrade your rooms.
    Using a separate service account to execute the upgrade means that this account will be the creator of the new room with the new special access rights.
@@ -102,7 +103,7 @@ Bots and integrations in your rooms may require additional manual migration step
 After upgrading, reconfigure your bots and integrations for the new room.
 This is particularly important for any moderation tooling you are using, such as [draupnir](https://the-draupnir-project.github.io/draupnir-documentation/) or [mjolnir](@/docs/communities/moderation/_index.md#your-community-s-security-guard).
 Check if your integrations need a configuration update, e.g. supplying them with the new room ID, and check that they have joined the upgraded room.
-Some integrations also store state in Matrix rooms, so consider if you need to recreate or copy some room state over, as is the case for example with [Hookshot](https://matrix-org.github.io/matrix-hookshot/latest/usage/room_configuration.html) configuration.
+Some integrations also store state in Matrix rooms, so consider if you need to recreate or copy some [room state](https://spec.matrix.org/latest/client-server-api/#types-of-room-events) over, as is the case for example with [Hookshot](https://matrix-org.github.io/matrix-hookshot/latest/usage/room_configuration.html) configuration.
 
 #### Room Directories
 
@@ -130,8 +131,11 @@ There are several situations that users will need to handle on the "receiving" s
 For example, there might be aliases, room directories, and spaces referencing your room, which you might not be aware of and that will need to be updated by the respective users.
 
 There are also some [clients that do not have support](#following-tombstones-to-the-new-room) to find and join the upgraded room from the old room.
-You send a manual message into the old room with a link to the new room as a workaround for these users.
+You should send a manual message into the old room with a link to the new room as a workaround for these users.
 You might consider pinning the message, using a room ping, renaming the old room, and similar methods to make sure your users are aware of the upgrade.
+
+If you're upgrading a room that is not public, you will need to invite the old members or make the new room joinable in another way, so users can join the new room when prompted.
+Some clients offer an option to automatically invite all users to the new room.
 
 ### Clients supporting room upgrades
 
