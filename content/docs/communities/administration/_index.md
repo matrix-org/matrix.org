@@ -12,24 +12,28 @@ authors = ["T&S R&D WG", "Website & Content WG"]
 ### What's a room upgrade? (Why) should I upgrade my room?
 
 Rooms are a central concept to Matrix: they are where users exchange messages.
-To facilitate this, there are certain rules which determine how a room works, from basics like ID formats to algorithms about how certain events interact with each other.
+Each room has a set of rules that describe how a room works, such as setting ID formats, or how certain events interact.
 These sets of rules form a "[room version](https://spec.matrix.org/latest/rooms/)" so that when rules need to change, it does not mess with the expectations already established in an existing room.
-Nevertheless, it is often desirable to eventually migrate an existing room to the latest room version to be able to enjoy the new features or fixes.
+When Matrix adds new features, or when bugs emerge, it can be necessary to change those rules.
+But a Matrix room will not follow the latest rules automatically!
+To enjoy the new features and the bug fixes, rooms need to be "upgraded".
 The Matrix way to handle this is to create a new room with the desired settings and create a link between old and new room.
-The old room is then considered "[upgraded](https://spec.matrix.org/latest/client-server-api/#room-upgrades)" to the new room.
+The old room is then considered [upgraded](https://spec.matrix.org/latest/client-server-api/#room-upgrades) to the new room.
 
-Beyond this main use case, there are some additional cases where you might want to replace an existing room with a new room.
-Matrix does not prescribe an order in which to upgrade, so "room downgrades" or "room sidegrades" are possible using the same process.
-For example, rooms have certain settings that are set at creation time and cannot be changed afterwards, like enabling end-to-end encryption and determining the room creator.
-Replacing the room via the upgrade process allows these settings to be adjusted.
-Similarly, this process could be used in rooms up to version 12 to remove admins from a room or to adjust creators from room version 12 onwards.
+{% notice_box() %}
+On August 11th 2025 there is a [planned](@/blog/2025/07/2025-07-16-security-predisclosure.md) coordinated security release intoducing the new room version 12, with a security disclosure following on August 14th.
+If you are responsible for public rooms, you should make a plan to upgrade those rooms. The rest of this guide will help you to build that plan.
+{% end %}
+
+#### Advanced use cases
+
+Some room settings are immutable without moving to a new version of the room.
+So, to change the room's end-to-end encryption setting, or the room creator, you would need to upgrade.
+As Matrix room versions are not ordered, it is possible to "downgrade" or "sidegrade" a room's version, e.g. to go from version 12 to version 12.
+For example, in rooms up to version 12, you could "sidegrade" to remove admins from a room.
+Likewise, to adjust creators from room version 12 onwards.
 
 <!-- TODO: Fixing split rooms, see chapter below? -->
-
-On August 11th 2025 there is a [planned](@/blog/2025/07/2025-07-16-security-predisclosure.md) coordinated security release intoducing the new room version 12, with a security disclosure following on August 14th.
-Affected rooms should be upgraded within a reasonable time frame.
-
-<!-- TODO: in which cases is this relevant? as far as we know rooms that may contain malicious homeservers, i.e. primarily public rooms -->
 
 ### How to upgrade a room
 
