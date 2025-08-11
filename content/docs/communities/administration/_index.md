@@ -40,9 +40,11 @@ You want to get it right first try to cause as little friction to your community
 {% end %}
 
 #### Prerequisites
+
 When you upgrade a room, the user performing the upgrade needs the permission ("[power level](@/docs/communities/moderation/_index.md#power-levels)") to send a [`m.room.tombstone`](https://spec.matrix.org/latest/client-server-api/#server-behaviour-19) event.
 
 #### Upgrading 
+
 Clients that [support upgrading rooms](#sending-room-upgrades) usually offer a button or similar in their UI when an upgrade is available.
 Sometimes the client UI  allows you to choose the target room version, but usually it uses the default room version defined by the [homeserver](@/docs/matrix-concepts/elements-of-matrix/_index.md#homeserver).
 
@@ -50,6 +52,7 @@ If the option is missing, the combination of your client and your homeserver's c
 Read on to learn how to upgrade anyway.
 
 #### Advanced upgrading  
+
 There are some reasons why your client might not be showing you the upgrading UI despite an upgrade being available, including:
 - Your homeserver implementation or admin doesn't advertise support for the room version, via the [homeserver's configuration](https://spec.matrix.org/latest/client-server-api/#mroom_versions-capability).
 - Your client only recommends upgrading from or between certain versions.
@@ -57,7 +60,8 @@ There are some reasons why your client might not be showing you the upgrading UI
 In these cases you can use e.g. Element Web's `/upgraderoom <version>` chat command.
 You can also downgrade and sidegrade in this way.
 
-**Limitations:**  
+#### Limitations
+
 While the [Matrix specification](https://spec.matrix.org/v1.15/client-server-api/#server-behaviour-19) is not strict about it, your homeserver will perform the room upgrade on a best effort basis, trying to create the new room with settings matching the old room.
 The decentralised nature of Matrix can lead to circumstances that your homeserver cannot automatically mitigate.
 The following recommendations can help.
@@ -68,6 +72,7 @@ This is a non-exhaustive list of recommendations to consider when planning a roo
 Which of these cases apply to your room depends on your specific setup, for example size of your community.
 
 #### Choose the right account
+
 You should choose the "right" account on the "right" homeserver to perform your upgrade.
 The account that starts the upgrade decides which homeserver performs the upgrade.
 Here are some important factors to guide your choice:
@@ -88,6 +93,7 @@ Here are some important factors to guide your choice:
    You could also consider setting up backup accounts on homeservers as [`additional_creators`](https://github.com/matrix-org/matrix-spec-proposals/pull/4289), in case one of them becomes unavailable.
 
 #### Bots and integrations
+
 Bots and integrations in your rooms may require additional manual migration steps.
 After upgrading, reconfigure your bots and integrations for the new room.
 This is particularly important for any moderation tooling you are using, such as [draupnir](https://the-draupnir-project.github.io/draupnir-documentation/) or [mjolnir](@/docs/communities/moderation/_index.md#your-community-s-security-guard).
@@ -95,11 +101,13 @@ Check if your integrations need a configuration update, e.g. supplying them with
 Some integrations also store state in Matrix rooms, so consider if you need to recreate or copy some room state over, as is the case for example with [Hookshot](https://matrix-org.github.io/matrix-hookshot/latest/usage/room_configuration.html) configuration.
 
 #### Room Directories
+
 The [published room directory](https://spec.matrix.org/latest/client-server-api/#published-room-directory) is a per-homeserver index of advertised rooms.
 As with aliases, each homeserver can only update its own room directory.
 If your old room is in the room directory, you might have to update the reference to the new room manually, especially on those homeservers that did not perform the upgrade.
 
 #### Rate limits
+
 Rate limits might apply to your upgrade in several different ways.
 This means that certain actions, such as creating a room, can only be done a few times before needing to wait.
 
@@ -113,6 +121,7 @@ This means that certain actions, such as creating a room, can only be done a few
    You might thus consider sending follow-up pings to the old rooms to make sure everyone got notified about every room and followed the upgrade successfully, since it is easy to lose a room due to the different notification and rate limiting mechanics in play.
 
 #### Communicate the upgrade plans to your users
+
 There are several situations that users will need to handle on the "receiving" side.
 For example, there might be aliases, room directories, and spaces referencing your room, which you might not be aware of and that will need to be updated by the respective users.
 
