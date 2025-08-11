@@ -12,16 +12,16 @@ authors = ["T&S R&D WG", "Website & Content WG"]
 ### What's a room upgrade? (Why) should I upgrade my room?
 
 Rooms are a central concept to Matrix: they are where messages between users are exchanged.
-To facilitate this, there are certain rules which determine how a room works from basics like ID formats to algorithms about how certain events interact with each other.
+To facilitate this, there are certain rules which determine how a room works, from basics like ID formats to algorithms about how certain events interact with each other.
 Such a set of rules is assigned a "[room version](https://spec.matrix.org/latest/rooms/)" so that when the rules need to get updated, it does not mess with the expectations already established in an existing room.
-Nevertheless, it is often desirable to eventually migrate the existing room to the new room version to be able to enjoy the new features or fixes.
+Nevertheless, it is often desirable to eventually migrate an existing room to the latest room version to be able to enjoy the new features or fixes.
 The Matrix way to handle this is to create a new room with the desired settings and create a link between old and new room.
 The old room is then considered "[upgraded](https://spec.matrix.org/latest/client-server-api/#room-upgrades)" to the new room.
 
 Beyond this main use case, there are some additional cases where you might want to replace an existing room with a new room.
 Matrix does not prescribe an order in which to upgrade, so "room downgrades" or "room sidegrades" are possible using the same process.
-For example, rooms can have certain settings that are fixed and cannot be changed in hindsight.
-This includes for example enabling end-to-end encryption, or determining the room creator.
+For example, rooms have certain settings that are set at creation time and cannot be changed afterwards, like enabling end-to-end encryption and determining the room creator.
+Replacing the room via the upgrade process allows these settings to be adjusted.
 Similarly, this process could be used in rooms up to version 12 to remove admins from a room or to adjust creators from room version 12 onwards.
 
 <!-- TODO: Fixing split rooms, see chapter below? -->
@@ -35,7 +35,8 @@ Affected rooms should be upgraded within a reasonable time frame.
 
 {% notice_box() %}
 We recommend to read this chapter first in its entirety and make a plan before starting to execute any upgrades.
-Room upgrades are not a frictionless process and you want to get it right first try to cause as little friction to your community as possible.
+Room upgrades are disruptive for users.
+You want to get it right first try to cause as little friction to your community as possible.
 {% end %}
 
 **Prerequisites:**  
@@ -136,7 +137,7 @@ If your client supports room upgrades, please consider [contributing](https://gi
 - Element Web/Desktop
 - Fractal
 - NeoChat
-- FluffyChat, probably
+- FluffyChat
 - Tammy
 - Nheko
 
