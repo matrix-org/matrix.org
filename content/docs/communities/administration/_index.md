@@ -141,10 +141,12 @@ If your client supports room upgrades, please consider [contributing](https://gi
 #### Sending room upgrades
 
 - Element Web/Desktop
+- Element Classic Android
 - Fractal
 - NeoChat
 - Quaternion
 - FluffyChat
+- Cinny
 
 {{ figure(
     img="upgrade-command.avif"
@@ -154,10 +156,13 @@ If your client supports room upgrades, please consider [contributing](https://gi
 #### Following tombstones to the new room
 
 - Element Web/Desktop
+- Element X iOS and Android
+- Element Classic iOS and Android
 - Fractal
 - NeoChat
 - Quaternion
 - FluffyChat
+- Cinny
 - Tammy
 - Nheko
 
