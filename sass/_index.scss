@@ -455,3 +455,91 @@
     margin-bottom: 1rem;
     background-color: var(--notice-box-color);
 }
+#information-banner {
+  position: relative;   // creates positioning context
+  z-index: 1000;         // large enough to be above sidebars, headers, etc.
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--notice-box-color, yellow);
+  padding: 0.6em 1em;
+  text-align: center;
+  overflow: visible;
+}
+
+#information-banner p {
+  margin: 0;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+// Ensure this selector is strong enough to override others
+.docs-body #information-banner,
+.docs-content #information-banner {
+    position: relative; // changed from fixed or sticky to relative
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--notice-box-color, #ff0);
+    padding: .6em 1em;
+    text-align: center;
+    overflow: visible;
+}
+.docs-body #information-banner p,
+.docs-content #information-banner p {
+    margin: 0;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
+.docs-menu .docs-menu-inner {
+    margin-top: 1.5rem; /* adjust value for desired gap */
+}
+.docs-body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* align tops */
+}
+
+.docs-menu {
+  flex: 0 0 240px; /* fixed width sidebar */
+  background-color: #fff; /* prevent see-through when content scrolls */
+  z-index: 2; /* keep above background layers */
+}
+
+.docs-menu-inner {
+  width: 100%;
+  position: relative;
+  margin-top: 1.5rem; /* extra space below yellow banner */
+}
+
+.docs-content {
+  flex: 1; /* take remaining space */
+  min-width: 0; /* Prevent overflow in flexbox */
+  position: relative;
+  z-index: 1;
+}
+.docs-body {
+    padding-bottom: 5rem; 
+}
+.docs-body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    min-height: 70vh; /* Ensures it's tall enough for content, adjust as needed */
+}
+
+.docs-content {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    padding-bottom: 5rem; 
+}
+
+.docs-menu {
+    // ...existing code...
+    max-height: calc(100vh - var(--navbar-height) - 10rem); // increase from 6rem to 10rem to add more space before footer
+    overflow-y: auto;
+}

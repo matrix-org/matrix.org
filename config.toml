@@ -1,6 +1,5 @@
 # The URL the site will be built for
 base_url = "https://matrix.org"
-
 title = "Matrix.org"
 description = "The Matrix.org Foundation"
 
@@ -11,7 +10,6 @@ compile_sass = true
 build_search_index = false
 
 default_language = "en"
-
 generate_feeds = true
 feed_filenames = ["atom.xml", "rss.xml"]
 
@@ -28,22 +26,26 @@ highlight_theme = "visual-studio-dark"
 
 [link_checker]
 skip_prefixes = [
-    # This page is not a real page. You need to open https://circu.li/fdroid/repo/index-v1.json for a response
+    # This page is not a real page. You need to open
+    # https://circu.li/fdroid/repo/index-v1.json for a response
     "https://circu.li/fdroid/",
 ]
-
 skip_anchor_prefixes = [
-    # Spec page does not have anchors in the html it seems. (Probably loading using js.) This causes a false positive
+    # Spec page does not have anchors in the html it seems. (Probably loading using js.)
+    # This causes a false positive
     "https://spec.matrix.org/v1.3/changelog/",
 ]
 
+# ---------------------------
+# SINGLE extra TABLE (merged)
+# ---------------------------
 [extra]
 banner = true
 
-# Possible states: "cfp", "awaiting_schedule", "scheduled", "no_tickets", "live", "watch-recordings", "none"
+# Possible states: "cfp", "awaiting_schedule", "scheduled",
+# "no_tickets", "live", "watch-recordings", "none"
 # None is used when elections instead are used
 conference_state = "awaiting_schedule"
-
 conference_website = "https://conference.matrix.org"
 conference_cfp = "https://cfp.2025.matrix.org/matrix-conf-2025/cfp"
 conference_dates = "Oct 15-18"
