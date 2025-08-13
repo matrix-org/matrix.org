@@ -27,16 +27,19 @@ header {
     position: static;
     overflow-y: auto;
     background-color: #fff;
-    border-bottom: 1px solid var(--borders-color);
+    border-top: 1px solid var(--borders-color);
     width: 100%;
+    order: 2;
 
     @media (min-width: 767px) {
+        border-top: 0;
         border-right: 1px solid var(--borders-color);
         flex-direction: row;
         position: sticky;
         top: 95px;
         height: 100svh;
         max-width: var(--docs-menu-width);
+        order: 1;
     }
 
     .docs-menu-inner {
