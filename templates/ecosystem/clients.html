@@ -1,5 +1,5 @@
 {% extends "section.html" %}
-{% import "macros/banner.html" as banner %}
+
 {% import "macros/clients.html" as clients %}
 {% import "macros/client_details.html" as client_details %}
 {% block head_extra %}
@@ -10,7 +10,7 @@
 <script type="module" src={{ get_url(path="/js/clients.js" , cachebust=true) }}></script>
 {% endblock head_extra%}
 {% block content %}
-{{ banner::banner() }}
+
 {% set clients = section.pages %}
 {% set licences = [] %}
 {% for client in clients %}

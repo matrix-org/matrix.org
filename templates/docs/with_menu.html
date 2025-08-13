@@ -1,5 +1,5 @@
 {% extends "section.html" %}
-{% import "macros/banner.html" as banner %}
+
 {% block scripts %}
 <script src="/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="/js/d3.v3.min.js"></script>
@@ -7,7 +7,7 @@
 <script src="/js/docs.js"></script>
 {% endblock scripts %}
 {% block content %}
-{{ banner::banner() }}
+
 
 {% set docs_sections = get_section(path="docs/_index.md") %}
 {% set root_section = get_section(path="docs/chat_basics/_index.md") %}

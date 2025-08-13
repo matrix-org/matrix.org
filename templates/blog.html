@@ -1,7 +1,7 @@
 {% extends "section.html" %}
-{% import "macros/banner.html" as banner %}
+
 {% block content -%}
-{{ banner::banner() }}
+
 <div class="content">
     {% for page in paginator.pages %}
     <article class="post">
