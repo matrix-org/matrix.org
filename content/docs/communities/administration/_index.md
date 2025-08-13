@@ -150,6 +150,7 @@ If your client supports room upgrades, please consider [contributing](https://gi
 - NeoChat
 - Quaternion
 - FluffyChat
+- < polycule >
 - Cinny
 
 {{ figure(
@@ -166,6 +167,7 @@ If your client supports room upgrades, please consider [contributing](https://gi
 - NeoChat
 - Quaternion
 - FluffyChat
+- < polycule >
 - Cinny
 - Tammy
 - Nheko
