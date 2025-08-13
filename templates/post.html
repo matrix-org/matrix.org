@@ -1,12 +1,10 @@
 {% extends "page.html" %}
-
 {% block head_extra %}
 {#
 {% if page.summary %}
 <meta name="description" content="{{ page.summary | safe }}">
 {% endif %}
 #}
-
 {%- if page.authors | length > 0 or page.taxonomies.author is undefined -%}
 {{ throw(message="Please put author under the taxonomies area.") }}
 {%- endif -%}

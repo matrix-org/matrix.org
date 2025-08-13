@@ -1,5 +1,4 @@
 {% extends "page.html" %}
-
 {% block head_extra %}
 <meta name="description" content="{{ page.extra.summary }}">
 <noscript>
@@ -8,7 +7,6 @@
 <script type="module" src={{ get_url(path="/js/servers.js" , cachebust=true) }}></script>
 {% endblock head_extra%}
 {% block content %}
-
 <div class="page-header">
     <div class="hero-block">
         <h1>{{ page.title }}</h1>
