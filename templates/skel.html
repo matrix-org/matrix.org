@@ -1,4 +1,5 @@
 {% import "macros/util.html" as util %}
+{% import "macros/banner.html" as banner %}
 <!doctype html>
 <html lang="en">
 
@@ -56,7 +57,7 @@
 <body>
     {% set navigation = load_data(path="navigation.toml") %}
     {% include "includes/header.html" %}
-
+    {{ banner::banner() }}
     <main>
         {% block content %}{% endblock content %}
     </main>

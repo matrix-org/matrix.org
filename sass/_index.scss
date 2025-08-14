@@ -447,6 +447,7 @@
     padding: .4em 1em;
     background-color: var(--notice-box-color);
     text-align: center;
+    z-index: 999;
 }
 
 .notice-box {
