@@ -110,6 +110,11 @@ header {
 
 .docs-content {
     flex: 1;
+    order: 2;
+    
+    @media (min-width: 767px) {
+        order: 1;
+    }
 
     article p img {
         max-width: 100%;
