@@ -87,4 +87,4 @@ This work fixes the most common set of state resets we’ve seen in the wild, al
 
 We’d also like to thank the client/bot/bridge implementors for accommodating the client-side breaking changes introduced in room version 12, particularly around the new power level semantics and room ID format change.
 
-Finally, we’d like to thank the community at large, particularly those who have been disrupted and have had to upgrade rooms in response to this work. Thanks all for your patience, and we look forward to a talk all about this at the Matrix Conference in October!
+Finally, we’d like to thank the community at large, particularly those who have been disrupted and have had to upgrade rooms in response to this work. Thanks all for your patience, and we look forward to a talk all about this at the [Matrix Conference](https://conference.matrix.org/) in October!
