@@ -28,7 +28,7 @@ The MSCs added under embargo were:
 
 Supporting these MSCs are:
 
-- Server-agnostic [Complement tests](https://github.com/matrix-org/complement/blob/dd9b896fead36504c97e35456fe3c0e09fc7328d/tests/v12_test.go).
+- Server-agnostic [Complement tests](https://github.com/matrix-org/complement/blob/dd9b896fead36504c97e35456fe3c0e09fc7328d/tests/v12_test.go)
 - [The specification PR introducing room version 12](https://github.com/matrix-org/matrix-spec/pull/2193)
 - [The implementor’s guide to State Res 2.1](@/docs/spec-guides/state-res-2.1/_index.md)
 - [Creator power level in room version 12](@/docs/spec-guides/creator-power-level/_index.md)
