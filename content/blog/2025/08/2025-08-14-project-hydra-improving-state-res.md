@@ -57,7 +57,7 @@ This MSC also solves the [age-old problem](https://github.com/matrix-org/matrix-
 
 [MSC4304](https://github.com/matrix-org/matrix-spec-proposals/pull/4304): “Room Version 12”. This simply defines the combination of the previous 3 MSCs as room version 12\.
 
-For full technical details, please read the actual MSCs: [MSC4289,](https://github.com/matrix-org/matrix-spec-proposals/pull/4289) [MSC4291,](https://github.com/matrix-org/matrix-spec-proposals/pull/4291) [MSC4297](https://github.com/matrix-org/matrix-spec-proposals/pull/4297) and [MSC4304.](https://github.com/matrix-org/matrix-spec-proposals/pull/4304)
+For full technical details, please read the actual MSCs: [MSC4289](https://github.com/matrix-org/matrix-spec-proposals/pull/4289), [MSC4291](https://github.com/matrix-org/matrix-spec-proposals/pull/4291), [MSC4297](https://github.com/matrix-org/matrix-spec-proposals/pull/4297) and [MSC4304](https://github.com/matrix-org/matrix-spec-proposals/pull/4304).
 
 #### History
 
