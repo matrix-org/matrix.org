@@ -42,6 +42,10 @@ Here are some examples of how it looks in some common apps:
     img="/images/homeserver/official/client4.avif"
     caption="Tammy's user info page")
 }}
+{{ figure(
+    img="/images/homeserver/official/client5.avif"
+    caption="FluffyChat's user info popup")
+}}
 </div>
 
 ## What should I do if the user ID doesn’t match?
