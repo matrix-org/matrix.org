@@ -32,7 +32,7 @@ header {
     order: 2;
 
     @media (min-width: 767px) {
-        border-top: 0;
+        border-bottom: 0;
         border-right: 1px solid var(--borders-color);
         flex-direction: row;
         position: sticky;
