@@ -15,6 +15,8 @@ This project has the codename “Hydra” and is an ongoing exercise in improvin
 
 This entire process has been highly unusual for the ecosystem, and it’s unfortunate that we were unable to make these changes out in the open. Where possible, we moved to release redacted versions of the MSCs as soon as we were comfortable from a security perspective (e.g. releasing [MSC4289](https://github.com/matrix-org/matrix-spec-proposals/pull/4289) and [MSC4291](https://github.com/matrix-org/matrix-spec-proposals/pull/4291) ahead of time, with redacted sections). Furthermore, we’d like to apologise for the disruption in landing a new stable room version and specification release with immediate effect rather than allowing for a period of public review. Going forwards, normal MSC work will continue in public as it ever has, along with normal on-cycle specification releases.
 
+<!-- more -->
+
 #### Key Information
 
 The MSCs added under embargo were:
