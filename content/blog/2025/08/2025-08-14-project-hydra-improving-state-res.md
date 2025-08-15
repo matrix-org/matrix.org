@@ -43,7 +43,7 @@ These changes fixed the following vulnerabilities:
 These issues only affect servers which are federating with untrusted or potentially malicious servers, such as participating in the public Matrix network.  Servers which are not federated, or which federate in private trusted networks such as BwMessenger, Tchap or TI-Messenger are not affected.
 
 The impact of these issues is rated as ‘high’ rather than ‘critical’ as they do not result in data compromise or exposure. Instead, the risk here is of a malicious homeserver operator corrupting the chatroom’s state by resetting it to a prior value (e.g. reverting access control or room membership to an earlier configuration). This does **not** expose conversation history nor any additional data.
-We are not aware of these issues being exploited, but would recommend servers to upgrade immediately if they are operating rooms with users participating from untrusted servers, as per [Monday’s announcement](@/blog/2025/08/2025-08-11-security-release.md). Room admins should then upgrade such rooms to version 12 to guard against these attacks in future - see the [new room upgrade guide](@/docs/communities/administration/_index.md#room-upgrades).
+We are not aware of these issues being exploited, but would recommend server admins to upgrade immediately if they are operating rooms with users participating from untrusted servers, as per [Monday’s announcement](@/blog/2025/08/2025-08-11-security-release.md). Room admins should then upgrade such rooms to version 12 to guard against these attacks in future - see the [new room upgrade guide](@/docs/communities/administration/_index.md#room-upgrades).
 
 ## Summary of changes
 
