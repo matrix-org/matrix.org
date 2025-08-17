@@ -48,7 +48,7 @@ The purpose of the room directory working group is to implement the matrix.org r
 
 Additionally the working group might propose improvements to the policy, which the T&S committee will then vote on.
 """
-members = ["Nico", "Sky"]
+members = ["Nico", "Sky", "mahdi", "Emma [it/its]"]
 matrix_room_alias = "#room-dir-wg-office:neko.dev"
 committee = "Trust & Safety Committee"
 sponsor = "Nico"
