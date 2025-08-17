@@ -32,7 +32,7 @@ Here are some examples of how it looks in some common apps:
 }}
 {{ figure(
     img="/images/homeserver/official/client3.avif"
-    caption="Cinny's user info popup")
+    caption="Hover on a message to reveal the sender ID in Cinny")
 }}
 {{ figure(
     img="/images/homeserver/official/client2.avif"
