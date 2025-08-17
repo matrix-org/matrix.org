@@ -36,11 +36,14 @@ Elections are being held in the second quarter of each calendar year, alternatin
 The current elected representatives are:
 
 <div class="two-column">
-<div class="category-group" data-category="Community Representatives">
+<div class="category-group">
+
+### Community Representatives
+
 <div class="group-content">
 <div>
 
-### Individual Members
+#### Individual Members
 
 * Andy Balaam (he/him)
 * Gnuxie (she/her)
@@ -50,58 +53,67 @@ The current elected representatives are:
 </div>
 <div>
 
-### Ecosystem Members
+#### Ecosystem Members
 
-* Bram van den Heuvel (he/they), Elm SDK
-* Kim Brose (he/him), Matrix Community Events
-* Nicolas Werner (he/him), Nheko-Reborn
+* Bram van den Heuvel (he/they), *Elm SDK*
+* Kim Brose (he/him), *Matrix Community Events*
+* Nicolas Werner (he/him), *Nheko-Reborn*
 
 </div>
 <div>
 
-### Associate Members
+#### Associate Members
 
-* Tobias Fella (he/him), KDE e.V.
-* And one vacant seat
+* Tobias Fella (he/him), *KDE e.V.*
+* Vacant seat
 
 </div>
 </div>
 </div>
 
-<div class="category-group" data-category="Funder Representatives">
+<div class="category-group">
+
+### Funder Representatives
+
 <div class="group-content">
 <div>
 
-### Platinum Members
+#### Platinum Members
 
-* Neil Johnson (he/him), Element
-* Three vacant seats
-
-</div>
-<div>
-
-### Gold Members
-
-* Brad Murray (he/him), Automattic (Beeper)
-* Two vacant seats
+* Neil Johnson (he/him), *Element*
+* Vacant seat
+* Vacant seat
+* Vacant seat
 
 </div>
 <div>
 
-### Silver Members
+#### Gold Members
 
-* Christian Kußowski (he/him), Famedly
-* Jan Kohnert (he/him), Gematik GmbH
+* Brad Murray (he/him), *Automattic (Beeper)*
+* Vacant seat
+* Vacant seat
+
+</div>
+<div>
+
+#### Silver Members
+
+* Christian Kußowski (he/him), *Famedly*
+* Jan Kohnert (he/him), *Gematik GmbH*
 
 </div>
 </div>
 </div>
 
-<div class="category-group" data-category="Foundation Representatives">
+<div class="category-group">
+
+### Foundation Representatives
+
 <div class="group-content">
 <div>
 
-### Guardians
+#### Guardians
 
 * Amandine Le Pape (she/her)
 * Matthew Hodgson (he/him)
@@ -110,7 +122,7 @@ The current elected representatives are:
 </div>
 <div>
 
-### Spec Core Team
+#### Spec Core Team
 
 * Richard van der Hoff (he/him)
 * Travis Ralston (he/him)
@@ -118,7 +130,7 @@ The current elected representatives are:
 </div>
 <div>
 
-### Managing Director
+#### Managing Director
 
 * Robin Riley (they/them)
 
