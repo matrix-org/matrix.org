@@ -1,5 +1,4 @@
 .two-column {
-    // Category wrapper
     .category-group {
         margin-bottom: 2rem;
         background: #fafafa;
@@ -9,7 +8,6 @@
             margin-bottom: 0;
         }
 
-        // Inner flex container for the boxes
         .group-content {
             display: flex;
             gap: 1.5rem;
@@ -32,7 +30,6 @@
         margin-top: 0;
     }
 
-    // Style the lists
     ul {
         list-style: none;
         padding: 0;
@@ -47,7 +44,6 @@
         }
     }
 
-    // Chairs section remains unchanged
     &.chairs-section {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -64,7 +60,6 @@
     }
 }
 
-// Responsive adjustments
 @media (max-width: 1024px) {
     .two-column {
         .category-group {
