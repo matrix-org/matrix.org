@@ -190,6 +190,11 @@ The Matrix community has created some tooling to aid with performing room upgrad
 - <https://github.com/FSG-Cat/Cats-PS-Collection/releases/tag/FMA_v1.0>
 - <https://codeberg.org/Apothecary/apothecary-upgrade/src/branch/main/upgrades.py>
 
+Further, the following tools can help you assess what room versions the servers participating in your room support.
+
+- <https://github.com/maubot/rsvc>
+- <https://codeberg.org/june64/mrvc/>
+
 ### References and further reading
 
 Community admins are documenting their experiences about upgrading rooms which can be useful as additional references.
