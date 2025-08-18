@@ -35,7 +35,7 @@ Elections are being held in the second quarter of each calendar year, alternatin
 
 The current elected representatives are:
 
-<div class="two-column">
+<div class="responsive-grid">
 <div class="category-group">
 
 ### Community Representatives
@@ -177,7 +177,7 @@ There are currently 4 Committees:
 
 The current chairs of the Governing Board are:
 
-<div class="two-column chairs-section">
+<div class="responsive-grid chairs-section">
 <div>
 
 ### Governing Board

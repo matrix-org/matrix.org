@@ -1,4 +1,4 @@
-.two-column {
+.responsive-grid {
     .category-group {
         margin-bottom: 2rem;
         background: #fafafa;
@@ -61,7 +61,7 @@
 }
 
 @media (max-width: 1024px) {
-    .two-column {
+    .responsive-grid {
         .category-group {
             padding: 1.5rem;
 
@@ -80,7 +80,7 @@
 }
 
 @media (max-width: 767px) {
-    .two-column {
+    .responsive-grid {
         .category-group {
             margin-bottom: 1.5rem;
             padding: 1.25rem;
