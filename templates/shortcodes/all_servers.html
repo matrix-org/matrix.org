@@ -17,7 +17,7 @@
             <img src="/assets/down-arrow.svg" alt="Downward facing arrow">
         </button>
         <div id="filter-maturity-menu" class="filter-menu">
-            <p>The client can support any of the maturity levels checked.</p>
+            <p>The server can support any of the maturity levels checked.</p>
             <div class="filter-option">
                 <input id="maturity-stable" type="checkbox" checked>
                 <label for="maturity-stable">Stable</label>
@@ -44,7 +44,7 @@
             <img src="/assets/down-arrow.svg" alt="Downward facing arrow">
         </button>
         <div id="filter-licence-menu" class="filter-menu">
-            <p>The client can support any of the licences checked.</p>
+            <p>The server can support any of the licences checked.</p>
             {% for licence in licences %}
             <div class="filter-option">
                 <input id="licence-{{ licence | slugify }}" type="checkbox" checked>
@@ -61,7 +61,7 @@
             <img src="/assets/down-arrow.svg" alt="Downward facing arrow">
         </button>
         <div id="filter-language-menu" class="filter-menu">
-            <p>The client must support any of the languages checked.</p>
+            <p>The server must support any of the languages checked.</p>
             {% for language in languages %}
             <div class="filter-option">
                 <input id="language-{{ language | slugify }}" type="checkbox" checked>
