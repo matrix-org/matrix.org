@@ -1,21 +1,21 @@
-header {
-    margin-bottom: 1em;
-
-    h1 {
-        margin-bottom: 0;
-    }
-
-    .metadata {
-        font-size: .8rem;
-    }
-}
-
 .docs-body {
     width: 100%;
     display: flex;
     flex-direction: row;
 
     --docs-menu-width: 18rem;
+
+    header {
+        margin-bottom: 1em;
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .metadata {
+            font-size: 0.8rem;
+        }
+    }
 }
 
 .docs-menu {
@@ -50,11 +50,11 @@ header {
     .submenu-checkbox {
         display: none;
 
-        &:not(:checked)~.section-submenu-wrap {
+        &:not(:checked) ~ .section-submenu-wrap {
             display: none;
         }
 
-        &:not(:checked)~.submenu-title {
+        &:not(:checked) ~ .submenu-title {
             .arrow {
                 background-image: url("/assets/down-arrow.svg");
                 width: 1rem;
@@ -63,7 +63,7 @@ header {
             }
         }
 
-        &:checked~.submenu-title {
+        &:checked ~ .submenu-title {
             .arrow {
                 background-image: url("/assets/up-arrow.svg");
                 width: 1rem;
@@ -76,7 +76,7 @@ header {
     .submenu-title {
         display: flex;
         flex-direction: row;
-        gap: .8rem;
+        gap: 0.8rem;
 
         font-size: 1.2rem;
         font-weight: 700;
@@ -91,7 +91,7 @@ header {
 
         li {
             margin-inline-start: 1em;
-            margin-block: .5em;
+            margin-block: 0.5em;
 
             ul {
                 border-left: 1px solid #bbb;
@@ -103,7 +103,6 @@ header {
             }
         }
 
-
         a {
             color: var(--color-text);
         }
@@ -111,11 +110,11 @@ header {
 }
 
 .docs-content {
-    padding-inline-start: calc(var(--docs-menu-width) + 3rem + .5rem);
+    padding-inline-start: calc(var(--docs-menu-width) + 3rem + 0.5rem);
 
     @media (max-width: 767px) {
         margin-inline: auto;
-        padding-inline: .5rem;
+        padding-inline: 0.5rem;
     }
 
     article p img {
@@ -141,21 +140,21 @@ header {
     color: #fff;
     border: transparent;
     border-radius: 9999px;
-    padding: .5rem 2rem;
+    padding: 0.5rem 2rem;
     box-shadow: 0 2px 2px #666;
 }
 
-#docs-menu-checkbox:checked~#docs-menu-button {
+#docs-menu-checkbox:checked ~ #docs-menu-button {
     background-color: #333;
 }
 
-#docs-menu-checkbox:not(:checked)~.docs-menu {
+#docs-menu-checkbox:not(:checked) ~ .docs-menu {
     @media (max-width: 767px) {
         display: none;
     }
 }
 
-#docs-menu-checkbox:checked~.docs-content {
+#docs-menu-checkbox:checked ~ .docs-content {
     @media (max-width: 767px) {
         display: none;
     }
@@ -164,7 +163,7 @@ header {
 .mjolnir_button {
     border: 1px solid rgb(217, 217, 217);
     border-radius: 1000px;
-    padding: 0 .4rem;
+    padding: 0 0.4rem;
     background-color: rgb(242, 247, 252);
 }
 
@@ -186,7 +185,7 @@ figure {
     }
 
     figcaption {
-        font-size: .8rem;
+        font-size: 0.8rem;
         text-align: center;
     }
 }
