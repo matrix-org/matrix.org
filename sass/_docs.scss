@@ -122,43 +122,6 @@
     }
 }
 
-#docs-menu-button {
-    position: fixed;
-    display: none;
-    z-index: 991;
-
-    @media (max-width: 767px) {
-        display: inline-block;
-    }
-
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-
-    background-color: #000;
-    color: #fff;
-    border: transparent;
-    border-radius: 9999px;
-    padding: 0.5rem 2rem;
-    box-shadow: 0 2px 2px #666;
-}
-
-#docs-menu-checkbox:checked ~ #docs-menu-button {
-    background-color: #333;
-}
-
-#docs-menu-checkbox:not(:checked) ~ .docs-menu {
-    @media (max-width: 767px) {
-        display: none;
-    }
-}
-
-#docs-menu-checkbox:checked ~ .docs-content {
-    @media (max-width: 767px) {
-        display: none;
-    }
-}
-
 .mjolnir_button {
     border: 1px solid rgb(217, 217, 217);
     border-radius: 1000px;
