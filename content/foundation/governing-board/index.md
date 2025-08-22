@@ -172,8 +172,8 @@ The current chairs of the Governing Board are:
 
 ### Community Committee
 
-* Vacant seat — Chair
-* Nicolas Werner (he/him) — Vice Chair
+* Nicolas Werner (he/him) — Chair
+* Vacant seat — Vice Chair
 
 </div>
 <div>

@@ -2,10 +2,8 @@
 	position: sticky;
 	top: 0;
 	z-index: 1000;
-	background-color: #000;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	--header-padding: 1.5dvw;
+	--header-vertical-padding: 8px;
 
 	@media all and (min-width: 1024px) {
 		height: var(--navbar-height);

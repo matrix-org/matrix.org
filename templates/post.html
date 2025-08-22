@@ -1,12 +1,10 @@
 {% extends "page.html" %}
-{% import "macros/banner.html" as banner %}
 {% block head_extra %}
 {#
 {% if page.summary %}
 <meta name="description" content="{{ page.summary | safe }}">
 {% endif %}
 #}
-
 {%- if page.authors | length > 0 or page.taxonomies.author is undefined -%}
 {{ throw(message="Please put author under the taxonomies area.") }}
 {%- endif -%}
@@ -46,7 +44,6 @@
 </script>
 {% endblock head_extra %}
 {% block content %}
-{{ banner::banner() }}
 <article class="content post {%- if page.toc %} with-sidebar{% endif %}">
     <header>
         <h1>{{ page.title }}</h1>

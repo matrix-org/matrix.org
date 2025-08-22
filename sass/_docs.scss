@@ -1,7 +1,12 @@
 .docs-body {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: start;
+
+    @media (min-width: 767px) {
+        flex-direction: row;
+    }
 
     --docs-menu-width: 18rem;
 
@@ -19,32 +24,26 @@
 }
 
 .docs-menu {
-    position: fixed;
-    padding-block-start: var(--navbar-height);
-    inset-block: 0;
-    inset-inline-start: 0;
+    position: static;
     overflow-y: auto;
     background-color: #fff;
-    border-right: 1px solid var(--borders-color);
-    max-width: var(--docs-menu-width);
+    border-bottom: 1px solid var(--borders-color);
+    width: 100%;
+    order: 2;
+
+    @media (min-width: 767px) {
+        border-bottom: 0;
+        border-right: 1px solid var(--borders-color);
+        flex-direction: row;
+        position: sticky;
+        top: 95px;
+        height: 100svh;
+        max-width: var(--docs-menu-width);
+        order: 1;
+    }
 
     .docs-menu-inner {
         padding: 1.5rem;
-    }
-
-    @media (max-width: 767px) {
-        /*
-        This trick is added because Chrome on Android doesn't re-calculate the
-        height of the viewport before the user stops scrolling. We're
-        artificially making the panel higher than it is
-        */
-        --panel-bottom-trick: 300px;
-        border-right: unset;
-        max-width: unset;
-        inset-inline-end: 0;
-        inset-block-end: calc(-1 * var(--panel-bottom-trick));
-        padding-block-end: calc(var(--panel-bottom-trick) + 5rem);
-        z-index: 990;
     }
 
     .submenu-checkbox {
@@ -110,11 +109,11 @@
 }
 
 .docs-content {
-    padding-inline-start: calc(var(--docs-menu-width) + 3rem + 0.5rem);
-
-    @media (max-width: 767px) {
-        margin-inline: auto;
-        padding-inline: 0.5rem;
+    flex: 1;
+    order: 2;
+    
+    @media (min-width: 767px) {
+        order: 1;
     }
 
     article p img {

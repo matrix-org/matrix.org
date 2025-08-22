@@ -1,11 +1,9 @@
 {% extends "section.html" %}
-{% import "macros/banner.html" as banner %}
 {% import "macros/supporters.html" as supporters_macros %}
 {% block head_extra %}
 <meta name="description" content="{{ section.extra.summary }}">
 {% endblock head_extra %}
 {% block content %}
-{{ banner::banner() }}
 {% set supporters = load_data(path="content/support/supporters.toml") %}
 <div class="page-header support">
     <div class="hero-block">

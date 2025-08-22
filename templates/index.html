@@ -1,13 +1,10 @@
 {% extends "skel.html" %}
-{% import "macros/banner.html" as banner %}
 {% block head_extra %}
 <meta name="description"
     content="The homepage of the matrix.org website. Chat securely with your family, friends, community, or build great apps with Matrix!">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 {% endblock head_extra %}
 {% block content %}
-
-{{ banner::banner() }}
 <div id="frontpage">
     <div id="hero" class="section">
         <div class="hero_content">

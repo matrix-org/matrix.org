@@ -22,10 +22,14 @@ footer_internal = [
 ]
 
 footer_external = [
-    { image = "github.svg", alt = "GitHub", href = "https://github.com/matrix-org" },
-    { image = "gitlab.svg", alt = "GitLab", href = "https://gitlab.matrix.org/" },
-    { image = "mastodon.svg", alt = "Mastodon", href = "https://mastodon.matrix.org/@matrix" },
-    { image = "twitter.svg", alt = "Twitter", href = "https://twitter.com/matrixdotorg" },
-    { image = "youtube.svg", alt = "YouTube", href = "https://www.youtube.com/channel/UCVFkW-chclhuyYRbmmfwt6w" },
-    { image = "rss.svg", alt = "Atom Feed", href = "/atom.xml" },
+    { image = "github.svg", alt = "Matrix on GitHub", href = "https://github.com/matrix-org", newTab = true },
+    { image = "gitlab.svg", alt = "Matrix on GitLab", href = "https://gitlab.matrix.org/", newTab = true },
+    { image = "mastodon.svg", alt = "Matrix on Mastodon", href = "https://mastodon.matrix.org/@matrix", relMe = true, newTab = true },
+    { image = "x.svg", alt = "Matrix on X", href = "https://x.com/matrixdotorg", newTab = true },
+    { image = "youtube.svg", alt = "Matrix on YouTube", href = "https://www.youtube.com/channel/UCVFkW-chclhuyYRbmmfwt6w", newTab = true },
+    { image = "rss.svg", alt = "Matrix Atom Feed", href = "/atom.xml", newTab = true },
+]
+
+footer_subfooter = [
+    { title = "Copyright Notice", href = "/legal/copyright-notice" },
 ]

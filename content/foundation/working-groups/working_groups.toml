@@ -12,6 +12,7 @@ Note that this is not the complete list of responsibilities, but a high level ov
 """
 members = ["Thib", "HarHarLinks", "MTRNord"]
 matrix_room_alias = "#matrix.org-website:matrix.org"
+email = ""
 committee = "Community Committee"
 sponsor = "HarHarLinks"
 
@@ -23,6 +24,7 @@ The Events working group is the main organising team of the official events host
 """
 members = ["Yan", "Nadine", "Thib", "Robin", "HarHarLinks", "The one with the braid"]
 matrix_room_alias = "#events-wg:matrix.org"
+email = "events-wg@foundation.matrix.org"
 committee = "Community Committee"
 sponsor = "HarHarLinks"
 
@@ -37,6 +39,7 @@ The T&S committee might sometimes ask the WG for help in researching specific to
 """
 members = ["Nico", "Cat", "Niko", "SFaulken", "Gnuxie"]
 matrix_room_alias = "#tns-rnd-wg-office:neko.dev"
+email = ""
 committee = "Trust & Safety Committee"
 sponsor = "Nico"
 
@@ -48,7 +51,8 @@ The purpose of the room directory working group is to implement the matrix.org r
 
 Additionally the working group might propose improvements to the policy, which the T&S committee will then vote on.
 """
-members = ["Nico", "Sky"]
+members = ["Nico", "Sky", "mahdi", "Emma [it/its]"]
 matrix_room_alias = "#room-dir-wg-office:neko.dev"
+email = ""
 committee = "Trust & Safety Committee"
 sponsor = "Nico"
