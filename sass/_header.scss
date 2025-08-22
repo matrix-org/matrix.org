@@ -2,8 +2,11 @@
 	position: sticky;
 	top: 0;
 	z-index: 1000;
-	--header-padding: 1.5dvw;
-	--header-vertical-padding: 8px;
+	background-color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
 
 	@media all and (min-width: 1024px) {
 		height: var(--navbar-height);
@@ -16,7 +19,7 @@
 
 		width: 100%;
 		height: auto;
-		padding: 20px 20px;
+		padding: 1.25rem;
 
 		font-size: 1.5rem;
 		color: #fff;
@@ -48,12 +51,12 @@
 
 				padding-inline: clamp(1em, 3dvw, 2em);
 
-				@media screen and (max-width: 1023px) {
+				@media all and (max-width: 1023px) {
 					margin-block: 1.2rem;
 					text-align: center;
 				}
 
-				@media screen and (min-width: 1024px) {
+				@media all and (min-width: 1024px) {
 					&:not(:last-child) {
 						margin-right: 12px;
 					}
@@ -67,6 +70,7 @@
 			}
 
 			flex-direction: column;
+
 			@media all and (min-width: 1024px) {
 				flex-direction: row;
 			}
@@ -96,7 +100,7 @@
 					white-space: nowrap;
 
 					&:has(.button) {
-						@media screen and (max-width: 1023px) {
+						@media all and (max-width: 1023px) {
 							align-self: center;
 							width: 100%;
 						}
@@ -109,7 +113,7 @@
 						gap: 0.5rem;
 					}
 
-					@media screen and (min-width: 1024px) {
+					@media all and (min-width: 1024px) {
 						text-align: center;
 						justify-content: center;
 						align-items: center;
@@ -149,7 +153,7 @@
 							top: 0;
 							left: 0;
 
-							@media screen and (min-width: 1024px) {
+							@media all and (min-width: 1024px) {
 								pointer-events: none;
 							}
 						}
@@ -169,7 +173,7 @@
 						transform: rotate(0deg);
 					}
 
-					@media screen and (min-width: 1024px) {
+					@media all and (min-width: 1024px) {
 						&:hover img {
 							transform: rotate(-90deg);
 						}
@@ -194,7 +198,7 @@
 					color: #fff;
 					align-items: start;
 
-					@media screen and (min-width: 1024px) {
+					@media all and (min-width: 1024px) {
 						position: absolute;
 						width: auto;
 						top: 2rem;
