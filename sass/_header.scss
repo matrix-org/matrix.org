@@ -49,6 +49,7 @@
 				color: #000 !important;
 
 				padding-inline: clamp(1em, 3dvw, 2em);
+				padding-block: 0.5rem;
 
 				@media all and (max-width: 1023px) {
 					margin-block: 1.2rem;
@@ -90,6 +91,7 @@
 				@media all and (min-width: 1024px) {
 					display: flex;
 					flex-direction: row;
+					align-items: center;
 				}
 
 				li {
