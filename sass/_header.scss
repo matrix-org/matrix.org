@@ -15,7 +15,6 @@
 	.header-content {
 		display: flex;
 		justify-content: space-between;
-		gap: 1rem;
 
 		width: 100%;
 		height: auto;
@@ -69,6 +68,7 @@
 				display: flex;
 			}
 
+			gap: 1rem;
 			flex-direction: column;
 
 			@media all and (min-width: 1024px) {
@@ -121,10 +121,10 @@
 
 					.submenu-toggle {
 						aspect-ratio: 1;
-						height: 1rem;
+						width: .8rem;
 						display: grid;
-						padding-top: 0.1rem;
 						cursor: pointer;
+						top: 2px;
 
 						& > * {
 							grid-row-start: 1;
@@ -202,6 +202,7 @@
 						position: absolute;
 						width: auto;
 						top: 2rem;
+						left: -1rem;
 						background-color: #fff;
 						border: 1px solid hsla(0, 0%, 80%, 1);
 						box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
