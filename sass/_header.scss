@@ -177,7 +177,7 @@
 
 					@media all and (min-width: 1024px) {
 						&:hover img {
-							transform: rotate(-90deg);
+							transform: rotate(-180deg);
 						}
 
 						&:hover .section-submenu {
@@ -186,7 +186,7 @@
 					}
 
 					&:has(.submenu-toggle-checkbox:checked) img {
-						transform: rotate(-90deg);
+						transform: rotate(-180deg);
 					}
 
 					&:has(.submenu-toggle-checkbox:checked) .section-submenu {
