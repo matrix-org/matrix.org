@@ -8,7 +8,7 @@
 	align-items: center;
 	width: 100%;
 
-	@media all and (min-width: 1024px) {
+	@media all and (min-width: 1150px) {
 		height: var(--navbar-height);
 	}
 
@@ -23,7 +23,7 @@
 		font-size: 1.5rem;
 		color: #fff;
 
-		@media all and (min-width: 1024px) {
+		@media all and (min-width: 1150px) {
 			align-items: center;
 			font-size: 1.125rem;
 			padding: 0 20px;
@@ -51,12 +51,12 @@
 				padding-inline: clamp(1em, 3dvw, 2em);
 				padding-block: 0.5rem;
 
-				@media all and (max-width: 1023px) {
+				@media all and (max-width: 1149px) {
 					margin-block: 1.2rem;
 					text-align: center;
 				}
 
-				@media all and (min-width: 1024px) {
+				@media all and (min-width: 1150px) {
 					&:not(:last-child) {
 						margin-right: 12px;
 					}
@@ -72,7 +72,7 @@
 			gap: 1rem;
 			flex-direction: column;
 
-			@media all and (min-width: 1024px) {
+			@media all and (min-width: 1150px) {
 				flex-direction: row;
 			}
 		}
@@ -88,7 +88,7 @@
 				margin: 0;
 				align-items: start;
 
-				@media all and (min-width: 1024px) {
+				@media all and (min-width: 1150px) {
 					display: flex;
 					flex-direction: row;
 					align-items: center;
@@ -102,7 +102,7 @@
 					white-space: nowrap;
 
 					&:has(.button) {
-						@media all and (max-width: 1023px) {
+						@media all and (max-width: 1149px) {
 							align-self: center;
 							width: 100%;
 						}
@@ -115,7 +115,7 @@
 						gap: 0.5rem;
 					}
 
-					@media all and (min-width: 1024px) {
+					@media all and (min-width: 1150px) {
 						text-align: center;
 						justify-content: center;
 						align-items: center;
@@ -155,7 +155,7 @@
 							top: 0;
 							left: 0;
 
-							@media all and (min-width: 1024px) {
+							@media all and (min-width: 1150px) {
 								pointer-events: none;
 							}
 						}
@@ -175,7 +175,7 @@
 						transform: rotate(0deg);
 					}
 
-					@media all and (min-width: 1024px) {
+					@media all and (min-width: 1150px) {
 						&:hover img {
 							transform: rotate(-180deg);
 						}
@@ -200,11 +200,10 @@
 					color: #fff;
 					align-items: start;
 
-					@media all and (min-width: 1024px) {
+					@media all and (min-width: 1150px) {
 						position: absolute;
 						width: auto;
 						top: 2rem;
-						left: -1rem;
 						background-color: #fff;
 						border: 1px solid hsla(0, 0%, 80%, 1);
 						box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
@@ -238,7 +237,7 @@
 			justify-content: space-between;
 			align-items: center;
 			width: 100%;
-			@media all and (min-width: 1024px) {
+			@media all and (min-width: 1150px) {
 				width: auto;
 			}
 		}
@@ -266,7 +265,7 @@
 			display: grid;
 			line-height: 1rem;
 
-			@media all and (min-width: 1024px) {
+			@media all and (min-width: 1150px) {
 				display: none;
 			}
 
