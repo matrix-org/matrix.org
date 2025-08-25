@@ -201,11 +201,13 @@ pre table {
 }
 
 :not(pre)>code {
-    color: #f54029;
-    border: 1px solid #f54029;
+    color: color-mix(in srgb, currentColor, transparent 10%);
+    background-color: color-mix(in srgb, currentColor, transparent 95%);
+    border: 1px solid color-mix(in srgb, currentColor, transparent 50%);
     border-radius: 4px;
     padding: 0 .4rem;
-}
+    font-weight: bolder;
+ }
 
 a>code {
     border-color: var(--color-link);
