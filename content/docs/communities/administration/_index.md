@@ -181,6 +181,8 @@ Here is a short summary of some significant changes.
 
 Find a summary of the most relevant changes in the [security pre-disclosure](@/blog/2025/07/2025-07-16-security-predisclosure.md) on the blog.
 
+Further info and recommendations can be found in [Matrix Live S11E05 - Project Hydra](https://www.youtube.com/watch?v=Xje32fIIUyg&t=1240s).
+
 ### Tools and scripts
 
 The Matrix community has created some tooling to aid with performing room upgrades which you might find useful.
