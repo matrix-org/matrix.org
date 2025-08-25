@@ -1,9 +1,9 @@
 +++
 title = "Matrix.org Foundation Privacy Policy"
-version = "3.2.0"
+version = "3.4.0"
 +++
 
-Effective date of 14 August 2025
+Effective date of 25 August 2025
 
 Please read this document carefully before accessing or using this service.
 
@@ -241,6 +241,10 @@ Currently, we log the IP addresses of everyone who accesses the Service. This da
 We use the privacy-preserving website analytics solution Plausible. Plausible allows us to understand how our website is used, without the use of cookies or other tracking technologies. Your use of the [matrix.org website](/) is not associated with any persistent identifiers or cross-site tracking and no personal data is collected about you.
 
 For full details on how Plausible processes data please refer to their [Privacy Policy](https://plausible.io/data-policy).
+
+We use the analytics solution PostHog provided by PostHog Inc. PostHog allows us to understand how your account is used, without the use of cookies or other tracking technologies. Analytics are performed in an aggregate manner based on MXID. This use is strictly for performance improvements.
+
+We host our PostHog data in EU data centres. For further details please review their [privacy policy](https://posthog.com/privacy).
 
 ### 2.3 What information is shared with third-parties and why?
 
