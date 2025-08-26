@@ -58,6 +58,10 @@ licence-{{ client.licence | slugify }}
 <a href="https://flathub.org/apps/details/{{ packages.flathub.app_id }}"><img src="/assets/stores/flathub.svg"
         alt="Download on Flathub" /></a>
 {% endif %}
+{% if packages.other_linux_link %}
+<a href="{{ packages.other_linux_link }}"><img
+        src="/assets/stores/download_for_linux.svg" alt="Download for Linux" /></a>
+{% endif %}
 {% if packages.webapp %}
 <a href="{{ packages.webapp }}"><img src="/assets/stores/use_in_browser.svg" alt="Use in your browser" /></a>
 {% endif %}
