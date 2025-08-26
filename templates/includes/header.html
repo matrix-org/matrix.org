@@ -1,47 +1,72 @@
 <header class="site-header">
-    <a href="/" class="brand">
-        <img src="/images/matrix-logo-white.svg" alt="Matrix logo">
-    </a>
-    <input id="site-header-dropdown-checkbox" type="checkbox" class="dropdown-checkbox" aria-hidden="true">
-    <label for="site-header-dropdown-checkbox" class="dropdown-button">&#xe602;</label>
-    <label for="site-header-dropdown-checkbox" class="page-overlay"></label>
-    <nav>
-        {% for link in navigation.header %}
-        {% if link.section %}
-        {% set href = "/" ~ link.section ~ "/" %}
-        {% set section = get_section(path=link.section ~ "/_index.md") %}
-        <div class="section-wrap">
-            <input id="{{ link.section }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true"
-                {{ util::current_checked(if_path_starts_with="/" ~ link.section) }}>
-            <label for="{{ link.section }}-submenu-checkbox" class="submenu-title">
-            <a href="/{{ link.section }}">
-                {{ link.title }}</a> <div class="arrow">
-                </div></label>
+	<div class="header-content">
+		<div class="brand-container">
+			<a class="brand" href="/" title="Back to Matrix Homepage">
+				<img src="/images/matrix-logo-white.svg" alt="Matrix logo" />
+			</a>
 
-            <div class="section-submenu-wrap">
-                <div class="section-submenu">
-                    {% for subsection_path in section.subsections %}
-                    {% set subsection = get_section(path=subsection_path) %}
-                    {# We ignore subsections with "navigation" key being false in the metadata. Note this variable may be unset #}
-                    {% if subsection.extra.navigation is not defined or subsection.extra.navigation %}
-                    <a href="{{ subsection.path }}">{{ subsection.title }}</a>
-                    {% endif %}
-                    {% endfor %}
-                    {% for mypage in section.pages %}
-                    {# We ignore subsections with "navigation" key being false in the metadata. Note this variable may be unset #}
-                    {% if mypage.extra.navigation is undefined or mypage.extra.navigation %}
-                    <a href="{{ mypage.path }}">{{ mypage.title }}</a>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        {% else %}
-        <a href="{{ link.href }}" class="{% if link.primary %}primary{% endif %}
-            {{ util::current_class(if_path_starts_with=link.href) }}">
-            {{ link.title }}
-        </a>
-        {% endif %}
-        {% endfor %}
-    </nav>
+			<label for="header-toggle-checkbox" class="dropdown-button"
+				><span>&#xe602;</span
+				><input id="header-toggle-checkbox" type="checkbox" aria-hidden="true"
+			/></label>
+		</div>
+		<nav class="header-nav">
+			<ul>
+				{% for link in navigation.header %} {% if link.section %} {% set href =
+				"/" ~ link.section ~ "/" %} {% set section =
+				get_section(path=link.section ~ "/_index.md") %}
+				<li class="section">
+					<div>
+						<a
+							href="/{{ link.section }}"
+							class="{{ util::current_class(if_path_starts_with=href) }}"
+						>
+							{{ link.title }}
+						</a>
+						<label
+							class="submenu-toggle"
+							role="button"
+							aria-label="Toggle Submenu"
+						>
+							<input
+								type="checkbox"
+								class="submenu-toggle-checkbox"
+								aria-hidden="true"
+							/>
+							<img src="/assets/down-arrow.svg" alt="Down arrow" />
+						</label>
+					</div>
+
+					<ul class="section-submenu">
+						{% for subsection_path in section.subsections %} {% set subsection =
+						get_section(path=subsection_path) %} {# We ignore subsections with
+						"navigation" key being false in the metadata. Note this variable may
+						be unset #} {% if subsection.extra.navigation is not defined or
+						subsection.extra.navigation %}
+						<li class="submenu-item">
+							<a href="{{ subsection.path }}">{{ subsection.title }}</a>
+						</li>
+						{% endif %} {% endfor %} {% for mypage in section.pages %} {# We
+						ignore subsections with "navigation" key being false in the
+						metadata. Note this variable may be unset #} {% if
+						mypage.extra.navigation is undefined or mypage.extra.navigation %}
+						<li>
+							<a href="{{ mypage.path }}">{{ mypage.title }}</a>
+						</li>
+						{% endif %} {% endfor %}
+					</ul>
+				</li>
+				{% else %}
+				<li>
+					<a
+						href="{{ link.href }}"
+						class="{{ util::current_class(if_path_starts_with=link.href) }} {% if link.button %}button{% endif %}"
+					>
+						{{ link.title }}
+					</a>
+				</li>
+				{% endif %} {% endfor %}
+			</ul>
+		</nav>
+	</div>
 </header>

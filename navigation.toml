@@ -6,7 +6,7 @@ header = [
     { title = "Ecosystem", section = "ecosystem" },
     { title = "Homeserver", section = "homeserver" },
     { title = "Support us", href = "/support" },
-    { title = "Try Matrix", href = "/try-matrix/", primary = true },
+    { title = "Try Matrix", href = "/try-matrix/", button = true },
 ]
 
 footer_internal = [
