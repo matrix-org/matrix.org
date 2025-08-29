@@ -62,26 +62,35 @@ curl –XPOST –H 'Authorization: X-Matrix origin=alice.com,...' –d '{
         </div>
         <div class="legend hidden" id="legend6">
             Destination clients receive Alice's message with a long-lived GET request.
-            (Clients are free to implement more efficient transports than polling as desired).
             <pre>
-curl "https://matrix.bob.com/_matrix/client/v2/sync?access_token=ACCESS_TOKEN"
+curl "https://matrix.bob.com/_matrix/client/v3/sync?access_token=ACCESS_TOKEN"
 {
     "next_batch": "s72595_4483_1934",
-    "rooms": [{
-    "room_id": "!KrLWMLDnZAyTapqLWW:alice.com",
-    "events": {
-        "batch": [{
-        "event_id": "$YUwRidLecu:alice.com",
-        "type": "m.room.message",
-        "content": {
-            "body": "I am a fish",
-            "msgtype": "m.text",
-        },
-        "origin_server_ts": 1417731086797,
-        "sender": "@alice:alice.com"
-        }],
-    },
-    }]
+    "rooms": {
+        ...
+        "join": {
+            ...
+            "ROOM_ID": {
+                ...
+                "timeline": {
+                    "events": [
+                        {
+                            "event_id": "$YUwRidLecu:alice.com",
+                            "type": "m.room.message",
+                            "content": {
+                                "body": "I am a fish",
+                                "msgtype": "m.text"
+                            },
+                            "origin_server_ts": 1417731086797,
+                            "sender": "@alice:alice.com"
+                        }
+                    ]
+                    ...
+                }
+            }
+        }
+    }
+    ...
 }</pre>
         </div>
         <div class="legend hidden" id="legend7">

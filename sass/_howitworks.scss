@@ -18,9 +18,17 @@
     display: none;
 }
 
-.legend pre {
-    font-size: 14px;
-    white-space: pre-wrap;
+#legendBox {
+    min-width: 0;
+}
+
+.legend {
+
+    pre {
+        font-size: 14px;
+        background-color: #1e1e1e;
+        color: #dcdcdc;
+    }
 }
 
 .legendNav {
