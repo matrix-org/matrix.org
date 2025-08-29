@@ -44,6 +44,11 @@ website = "https://filament.dm/"
 logo = "filament.svg"
 
 [[silver]]
+name = "FlatTurtle"
+website = "https://www.flatturtle.com/"
+logo = "flatturtle.png"
+
+[[silver]]
 name = "Gematik"
 website = "https://www.gematik.de/"
 logo = "gematik.png"
@@ -167,6 +172,11 @@ logo = "polycule.svg"
 name = "Trixnity"
 website = "https://trixnity.gitlab.io/trixnity"
 logo = "trixnity.png"
+
+[[associate]]
+name = "c-base"
+website = "https://c-base.org/"
+logo = "c-base.svg"
 
 [[associate]]
 name = "Eclipse Foundation"
