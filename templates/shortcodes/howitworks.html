@@ -31,24 +31,26 @@ curl -XPOST
             servers which are participating in the room.
             <pre>
 curl –XPOST –H 'Authorization: X-Matrix origin=alice.com,...' –d '{
-    "ts": 1413414391521,
-    "origin": "alice.com",
-    "destination": "bob.com",
-    "pdus": [{
-        "event_id": "$YUwRidLecu:alice.com",
-        "content": {
+  "ts": 1413414391521,
+  "origin": "alice.com",
+  "destination": "bob.com",
+  "pdus": [
+    {
+      "event_id": "$YUwRidLecu:alice.com",
+      "content": {
         "body": "hello world",
         "msgtype": "m.text"
-        },
-        ...
-        "pdu_type": "m.room.message",
-        "signatures": {
+      },
+      ...
+      "pdu_type": "m.room.message",
+      "signatures": {
         "matrix.org": {
-            "ed25519:auto": "jZXTwAH/7EZ..."
+          "ed25519:auto": "jZXTwAH/7EZ..."
         }
-        },
-        "sender": "@alice:alice.com"
-    }]
+      },
+      "sender": "@alice:alice.com"
+    }
+  ]
 }' https://matrix.bob.com:8448/_matrix/federation/v1/send/916d...</pre>
         </div>
         <div class="legend hidden" id="legend5">
@@ -65,32 +67,32 @@ curl –XPOST –H 'Authorization: X-Matrix origin=alice.com,...' –d '{
             <pre>
 curl "https://matrix.bob.com/_matrix/client/v3/sync?access_token=ACCESS_TOKEN"
 {
-    "next_batch": "s72595_4483_1934",
-    "rooms": {
-        ...
-        "join": {
-            ...
-            "ROOM_ID": {
-                ...
-                "timeline": {
-                    "events": [
-                        {
-                            "event_id": "$YUwRidLecu:alice.com",
-                            "type": "m.room.message",
-                            "content": {
-                                "body": "I am a fish",
-                                "msgtype": "m.text"
-                            },
-                            "origin_server_ts": 1417731086797,
-                            "sender": "@alice:alice.com"
-                        }
-                    ]
-                    ...
-                }
-            }
-        }
-    }
+  "next_batch": "s72595_4483_1934",
+  "rooms": {
     ...
+    "join": {
+      ...
+      "ROOM_ID": {
+        ...
+        "timeline": {
+          "events": [
+            {
+              "event_id": "$YUwRidLecu:alice.com",
+              "type": "m.room.message",
+              "content": {
+                "body": "I am a fish",
+                "msgtype": "m.text"
+              },
+              "origin_server_ts": 1417731086797,
+              "sender": "@alice:alice.com"
+            }
+          ]
+          ...
+        }
+      }
+    }
+  }
+  ...
 }</pre>
         </div>
         <div class="legend hidden" id="legend7">
