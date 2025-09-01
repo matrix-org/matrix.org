@@ -65,7 +65,12 @@ curl –XPOST –H 'Authorization: X-Matrix origin=alice.com,...' –d '{
         <div class="legend hidden" id="legend6">
             Destination clients receive Alice's message with a long-lived GET request.
             <pre>
-curl "https://matrix.bob.com/_matrix/client/v3/sync?access_token=ACCESS_TOKEN"
+curl "https://matrix.bob.com/_matrix/client/v3/sync" \
+    -H "Authorization: Bearer ACCESS_TOKEN"
+</pre>
+
+            Response:
+            <pre>
 {
   "next_batch": "s72595_4483_1934",
   "rooms": {
