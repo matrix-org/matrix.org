@@ -147,6 +147,8 @@ There are currently 4 Committees:
 * Trust & Safety
 * Finance & Fundraising
 
+More information about each Committee is available on the dedicated [Committees](@/foundation/governing-board/committees.md) page.
+
 ## Current Chairs of the Governing Board
 
 The current chairs of the Governing Board are:
