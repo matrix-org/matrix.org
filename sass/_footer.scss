@@ -16,13 +16,18 @@
         width: 100%;
         padding-bottom: 40px;
         max-width: var(--footer-width);
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 1rem;
 
-        @media (max-width: 767px) {
-            grid-template-columns: 1fr;
-            text-align: center;
+        a {
+            display:block;
+            width: 32%;
+
+            @media (max-width: 767px) {
+                width: 100%;
+            }
         }
     }
 
