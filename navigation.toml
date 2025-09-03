@@ -18,6 +18,7 @@ footer_internal = [
     { title = "Legal", href = "/legal" },
     { title = "Law Enforcement Guidelines", href = "/legal/law-enforcement-guidelines" },
     { title = "Contact", href = "/contact" },
+    { title = "Status", href = "https://status.matrix.org" },
     { title = "Site Source", href = "https://github.com/matrix-org/matrix.org/" },
 ]
 
