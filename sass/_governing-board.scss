@@ -3,6 +3,7 @@
         margin-bottom: 2rem;
         background: #fafafa;
         padding: 2rem;
+        border: 1px solid var(--borders-color);
 
         &:last-child {
             margin-bottom: 0;
@@ -22,6 +23,7 @@
                 overflow: hidden;
                 display: flex;
                 flex-direction: column;
+                border: 1px solid var(--borders-color);
             }
         }
     }
@@ -52,6 +54,7 @@
         > div {
             background: #fafafa;
             padding: 1.5rem;
+            border: 1px solid var(--borders-color);
 
             &:first-child {
                 grid-column: 1 / -1;
