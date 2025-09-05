@@ -1,11 +1,110 @@
-.two-column {
-    display: block;
+.responsive-grid {
+    .category-group {
+        margin-bottom: 2rem;
+        background: #fafafa;
+        padding: 2rem;
+        border: 1px solid var(--borders-color);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .group-content {
+            display: flex;
+            gap: 1.5rem;
+
+            > div {
+                flex: 1;
+                min-width: 0; // Allow shrinking below min-width
+                background: #fff;
+                padding: 1.5rem;
+                padding-bottom: 0;
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid var(--borders-color);
+            }
+        }
+    }
+
+    h3,h4 {
+        margin-top: 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            padding: 0.75rem 0;
+            line-height: 1.4;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            }
+        }
+    }
+
+    &.chairs-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+
+        > div {
+            background: #fafafa;
+            padding: 1.5rem;
+            border: 1px solid var(--borders-color);
+
+            &:first-child {
+                grid-column: 1 / -1;
+            }
+        }
+    }
 }
 
+@media (max-width: 1024px) {
+    .responsive-grid {
+        .category-group {
+            padding: 1.5rem;
 
-@media (min-width: 768px) {
-    .two-column {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+            .group-content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.25rem;
+            }
+        }
+
+        &.chairs-section {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .responsive-grid {
+        .category-group {
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+
+            .group-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+
+                > div {
+                    padding: 1.25rem;
+                }
+            }
+        }
+
+        &.chairs-section {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+
+            > div {
+                padding: 1.25rem;
+            }
+        }
     }
 }
