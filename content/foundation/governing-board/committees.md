@@ -46,6 +46,9 @@ There are currently 4 Committees:
 
 Gnuxie, Greg Sutcliffe, Kim Brose, Matthew Hodgson, Nicolas Werner, Robin Riley
 
+Chair: Nicolas Werner  
+Vice Chair: *vacant*
+
 ### Meeting Schedule
 
 The committee aims to meet on the last Monday of the month.
@@ -73,11 +76,92 @@ The committee aims to meet on the last Monday of the month.
 
 Brad Murray, Bram Noordstar, Gnuxie, Greg Sutcliffe, Kim Brose, Jan Kohnert, Neil Johnson, Nicolas Werner, Robin Riley, Travis Ralston
 
+Chair: Bram Noordstar  
+Vice Chair: Neil Johnson
+
 ### Meeting schedule
 
 The committee aims to meet every second Tuesday of the month. Given the high frequency, Governance Committee members are expected to attend at least once every quarter.
 
 ## Trust & Safety
 
+### Charter
+
+> #### Purpose
+> 
+> From a T&S perspective Matrix can be seen as the following groups:
+> 
+> - Homeserver operators providing hosting for groups of users
+> - Room & community moderators fostering communities on Matrix
+> - Individual participants in rooms and communities
+> - The Foundation responsible for the overall perception of the Matrix protocol and ecosystem
+> 
+> These groups have different requirements for moderation. The Trust and Safety
+> Committee represents the interests of these different groups on the Governing
+> Board. Matrix should be a welcoming space and to keep illegal or abusive
+> material out of Matrix we need moderation and effective tooling.
+> 
+> #### Pledge of Confidentiality
+> 
+> The T&S committee will sometimes have to deal with confidential data, possibly
+> because of legal reasons, possibly because of active abuse concerns. While the
+> GB as a whole and the T&S committee specifically try to be transparent, there
+> will be times where the T&S committee should keep certain information
+> confidential and only share it with specific individuals. As the T&S committee we pledge
+> to keep information confidential when necessary while still being transparent
+> and open where possible.
+> 
+> #### Powers and Duties
+> 
+> The T&S committee is responsible for:
+> 
+> - forming working groups around T&S
+> - driving initiatives to improve T&S for one or multiple of the groups listed under "Purpose"
+> - enable collaboration and interactions between different individuals and groups trying to improve T&S
+> - collaborating with the Matrix.org T&S team
+> - together with the Matrix.org T&S team propose changes to policies for the operation of the Matrix.org homeserver as well as community interactions in other public channels (Code of Conduct and its application)
+> - document best practices related to T&S for communities and server operators
+
+### Members
+
+Bram Noordstar, J. B. Crawford, Jan Kohnert, Matthew Hodgson, Nicolas Werner, Robin Riley, Tobias Fella, Travis Ralston
+
+Chair: J. B. Crawford  
+Vice Chair: Nicolas Werner
+
+### Meeting Schedule
+
+The committee should meet at least once every 2 months to discuss current
+topics, priorities initiatives, gather feedback and share knowledge.
 
 ## Finance & Fundraising
+
+### Charter
+
+> #### Purpose
+> 
+> The Finance and Fundraising Committee exists to support fundraising and financial sustainability, as well as to oversee the annual budget and any unbudgeted expenses over the threshold defined in the Terms of Reference (set at $50,000 as of 2025-03-06).
+> 
+> The Committee may agree to take on other finance-related projects, as appropriate, in partnership with the Foundation staff, Governing Board, or Guardians on a one-off basis. Anything more than a one-off should trigger a charter update.
+> 
+> #### Powers and duties
+> 
+> The Finance and Fundraising Committee:
+> 
+> * The responsibility to review and provide feedback on financial documents, like budgets.
+> * The responsibility to review and provide feedback on unbudgeted expenses over the threshold defined in the Terms of Reference (set at $50,000 as of 2025-03-06).
+> * The power to recommend that the Governing Board approve, approve with changes, or reject with cause an annual budget or major unbudgeted expense.
+> * The power to operate a Fundraising Working Group to support fundraising activities.
+> * The ability to take on other financial matters as appropriate.
+> * The obligation to treat financial documents as confidential to the Governing Board unless explicitly authorized to share by the Managing Director or Guardians.
+
+### Members
+
+Amandine Le Pape, Andy Balaam, Brad Murray, Greg Sutcliffe, J. B. Crawford, Matthew Hodgson, Nicolas Werner, Richard van der Hoff, Travis Ralston
+
+Chair: Robin Riley  
+Vice Chair: *vacant*
+
+### Meeting schedule
+
+The Committee should meet at least once a quarter, and should meet more frequently when preparing a budget for the Governing Board’s review. Additional meetings may be required if new time sensitive matters arise that merit synchronous discussion.
