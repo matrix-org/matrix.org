@@ -57,3 +57,14 @@
         }
     }
 }
+
+.standard {
+    border: 1px solid var(--borders-color);
+    border-radius: 9999px;
+    padding: 0 .6rem;
+    font-weight: 600;
+    justify-self: flex-end;
+    background-color: #F6D5D5;
+    border-color: #8B1212;
+    color: #8B1212;
+}

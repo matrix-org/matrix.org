@@ -102,6 +102,9 @@
             <div class="title-row">
                 <h3>{{ distribution.name }}</h3>
                 <div class="maturity {{ distribution.maturity | lower }}">{{ distribution.maturity }}</div>
+                {% if not distribution.matrix_standard %}
+                <div class="standard" title="This distro might not be entirely compatible with standard Matrix apps.">!</div>
+                {% endif %}
             </div>
             <div>{{ distribution.licence }} &middot; {% for framework in distribution.frameworks | slice(end=2) %}{{
                 framework }}{% if not loop.last %} &ndash; {% endif %}{% endfor %}</div>

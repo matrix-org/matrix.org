@@ -7,6 +7,7 @@ frameworks = ["Helmfile", "Helm", "Kubernetes"]
 licence = "Apache-2.0"
 repository = "https://gitlab.opencode.de/bmi/opendesk"
 support_level = "Commercial"
+matrix_standard = true
 
 [[distributions]]
 name = "BundesMessenger"
@@ -28,6 +29,7 @@ frameworks = ["Kubernetes"]
 licence = "Apache-2.0"
 repository = "https://github.com/opdev/synapse-operator"
 support_level = "Community"
+matrix_standard = true
 
 [[distributions]]
 name = "ESS Community"
@@ -38,6 +40,7 @@ frameworks = ["Kubernetes"]
 licence = "AGPL-3.0"
 repository = "https://github.com/element-hq/ess-helm"
 support_level = "Community"
+matrix_standard = true
 
 [[distributions]]
 name = "Ananace Helm Charts"
@@ -49,6 +52,7 @@ licence = "Apache-2.0"
 repository = "https://gitlab.com/ananace/charts"
 room = "#matrix-on-kubernetes:fiksel.info"
 support_level = "Community"
+matrix_standard = true
 
 [[distributions]]
 name = "matrix-docker-ansible-deploy"
@@ -60,3 +64,4 @@ licence = "AGPL-3.0"
 repository = "https://github.com/spantaleev/matrix-docker-ansible-deploy"
 room = "#matrix-docker-ansible-deploy:devture.com"
 support_level = "Community"
+matrix_standard = true
