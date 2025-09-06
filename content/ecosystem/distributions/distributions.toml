@@ -22,13 +22,13 @@ support_level = "Community"
 
 [[distributions]]
 name = "Element Server Suite"
-description = "Element Server Suite (ESS) is a professional backend for Matrix-based communications that supports self-hosted and fully managed deployments."
+description = "Element Server Suite Community Edition (ESS Community) allows you to deploy a Matrix stack using the provided Helm charts and a Kubernetes distribution of your choice, even if you don't have Kubernetes knowledge."
 vendor = "Element"
 maturity = "Stable"
 frameworks = ["Kubernetes"]
-licence = "Proprietary"
-repository = "https://element.io/server-suite"
-support_level = "Commercial"
+licence = "AGPL-3.0"
+repository = "https://github.com/element-hq/ess-helm"
+support_level = "Community"
 
 [[distributions]]
 name = "synapse-operator"
