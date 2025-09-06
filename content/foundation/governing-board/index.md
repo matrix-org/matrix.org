@@ -48,7 +48,7 @@ The current elected representatives are:
 * Andy Balaam (he/him)
 * Gnuxie (she/her)
 * Greg Sutcliffe (he/him)
-* J.B. Crawford (they/them)
+* J. B. Crawford (they/them)
 
 </div>
 <div>
@@ -173,6 +173,8 @@ There are currently 4 Committees:
 * Trust & Safety
 * Finance & Fundraising
 
+More information about each Committee is available on the dedicated [Committees](@/foundation/governing-board/committees.md) page.
+
 ## Current Chairs of the Governing Board
 
 The current chairs of the Governing Board are:
@@ -204,7 +206,7 @@ The current chairs of the Governing Board are:
 </div>
 <div>
 
-### Finance Committee
+### Finance & Fundraising Committee
 
 * Robin Riley (they/them) — Chair
 * Vacant seat — Vice Chair
@@ -214,7 +216,7 @@ The current chairs of the Governing Board are:
 
 ### Trust & Safety Committee
 
-* J.B. Crawford — Chair
+* J. B. Crawford — Chair
 * Nicolas Werner (he/him) — Vice Chair
 
 </div>
