@@ -4,7 +4,8 @@ If you want to contribute to the website, make sure the problem you're trying to
 fix or the feature you want to implement has been discussed in our issue tracker
 and that we are interested in reviewing and merging such a contribution.
 
-To discuss maintenance of this site, please come talk to the team in
+To discuss maintenance of this site, please come talk to us, the
+[Website & Content Working Group](https://matrix.org/foundation/working-groups/#website-and-content), in
 [#matrix.org-website:matrix.org](https://matrix.to/#/#matrix.org-website:matrix.org).
 
 ## Cloning the Repository
