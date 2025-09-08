@@ -1,12 +1,12 @@
 [[distributions]]
-name = "openDesk"
+name = "openDesk CE"
 description = "The customisable office and collaboration suite designed specifically for your needs in public administration."
 vendor = "ZenDiS GmbH"
 maturity = "Stable"
 frameworks = ["Helmfile", "Helm", "Kubernetes"]
 licence = "Apache-2.0"
 repository = "https://gitlab.opencode.de/bmi/opendesk"
-support_level = "Commercial"
+support_level = "Community"
 matrix_standard = true
 
 [[distributions]]
@@ -17,7 +17,7 @@ maturity = "Stable"
 frameworks = ["Helm", "Kubernetes"]
 licence = "Apache-2.0"
 repository = "https://gitlab.opencode.de/bwi/bundesmessenger/info"
-support_level = "Commercial"
+support_level = "Community"
 matrix_standard = false
 
 [[distributions]]
