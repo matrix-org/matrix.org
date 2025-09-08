@@ -27,19 +27,24 @@ Here are some examples of how it looks in some common apps:
 
 <div style="display:flex; flex-direction:row; flex-wrap: wrap; gap: 8px; align-items: baseline; justify-content: center;">
 {{ figure(
-    img="/images/homeserver/official/client1.png"
-    alt="Element Web's right panel"
-    caption="")
+    img="/images/homeserver/official/element-panel.avif"
+    caption="Element Web's right panel")
 }}
 {{ figure(
-    img="/images/homeserver/official/client3.png"
-    alt="Cinny's user info popup"
-    caption="")
+    img="/images/homeserver/official/tammy-info.avif"
+    caption="Tammy's user info page")
 }}
 {{ figure(
-    img="/images/homeserver/official/client2.png"
-    alt="Element Web's tooltip on the avatar"
-    caption="")
+    img="/images/homeserver/official/fluffy-info.avif"
+    caption="FluffyChat's user info popup")
+}}
+{{ figure(
+    img="/images/homeserver/official/cinny-hover.avif"
+    caption="Hover on a message to reveal the sender ID in Cinny")
+}}
+{{ figure(
+    img="/images/homeserver/official/element-tooltip.avif"
+    caption="Element Web's tooltip on the avatar")
 }}
 </div>
 
