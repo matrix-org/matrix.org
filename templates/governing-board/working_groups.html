@@ -23,7 +23,7 @@
 
     <section class="working_group">
         <header>
-            <h2>{{ wg.name }} <span class="committee-pill {{ committee_id }}">{{ wg.committee
+            <h2 id="{{ wg.name | slugify }}">{{ wg.name }} <span class="committee-pill {{ committee_id }}">{{ wg.committee
                     }}</span>
                 <hr />
         </header>
