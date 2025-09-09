@@ -8,7 +8,10 @@ The Committees of the Governing Board are subgroups focusing on specific areas o
 
 The Committees of the Governing Board are subgroups focusing on specific areas of interest to The Matrix Foundation.
 They are the primary working units of the Board and consist exclusively of Board members.
-Committees host [Working Groups](@/foundation/working-groups/index.md) to enable broader community participation in the Foundation.
+
+An important function of Committees is to host [Working Groups](@/foundation/working-groups/index.md) which enable broader community participation in the Foundation.
+Working Groups are made of volunteer members, along with a Board Member to coordinate with the rest of the Governing Board and other Working Groups.
+
 You can learn more about how Committees work in the [Bylaws of the Governing Board](@/foundation/governing-board/bylaws/02-bylaws.md#4-committees).
 
 There are currently 4 Committees:
