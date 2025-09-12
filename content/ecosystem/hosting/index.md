@@ -1,7 +1,7 @@
 +++
 title = "Hosting"
 template = "ecosystem/hosting.html"
-weight = 4
+weight = 6
 extra.summary = """
 Everyone can host their Matrix server, but not everybody wants to. These are the providers the Matrix.org Foundation knows about. 
 """

@@ -1,0 +1,11 @@
+{% macro classes(distribution) %}
+maturity-{{ distribution.maturity | lower }}
+
+licence-{{ distribution.licence | slugify }}
+
+{% for framework in distribution.frameworks %}
+framework-{{ framework | slugify }}
+{% endfor %}
+
+support-{{ distribution.support_level | slugify }}
+{% endmacro %}

@@ -1,6 +1,7 @@
 +++
 title = "SDKs"
-weight = 3
+weight = 4
+extra.order = 4
 template = "ecosystem/sdks.html"
 extra.summary = """
 Develop great apps, bots, and bridges. Focus on what you do best. Let the SDKs
