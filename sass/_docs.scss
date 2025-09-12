@@ -1,15 +1,3 @@
-header {
-    margin-bottom: 1em;
-
-    h1 {
-        margin-bottom: 0;
-    }
-
-    .metadata {
-        font-size: 0.8rem;
-    }
-}
-
 .docs-body {
     width: 100%;
     display: flex;
@@ -21,6 +9,18 @@ header {
     }
 
     --docs-menu-width: 18rem;
+
+    header {
+        margin-bottom: 1em;
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .metadata {
+            font-size: 0.8rem;
+        }
+    }
 }
 
 .docs-menu {
@@ -119,18 +119,6 @@ header {
     article p img {
         max-width: 100%;
         margin-inline: auto;
-    }
-}
-
-#docs-menu-checkbox:not(:checked) ~ .docs-menu {
-    @media (max-width: 767px) {
-        display: none;
-    }
-}
-
-#docs-menu-checkbox:checked ~ .docs-content {
-    @media (max-width: 767px) {
-        display: none;
     }
 }
 
