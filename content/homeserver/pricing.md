@@ -32,7 +32,7 @@ Where a user account has been allocated to a plan the following usage limits app
 |Usage|Free plan|Premium plan|
 |-|-|-|
 |Size of attachment that can be sent|10MB maximum per attachment|100MB maximum per attachment|
-|Total size of attachments and [data usage](#faq-data-usage-limit)|100MB per 24 hours, up to 500MB per 28 days|1GB per 24 hours, up to 5GB per 28 days|
+|Total size of attachments and [data usage](@/homeserver/pricing.md#faq-data-usage-limit)|100MB per 24 hours, up to 500MB per 28 days|1GB per 24 hours, up to 5GB per 28 days|
 |Speed at which you can invite others to a room|Standard|10 times faster|
 
 In accordance with [our terms](@/legal/terms-and-conditions.md#7-2-data-limits-and-fair-usage), where a user account is not on one of the above plans the following fair usage limits apply:
