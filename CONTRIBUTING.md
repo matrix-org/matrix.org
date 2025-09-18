@@ -101,11 +101,9 @@ please reach out with your feedback or suggestions directly, or our public room
 [#matrix.org-website:matrix.org](https://matrix.to/#/#matrix.org-website:matrix.org).
 
 When contributing to our repos:
-- Please read and apply our
-  [CONTRIBUTING.md](https://github.com/matrix-org/matrix.org/blob/main/CONTRIBUTING.md)
-  guidelines. This document explains everything about the contribution process,
-  i.e. what to mind when creating your pull request. This includes but is not
-  limited to:
+- Please read and apply our [CONTRIBUTING.md](./CONTRIBUTING.md) guidelines.
+  This document explains everything about the contribution process, i.e. what
+  to mind when creating your pull request. This includes but is not limited to:
   - Please follow the Pull Request ("PR") workflow and do not push directly to
     the main branch. This is designed to help us run both automated and manual
     checks to ensure the website is the best it can be.
@@ -118,11 +116,10 @@ When contributing to our repos:
     mandate, we offer you to inform the WG in advance when a blog post is meant
     to be published at a known, predetermined time. Generally, we expect a
     working day advance notice should be enough for us to react to it.
-- Please read and apply our
-  [CONTENT.md](https://github.com/matrix-org/matrix.org/blob/main/CONTENT.md)
-  guidelines. This document explains how the website is set up from a technical
-  standpoint, e.g. what to mind when creating a new blog post, or how to
-  add/update a project in the ecosystem section.
+- Please read and apply our [CONTENT.md](./CONTENT.md) guidelines. This
+  document explains how the website is set up from a technical standpoint, e.g.
+  what to mind when creating a new blog post, or how to add/update a project in
+  the ecosystem section.
 <!-- - Please adhere to the Matrix Foundation's communication strategy/content policy.
        *TODO: this policy will be established separately* -->
 - You are taking ownership of your PR. We will review your PR and give you
@@ -181,7 +178,7 @@ required:
   `.well-known`, which are owned by the team operating the homeserver. These
   parts of the repos are also exempt from the above requirements and follow the
   respective team's processes instead. We maintain a
-  [CODEOWNERS](.github/CODEOWNERS) file to mark these areas of the repository
+  [CODEOWNERS](./.github/CODEOWNERS) file to mark these areas of the repository
   appropriately. The WG is available for support to these teams.
 
 It’s understood that there will be times when this process will be ignored -
