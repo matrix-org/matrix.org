@@ -187,3 +187,8 @@ logo = "gnome.svg"
 name = "KDE e.V."
 website = "https://kde.org"
 logo = "kde.svg"
+
+[[associate]]
+name = "Moonlight Institute"
+website = "https://www.moonlightinstitute.org/"
+logo = "moonlight-institute.svg"
