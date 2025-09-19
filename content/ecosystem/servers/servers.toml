@@ -19,6 +19,17 @@ repository = "https://github.com/matrix-construct/tuwunel"
 room = "#tuwunel:matrix.org"
 
 [[servers]]
+name = "Synapse Pro"
+description = "Synapse for Enterprise. Backs the Foundation's matrix.org homeserver "
+author = "Element"
+maturity = "Stable"
+language = "Python and Rust"
+licence = "Element Commercial License"
+repository = "https://element.io/server-suite/synapse-pro"
+room = "#synapse:matrix.org"
+
+
+[[servers]]
 name = "Dendrite"
 description = "Dendrite is a second-generation Matrix homeserver written in Go!"
 author = "Element"
