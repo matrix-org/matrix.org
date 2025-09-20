@@ -37,7 +37,7 @@
     }
 
     h3 {
-        margin: 0;
+        margin: 0 .2rem 0 0;
 
         font-style: normal;
         font-weight: 700;
@@ -192,6 +192,7 @@
     font-size: 1rem;
     font-weight: 400;
     max-width: fit-content;
+    justify-self: flex-end;
 
     &.stable {
         background-color: #DFF6D5;
@@ -225,6 +226,7 @@
     justify-content: space-between;
     gap: .2rem;
     align-items: start;
+    flex-wrap: wrap;
 }
 
 #filters-overlay {
