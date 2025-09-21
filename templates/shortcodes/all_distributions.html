@@ -106,9 +106,6 @@
             <div>{{ distribution.licence }} &middot; {% for framework in distribution.frameworks | slice(end=2) %}{{
                 framework }}{% if not loop.last %} &ndash; {% endif %}{% endfor %}</div>
             <span>{{ distribution.description | safe }}</span>
-            {% if not distribution.matrix_standard %}
-            <span>This distro might not be entirely compatible with standard Matrix apps.</span>
-            {% endif %}
             <div class="distribution-links">
                 {% if distribution.repository %}
                 <a href="{{ distribution.repository }}">
