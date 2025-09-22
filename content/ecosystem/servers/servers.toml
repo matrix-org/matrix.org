@@ -1,6 +1,6 @@
 [[servers]]
 name = "Synapse"
-description = "Synapse is a Matrix homeserver written in Python/Twisted. "
+description = "Synapse is a Matrix homeserver written in Python/Twisted."
 author = "Element"
 maturity = "Stable"
 language = "Python"
@@ -17,6 +17,16 @@ language = "Rust"
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-construct/tuwunel"
 room = "#tuwunel:matrix.org"
+
+[[servers]]
+name = "Synapse Pro"
+description = "Synapse for Enterprise, with a focus on performance, scalability and compliance."
+author = "Element"
+maturity = "Stable"
+language = "Python and Rust"
+licence = "Element Commercial License"
+repository = "https://element.io/server-suite/synapse-pro"
+room = "#synapse:matrix.org"
 
 [[servers]]
 name = "Dendrite"
