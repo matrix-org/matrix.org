@@ -20,7 +20,7 @@ room = "#tuwunel:matrix.org"
 
 [[servers]]
 name = "Synapse Pro"
-description = "Synapse for Enterprise. Backs the Foundation's matrix.org homeserver."
+description = "Synapse for Enterprise, with a focus on performance, scalability and compliance."
 author = "Element"
 maturity = "Stable"
 language = "Python and Rust"
