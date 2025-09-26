@@ -86,6 +86,12 @@
             <div>{{ server.licence }} {{ server.language }}</div>
             <span>{{ server.description | safe }}</span>
             <div class="server-links">
+                {% if server.website %}
+                <a href="{{ server.website }}">
+                    {{ load_data(path="/assets/home.svg") | safe }}
+                    Homepage
+                </a>
+                {% endif %}
                 {% if server.repository %}
                 <a href="{{ server.repository }}">
                     {{ load_data(path="/assets/projects/repo.svg") | safe }}
