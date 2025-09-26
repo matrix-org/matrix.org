@@ -5,7 +5,7 @@
 # https://help.github.com/articles/about-codeowners/
 
 * @matrix-org/website-wg
-/content/legal/ @deniseal @matrix-org/website-wg
+/content/legal/ @matrix-org/legal @matrix-org/website-wg
 /content/security-disclosure-policy.md @matrix-org/security @matrix-org/website-wg
 /content/security-hall-of-fame/ @matrix-org/security @matrix-org/website-wg
 /static/.well-known/pgp-key.txt @matrix-org/security
