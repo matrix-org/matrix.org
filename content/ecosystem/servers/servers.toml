@@ -25,7 +25,7 @@ author = "Element"
 maturity = "Stable"
 language = "Python and Rust"
 licence = "Element Commercial License"
-repository = "https://element.io/server-suite/synapse-pro"
+website = "https://element.io/server-suite/synapse-pro"
 room = "#synapse:matrix.org"
 
 [[servers]]
