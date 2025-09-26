@@ -241,7 +241,7 @@ maintainer = "Your name or organisation"
 maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 language = "The programminglanguage of your server. For example 'Python'"
 licence = "PICK ONE identifier from https://spdx.org/licenses/"
-repository = "github.com/example-org/example-repo"
+repository = "https://github.com/example-org/example-repo"
 # In which type of application this SDK is meant to get used. This should be an array.
 # Possible values are "bridge", "bot", "client"
 purpose = ["bot", "bridge"]
@@ -250,11 +250,31 @@ A short description about the SDK.
 """
 ```
 
+### Distributions
+
+Distros are listed in [`/content/ecosystem/distributions/distributions.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/distributions/distributions.toml). A distribution is an artifact grouping multiple components of a Matrix stack and making them easy to deploy in one package.
+
+To add a distribution please use this template and append it to the `distributions.toml`:
+
+```toml
+[[distributions]]
+name = "My Matrix Distro"
+description = "This is my distro, exactly how I like it."
+vendor = "Your name or organisation"
+maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
+frameworks = ["Name at least one installation technology.", "You may also add more."]
+licence = "PICK ONE identifier from https://spdx.org/licenses/"
+repository = "https://github.com/example-org/example-repo"
+room = "#your-matrix-room:example.com"
+support_level = "PICK ONE Community OR Commercial"
+matrix_standard = true if it is compatible with Matrix standard apps, false if it only works fully when self-contained
+```
+
 ### Hosting providers
 
 Hosting provders are listed in [`/content/ecosystem/hosting/providers.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/hosting/providers.toml). It lists providers which provide Matrix components like servers or bots to customers. We require this section to only contain providers that do the actual hosting. Providers which either provide a setup script or only provide selfhosting should go into the in the future existing Distributions section instead.
 
-To add a hosting provider entry, add the following template to the `providers.toml`. Logos should be placed next to the the toml file. A logo should be in the SVG format. However if this is not available a PNG is acceptable provided it has sufficient resolution while also having reasonable filesize.
+To add a hosting provider entry, add the following template to the `providers.toml`. Logos should be placed next to the toml file. A logo should be in the SVG format. However if this is not available a PNG is acceptable provided it has sufficient resolution while also having reasonable filesize.
 
 ```toml
 [[providers]]

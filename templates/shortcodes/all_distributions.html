@@ -1,0 +1,126 @@
+{% import "macros/distributions.html" as srvutils %}
+{% set distributions_data = load_data(path="content/ecosystem/distributions/distributions.toml") %}
+{% set licences = [] %}
+{% set frameworks = [] %}
+{% set support_levels = [] %}
+{% for distribution in distributions_data.distributions %}
+{% set_global licences = licences | concat(with=distribution.licence) %}
+{% set_global frameworks = frameworks | concat(with=distribution.frameworks) %}
+{% set_global support_levels = support_levels | concat(with=distribution.support_level) %}
+{% endfor %}
+{% set licences = licences | unique | sort %}
+{% set frameworks = frameworks | unique | sort %}
+{% set support_levels = support_levels | unique | sort %}
+
+<div class="filters">
+    <div class="filter-wrap">
+        <button id="filter-maturity" class="filter">
+            Maturity
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
+        </button>
+        <div id="filter-maturity-menu" class="filter-menu">
+            <p>The distribution can support any of the maturity levels checked.</p>
+            <div class="filter-option">
+                <input id="maturity-stable" type="checkbox" checked>
+                <label for="maturity-stable">Stable</label>
+            </div>
+            <div class="filter-option">
+                <input id="maturity-beta" type="checkbox" checked>
+                <label for="maturity-beta">Beta</label>
+            </div>
+            <div class="filter-option">
+                <input id="maturity-alpha" type="checkbox" checked>
+                <label for="maturity-alpha">Alpha</label>
+            </div>
+            <div class="filter-option">
+                <input id="maturity-obsolete" type="checkbox">
+                <label for="maturity-obsolete">Obsolete</label>
+            </div>
+            <div class="reset-links">Select <button>all</button> - <button>none</button></div>
+        </div>
+    </div>
+    <div class="filter-wrap">
+        <button id="filter-licence" class="filter">
+            Licence
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
+        </button>
+        <div id="filter-licence-menu" class="filter-menu">
+            <p>The distribution can support any of the licences checked.</p>
+            {% for licence in licences %}
+            <div class="filter-option">
+                <input id="licence-{{ licence | slugify }}" type="checkbox" checked>
+                <label for="licence-{{ licence | slugify }}">{{ licence }}</label>
+            </div>
+            {% endfor %}
+            <div class="reset-links">Select <button>all</button> - <button>none</button></div>
+        </div>
+    </div>
+    <div class="filter-wrap">
+        <button id="filter-framework" class="filter">
+            Framework
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
+        </button>
+        <div id="filter-framework-menu" class="filter-menu">
+            <p>The distribution is using any of the frameworks checked.</p>
+            {% for framework in frameworks %}
+            <div class="filter-option">
+                <input id="framework-{{ framework | slugify }}" type="checkbox" checked>
+                <label for="framework-{{ framework | slugify }}">{{ framework }}</label>
+            </div>
+            {% endfor %}
+            <div class="reset-links">Select <button>all</button> - <button>none</button></div>
+        </div>
+    </div>
+    <div class="filter-wrap">
+        <button id="filter-support" class="filter">
+            Support Level
+            <div class="divider"></div>
+            <img src="/assets/down-arrow.svg" alt="Downard facing arrow">
+        </button>
+        <div id="filter-support-menu" class="filter-menu">
+            <p>The distribution has any of these support levels.</p>
+            {% for support in support_levels %}
+            <div class="filter-option">
+                <input id="support-{{ support | slugify }}" type="checkbox" checked>
+                <label for="support-{{ support | slugify }}">{{ support }}</label>
+            </div>
+            {% endfor %}
+            <div class="reset-links">Select <button>all</button> - <button>none</button></div>
+        </div>
+    </div>
+</div>
+
+<div id="filters-overlay"></div>
+
+<div id="all-distributions" class="projects-card-deck">
+    {% for distribution in distributions_data.distributions | sort(attribute="maturity") | reverse %}
+    <div>
+        <div class="project-card {{ srvutils::classes(distribution=distribution) }}">
+            <div class="title-row">
+                <h3>{{ distribution.name }}</h3>
+                <div class="maturity {{ distribution.maturity | lower }}">{{ distribution.maturity }}</div>
+            </div>
+            <div>{{ distribution.licence }} &middot; {% for framework in distribution.frameworks %}{{
+                framework }}{% if not loop.last %} &ndash; {% endif %}{% endfor %}</div>
+            <span>{{ distribution.description | safe }}</span>
+            <div class="distribution-links">
+                {% if distribution.repository %}
+                <a href="{{ distribution.repository }}">
+                    {{ load_data(path="/assets/projects/repo.svg") | safe }}
+                    Repository
+                </a>
+                {% endif %}
+                {% if distribution.room %}
+                <a href="https://matrix.to/#/{{ distribution.room }}">
+                    {{ load_data(path="/assets/projects/matrix.svg") | safe }}
+                    Matrix Room
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
