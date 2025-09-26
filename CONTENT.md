@@ -206,6 +206,7 @@ maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 language = "The programming language of your server. For example 'Python'"
 licence = "PICK ONE identifier from https://spdx.org/licenses/"
 repository = "https://github.com/example-org/example-repo"
+website = "https://mymatrixserver.dev"
 room = "#your-matrix-room:example.com"
 ```
 
