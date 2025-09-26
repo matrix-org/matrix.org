@@ -103,7 +103,7 @@
                 <h3>{{ distribution.name }}</h3>
                 <div class="maturity {{ distribution.maturity | lower }}">{{ distribution.maturity }}</div>
             </div>
-            <div>{{ distribution.licence }} &middot; {% for framework in distribution.frameworks | slice(end=2) %}{{
+            <div>{{ distribution.licence }} &middot; {% for framework in distribution.frameworks %}{{
                 framework }}{% if not loop.last %} &ndash; {% endif %}{% endfor %}</div>
             <span>{{ distribution.description | safe }}</span>
             <div class="distribution-links">
