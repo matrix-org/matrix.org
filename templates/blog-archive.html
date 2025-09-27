@@ -5,8 +5,13 @@
 <article class="content">
     <h1>Blog Archive</h1>
     <ul>
-        {% for page in pages %}
-        <li>{{ page.date | date }} — <a href="{{ page.path }}">{{ page.title }}</a></li>
+        {% for blog_page in pages %}
+            {% if blog_page.extra.hide_from_blog %}
+                {% continue %}
+            {% endif %}
+            <li>
+                {{ blog_page.date | date }} — <a href="{{ blog_page.path }}">{{ blog_page.title }}</a>
+            </li>
         {% endfor %}
     </ul>
 </article>
