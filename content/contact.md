@@ -18,5 +18,6 @@ For direct inquiries about the following topics, please email us:
 - [funding@matrix.org](mailto:funding@matrix.org) for organisational sponsorship and funding
   queries. See also our [Support us](/support) page.
 - [legal@matrix.org](mailto:legal@matrix.org) for questions about our [legal documents](https://matrix.org/legal/).
+- [dpo@matrix.org](mailto:dpo@matrix.org) for questions about privacy and data protection.
 
 You can find our staff members, and contact details for some of them, in the [About](/about/) section.
