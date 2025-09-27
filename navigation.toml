@@ -1,36 +1,118 @@
-header = [
-    { title = "Spec", href = "https://spec.matrix.org" },
-    { title = "Foundation", section = "foundation" },
-    { title = "Blog", href = "/blog/" },
-    { title = "Docs", href = "/docs/" },
-    { title = "Ecosystem", section = "ecosystem" },
-    { title = "Homeserver", section = "homeserver" },
-    { title = "Support us", href = "/support" },
-    { title = "Try Matrix", href = "/try-matrix/", primary = true },
-]
+[[header]]
+title = "Spec"
+href = "https://spec.matrix.org"
 
-footer_internal = [
-    { title = "Donate", href = "/support" },
-    { title = "Shop", href = "https://shop.matrix.org" },
-    { title = "Security Disclosure Policy", href = "/security-disclosure-policy" },
-    { title = "Security Hall of Fame", href = "/security-hall-of-fame" },
-    { title = "Code of Conduct", href = "/legal/code-of-conduct" },
-    { title = "Legal", href = "/legal" },
-    { title = "Law Enforcement Guidelines", href = "/legal/law-enforcement-guidelines" },
-    { title = "Contact", href = "/contact" },
-    { title = "Matrix.org Status", href = "https://status.matrix.org" },
-    { title = "Site Source", href = "https://github.com/matrix-org/matrix.org/" },
-]
+[[header]]
+title = "Foundation"
+section = "foundation"
 
-footer_external = [
-    { image = "github.svg", alt = "Matrix on GitHub", href = "https://github.com/matrix-org", newTab = true },
-    { image = "gitlab.svg", alt = "Matrix on GitLab", href = "https://gitlab.matrix.org/", newTab = true },
-    { image = "mastodon.svg", alt = "Matrix on Mastodon", href = "https://mastodon.matrix.org/@matrix", relMe = true, newTab = true },
-    { image = "x.svg", alt = "Matrix on X", href = "https://x.com/matrixdotorg", newTab = true },
-    { image = "youtube.svg", alt = "Matrix on YouTube", href = "https://www.youtube.com/channel/UCVFkW-chclhuyYRbmmfwt6w", newTab = true },
-    { image = "rss.svg", alt = "Matrix Atom Feed", href = "/atom.xml", newTab = true },
-]
+[[header]]
+id = "blog"
+title = "Blog"
+href = "/blog/"
 
-footer_subfooter = [
-    { title = "Copyright Notice", href = "/legal/copyright-notice" },
-]
+[[header.children]]
+title = "Archive"
+href = "/blog/archive/"
+
+[[header]]
+title = "Docs"
+href = "/docs/"
+
+[[header]]
+title = "Ecosystem"
+section = "ecosystem"
+
+[[header]]
+title = "Homeserver"
+section = "homeserver"
+
+[[header]]
+title = "Support us"
+href = "/support"
+
+[[header]]
+title = "Try Matrix"
+href = "/try-matrix/"
+primary = true
+
+[[footer_internal]]
+title = "Donate"
+href = "/support"
+
+[[footer_internal]]
+title = "Shop"
+href = "https://shop.matrix.org"
+
+[[footer_internal]]
+title = "Security Disclosure Policy"
+href = "/security-disclosure-policy"
+
+[[footer_internal]]
+title = "Security Hall of Fame"
+href = "/security-hall-of-fame"
+
+[[footer_internal]]
+title = "Code of Conduct"
+href = "/legal/code-of-conduct"
+
+[[footer_internal]]
+title = "Legal"
+href = "/legal"
+
+[[footer_internal]]
+title = "Law Enforcement Guidelines"
+href = "/legal/law-enforcement-guidelines"
+
+[[footer_internal]]
+title = "Contact"
+href = "/contact"
+
+[[footer_internal]]
+title = "Matrix.org Status"
+href = "https://status.matrix.org"
+
+[[footer_internal]]
+title = "Site Source"
+href = "https://github.com/matrix-org/matrix.org/"
+
+[[footer_external]]
+image = "github.svg"
+alt = "Matrix on GitHub"
+href = "https://github.com/matrix-org"
+newTab = true
+
+[[footer_external]]
+image = "gitlab.svg"
+alt = "Matrix on GitLab"
+href = "https://gitlab.matrix.org/"
+newTab = true
+
+[[footer_external]]
+image = "mastodon.svg"
+alt = "Matrix on Mastodon"
+href = "https://mastodon.matrix.org/@matrix"
+relMe = true
+newTab = true
+
+[[footer_external]]
+image = "x.svg"
+alt = "Matrix on X"
+href = "https://x.com/matrixdotorg"
+newTab = true
+
+[[footer_external]]
+image = "youtube.svg"
+alt = "Matrix on YouTube"
+href = "https://www.youtube.com/channel/UCVFkW-chclhuyYRbmmfwt6w"
+newTab = true
+
+[[footer_external]]
+image = "rss.svg"
+alt = "Matrix Atom Feed"
+href = "/atom.xml"
+newTab = true
+
+[[footer_subfooter]]
+title = "Copyright Notice"
+href = "/legal/copyright-notice"
