@@ -75,9 +75,10 @@ it will add manual work for a human to format the post.
 
 ### Do Not Treat TWIM as a Changelog
 
-Copying a changelog is easy but not what TWIM is about. Ideally, we prefer posts
-which are a few paragraphs long outlining some highlights
-over a long detailed list. This makes your announcement more readable to humans.
+Copying the list of your commit messages of this week is easy, but not what TWIM is about.
+Ideally, we prefer posts which are a few paragraphs long outlining some highlights
+over a long detailed list.
+This makes your announcement more digestable to humans.
 You may of course still link to the changelog.
 
 ### Add Images or Videos
