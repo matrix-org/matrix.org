@@ -25,7 +25,7 @@ name = "ESS Community"
 description = "Element Server Suite Community Edition allows you to deploy a Matrix stack using the provided Helm charts and a Kubernetes distribution of your choice, even if you don't have Kubernetes knowledge."
 vendor = "Element"
 maturity = "Stable"
-frameworks = ["Kubernetes"]
+frameworks = ["Helm","Kubernetes"]
 licence = "AGPL-3.0"
 repository = "https://github.com/element-hq/ess-helm"
 support_level = "Community"
@@ -54,3 +54,15 @@ repository = "https://github.com/spantaleev/matrix-docker-ansible-deploy"
 room = "#matrix-docker-ansible-deploy:devture.com"
 support_level = "Community"
 matrix_standard = true
+
+[[distributions]]
+name = "ESS Pro"
+description = "Element Server Suite Pro is the enterprise backend for Matrix-based communications."
+vendor = "Element"
+maturity = "Stable"
+frameworks = ["Helm","Kubernetes"]
+licence = "Element Commercial License"
+repository = "https://element.io/server-suite"
+support_level = "Commercial"
+matrix_standard = true
+
