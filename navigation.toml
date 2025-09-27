@@ -15,6 +15,14 @@ href = "/blog/"
 title = "Archive"
 href = "/blog/archive/"
 
+[[header.children]]
+title = "Authors"
+href = "/author/"
+
+[[header.children]]
+title = "Categories"
+href = "/category/"
+
 [[header]]
 title = "Docs"
 href = "/docs/"
