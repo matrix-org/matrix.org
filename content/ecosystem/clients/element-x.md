@@ -7,8 +7,8 @@ maintainer = "Element"
 maturity = "Stable"
 repo = "https://github.com/element-hq"
 matrix_room = "#element-x-ios:matrix.org"
-licence = "Apache-2.0"
-latest_release = "2023-09-21"
+licence = "AGPL-3.0-or-later OR Element Commercial License"
+latest_release = "2025-09-23"
 featured = true
 [extra.features]
 e2ee = true
