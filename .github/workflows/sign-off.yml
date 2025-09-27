@@ -1,0 +1,61 @@
+# Copyright 2025 The Matrix.org Foundation C.I.C.
+# Copyright 2024 - 2025 Catalan Lover <catalanlover@protonmail.com>
+# Copyright 2022 - 2024 The Matrix.org Foundation C.I.C.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# SPDX-FileAttributionText: <text>
+# This modified file incorporates work from matrix-org/backend-meta
+# https://github.com/matrix-org/backend-meta
+# </text>
+
+name: Contribution requirements
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+  workflow_call:
+
+jobs:
+  signoff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR for sign-off text
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // We don't require owners or members of the org to sign off.
+            const authorAssociation = context.payload.pull_request.author_association;
+            if (['OWNER', 'MEMBER'].includes(authorAssociation) ||
+                // GitHub sometimes mislables users as 'CONTRIBUTOR'/'COLLABORATOR',
+                // so check that the user created the PR on the base project to check they have write access.
+                context.payload.pull_request.head.user.login === context.repo.owner) {
+              core.notice('Pull request does not require sign-off.');
+              return;
+            }
+
+            // This regex is intentionally left lenient.
+            const signOffRegex = /signed[_\- ]off[_\- ]by: [\S ]+ <?.+(@|at).+>?/i;
+
+            if (signOffRegex.test(context.payload.pull_request.body ?? "")) {
+              core.notice('Pull request body contains a sign-off notice');
+              return;
+            }
+
+            const commits = await github.rest.pulls.listCommits({
+              pull_number: context.payload.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              // It's *possible* the author has buried the sign-off 101 commits down, but
+              // we don't want to max out the API searching for it.
+              per_page: 100,
+            });
+
+            const commit = commits.data.find(c => signOffRegex.test(c.commit.message));
+            if (commit) {
+              core.notice(`Commit '${commit.id}' contains a sign-off notice`);
+              return;
+            }
+
+            core.setFailed('No sign off found. Please ensure you have signed off following the advice in https://github.com/matrix-org/matrix.org/blob/main/CONTRIBUTING.md#sign-off .')
+            core.notice('Ensure you have matched the format `Signed-off-by: Your Name <your@email.example.org>`')
