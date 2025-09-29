@@ -62,7 +62,7 @@ vendor = "Element"
 maturity = "Stable"
 frameworks = ["Helm","Kubernetes"]
 licence = "Element Commercial License"
-repository = "https://element.io/server-suite"
+website = "https://element.io/server-suite"
 support_level = "Commercial"
 matrix_standard = true
 
