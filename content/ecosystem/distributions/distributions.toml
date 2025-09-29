@@ -57,7 +57,7 @@ matrix_standard = true
 
 [[distributions]]
 name = "ESS Pro"
-description = "Element Server Suite Pro is the enterprise backend for Matrix-based communications."
+description = "Element Server Suite Pro is an enterprise backend for Matrix-based communications."
 vendor = "Element"
 maturity = "Stable"
 frameworks = ["Helm","Kubernetes"]
