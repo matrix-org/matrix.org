@@ -1,4 +1,4 @@
 +++
-title = "Mastodon"
+title = "ActivityPub"
 weight = 1700
 +++

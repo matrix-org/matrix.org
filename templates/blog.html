@@ -2,6 +2,9 @@
 {% block content -%}
 <div class="content">
     {% for page in paginator.pages %}
+    {% if page.extra.hide_from_blog %}
+        {% continue %}
+    {% endif %}
     <article class="post">
         <header>
             <h1><a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a></h1>
