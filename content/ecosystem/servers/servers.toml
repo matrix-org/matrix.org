@@ -167,3 +167,13 @@ language = "Rust"
 licence = "Apache-2.0"
 repository = "https://forgejo.ellis.link/continuwuation/continuwuity"
 room = "#continuwuity:continuwuity.org"
+
+[[servers]]
+name = "Vona"
+description = "Vona is a Matrix homeserver written in Python"
+author = "Kierre Sametti"
+maturity = "Beta"
+language = "Python"
+licence = "Velicense"
+repository = "https://foundry.fsky.io/vel/matrix-vona"
+room = "#vona:matrix.org"
