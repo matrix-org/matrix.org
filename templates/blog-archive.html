@@ -2,17 +2,53 @@
 {% block content %}
 {% set section = get_section(path="blog/_index.md") %}
 {% set pages = section.pages | sort(attribute="date") | reverse %}
+
 <article class="content">
     <h1>Blog Archive</h1>
-    <ul>
+
+    <!-- Filter Buttons -->
+    <div id="filter-buttons" style="margin-bottom: 1rem;">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="weekly">This Week in Matrix</button>
+        <button class="filter-btn" data-filter="release">Releases</button>
+        <button class="filter-btn" data-filter="project">Projects</button>
+        <button class="filter-btn" data-filter="announcement">Announcements</button>
+        <button class="filter-btn" data-filter="incident">Incidents</button>
+    </div>
+
+    <!-- Blog List -->
+    <ul id="blog-list">
         {% for blog_page in pages %}
             {% if blog_page.extra.hide_from_blog %}
                 {% continue %}
             {% endif %}
-            <li>
-                {{ blog_page.date | date }} — <a href="{{ blog_page.path }}">{{ blog_page.title }}</a>
+
+            {% set title_lower = blog_page.title | lower %}
+            {% set category = "other" %}
+
+            {% if "this week in matrix" in title_lower %}
+                {% set category = "weekly" %}
+            {% elif "release" in title_lower %}
+                {% set category = "release" %}
+            {% elif "project" in title_lower %}
+                {% set category = "project" %}
+            {% elif "update" in title_lower or "account" in title_lower %}
+                {% set category = "announcement" %}
+            {% elif "corruption" in title_lower or "incident" in title_lower %}
+                {% set category = "incident" %}
+            {% endif %}
+
+            <li class="blog-item" data-category="{{ category }}">
+                {{ blog_page.date | date }} — 
+                <a href="{{ blog_page.path }}">{{ blog_page.title }}</a>
             </li>
         {% endfor %}
     </ul>
 </article>
+
+<!-- Simple JS for Filtering -->
+<script src="/js/blog-filter.js"></script>
+
+<link rel="stylesheet" href="/css/blog-filter.css">
+
 {% endblock content %}
