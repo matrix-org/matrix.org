@@ -1,0 +1,16 @@
+<svg version="1.1" viewBox="0 0 27.9 32" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <title>Matrix (protocol) logo</title>
+ <g transform="translate(-.095 .005)" fill="#040404">
+    <path d="m27.1 31.2v-30.5h-2.19v-0.732h3.04v32h-3.04v-0.732z"/>
+    <g transform="translate(13.95 16) scale(0.03,-0.03)">
+        <polygon fill="#F0AD00" points="-280,-90 0,190 280,-90" transform="translate(0 -210)"/>
+        <polygon fill="#7FD13B" points="-280,-90 0,190 280,-90" transform="translate(-210 0) rotate(-90)"/>
+        <polygon fill="#7FD13B" points="-198,-66 0,132 198,-66" transform="translate(207 207) rotate(-45)"/>
+        <polygon fill="#60B5CC" points="-130,0 0,-130 130,0 0,130" transform="translate(150 0)"/>
+        <polygon fill="#5A6378" points="-191,61 69,61 191,-61 -69,-61" transform="translate(-89 239)"/>
+        <polygon fill="#F0AD00" points="-130,-44 0,86 130,-44" transform="translate(0 106) rotate(-180)"/>
+        <polygon fill="#60B5CC" points="-130,-44 0,86 130,-44" transform="translate(256 -150) rotate(-270)"/>
+    </g>
+    <path d="m0.936 0.732v30.5h2.19v0.732h-3.04v-32h3.03v0.732z"/>
+ </g>
+</svg>
