@@ -1,0 +1,17 @@
+.filter-btn {
+    margin: 0 5px;
+    padding: 6px 12px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    background: white;
+    font-weight: 500;
+    transition: 0.2s ease-in-out;
+}
+.filter-btn.active {
+    background: #007bff;
+    color: white;
+}
+.filter-btn:hover {
+    background: #f0f0f0;
+}
