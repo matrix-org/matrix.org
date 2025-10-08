@@ -1,0 +1,41 @@
+{% import "macros/atom.html" as atom %}
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}">
+    <title>{{ config.title }}
+    {%- if term %} - {{ term.name }}
+    {%- elif section.title %} - {{ section.title }}
+    {%- endif -%}
+    </title>
+    {%- if config.description %}
+    <subtitle>{{ config.description }}</subtitle>
+    {%- endif %}
+    <link href="{{ feed_url | safe }}" rel="self" type="application/atom+xml"/>
+    <link href="
+      {%- if section -%}
+        {{ section.permalink | escape_xml | safe }}
+      {%- else -%}
+        {{ config.base_url | escape_xml | safe }}
+      {%- endif -%}
+    "/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>{{ last_updated | date(format="%+") }}</updated>
+    <id>{{ feed_url | safe }}</id>
+    {% set filtered_pages = [] %}
+    {% for page in pages %}
+    {% set path_lower = page.path | lower %}
+    {% set is_twim = path_lower is containing("twim") or path_lower is containing("this-week-in-matrix") %}
+    {% if not is_twim %}
+    {% set_global filtered_pages = filtered_pages | concat(with=page) %}
+    {% endif %}
+    {% endfor %}
+    {% set pageslen = filtered_pages | length %}
+    {% if pageslen > 15 %}
+    {% for i in range(end=15) %}
+    {{ atom::entry(page=filtered_pages[i]) }}
+    {% endfor %}
+    {% else %}
+    {%- for page in filtered_pages %}
+    {{ atom::entry(page=page) }}
+    {%- endfor %}
+    {% endif %}
+</feed>
