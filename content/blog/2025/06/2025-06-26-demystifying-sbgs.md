@@ -3,7 +3,7 @@ date = "2025-06-26"
 title = "Demystifying SBGs"
 
 [taxonomies]
-author = ["Matthew"]
+author = ["Matthew Hodgson"]
 category = ["General"]
 +++
 
