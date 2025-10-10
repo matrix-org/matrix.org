@@ -7,9 +7,9 @@ author = ["Matthew Hodgson", "Neil Johnson", "Thib", "SRE Team"]
 category = ["matrix.org homeserver"]
 +++
 
-On 2nd September 2025 the Matrix.org Homeserver suffered a \~24h outage.
+On 2nd September 2025 the matrix.org homeserver suffered a \~24h outage.
 
-During routine maintenance to increase disk capacity, the primary database failed, and we fell back to the secondary. In attempting to restore the original primary, we lost the secondary-turned-primary rendering Matrix.org unavailable.
+During routine maintenance to increase disk capacity, the primary database failed, and we fell back to the secondary. In attempting to restore the original primary, we lost the secondary-turned-primary rendering matrix.org unavailable.
 
 To recover, it was necessary to restore from S3 storage, however the restore process was lengthy due to the size of the dataset (51TB).
 
@@ -19,7 +19,7 @@ The Matrix.org homeserver was unavailable from 2025-09-02 17:45 UTC and full ser
 
 ## What happened
 
-The Matrix.org homeserver is made of a main Synapse instance with hundreds of workers, backed by a single logical Postgres cluster made up of two machines. The primary database is replicated to a secondary, read-only instance via [streaming](https://www.postgresql.org/docs/current/warm-standby.html#STREAMING-REPLICATION) replication
+The Matrix.org homeserver is made of a main Synapse instance with hundreds of workers, backed by a single logical Postgres cluster made up of two machines. The primary database is replicated to a secondary, read-only instance via [streaming](https://www.postgresql.org/docs/current/warm-standby.html#STREAMING-REPLICATION) replication.
 
 ![A schema showing Synapse connected to a primary database. It also shows a secondary database pulling WALs from the primary. Finally the primary database also pushes WALs to a S3 bucket](/blog/img/morg-high-level-architecture.png)
 
@@ -92,7 +92,7 @@ Unfortunately, in attempting to do so, we erroneously deleted the data directory
 
 After realising our mistake, we decided to keep our Postgres up on `db-01` in case deleted files were still open in Postgres processes, with the hopes that the open file handles would forestall the actual deletion of the data on disk.
 
-With both `db-01` and `db-02 out of action` we had no other option but to restore at least one database from offsite backup. Since `db-02` was in a pristine state, with an expanded RAID array, we decided to restore the database on this server.
+With both `db-01` and `db-02` out of action we had no other option but to restore at least one database from offsite backup. Since `db-02` was in a pristine state, with an expanded RAID array, we decided to restore the database on this server.
 
 As detailed earlier, our backup strategy at the time was: full database backups weekly, incremental database backups daily, and WALs archival continuously. To perform a complete backup without any data loss on `db-02`, we needed to
 
@@ -129,16 +129,16 @@ So we configured a `restore_command` with a wrapper script that could fetch WALs
 
 Frustratingly, the playback rate was slower than expected \- to replay the \~18 hours of WALs ended up taking 5.5 hours (we had been hoping it would take around 10 minutes for every 1 hour of WALs). It took until 16:27 UTC to replay all the WALs. And at this point we could log into the Postgres database on `db-02`.
 
-At long last, we had a working database instance, with no data loss. We promoted it to a primary database at 16:45 UTC, and started a Synapse test worker at 16:51 UTC. We could see new WALs start to appear in S3, which meant WAL shipping worked. It was time to restart Synapse and bring Matrix.org back online. We started Synapse at 16:54 UTC, and after various thundering-herd overloads as everyone reconnected, all the workers were online and stable by 18:00 UTC.
+At long last, we had a working database instance, with no data loss. We promoted it to a primary database at 16:45 UTC, and started a Synapse test worker at 16:51 UTC. We could see new WALs start to appear in S3, which meant WAL shipping worked. It was time to restart Synapse and bring matrix.org back online. We started Synapse at 16:54 UTC, and after various thundering-herd overloads as everyone reconnected, all the workers were online and stable by 18:00 UTC.
 
-At this point, the server was back online, Matrix.org was catching up with everything that had happened on the rest of the federation while it was offline, albeit with a single database node (although WALs were being archived to S3 for safety)
+At this point, the server was back online, Matrix.org was catching up with everything that had happened on the rest of the federation while it was offline, albeit with a single database node (although WALs were being archived to S3 for safety).
 
 At this point, if our database had caught fire we could have been able to restore it without losing data, but at the cost of bringing Matrix.org offline again. We had just been through it, we didn’t want to do it again. We needed our secondary back.
 
 But we also needed the team to get some rest. Given how slow it was to replay WALs, we reconfigured our backups to happen against the primary database rather than against the (missing) replica. We let the European team go to bed, while our American SRE kept tabs on everything. At 03:26 UTC a new incremental backup completed. 
 
 At 09:21 UTC we added the two NVMe disks to the RAID array and to the LVM volumes group of `db-01`. We rebooted to ensure the disks were properly detected and mounted \- but the server didn’t come back. We opened the lights-out console Mythic Beasts provides us, and saw that the RAID array was not in the functional state. We had rebooted `db-01` at a critical moment of the array reshaping.   
-After fixing up the array to make it in a bootable state, `db-01` finally restarted, and we copied over the basebackup from `db-02` and set it replicating.
+After fixing up the array to bring it in a bootable state, `db-01` finally restarted, and we copied over the basebackup from `db-02` and set it to replicating.
 
 ## Lessons learned
 
@@ -156,7 +156,7 @@ Running a destructive command on the incorrect server was a key moment in the in
 
 On making the sensitive changes, the on-call group effectively paired as a trio, however, in the heat of the moment, this was insufficient to catch the error. 
 
-We realised that the database servers names were a source of confusion. db-01 reads like “Primary DB” and db-02 reads like “Secondary DB”. Not only is this false in our case, a primary database server can become a secondary database server, and the other way around. Names with intrinsic meanings are a source of confusion. 
+We realised that the database servers names were a source of confusion. `db-01` reads like “Primary DB” and `db-02` reads like “Secondary DB”. Not only is this false in our case, a primary database server can become a secondary database server, and the other way around. Names with intrinsic meanings are a source of confusion. 
 
 We’re considering changing the background colour of the terminal dynamically depending on the role the database is playing in the cluster. An idea we floated is to monitor the presence of the `standby.signal` file in the database data directory to know whether it is a primary or a secondary database, and update the terminal’s background colour accordingly. This is not a silver bullet since the background colour would only change after a command has been sent, but that would already be an improvement.
 
@@ -176,4 +176,4 @@ We received a lot of support on social media where we communicated actively arou
 
 The SRE team would like to thank our hosting provider Mythic Beasts. They reached out quickly and proactively when adding new disks, reporting the errors they were seeing. They have been much more than just a pair of remote hands. They also reached out with an offer of support during the incident.
 
-Finally, we’d like to sincerely apologise again to everyone impacted by the outage. We hope you found the post-mortem informative and you’d like to talk about it more, several of us will be at the [Matrix Conference 2026](https://conference.matrix.org) in Strasbourg. In addition to a flurry of great talks, there will be workshops about how to set up a Matrix homeserver and tune the clients to your liking\!
+Finally, we’d like to sincerely apologise again to everyone impacted by the outage. We hope you found the post-mortem informative and you’d like to talk about it more, several of us will be at the [Matrix Conference 2025](https://conference.matrix.org) in Strasbourg. In addition to a flurry of great talks, there will be workshops about how to set up a Matrix homeserver and tune the clients to your liking\!
