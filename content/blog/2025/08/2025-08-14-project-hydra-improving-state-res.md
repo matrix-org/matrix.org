@@ -3,7 +3,7 @@ date = "2025-08-14"
 title = "Project Hydra: Improving state resolution in Matrix"
 
 [taxonomies]
-author = ["Kegan Dougal, Staff Engineer - Element"]
+author = ["Kegan Dougal"]
 category = ["General", "Security"]
 +++
 
