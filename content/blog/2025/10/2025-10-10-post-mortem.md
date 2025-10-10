@@ -7,7 +7,7 @@ author = ["Matthew Hodgson", "Neil Johnson", "Thib", "SRE Team"]
 category = ["matrix.org homeserver"]
 +++
 
-On 2nd September 2025 the matrix.org homeserver suffered a \~24h outage.
+On 2nd September 2025 the [matrix.org homeserver](@/homeserver/about.md) suffered a \~24h outage.
 
 During routine maintenance to increase disk capacity, the primary database failed, and we fell back to the secondary. In attempting to restore the original primary, we lost the secondary-turned-primary rendering matrix.org unavailable.
 
@@ -21,7 +21,10 @@ The matrix.org homeserver was unavailable from 2025-09-02 17:45 UTC and full ser
 
 The matrix.org homeserver is made of a main Synapse instance with hundreds of workers, backed by a single logical Postgres cluster made up of two machines. The primary database is replicated to a secondary, read-only instance via [streaming](https://www.postgresql.org/docs/current/warm-standby.html#STREAMING-REPLICATION) replication.
 
-![A schema showing Synapse connected to a primary database. It also shows a secondary database pulling WALs from the primary. Finally the primary database also pushes WALs to a S3 bucket](/blog/img/morg-high-level-architecture.png)
+{{ figure(
+    img="/blog/img/morg-high-level-architecture.png"
+    caption="A schema showing Synapse connected to a primary database. It also shows a secondary database pulling WALs from the primary. Finally the primary database also pushes WALs to a S3 bucket"
+)}}
 
 Confusingly, at the time of the incident, the primary database server is called `db-02`, and the secondary database server is called `db-01`. The deployment runs on bare metal servers at Mythic Beasts and the Postgres database servers both use their own logical RAID 10 array with `mdraid`.
 
@@ -86,7 +89,7 @@ sudo time /opt/wal-g/wal-g \
 
 This command was entered while the current directory was the Postgres database directory, which caused the `tee` command to fail and abort the restore process, which had enough time to create some directories in the data path but nothing else. We switched to the home path and re-ran the command, which successfully wrote to the log file, but failed due to the data directory being non-empty after the previous aborted restore. 
 
-The necessary course of action at this point was to clear the remains of the failed restore attempt from the data directory and start again. Since \`db-02\` had already been cleared and needed to be restored, this didn’t register as a particularly high risk manoeuvre. 
+The necessary course of action at this point was to clear the remains of the failed restore attempt from the data directory and start again. Since `db-02` had already been cleared and needed to be restored, this didn’t register as a particularly high risk manoeuvre.
 
 Unfortunately, in attempting to do so, we erroneously deleted the data directory of the primary on `db-01`.
 
