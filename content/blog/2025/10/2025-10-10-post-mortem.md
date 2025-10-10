@@ -13,13 +13,13 @@ During routine maintenance to increase disk capacity, the primary database faile
 
 To recover, it was necessary to restore from S3 storage, however the restore process was lengthy due to the size of the dataset (51TB).
 
-The Matrix.org homeserver was unavailable from 2025-09-02 17:45 UTC and full service resumed at 2025-09-03 18:00 UTC. No data was lost as a result of the incident.
+The matrix.org homeserver was unavailable from 2025-09-02 17:45 UTC and full service resumed at 2025-09-03 18:00 UTC. No data was lost as a result of the incident.
 
 <!-- more -->
 
 ## What happened
 
-The Matrix.org homeserver is made of a main Synapse instance with hundreds of workers, backed by a single logical Postgres cluster made up of two machines. The primary database is replicated to a secondary, read-only instance via [streaming](https://www.postgresql.org/docs/current/warm-standby.html#STREAMING-REPLICATION) replication.
+The matrix.org homeserver is made of a main Synapse instance with hundreds of workers, backed by a single logical Postgres cluster made up of two machines. The primary database is replicated to a secondary, read-only instance via [streaming](https://www.postgresql.org/docs/current/warm-standby.html#STREAMING-REPLICATION) replication.
 
 ![A schema showing Synapse connected to a primary database. It also shows a secondary database pulling WALs from the primary. Finally the primary database also pushes WALs to a S3 bucket](/blog/img/morg-high-level-architecture.png)
 
@@ -102,7 +102,7 @@ As detailed earlier, our backup strategy at the time was: full database backups 
 
 So at 17:30 UTC, we started restoring the database on `db-02` by using [wal-g](https://github.com/wal-g/wal-g) \-  a well known tool that pulls the backups from S3 to restore databases. That was going to be costly and slow, but we didn’t have a choice and that’s what backups are for. 
 
-In the meantime, the backend team was paged to manage the impact to Synapse, an incident was opened, and an emergency was declared. Our primary database on `db-01` was partially wiped and throwing errors, but not corrupt enough to crash Synapse. We decided to shut down both Synapse and the primary database to avoid unknown database states. At this point, the Matrix.org homeserver was down.
+In the meantime, the backend team was paged to manage the impact to Synapse, an incident was opened, and an emergency was declared. Our primary database on `db-01` was partially wiped and throwing errors, but not corrupt enough to crash Synapse. We decided to shut down both Synapse and the primary database to avoid unknown database states. At this point, the matrix.org homeserver was down.
 
 At 18:06 UTC we decided to re-mount the data partition of `db-01` as read-only. We were now in emergency mode, and wanted to ensure we couldn’t damage the database further, in case we could salvage it later.
 
@@ -131,9 +131,9 @@ Frustratingly, the playback rate was slower than expected \- to replay the \~18 
 
 At long last, we had a working database instance, with no data loss. We promoted it to a primary database at 16:45 UTC, and started a Synapse test worker at 16:51 UTC. We could see new WALs start to appear in S3, which meant WAL shipping worked. It was time to restart Synapse and bring matrix.org back online. We started Synapse at 16:54 UTC, and after various thundering-herd overloads as everyone reconnected, all the workers were online and stable by 18:00 UTC.
 
-At this point, the server was back online, Matrix.org was catching up with everything that had happened on the rest of the federation while it was offline, albeit with a single database node (although WALs were being archived to S3 for safety).
+At this point, the server was back online, matrix.org was catching up with everything that had happened on the rest of the federation while it was offline, albeit with a single database node (although WALs were being archived to S3 for safety).
 
-At this point, if our database had caught fire we could have been able to restore it without losing data, but at the cost of bringing Matrix.org offline again. We had just been through it, we didn’t want to do it again. We needed our secondary back.
+At this point, if our database had caught fire we could have been able to restore it without losing data, but at the cost of bringing matrix.org offline again. We had just been through it, we didn’t want to do it again. We needed our secondary back.
 
 But we also needed the team to get some rest. Given how slow it was to replay WALs, we reconfigured our backups to happen against the primary database rather than against the (missing) replica. We let the European team go to bed, while our American SRE kept tabs on everything. At 03:26 UTC a new incremental backup completed. 
 
