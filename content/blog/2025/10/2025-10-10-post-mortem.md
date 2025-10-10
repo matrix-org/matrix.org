@@ -109,7 +109,7 @@ At 18:06 UTC we decided to re-mount the data partition of `db-01` as read-only. 
 At 18:40 UTC, after taking the time to consider our options, we realised the following
 
 * [extundelete](https://extundelete.sourceforge.net/) and [ext4magic](https://ext4magic.sourceforge.net/ext4magic_en.html) were both unmaintained for a decade, and are unable to work on an unmounted filesystem. ext4magic even explicitly documents it “can no longer successfully process current ext4 file systems”  
-* We also tried [R-Linux](https://www.r-studio.com/free-linux-recovery/), but weren’t confident in the integrity of the recovered files \- especially with our recent experiences with slow-burning [postgres corruption](https://matrix.org/blog/2025/07/postgres-corruption-postmortem/).  
+* We also tried [R-Linux](https://www.r-studio.com/free-linux-recovery/), but weren’t confident in the integrity of the recovered files \- especially with our recent experiences with slow-burning [postgres corruption](@/blog/2025/07/2025-07-23-postgres-corruption-postmortem.md).  
 * So we decided against trying to recover the lost data by carving or undeletion, in favour of a guaranteed reliable restore from offsite backup.
 
 At 20:30 UTC, `db-02` was still restoring from the S3 backup. After restoring the database on `db-02` from its full and incremental backups, we would need to replay the WALs produced by `db-01` to fill the gap between the last backup taken from `db-02` and the moment we lost `db-01`.
