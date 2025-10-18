@@ -38,7 +38,7 @@ curl –XPOST –H 'Authorization: X-Matrix origin=alice.com,...' –d '{
     {
       "event_id": "$YUwRidLecu:alice.com",
       "content": {
-        "body": "hello world",
+        "body": "hello",
         "msgtype": "m.text"
       },
       ...
@@ -81,7 +81,7 @@ curl "https://matrix.bob.com/_matrix/client/v3/sync" \
               "event_id": "$YUwRidLecu:alice.com",
               "type": "m.room.message",
               "content": {
-                "body": "I am a fish",
+                "body": "hello",
                 "msgtype": "m.text"
               },
               "origin_server_ts": 1417731086797,
