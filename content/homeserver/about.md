@@ -28,4 +28,4 @@ Other useful links:
 - For the latest news and information about the homeserver see the [blog](/category/matrix-org-homeserver)
 - [System status](https://status.matrix.org) and incidents
 - For support please see the [Contact](@/contact.md) page
-- For requesting your room to be listed in the homeserver-directory see [this form](https://cryptpad.fr/form/#/2/form/view/BIhKmupHthnfRK9e7rdJnG0ilU2k0dJtazvIMlfNCds/)
+- For requesting your room to be listed in the homeserver directory see [this form](https://cryptpad.fr/form/#/2/form/view/BIhKmupHthnfRK9e7rdJnG0ilU2k0dJtazvIMlfNCds/)
