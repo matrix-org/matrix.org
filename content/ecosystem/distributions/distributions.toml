@@ -10,6 +10,18 @@ support_level = "Community"
 matrix_standard = true
 
 [[distributions]]
+name = "BundesMessenger"
+description = "The free & secure messenger for the public sector."
+vendor = "BWI GmbH"
+maturity = "Stable"
+frameworks = ["Helm", "Kubernetes"]
+licence = "Apache-2.0"
+repository = "https://gitlab.opencode.de/bwi/bundesmessenger/backend/helm-chart"
+room = "#opencodebum:matrix.org"
+support_level = "Community"
+matrix_standard = true
+
+[[distributions]]
 name = "synapse-operator"
 description = "The Synapse operator offers a convenient way to deploy and manage a Synapse server. It was built with operator-sdk."
 vendor = "Red Hat"
