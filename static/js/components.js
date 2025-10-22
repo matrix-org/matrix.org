@@ -106,14 +106,14 @@ class YoutubePlayer extends HTMLElement {
                 this.dispatchEvent(new CustomEvent("ytConsentChanged", { bubbles: true }));
             });
 
-            const videoId = this.getAttribute("video-id")
+            const videoId = this.getAttribute("video-id");
+            const start = this.getAttribute("start");
             const openInYoutube = document.createElement("a");
             openInYoutube.textContent = "Open in Youtube";
             openInYoutube.classList.add("button");
-            openInYoutube.setAttribute(
-                "href",
-                `https://youtube.com/watch?v=${videoId}`
-            );
+            let shareUrl = `https://youtube.com/watch?v=${videoId}`;
+            if (start) shareUrl += `&t=${start}s`;
+            openInYoutube.setAttribute("href", shareUrl);
             openInYoutube.setAttribute("target", "_blank");
             buttonGroup.appendChild(openInYoutube);
 
@@ -131,8 +131,11 @@ class YoutubePlayer extends HTMLElement {
 
 
     loadPlayer() {
-        const videoId = this.getAttribute("video-id")
-        const innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        const videoId = this.getAttribute("video-id");
+        const start = this.getAttribute("start");
+        let embedUrl = `https://www.youtube.com/embed/${videoId}`;
+        if (start) embedUrl += `?start=${start}`;
+        const innerHTML = `<iframe src="${embedUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
         for (const child of this.shadowRoot.children) {
             if (child.classList.contains("youtube_placeholder")) {

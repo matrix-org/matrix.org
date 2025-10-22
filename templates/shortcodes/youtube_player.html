@@ -1,2 +1,7 @@
-<noscript>Today's Matrix Live: <a href="https://youtube.com/watch?v={{ video_id }}">https://youtube.com/watch?v={{ video_id }}</a></noscript>
-<youtube-player video-id="{{ video_id }}"></youtube-player>
+<noscript>
+  {% if noscript_text %}{{ noscript_text }}{% else %}Today's Matrix Live{% endif %}:
+  <a href="https://youtube.com/watch?v={{ video_id }}{% if start %}&t={{ start }}s{% endif %}">
+    https://youtube.com/watch?v={{ video_id }}{% if start %}&t={{ start }}s{% endif %}
+  </a>
+</noscript>
+<youtube-player video-id="{{ video_id }}"{% if start %} start="{{ start }}"{% endif %}></youtube-player>
