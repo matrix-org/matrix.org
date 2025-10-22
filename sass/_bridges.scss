@@ -54,6 +54,11 @@
     }
 }
 
+.platform.no-bridge {
+    opacity: 0.15;          
+    pointer-events: none;  
+}
+
 .bridges_implem> :nth-child(even) {
     background-color: #fafafa;
 }
