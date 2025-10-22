@@ -266,6 +266,7 @@ maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 frameworks = ["Name at least one installation technology.", "You may also add more."]
 licence = "PICK ONE identifier from https://spdx.org/licenses/"
 repository = "https://github.com/example-org/example-repo"
+website = "https://mymatrixdistro.dev"
 room = "#your-matrix-room:example.com"
 support_level = "PICK ONE Community OR Commercial"
 matrix_standard = true if it is compatible with Matrix standard apps, false if it only works fully when self-contained
