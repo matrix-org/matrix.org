@@ -22,8 +22,8 @@ This entire process has been highly unusual for the ecosystem, and it’s unfort
 The MSCs added under embargo were:
 
 - [MSC4289](https://github.com/matrix-org/matrix-spec-proposals/pull/4289): Explicitly privilege room creators
-- [MSC4291](https://github.com/matrix-org/matrix-spec-proposals/pull/4291): Room IDs as hashes of the create event
-- [MSC4297](https://github.com/matrix-org/matrix-spec-proposals/pull/4297): State Resolution v2.1
+- [MSC4291](https://github.com/matrix-org/matrix-spec-proposals/pull/4291): Room IDs as hashes of the create event, which resolves [CVE-2025-54315](https://www.cve.org/CVERecord?id=CVE-2025-54315) (Lack of create event uniqueness)
+- [MSC4297](https://github.com/matrix-org/matrix-spec-proposals/pull/4297): State Resolution v2.1, which resolves [CVE-2025-49090](https://www.cve.org/CVERecord?id=CVE-2025-49090) (State Resolution 2.0 deficiencies)
 - [MSC4304](https://github.com/matrix-org/matrix-spec-proposals/pull/4304): Room Version 12
 
 Supporting these MSCs are:
@@ -35,7 +35,7 @@ Supporting these MSCs are:
 
 These changes fixed the following vulnerabilities:
 
-- [CVE-2025-49090](https://www.cve.org/CVERecord?id=CVE-2025-49090) (State Resolution 2.0 deficiencies)
+- [CVE-2025-49090](https://www.cve.org/CVERecord?id=CVE-2025-49090): The Matrix State Resolution algorithm before version 2.1 exhibits undesirable behavior in certain edge conditions, resulting in state resets: the scenario of a room's state resetting to an earlier or incorrect state in the absence of revocation events that would validly result in that state. This allows a malicious participating homeserver to potentially corrupt a room's state by sending a crafted sequence of Matrix events and API responses. Room version 12 resolves the issue by switching to State Resolution v2.1
 - [CVE-2025-54315](https://www.cve.org/CVERecord?id=CVE-2025-54315) (Lack of create event uniqueness)
 
 ## Impact
