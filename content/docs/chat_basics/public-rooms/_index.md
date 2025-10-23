@@ -57,6 +57,33 @@ Click on "Join the discussion": you can now participate in the room!
 
 ![](room-participate.png)
 
+## Hiding images by default
+
+In public rooms, sometimes people post inappropriate content, including images
+you don't want to see. Hopefully a room's moderators will tidy things up quite
+quickly, but many people prefer to make images in public rooms hidden, allowing
+them to show individual images when they are ready.
+
+### In Element
+
+In Element, you can hide images in public rooms in Settings.
+
+![](menu_settings.png)
+
+Choose Preferences, and scroll down to Moderation and safety. Click "In private
+rooms" under "Show media in timeline".
+
+![](settings_preferences_safety.png)
+
+Now images will be hidden by default. You can make them visible by clicking on
+"Show image".
+
+![](show_image.png)
+
+You can re-hide them by choosing the "eye" icon when you hover over the image.
+
+![](hide_image.png)
+
 ## Browsing the public directory
 
 Joining a specific room is handy when you know exactly what you want to discuss
