@@ -50,6 +50,9 @@ description = """
 The purpose of the room directory working group is to implement the matrix.org room directory policy, as described in that policy.
 
 Additionally the working group might propose improvements to the policy, which the T&S committee will then vote on.
+
+
+Too request inclusion of your room in the homeserver directory, see [this form](https://cryptpad.fr/form/#/2/form/view/BIhKmupHthnfRK9e7rdJnG0ilU2k0dJtazvIMlfNCds/).
 """
 members = ["Nico", "Sky", "mahdi", "Emma [it/its]", "Krille - Christian K."]
 matrix_room_alias = "#room-dir-wg-office:neko.dev"

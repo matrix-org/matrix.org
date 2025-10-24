@@ -15,6 +15,7 @@ This section of the website collects all the related information about the matri
 
 - [What is the "Matrix.org (Official Account)"?](@/homeserver/official.md)
 - [Matrix.org Homeserver Pricing](@/homeserver/pricing.md)
+- [Matrix.org Room Directory](@/homeserver/room_directory.md)
 
 You can find the [legal documents](@/legal/_index.md) related to usage of the matrix.org homeserver here:
 
@@ -28,4 +29,3 @@ Other useful links:
 - For the latest news and information about the homeserver see the [blog](/category/matrix-org-homeserver)
 - [System status](https://status.matrix.org) and incidents
 - For support please see the [Contact](@/contact.md) page
-- For requesting your room to be listed in the homeserver directory see [this form](https://cryptpad.fr/form/#/2/form/view/BIhKmupHthnfRK9e7rdJnG0ilU2k0dJtazvIMlfNCds/)
