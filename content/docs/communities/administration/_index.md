@@ -182,6 +182,7 @@ Here is a short summary of some significant changes.
 Find a summary of the most relevant changes in the [security pre-disclosure](@/blog/2025/07/2025-07-16-security-predisclosure.md) on the blog.
 
 Further info and recommendations can be found in [Matrix Live S11E05 - Project Hydra](https://www.youtube.com/watch?v=Xje32fIIUyg&t=1240s).
+{{youtube_player(video_id="Xje32fIIUyg",start="1240",noscript_text="Matrix Live S11E05 - Project Hydra")}}
 
 ### Tools and scripts
 
