@@ -149,7 +149,7 @@ topics, priorities initiatives, gather feedback and share knowledge.
 > 
 > #### Powers and duties
 > 
-> The Finance and Fundraising Committee:
+> The Finance and Fundraising Committee has:
 > 
 > * The responsibility to review and provide feedback on financial documents, like budgets.
 > * The responsibility to review and provide feedback on unbudgeted expenses over the threshold defined in the Terms of Reference (set at $50,000 as of 2025-03-06).
