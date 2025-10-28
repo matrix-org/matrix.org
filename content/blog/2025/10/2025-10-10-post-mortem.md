@@ -26,7 +26,7 @@ The matrix.org homeserver is made of a main Synapse instance with hundreds of wo
     caption="A schema showing Synapse connected to a primary database. It also shows a secondary database pulling WALs from the primary. Finally the primary database also pushes WALs to a S3 bucket"
 )}}
 
-Confusingly, at the time of the incident, the primary database server is called `db-02`, and the secondary database server is called `db-01`. The deployment runs on bare metal servers at Mythic Beasts and the Postgres database servers both use their own logical RAID 10 array with `mdraid`.
+Confusingly, at the time of the incident, the primary database server is called `db-02`, and the secondary database server is called `db-01`. The deployment runs on bare metal servers at Mythic Beasts and the Postgres database servers both use their own logical RAID 10 array with [`mdraid`](https://docs.kernel.org/admin-guide/md.html).
 
 Our primary database is backed up to an S3 bucket in AWS. At the time of the incident, we performed a full database backup weekly, incremental database backups daily, and we archived WALs continuously to a separate S3 bucket. If you are not familiar with WALs, you can see them as the primary database recording what it does when inserting or removing records into its tables.
 
