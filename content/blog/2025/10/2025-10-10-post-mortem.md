@@ -179,4 +179,4 @@ We received a lot of support on social media where we communicated actively arou
 
 The SRE team would like to thank our hosting provider Mythic Beasts. They reached out quickly and proactively when adding new disks, reporting the errors they were seeing. They have been much more than just a pair of remote hands. They also reached out with an offer of support during the incident.
 
-Finally, we’d like to sincerely apologise again to everyone impacted by the outage. We hope you found the post-mortem informative and you’d like to talk about it more, several of us will be at the [Matrix Conference 2025](https://conference.matrix.org) in Strasbourg. In addition to a flurry of great talks, there will be workshops about how to set up a Matrix homeserver and tune the clients to your liking\!
+Finally, we’d like to sincerely apologise again to everyone impacted by the outage, we hope you found the post-mortem informative and if you would like to investigate running your own homeserver, there are plenty of [distributions](@/ecosystem/distributions/index.md) to choose from.
