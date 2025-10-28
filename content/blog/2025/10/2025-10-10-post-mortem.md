@@ -23,7 +23,7 @@ The matrix.org homeserver is made of a main Synapse instance with hundreds of wo
 
 {{ figure(
     img="/blog/img/morg-high-level-architecture.png"
-    caption="A schema showing Synapse connected to a primary database. It also shows a secondary database pulling WALs from the primary. Finally the primary database also pushes WALs to a S3 bucket"
+    caption="A schema showing Synapse connected to a primary database. It also shows a secondary database pulling WALs from the primary. Finally the primary database also pushes WALs to a S3 bucket."
 )}}
 
 Confusingly, at the time of the incident, the primary database server is called `db-02`, and the secondary database server is called `db-01`. The deployment runs on bare metal servers at Mythic Beasts and the Postgres database servers both use their own logical RAID 10 array with [`mdraid`](https://docs.kernel.org/admin-guide/md.html).
