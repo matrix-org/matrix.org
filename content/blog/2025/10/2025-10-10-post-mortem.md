@@ -1,5 +1,5 @@
 +++
-date = "2025-10-28T10:00:00Z"
+date = "2025-10-29T10:00:00Z"
 title = "Post-mortem of the September 2 outage"
 
 [taxonomies]
@@ -26,7 +26,7 @@ The matrix.org homeserver is made of a main Synapse instance with hundreds of wo
     caption="A schema showing Synapse connected to a primary database. It also shows a secondary database pulling WALs from the primary. Finally the primary database also pushes WALs to a S3 bucket"
 )}}
 
-Confusingly, at the time of the incident, the primary database server is called `db-02`, and the secondary database server is called `db-01`. The deployment runs on bare metal servers at Mythic Beasts and the Postgres database servers both use their own logical RAID 10 array with `mdraid`.
+Confusingly, at the time of the incident, the primary database server is called `db-02`, and the secondary database server is called `db-01`. The deployment runs on bare metal servers at [Mythic Beasts](https://www.mythic-beasts.com/) and the Postgres database servers both use their own logical RAID 10 array with `mdraid`.
 
 Our primary database is backed up to an S3 bucket in AWS. At the time of the incident, we performed a full database backup weekly, incremental database backups daily, and we archived WALs continuously to a separate S3 bucket. If you are not familiar with WALs, you can see them as the primary database recording what it does when inserting or removing records into its tables.
 
@@ -41,7 +41,7 @@ We monitor the database size and growth, and when the database reached roughly 5
 
 ### Timeline
 
-At 11:03 UTC on Sept 2nd 2025, Mythic Beasts’ teams added 2 NVMe drives to both `db-02` and `db-01`, respectively the primary and secondary database servers.
+At 11:03 UTC on Sept 2nd 2025, Mythic Beasts’ teams added 2 NVMe drives to our primary and secondary database `db-02` and `db-01`, respectively the primary and secondary database servers. We then set about introducing the new drives to the respective RAID arrays.
 
 At 11:17 UTC, one existing drive disappeared from the RAID array of `db-02`, our primary database server. Our monitoring fired, and Mythic Beasts confirmed the issue. Because we’re using [RAID 10](https://en.wikipedia.org/wiki/Nested_RAID_levels#RAID_10_\(RAID_1+0\)), the setup was still functional but running in degraded mode. There was no data loss, but the RAID array could potentially not survive another drive failure, and performance could be degraded.
 
