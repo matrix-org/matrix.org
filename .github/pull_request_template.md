@@ -6,13 +6,14 @@
 
      You can use the CI build or a local environment to check your changes are working as expected.
      
-     If you have questions at any time, please contact the Website Working Group at
+     If you have questions at any time, please contact the Website & Content Working Group at
      https://matrix.to/#/#matrix.org-website:matrix.org -->
 
-<!-- Please describe what you added, and add a screenshot or video if possible.
+<!-- Please describe what you added here, and add a screenshot or video if possible.
      That makes it easier to understand the change. -->
 
-<!-- Please don't remove this checklist from your PR, as it is useful for reviewers, too. -->
+<!-- ---------- DO NOT WRITE BELOW THIS LINE ----------
+     Please don't remove this checklist from your PR, as it is useful for reviewers, too. -->
 **:heavy_check_mark: Checklist**
 
 - Check for common mistakes:
