@@ -38,7 +38,7 @@ On that note, _more than a day's worth of video_ were recorded by the excellent 
 Amazingly, talks were not only live-streamed, they were then available on [our YouTube Channel](https://www.youtube.com/watch?v=Hvdlk3kz4wY&list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG) and on the Chaos Computer Club's [own streaming platform](https://media.ccc.de/c/matrix-conf-2025) _within minutes_ after the speaker stopped talking. Even more impressive? The VOC team members are volunteers.
 
 {{ figure(
-    img="/blog/img/conf25-av.webp)"
+    img="/blog/img/conf25-av.webp"
     caption=""
     alt="A photo of a woman wearing a purple hoodie with the logo of The Matrix Conference embroidered prominently. She is looking at another volunteer, smiling. The other volunteer is operating video mixing software on a laptop."
 ) }}
