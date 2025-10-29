@@ -9,10 +9,11 @@
      If you have questions at any time, please contact the Website & Content Working Group at
      https://matrix.to/#/#matrix.org-website:matrix.org -->
 
-<!-- Please describe what you added here, and add a screenshot or video if possible.
+<!-- ------------------------------------------------------------------------------------------
+     Please describe what you added here, and add a screenshot or video if possible.
      That makes it easier to understand the change. -->
 
-<!-- ---------- DO NOT WRITE BELOW THIS LINE ----------
+<!-- ------------------------------ DO NOT WRITE BELOW THIS LINE ------------------------------
      Please don't remove this checklist from your PR, as it is useful for reviewers, too. -->
 **:heavy_check_mark: Checklist**
 
