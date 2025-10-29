@@ -35,8 +35,6 @@ The second and third days were the heart of the conference. The global show-up r
 
 On that note, _more than a day's worth of video_ were recorded by the excellent Audio/Video team. The [Chaos Computer Club Video Operation Center](https://c3voc.de/) indeed brought their audio and video equipment and expertise, and have set up a professional recording and streaming set up. They trained volunteers to use their equipment and home-developed software. Volunteers found it easy to operate the camera and audio/video mixers.
 
-TODO: insert picture of Dominik operating the video mixer and the picture of Tulir operating a camera
-
 Amazingly, talks were not only live-streamed, they were then available on [our YouTube Channel](https://www.youtube.com/watch?v=Hvdlk3kz4wY&list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG) and on the Chaos Computer Club's [own streaming platform](https://media.ccc.de/c/matrix-conf-2025) _within minutes_ after the speaker stopped talking. Even more impressive? The VOC team members are volunteers.
 
 {{ figure(
