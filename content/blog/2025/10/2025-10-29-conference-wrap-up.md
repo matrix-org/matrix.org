@@ -5,6 +5,9 @@ title = "Matrix Conf 2025 was a blast!"
 [taxonomies]
 author = ["Thib"]
 category = ["Foundation","Conference"]
+
+[extra]
+image = "/blog/img/conf25-crowd.jpg"
 +++
 
 
