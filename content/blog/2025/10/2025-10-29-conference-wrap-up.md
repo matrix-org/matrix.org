@@ -28,7 +28,7 @@ The Conference started by a Barcamp/Unconference: it's an informal workshop day 
 {{ figure(
     img="/blog/img/conf25-yan-barcamp.webp"
     caption=""
-    alt="A photo of a white man wearing a hat and a purple hoodie. He holds a microphone and speaks in the middle of a crowd where many people are busy on their computers and talking to each other."
+    alt="A photo of a man wearing a hat and a purple hoodie. He holds a microphone and speaks in the middle of a crowd where many people are busy on their computers and talking to each other."
 ) }}
 
 The second and third days were the heart of the conference. The global show-up rate was high! Indeed, 96% of people who bought a ticket showed up. We asked people to optionally add their country of origin, and for those who replied 20 countries were represented. We got 68 speakers, including 2 remote sessions and 1 hybrid session.
