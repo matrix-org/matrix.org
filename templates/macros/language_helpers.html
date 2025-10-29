@@ -1,0 +1,11 @@
+{% macro normalize_language(lang) -%}
+    {%- if lang == "C++" -%}
+        cplusplus
+    {%- elif lang == "C#" -%}
+        csharp
+    {%- elif lang == "C" -%}
+        c
+    {%- else -%}
+        {{ lang | slugify }}
+    {%- endif -%}
+{%- endmacro %}

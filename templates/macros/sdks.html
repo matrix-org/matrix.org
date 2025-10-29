@@ -1,3 +1,5 @@
+{% import "macros/language_helpers.html" as lang_helper %}
+
 {% macro sdks_panel(type) %}
 {% set sdks_data = load_data(path="content/ecosystem/sdks/sdks.toml") %}
 {% set licences = [] %}
@@ -69,18 +71,10 @@
             <div id="{{ type }}-sdks-filter-language-menu" class="filter-menu">
                 <p>The client must support any of the languages checked.</p>
                 {% for language in languages %}
-                    {% if language == "C++" %}
-                        {% set lang_id = "plusplus" %}
-                    {% elif language == "C#" %}
-                        {% set lang_id = "dotnet" %}
-                    {% elif language == "C" %}
-                        {% set lang_id = "clanguage" %}
-                    {% else %}
-                        {% set lang_id = language | slugify %}
-                    {% endif %}
+                    {% set language_slug = lang_helper::normalize_language(lang=language) %}
                     <div class="filter-option">
-                        <input id="language-{{ lang_id }}" type="checkbox" checked>
-                        <label for="language-{{ lang_id }}">{{ language }}</label>
+                        <input id="language-{{ language_slug }}" type="checkbox" checked>
+                        <label for="language-{{ language_slug }}">{{ language }}</label>
                     </div>
                 {% endfor %}
 
@@ -92,18 +86,10 @@
     <div id="{{ type }}-sdks" class="projects-card-deck">
         {% for sdk in sdks_data.sdks | sort(attribute="maturity") | reverse %}
         {% if sdk.purpose is containing(type) %}
+        {% set language_slug = lang_helper::normalize_language(lang=sdk.language) %}
         <div>
             <div
-                {% if sdk.language == "C++" %}
-                    {% set lang_id = "plusplus" %}
-                {% elif sdk.language == "C#" %}
-                    {% set lang_id = "dotnet" %}
-                {% elif sdk.language == "C" %}
-                    {% set lang_id = "clanguage" %}
-                {% else %}
-                    {% set lang_id = sdk.language | slugify %}
-                {% endif %}
-                class="project-card maturity-{{ sdk.maturity | lower }} licence-{{ sdk.licence | slugify }} language-{{ lang_id }}">
+                class="project-card maturity-{{ sdk.maturity | lower }} licence-{{ sdk.licence | slugify }} language-{{ language_slug }}">
                 <div class="title-row">
                     <h3>{{ sdk.name }}</h3>
                     <div class="maturity {{ sdk.maturity | lower }}">{{ sdk.maturity }}</div>
