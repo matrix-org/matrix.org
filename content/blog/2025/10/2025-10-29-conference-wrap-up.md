@@ -18,7 +18,7 @@ The first success was of course in attendance. With more than 250 attendees on-s
 {{ figure(
     img="/blog/img/conf25-keynote.webp"
     caption=""
-    alt="A picture of Amandine, one of the Guardians of The Matrix.org Foundation, standing in front of a large crowd in a packed room. Her slides read \"The Foundation Update\"."
+    alt="A picture of Amandine, one of the Guardians of The Matrix.org Foundation, standing in front of a large crowd in a packed room. Her slides read 'The Foundation Update'."
 ) }}
 
 <!-- more -->
