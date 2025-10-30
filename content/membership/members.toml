@@ -74,6 +74,11 @@ website = "https://infra.run"
 logo = "infra.run.svg"
 
 [[silver]]
+name = "Liberbyte"
+website = "https://www.liberbyte.com/"
+logo = "liberbyte.png"
+
+[[silver]]
 name = "LiveKit"
 website = "https://livekit.io"
 logo = "livekit.svg"
