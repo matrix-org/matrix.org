@@ -21,7 +21,7 @@ email = ""
 name = "Events"
 summary = "Organising the Foundation's official events and appearances at conferences"
 description = """
-The Events working group is the main organising team of the official events hosted by the Foundation, such as the Matrix Conference or co-hosting FOSDEM Fringe, as well as official appearances at other conferences, e.g. the FOSDEM booth and devroom. The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the Matrix Community Summit, or the FrOSCon Matrix Community devroom, and tries to foster an ecosystem of decentralised events and user groups.
+The Events working group is the main organising team of the official events hosted by the Foundation, such as the Matrix Conference or co-hosting FOSDEM Fringe, as well as official appearances at other conferences, e.g. the FOSDEM booth and devroom. The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the Matrix Community Summit, or the FrOSCon Matrix Community devroom, and aims to foster an ecosystem of decentralised events and user groups.
 """
 committee = "Community Committee"
 members = ["Yan", "Nadine", "Thib", "HarHarLinks", "The one with the braid"]
