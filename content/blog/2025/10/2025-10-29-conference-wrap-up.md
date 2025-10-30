@@ -11,7 +11,7 @@ image = "/blog/img/conf25-crowd.jpg"
 +++
 
 
-The Matrix Conference 2025 is over, and it was a significant success for Matrix, its Foundation, and its ecosystem! If you couldn't make it to the Conference, here is what you missed and how you can catch up.
+[The Matrix Conference 2025](https://2025.matrix.org/) is over, and it was a significant success for Matrix, its Foundation, and its ecosystem! If you couldn't make it to the Conference, here is what you missed and how you can catch up.
 
 The first success was of course in attendance. With more than 250 attendees on-site and hundreds of attendees online, the Conference was _attractive_ to many. This is particularly remarkable because the majority of our audience is in Germany, and this year's Conference was held in France. We want to thank our community for being so dedicated to Matrix and for following us here!
 
@@ -60,9 +60,9 @@ But all the goodwill in the world won't go anywhere without the finances to rent
 {{ figure(
     img="/blog/img/conf25-rocket.chat-booth.webp"
     caption=""
-    alt="A picture of the booth of one of the Conference sponsors, Rocket.Chat, staffed by two people. Two attendees are standign in front of the booth and asking questions to the staff. On the booth table there are Rocket.Chat branded t-shirts folded."
+    alt="A picture of the booth of one of the Conference sponsors, Rocket.Chat, staffed by two people. Two attendees are standign in front of the booth and asking questions to the staff. On the booth table there are Rocket.Chat branded T-shirts folded."
 ) }}
 
-If you missed the Conference, you can watch the videos on demand and find the talks slides on the [Conference website](https://conference.matrix.org/watch). If you wanted to get some Conference gear but couldn't get one of those fantastic Black & White t-shirt or hoodie, you have until Monday 3 November to [order yours](https://conference.matrix.org/register/#tickets).
+If you missed the Conference, you can watch the videos on demand and find the talks slides on the [Conference website](https://conference.matrix.org/watch). If you wanted to get some Conference gear but couldn't get one of those fantastic Black & White T-shirt or hoodie, you have until Monday 3 November to [order yours](https://conference.matrix.org/register/#tickets).
 
-Your next opportunity to catch-up with us is a FOSDEM in Brussels, in January 31 and February 1, where we will be coordinating the Decentralized Communications Devroom. We also asked for a booth, but booth allocations haven't been announced yet. Heads-up that we will also organize a Fringe Event this year again, so make sure to be there a few days before FOSDEM!
+Your next opportunity to catch up with us is at FOSDEM in Brussels, on January 31 and February 1, where we will be coordinating the Decentralized Communications Devroom. We also asked for a booth, but booth allocations haven't been announced yet. Heads-up that we will also organize a Fringe Event this year again, so make sure to be there a few days before FOSDEM!
