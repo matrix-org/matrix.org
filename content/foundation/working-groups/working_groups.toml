@@ -10,11 +10,11 @@ The group is not responsible for domain-specific content of other teams like the
 
 Note that this is not the complete list of responsibilities, but a high level overview.
 """
+committee = "Community Committee"
 members = ["Thib", "HarHarLinks", "MTRNord"]
+sponsor = "HarHarLinks"
 matrix_room_alias = "#matrix.org-website:matrix.org"
 email = ""
-committee = "Community Committee"
-sponsor = "HarHarLinks"
 
 [[working_groups]]
 name = "Events"
@@ -22,11 +22,11 @@ summary = "Organising the Foundation's official events and appearances at confer
 description = """
 The Events working group is the main organising team of the official events hosted by the Foundation, such as the Matrix Conference or co-hosting FOSDEM Fringe, as well as official appearances at other conferences, e.g. the FOSDEM booth and devroom. The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the Matrix Community Summit, or the FrOSCon Matrix Community devroom, and tries to foster an ecosystem of decentralised events and user groups.
 """
-members = ["Yan", "Nadine", "Thib", "Robin", "HarHarLinks", "The one with the braid"]
+committee = "Community Committee"
+members = ["Yan", "Nadine", "Thib", "HarHarLinks", "The one with the braid"]
+sponsor = "HarHarLinks"
 matrix_room_alias = "#events-wg:matrix.org"
 email = "events-wg@foundation.matrix.org"
-committee = "Community Committee"
-sponsor = "HarHarLinks"
 
 [[working_groups]]
 name = "Trust & Safety Research & Documentation"
@@ -37,11 +37,11 @@ On the other hand the community can also benefit from having some of that inform
 The T&S R&D WG is a tool to help with that. It includes a wider set of individuals and reports their research results to the T&S committee. The WG is also encouraged to enhance the [documentation](/docs) on the Matrix.org website to help communities and users on Matrix moderate their rooms.
 The T&S committee might sometimes ask the WG for help in researching specific topics in more detail to guide their decisions.
 """
+committee = "Trust & Safety Committee"
 members = ["Nico", "Cat", "Niko", "SFaulken", "Gnuxie"]
+sponsor = "Nico"
 matrix_room_alias = "#tns-rnd-wg-office:neko.dev"
 email = ""
-committee = "Trust & Safety Committee"
-sponsor = "Nico"
 
 [[working_groups]]
 name = "Room Directory"
@@ -51,8 +51,8 @@ The purpose of the room directory working group is to implement the matrix.org r
 
 Additionally the working group might propose improvements to the policy, which the T&S committee will then vote on.
 """
+committee = "Trust & Safety Committee"
 members = ["Nico", "Sky", "mahdi", "Emma [it/its]", "Krille - Christian K."]
+sponsor = "Nico"
 matrix_room_alias = "#room-dir-wg-office:neko.dev"
 email = ""
-committee = "Trust & Safety Committee"
-sponsor = "Nico"
