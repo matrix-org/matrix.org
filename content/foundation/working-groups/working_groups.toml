@@ -13,6 +13,7 @@ Note that this is not the complete list of responsibilities, but a high level ov
 committee = "Community Committee"
 members = ["Thib", "HarHarLinks", "MTRNord"]
 sponsor = "HarHarLinks"
+meetings = "Thursdays, 16:00-17:00 Berlin time. Please reach out via our Matrix room to join."
 matrix_room_alias = "#matrix.org-website:matrix.org"
 email = ""
 
@@ -25,6 +26,7 @@ The Events working group is the main organising team of the official events host
 committee = "Community Committee"
 members = ["Yan", "Nadine", "Thib", "HarHarLinks", "The one with the braid"]
 sponsor = "HarHarLinks"
+meetings = "Mondays, 16:00-17:00 Berlin time. Please reach out via our Matrix room."
 matrix_room_alias = "#events-wg:matrix.org"
 email = "events-wg@foundation.matrix.org"
 

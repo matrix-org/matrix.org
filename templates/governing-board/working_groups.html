@@ -32,6 +32,7 @@
             <div class="members">
                 <p><strong>Members:</strong> {{ wg.members | join(sep=", ") }}</p>
                 <p><strong>Sponsor:</strong> {{ wg.sponsor }}</p>
+                {% if wg.meetings %}<p><strong>Meeting schedule:</strong> {{ wg.meetings }}</p>{% endif %}
             </div>
             <p>{{ wg.description | markdown(inline=true) | safe }}</p>
             <div class="button-group">
