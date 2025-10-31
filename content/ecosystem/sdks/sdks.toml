@@ -27,7 +27,7 @@ Matrix Client-Server SDK for JavaScript.
 [[sdks]]
 name = "MatrixBot .NET Core SDK"
 maintainer = "enimatek-nl"
-maturity = "Stable"
+maturity = "Obsolete"
 language = "C#"
 licence = "MIT"
 repository = "https://github.com/enimatek-nl/matrixbot-dotnet-sdk"
