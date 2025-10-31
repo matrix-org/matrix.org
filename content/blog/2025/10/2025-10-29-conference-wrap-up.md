@@ -31,14 +31,14 @@ The Conference started by a Barcamp/Unconference: it's an informal workshop day 
     alt="A photo of a people sitting at a table in a busy area, talking to one another and working on their computers."
 ) }}
 
-The second and third days were the heart of the conference. The global show-up rate was high! Indeed, 96% of people who bought a ticket showed up. We asked people to optionally add their country of origin, and for those who replied 20 countries were represented. Matrix is already crossing seas and continents: the bulk of our audience came from Europe, but we also got representatives from Brazil, Canada and Japan! We got 68 speakers, including 2 remote sessions and 1 hybrid session. We concluded the conference by a slower day of workshops on Saturday where people remained very engaged.
+The second and third days were the heart of the conference. The global show-up rate was high! Indeed, 96% of people who bought a ticket showed up. We asked people to optionally add their country of origin, and for those who replied 20 countries were represented. Matrix is already crossing seas and continents: the bulk of our audience came from Europe, but we also got representatives from Brazil, Canada, and Japan! We got 68 speakers, including 2 remote sessions and 1 hybrid session. We concluded the conference by a slower day of workshops on Saturday where people remained very engaged.
 
-_More than a day's worth of video_ was recorded by the excellent Audio/Video team. The [Chaos Computer Club Video Operation Center](https://c3voc.de/) (VOC) indeed brought their audio and video equipment and expertise, and have set up a professional recording and streaming set up. They trained volunteers to use their equipment and home-developed software. Volunteers found it easy and great fun to operate the camera and audio/video mixers. We're grateful to VOC for their expertise, patience, enthusiasm and calm all along the conference. They have been excellent people to work with.
+_More than a day's worth of video_ was recorded by the excellent Audio/Video team. The [Chaos Computer Club Video Operation Center](https://c3voc.de/) (VOC) indeed brought their audio and video equipment and expertise, and have set up a professional recording and streaming set up. They trained volunteers to use their equipment and home-developed software. Volunteers found it easy and great fun to operate the camera and audio/video mixers. We're grateful to VOC for their expertise, patience, enthusiasm, and calm all along the conference. They have been excellent people to work with.
 
 Amazingly, talks were not only live-streamed, they were then available on [our YouTube Channel](https://www.youtube.com/watch?v=Hvdlk3kz4wY&list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG) and on the Chaos Computer Club's [own streaming platform](https://media.ccc.de/c/matrix-conf-2025) _within minutes_ after the speaker stopped talking. Even more impressive? The VOC team members are volunteers.
 
 {{ figure(
-    img="/blog/img/conf25-av.webp"
+    img="/blog/img/conf25-av.webp
     caption=""
     alt="A photo of a woman wearing a purple hoodie with the logo of The Matrix Conference embroidered prominently. She is looking at another volunteer, smiling. The other volunteer is operating video mixing software on a laptop."
 ) }}
@@ -53,14 +53,14 @@ We owe this conference to volunteers. More than 30 of them signed up to give the
 
 But all the goodwill in the world won't go anywhere without the finances to rent a venue, get catering, and cover the general expenses to organize a conference. We also owe this conference to the sponsors who showed up en masse to support the event! Our gratitude goes particularly to:
 
-- Our Anchor and Video sponsor [Element](https://element.io/). You can find [their Keynote, _The Element Update: Shininess, Scalability and Sustainability_ on our YouTube channel](https://www.youtube.com/watch?v=TZgcdgv2NXk&list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG&index=27).
+- Our Anchor and Video sponsor [Element](https://element.io/). You can find [their Keynote, _The Element Update: Shininess, Scalability, and Sustainability_ on our YouTube channel](https://www.youtube.com/watch?v=TZgcdgv2NXk&list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG&index=27).
 - Our Champion sponsors [Rocket.Chat](https://rocket.chat), [Automattic](https://automattic.com/), [Connect2x](https://timmy-messenger.de/), [Famedly](https://www.famedly.com/)
 - Our Sustaining sponsors [ERCOM](https://cds.thalesgroup.com/en/ercom), [Futurewei](https://www.futurewei.com/) and [RISE](https://www.rise-world.com/de/)
 
 {{ figure(
     img="/blog/img/conf25-rocket.chat-booth.webp"
     caption=""
-    alt="A picture of the booth of one of the Conference sponsors, Rocket.Chat, staffed by two people. Two attendees are standign in front of the booth and asking questions to the staff. On the booth table there are Rocket.Chat branded T-shirts folded."
+    alt="A picture of the booth of one of the Conference sponsors, Rocket.Chat, staffed by two people. Two attendees are standing in front of the booth and asking questions to the staff. On the booth table there are Rocket.Chat branded T-shirts folded."
 ) }}
 
 If you missed the Conference, you will be able watch the videos on demand and find the talks slides on the [Conference website](https://conference.matrix.org/watch) right after we finish adding the photos. In the meantime you can find them on [our YouTube Channel](https://www.youtube.com/watch?v=Hvdlk3kz4wY&list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG) and on the Chaos Computer Club's [streaming platform](https://media.ccc.de/c/matrix-conf-2025).
