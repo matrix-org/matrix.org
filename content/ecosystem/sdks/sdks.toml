@@ -573,7 +573,7 @@ Matrix client library for MicroPython.
 [[sdks]]
 name = "matrix-communication-client"
 maintainer = "Réda Housni Alaoui"
-maturity = "Stable"
+maturity = "Obsolete"
 language = "Java"
 licence = "MIT"
 repository = "https://github.com/Cosium/matrix-communication-client"
