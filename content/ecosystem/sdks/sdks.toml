@@ -625,7 +625,7 @@ Yet another matrix bot library.
 [[sdks]]
 name = "Elm SDK"
 maintainer = "Bram Noordstar"
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Elm"
 licence = "EUPL-1.2"
 repository = "https://github.com/noordstar/elm-matrix-sdk-beta"
