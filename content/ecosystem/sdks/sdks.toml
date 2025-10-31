@@ -638,7 +638,7 @@ A more consistent alternative to the matrix-js-sdk written in Elm.
 [[sdks]]
 name = "Matrix.swift"
 maintainer = "cvwright"
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Swift"
 licence = "Apache-2.0"
 repository = "https://github.com/circles-project/Matrix.swift"
