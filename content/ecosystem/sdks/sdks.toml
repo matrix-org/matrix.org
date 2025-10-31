@@ -227,7 +227,7 @@ featured_in = []
 [[sdks]]
 name = "Matrix-ClientServer-API-java"
 maintainer = "Jojii"
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Java"
 licence = "GPL-3.0-only"
 repository = "https://github.com/JojiiOfficial/Matrix-ClientServer-API-java"
