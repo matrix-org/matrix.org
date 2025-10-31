@@ -560,7 +560,7 @@ featured_in = []
 [[sdks]]
 name = "µtrix"
 maintainer = "Dominik George; Project Hack'n'Fun @ Teckids e.V."
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Python"
 licence = "Apache-2.0"
 repository = "https://edugit.org/Teckids/hacknfun/libs/mytrix"
