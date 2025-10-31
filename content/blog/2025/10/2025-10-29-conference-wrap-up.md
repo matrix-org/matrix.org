@@ -63,6 +63,10 @@ But all the goodwill in the world won't go anywhere without the finances to rent
     alt="A picture of the booth of one of the Conference sponsors, Rocket.Chat, staffed by two people. Two attendees are standign in front of the booth and asking questions to the staff. On the booth table there are Rocket.Chat branded T-shirts folded."
 ) }}
 
-If you missed the Conference, you can watch the videos on demand and find the talks slides on the [Conference website](https://conference.matrix.org/watch). If you wanted to get some Conference gear but couldn't get one of those fantastic Black & White T-shirt or hoodie, you have until Monday 3 November to [order yours](https://conference.matrix.org/register/#tickets).
+If you missed the Conference, you will be able watch the videos on demand and find the talks slides on the [Conference website](https://conference.matrix.org/watch) right after we finish adding the photos. In the meantime you can find them on [our YouTube Channel](https://www.youtube.com/watch?v=Hvdlk3kz4wY&list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG) and on the Chaos Computer Club's [streaming platform](https://media.ccc.de/c/matrix-conf-2025).
+
+If you wanted to get some Conference gear but couldn't get one of those fantastic Black & White T-shirts or hoodies, you have until Monday 3 November to [order yours](https://conference.matrix.org/register/#tickets).
 
 Your next opportunity to catch up with us is at FOSDEM in Brussels, on January 31 and February 1, where we will be coordinating the Decentralized Communications Devroom. We also asked for a booth, but booth allocations haven't been announced yet. Heads-up that we will also organize a Fringe Event this year again, so make sure to be there a few days before FOSDEM!
+
+You can follow what we're up to on our socials ([Fediverse](https://mastodon.matrix.org/@matrix), [LinkedIn](https://www.linkedin.com/company/matrix-org), [Bluesky](https://bsky.app/profile/matrix.org)), you can follow our blog via RSS, or join our [Matrix Space](https://matrix.to/#/#community:matrix.org).
