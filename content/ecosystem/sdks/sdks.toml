@@ -330,7 +330,7 @@ repository = "https://github.com/quotient-im"
 purpose = ["client", "bot"]
 featured_in = []
 description = """
-A Qt5 library to write cross-platform clients for Matrix
+A Qt6 library to write cross-platform clients for Matrix
 """
 
 [[sdks]]
