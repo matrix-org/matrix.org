@@ -651,7 +651,7 @@ Matrix client SDK in Swift
 [[sdks]]
 name = "matrix_dotnet"
 maintainer = "Greenscreener"
-maturity = "Beta"
+maturity = "Obsolete"
 language = "C#"
 licence = "GPL-3.0-or-later"
 repository = "https://gitlab.com/Greenscreener/matrix-dotnet"
