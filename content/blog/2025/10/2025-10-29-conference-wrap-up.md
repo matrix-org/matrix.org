@@ -43,7 +43,7 @@ Amazingly, talks were not only live-streamed, they were then available on [our Y
     alt="A photo of a woman wearing a purple hoodie with the logo of The Matrix Conference embroidered prominently. She is looking at another volunteer, smiling. The other volunteer is operating video mixing software on a laptop."
 ) }}
 
-We owe this conference to volunteers. More than 30 of them signed up to give their time and enthusiasm to the Conference. They took shifts to welcome people at the check-in booth, operated cameras, controlled the video mixers, helped during build-up and tear down, and generally happily _asked for more things to do_. We are sincerely grateful to everyone who showed up to lend a hand. It is heartwarming to be part of such an engaged community!
+We owe this conference to volunteers. More than 30 of them signed up to give their time and enthusiasm to the Conference. They took shifts to welcome people at the check-in booth, operated cameras, controlled the video mixers, helped during build-up and tear down, and generally happily _asked for more things to do_. We are sincerely grateful to everyone who showed up to lend a hand. It is heartwarming to be part of such an engaged community! If you want to join this welcoming community, drop us a line in [the Events Working Group room](https://matrix.to/#/%23events-wg:matrix.org).
 
 {{ figure(
     img="/blog/img/conf25-stage-host.webp"
