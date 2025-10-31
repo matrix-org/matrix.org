@@ -405,7 +405,7 @@ featured_in = []
 [[sdks]]
 name = "dial-phone"
 maintainer = "mtorials"
-maturity = "Alpha"
+maturity = "Obsolete"
 language = "Kotlin"
 licence = "Apache-2.0"
 repository = "https://github.com/mtorials/dial-phone"
