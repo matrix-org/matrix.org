@@ -53,7 +53,7 @@ We owe this conference to volunteers. More than 30 of them signed up to give the
 
 But all the goodwill in the world won't go anywhere without the finances to rent a venue, get catering, and cover the general expenses to organize a conference. We also owe this conference to the sponsors who showed up en masse to support the event! Our gratitude goes particularly to:
 
-- Our Anchor and Video sponsor [Element](https://element.io/). You can find [their Keynote, _The Element Update: Shininess, Scalability, and Sustainability_ on our YouTube channel](https://www.youtube.com/watch?v=TZgcdgv2NXk&list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG&index=27).
+- Our Anchor and Video sponsor [Element](https://element.io/). You can find [their Keynote, _The Element Update: Shininess, Scalability and Sustainability_ on our YouTube channel](https://www.youtube.com/watch?v=TZgcdgv2NXk&list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG&index=27).
 - Our Champion sponsors [Rocket.Chat](https://rocket.chat), [Automattic](https://automattic.com/), [Connect2x](https://timmy-messenger.de/), [Famedly](https://www.famedly.com/)
 - Our Sustaining sponsors [ERCOM](https://cds.thalesgroup.com/en/ercom), [Futurewei](https://www.futurewei.com/) and [RISE](https://www.rise-world.com/de/)
 
