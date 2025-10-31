@@ -69,4 +69,4 @@ If you wanted to get some Conference gear but couldn't get one of those fantasti
 
 Your next opportunity to catch up with us is at FOSDEM in Brussels, on January 31 and February 1, where we will be coordinating the Decentralized Communications Devroom. We also asked for a booth, but booth allocations haven't been announced yet. Heads-up that we will also organize a Fringe Event this year again, so make sure to be there a few days before FOSDEM!
 
-You can follow what we're up to on our socials ([Fediverse](https://mastodon.matrix.org/@matrix), [LinkedIn](https://www.linkedin.com/company/matrix-org), [Bluesky](https://bsky.app/profile/matrix.org)), you can follow our blog via RSS, or join our [Matrix Space](https://matrix.to/#/#community:matrix.org).
+You can follow what we're up to on our socials ([Fediverse](https://mastodon.matrix.org/@matrix), [LinkedIn](https://www.linkedin.com/company/matrix-org), [Bluesky](https://bsky.app/profile/matrix.org)), you can follow our blog via RSS, or join our [Matrix Space](https://matrix.to/#/%23events-wg:matrix.org).
