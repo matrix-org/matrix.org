@@ -26,9 +26,9 @@ The first success was of course in attendance. With more than 250 attendees on-s
 The Conference started by a Barcamp/Unconference: it's an informal workshop day where people join and share the topics they want to talk and hear about. In the evening we all gathered for a Welcome Party at bar Le Météor. Rocket.Chat and Element sponsored the evening, so attendees only had to come and grab food and drinks. We're grateful to both Rocket.Chat and Element for offering us this great night of socializing!
 
 {{ figure(
-    img="/blog/img/conf25-yan-barcamp.webp"
+    img="/blog/img/conf25-barcamp.webp"
     caption=""
-    alt="A photo of a man wearing a hat and a purple hoodie. He holds a microphone and speaks in the middle of a crowd where many people are busy on their computers and talking to each other."
+    alt="A photo of a people sitting at a table in a busy area, talking to one another and working on their computers."
 ) }}
 
 The second and third days were the heart of the conference. The global show-up rate was high! Indeed, 96% of people who bought a ticket showed up. We asked people to optionally add their country of origin, and for those who replied 20 countries were represented. Matrix is already crossing seas and continents: the bulk of our audience came from Europe, but we also got representatives from Brazil, Canada and Japan! We got 68 speakers, including 2 remote sessions and 1 hybrid session. We concluded the conference by a slower day of workshops on Saturday where people remained very engaged.
