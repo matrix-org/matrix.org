@@ -593,7 +593,7 @@ repository = "https://cgit.rory.gay/matrix/LibMatrix.git"
 purpose = ["client", "bot", "bridge"]
 featured_in = ["client", "bot", "bridge"]
 description = """
-A .NET 8 library for interacting with Matrix.
+A .NET 10 library for interacting with Matrix.
 """
 
 [[sdks]]
