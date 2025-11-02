@@ -1,8 +1,8 @@
 [[working_groups]]
-name = "Website and Content"
+name = "Website & Content"
 summary = "Editoral and technical oversight of the main websites and socials"
 description = """
-The website and content working group is responsible for the editorial and technical oversight of the main Matrix websites and social media channels.
+The Website and Content Working Group is responsible for the editorial and technical oversight of the main Matrix websites and social media channels.
 This includes the main [matrix.org website](/), [conference website](https://conference.matrix.org), and the various social media channels.
 The group is responsible for ensuring that the websites are up to date, accurate, and reflect the current state of the Matrix ecosystem.
 It also includes [preparing and publishing](/twim-guide) the weekly This Week in Matrix news digest.
@@ -10,8 +10,12 @@ The group is not responsible for domain-specific content of other teams like the
 
 Note that this is not the complete list of responsibilities, but a high level overview.
 """
+charter = """
+charter goes here :)
+"""
 committee = "Community Committee"
 members = ["Thib", "HarHarLinks", "MTRNord"]
+chairs = ["MTRNord"]
 sponsor = "HarHarLinks"
 meetings = "Thursdays, 16:00-17:00 Berlin time. Please reach out via our Matrix room to join."
 matrix_room_alias = "#matrix.org-website:matrix.org"
@@ -21,7 +25,35 @@ email = ""
 name = "Events"
 summary = "Organising the Foundation's official events and appearances at conferences"
 description = """
-The Events working group is the main organising team of the official events hosted by the Foundation, such as the Matrix Conference or co-hosting FOSDEM Fringe, as well as official appearances at other conferences, e.g. the FOSDEM booth and devroom. The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the Matrix Community Summit, or the FrOSCon Matrix Community devroom, and aims to foster an ecosystem of decentralised events and user groups.
+The Events Working Group is the main organising team of the official events hosted by the Foundation, such as the Matrix Conference or co-hosting FOSDEM Fringe, as well as official appearances at other conferences, e.g. the FOSDEM booth and devroom. The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the Matrix Community Summit, or the FrOSCon Matrix Community devroom, and tries to foster an ecosystem of decentralised events and user groups.
+"""
+charter = """
+The Events Working Group is an outreach arm of the Matrix Foundation.
+It is the main organising team of the official events hosted by the Foundation, such as [The Matrix Conference](https://conference.matrix.org) or co-hosting [FOSDEM Fringe](https://fosdem.org/2026/fringe/), as well as official appearances at other conferences, e.g. the [FOSDEM](https://fosdem.org) booth and devroom.
+The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the [Matrix Community Summit](https://matrix-community.events), or the FrOSCon Matrix Community devroom, and tries to foster an ecosystem of decentralised events and user groups.
+
+Typical tasks include:
+
+- issue CfP, curation of talks, schedule building, pretalx
+- call for volunteers to staff events, shift assignment
+- merch
+  - [official merch](https://shop.matrix.org) available for sale/giveaway at event
+  - stickers available for giveaway
+  - event-specific, e.g. team shirts
+- design input
+- promotion & marketing, sponsoring, ticketing, pretix
+- coordinate video recording, podcasting, etc.
+- support community events
+  - Foundation-sponsored merch/stickers
+  - helpful hints how we handle running an event
+  - handling infrastructure support e.g. acting as financial entity
+- keeping tabs on all events globally that might be relevant
+  - for our own events to not collide with them
+  - to potentially participate in the future
+  - their CfPs etc
+- develop/maintain tooling/docs for running events on Matrix (pretix bot, FOSDEM widget, …)
+- maintain a knowledgebase at <https://handbook.matrix.org/>
+- make Matrix attractive to get invited to events
 """
 committee = "Community Committee"
 members = ["Yan", "Nadine", "Thib", "HarHarLinks", "The one with the braid", "Dominik"]
@@ -39,6 +71,9 @@ On the other hand the community can also benefit from having some of that inform
 The T&S R&D WG is a tool to help with that. It includes a wider set of individuals and reports their research results to the T&S committee. The WG is also encouraged to enhance the [documentation](/docs) on the Matrix.org website to help communities and users on Matrix moderate their rooms.
 The T&S committee might sometimes ask the WG for help in researching specific topics in more detail to guide their decisions.
 """
+charter = """
+charter goes here :)
+"""
 committee = "Trust & Safety Committee"
 members = ["Nico", "Cat", "Niko", "SFaulken", "Gnuxie"]
 sponsor = "Nico"
@@ -49,12 +84,25 @@ email = ""
 name = "Room Directory"
 summary = "Help maintain the room directory on the matrix.org homeserver"
 description = """
+The purpose of the room directory Working Group is to implement the matrix.org room directory policy, as described in that policy.
+
+Additionally the Working Group might propose improvements to the policy, which the T&S committee will then vote on.
+"""
+charter = """
+### Purpose
+
 The purpose of the room directory working group is to implement the matrix.org room directory policy, as described in that policy.
 
 Additionally the working group might propose improvements to the policy, which the T&S committee will then vote on.
+
+### Membership
+
+The membership of the room directory working group will be determined by the [Trust & Safety Committee of the Governing Board](@/foundation/governing-board/committees.md#trust-safety).
+Members may be added or removed by a majority vote of the T&S committee.
 """
 committee = "Trust & Safety Committee"
 members = ["Nico", "Sky", "mahdi", "Emma [it/its]", "Krille - Christian K."]
+chairs = ["Sky"]
 sponsor = "Nico"
 matrix_room_alias = "#room-dir-wg-office:neko.dev"
 email = ""
