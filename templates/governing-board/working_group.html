@@ -1,16 +1,19 @@
 {% extends "page.html" %}
 {% block content -%}
-<article class="content working-group-content">
+<article class="content">
     <header>
         <h1>{{ page.title }}</h1>
     </header>
 
-    {{ page.content | safe }}
-
-    {% set wg_path = page.path ~ "working_groups.toml" %}
+    {% set wg_path = page.path | split(pat="/") | slice(end=-2) | join(sep="/") %}
+    {% set wg_path = wg_path ~ "/working_groups.toml" %}
     {% set working_groups = load_data(path=wg_path, format="toml") %}
 
     {% for wg in working_groups.working_groups %}
+    {% if page.title is not starting_with(wg.name) %}
+    {% continue %}
+    {% endif %}
+
     {% if wg.committee == "Community Committee" %}
     {% set committee_id = "community" %}
     {% elif wg.committee == "Governance Committee" %}
@@ -22,24 +25,22 @@
     {% endif %}
 
     <section class="working_group">
-        <header>
-            <h2 id="{{ wg.name | slugify }}">{{ wg.name }} <span class="committee-pill {{ committee_id }}">{{ wg.committee
-                    }}</span>
-            </h2>
-            <hr />
-        </header>
-        <p class="summary">{{ wg.summary }}</p>
         <div class="description">
+            <h2 id="charter">Charter</h2>
+            <blockquote>
+                <p>{{ wg.charter | markdown(inline=true) | safe }}</p>
+            </blockquote>
+            <h2 id="members">Members</h2>
             <div class="members">
-                <p><strong>Members:</strong> {{ wg.members | join(sep=", ") }}</p>
+                <p>{{ wg.members | join(sep=", ") }}</p>
                 <p><strong>Sponsor:</strong> {{ wg.sponsor }}</p>
-                {% if wg.meetings %}<p><strong>Meeting schedule:</strong> {{ wg.meetings }}</p>{% endif %}
             </div>
-            <p>{{ wg.description | markdown(inline=true) | safe }}</p>
+            {% if wg.meeting %}
+            <h2 id="meetings">Meeting Schedule</h2>
+            <p>{{ wg.meeting }}</p>
+            {% endif %}
+            <h2 id="contact">Contact</h2>
             <div class="button-group">
-                {% if wg.charter %}
-                <a href="{{ wg.name | slugify }}#charter" class="button inverted"><span>Charter</span></a>
-                {% endif %}
                 <a href="https://matrix.to/#/{{ wg.matrix_room_alias }}" class="button"><svg viewBox="0 0 32 32"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M 30,2.0000001 V 30 h -1 -2 v 2 h 5 V -3.3333334e-8 L 27,0 v 2 z" />
@@ -64,6 +65,8 @@
                 {% endif %}
             </div>
         </div>
+
+        {{ page.content | safe }}
     </section>
     {% endfor %}
 
