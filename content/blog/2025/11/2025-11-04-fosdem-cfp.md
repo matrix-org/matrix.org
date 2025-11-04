@@ -54,15 +54,15 @@ Of course, the proposal must respect the FOSDEM terms as well:
 
 ## Code of Conduct
 
-All speakers and attendees agree that all of the presentations and discussions in our devroom are held under the guidelines set in the [FOSDEM Code of Conduct](https://fosdem.org/2026/practical/conduct/). We expect attendees, speakers, and volunteers to follow the CoC at all times.
+All speakers and attendees agree that all of the presentations and discussions in our Devroom are held under the guidelines set in the [FOSDEM Code of Conduct](https://fosdem.org/2026/practical/conduct/). We expect attendees, speakers, and volunteers to follow the CoC at all times.
 
-If you have any questions about the CoC or wish to have one of the devroom organisers review your presentation slides or any other content for CoC compliance, please email us and we will do our best to assist you.
+If you have any questions about the CoC or wish to have one of the Devroom organisers review your presentation slides or any other content for CoC compliance, please email us and we will do our best to assist you.
 
 ## Submitting a Proposal
 
-Proposals must be submitted on [FOSDEM's conference management system](https://pretalx.fosdem.org/). When submitting a proposal make sure to select the Decentralised Communication dev room.
+Proposals must be submitted on [FOSDEM's conference management system](https://pretalx.fosdem.org/). When submitting a proposal make sure to select the Decentralised Communication Devroom.
 
-We expect to receive more requests than we have slots available. The devroom organisers will be reviewing the proposals and accepting them based on the potential positive impact the project has on the Decentralised Communication space.
+We expect to receive more requests than we have slots available. The Devroom organisers will be reviewing the proposals and accepting them based on the potential positive impact the project has on the Decentralised Communication space.
 
 No particular project or protocol will be favoured or prioritised in selecting talks; instead the most interesting talks will be selected from across all parties, favouring project diversity wherever possible.
 
