@@ -70,4 +70,4 @@ If a project proposal has been turned down, it doesn't mean we don't believe it 
 
 ## Fringe Event
 
-We are currently organising a Fringe Event that will take the whole day in Friday. If you book your travel and accommodation for FOSDEM, try to arrive on Thursday night to enjoy the full day Friday!
+We are currently organising a Fringe Event that will take up the whole day on Friday January 30. If you book your travel and accommodation for FOSDEM, try to arrive on Thursday night to enjoy the full Friday!
