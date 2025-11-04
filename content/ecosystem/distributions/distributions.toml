@@ -34,12 +34,13 @@ matrix_standard = true
 
 [[distributions]]
 name = "ESS Community"
-description = "Element Server Suite Community Edition allows you to deploy a Matrix stack using the provided Helm charts and a Kubernetes distribution of your choice, even if you don't have Kubernetes knowledge."
+description = "Element Server Suite Community is a Matrix distribution from Element, the creators of Matrix. It is built with a focus on quality and ease of use for non-commercial community use cases."
 vendor = "Element"
 maturity = "Stable"
 frameworks = ["Kubernetes"]
 licence = "AGPL-3.0"
 repository = "https://github.com/element-hq/ess-helm"
+room = "#ess-community:element.io"
 support_level = "Community"
 matrix_standard = true
 
