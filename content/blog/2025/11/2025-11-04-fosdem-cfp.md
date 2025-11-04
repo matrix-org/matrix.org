@@ -66,7 +66,7 @@ We expect to receive more requests than we have slots available. The devroom org
 
 No particular project or protocol will be favoured or prioritised in selecting talks; instead the most interesting talks will be selected from across all parties, favouring project diversity wherever possible.
 
-If a project proposal has been turned down, it doesn't mean we don't believe it has good potential, and we strongly encourage you to highlight it in within your ecosystem's news bulletins to give it some visibility.
+If a project proposal has been turned down, it doesn't mean we don't believe it has good potential, and we strongly encourage you to highlight it within your ecosystem's news bulletins to give it some visibility.
 
 ## Fringe Event
 
