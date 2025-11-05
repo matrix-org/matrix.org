@@ -1,5 +1,5 @@
 +++
-date = "2025-11-04T16:00:00Z"
+date = "2025-11-05T10:00:00Z"
 title = "Call for Participation to the FOSDEM 2026 Decentralised Communications Devroom"
 
 [taxonomies]
