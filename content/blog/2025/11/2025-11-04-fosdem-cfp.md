@@ -71,3 +71,5 @@ If a project proposal has been turned down, it doesn't mean we don't believe it 
 ## Fringe Event
 
 We are currently organising a Fringe Event that will take up the whole day on Friday January 30. If you book your travel and accommodation for FOSDEM, try to arrive on Thursday night to enjoy the full Friday!
+
+You can follow our activities on our socials ([Fediverse](https://mastodon.matrix.org/@matrix), [LinkedIn](https://www.linkedin.com/company/matrix-org), [Bluesky](https://bsky.app/profile/matrix.org)), you can follow our blog via [RSS/atom](/atom.xml), or join the Events Working Group [Matrix room](https://matrix.to/#/%23events-wg:matrix.org) for updates and to get involved.
