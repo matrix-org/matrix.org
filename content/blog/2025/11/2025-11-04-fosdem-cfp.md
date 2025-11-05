@@ -33,7 +33,6 @@ Marketing talks are not welcome.
 Please note the following deadlines, that are global for FOSDEM and that we can't extend.
 
 * Conference dates: 31 Jan and 1 Feb 2026
-* Devroom date: ???
 * Submission deadline: 30 November
 * Announcement of selected talks: 15 December
 
