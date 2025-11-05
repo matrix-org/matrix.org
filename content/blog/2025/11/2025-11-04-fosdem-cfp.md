@@ -61,7 +61,7 @@ If you have any questions about the CoC or wish to have one of the Devroom organ
 
 ## Submitting a Proposal
 
-Proposals must be submitted on [FOSDEM's conference management system](https://pretalx.fosdem.org/). When submitting a proposal make sure to select the Decentralised Communication Devroom.
+Proposals must be submitted on [FOSDEM's conference management system](https://pretalx.fosdem.org/fosdem-2026/cfp). When submitting a proposal make sure to select the Decentralised Communication Devroom.
 
 We expect to receive more requests than we have slots available. The Devroom organisers will be reviewing the proposals and accepting them based on the potential positive impact the project has on the Decentralised Communication space.
 
