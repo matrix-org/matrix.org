@@ -12,6 +12,8 @@ image = "https://matrix.org/blog/img/matrix-fosdem.png"
 
 The Matrix.org Foundation will coordinate the FOSDEM 2026 Decentralised Communication Devroom, and is requesting submissions for talks!
 
+![A picture of people sitting in a university lecture room. They are listening to a speaker off the frame. The room is almost full.](/blog/img/fosdem25-devroom.webp)
+
 One of the most important roles for Free & Open Source Software right now is liberating users from being trapped and exploited by Big Tech. This is especially true of the fundamental need for humanity to communicate safely and securely, without being dependent on gatekeepers who pose a single point of control and failure.
 
 <!-- more -->
