@@ -193,7 +193,7 @@ The current chairs of the Governing Board are:
 ### Governance Committee
 
 * Bram van den Heuvel (he/they) — Chair
-* Vacant seat — Vice Chair
+* Neil Johnson (he/him) — Vice Chair
 
 </div>
 <div>
