@@ -40,7 +40,8 @@ On receipt, the security team will:
 The following is a list of known issues and/or things we do not consider to be
 an issue. Please **do not** send reports regarding the following:
 
-- Issues relating to SPF or DMARC.
+- Issues relating to SPF or DMARC
+- Reverse tabnabbing
 
 The Matrix.org Foundation does not ordinarily provide bug bounties, though
 organisations building on top of Matrix may do so in future. We maintain a
