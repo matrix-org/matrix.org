@@ -192,31 +192,66 @@ To contact the working group, you can always use our [public
 room](https://matrix.to/#/%23matrix.org-website:matrix.org) or, if this is not
 a suitable option for your inquiry, please reach out to a [WG
 member](https://matrix.org/foundation/working-groups/) via a DM.
+
+## AI Policy
+
 <!--
 SPDX-SnippetBegin
 SPDX-FileCopyrightText: 2025 Gusted
+SPDX-FileCopyrightText: 2025 The Matrix.org Foundation C.I.C.
 SPDX-License-Identifier: CC-BY-4.0
 -->
 
-## Terminology
+*This policy is based on [Forgejo's AI
+Agreement](https://codeberg.org/forgejo/governance/src/commit/ff60d7ed4b0f3d411e6a0b5ebe5813fcad87b9dd/AIAgreement.md).
+To understand more about its background, you may wish to study the discussion
+leading to its creation at
+<https://codeberg.org/forgejo/discussions/issues/366>.*
+
+### Terminology
 
 This does not necessarily reflect the official or commonly used terminology.
 
-Software and services that heavily rely on large language model technology to generate their outcomes are referred to as Artificial Intelligence (AI). Examples of products that fit this definition: GitHub Copilot, ChatGPT, Claude Sonnet, DeepSeek, Llama and Gemini.
+Software and services that heavily rely on large language model technology to
+generate their outcomes are referred to as Artificial Intelligence (AI).
+Examples of products that fit this definition:
+GitHub Copilot, ChatGPT, Claude Sonnet, DeepSeek, Llama and Gemini.
 
-There's a distinction between general and narrow AI, all the aforementioned examples fall under general AI as they were not trained to execute a specific well-defined task. Narrow AI is trained to be used for specific well-defined tasks where the problem space is known in advance.
+There's a distinction between general and narrow AI, all the aforementioned
+examples fall under general AI as they were not trained to execute a specific
+well-defined task.
+Narrow AI is trained to be used for specific well-defined tasks where the
+problem space is known in advance.
 
-Vibe coding is the practice where AI creates a code change (feature, bug fix, tests, refactor) with a human that describes what needs to be implemented.
+Vibe coding is the practice where AI creates a code change (feature, bug fix,
+tests, refactor) with a human that describes what needs to be implemented.
 
-AI agents are AIs that are configured to perform interactions or make changes with little to no human supervision. 
+AI agents are AIs that are configured to perform interactions or make changes
+with little to no human supervision.
 
-## Agreement
+### Agreement
 
-1. If content was made with the help of AI, you must convey that this is the case. This includes content that you authored but was motivated by a suggestion of AI.
-2. If at any point you used AI's work in your contribution you should make an effort to verify that you can submit this under the license of the repository.
-3. The accountability of using AI in a contribution lies with the person that makes that contribution.
-4. All communication, that includes: commit messages, pull request messages, documentation, code comments and issues (and comments on issues/pull requests), that is intended to be read by people to understand your thoughts and work must not have been generated with AI. We exclude machine translation and tooling that helps with grammar and spelling check.
-5. Using general AI for review is forbidden. If the change contains changes to the UX it has to be approved by a human reviewer.
-6. It is not allowed to use AI in an autonomous-looking way to contribute in Forgejo. This also applies when someone engages in 'vibe coding' or uses so-called 'agent mode'.
+1. If content was made with the help of AI, you MUST convey that this is the
+   case.
+   This includes content that you authored but was motivated by a suggestion of
+   AI.
+2. If at any point you used AI's work in your contribution you should make an
+   effort to verify that you can submit this under the license of the
+   repository.
+3. The accountability of using AI in a contribution lies with the person that
+   makes that contribution.
+4. All communication, that includes: commit messages, pull request messages,
+   documentation, code comments and issues (and comments on issues/pull
+   requests), that is intended to be read by people to understand your thoughts
+   and work MUST NOT have been generated with AI.
+   We exclude machine translation and tooling that helps with grammar and
+   spelling check.
+5. Using general AI for review is forbidden.
+   If the change contains changes to the UX it has to be approved by a human
+   reviewer.
+6. It is not allowed to use AI in an autonomous-looking way to contribute to
+   this repository.
+   This also applies when someone engages in 'vibe coding' or uses so-called
+   'agent mode'.
 
 <!-- SPDX-SnippetEnd -->
