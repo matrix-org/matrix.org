@@ -16,6 +16,10 @@ title = "Archive"
 href = "/blog/archive/"
 
 [[header.children]]
+title = "TWIM"
+href = "/category/this-week-in-matrix/"
+
+[[header.children]]
 title = "Authors"
 href = "/author/"
 
