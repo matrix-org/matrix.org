@@ -1,3 +1,5 @@
+{% import "macros/language_helpers.html" as lang_helper %}
+
 {% macro sdks_panel(type) %}
 {% set sdks_data = load_data(path="content/ecosystem/sdks/sdks.toml") %}
 {% set licences = [] %}
@@ -56,6 +58,7 @@
                     <label for="licence-{{ licence | slugify }}">{{ licence }}</label>
                 </div>
                 {% endfor %}
+
                 <div class="reset-links">Select <button>all</button> - <button>none</button></div>
             </div>
         </div>
@@ -68,11 +71,13 @@
             <div id="{{ type }}-sdks-filter-language-menu" class="filter-menu">
                 <p>The client must support any of the languages checked.</p>
                 {% for language in languages %}
-                <div class="filter-option">
-                    <input id="language-{{ language | slugify }}" type="checkbox" checked>
-                    <label for="language-{{ language | slugify }}">{{ language }}</label>
-                </div>
+                    {% set language_slug = lang_helper::normalize_language(lang=language) %}
+                    <div class="filter-option">
+                        <input id="language-{{ language_slug }}" type="checkbox" checked>
+                        <label for="language-{{ language_slug }}">{{ language }}</label>
+                    </div>
                 {% endfor %}
+
                 <div class="reset-links">Select <button>all</button> - <button>none</button></div>
             </div>
         </div>
@@ -81,9 +86,10 @@
     <div id="{{ type }}-sdks" class="projects-card-deck">
         {% for sdk in sdks_data.sdks | sort(attribute="maturity") | reverse %}
         {% if sdk.purpose is containing(type) %}
+        {% set language_slug = lang_helper::normalize_language(lang=sdk.language) %}
         <div>
             <div
-                class="project-card maturity-{{ sdk.maturity | lower }} licence-{{ sdk.licence | slugify }} language-{{ sdk.language | slugify }}">
+                class="project-card maturity-{{ sdk.maturity | lower }} licence-{{ sdk.licence | slugify }} language-{{ language_slug }}">
                 <div class="title-row">
                     <h3>{{ sdk.name }}</h3>
                     <div class="maturity {{ sdk.maturity | lower }}">{{ sdk.maturity }}</div>
