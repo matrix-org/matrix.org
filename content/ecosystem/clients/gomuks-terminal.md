@@ -1,6 +1,7 @@
 +++
 title = "gomuks terminal"
 [extra]
+thumbnail = "gomuks.png"
 maintainer = "Tulir"
 licence = "AGPL-3.0-or-later"
 language = "Go"
