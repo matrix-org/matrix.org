@@ -15,6 +15,7 @@ This section of the website collects all the related information about the matri
 
 - [What is the "Matrix.org (Official Account)"?](@/homeserver/official.md)
 - [Matrix.org Homeserver Pricing](@/homeserver/pricing.md)
+- [Matrix.org Room Directory](@/homeserver/room_directory.md)
 
 You can find the [legal documents](@/legal/_index.md) related to usage of the matrix.org homeserver here:
 
