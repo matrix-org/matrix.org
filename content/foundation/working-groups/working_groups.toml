@@ -11,7 +11,72 @@ The group is not responsible for domain-specific content of other teams like the
 Note that this is not the complete list of responsibilities, but a high level overview.
 """
 charter = """
-charter goes here :)
+Paramount to all these formalities we are introducing by creating a WG from a Foundation staffer with some volunteers, is to provide a framework that enables their work. This should particularly mean that everything we establish here should streamline things, avoid discussion by drawing clear lines, etc. and NOT drowning in bureaucracy. Some of these processes will necessarily introduce a bit of potential friction and we should be careful to design these parts as lightweight and streamlinable as possible.
+
+### Membership
+
+- the WG can let any community member in good standing join on its own judgement
+- any GB member can join the WG
+- the GB can recommend people to be considered for joining/removal
+
+### Powers and responsibilities
+
+- editorial rights to the matrix.org website repo, including blog & TWIM
+  - except
+    - security team has the security hall of fame subpage content
+    - legal team has legal content
+    - matrix.org homeserver team ("backend team") has things directly related to running the HS such as .well-known
+    - (SCT has [spec.matrix.org](https://spec.matrix.org))
+  - create process around blog posts e.g. to coordinate publishing on certain time
+    - creates the responsibility of availability
+    - on certain topics might require more setup, e.g. blog posts on security issues
+    - this needs to be streamlined enough to avoid potential of e.g. too much nitpicking. for example pre-approving content, etc.
+  - the WG may decide to not publish things or ask for changes, according to the content policy/communication strategy (see below). changes to the content require the original author's approval before publishing.
+    - the WG can also delegate review approvals
+  - establish clear criteria about projects listed under /ecosystem (e.g. maturity status, featured), to be signed off by the GB
+  - create and maintain "core" content
+    - initially: improve documentation/onboarding experience for new users
+nd communities (e.g. the /docs page)
+    - propose a list of things that are "core" content
+  - establish a policy/clean-up process for unverified content
+    - do docs authors have responsibility for their content?
+- conference website, in agreement with the Events WG
+  - here, events WG would be responsible for content, and Website WG for tech
+  - process for joint responsibilities like this to be created by the joint WGs/teams
+- TWIM helper/tooling repos
+- administration of (deployed) tooling
+  - e.g. TWIM bot
+  - e.g. cloudflare
+  - processes around this to be created by the WG. e.g. delegation of admin tasks (-> currently by SRE team on Fdn k8s)
+- Matrix Live
+  - for now, it seems to fit best in this WG
+  - content creation can be delegated
+  - review (content and technical e.g. editing) and publish it
+- manage respective rooms: TWIM, TWIM offtopic, website, news room
+  - Manage the [#community:matrix.org](https://matrix.to/#/#community:matrix.org) space
+    - making this known and establishing processes for it
+  - shared with T&S
+- socials
+  - YouTube: descriptions, playlists, comments, ...
+  - mastodon.matrix.org
+    - decide what is the commitment for the @matrix account here
+    - document some expectations to content posted/other interactions
+    - blog posts and other things published by the WG are posted
+    - set some baseline rules
+  - etc -> see list in the Fdn handbook
+    - see mastodon
+    - document any accounts and who has access
+- help establish the communication strategy/content policy and review any activity in the repo & other outlets to make sure we follow it
+  - also see the existing proposals in the handbook
+  - e.g. set a (technical) policy for pushes to main that all contributions must follow
+  - e.g. m.org blog posts
+  - e.g. label appearances of non-Foundation entities clearly on Matrix Live (e.g. Element Demos)
+  - mark authors and explain their role
+- technical oversight of shop.matrix.org
+  - access to administrate it
+  - ensuring that one can actually buy an article without the website exploding
+  - ability to update documentation, i.e. making sure the modalities are as clear and easy to find as possible
+  - this explicitly excludes decisions about the merchandise sold on the store and the financial aspects, but includes only the technical operation.
 """
 committee = "Community Committee"
 members = ["Thib", "HarHarLinks", "MTRNord"]
