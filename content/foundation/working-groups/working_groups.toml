@@ -137,7 +137,37 @@ The T&S R&D WG is a tool to help with that. It includes a wider set of individua
 The T&S Committee might sometimes ask the WG for help in researching specific topics in more detail to guide their decisions.
 """
 charter = """
-charter goes here :)
+### Purpose
+
+To make appropriate decisions, the T&S committee needs to know about the state of T&S in the wider ecosystem. It needs to have insights into current challenges, solutions and initiatives.
+On the other hand the community can also benefit from having some of that information documented.
+The T&S R&D WG is a tool to help with that. It includes a wider set of individuals and reports their research results to the T&S committee. In some cases the WG is also encouraged to enhance the documentation on matrix.org to help communities and users on Matrix moderate their rooms.
+The T&S committee might sometimes ask the WG for help in researching specific topics in more detail to guide their decisions.
+
+### Pledge of Confidentiality
+
+The WG will sometimes have to deal or come in contact with confidential data, possibly
+because of legal reasons, possibly because of active abuse concerns. While the
+WG is encouraged to be open, there
+will be times where the WG should keep certain information
+confidential and only share it with specific individuals. As the WG we pledge
+to keep information confidential when necessary while still being transparent
+and open where possible.
+The T&S committee may decide to remove members from the WG if it sees a member abusing their access to information or not acting in a trustworthy manner by sharing information the group agreed to keep confidential. This should be a last resort, needs a majority in the T&S committee and should be preceded by appropriate communication and warnings.
+
+### Typical Tasks
+
+- Gather information about current moderation challenges on Matrix and keep structured notes about them
+- Maintain an overview of available moderation tools and their capabilities
+- Create and maintain moderation guides on matrix.org in collaboration with the Website or Documentation WGs
+- Reach out to moderators to gather feedback or offer advice
+- Reports insights and opinions to the T&S committee and possibly other T&S working groups
+- Potentially collaborate on proposals with the T&S committee or other WGs
+- Turn some of their research into MSCs and collaboratively push them to completion as well as advise on other MSCs from a T&S perspective
+
+### Initial Members
+
+Interested members should be able to apply to the WG freely, but the WG and the T&S committee should do a short background check, if they are willing to give the applicant access to the information or if there are any active abuse concerns. This should be a low bar to clear, but is intended to keep malicious individuals out.
 """
 committee = "Trust & Safety Committee"
 members = ["Nico", "Cat", "Niko", "SFaulken", "Gnuxie"]
