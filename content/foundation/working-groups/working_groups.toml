@@ -11,6 +11,8 @@ The group is not responsible for domain-specific content of other teams like the
 Note that this is not the complete list of responsibilities, but a high level overview.
 """
 charter = """
+### Purpose
+
 Paramount to all these formalities we are introducing by creating a WG from a Foundation staffer with some volunteers, is to provide a framework that enables their work. This should particularly mean that everything we establish here should streamline things, avoid discussion by drawing clear lines, etc. and NOT drowning in bureaucracy. Some of these processes will necessarily introduce a bit of potential friction and we should be careful to design these parts as lightweight and streamlinable as possible.
 
 ### Membership
@@ -93,11 +95,13 @@ description = """
 The Events Working Group is the main organising team of the official events hosted by the Foundation, such as The Matrix Conference or co-hosting FOSDEM Fringe, as well as official appearances at other conferences, e.g. the FOSDEM booth and devroom. The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the Matrix Community Summit, or the FrOSCon Matrix Community devroom, and tries to foster an ecosystem of decentralised events and user groups.
 """
 charter = """
+### Purpose
+
 The Events Working Group is an outreach arm of The Matrix Foundation.
 It is the main organising team of the official events hosted by the Foundation, such as [The Matrix Conference](https://conference.matrix.org) or co-hosting [FOSDEM Fringe](https://fosdem.org/2026/fringe/), as well as official appearances at other conferences, e.g. the [FOSDEM](https://fosdem.org) booth and devroom.
 The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the [Matrix Community Summit](https://matrix-community.events), or the FrOSCon Matrix Community devroom, and tries to foster an ecosystem of decentralised events and user groups.
 
-Typical tasks include:
+### Typical Tasks
 
 - issue CfP, curation of talks, schedule building, pretalx
 - call for volunteers to staff events, shift assignment
