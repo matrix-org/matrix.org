@@ -69,41 +69,41 @@ them to show individual images when they are ready.
 In Fractal, images in public rooms are hidden by default. You can check and
 adjust this in Account Settings.
 
-![](fractal_menu_settings.png)
+![](fractal_menu_settings.avif)
 
 Choose Safety, and find "Media Previews". Make sure "Show only in private rooms"
 is selected.
 
-![](fractal_settings_safety.png)
+![](fractal_settings_safety.avif)
 
 Now images will be hidden by default. You can make them visible by clicking on
 "Click to show preview".
 
-![](fractal_show_image.png)
+![](fractal_show_image.avif)
 
 You can re-hide them by choosing the "eye" icon in the corner of the image.
 
-![](fractal_hide_image.png)
+![](fractal_hide_image.avif)
 
 ### In Element X
 
 In Element X, you can hide images in public rooms in Settings, by tapping on
 your avatar.
 
-![](element_x_main.png)
+![](element_x_main.avif)
 
 Choose Advanced Settings.
 
-![](element_x_settings.png)
+![](element_x_settings.avif)
 
 Under "Show media in timeline" choose "In private rooms"
 
-![](element_x_advanced_settings.png)
+![](element_x_advanced_settings.avif)
 
 Now images will be hidden by default. You can make them visible by clicking on
 "Show".
 
-![](element_x_show_image.png)
+![](element_x_show_image.avif)
 
 To hide an image after it has been shown, go back to the room list and re-enter
 the room.
@@ -112,21 +112,21 @@ the room.
 
 In Element Web, you can hide images in public rooms in Settings.
 
-![](element_menu_settings.png)
+![](element_menu_settings.avif)
 
 Choose Preferences, and scroll down to Moderation and safety. Click "In private
 rooms" under "Show media in timeline".
 
-![](element_settings_preferences_safety.png)
+![](element_settings_preferences_safety.avif)
 
 Now images will be hidden by default. You can make them visible by clicking on
 "Show image".
 
-![](element_show_image.png)
+![](element_show_image.avif)
 
 You can re-hide them by choosing the "eye" icon when you hover over the image.
 
-![](element_hide_image.png)
+![](element_hide_image.avif)
 
 ## Browsing the public directory
 
