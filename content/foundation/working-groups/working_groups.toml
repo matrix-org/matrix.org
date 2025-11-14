@@ -6,7 +6,7 @@ The Website and Content Working Group is responsible for the editorial and techn
 This includes the main [matrix.org website](/), [conference website](https://conference.matrix.org), and the various social media channels.
 The group is responsible for ensuring that the websites are up to date, accurate, and reflect the current state of the Matrix ecosystem.
 It also includes [preparing and publishing](/twim-guide) the weekly This Week in Matrix news digest.
-The group is not responsible for domain-specific content of other teams like the [spec](https://spec.matrix.org) website, matrix.org Homeserver related configurations or the [legal](/legal) and [security](/security-disclosure-policy) sections of the website.
+The group is not responsible for domain-specific content of other teams like the [spec](https://spec.matrix.org) website, matrix.org homeserver related configurations or the [legal](/legal) and [security](/security-disclosure-policy) sections of the website.
 
 Note that this is not the complete list of responsibilities, but a high level overview.
 """
@@ -131,10 +131,10 @@ email = "events-wg@foundation.matrix.org"
 name = "Trust & Safety Research & Documentation"
 summary = "Documenting and Researching the state of Trust and Safety in the ecosystem"
 description = """
-To make appropriate decisions, the T&S committee needs to know about the state of T&S in the wider ecosystem. It needs to have insights into current challenges, solutions and initiatives.
+To make appropriate decisions, the T&S Committee needs to know about the state of T&S in the wider ecosystem. It needs to have insights into current challenges, solutions and initiatives.
 On the other hand the community can also benefit from having some of that information documented.
-The T&S R&D WG is a tool to help with that. It includes a wider set of individuals and reports their research results to the T&S committee. The WG is also encouraged to enhance the [documentation](/docs) on the matrix.org website to help communities and users on Matrix moderate their rooms.
-The T&S committee might sometimes ask the WG for help in researching specific topics in more detail to guide their decisions.
+The T&S R&D WG is a tool to help with that. It includes a wider set of individuals and reports their research results to the T&S Committee. The WG is also encouraged to enhance the [documentation](/docs) on the matrix.org website to help communities and users on Matrix moderate their rooms.
+The T&S Committee might sometimes ask the WG for help in researching specific topics in more detail to guide their decisions.
 """
 charter = """
 charter goes here :)
@@ -151,19 +151,19 @@ summary = "Help maintain the room directory on the matrix.org homeserver"
 description = """
 The purpose of the room directory Working Group is to implement the matrix.org room directory policy, as described in that policy.
 
-Additionally the Working Group might propose improvements to the policy, which the T&S committee will then vote on.
+Additionally the Working Group might propose improvements to the policy, which the T&S Committee will then vote on.
 """
 charter = """
 ### Purpose
 
-The purpose of the room directory working group is to implement the matrix.org room directory policy, as described in that policy.
+The purpose of the Room Directory Working Group is to implement the matrix.org room directory policy, as described in that policy.
 
-Additionally the working group might propose improvements to the policy, which the T&S committee will then vote on.
+Additionally the Working Group might propose improvements to the policy, which the T&S Committee will then vote on.
 
 ### Membership
 
-The membership of the room directory working group will be determined by the [Trust & Safety Committee of the Governing Board](@/foundation/governing-board/committees.md#trust-safety).
-Members may be added or removed by a majority vote of the T&S committee.
+The membership of the Room Directory Working Group will be determined by the [Trust & Safety Committee of the Governing Board](@/foundation/governing-board/committees.md#trust-safety).
+Members may be added or removed by a majority vote of the T&S Committee.
 """
 committee = "Trust & Safety Committee"
 members = ["Nico", "Sky", "mahdi", "Emma [it/its]", "Krille - Christian K."]
