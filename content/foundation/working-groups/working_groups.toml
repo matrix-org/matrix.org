@@ -125,6 +125,7 @@ The WG also acts as first contact point for similar community endeavours, e.g. i
 """
 committee = "Community Committee"
 members = ["Yan", "Nadine", "Thib", "HarHarLinks", "The one with the braid", "Dominik"]
+chairs = ["HarHarLinks"]
 sponsor = "HarHarLinks"
 meetings = "Mondays, 16:00-17:00 Berlin time. Please reach out via our Matrix room."
 matrix_room_alias = "#events-wg:matrix.org"
@@ -174,6 +175,7 @@ Interested members should be able to apply to the WG freely, but the WG and the 
 """
 committee = "Trust & Safety Committee"
 members = ["Nico", "Cat", "Niko", "SFaulken", "Gnuxie"]
+chairs = ["Niko", "Cat"]
 sponsor = "Nico"
 matrix_room_alias = "#tns-rnd-wg-office:neko.dev"
 email = ""
