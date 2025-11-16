@@ -3,7 +3,7 @@ title = "Room Directory WG"
 template = "governing-board/working_group.html"
 +++
 
-## Room Directory policy
+## Room Directory Policy
 
 ???
 
