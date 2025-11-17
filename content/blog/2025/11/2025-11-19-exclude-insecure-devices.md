@@ -15,4 +15,4 @@ If you missed [Andy’s talk](https://media.ccc.de/v/matrix-conf-2025-72625-invi
 
 As Andy also mentions in his talk, Element is planning to change the defaults in its clients to follow MSC4153’s recommendations to exclude non-cross-signed devices in **April 2026**. In preparation, the Element clients will very soon start to force users to verify their own devices so that those users are not shut out come April.
 
-If you are a client developer, we encourage you to take a similar approach of encouraging users to verify their devices, so that they are not excluded from the conversation as the ecosystem moves towards MSC4153 compliance. And if you are a user, make sure your devices are verified\!
+If you are a client developer, we encourage you to take a similar approach of encouraging users to verify their devices, so that they are not excluded from the conversation as the ecosystem moves towards MSC4153 compliance. And if you are a user, make sure your devices are verified!
