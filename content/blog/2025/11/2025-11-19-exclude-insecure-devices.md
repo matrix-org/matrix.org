@@ -3,7 +3,7 @@ date = "2025-11-19"
 title = '"Exclude insecure devices" is coming'
 
 [taxonomies]
-author = ["Rich vdH"]
+author = ["Richard van der Hoff"]
 category = ["Cryptography", "Encryption", "Spec"]
 +++
 
