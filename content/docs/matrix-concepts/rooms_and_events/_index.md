@@ -146,7 +146,7 @@ else.
 }}
 
 If Walter fiddled with its homeserver database to alter its local copy of the
-room, his change would not propagate: nobody has granted him power level 0: when
+room, his change would not propagate: nobody has granted him power level 100: when
 the other homeservers would want to update their local copy of the room, they
 would reject the change making Walter administrator of the room.
 
