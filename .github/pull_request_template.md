@@ -25,7 +25,7 @@
   - [ ] Verify the date and post ordering on the `/blog` page, especially for multiple posts on the same day. Prefer UTC format, e.g. `2025-12-01T14:00:00Z` for Dec 1st, 2025, 2pm UTC.
   - [ ] Set the correct author and category. Browse existing ones at <https://matrix.org/author/> and <https://matrix.org/category/> to match them.
 - [ ] If you hold a specific role in relation to the content you are contributing, such as project maintainer or on behalf of a team or organisation, please let us know. See [example](https://github.com/matrix-org/matrix.org/pull/2969).
-- [ ] If your PR is time-sensitive in any way, please mention the attached timeline in the PR description.
+- [ ] If your PR is time-sensitive in any way, please mention the attached timeline and context in the PR description.
 - [ ] Mention any issues related to the PR. Use [GitHub keywords](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) as appropriate.
 - [ ] Your individual commits or pull request is [signed off](https://github.com/matrix-org/matrix.org/blob/main/CONTRIBUTING.md).
 
