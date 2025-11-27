@@ -1,4 +1,33 @@
 [[bridges]]
+name = "mautrix-slack"
+maintainer = "Beeper, Tulir"
+summary = """
+A Matrix-Slack puppeting bridge. Written in Go using a fork of
+[slack-go](https://github.com/slack-go/slack)
+"""
+maturity = "Beta"
+language = "Go"
+license = "AGPL-3.0-or-later"
+docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=slack"
+repo = "https://github.com/mautrix/slack"
+room = "#slack:maunium.net"
+featured = true
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+channels = true
+formatted_text = true
+message_media = true
+mentions = true
+threads = true
+redactions = true
+editing = true
+reactions = true
+presence = true
+typing_notifications = true
+
+[[bridges]]
 name = "matrix-appservice-slack"
 maintainer = "Matrix.org Foundation"
 summary = """
@@ -29,35 +58,6 @@ editing = true
 reactions = true
 presence = true
 typing_notifications = false
-
-[[bridges]]
-name = "mautrix-slack"
-maintainer = "Beeper, Tulir"
-summary = """
-A Matrix-Slack puppeting bridge. Written in Go using a fork of
-[slack-go](https://github.com/slack-go/slack)
-"""
-maturity = "Beta"
-language = "Go"
-license = "AGPL-3.0-or-later"
-docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=slack"
-repo = "https://github.com/mautrix/slack"
-room = "#slack:maunium.net"
-featured = true
-privilege.platform = "User" # Free text
-privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
-[bridges.supports]
-dm = true
-channels = true
-formatted_text = true
-message_media = true
-mentions = true
-threads = true
-redactions = true
-editing = true
-reactions = true
-presence = true
-typing_notifications = true
 
 [[bridges]]
 name = "matrix-puppet-slack"
