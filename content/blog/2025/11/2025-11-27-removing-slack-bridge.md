@@ -15,7 +15,7 @@ The Matrix.org Foundation has been hosting a free of charge Slack bridge for use
 
 This is why, without enough customers paying for it and despite the efforts of the community trying to help, Element will not continue to maintain this bridge. As a result, the Foundation will no longer provide this service to matrix.org users. We want to thank Element for all these years of graciously maintaining a bridge for us.
 
-### What this means for users
+## What this means for users
 
 The Slack bridge will be removed from **matrix.org** on **December 10**. After this date, rooms connected to Slack will stop receiving new messages, and no new connections will be accepted. Existing messages and room history in Matrix will remain available, but the link to Slack will be closed.
 
@@ -29,7 +29,7 @@ The following bridges will remain online.
 | Snoonet  | IRC      | [matrix-appservice-irc](https://github.com/matrix-org/matrix-appservice-irc/) |
 | Bifrost  | XMPP     | [matrix-bifrost](https://github.com/matrix-org/matrix-bifrost)                |
 
-### Looking ahead
+## Looking ahead
 
 Bridges are an important part of the Matrix ecosystem. They connect Matrix rooms to conversations on other platforms, helping users communicate without needing to maintain multiple accounts or abandon existing communities. They also help onboard users in the Matrix network. This bridging capability allows Matrix to act as a unifying layer across fragmented chat systems.
 
