@@ -71,7 +71,7 @@ part of the [matrix-puppet-bridge](https://github.com/matrix-hacks/matrix-puppet
 suite of puppetting bridges. It can be used for existing chats, rather than
 initiating new ones.
 """
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Javascript"
 license = "Licence unknown"
 repo = "https://github.com/matrix-hacks/matrix-puppet-slack"
