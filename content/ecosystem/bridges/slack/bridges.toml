@@ -8,7 +8,7 @@ with active development on new features as they arrive. Check the list below for
 
 The bridge is regularly hacked on and is accepting new PRs for bugfixes and features, come and get involved!
 """
-maturity = "Stable"
+maturity = "Obsolete"
 language = "TypeScript"
 license = "Apache-2.0"
 docs = "https://matrix-appservice-slack.readthedocs.io/en/latest/getting_started/"
