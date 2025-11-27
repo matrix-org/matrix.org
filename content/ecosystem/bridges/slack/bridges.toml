@@ -14,7 +14,7 @@ license = "Apache-2.0"
 docs = "https://matrix-appservice-slack.readthedocs.io/en/latest/getting_started/"
 repo = "https://github.com/matrix-org/matrix-appservice-slack"
 room = "#matrix_appservice_slack:cadair.com"
-featured = true
+featured = false
 privilege.platform = "Admin" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
 [bridges.supports]
