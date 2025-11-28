@@ -215,7 +215,6 @@ After closing the entries, the editor does a last manual best-effort check if al
 been collected by the bot and assigned the right project or category, fixing any stragglers.
 Finally, the editor `!render`s the bot's digest to Markdown and adds it to a feature branch of
 the website repository to finish it up:
-- configure the right `path` in the metadata
 - add Matrix Live video embed and title
 - poll the ping stats and include them in the post
 - add any submitted images to the repo and write `alt` text for accessibility
