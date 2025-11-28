@@ -208,8 +208,8 @@ The current chairs of the Governing Board are:
 
 ### Finance & Fundraising Committee
 
-* Robin Riley (they/them) — Chair
-* Vacant seat — Vice Chair
+* Gnuxie (she/her) — Chair
+* Amandine Le Pape (she/her) — Vice Chair
 
 </div>
 <div>
