@@ -1,5 +1,5 @@
 +++
-date = "2025-11-27"
+date = "2025-11-28T09:30:00Z"
 title = "Retiring the Slack Bridge on matrix.org"
 
 [taxonomies]
@@ -17,7 +17,7 @@ This is why, without enough customers paying for it and despite the efforts of t
 
 ## What this means for users
 
-The Slack bridge will be removed from **matrix.org** on **December 10**. After this date, rooms connected to Slack will stop receiving new messages, and no new connections will be accepted. Existing messages and room history in Matrix will remain available, but the link to Slack will be closed.
+The Slack bridge will be removed from **matrix.org** on **January 13**. After this date, rooms connected to Slack will stop receiving new messages, and no new connections will be accepted. Existing messages and room history in Matrix will remain available, but the link to Slack will be closed.
 
 Users who rely on Slack bridging are encouraged to take over its maintenance, find a supplier who can maintain it for them, or [explore alternatives](@/ecosystem/bridges/slack/_index.md). If you operate your own Matrix homeserver, you are able to host your own instance of the Slack bridge or develop one that suits your needs. However, please note that ongoing maintenance will be required to keep such a bridge functioning as Slack evolves its APIs.
 
