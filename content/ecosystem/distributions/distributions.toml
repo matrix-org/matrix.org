@@ -37,7 +37,7 @@ name = "ESS Community"
 description = "Element Server Suite Community is a Matrix distribution from Element, the creators of Matrix. It is built with a focus on quality and ease of use for non-commercial community use cases."
 vendor = "Element"
 maturity = "Stable"
-frameworks = ["Kubernetes"]
+frameworks = ["Helm","Kubernetes"]
 licence = "AGPL-3.0"
 repository = "https://github.com/element-hq/ess-helm"
 room = "#ess-community:element.io"
@@ -67,3 +67,15 @@ repository = "https://github.com/spantaleev/matrix-docker-ansible-deploy"
 room = "#matrix-docker-ansible-deploy:devture.com"
 support_level = "Community"
 matrix_standard = true
+
+[[distributions]]
+name = "ESS Pro"
+description = "Element Server Suite Pro is an enterprise backend for Matrix-based communications."
+vendor = "Element"
+maturity = "Stable"
+frameworks = ["Helm","Kubernetes"]
+licence = "Element Commercial License"
+website = "https://element.io/server-suite"
+support_level = "Commercial"
+matrix_standard = true
+
