@@ -29,4 +29,7 @@ jobs:
             gh pr edit $PR_NUMBER --add-label 'missing-template'
             gh pr review $PR_NUMBER --request-changes --body "Thanks for contributing to the matrix.org website. I have automatically marked your pull request as a draft. Please restore the [PR template]($BASE_URL/.github/pull_request_template.md?plain=1) to your PR description and follow our [contributing guidelines]($BASE_URL/CONTRIBUTING.md), then undraft to let the team know the PR is ready for review."
           fi
-          gh pr edit $PR_NUMBER --remove-label 'missing-template' && gh pr review $PR_NUMBER --approve || true
+          if gh pr view $PR_NUMBER --json 'labels' | grep -q "missing-template"; then
+            gh pr edit $PR_NUMBER --remove-label 'missing-template'
+            gh pr review $PR_NUMBER --approve
+          fi
