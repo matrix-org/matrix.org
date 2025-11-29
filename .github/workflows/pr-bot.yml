@@ -2,7 +2,7 @@ name: PR Bot
 
 on:
   pull_request:
-    types: [opened, reopened]  # https://docs.github.com/en/webhooks/webhook-events-and-payloads?actionType=ready_for_review#pull_request
+    types: [opened, reopened, ready_for_review]  # https://docs.github.com/en/webhooks/webhook-events-and-payloads?actionType=ready_for_review#pull_request
 
 jobs:
   missing-template:
@@ -21,10 +21,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           BASE_URL: ${{ github.server.url }}/${{ github.repository }}/blob/main
+          PR_NUMBER: ${{ github.event.number }}
         working-directory: ${{ env.CHECKOUT_DIR }}
         run: |
-          if ! gh pr view $GITHUB_HEAD_REF --json 'body' | grep -q "don't remove this checklist from your PR"; then
-            gh pr ready $GITHUB_HEAD_REF --undo  # mark as draft
-            gh pr edit $GITHUB_HEAD_REF --add-label 'missing-template'
-            gh pr review $GITHUB_HEAD_REF --request-changes --body "Thanks for contributing to the matrix.org website. I have automatically marked your pull request as a draft. Please restore the [PR template]($BASE_URL/.github/pull_request_template.md?plain=1) to your PR description and follow our [contributing guidelines]($BASE_URL/CONTRIBUTING.md), then undraft to let the team know the PR is ready for review."
+          if ! gh pr view $PR_NUMBER --json 'body' | grep -q "don't remove this checklist from your PR"; then
+            gh pr ready $PR_NUMBER --undo  # mark as draft
+            gh pr edit $PR_NUMBER --add-label 'missing-template'
+            gh pr review $PR_NUMBER --request-changes --body "Thanks for contributing to the matrix.org website. I have automatically marked your pull request as a draft. Please restore the [PR template]($BASE_URL/.github/pull_request_template.md?plain=1) to your PR description and follow our [contributing guidelines]($BASE_URL/CONTRIBUTING.md), then undraft to let the team know the PR is ready for review."
           fi
+          gh pr edit $PR_NUMBER --remove-label 'missing-template' && gh pr review $PR_NUMBER --approve || true
