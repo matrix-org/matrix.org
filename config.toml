@@ -38,7 +38,7 @@ skip_anchor_prefixes = [
 ]
 
 [extra]
-banner = true
+banner = false
 
 # Possible states: "cfp", "awaiting_schedule", "scheduled", "no_tickets", "live", "watch-recordings", "none"
 # None is used when elections instead are used
