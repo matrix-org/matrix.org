@@ -31,5 +31,5 @@ jobs:
           fi
           if gh pr view $PR_NUMBER --json 'labels' | grep -q "missing-template"; then
             gh pr edit $PR_NUMBER --remove-label 'missing-template'
-            gh pr review $PR_NUMBER --approve
+            gh pr review $PR_NUMBER --approve --body "Thank you for applying the PR template. The PR is now ready for review by a human."
           fi
