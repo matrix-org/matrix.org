@@ -7,6 +7,10 @@ productive, respectful, and transparent environment in which we can collaborate
 effectively. These social norms will guide our internal interactions and also
 set expectations for how we communicate externally.
 
+The canonical version of this document are the markdown sources available
+through the [matrix.org website’s git
+repo](https://github.com/matrix-org/matrix.org/tree/main/content/foundation/governing-board/bylaws).
+
 ---
 
 ## **Board-Internal Norms**
