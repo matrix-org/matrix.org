@@ -16,7 +16,7 @@ This year we're organising a **hackathon** before FOSDEM, we'll have a **booth**
 
 <!-- more -->
 
-## Friday, 30th January - Community hackathon & Lounge Evening
+## Friday, 30th January - Community Hackathon & Lounge Evening
 
 Would it be FOSDEM if it didn't start with our traditional Matrix Community Event on Friday? This time, we will be organizing a collaborative hackathon for the **full day**, starting at 9:00 CET. Don't be late: we'll use the first hour to select tasks and form teams!
 
