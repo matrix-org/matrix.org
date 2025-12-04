@@ -39,7 +39,7 @@ skip_anchor_prefixes = [
 
 [extra]
 # To enable the banner, either copy a pre-made template from below, paste it, and  modify it if need be,
-# or write custom Markdown. To disable the banner, simply either set the value to false or an empty string ("").
+# or write custom Markdown. To disable the banner, simply set the value to an empty string ("").
 #
 # cfp: "We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
 # on <dates> in <location>. [Learn more](https://conference.matrix.org) about it, 
