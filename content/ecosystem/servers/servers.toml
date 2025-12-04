@@ -150,6 +150,15 @@ repository = "https://git.telodendria.io/Telodendria/Telodendria"
 room = "#general:synapse.telodendria.io"
 
 [[servers]]
+name = "Palpo"
+description = "Palpo is a Matrix homeserver written in Rust"
+author = "Palpo Team"
+maturity = "Alpha"
+language = "Rust"
+licence = "Apache-2.0"
+repository = "https://github.com/palpo-im/palpo"
+
+[[servers]]
 name = "conduwuit"
 description = "conduwuit is a well-maintained, hard-fork of Conduit with tons of new features, many bug fixes, huge performance improvements, quality of life enhancements, moderation tools, and much more!"
 author = "strawberry"
