@@ -115,7 +115,7 @@ The current elected representatives are:
 
 #### Guardians
 
-* Amandine Le Pape (she/her)
+* (Amandine Le Pape (she/her) currently acting MD)
 * Matthew Hodgson (he/him)
 * Ross Schulman
 
@@ -132,7 +132,7 @@ The current elected representatives are:
 
 #### Managing Director
 
-* Robin Riley (they/them)
+* Amandine Le Pape (she/her)
 
 </div>
 </div>
