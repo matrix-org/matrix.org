@@ -60,7 +60,7 @@ Reach out to <events-wg@foundation.matrix.org> or in [#events-wg:matrix.org](htt
 
 This year FOSDEM organisers tried to accommodate as many projects as possible by asking devroom managers to focus on themes more than on specific projects. They generously granted us a full day devroom on Sunday, 1st February, to talk about Decentralised Communication, and we're delighted to have received so many proposals!
 
-![A room full of people are listening to a speaker who is off the frame.](/blog/img/fosdem-25-booth.webp)
+![A room full of people are listening to a speaker who is off the frame.](/blog/img/fosdem25-devroom.webp)
 
 We're rating which talks we think are the most interesting for the Decentralised Communications community, and will finalize a schedule by 15th December. We're looking forward to meeting people from the various decentralised communication communities, exchanging ideas, and seeing how we can collaborate more!
 
