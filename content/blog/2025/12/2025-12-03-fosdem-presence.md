@@ -16,13 +16,13 @@ This year we're organising a **hackathon** before FOSDEM, we'll have a **booth**
 
 <!-- more -->
 
-## Friday, 30th January - Community Hackathon & Lounge Evening
+## Friday, 30th January - Community hackathon & Lounge Evening
 
 Would it be FOSDEM if it didn't start with our traditional Matrix Community Event on Friday? This time, we will be organizing a collaborative hackathon for the **full day**, starting at 9:00 CET. Don't be late: we'll use the first hour to select tasks and form teams!
 
 ![A picture of a group of people smiling and laughing in front of the Matrix flag](/blog/img/fosdem-25-group-picture.webp)
 
-The Matrix ecosystem is all about lifting everyone through federation and interoperability. That's why in this Hackathon for the Community, we will not compete for the best project, but we will have a joint mission: The Matrix Federation is endangered by Big Silo trying to control our minds, and we can fight back!
+The Matrix ecosystem is all about lifting everyone through federation and interoperability. That's why in this hackathon for the Community, we will not compete for the best project, but we will have a joint mission: The Matrix Federation is endangered by Big Silo trying to control our minds, and we can fight back!
 
 The mighty scientists funded by our sponsors helped us develop Brain Protection Caps. They shipped a crate with the caps, and tried to send us the combination of the lock on Matrix. Unfortunately, their server went down before they could send the message! To crack the combination we need to level up our skills and fill our collective experience bar by collaborating on hackathon projects.
 
