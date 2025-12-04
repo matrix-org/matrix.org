@@ -6,7 +6,7 @@ title = "Find us at FOSDEM"
 author = ["Thib"]
 category = ["Events", "FOSDEM"]
 
-[extras]
+[extra]
 image = "https://matrix.org/blog/img/matrix-fosdem.png"
 +++
 
