@@ -18,7 +18,7 @@ This year we're organising a **hackathon** before FOSDEM, we'll have a **booth**
 
 ## Friday, 30th January - Community Hackathon & Lounge Evening
 
-Would it be FOSDEM if it didn't start with our traditional Matrix Community Event on Friday? This time, we will be organizing a collaborative Hackathon for the **full day**, starting at 9:00 CET. Don't be late: we'll use the first hour to select tasks and form teams!
+Would it be FOSDEM if it didn't start with our traditional Matrix Community Event on Friday? This time, we will be organizing a collaborative hackathon for the **full day**, starting at 9:00 CET. Don't be late: we'll use the first hour to select tasks and form teams!
 
 ![A picture of a group of people smiling and laughing in front of the Matrix flag](/blog/img/fosdem-25-group-picture.webp)
 
@@ -58,9 +58,9 @@ Reach out to <events-wg@foundation.matrix.org> or in [#events-wg:matrix.org](htt
 
 ## Sunday, 1st February - Devroom
 
-This year FOSDEM organisers tried to accommodate as many projects as possible by asking devroom managers to focus on themes more than on specific projects. They generously granted us a full day devroom on Sunday 1st February to talk about Decentralised Communication, and we're delighted to have received so many proposals!
+This year FOSDEM organisers tried to accommodate as many projects as possible by asking devroom managers to focus on themes more than on specific projects. They generously granted us a full day devroom on Sunday, 1st February, to talk about Decentralised Communication, and we're delighted to have received so many proposals!
 
-![A room full of people how are listening to a speaker who is off the frame.](/blog/img/fosdem-25-booth.webp)
+![A room full of people are listening to a speaker who is off the frame.](/blog/img/fosdem-25-booth.webp)
 
 We're rating which talks we think are the most interesting for the Decentralised Communications community, and will finalize a schedule by 15th December. We're looking forward to meeting people from the various decentralised communication communities, exchanging ideas, and seeing how we can collaborate more!
 
