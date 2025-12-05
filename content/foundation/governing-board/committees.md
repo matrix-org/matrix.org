@@ -47,7 +47,7 @@ There are currently 4 Committees:
 
 ### Members
 
-Gnuxie, Greg Sutcliffe, Kim Brose, Matthew Hodgson, Nicolas Werner, Robin Riley
+Amandine Le Pape, Gnuxie, Greg Sutcliffe, Kim Brose, Matthew Hodgson, Nicolas Werner
 
 Chair: Nicolas Werner  
 Vice Chair: *vacant*
@@ -77,7 +77,7 @@ The committee aims to meet on the last Monday of the month.
 
 ### Members
 
-Brad Murray, Bram Noordstar, Gnuxie, Greg Sutcliffe, Kim Brose, Jan Kohnert, Neil Johnson, Nicolas Werner, Robin Riley, Travis Ralston
+Brad Murray, Bram Noordstar, Gnuxie, Greg Sutcliffe, Kim Brose, Jan Kohnert, Neil Johnson, Nicolas Werner, Travis Ralston
 
 Chair: Bram Noordstar  
 Vice Chair: Neil Johnson
@@ -127,7 +127,7 @@ The committee aims to meet every second Tuesday of the month. Given the high fre
 
 ### Members
 
-Bram Noordstar, J. B. Crawford, Jan Kohnert, Matthew Hodgson, Nicolas Werner, Robin Riley, Tobias Fella, Travis Ralston
+Bram Noordstar, J. B. Crawford, Jan Kohnert, Matthew Hodgson, Nicolas Werner, Tobias Fella, Travis Ralston
 
 Chair: J. B. Crawford  
 Vice Chair: Nicolas Werner
@@ -160,10 +160,10 @@ topics, priorities initiatives, gather feedback and share knowledge.
 
 ### Members
 
-Amandine Le Pape, Andy Balaam, Brad Murray, Greg Sutcliffe, J. B. Crawford, Matthew Hodgson, Nicolas Werner, Richard van der Hoff, Travis Ralston
+Amandine Le Pape, Andy Balaam, Brad Murray, Gnuxie, Greg Sutcliffe, J. B. Crawford, Matthew Hodgson, Nicolas Werner, Richard van der Hoff, Travis Ralston
 
-Chair: Robin Riley  
-Vice Chair: *vacant*
+Chair: Gnuxie  
+Vice Chair: Amandine Le Pape
 
 ### Meeting schedule
 
