@@ -5,6 +5,10 @@ title = "Governing Board: Processes"
 This section describes the practical procedures for decision-making, proposals,
 conflict resolution, transparency, and other operational matters.
 
+The canonical version of this document are the markdown sources available
+through the [matrix.org website’s git
+repo](https://github.com/matrix-org/matrix.org/tree/main/content/foundation/governing-board/bylaws).
+
 ## Committee Creation Process
 
 Board members are encouraged to propose new committees, provided there is a
