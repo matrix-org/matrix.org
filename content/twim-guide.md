@@ -97,17 +97,17 @@ If your project appears frequently on TWIM, consider to
 [add it to the bot](#reactions-and-adding-a-project-to-the-bot),
 so all the boilerplate can get added to your post automatically.
 
-### Correct Usage of Headers
+### Correct Usage of Headings
 
 As the [TWIM helper bot](https://github.com/haecker-felix/hebbot) takes messages
-as verbatim, it is helpful to the editors to use the right header level.
+as verbatim, it is helpful to the editors to use the right heading level.
 
 We recommend `H3` (`###` in Markdown) for the project title and `H4` (`####`in Markdown)
 for all titles below it. This way there is only minor human interaction necessary or none
 at all. Like [Contact Info and Source Link](#contact-info-and-source-link), the bot adds
 your project's title automatically when it knows your project.
 
-Additionally please do not use headers for links but instead use bold links if you
+Additionally please do not use headings for links but instead use bold links if you
 want to highlight the links.
 
 ### Correct Linking
@@ -136,7 +136,7 @@ to get reflected in the room.
 
 You can tell that the TWIM editors are using your project's configuration by checking the
 text reactions on your submissions.
-When text reactions are used, the bot will add boilerplate including project title header,
+When text reactions are used, the bot will add boilerplate including project title heading,
 description, and link automatically, and you can drop it from your submission so the editors
 don't have to remove duplicate titles.
 
