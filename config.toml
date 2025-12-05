@@ -38,16 +38,32 @@ skip_anchor_prefixes = [
 ]
 
 [extra]
-banner = false
-
-# Possible states: "cfp", "awaiting_schedule", "scheduled", "no_tickets", "live", "watch-recordings", "none"
-# None is used when elections instead are used
-conference_state = "none"
-
-conference_website = "https://conference.matrix.org"
-conference_cfp = "https://cfp.2025.matrix.org/matrix-conf-2025/cfp"
-conference_dates = "Oct 15-18"
-conference_location = "Strasbourg, France"
-
-governing_board_elections = false
-governing_board_elections_page = "/foundation/governing-board-elections/2025/"
+# To enable the banner, either copy a pre-made template from below, paste it, and  modify it if need be,
+# or write custom Markdown. To disable the banner, simply set the value to an empty string ("").
+#
+# cfp: "We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
+# on <dates> in <location>. [Learn more](https://conference.matrix.org) about it, 
+# or [submit a proposal](https://cfp.<year>.matrix.org/matrix-conf-<year>/cfp)!"
+#
+# awaiting_schedule: "We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
+# on <dates> in <location>. [Learn more](https://conference.matrix.org) about it, 
+# [buy a ticket](https://conference.matrix.org/register/)!"
+#
+# scheduled: "We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
+# on <dates> in <location>. [Learn more](https://conference.matrix.org) about it, 
+# [buy a ticket](https://conference.matrix.org/register/), or 
+# [check the schedule](https://conference.matrix.org/schedule/)!"
+#
+# no_tickets: "We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
+# on <dates> in <location>. [Learn more](https://conference.matrix.org) about it, 
+# or [check the schedule](https://conference.matrix.org/schedule/)!"
+#
+# live: "[The Matrix Conference](https://conference.matrix.org) is live. 
+# [Check the livestreams](https://conference.matrix.org/watch/)!"
+#
+# watch-recordings: "[The Matrix Conference](https://conference.matrix.org) is over, 
+# and the [recordings](https://conference.matrix.org/watch/) are here!"
+#
+# governing_board_elections: "We are holding our Governing Board elections. Find 
+# all the information [on the elections page](https:/matrix.org/foundation/governing-board-elections/<year>/)."
+banner = ""
