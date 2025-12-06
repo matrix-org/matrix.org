@@ -42,7 +42,6 @@ category = ["This Week in Matrix"]
 > 
 > ![](matrix_spec_change_proposals.png)
 
-
 ## Dept of Servers 🏢
 
 ### Synapse ([website](https://github.com/matrix-org/synapse/))
