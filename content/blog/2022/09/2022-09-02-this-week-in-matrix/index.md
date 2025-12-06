@@ -15,33 +15,32 @@ category = ["This Week in Matrix"]
 
 ## Dept of Spec 📜
 
-{% details(summary="[uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) reports") %}
-  > Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
-  > 
-  > 
-  > ## MSC Status
-  > 
-  > **Merged MSCs:**
-  > * *No MSCs were merged this week.*
-  > 
-  > **MSCs in Final Comment Period:**
-  > * *No MSCs are in FCP.*
-  > 
-  > **New MSCs:**
-  > * *There were no new MSCs this week.*
-  > 
-  > ## Spec Core Team
-  > 
-  > It's been a light week for the spec core team, but we have been looking at [MSC3862](https://github.com/matrix-org/matrix-spec-proposals/pull/3862) and [MSC3758](https://github.com/matrix-org/matrix-spec-proposals/pull/3758).  These are two proposals that try to extend push rules in different ways to be able to match more than just strings.  So we have been discussing the relative merits of both proposals.
-  > 
-  > ## Random MSC of the Week
-  > 
-  > The random MSC of the week is... [MSC3386: Unified Join Rules](https://github.com/matrix-org/matrix-spec-proposals/pull/3386)!
-  > 
-  > Currently, a room can be set so that prospective members can [knock](https://github.com/matrix-org/matrix-doc/pull/2403) to request to join the room, or allow [members of a different room to join](https://github.com/matrix-org/matrix-doc/pull/3083).  However a room cannot be set up to allow both; MSC3386 proposes a change to the join rules to change this.
-  > 
-  > ![](matrix_spec_change_proposals.png)
-{% end %}
+[uhoreg](https://matrix.to/#/@hubert:uhoreg.ca) reports
+
+> Here's your weekly spec update! The heart of Matrix is the specification - and this is modified by Matrix Spec Change (MSC) proposals. Learn more about how the process works at https://matrix.org/docs/spec/proposals.
+> 
+> ### MSC Status
+> 
+> **Merged MSCs:**
+> * *No MSCs were merged this week.*
+> 
+> **MSCs in Final Comment Period:**
+> * *No MSCs are in FCP.*
+> 
+> **New MSCs:**
+> * *There were no new MSCs this week.*
+> 
+> ### Spec Core Team
+> 
+> It's been a light week for the spec core team, but we have been looking at [MSC3862](https://github.com/matrix-org/matrix-spec-proposals/pull/3862) and [MSC3758](https://github.com/matrix-org/matrix-spec-proposals/pull/3758).  These are two proposals that try to extend push rules in different ways to be able to match more than just strings.  So we have been discussing the relative merits of both proposals.
+> 
+> ### Random MSC of the Week
+> 
+> The random MSC of the week is... [MSC3386: Unified Join Rules](https://github.com/matrix-org/matrix-spec-proposals/pull/3386)!
+> 
+> Currently, a room can be set so that prospective members can [knock](https://github.com/matrix-org/matrix-doc/pull/2403) to request to join the room, or allow [members of a different room to join](https://github.com/matrix-org/matrix-doc/pull/3083).  However a room cannot be set up to allow both; MSC3386 proposes a change to the join rules to change this.
+> 
+> ![](matrix_spec_change_proposals.png)
 
 ## Dept of Servers 🏢
 
