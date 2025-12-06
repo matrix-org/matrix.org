@@ -4,7 +4,24 @@ href = "https://spec.matrix.org"
 
 [[header]]
 title = "Foundation"
-section = "foundation"
+id = "foundation"
+href = "/foundation/"
+
+[[header.children]]
+title = "About"
+href = "/foundation/about/"
+
+[[header.children]]
+title = "Governing Board"
+href = "/foundation/governing-board/"
+
+[[header.children]]
+title = "Working Groups"
+href = "/foundation/working-groups/"
+
+[[header.children]]
+title = "Members"
+href = "/membership/"
 
 [[header]]
 id = "blog"
