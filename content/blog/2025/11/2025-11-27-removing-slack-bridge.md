@@ -4,7 +4,7 @@ title = "Retiring the Slack Bridge on matrix.org"
 
 [taxonomies]
 author = ["Amandine Le Pape"]
-category = ["Cryptography", "Encryption", "Spec"]
+category = ["Bridges"]
 +++
 
 Bridges are one of the reasons Matrix is called Matrix: let’s matrix all the networks together! They are key to onboard new users into the network. However, maintaining and operating bridges, in particular to closed, proprietary platforms, is expensive: they need to be kept up to date with any change made by the platform on a regular basis and they’re fiddly to keep up and running.
