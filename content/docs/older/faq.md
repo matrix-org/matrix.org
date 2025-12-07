@@ -224,8 +224,8 @@ The point of entry for everything matrix is [#matrix:matrix.org
 If you're a developer and are looking to get involved with building something on
 Matrix, try [#matrix-dev:matrix.org](https://matrix.to/#/#matrix-dev:matrix.org).
 
-If you host a Synapse homeserver, you can get support in the [
-#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org) room.
+If you host a Synapse homeserver, you can get support in the
+[#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org) room.
 
 #### How do I create a link to a Matrix room or user?
 
@@ -623,8 +623,8 @@ documentation as it is currently written](https://spec.matrix.org), then review
 [the process for new proposals](https://spec.matrix.org/proposals/). You should
 start by writing a publicly-accessible proposal describing your change.
 
-To see the proposals currently under discussion,join us in [
-#matrix-spec:matrix.org](https://matrix.to/#/#matrix-spec:matrix.org).
+To see the proposals currently under discussion, join us in
+[#matrix-spec:matrix.org](https://matrix.to/#/#matrix-spec:matrix.org).
 
 #### What is the process for adding Spec proposals?
 
