@@ -4,7 +4,7 @@ title = '"Exclude insecure devices" is coming'
 
 [taxonomies]
 author = ["Richard van der Hoff"]
-category = ["Cryptography", "Encryption", "Spec"]
+category = ["Encryption", "Spec"]
 +++
 
 The Spec Core Team would like to remind everyone that, now that [MSC4153](https://github.com/matrix-org/matrix-spec-proposals/pull/4153) has been accepted, the Matrix spec recommends that “Encrypted to-device messages SHOULD NOT be sent to non-cross-signed devices”.
