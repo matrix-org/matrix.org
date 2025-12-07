@@ -20,7 +20,6 @@
 - Check for common mistakes:
   - [ ] Wrap plain URLs in `<>` to linkify them ([learn more](https://github.com/matrix-org/matrix.org/blob/main/CONTENT.md#publishing-to-the-blog)).
   - [ ] Use the right level of headings: The page title will use a level 1 headings, so your headings should use level 2 and below.
-  - [ ] Use internal links: when linking to another page on <https://matrix.org>, use the Zola `[label](@/target.md)` [syntax](https://www.getzola.org/documentation/content/linking/#internal-links).
 - For blog posts:
   - [ ] Verify the date and post ordering on the `/blog` page, especially for multiple posts on the same day. Prefer UTC format, e.g. `2025-12-01T14:00:00Z` for Dec 1st, 2025, 2pm UTC.
   - [ ] Set the correct author and category. Browse existing ones at <https://matrix.org/author/> and <https://matrix.org/category/> to match them.
