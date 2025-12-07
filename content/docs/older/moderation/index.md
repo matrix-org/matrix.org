@@ -116,10 +116,8 @@ without changing any of the settings, you might set them to a negative power
 level, so they didn’t even meet the “Send messages” threshold of 0.
 
 For the full spec of power levels, please see:
-[https://matrix.org/docs/spec/client_server/latest.html#m-room-power-levels
-](https://matrix.org/docs/spec/client_server/latest.html#m-room-power-levels).
-If you’re wondering where the term comes from, you should [watch more anime
-](https://knowyourmeme.com/memes/power-level)...
+[https://matrix.org/docs/spec/client_server/latest.html#m-room-power-levels](https://matrix.org/docs/spec/client_server/latest.html#m-room-power-levels).
+If you’re wondering where the term comes from, you should [watch more anime](https://knowyourmeme.com/memes/power-level)...
 
 ### Kicking and banning users
 
@@ -223,8 +221,7 @@ a bad merge conflict resolution - a so-called
 2 onwards and room state should no longer diverge. However, many old rooms
 still use the original buggy v1 algorithm. It is possible to upgrade the room
 version in Element via the undocumented `/upgraderoom 6` command - but please
-note there are several[UX bugs
-](https://github.com/vector-im/element-web/labels/A-Room-Upgrades) which make
+note there are several[UX bugs](https://github.com/vector-im/element-web/labels/A-Room-Upgrades) which make
 this process a bit rough sometimes.
 
 ### Bridged rooms
@@ -393,8 +390,7 @@ connection as early as possible.
 
 Synapse supports a module-like system which can be used to block servers from
 doing certain actions, such as sending invites to your users.
-[t2bot/synapse-simple-antispam
-](https://github.com/t2bot/synapse-simple-antispam) is one example of how this
+[t2bot/synapse-simple-antispam](https://github.com/t2bot/synapse-simple-antispam) is one example of how this
 works - see the code for a bit more information on what is possible. Although
 this won't prevent servers from interacting with your server, it can help with
 reducing the amount of spam/malicious content.
@@ -570,8 +566,7 @@ rules to messaging providers - meaning that servers running in affected
 territories may be legally obligated to provide their users with content
 filtering tools of this nature.
 
-See [#matrix-reputation:matrix.org
-](https://matrix.to/#/#matrix-reputation:matrix.org) and
+See [#matrix-reputation:matrix.org](https://matrix.to/#/#matrix-reputation:matrix.org) and
 [https://docs.google.com/document/d/1rijGLs9-RJ9Mz2Yk5wWycMbErrCDK1VJkACdUPMN0-M/](https://docs.google.com/document/d/1rijGLs9-RJ9Mz2Yk5wWycMbErrCDK1VJkACdUPMN0-M/)
 for more details on this.
 
@@ -588,6 +583,5 @@ further refinements in future as detailed in the ‘outstanding issues’ sectio
 above (as of April 2019). As the Matrix.org team, In practice we use the
 features above to relatively successfully admin one of the largest servers on
 the network (matrix.org itself, with ~70K concurrent users), and to moderate
-one of the larger communities on the network ([+matrix:matrix.org
-](https://matrix.to/#/+matrix:matrix.org); ~30 rooms with over 10K users
+one of the larger communities on the network ([+matrix:matrix.org](https://matrix.to/#/+matrix:matrix.org); ~30 rooms with over 10K users
 present).

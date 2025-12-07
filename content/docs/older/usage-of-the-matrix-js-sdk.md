@@ -235,6 +235,5 @@ There is much, much more to Matrix, the Client-Server API and the matrix-js-sdk,
 but this guide should give some understanding of simple usage. In subsequent
 guides we'll cover more detail and also explore projects you can build on top,
 such as IoT controls and chatbot interfaces. For now you can take a look at
-[other examples in the matrix-js-sdk itself
-](https://github.com/matrix-org/matrix-js-sdk/tree/master/examples), and also
-the Matrix Client-Server API which it implements.
+[other examples in the matrix-js-sdk itself](https://github.com/matrix-org/matrix-js-sdk/tree/master/examples),
+and also the Matrix Client-Server API which it implements.

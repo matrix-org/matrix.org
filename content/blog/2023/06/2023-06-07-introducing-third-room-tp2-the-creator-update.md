@@ -127,7 +127,7 @@ Talking of docs, we’re proud to unveil a shiny new documentation website for T
     * The official WebSG Tutorial - learn how to build a basketball game with WebSG!
         * [Part 1: Interactables](https://thirdroom.io/docs/guides/websg/basketball/part-1.html)
         * [Part 2: Collisions and UI](https://thirdroom.io/docs/guides/websg/basketball/part-2.html)
-        * [Part 3: Networking ](https://thirdroom.io/docs/guides/websg/basketball/part-3.html)(in progress)
+        * [Part 3: Networking](https://thirdroom.io/docs/guides/websg/basketball/part-3.html) (in progress)
     * [A guide to the Scene Graph itself](https://thirdroom.io/docs/guides/websg/scenegraph.html)
     * [A guide to manipulating meshes](https://thirdroom.io/docs/guides/websg/meshes.html) with WebSG
     * [A guide to materials](https://thirdroom.io/docs/guides/websg/materials.html) with WebSG

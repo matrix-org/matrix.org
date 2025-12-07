@@ -140,7 +140,7 @@ things which haven’t made it into this release are:
 *   Authenticating access to the media repository - for now, we still rely on media IDs being almost impossible to guess to protect the data rather than authenticating the user.
 *   Deleting items from the media repository - we still need to hook up deletion APIs.
 *   Garbage collecting forgotten rooms.  If everyone leaves & forgets a room, we should delete it from the DB.
-*   [Communicating erasure requests over federation ](https://github.com/matrix-org/matrix-doc/issues/1280)
+*   [Communicating erasure requests over federation](https://github.com/matrix-org/matrix-doc/issues/1280)
 
 We’ll continue to work on these as part of our ongoing maintenance backlog.
 
@@ -316,7 +316,7 @@ our AMA over at
     *   vector-im/riot-android
         *   [3223 VoIP: Stop falling back to Google for STUN](https://github.com/vector-im/riot-android/issues/3223) (done)
         *   [3224 Make sure there are no ugly edge cases running Riot without an integrations manager](https://github.com/vector-im/riot-android/issues/3224) (done)
-        *   [3225 Prompt to accept integration manager polices on use ](https://github.com/vector-im/riot-android/issues/3225)(done)
+        *   [3225 Prompt to accept integration manager polices on use](https://github.com/vector-im/riot-android/issues/3225)(done)
         *   [3226 Decouple setting an email for password reset from publishing your threepid to the identity server and support choice of identity server (on registration)](https://github.com/vector-im/riot-android/issues/3226) (done)
         *   [3227 Prompt to accept identity server policies before inviting them to a room](https://github.com/vector-im/riot-android/issues/3227) (done)
         *   [3228 Identity server v2 API authentication](https://github.com/vector-im/riot-android/issues/3228) (done)
@@ -343,7 +343,7 @@ our AMA over at
         *   [3283 Use wellknown to discover the IS of a custom HS](https://github.com/vector-im/riot-android/issues/3283) (done)
         *   [3289 Lowercase emails during IS lookup calls](https://github.com/vector-im/riot-android/issues/3289) (done)
         *   [3295 Use `id_access_token` in CS API when required](https://github.com/vector-im/riot-android/issues/3295) (done)
-        *   [3300 Use the new backend APIs for adding-3pid-to-homeserver and binding-3pid-on-identity-server when they exist. ](https://github.com/vector-im/riot-android/issues/3300)(done)
+        *   [3300 Use the new backend APIs for adding-3pid-to-homeserver and binding-3pid-on-identity-server when they exist.](https://github.com/vector-im/riot-android/issues/3300)(done)
         *   [3312 Riot should check for r0.6.0 server support alongside feature flags](https://github.com/vector-im/riot-android/issues/3312) (done)
         *   [3316 Implement MSC2290](https://github.com/vector-im/riot-android/issues/3316) (done)
         *   [3324 id_server param sent when registering an email on server that does not requires one](https://github.com/vector-im/riot-android/issues/3324) (done)
@@ -448,7 +448,7 @@ our AMA over at
         *   [6078 Add POST submit_token endpoint for MSISDN](https://github.com/matrix-org/synapse/pull/6078) (done)
         *   [6079 Add submit_url response parameter to msisdn /requestToken](https://github.com/matrix-org/synapse/pull/6079) (done)
         *   [6087 Remove hardcoded defaults of matrix.org and vector.im in configuration](https://github.com/matrix-org/synapse/issues/6087) (done)
-        *   [6090 Explicitly log when a homeserver does not have a trusted key server configured ](https://github.com/matrix-org/synapse/pull/6090)(done)
+        *   [6090 Explicitly log when a homeserver does not have a trusted key server configured](https://github.com/matrix-org/synapse/pull/6090)(done)
         *   [6096 Riot Web expects the email validation next_link to have the sid appended](https://github.com/matrix-org/synapse/issues/6096) (done)
         *   [6100 Remove email from registration flows if it’s unsupported](https://github.com/matrix-org/synapse/issues/6100) (done)
         *   [6103 _check_threepid in auth.py incorrect for MSISDN](https://github.com/matrix-org/synapse/issues/6103) (done)

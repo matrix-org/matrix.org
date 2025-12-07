@@ -73,11 +73,10 @@ full semantics of the remote system are available to the bridge to expose into
 Matrix.  However, the bridge has to handle the authentication process to log
 the user into the remote bridge.
 
-This is essentially how the current [matrix-appservice-irc
-](https://github.com/matrix-org/matrix-appservice-irc) bridge works (if you
-configure it to log into the remote IRC network as your ‘real’ IRC nickname).
-[matrix-appservice-gitter
-](https://github.com/matrix-org/matrix-appservice-gitter) is being extended to
+This is essentially how the current [matrix-appservice-irc](https://github.com/matrix-org/matrix-appservice-irc)
+bridge works (if you configure it to log into the remote IRC network as your
+‘real’ IRC nickname).
+[matrix-appservice-gitter](https://github.com/matrix-org/matrix-appservice-gitter) is being extended to
 support both puppeted and bridgebot-based operation. It’s how the experimental
 [matrix-appservice-tg](https://github.com/matrix-org/matrix-appservice-tg) bridge works.
 
@@ -108,10 +107,9 @@ being puppeted (see hybrid relaybot).
 
 [matrix-puppet-bridge](https://github.com/matrix-hacks/matrix-puppet-bridge) is
 a community project that tries to facilitate development of double-puppeted
-bridges, having done so, without a bridgebot feature, for [several networks
-](https://github.com/matrix-hacks/matrix-puppet-bridge#examples). A downside to
-their approach is the assumption that an individual will run the bridge on
-their own homeserver, thus working around the problem of sharing auth
+bridges, having done so, without a bridgebot feature, for [several networks](https://github.com/matrix-hacks/matrix-puppet-bridge#examples).
+A downside to their approach is the assumption that an individual will run the
+bridge on their own homeserver, thus working around the problem of sharing auth
 credentials on a shared homeserver.
 
 ### Hybrid Relaybot Puppet Bridge
@@ -136,8 +134,7 @@ One-way bridging is rare, but can be used to represent a bridge that is bridging
 from the remote system into matrix. This is common when the remote system does
 not permit message posting, or is simply not capable of handling posting
 outside their system. The users bridged from the remote system often appear as
-virtual users in matrix, as is the case with [matrix-appservice-instagram
-](https://github.com/turt2live/matrix-appservice-instagram).
+virtual users in matrix, as is the case with [matrix-appservice-instagram](https://github.com/turt2live/matrix-appservice-instagram).
 
 ### Sidecar bridge
 

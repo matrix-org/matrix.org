@@ -26,7 +26,7 @@ The only viable solution to this is for organisations building on Matrix to cont
 
 As a reminder, the work the [Foundation](https://matrix.org/foundation) does today for the benefit of the Matrix includes:
 
-* Publishing the[ Matrix Specification](https://spec.matrix.org)
+* Publishing the [Matrix Specification](https://spec.matrix.org)
 * Organising the Matrix Spec Core Team, responsible for reviewing and evolving the protocol.
 * Writing roughly half the Matrix Spec Change [proposals](https://spec.matrix.org/proposals).
 * Developing [Synapse](https://github.com/matrix-org/synapse), the Python matrix homeserver implementation

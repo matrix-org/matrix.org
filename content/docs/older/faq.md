@@ -38,34 +38,30 @@ control their data and select the services and vendors they want to use.
 
 The aim is to provide an analogous ecosystem to email - one where you can
 communicate with pretty much anyone, without caring what app or server they are
-using, using whichever [client app](/ecosystem/clients) & [server
-](/ecosystem/servers) you chose, and use a neutral identity system like an
-e-mail address or phone number to discover people to talk to.
+using, using whichever [client app](/ecosystem/clients) & [server](/ecosystem/servers)
+you chose, and use a neutral identity system like an e-mail address or phone
+number to discover people to talk to.
 
 #### Why are you called Matrix?
 
 We are called Matrix because we provide a structure in which all communication
 can be matrixed together.
 
-No, it’s nothing to do with the film (although [Third Room
-](https://thirdroom.io) builds virtual worlds on top of Matrix 😎).
+No, it’s nothing to do with the film (although [Third Room](https://thirdroom.io)
+builds virtual worlds on top of Matrix 😎).
 
 #### What does Matrix provide?
 
 * [Open Standard HTTP APIs](https://spec.matrix.org) for transferring JSON
   messages (e.g. instant messages, WebRTC signalling), including:
-  * [Client-Server API
-    ](https://spec.matrix.org/latest/#client-server-api-v1) - defines how Matrix
+  * [Client-Server API](https://spec.matrix.org/latest/#client-server-api-v1) - defines how Matrix
     compatible clients communicate with Matrix homeservers.
-  * [Server-Server API
-    ](https://spec.matrix.org/latest/server-server-api/) - defines how Matrix
+  * [Server-Server API](https://spec.matrix.org/latest/server-server-api/) - defines how Matrix
     homeservers exchange messages and synchronise history with each other.
-  * [Application Service API
-    ](https://spec.matrix.org/latest/application-service-api/) - defines how to
+  * [Application Service API](https://spec.matrix.org/latest/application-service-api/) - defines how to
     extend the functionality of Matrix with 'integrations' and bridge to other
     networks.
-  * [Modules
-    ](https://spec.matrix.org/v1.4/client-server-api/#modules) - specifies
+  * [Modules](https://spec.matrix.org/v1.4/client-server-api/#modules) - specifies
     features that must be implemented by particular classes of clients.
 * Open source implementations of:
   * Client SDKs (Javascript, Web (React), iOS, Android, Rust)
@@ -110,17 +106,16 @@ you can do so via:
 * Ethereum (address: 0xA5f9a4f9E024F6D727f7afdA9257e22329A97485)
 
 If you would like to sponsor the team as a corporation, or are interested in
-paying for prioritised or custom development, please [get in touch
-](https://matrix.org/contact).
+paying for prioritised or custom development, please [get in touch](https://matrix.org/contact).
 
 For the first three years of Matrix's development (2014-2017), most of the core
 contributors worked for [Amdocs](https://www.amdocs.com), who paid for them to
 work fulltime on Matrix. In July 2017, Amdocs considered the project to be
 sufficiently successful that it could now self-support and so stopped funding.
-The majority of the core team is now employed by [Element
-](https://element.io), an independent company set up to hire the team and
-support Matrix's development. Other contributors are funded by their own
-employers or donate their own time to the project.
+The majority of the core team is now employed by [Element](https://element.io),
+an independent company set up to hire the team and support Matrix's
+development. Other contributors are funded by their own employers or donate
+their own time to the project.
 
 #### Who is building Matrix?
 
@@ -213,13 +208,12 @@ Then...
 * You could even try to write a homeserver (but be warned, Matrix's architecture
   makes homeservers orders of magnitude harder than clients or bridges.)
 
-See [our contributor guide
-](https://matrix-org.github.io/synapse/latest/development/contributing_guide.html) for full details on how to contribute to the project. All are welcome!
+See [our contributor guide](https://matrix-org.github.io/synapse/latest/development/contributing_guide.html)
+for full details on how to contribute to the project. All are welcome!
 
 #### Where can I get support?
 
-The point of entry for everything matrix is [#matrix:matrix.org
-](https://matrix.to/#/#matrix:matrix.org) aka #matrix on irc.libera.chat.
+The point of entry for everything matrix is [#matrix:matrix.org](https://matrix.to/#/#matrix:matrix.org) aka #matrix on irc.libera.chat.
 
 If you're a developer and are looking to get involved with building something on
 Matrix, try [#matrix-dev:matrix.org](https://matrix.to/#/#matrix-dev:matrix.org).
@@ -244,8 +238,7 @@ There are many clients available, ranging from the glossy mass-market to the gee
 
 The most popular and established client is Element, available on web, desktop, Android and iOS.
 
-To get a list of all the clients we're aware of, head to [the clients page
-](/ecosystem/clients)
+To get a list of all the clients we're aware of, head to [the clients page](/ecosystem/clients)
 
 
 #### What bridges to other networks are available?
@@ -405,9 +398,9 @@ on:
 [IRCv3](https://ircv3.net) exists and is addressing some of these issues; this
 is great news and we wish them well. It's almost a contradiction in terms to
 get competitive between openly interoperable communication projects - in fact
-there there already exist mature Matrix-IRC bridges. [matrix-appservice-irc
-](https://github.com/matrix-org/matrix-appservice-irc/) is currently used to
-bridge with [Libera.Chat](https://libera.chat) and many other IRC networks.
+there there already exist mature Matrix-IRC bridges. [matrix-appservice-irc](https://github.com/matrix-org/matrix-appservice-irc/)
+is currently used to bridge with [Libera.Chat](https://libera.chat) and many
+other IRC networks.
 
 #### What is the difference between Matrix and XMPP?
 
@@ -521,9 +514,10 @@ stage.
 
 #### What are spaces?
 
-Spaces are a collections of rooms. [#community:matrix.org
-](https://matrix.to/#/community:matrix.org) is the official matrix community
-space containing rooms managed by the core Matrix team.
+Spaces are a collections of rooms.
+[#community:matrix.org](https://matrix.to/#/community:matrix.org) is the
+official matrix community space containing rooms managed by the core Matrix
+team.
 
 Spaces are the replacements for the deprecated communities which were also known
 as groups. Other than groups a space itself is a Room
