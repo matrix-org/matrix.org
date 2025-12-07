@@ -1,0 +1,26 @@
+name: Linters
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  run:
+    name: Spell Check with Typos
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Actions Repository
+      uses: actions/checkout@v6
+
+    - name: Check spelling
+      uses: crate-ci/typos@v1.20.3
+
+  rumdl-check:
+    name: Lint Markdown with rumdl
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: rvben/rumdl@v0.0.190
+        with:
+          report-type: annotations

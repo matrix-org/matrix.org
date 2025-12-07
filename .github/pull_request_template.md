@@ -13,13 +13,10 @@
 ### Timeline
 <!-- If your PR is time-sensitive in any way, please mention the attached timeline and context. -->
 
-### :heavy_check_mark: Checklist
+### Checklist
 <!-- Please tick as appropriate, but don't remove this checklist from your PR, as it is useful for reviewers, too. -->
 
 - [x] Keep this checklist
-- Check for common mistakes:
-  - [ ] Wrap plain URLs in `<>` to linkify them ([learn more](https://github.com/matrix-org/matrix.org/blob/main/CONTENT.md#publishing-to-the-blog)).
-  - [ ] Use the right level of headings: The page title will use a level 1 headings, so your headings should use level 2 and below.
 - [ ] Your individual commits or pull request is [signed off](https://github.com/matrix-org/matrix.org/blob/main/CONTRIBUTING.md).
 
 <!-- ------------------------------ DO NOT WRITE BELOW THIS LINE ------------------------------ -->
