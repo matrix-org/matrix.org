@@ -13,7 +13,7 @@ Synapse 1.17.0 is here!
 
 Hot on the heels of Synapse 1.16.1, 1.17.0 is a bug fix release most notably containing a fix for ['stuck invites'](https://github.com/matrix-org/synapse/issues/2181) which happen when we are unable to reject a room invite received over federation.
 
-Get the new releases from any of the usual sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md. 1.17.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.17.0).
+Get the new releases from any of the usual sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>. 1.17.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.17.0).
 
 Changelog for 1.17.0 follows:
 

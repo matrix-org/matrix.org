@@ -144,7 +144,7 @@ supporting Matrix, whether by donating to the Foundation, promoting and using
 the protocol, or contributing code to the ecosystem.  You are the ones keeping
 the dream alive :)
 
-You can read things from the NV angle over at https://blog.vector.im/8-5m-to-accelerate-matrix/.
+You can read things from the NV angle over at <https://blog.vector.im/8-5m-to-accelerate-matrix/>.
 We hope you’re as excited as we are to open a whole new chapter as Matrix
 picks up yet more momentum :D
 

@@ -44,11 +44,11 @@ Based on my personal testing there is _no additional work_ to be done in the rea
 
 ### Pull request list
 
-* https://github.com/matrix-org/matrix-ircd/pull/64
-* https://github.com/matrix-org/matrix-ircd/pull/65
-* https://github.com/matrix-org/matrix-ircd/pull/66
-* https://github.com/matrix-org/matrix-ircd/pull/67
-* https://github.com/matrix-org/matrix-ircd/pull/71
-* https://github.com/matrix-org/matrix-ircd/pull/72
-* https://github.com/matrix-org/matrix-ircd/pull/77
+* <https://github.com/matrix-org/matrix-ircd/pull/64>
+* <https://github.com/matrix-org/matrix-ircd/pull/65>
+* <https://github.com/matrix-org/matrix-ircd/pull/66>
+* <https://github.com/matrix-org/matrix-ircd/pull/67>
+* <https://github.com/matrix-org/matrix-ircd/pull/71>
+* <https://github.com/matrix-org/matrix-ircd/pull/72>
+* <https://github.com/matrix-org/matrix-ircd/pull/77>
 

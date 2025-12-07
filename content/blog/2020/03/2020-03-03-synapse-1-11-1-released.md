@@ -13,7 +13,7 @@ Admins not using Single Sign-On to authenticate users are not affected though ma
 
 Thanks to [Rhys Davies](https://twitter.com/rhysmdnz) for the responsible disclosure.
 
-Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.11.1) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.11.1) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 
 Changelog since Synapse 1.11.0
