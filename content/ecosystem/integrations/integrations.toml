@@ -141,7 +141,6 @@ language = "Rust"
 licence = "MIT"
 repository = "https://gitlab.com/jpypi/rustix"
 
-
 [[integrations]]
 name = "Synapse Admin"
 description = """
@@ -252,3 +251,14 @@ language = "TypeScript"
 licence = "AFL-3.0"
 repository = "https://github.com/the-draupnir-project/Draupnir"
 room = "#draupnir:matrix.org"
+
+[[integrations]]
+name = "Mjolnir"
+description = """
+A moderation tool for Matrix.
+"""
+maintainer = "matrix.org"
+language = "TypeScript"
+licence = "Apache-2.0"
+repository = "https://github.com/matrix-org/mjolnir"
+room = "#mjolnir:matrix.org"
