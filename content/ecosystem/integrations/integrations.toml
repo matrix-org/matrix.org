@@ -257,7 +257,7 @@ name = "Mjolnir"
 description = """
 A moderation tool for Matrix.
 """
-maintainer = "matrix.org"
+maintainer = "The Matrix.org Foundation"
 language = "TypeScript"
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/mjolnir"
