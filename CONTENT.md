@@ -38,6 +38,8 @@ Once this structure is in place, you need to write the actual blog post. It is a
 
 In the frontmatter, make sure to format the date as `year-month-day` (e.g. `2024-01-22`) then append `T` to specify the time as `hour:minute:seconds` (e.g. `12:30:00`) and add a final `Z` to specify that the time is on the UTC time zone. We use UTC to make it easier for humans to figure out which blog post is going to be published first if two blog posts are issued on the same day.
 
+The `taxonomies` automatically create groupings of blog posts and also filter into respective atom feeds readers can subscribe to. It is hence important to choose correct and consistent values for both author(s) and categories. You can browse existing ones at <https://matrix.org/author/> and <https://matrix.org/category/> to match them.
+
 You can use the following template to create a new blog post:
 
 ```markdown
