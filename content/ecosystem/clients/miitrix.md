@@ -18,6 +18,7 @@ threads = false
 sso = false
 multi_account = false
 multi_language = false
+[extra.packages]
 +++
 
 Miitrix is a proof-of-concept client for the Nintendo 3DS. The UI is all just terminal-based (printf), however it is fully usable.
