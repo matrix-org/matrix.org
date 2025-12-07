@@ -13,7 +13,7 @@ Matrix Application Service framework in Node.js.
 
 [[sdks]]
 name = "Matrix.org JS SDK"
-maintainer = "Element, on behalf of the Matrix.org Foundation"
+maintainer = "Element, on behalf of The Matrix.org Foundation"
 maturity = "Stable"
 language = "JavaScript"
 licence = "Apache-2.0"
@@ -506,7 +506,7 @@ featured_in = []
 
 [[sdks]]
 name = "matrix-rust-sdk"
-maintainer = "Element, on behalf of the Matrix.org Foundation"
+maintainer = "Element, on behalf of The Matrix.org Foundation"
 maturity = "Stable"
 language = "Rust"
 licence = "Apache-2.0"
