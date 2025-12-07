@@ -29,7 +29,7 @@ typing_notifications = true
 
 [[bridges]]
 name = "matrix-appservice-slack"
-maintainer = "Matrix.org Foundation"
+maintainer = "The Matrix.org Foundation"
 summary = """
 The bridge allows you to connect Matrix rooms and Slack channels together. It supports bridging via webhooks or via a
 dedicated slack integration (using the Events API). The bridge supports nearly all matrix message types and client features
