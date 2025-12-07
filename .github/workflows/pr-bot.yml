@@ -20,7 +20,7 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
         run: |
           cmd="gh pr -R ${{ github.repository }}"
-          if ! $cmd view $PR_NUMBER --json 'body' | grep -q "don't remove this checklist from your PR"; then
+          if ! $cmd view $PR_NUMBER --json 'body' | grep -q "Description"; then
             $cmd ready $PR_NUMBER --undo  # mark as draft
             $cmd edit $PR_NUMBER --add-label 'missing-template'
             $cmd review $PR_NUMBER --request-changes --body "Thanks for contributing to the matrix.org website. I have automatically marked your pull request as a draft. Please restore the [PR template]($BASE_URL/.github/pull_request_template.md?plain=1) to your PR description and follow our [contributing guidelines]($BASE_URL/CONTRIBUTING.md), then undraft to let the team know the PR is ready for review."
