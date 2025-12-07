@@ -6,9 +6,6 @@ title = "This Week in Matrix 2023-06-16"
 [taxonomies]
 author = ["Thib"]
 category = ["This Week in Matrix"]
-
-[extra]
-image = "https://matrix.org/blog/img/matrix-logo.png"
 +++
 
 ## Matrix Live
