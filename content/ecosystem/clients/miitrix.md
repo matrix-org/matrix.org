@@ -21,4 +21,4 @@ multi_language = false
 [extra.packages]
 +++
 
-Miitrix is a proof-of-concept client for the Nintendo 3DS. The UI is all just terminal-based (printf), however it is fully usable.
+Miitrix is a proof-of-concept client for the Nintendo 3DS, featuring a terminal-based user interface implemented with printf.
