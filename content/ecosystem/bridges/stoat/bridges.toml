@@ -1,2 +1,26 @@
 [[bridges]]
+name = "matrix-appservice-revolt"
+maintainer = "Austin Huang"
+summary = "Bridges Revolt and Matrix via the Application Service API."
+maturity = "Alpha"
+language = "TypeScript"
+license = "AGPL-3.0-or-later"
+docs = "https://codeberg.org/austinhuang/matrix-appservice-revolt/wiki"
+repo = "https://codeberg.org/austinhuang/matrix-appservice-revolt"
+room = "#matrix-appservice-revolt:bus-hit.me"
+featured = false
+privilege.platform = "Admin"
+privilege.matrix = "Homeserver Admin"
 [bridges.supports]
+dm = false
+channels = true
+formatted_text = true
+message_media = true
+replies = true
+mentions = true
+threads = false # Revolt doesn't have Threads
+redactions = true
+editing = true
+reactions = false
+presence = false
+typing_notifications = false
