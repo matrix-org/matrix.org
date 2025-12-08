@@ -8,6 +8,7 @@ latest_release = "2024-09-30"
 maturity = "Beta"
 repo = "https://gitlab.com/sailtrix/harbour-sailtrix"
 website = "https://gitlab.com/sailtrix/harbour-sailtrix"
+matrix_room = "#sailtrix:matrix.org"
 featured = false
 [extra.features]
 e2ee = true
