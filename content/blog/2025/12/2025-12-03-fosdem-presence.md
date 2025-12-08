@@ -10,7 +10,7 @@ category = ["Events", "FOSDEM"]
 image = "https://matrix.org/blog/img/matrix-fosdem.png"
 +++
 
-You might have seen our [earlier post](@blog/2025/11/2025-11-04-fosdem-cfp.md) about the Decentralised Communication Devroom we are coordinating. This is one of the exciting ways to come talk to us, but it's not the only one!
+You might have seen our [earlier post](@/blog/2025/11/2025-11-04-fosdem-cfp.md) about the Decentralised Communication Devroom we are coordinating. This is one of the exciting ways to come talk to us, but it's not the only one!
 
 This year we're organising a **hackathon** before FOSDEM, we'll have a **booth** during FOSDEM itself, and we're coordinating the Decentralised Communication **devroom**!
 
