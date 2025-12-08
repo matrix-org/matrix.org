@@ -686,3 +686,15 @@ repository = "https://github.com/etkecc/go-msc1929"
 description = """
 Golang client for MSC1929 (/.well-known/matrix/support)
 """
+
+[[sdks]]
+name = "Matrix Nim SDK"
+maintainer = "dylhack"
+maturity = "Obsolete"
+language = "Nim"
+licence = "GPL-3.0"
+repository = "https://github.com/dylhack/matrix-nim-sdk"
+purpose = ["client", "bot"]
+description = """
+A Matrix library for the client-server and appservice API's written in Nim!
+"""
