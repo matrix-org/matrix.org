@@ -21,6 +21,7 @@ threads = true
 sso = true
 multi_account = true
 multi_language = true
+[extra.packages]
 +++
 
 Extera Next is another generation of Extera, made on top of FluffyChat.
