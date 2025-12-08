@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: rvben/rumdl@v0.0.190
+      - uses: rvben/rumdl@v0.0.191
         with:
           config: .rumdl.toml
           report-type: annotations
