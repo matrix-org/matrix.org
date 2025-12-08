@@ -1,25 +1,20 @@
 ### Description
-<!-- Please describe what you added here, and add a screenshot or video if possible.
-     That makes it easier to understand the change. -->
+
+<!-- Please describe what you added or changed. This helps us review the PR faster. -->
 
 
 
 ### Related issues
-<!-- Mention any issues related to the PR.
-     Use GitHub keywords (https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) as applicable. -->
 
-
+<!-- If you know that your PR closes issues, please list them here -->
 
 ### Role
-<!-- If you hold a specific role in relation to the content you are contributing, such as project maintainer or team/organisation member, please let us know.
-     Example: https://github.com/matrix-org/matrix.org/pull/2969 -->
 
-
+<!-- Are you contributing as an individual or on behalf of an organisation? Are you affiliated with any project relevant to this PR? -->
 
 ### Timeline
-<!-- If your PR is time-sensitive in any way, please mention the attached timeline and context. -->
 
-
+<!-- By when do you need us to review your PR at the latest? -->
 
 ### Signoff
 
