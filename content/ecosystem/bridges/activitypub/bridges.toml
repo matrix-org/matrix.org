@@ -10,7 +10,7 @@ license = "MIT"
 docs = "https://codeberg.org/urmaul/toot-feed-bot#readme"
 repo = "https://codeberg.org/urmaul/toot-feed-bot"
 featured = false
-privilege.platform = "None" # Who can use/add the bridge on the third-party platform
+privilege.platform = "User" # Who can use/add the bridge on the third-party platform
 privilege.matrix = "None" # Any of Homeserver Admin, Room Admin, None
 [bridges.supports]
 dm = false
@@ -21,3 +21,4 @@ redactions = false
 reactions = false
 typing_notifications = false
 read_receipts = false
+
