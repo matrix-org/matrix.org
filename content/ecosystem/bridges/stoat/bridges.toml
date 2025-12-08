@@ -1,7 +1,7 @@
 [[bridges]]
 name = "matrix-appservice-revolt"
 maintainer = "Austin Huang"
-summary = "Bridges Revolt and Matrix via the Application Service API."
+summary = "Bridges Stoat (previously called Revolt) and Matrix via the Application Service API."
 maturity = "Alpha"
 language = "TypeScript"
 license = "AGPL-3.0-or-later"
