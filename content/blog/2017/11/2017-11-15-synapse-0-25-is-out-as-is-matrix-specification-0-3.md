@@ -80,14 +80,14 @@ The full changelog for 0.3 of the spec is:
 
 This is a medium-sized release; the main thing being to support configurable room visibility within groups (so that whenever you add a room to a group, you're not forced into sharing their existence with the general public, but can choose to just tell group members about them).  There's also a bunch of useful bug fixes and some performance improvements, including lots of contributions from the community this release (thank you!).  Full release notes are:
 
-##### Changes in synapse v0.25.0 (2017-11-15)
+#### Changes in synapse v0.25.0 (2017-11-15)
 
 Bug fixes:
 <ul>
  	<li>Fix port script (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/2673" data-error-text="Failed to load issue title" data-id="273841564" data-permission-text="Issue title is private" data-url="https://github.com/matrix-org/synapse/issues/2673">#2673</a>)</li>
 </ul>
 
-##### Changes in synapse v0.25.0-rc1 (2017-11-14)
+#### Changes in synapse v0.25.0-rc1 (2017-11-14)
 
 Features:
 <ul>

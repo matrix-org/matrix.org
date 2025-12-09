@@ -1,0 +1,42 @@
+# rumdl configuration file
+
+# Global configuration options
+[global]
+# List of rules to disable (uncomment and modify as needed)
+# disable = ["MD013", "MD033"]
+
+# List of rules to enable exclusively (if provided, only these rules will run)
+enable = ["MD001", "MD003", "MD011", "MD034", "MD039"]
+
+# List of file/directory patterns to include for linting (if provided, only these will be linted)
+# include = [
+#    "docs/*.md",
+#    "src/**/*.md",
+#    "README.md"
+# ]
+
+# List of file/directory patterns to exclude from linting
+exclude = [
+    # Common directories to exclude
+    ".git",
+    ".github",
+    "node_modules",
+    "vendor",
+    "dist",
+    "build",
+
+    # legacy content
+    "content/blog/2014",
+    "content/blog/2015",
+    "content/blog/2016",
+    "content/blog/2017",
+    "content/blog/2018",
+]
+
+# Respect .gitignore files when scanning directories (default: true)
+respect-gitignore = true
+
+# Markdown flavor/dialect (uncomment to enable)
+# Options: mkdocs, gfm, commonmark
+flavor = "commonmark"  # https://www.getzola.org/documentation/getting-started/overview/
+

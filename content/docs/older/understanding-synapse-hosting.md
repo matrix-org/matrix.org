@@ -642,7 +642,7 @@ here again adapt the labels to your own domain.
       - traefik.http.routers.synapse.tls.certresolver=letls
 ```
 
-We can try to reach https://matrix.example.org… and it should answer!
+We can try to reach <https://matrix.example.org>… and it should answer!
 
 ![Synapse serving its static page, behind nginx](/docs/legacy/understanding-synapse-hosting-nginx.png "Synapse serving its static page, behind nginx")
 
@@ -652,8 +652,7 @@ It looks like our server is online, that’s fantastic! Let’s connect to our n
 Matrix account then! But wait… registrations are closed by default on Synapse.
 We can’t register using a web client. Let’s get a prompt in the Synapse
 container with `docker exec -it infra-synapse-1 /bin/bash` to manually register
-a new user using the `register_new_matrix_user -c /data/homeserver.yaml
-http://localhost:8008` command:
+a new user using the `register_new_matrix_user -c /data/homeserver.yaml http://localhost:8008` command:
 
 
 ```

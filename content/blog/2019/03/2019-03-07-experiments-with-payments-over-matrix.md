@@ -27,7 +27,7 @@ We wanted to elaborate on this a bit from the Matrix.org perspective, specifical
  	<li style="font-weight: 400;">The idea in future is for Modular to provide this as a mechanism that <em>anyone</em> can use to charge for content on Matrix - e.g. if you have your own sticker pack and want to sell it to people, you'll be able to upload it and charge people for it.
 </li>
 </ul>
-Meanwhile, there's a lot of interesting stuff on the horizon with integration managers in general - see <a href="https://github.com/matrix-org/matrix-doc/issues/1236">MSC1236</a> and an upcoming MSC from TravisR (based around <a href="https://github.com/matrix-org/matrix-doc/issues/1286">https://github.com/matrix-org/matrix-doc/issues/1286</a>) proposing new integration capabilities.  We're also hoping to implement inline widgets soon (e.g. chatbot buttons for voting and other semantic behaviour) which should make widgets even more interesting!
+Meanwhile, there's a lot of interesting stuff on the horizon with integration managers in general - see <a href="https://github.com/matrix-org/matrix-doc/issues/1236">MSC1236</a> and an upcoming MSC from TravisR (based around <https://github.com/matrix-org/matrix-doc/issues/1286>) proposing new integration capabilities.  We're also hoping to implement inline widgets soon (e.g. chatbot buttons for voting and other semantic behaviour) which should make widgets even more interesting!
 
 
 So, feel free to go stick some hex stickers on your rooms if you like and help test this out.  In future there should be more useful things available :)

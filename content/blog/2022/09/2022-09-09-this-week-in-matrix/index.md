@@ -284,7 +284,7 @@ Native Decentralised End-to-end Encrypted Group Calls in Matrix, as a standalone
 >
 > ❓ Please help us test our new integration of Element Call into Element Web.
 >
-> (Details in https://matrix.to/#/#element-community-testing:matrix.org)
+> (Details in <https://matrix.to/#/#element-community-testing:matrix.org>)
 
 ## Dept of SDKs and Frameworks 🧰
 
@@ -342,7 +342,7 @@ Matrix server setup using Ansible and Docker
 
 [imbev](https://matrix.to/#/@imbev:matrix.org) reports
 
-> matrix-rss-bridge is a bridge for reading RSS feeds in Matrix rooms. You can find the repository at https://gitlab.com/imbev/matrix-rss-bridge
+> matrix-rss-bridge is a bridge for reading RSS feeds in Matrix rooms. You can find the repository at <https://gitlab.com/imbev/matrix-rss-bridge>
 >
 > ### Setup
 >

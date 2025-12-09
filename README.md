@@ -28,8 +28,8 @@ just 612MiB.
 For more information on this please check out these 2 articles which also
 explain why `--depth=1` is not ideal and which implications this has:
 
-- https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone/
-- https://web.archive.org/web/20241001150554/https://nayak.io/posts/git-clone-optimizations/
+- <https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone/>
+- <https://web.archive.org/web/20241001150554/https://nayak.io/posts/git-clone-optimizations/>
 
 ## Building the website
 
@@ -41,5 +41,5 @@ zola serve
 ```
 
 Zola will build the website and start a web server, usually at
-http://127.0.0.1:1111
+<http://127.0.0.1:1111>
 

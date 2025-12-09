@@ -33,7 +33,7 @@ Synapse 1.0 is good news for anyone running a Synapse installation - it contains
 In anticipation for this, everyone currently running a homeserver must ensure that they have checked their federation certificate (check yours <a href="/federationtester/">here</a>). Failure to do so will mean being unable to federate with any Matrix 1.0 compliant server. If your server fails the check, our <a href="https://github.com/matrix-org/synapse/blob/master/docs/MSC1711_certificates_FAQ.md">FAQ</a> has all the details on what you need to do. 
 
 
-This post is a call to arms to try and get as many admins to upgrade their certificates as possible. We are tracking adoption at <a href="https://arewereadyyet.com">https://arewereadyyet.com</a> - currently this sits at about 55% - we need this figure to be higher before we can pull the lever.  
+This post is a call to arms to try and get as many admins to upgrade their certificates as possible. We are tracking adoption at <https://arewereadyyet.com> - currently this sits at about 55% - we need this figure to be higher before we can pull the lever.  
 
 
 So what are you waiting for? Check that your server has valid certs - then tell all your admin pals to do the same. 

@@ -4,6 +4,19 @@ The matrix.org website is powered by [Zola](https://www.getzola.org/), a [static
 
 This documentation is about helping you create new content that the static site generator will accept. To get your content actually deploy on matrix.org, you need to be familiar with git, GitHub and Pull Requests. If that's not the case, we suggest either finding someone who is and can help, or dropping us a line in the [Matrix.org Website chat room](https://matrix.to/#/#matrix.org-website:matrix.org).
 
+## General tips
+
+### Internal links
+
+Zola can automatically check internal links if they are added using the [Zola internal link syntax](https://www.getzola.org/documentation/content/linking/#internal-links).
+
+Tl;dr: Linking to a file located at content/pages/about.md would be `[my link](@/pages/about.md)`.
+
+There are some edge cases, for example this can only work when a file generating a page actually exists, e.g. not for entirely generated pages such as the blog's `/category/` pages.
+We collect such issues in [#2829](https://github.com/matrix-org/matrix.org/issues/2829) and welcome ideas to improve this approach.
+
+We still prefer this approach on a best effort basis as it has already proven useful.
+
 ## Publishing to the blog
 
 Articles on the blog are written in the markdown format. Markdown should generally be the same everywhere, but there are small variations around what you can or can't do with it. Zola supports the [CommonMark variant](https://commonmark.org/help/) of Markdown. Note that Zola's Markdown parser is pedantic about links and requires to use `<>` around a link without title.
@@ -24,6 +37,8 @@ insert_anchor_links = "left"
 Once this structure is in place, you need to write the actual blog post. It is a single text file ending with the `.md` extension. There are two sections in the file: a _frontmatter_ containing all the metadata (e.g. title of the post, date of publication, author, section), and the content itself.
 
 In the frontmatter, make sure to format the date as `year-month-day` (e.g. `2024-01-22`) then append `T` to specify the time as `hour:minute:seconds` (e.g. `12:30:00`) and add a final `Z` to specify that the time is on the UTC time zone. We use UTC to make it easier for humans to figure out which blog post is going to be published first if two blog posts are issued on the same day.
+
+The `taxonomies` automatically create groupings of blog posts and also filter into respective atom feeds readers can subscribe to. It is hence important to choose correct and consistent values for both author(s) and categories. You can browse existing ones at <https://matrix.org/author/> and <https://matrix.org/category/> to match them.
 
 You can use the following template to create a new blog post:
 

@@ -39,7 +39,7 @@ general internet and wider Matrix network.
 
 You can test whether your room directory is visible to arbitrary Matrix clients
 on the general internet by viewing a URL like
-https://sandbox.modular.im/_matrix/client/r0/publicRooms (but for your server). 
+<https://sandbox.modular.im/_matrix/client/r0/publicRooms> (but for your server). 
 If it gives a "Missing access token" error, you are okay.
 
 You can test whether your room directory is visible to arbitrary Matrix servers
@@ -69,6 +69,6 @@ directories with finer grained access control, etc) - but until this is sorted,
 please heed this advice.
 
 If you have concerns about randoms having managed to discover or join rooms
-which should have been private, please contact security@matrix.org.
+which should have been private, please contact <security@matrix.org>.
 
 
