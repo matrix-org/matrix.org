@@ -69,41 +69,79 @@ them to show individual images when they are ready.
 In Fractal, images in public rooms are hidden by default. You can check and
 adjust this in Account Settings.
 
-![](fractal_menu_settings.png)
+{{ figure(
+    img="fractal_menu_settings.avif"
+    caption=""
+    alt="Fractal, after clicking the avatar to show a pop-up menu. The gear
+    icon is highlighted, saying Account Settings"
+) }}
 
 Choose Safety, and find "Media Previews". Make sure "Show only in private rooms"
 is selected.
 
-![](fractal_settings_safety.png)
+{{ figure(
+    img="fractal_settings_safety.avif"
+    caption=""
+    alt="Fractal's settings screen, on the Safety tab. Show only in private
+    rooms is highlighted, under Media previews."
+) }}
 
 Now images will be hidden by default. You can make them visible by clicking on
 "Click to show preview".
 
-![](fractal_show_image.png)
+{{ figure(
+    img="fractal_show_image.avif"
+    caption=""
+    alt="Fractal's main timeline, with some hidden images. Click to show
+    preview is highlighted on one of them."
+) }}
 
 You can re-hide them by choosing the "eye" icon in the corner of the image.
 
-![](fractal_hide_image.png)
+{{ figure(
+    img="fractal_hide_image.avif"
+    caption=""
+    alt="Fractal's main timeline, with some images. The eye symbol in the
+    top right of one is highlighted. The tooltip says Hide media preview."
+) }}
 
 ### In Element X
 
 In Element X, you can hide images in public rooms in Settings, by tapping on
 your avatar.
 
-![](element_x_main.png)
+{{ figure(
+    img="element_x_main.avif"
+    caption=""
+    alt="Element X, with the avatar highlighted."
+) }}
 
 Choose Advanced Settings.
 
-![](element_x_settings.png)
+{{ figure(
+    img="element_x_settings.avif"
+    caption=""
+    alt="Element X's Settings screen, with Advanced settings highlighted."
+) }}
 
 Under "Show media in timeline" choose "In private rooms"
 
-![](element_x_advanced_settings.png)
+{{ figure(
+    img="element_x_advanced_settings.avif"
+    caption=""
+    alt="Element X's Advanced settings screen, showing Show media in timeline,
+    with the In private rooms option highlighted."
+) }}
 
 Now images will be hidden by default. You can make them visible by clicking on
 "Show".
 
-![](element_x_show_image.png)
+{{ figure(
+    img="element_x_show_image.avif"
+    caption=""
+    alt="Element X's timeline, with a hidden image which has a Show button
+    that is highlighted."
+) }}
 
 To hide an image after it has been shown, go back to the room list and re-enter
 the room.
@@ -112,21 +150,42 @@ the room.
 
 In Element Web, you can hide images in public rooms in Settings.
 
-![](element_menu_settings.png)
+{{ figure(
+    img="element_menu_settings.avif"
+    caption=""
+    alt="Element Web with the avatar highlighted, and the avatar menu visible,
+    with All settings highlighted."
+) }}
 
 Choose Preferences, and scroll down to Moderation and safety. Click "In private
 rooms" under "Show media in timeline".
 
-![](element_settings_preferences_safety.png)
+{{ figure(
+    img="element_settings_preferences_safety.avif"
+    caption=""
+    alt="Element Web's settings menu, on the Preferences page, showing the
+    Moderation and safety section. Under Show media in timeline, In private
+    rooms is highlighted."
+) }}
 
 Now images will be hidden by default. You can make them visible by clicking on
 "Show image".
 
-![](element_show_image.png)
+{{ figure(
+    img="element_show_image.avif"
+    caption=""
+    alt="Element Web's timeline with a hidden image. The Show image button
+    is highlighted."
+) }}
 
 You can re-hide them by choosing the "eye" icon when you hover over the image.
 
-![](element_hide_image.png)
+{{ figure(
+    img="element_hide_image.avif"
+    caption=""
+    alt="Element Web, hovering over an image to show the pop-up menu. On this
+    menu is an eye image that is highlighted. The tooltip says Hide."
+) }}
 
 ## Browsing the public directory
 
