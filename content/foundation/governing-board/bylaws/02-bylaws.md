@@ -7,6 +7,10 @@ the Matrix Governing Board, including membership, meetings, elections, roles,
 responsibilities, and behavioral standards. All content must be consistent with
 the Terms of Reference (TOR).
 
+The canonical version of this document are the markdown sources available
+through the [matrix.org website’s git
+repo](https://github.com/matrix-org/matrix.org/tree/main/content/foundation/governing-board/bylaws).
+
 ## 1. Board Structure & Mandate
 
 The Governing Board is made up of members elected by the community. As a
@@ -65,7 +69,10 @@ provisional Chair, creates a charter, and establishes a meeting or discussion
 cadence/process. New Committees are expected to be infrequent, and proposed
 by at least 3 Board members. Proposals for new Committees must include an
 initial draft charter and be presented in the Board Discussions forum; a simple
-majority vote of the Board is sufficient to create a Committee.
+majority vote of the Board is sufficient to create a Committee. Henceforth the
+canonical versions of the Committee charters are maintained by the Governing
+Board [via the matrix.org website git
+repo](https://github.com/matrix-org/matrix.org/blob/main/content/foundation/governing-board/committees.md).
 
 Committees are primarily composed of Governing Board members (with rare
 exceptions). Their main role is to coordinate and provide strategic oversight
@@ -121,12 +128,15 @@ several Committees.
 
 Working Groups must have a dedicated public Matrix room (which will
 be listed on
-[the Working Groups webpage](https://matrix.org/foundation/working-groups/)
+[the Working Groups webpage](@/foundation/working-groups/index.md)
 and the [Working Groups Matrix space](https://matrix.to/#/#matrix-wgs:matrix.org))
 and have access to a Discourse category for communication with the Board,
 documentation, and voting. In order to ensure transparency and
 accountability, Working Groups should take notes in meetings and
-generally do their best to make their work public where possible.
+generally do their best to make their work public where possible. Similarly,
+the Governing Board maintains the canonical charters of the Working Groups [in
+the matrix.org website git
+repo](https://github.com/matrix-org/matrix.org/blob/main/content/foundation/working-groups/working_groups.toml).
 
 ### Proposing New Working Groups
 
