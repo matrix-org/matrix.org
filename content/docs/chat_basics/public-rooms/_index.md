@@ -73,7 +73,7 @@ adjust this in Account Settings.
     img="fractal_menu_settings.avif"
     caption=""
     alt="Fractal, after clicking the avatar to show a pop-up menu. The gear
-    icon is highlighted, saying Account Settings"
+    icon is highlighted, saying Account Settings."
 ) }}
 
 Choose Safety, and find "Media Previews". Make sure "Show only in private rooms"
@@ -124,7 +124,7 @@ Choose Advanced Settings.
     alt="Element X's Settings screen, with Advanced settings highlighted."
 ) }}
 
-Under "Show media in timeline" choose "In private rooms"
+Under "Show media in timeline" choose "In private rooms".
 
 {{ figure(
     img="element_x_advanced_settings.avif"
