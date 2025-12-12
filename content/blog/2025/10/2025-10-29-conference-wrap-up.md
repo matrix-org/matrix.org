@@ -23,6 +23,12 @@ The first success was of course in attendance. With more than 250 attendees on-s
 
 <!-- more -->
 
+{{ figure(
+    img="/blog/img/conf25-crowd.avif"
+    caption=""
+    alt="A picture containing the group of people attending the event. Many of them wearing the lavender colored merch of the event as well as a Matrix Conference landyard."
+) }}
+
 The Conference started by a Barcamp/Unconference: it's an informal workshop day where people join and share the topics they want to talk and hear about. In the evening we all gathered for a Welcome Party at bar Le Météor. Rocket.Chat and Element sponsored the evening, so attendees only had to come and grab food and drinks. We're grateful to both Rocket.Chat and Element for offering us this great night of socializing!
 
 {{ figure(
