@@ -20,8 +20,6 @@ sso = false
 multi_account = true
 multi_language = true
 [extra.packages]
-windows_installer = "https://lily-is.land/kazv/kazv/releases"
-other_linux_link = "https://lily-is.land/kazv/kazv/releases"
 +++
 
 A convergent Matrix client and secure messaging app
