@@ -262,3 +262,13 @@ language = "TypeScript"
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/mjolnir"
 room = "#mjolnir:matrix.org"
+
+[[integrations]]
+name = "TootFeedBot"
+description = """
+A bot that forwards toots from your Fediverse feed to your matrix inbox. It supports Mastodon and Pleroma.
+"""
+maintainer = "urmaul"
+language = "TypeScript"
+license = "MIT"
+repository = "https://codeberg.org/urmaul/toot-feed-bot"
