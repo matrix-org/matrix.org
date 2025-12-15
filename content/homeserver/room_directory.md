@@ -34,9 +34,9 @@ The formal policy developed by the Trust & Safety Committee of the [Governing Bo
 
 **Interpretation notes**
 
-* Clause 4 supports using forms instead of an email address.
 * Clause 2's use of "may" permits approval *and* denial.
 * Clause 3 is permissive to "vaguely related to Matrix", but is intended to be kept relatively narrow to "Matrix-related" for now. This may change in the future.
+* Clause 4 supports using forms instead of an email address.
 
 **Implementation details**
 
