@@ -17,7 +17,7 @@ If you want to explore a even wider range of public Matrix rooms, you can also b
 
 ## Full policy
 
-The formal policy developed by the Trust & Safety Committee of the [Governing Board](@/foundation/governing-board/index.md) is below. Interpretation and changes are managed by the Trust & Safety Committee while implementation is managed by the [Room Directory Working Group](@/foundation/working-groups/index.md).
+The formal policy developed by the Trust & Safety Committee of the [Governing Board](@/foundation/governing-board/index.md) is below. Interpretation and changes are managed by the Trust & Safety Committee and approved by the [Trust & Safety](@/foundation/about/index.md#the-staff-of-the-foundation) team, while implementation is managed by the [Room Directory Working Group](@/foundation/working-groups/index.md).
 
 1. The matrix.org public room directory is highly visible and serves as the main entrypoint into the Matrix ecosystem for many new users. To ensure trust and safety on matrix.org and maintain a good onboarding experience, the Matrix foundation curates the room directory.
 2. Rooms or spaces may be included in the room directory if they meet the following criteria.
