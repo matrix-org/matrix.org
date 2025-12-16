@@ -47,7 +47,7 @@ If, having considered the risks, we still want to roll out the feature further, 
 Enabling the feature for *all* users on `matrix.org` is a last resort.
 When doing this we'll need to make sure we consider up-front things like:
 
-- how we make sure that clients don't end up relying on it by accident (for example, guarding it by a 'labs' flag which users have to enable explictly).
+- how we make sure that clients don't end up relying on it by accident (for example, guarding it by a 'labs' flag which users have to enable explicitly).
 - how we will safely evolve the feature if it turns out more changes are needed to the API.
 - how we will safely remove the `/unstable` prefixes once the feature is stabilised.
 
