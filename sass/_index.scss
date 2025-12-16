@@ -1,5 +1,4 @@
 #frontpage {
-
     h2 {
         margin-block: 1.38rem 1rem;
     }
@@ -273,6 +272,77 @@
         }
     }
 
+    #platinum-sponsor {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        padding: 80px;
+        overflow: hidden;
+        align-items: center;
+        color: #fff;
+        background-color: #000;
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(100%, 400px), 1fr)
+            );
+            gap: 28px;
+            max-width: 55.8rem;
+        }
+
+        .membership-card {
+            max-width: 648px;
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px #3c3f44 solid;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 28px;
+        }
+
+        .membership-card__content {
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            display: flex;
+
+            img {
+                width: 148px;
+                height: 32px;
+                object-fit: contain;
+            }
+        }
+        .membership-card__extra {
+            border-top: 1px #3c3f44 solid;
+            padding-top: 16px;
+        }
+    }
+
+    #become-a-member {
+        display: flex;
+        flex-direction: column;
+        padding: 80px;
+        overflow: hidden;
+        align-items: center;
+        color: #000;
+        background-color: #fff;
+
+        .become-a-member__content {
+            max-width: 55.8rem;
+            flex-direction: column;
+            align-items: center;
+            gap: 28px;
+            display: flex;
+
+            p {
+                text-wrap: balance;
+            }
+        }
+    }
+
     #buildonmatrix {
         display: flex;
         flex-direction: column;
@@ -329,7 +399,10 @@
             @media (max-width: 767px) {
                 top: 25px; // container padding
             }
-            left: min(max(20%, calc(50% - 600px)), calc(50% - (var(--bridge-visual-width) / 2) - 300px));
+            left: min(
+                max(20%, calc(50% - 600px)),
+                calc(50% - (var(--bridge-visual-width) / 2) - 300px)
+            );
 
             width: var(--bridge-visual-width);
             height: 287px;
@@ -340,7 +413,10 @@
 
             position: absolute;
             bottom: 50px;
-            left: min(max(20%, calc(50% - 600px)), calc(50% - (var(--homeserver-width) / 2) - 300px));
+            left: min(
+                max(20%, calc(50% - 600px)),
+                calc(50% - (var(--homeserver-width) / 2) - 300px)
+            );
 
             width: var(--homeserver-width);
             height: 235px;
@@ -351,7 +427,10 @@
 
             position: absolute;
             bottom: 75px;
-            right: min(max(12%, calc(50% - 650px)), calc(50% - (var(--federation-visual-width) / 2) - 300px));
+            right: min(
+                max(12%, calc(50% - 650px)),
+                calc(50% - (var(--federation-visual-width) / 2) - 300px)
+            );
 
             width: var(--federation-visual-width);
             height: 880px;
@@ -360,7 +439,7 @@
         .call-to-action {
             display: flex;
             align-items: center;
-            gap: .5em;
+            gap: 0.5em;
 
             img {
                 max-height: 1.5em;
@@ -390,7 +469,6 @@
             @media (max-width: 767px) {
                 margin: 0 auto;
             }
-
 
             .sponsor_card {
                 display: flex;
@@ -444,7 +522,7 @@
 
 #information-banner {
     width: 100%;
-    padding: .4em 1em;
+    padding: 0.4em 1em;
     background-color: var(--notice-box-color);
     text-align: center;
     z-index: 999;
@@ -452,7 +530,7 @@
 
 .notice-box {
     text-align: center;
-    padding: .4em 1em;
+    padding: 0.4em 1em;
     margin-bottom: 1rem;
     background-color: var(--notice-box-color);
 }
