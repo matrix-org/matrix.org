@@ -1,4 +1,5 @@
 #frontpage {
+
     h2 {
         margin-block: 1.38rem 1rem;
     }
@@ -399,10 +400,7 @@
             @media (max-width: 767px) {
                 top: 25px; // container padding
             }
-            left: min(
-                max(20%, calc(50% - 600px)),
-                calc(50% - (var(--bridge-visual-width) / 2) - 300px)
-            );
+            left: min(max(20%, calc(50% - 600px)), calc(50% - (var(--bridge-visual-width) / 2) - 300px));
 
             width: var(--bridge-visual-width);
             height: 287px;
@@ -413,10 +411,7 @@
 
             position: absolute;
             bottom: 50px;
-            left: min(
-                max(20%, calc(50% - 600px)),
-                calc(50% - (var(--homeserver-width) / 2) - 300px)
-            );
+            left: min(max(20%, calc(50% - 600px)), calc(50% - (var(--homeserver-width) / 2) - 300px));
 
             width: var(--homeserver-width);
             height: 235px;
@@ -427,10 +422,7 @@
 
             position: absolute;
             bottom: 75px;
-            right: min(
-                max(12%, calc(50% - 650px)),
-                calc(50% - (var(--federation-visual-width) / 2) - 300px)
-            );
+            right: min(max(12%, calc(50% - 650px)), calc(50% - (var(--federation-visual-width) / 2) - 300px));
 
             width: var(--federation-visual-width);
             height: 880px;
@@ -439,7 +431,7 @@
         .call-to-action {
             display: flex;
             align-items: center;
-            gap: 0.5em;
+            gap: .5em;
 
             img {
                 max-height: 1.5em;
@@ -469,6 +461,7 @@
             @media (max-width: 767px) {
                 margin: 0 auto;
             }
+
 
             .sponsor_card {
                 display: flex;
@@ -522,7 +515,7 @@
 
 #information-banner {
     width: 100%;
-    padding: 0.4em 1em;
+    padding: .4em 1em;
     background-color: var(--notice-box-color);
     text-align: center;
     z-index: 999;
@@ -530,7 +523,7 @@
 
 .notice-box {
     text-align: center;
-    padding: 0.4em 1em;
+    padding: .4em 1em;
     margin-bottom: 1rem;
     background-color: var(--notice-box-color);
 }
