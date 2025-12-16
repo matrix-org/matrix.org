@@ -1,16 +1,4 @@
 [[staff]]
-name = "Robin Riley"
-title = "Managing Director"
-picture = "robin.jpg"
-email = "robin@foundation.matrix.org"
-website = "https://robinriley.fyi/"
-linkedin = "https://www.linkedin.com/in/bluesomewhere/"
-fediverse = "https://social.riley.pub/@robin"
-bio = """
-Robin is a community organiser, web developer, nonprofit geek, and activist based in Petaluma, California. Best known for their time in leadership at the Open Source Initiative, Robin is also on the board of Petaluma Pride, author of the Public Health Pledge, and an advisor to Independent Federated Trust & Safety (IFTAS). Robin has also been known as Josh Simmons. In the past, Robin has worked in community-facing roles focused on open source at Tidelift, Salesforce, Google, and O’Reilly Media.
-"""
-
-[[staff]]
 name = "Jim Mackenzie"
 title = "Vice President of Trust and Safety"
 picture = "jim.jpg"

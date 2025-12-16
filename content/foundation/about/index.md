@@ -166,6 +166,14 @@ most of our staffers are employees of Element, working under a contract with, an
 funded by, the Foundation. The exception is our Managing Director who contracts
 directly with the Foundation.
 
+
+<div class="staff">
+    <div class="staff-details">
+        <h4 class="staff-name" id="managing-director">Managing Director</h4>
+        <p>The Foundation is currently looking for a new Managing Director. A job description will be out soon, but if you believe you may be a good fit to the role, feel free to <a href="mailto:management@foundation.matrix.org">get in touch</a>. In the mean time, the role is being covered by <a href="#the-guardians">Amandine</a> as Acting Managing Director.</p>
+    </div>
+</div>
+
 {{ staff() }}
 
 ### The Spec Core Team
