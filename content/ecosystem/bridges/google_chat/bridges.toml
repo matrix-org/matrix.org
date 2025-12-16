@@ -2,7 +2,7 @@
 name = "mautrix-googlechat"
 maintainer = "Tulir"
 summary = "A Matrix-Google Chat puppeting bridge"
-maturity = "Beta"
+maturity = "Stable"
 language = "Python"
 license = "AGPL-3.0-or-later"
 docs = "https://docs.mau.fi/bridges/python/setup.html?bridge=googlechat"
