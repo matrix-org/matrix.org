@@ -284,6 +284,10 @@
         background-color: #000;
         text-align: center;
 
+        h2 {
+            font-size: 2.5rem;
+        }
+
         .row {
             display: grid;
             grid-template-columns: repeat(
@@ -331,6 +335,10 @@
         align-items: center;
         color: #000;
         background-color: #fff;
+
+        h2 {
+            font-size: 2.5rem;
+        }
 
         #become-a-member__content {
             max-width: 55.8rem;
