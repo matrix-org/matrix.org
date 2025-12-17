@@ -35,7 +35,7 @@ maintainer = "Tulir"
 summary = """
 A Matrix-Facebook Messenger and Instagram DM puppeting bridge.
 """
-maturity = "Alpha"
+maturity = "Stable"
 language = "Go"
 license = "AGPL-3.0-or-later"
 docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=meta"
