@@ -1,26 +1,4 @@
 [[bridges]]
-name = "android-sms"
-maintainer = "Beeper"
-summary = """
-An Android app that wraps [mautrix-imessage](https://github.com/tulir/mautrix-imessage)
-to bridge SMS from your Android phone to Matrix.
-"""
-maturity = "Obsolete"
-language = "Kotlin"
-license = "Apache-2.0"
-repo = "https://gitlab.com/beeper/android-sms"
-room = "#imessage:maunium.net"
-featured = false
-privilege.platform = "User" # Free text
-privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
-[bridges.supports]
-sms = true
-mms = true
-rcs = false
-group_chats = true
-history_from_android = true
-
-[[bridges]]
 name = "mautrix-gmessages"
 maintainer = "Tulir"
 summary = "A Matrix-Google Messages puppeting bridge"
@@ -67,3 +45,25 @@ mms = false
 rcs = false
 group_chats = true
 history_from_android = false
+
+[[bridges]]
+name = "android-sms"
+maintainer = "Beeper"
+summary = """
+An Android app that wraps [mautrix-imessage](https://github.com/tulir/mautrix-imessage)
+to bridge SMS from your Android phone to Matrix.
+"""
+maturity = "Obsolete"
+language = "Kotlin"
+license = "Apache-2.0"
+repo = "https://gitlab.com/beeper/android-sms"
+room = "#imessage:maunium.net"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+sms = true
+mms = true
+rcs = false
+group_chats = true
+history_from_android = true
