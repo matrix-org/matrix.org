@@ -53,7 +53,7 @@ The schedule is the following:
 - 19:30 - Dinner delivery
 - 21:30 - End of the Evening Lounge
 
-Between 09:00 and 17:00 we will keep the space focused on the hackathon, with a backstory to galvanise contributors! After 17:00 the hacking phase of the hackathon will be over, and everyone will be welcome to attend and join us for the evening.
+Between 09:00 and 17:00 we will keep the space focused on the hackathon, with a backstory to galvanise contributors! After 17:00 the hacking phase of the hackathon will be over, and everyone will be welcome to attend and join us for the evening even without a registration.
 
 🕐️ Friday 30, 09:00 - 17:00 CET (local time)  
 🏢 [HSBXL](https://hsbxl.be/), Rue Osseghem 53, 1080 Molenbeek
