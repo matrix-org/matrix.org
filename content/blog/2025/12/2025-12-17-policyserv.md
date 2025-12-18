@@ -1,10 +1,10 @@
 +++
-date = "2025-12-17"
+date = "2025-12-18"
 title = "Sharing a safety tool: announcing policyserv"
 
 [taxonomies]
 author = ["Jim Mackenzie, VP Trust & Safety — The Matrix.org Foundation"]
-category = ["Foundation", "General", "Trust & Safety"]
+category = ["Trust & Safety"]
 +++
 
 In April, we [introduced policy servers](@/blog/2025/04/2025-04-17-introducing-policy-servers.md) to help tackle the spread of harmful content on Matrix. Today, we’re announcing that our implementation is available as open source. Say hello to [policyserv](https://github.com/matrix-org/policyserv) v1!
