@@ -12,6 +12,8 @@ image = "https://matrix.org/blog/img/matrix-fosdem.png"
 
 As we've [previously announced](@/blog/2025/12/2025-12-03-fosdem-presence.md), we are organising a Matrix Hackathon before FOSDEM and co-organising the Decentralised Communication Devroom. We have updates for you!
 
+<!-- more -->
+
 ## Devroom line-up
 
 We finalised and published the schedule of the Devroom. We're pleased to announce that the devroom will feature talks about Trust & Safety in the context of decentralised systems, Matrix, XMPP, ActivityPub, AT, DASL, KERI, and even a talk about how to onboard more people. When combing the proposals, we tried to get as many relevant technologies covered as possible.
