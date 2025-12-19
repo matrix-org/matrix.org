@@ -34,7 +34,7 @@ The following topics are covered by mentors who already signed up and volunteere
 - Trust & Safety, [Draupnir](https://github.com/the-draupnir-project/Draupnir): Gnuxie
 - Trust & Safety, [Mjolnir](https://github.com/matrix-org/mjolnir), [Policyserv](https://github.com/matrix-org/policyserv): Travis
 - [Element Web](https://github.com/element-hq/element-web): Dave, Florian
-- MatrixRTC: Timo, Td, Valere
+- MatrixRTC: Timo, td, Valere
 - Encryption: Valere, Hubert
 - [Matrix-Auth-Service](https://github.com/element-hq/matrix-authentication-service): Quentin
 - [Nheko](https://github.com/Nheko-Reborn/nheko): Nico
