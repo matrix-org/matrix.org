@@ -108,9 +108,9 @@ relMe = true
 newTab = true
 
 [[footer_external]]
-image = "x.svg"
-alt = "Matrix on X"
-href = "https://x.com/matrixdotorg"
+image = "bluesky.svg"
+alt = "Matrix on BlueSky"
+href = "https://bsky.app/profile/matrix.org"
 newTab = true
 
 [[footer_external]]
