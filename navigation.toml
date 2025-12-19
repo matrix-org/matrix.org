@@ -107,11 +107,6 @@ href = "https://mastodon.matrix.org/@matrix"
 relMe = true
 newTab = true
 
-[[footer_external]]
-image = "x.svg"
-alt = "Matrix on X"
-href = "https://x.com/matrixdotorg"
-newTab = true
 
 [[footer_external]]
 image = "youtube.svg"
