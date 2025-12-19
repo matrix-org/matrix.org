@@ -56,4 +56,5 @@ The schedule is the following:
 Between 09:00 and 17:00 we will keep the space focused on the hackathon, with a backstory to galvanise contributors! After 17:00 the hacking phase of the hackathon will be over, and everyone will be welcome to attend and join us for the evening even without a registration.
 
 🕐️ Friday 30, 09:00 - 17:00 CET (local time)  
-🏢 [HSBXL](https://hsbxl.be/), Rue Osseghem 53, 1080 Molenbeek
+🏢 [HSBXL](https://hsbxl.be/), Rue Osseghem 53, 1080 Molenbeek  
+🎫 [Free registration here](https://pretix.eu/matrix/fosdem26-hackathon/)
