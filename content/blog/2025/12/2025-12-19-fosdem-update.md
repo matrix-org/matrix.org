@@ -57,4 +57,5 @@ Between 09:00 and 17:00 we will keep the space focused on the hackathon, with a 
 
 🕐️ Friday 30, 09:00 - 17:00 CET (local time)  
 🏢 [HSBXL](https://hsbxl.be/), Rue Osseghem 53, 1080 Molenbeek  
-🎫 [Free registration here](https://pretix.eu/matrix/fosdem26-hackathon/)
+🎫 [Free registration here](https://pretix.eu/matrix/fosdem26-hackathon/)  
+[m] Join us in [#fosdem-2026-hackathon:matrix.org](https://matrix.to/#/%23fosdem-2026-hackathon:matrix.org) to stay informed!
