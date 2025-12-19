@@ -1,5 +1,5 @@
 +++
-date = "2025-12-19"
+date = "2025-12-19T15:30:00Z"
 title = "FOSDEM Update"
 
 [taxonomies]
