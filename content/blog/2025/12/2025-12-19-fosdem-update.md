@@ -20,7 +20,7 @@ We finalised and published the schedule of the Devroom. We're pleased to announc
 
 You can find the [Devroom schedule](https://fosdem.org/2026/schedule/track/decentralised-communication/) on FOSDEM's website.
 
-🕐️ Sunday 1, 09:00 - 17:00 CET (local time)  
+🕐️ Sunday, 1st February, 09:00 - 17:00 CET (local time)  
 🏢 Room aw1126
 
 ## Hackathon
@@ -55,7 +55,7 @@ The schedule is the following:
 
 Between 09:00 and 17:00 we will keep the space focused on the hackathon, with a backstory to galvanise contributors! After 17:00 the hacking phase of the hackathon will be over, and everyone will be welcome to attend and join us for the evening even without a registration.
 
-🕐️ Friday 30, 09:00 - 17:00 CET (local time)  
+🕐️ Friday, 30th January, 09:00 - 17:00 CET (local time)  
 🏢 [HSBXL](https://hsbxl.be/), Rue Osseghem 53, 1080 Molenbeek  
 🎫 [Free registration here](https://pretix.eu/matrix/fosdem26-hackathon/)  
 [m] Join us in [#fosdem-2026-hackathon:matrix.org](https://matrix.to/#/%23fosdem-2026-hackathon:matrix.org) to stay informed!
