@@ -39,7 +39,7 @@ The following topics are covered by mentors who already signed up and volunteere
 - [Matrix-Auth-Service](https://github.com/element-hq/matrix-authentication-service): Quentin
 - [Nheko](https://github.com/Nheko-Reborn/nheko): Nico
 - [Neoboard](https://github.com/nordeck/matrix-neoboard): Milton
-- Python bots: Kim
+- Website, Python bots: Kim
 
 If you want to mentor or hack on another topic you're of course also welcome to the hackathon.
 
