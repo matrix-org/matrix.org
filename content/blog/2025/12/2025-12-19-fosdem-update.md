@@ -59,3 +59,9 @@ Between 09:00 and 17:00 we will keep the space focused on the hackathon, with a 
 🏢 [HSBXL](https://hsbxl.be/), Rue Osseghem 53, 1080 Molenbeek  
 🎫 [Free registration here](https://pretix.eu/matrix/fosdem26-hackathon/)  
 [m] Join us in [#fosdem-2026-hackathon:matrix.org](https://matrix.to/#/%23fosdem-2026-hackathon:matrix.org) to stay informed!
+
+## Booth
+
+This year again we will have a booth for both days at the event. We're looking for volunteers to join the team staffing the booth. Sign up early and you'll get one of the 2026 volunteer limited edition t-shirts!
+
+You can pick a shift on our [shifts management platform](https://volunteer.matrix-community.events/fosdem-2026/) and we will invite you in the private matrix room to manage the booth.
