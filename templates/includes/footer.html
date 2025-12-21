@@ -6,7 +6,7 @@
     </div>
     <div class="external-links">
         {% for item in navigation.footer_external %}
-        <a href="{{ item.href }}" {% if item.newTab %}target="_blank"{% endif %} {% if item.relMe %}rel="me"{% endif %}>{{ load_data(path="/assets/" ~ item.image) | safe }}</a>
+        <a href="{{ item.href }}" {% if item.newTab %}target="_blank"{% endif %} {% if item.relMe %}rel="me"{% endif %} aria-label="{{ item.alt }}">{{ load_data(path="/assets/" ~ item.image) | safe }}</a>
         {% endfor %}
     </div>
     <div class="subfooter-links">
