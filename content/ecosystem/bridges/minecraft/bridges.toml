@@ -1,0 +1,24 @@
+[[bridges]]
+name = "EndBridge"
+maintainer = "Jonah"
+summary = """
+EndBridge is a [Matrix](https://matrix.org) to Minecraft chat bridge, built with Fabric. It allows Minecraft players to communicate with Matrix users with the help of the [Matrix Client-Server API](https://spec.matrix.org/v1.8/client-server-api/).<br/>
+Download the mod either from [releases](https://gitea.com/Jonah369/EndBridge/releases) or [Modrinth](https://modrinth.com/mod/endbridge).
+"""
+maturity = "Alpha"
+language = "Java"
+license = "BSD-4-Clause"
+docs = "https://gitea.com/Jonah369/EndBridge/wiki"
+repo = "https://gitea.com/Jonah369/EndBridge"
+featured = true
+privilege.platform = "Server Admin" # Free text
+privilege.matrix = "Room Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = false
+message_media = false
+redactions = false
+reactions = false
+presence = false
+mentions = false
+typing_notifications = false
+read_receipts = false
