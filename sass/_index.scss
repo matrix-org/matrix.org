@@ -28,13 +28,13 @@
                 color: #fff;
                 font-size: 2.5rem;
                 font-weight: 700;
-                max-width: 36rem;
+                max-width: 40rem;
                 margin: 0 auto;
+                padding: 0 30px;
                 text-align: center;
 
                 @media (max-width: 767px) {
                     font-size: 2.125rem;
-                    margin: 0 30px;
                 }
             }
 
@@ -270,6 +270,87 @@
             flex: auto;
             max-width: min(576px, 100%);
             margin: 20px;
+        }
+    }
+
+    #platinum-sponsor {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        padding: 80px;
+        overflow: hidden;
+        align-items: center;
+        color: #fff;
+        background-color: #000;
+        text-align: center;
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(100%, 400px), 1fr)
+            );
+            gap: 28px;
+            max-width: 55.8rem;
+        }
+
+        .membership-card {
+            max-width: 648px;
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px #3c3f44 solid;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 28px;
+        }
+
+        .membership-card__content {
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            display: flex;
+
+            img {
+                width: 148px;
+                height: 42px;
+                object-fit: contain;
+            }
+        }
+        .membership-card__extra {
+            border-top: 1px #3c3f44 solid;
+            padding-top: 16px;
+        }
+    }
+
+    #become-a-member {
+        display: flex;
+        flex-direction: column;
+        padding: 80px;
+        overflow: hidden;
+        align-items: center;
+        color: #000;
+        background-color: #fff;
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        #become-a-member__content {
+            max-width: 55.8rem;
+            flex-direction: column;
+            align-items: center;
+            gap: 28px;
+            display: flex;
+            text-align: center;
+
+            p {
+                text-wrap: balance;
+            }
         }
     }
 

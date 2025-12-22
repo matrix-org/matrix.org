@@ -53,7 +53,7 @@ summary = """
 An Android app that wraps [mautrix-imessage](https://github.com/tulir/mautrix-imessage)
 to bridge SMS from your Android phone to Matrix.
 """
-maturity = "Alpha"
+maturity = "Obsolete"
 language = "Kotlin"
 license = "Apache-2.0"
 repo = "https://gitlab.com/beeper/android-sms"
