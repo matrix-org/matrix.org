@@ -40,10 +40,19 @@
         </a>
         {% endif %}
         {% if client.repo %}
-        <a href="{{ client.repo }}" class="pill">
-            {{ load_data(path="/assets/repository.svg") | safe }}
-            Source Code
-        </a>
+            {% if client.repo.0 is defined %}
+                {% for repo_url in client.repo %}
+                <a href="{{ repo_url }}" class="pill">
+                    {{ load_data(path="/assets/repository.svg") | safe }}
+                    Source Code
+                </a>
+                {% endfor %}
+            {% else %}
+                <a href="{{ client.repo }}" class="pill">
+                    {{ load_data(path="/assets/repository.svg") | safe }}
+                    Source Code
+                </a>
+            {% endif %}
         {% endif %}
     </div>
     <div class="stores">
