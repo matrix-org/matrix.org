@@ -22,8 +22,6 @@ function toggleCheckbox(element) {
     element.checked = !element.checked;
 }
 
-console.log(dropdownToggle);
-
 document.addEventListener("DOMContentLoaded", () => {
     /**
      * Set the aria-pressed attribute on the dropdown toggle as a progressive enhancement
