@@ -14,6 +14,7 @@ This is the third in a series of three posts which discuss recent work to improv
 While the primary goal was to improve Sydent's coverage and robustness, to some extent this was an experiment too. How much could we get out of typing and static analysis, if we _really_ invested in thorough annotations? Sydent is a small project that would make for a good testbed! I decided my goal would be to get Sydent passing mypy under [--strict mode](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict). This is a command line option which turns on a number of extra checks (though not everything); it feels similar to passing `-Wall -Wextra -Werror` to `gcc`. It's a little extreme, but Sydent is a small project and this would be a good chance to see how hard it would be. In my view, the most useful options implied by strict mode were as follows.
 
 ### [--check-untyped-defs](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs)
+
 By default, mypy will only analyze the implementation of functions that are annotated. On the one hand, without annotations for inputs and the return type, it's going to be hard for mypy to thoroughly check the soundness of your function. On the other, it can still do good work with the type information it has from other sources. Mypy can
 
 - infer the type of literals, e.g. deducing `x: str` from  `x = "hello"`;

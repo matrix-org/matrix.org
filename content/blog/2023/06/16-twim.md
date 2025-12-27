@@ -350,6 +350,7 @@ A Matrix bot for the [Friendly Linux Players](https://friendlylinuxplayers.org/)
 Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
 
 ### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+
 Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|
@@ -366,6 +367,7 @@ Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience th
 |10|nerdhouse.io|7082|
 
 ### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+
 Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|
