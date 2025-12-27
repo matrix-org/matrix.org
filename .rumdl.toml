@@ -10,6 +10,7 @@ enable = [
   "MD001",  # Heading levels should only increment by one
   "MD003",  # Heading style should be consistent
   "MD011",  # Fix reversed link syntax
+  "MD022",  # Add blank lines around headings
   "MD030",  # Add consistent spacing after list markers
   "MD031",  # Code blocks need blank lines around them
   "MD034",  # URLs should be formatted as links
