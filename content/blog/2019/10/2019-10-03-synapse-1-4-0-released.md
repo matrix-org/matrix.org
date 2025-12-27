@@ -36,6 +36,7 @@ In the medium term, the vector.im and matrix.org identity servers will disable s
 Once delegated 3pid verification support has been disabled in the vector.im and matrix.org identity servers, all Synapse versions that depend on those instances will be unable to verify email and phone numbers through them. There are no imminent plans to remove delegated 3pid verification from Sydent generally. (Sydent is the identity server project that backs the vector.im and matrix.org instances).
 
 ## Why is this necessary?
+
 Prior to 1.4.0, the identity server was providing two related-but-separate functions:
 
 a directory for users to publish their contact details and to look up their contacts by their email addresses and phone numbers.
@@ -52,9 +53,11 @@ The best way to solve this problem is to have individual homeservers take owners
 This delegation is entirely separate from the user's choice of identity server for user directory services. As of right now the user is free to choose and trust whichever identity server they wish, or to choose not to use an identity server at all.
 
 ## Are there any other data privacy features?
+
 Yes, 1.4.0 now [automatically garbage collects redacted messages](https://github.com/matrix-org/synapse/issues/1287) (defaults to 7 days) and removes [unused IP and user agent information](https://github.com/matrix-org/synapse/pull/6098/files) stored in the user_ips table (defaults to 30 days). Finally, Synapse now [warns in its logs](https://github.com/matrix-org/synapse/pull/6090/files) if you are using matrix.org as a trusted key server, in case you wish to use a different server to help discover other servers’ keys.
 
 ## Anything else?
+
 Aside from privacy, we’ve expanded our OpenTracing support and fixed a host of bugs. However the thing that is most exciting is switching on our solution for [mitigating forward extremities build up](https://github.com/matrix-org/synapse/issues/5319)’ by default.
 
 In some cases rooms can accumulate ‘forward extremities’, which are simply an artefact of attempting to resolve the room state over multiple servers. Forward extremities are necessary to ensure that each server can independently arrive at the same view of the room eventually, however processing these extremities can be [computationally expensive and degrade server performance overall](https://github.com/matrix-org/synapse/issues/1760).

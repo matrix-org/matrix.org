@@ -15,6 +15,7 @@ The changelog since 1.1.0 follows:
 
 Synapse 1.2.0 (2019-07-25)
 ==========================
+
 No significant changes.
 
 Synapse 1.2.0rc2 (2019-07-24)
