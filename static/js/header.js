@@ -34,6 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
      * since it doesn't make much sense to mark it as focusable if JavaScript isn't enabled.
      */
     dropdownToggle.setAttribute("tabindex", 0);
+
+    /**
+     * Set the role attribute on the dropdown toggle as a progressive enhancement
+     * since it doesn't make much sense to mark it as focusable if JavaScript isn't enabled.
+     */
+    dropdownToggle.setAttribute("role", "button");
 });
 
 dropdownToggle.addEventListener("click", () => {
@@ -41,8 +47,12 @@ dropdownToggle.addEventListener("click", () => {
 });
 
 dropdownToggle.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" || event.key === " ") {
+        // Prevent the page from scrolling if the space button is pressed.
+        event.preventDefault();
+
         toggleCheckbox(dropdownCheckbox);
+
         toggleAriaPressed(dropdownToggle);
     }
 });
