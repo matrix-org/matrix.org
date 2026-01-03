@@ -306,6 +306,7 @@ Synapse Maintenance Container – Docker container with tools for synapse & post
 [saces](https://matrix.to/#/@saces:c-base.org) announces
 
 > New in v0.4.2
+> 
 >   - MXPASSFILE - like PGPASSFILE, but for matrix tokens. See [MXPassfile.adoc](https://gitlab.com/mb-saces/synatainer/-/blob/main/MXPassfile.adoc) for details.
 > 
 > 
