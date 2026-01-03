@@ -91,6 +91,7 @@ curl -XPOST -d '{"type":"m.login.password", "user":"example", "password":"wordpa
 ```
 
 4. This `access_token` will be used for authentication for the rest of your API
+
 calls. Potentially the next step you want is to make a call to the sync API and
 get the last few events from each room your user is in:
 
@@ -132,6 +133,7 @@ curl -XGET "http://localhost:8008/_matrix/client/r0/sync?access_token=YOUR_ACCES
 ```
 
 6. This request will block waiting for an incoming event, timing out after
+
 several seconds if there is no event. This ensures that you only get new
 events. Now you have the initial room states, and a stream of events - a good
 client should be able to process all these events and present them to the user.

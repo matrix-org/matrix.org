@@ -157,6 +157,7 @@ sydent.validators.msisdnvalidator             0          8            0         
 ### The meaning of precision
 
 There are two metrics I chose to focus on:
+
 - the proportion of "imprecise" lines across the project; I also used the complement, `precision = 100% - imprecision`, and
 - the proportion of expressions whose type is not `Any`.
 
@@ -233,6 +234,7 @@ After the sprint to improve coverage, I spent a short amount of time trying the 
 
 
 #### [Pytype](https://github.com/google/pytype) (Google)
+
 - Google internal? Seems to be maintained by one person semiregularly by "syncing" from Google.
 - Apparently contains a script [merge-pyi](https://github.com/google/pytype/tree/master/pytype/tools/merge_pyi) to annotate a source file given a stub file.
 - No support for TypedDict: as soon as it saw one in Sydent, it stopped all analysis.

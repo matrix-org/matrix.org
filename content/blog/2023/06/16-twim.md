@@ -87,6 +87,7 @@ Synapse is a Matrix homeserver implementation developed by the matrix.org core t
 [Shay](https://matrix.to/#/@shayshay:matrix.org) announces
 
 > This week we released 1.86.0rc2. Here are a few of the highlights:
+> 
 > * Support resolving a room's [canonical alias](https://spec.matrix.org/v1.7/client-server-api/#mroomcanonical_alias) via the module API
 > * Speed up `/messages` by backfilling in the background when there are no backward extremities where we are directly paginating
 > * Correctly clear caches when we delete a room
@@ -103,6 +104,7 @@ A client for matrix, the decentralized communication protocol
 [Tobias Fella](https://matrix.to/#/@tobiasfella:kde.org) says
 
 > Here's what's happened in the last three weeks of NeoChat development:
+> 
 > * You can now create spaces in NeoChat. You can't edit them yet, but it's a start 😀.
 > * NeoChat will no longer show outdated notifications.
 > * As part of the matrixification of [Itinerary](https://apps.kde.org/itinerary/) (stay tuned for more info about that), Volker implemented support for viewing MSC3489 Live Location Shares.
@@ -203,6 +205,7 @@ simplematrixbotlib is an easy to use bot library for the Matrix ecosystem writte
 > ### [v2.9.0](https://codeberg.org/imbev/simplematrixbotlib/src/tag/v2.8.0)
 > 
 > ###  Notes:
+> 
 > * Improvements :)
 > ### Additions:
 > * Add sending of reactions

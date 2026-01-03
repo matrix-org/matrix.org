@@ -101,6 +101,7 @@ please reach out with your feedback or suggestions directly, or our public room
 [#matrix.org-website:matrix.org](https://matrix.to/#/#matrix.org-website:matrix.org).
 
 When contributing to our repos:
+
 - Please read and apply our [CONTRIBUTING.md](./CONTRIBUTING.md) guidelines.
   This document explains everything about the contribution process, i.e. what
   to mind when creating your pull request. This includes but is not limited to:
@@ -152,6 +153,7 @@ When contributing to our repos:
 
 In order to make this process work smoothly, the WG aims to meet the following
 expectations:
+
 - The WG is expected to react with a review within one business day of a new PR
   being opened. At this time, we cannot guarantee a faster reaction time.
 - The WG will make the contribution process transparent and document any
@@ -164,6 +166,7 @@ expectations:
 
 Notably, we are aware that some exceptions to the above expectations are
 required:
+
 - Publishing news about immediate security updates is exempt from the review
   requirement due to their nature of being important to get published. The WG
   will review the changes in hindsight and request that further tweaks get

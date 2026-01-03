@@ -22,41 +22,50 @@ Read on to see who is on the Governing Board, a brief discussion of next steps, 
 ## The Governing Board
 
 Representing [Individual Members](https://opavote.com/results/5140858738311168), we have:
+
 - Andy Balaam (he/him)
 - Greg Sutcliffe (he/him)
 - J.B. Crawford (they/them)
 - Sumner Evans
 
 Representing [Ecosystem Members](https://opavote.com/results/5661642078552064), we have:
+
 - Bram van den Heuvel (he/they), Elm SDK
 - Kim Brose (he/him), Matrix Community Events
 - Nicolas Werner (he/him), Nheko-Reborn
 
 Representing [Associate Members](https://opavote.com/results/6484668047163392), we have
+
 - Cleo Menenez Jr. (he/him), GNOME Foundation
 - Tobias Fella (he/him), KDE e.V.
 
 Representing [Platinum Members](https://opavote.com/results/4762997481275392), we have:
+
 - Neil Johnson (he/him), Element
 
 Representing [Gold Members](https://opavote.com/results/6283574079651840), we have:
+
 - Brad Murray (he/him), Beeper
 - Kevin Boos (he/him), Futurewei Technologies
 
 Representing [Silver Members](https://opavote.com/results/6615071399608320), we have:
+
 - Jan Kohnert (he/him), Gematik GmbH
 - Thor Arne Johansen, Verji Tech AS
 
 Representing [Guardians](https://opavote.com/results/5342481448173568), we have:
+
 - Amandine Le Pape (she/her)
 - Matthew Hodgson (he/him)
 - Ross Schulman
 
 Representing [Spec Core Team members](https://opavote.com/results/5127688657305600), we have:
+
 - Richard van der Hoff (he/him)
 - Travis Ralston (he/him)
 
 And, lastly, representing Foundation staff in an ex officio capacity, we have:
+
 - Josh Simmons (he/they)
 
 ## Next steps

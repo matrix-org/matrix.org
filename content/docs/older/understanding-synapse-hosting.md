@@ -407,6 +407,7 @@ the actual technical server is on matrix.example.org: this is what delegation
 of incoming traffic is for.
 
 This can be done by serving two static files:
+
 * example.org/.well-known/matrix/server and
 * example.org/.well-known/matrix/client
 

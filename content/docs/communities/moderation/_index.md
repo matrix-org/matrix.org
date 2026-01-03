@@ -77,6 +77,7 @@ easily.
 ### Setting it up in your rooms
 
 Once you have performed the technical set-up of mjolnir, you need to:
+
 1. Make sure your moderation staff is in the control room of your community
 1. Invite mjolnir the security guard bot in all your rooms
 1. Make the mjolnir bot Administrator in all your rooms (so it can enforce

@@ -203,6 +203,7 @@ Desktop client for Matrix using Qt and C++17.
 > FluffyChat 1.6.4 has been released. 🥳 This time it is only a minor bugfix release which also updates translations and some dependencies. The app now tries to automatically request keys for undecryptable messages and displays a detailed explanation why a message is unable to decrypt, when clicking on it.
 >
 > Full changelog:
+> 
 > * Translated using Weblate (Chinese (Simplified)) (Eric)
 > * Translated using Weblate (Estonian) (Priit Jõerüüt)
 > * Translated using Weblate (Galician) (Xosé M)
@@ -216,6 +217,7 @@ Desktop client for Matrix using Qt and C++17.
 > * feat: Automatic key requests and better key error dialog (Christian Pauly)
 > * fix: Styling and notification settings (Christian Pauly)
 > * fix: add missing command localizations (Christian Pauly)
+> 
 > ![](/blog/img/EHiFOtiHUqDdSfslEajVCmMf.png)
 
 ### Element ([website](https://element.io))

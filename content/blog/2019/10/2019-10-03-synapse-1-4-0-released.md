@@ -12,6 +12,7 @@ Wheyhey as I live and breathe 1.4.0 is here!
 1.4.0 should be considered ‘The Privacy Release’ and is the cumulation of a huge body of work spanning multiple projects to improve data privacy in the matrix ecosystem. You can read more about the [full project here](https://matrix.org/blog/2019/09/27/privacy-improvements-in-synapse-1-4-and-riot-1-4).
 
 While we consider 1.4.0 to be a huge leap forward in terms of data privacy, it is really important to note that it contains breaking changes.
+
  * If you currently rely on email or SMS delivery via an identity server you must modify your Synapse configuration.
  * If you have configured custom templates, then eight new templates must be added to your templates directory.
 
