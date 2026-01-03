@@ -22,12 +22,15 @@ category = ["This Week in Matrix"]
 > ### MSC Status
 > 
 > **Merged MSCs:**
+> 
 > * *No MSCs were merged this week.*
 > 
 > **MSCs in Final Comment Period:**
+> 
 > * *No MSCs are in FCP.*
 > 
 > **New MSCs:**
+> 
 > * *There were no new MSCs this week.*
 > 
 > ### Spec Core Team
@@ -325,6 +328,7 @@ Synapse Maintenance Container – Docker container with tools for synapse & post
 > Start the container without command and let do its magic :)
 > 
 > What it does by default:
+> 
 > * daily:
 >   - purge all rooms without local members
 >   - run the state autocompressor (500/100)

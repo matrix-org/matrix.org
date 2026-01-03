@@ -12,6 +12,7 @@ category = ["Releases"]
 Synapse 1.16.0 is here!
 
 Notable additions in 1.16.0 include:-
+
  * An important performance fix to improve room state resolution.
  * An option to enable e2e by default for new rooms.
  * Ability to run multiple media repo workers side by side.

@@ -16,6 +16,7 @@ Certificate Transparency (CT) is a feature of the TLS ecosystem which lets you s
 In practice, this revealed a handful of internal-facing services using dedicated public TLS certificates which were accessible to the general internet - some of which should have been locked to be accessible only from our internal network.  
 
 Specifically:
+
  * `kibana.ap-southeast-1.k8s.i.modular.im` - a Kibana deployment for a new experimental Modular cluster which is being set up in SE Asia. The Kibana is in the middle of being deployed, and was exposed without authentication during deployment due to a firewall & config error.  However, **it is not a production system and carries no production traffic or user data** (it was just being used for experimentation for hypothetical geography-specific Modular deployments).  We firewalled this off at 07:53 UTC, and are doing analysis to confirm there was no further compromise, and will then rebuild the cluster (having fixed the firewall config error from repeating).
  * AWX deployments used by our internal Modular platform, which were behind authentication but should not be exposed to the public net.
  * Various semi-internal dev and testing services which should be IP-locked to our internal network (but are all locked behind authentication too).

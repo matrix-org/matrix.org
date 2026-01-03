@@ -90,6 +90,7 @@ View resources -> Instances -> Select instance -> Virtual Cloud Network ->
 Public Subnet -> Security Lists -> Default -> Ingress
 
 Open incoming for CIDR 0.0.0.0/0:
+
 - 22/tcp for SSH (should be open already)
 - 80/tcp for HTTP
 - 443/tcp for HTTPS

@@ -9,6 +9,7 @@ category = ["Foundation", "Elections", "Governing Board"]
 +++
 
 _Update: the terms of the board have been updated with the follow changes:_
+
 * _Allow for filling vacancies by appointment or by-election at the discretion of the Managing Director and the Guardians, in consultation with a Governance Committee. (2.7.1)_
 * _Allow for the Governing Board to adopt voting mechanisms other than simple majority on a case-by-case basis. (5.5)_
 * _Disallow nominees from running for election in more than one constituency at a time. (2.4.1)_

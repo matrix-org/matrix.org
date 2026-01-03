@@ -23,4 +23,5 @@ The changelog for 1.19.2 is as follows:
 
 Due to the issue below server admins are encouraged to upgrade as soon as possible.
 Bugfixes
+
 - Fix joining rooms over federation that include malformed events. (#8324)

@@ -11,6 +11,7 @@ category = ["Releases"]
 Synapse 1.20.0 is here!
 
 Highlights of 1.20.0 include:-
+
   * Shadow ban support.
   * Unread message counts in the sync response to help our client developers, this is a precursor to improving notification support.
   * No less than 28 async/await PRs, so we can finally share all the hard work.

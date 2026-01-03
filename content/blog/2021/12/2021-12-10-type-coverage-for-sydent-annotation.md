@@ -121,11 +121,13 @@ example.py:7: note: Revealed type is "builtins.int*"
 ```
 
 Behind the scenes, I _think_ that `x = await foo()` is really using the same mechanism as the `inlineCallbacks` approach.
+
 - An `async def` function is really a generator function behind the scenes.
 - When we `await foo()`, we yield the expression `foo()`
 - Then the machinery running our coroutine `c` will call `c.send(x)` to resume execution, where `x` is the value produced by waiting for `foo()`.
 
 With the `await` form, mypy knows two things:
+
 - the value `foo()` which was yielded should be `Awaitable[T]`, and
 - the value `x` send to the coroutine should come from awaiting `foo()`, and therefore be of type `T`.
 
@@ -185,6 +187,7 @@ def decorator(input: F) -> F:
 ```
 
 The idea here is
+
 1. Use `Callable[..., Any]` to describe a generic function with no particular signature.
 2. Use that as a bound on a type variable `F`. At each usage of `@decorator`, mypy will deduce a more specific version of `F`, e.g. `Callable[[int], str]`.
 3. Within that usage of `@decorator`, `F` is fixed to that specific type. We use `-> F` to express that "we return a function with the same signature as the decoratee".
