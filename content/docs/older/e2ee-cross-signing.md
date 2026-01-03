@@ -92,7 +92,9 @@ containing your own device ID. A payload such as
   "foo": "bar"
 }
 ```
+
 would thus look like:
+
 ```json
 {
   "foo": "bar",
@@ -104,6 +106,7 @@ would thus look like:
 For room messages, the transaction ID, which is the event Id of the first event, is added in the
 `m.relates_to` section of the event. The device ID is the same as to_device massages; it should be
 set to the ID of the sending device. So the above payload becomes:
+
 ```json
 {
   "foo": "bar",
@@ -125,12 +128,14 @@ typically depends on whether the room they are sent in is encrypted or not.
 #### `m.key.verification.request`
 Sending this starts a verification request. It sends all the verification methods you know (in the
 case of SAS that is only `m.sas.v1`), along with the current timestamp in milliseconds.
+
 ```json
 {
   "methods": ["m.sas.v1"],
   "timestamp": 1590314157821
 }
 ```
+
 A receiving client is expected to reject the request if it is more than 10 minutes in the past or more
 than 5 minutes in the future.
 
@@ -138,6 +143,7 @@ than 5 minutes in the future.
 Sending this indicates that you accept the key verification request and additionally reveals which
 methods you support yourself. That way both verification partners will be able to figure out which
 methods they have in common.
+
 ```json
 {
   "methods": ["m.sas.v1"],
@@ -147,6 +153,7 @@ methods they have in common.
 #### `m.key.verification.start`
 Sending this indicates that you are starting verification with a specific method. The exact payload
 is dependent on the verification method.
+
 ```json
 {
   "method": "m.sas.v1",
@@ -156,6 +163,7 @@ is dependent on the verification method.
 
 #### `m.key.verification.done`
 Sending this indicates that the verification process is *fully* done.
+
 ```json
 {}
 ```
@@ -163,6 +171,7 @@ Sending this indicates that the verification process is *fully* done.
 #### `m.key.verification.cancel`
 Sending this cancels the verification (timeout, key mismatch, user cancellation, etc.). It has a
 human-readable reason, along with a cancellation code.
+
 ```json
 {
   "reason": "The verification timed out",
@@ -223,6 +232,7 @@ SAS introduces a few more cancellation codes, specific to SAS verification,
 This sends a bunch of parameters that the sending device supports. Please note that you will have to
 remember this object while performing a commitment check (explained in the next section), of the one
 that *includes* the metadata of `transaction_id` and `from_device` keys, omitted in these examples.
+
 ```json
 {
   "method": "m.sas.v1",
@@ -238,6 +248,7 @@ A commitment is an additional verification process. It is the hash (based on the
 specified) of the concatenated ephemeral public key you generate and the canonical json of the
 `m.key.verification.start` body. Libolm provides both the hashing method and the public/private key
 generation. Code for calculating the commitment could look as follows:
+
 ```dart
 var sas = olm.SAS(); // save for later. This will generate our ephemeral public/private keypair
 var canonicalJson = ""; // the canonical json of the `m.key.verification.start` request
@@ -255,6 +266,7 @@ if (hashMethod == "sha256") {
 #### `m.key.verification.accept`
 This accepts the `m.key.verification.start` request, and sends the parameters that both parties support.
 Along with that, it also sends a `commitment`, as defined above.
+
 ```json
 {
   "method": "m.sas.v1",
@@ -273,6 +285,7 @@ Be sure that if you received the commitment, you use the received public key to 
 you received earlier. The public key is both added to the `sas` object with `sas.set_their_key(payload["key"]);`
 and also saved in a separate variable, as you'll need it later, as unfortunately the `sas` object does
 not allow for it to be retrieved again.
+
 ```json
 {
   "key": "your-public-key"
@@ -333,6 +346,7 @@ master cross-signing key. For that, a base information is created, which is the 
 `MATRIX_KEY_VERIFICATION_MAC`, your own user ID, your own device ID, the other user's ID, the other
 device's ID, and the transaction ID. Note how, unlike SAS, no `|` delimiter is used and the order
 does *not* depend on who started the verification:
+
 ```dart
 var baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
     client.userID +
@@ -343,6 +357,7 @@ var baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
 ```
 
 Next calculate the MAC of your device IDs and the fingerprints that you want to send:
+
 ```dart
 String _calculateMac(String input, String info) {
   if (messageAuthenticationCode == "hkdf-hmac-sha256") { // this is from the m.key.verification.accept call
@@ -384,6 +399,7 @@ After receiving the MAC and having the user verify that the emoji match (and thu
 your own MAC), you have to verify that the received MACs are valid, and only verify the keys if the
 MACs are valid. For that, generate the base info from the perspective of the other party; essentially
 placing other person's information before your own:
+
 ```dart
 final baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
     request.userId +
@@ -392,8 +408,10 @@ final baseInfo = 'MATRIX_KEY_VERIFICATION_MAC' +
     client.deviceID +
     request.transactionId;
 ```
+
 Then generate the key list out of the dictionary keys of the `mac` object received and verify that
 the MAC matches up:
+
 ```dart
 final keyList = payload["mac"].keys.toList();
 keyList.sort();
@@ -402,6 +420,7 @@ if (payload["keys"] != _calculateMac(keyList.join(","), baseInfo + "KEY_IDS")) {
   return;
 }
 ```
+
 Then verify the MACs of the keys themselves by iterating over the objects, and calculating the MACs
 of the keys again as above. You should have the public key yourself already, as you are just verifying
 if the key matches. If you received the MAC of a key you don't know, just ignore it. It is likely to
@@ -487,6 +506,7 @@ and update your `device_keys` dictionary accordingly, just as before. This endpo
 return the `master_keys`, `self_signing_keys` and `user_signing_keys` of a user, given they are using
 cross-signing. Simply update and store this information locally as well. The format of these are
 pretty similar to the `device_keys` dictionary:
+
 ```json
 {
   "self_signing_keys": {
@@ -505,6 +525,7 @@ pretty similar to the `device_keys` dictionary:
   }
 }
 ```
+
 In this example we have Bob's self-signing key which has a signature of Bob's master key. The `usage`
 array additionally indicates the usage of the key, which is `master`, `self_signing` or `user_signing`.
 While for cross-signing there should only be one item in `usage`, in the future some other keys might be added
@@ -644,6 +665,7 @@ provided you have that secret cached.
 
 #### `m.secret.request`
 This requests a secret from another device, or cancels a pending request.
+
 ```json
 {
   "action": "request", // or request_cancellation
@@ -655,6 +677,7 @@ This requests a secret from another device, or cancels a pending request.
 
 #### `m.secret.send`
 This sends / shares a secret with another device
+
 ```json
 {
   "request_id": "<same request id as received in m.secret.request>",
@@ -955,6 +978,7 @@ and `signature` keys and sign the canonical json encoded object. Afterwards you 
 server.
 
 For example, you want to sign the following device key:
+
 ```json
 {
   "user_id": "@alice:example.com",
@@ -980,6 +1004,7 @@ For example, you want to sign the following device key:
 ```
 
 Then you strip the `signatures` and `unsigned` keys:
+
 ```json
 {
   "user_id": "@alice:example.com",
@@ -998,11 +1023,13 @@ Then you strip the `signatures` and `unsigned` keys:
 ```
 
 And then the canonical json you need to sign is:
+
 ```
 {"algorithms":["m.olm.v1.curve25519-aes-sha2","m.megolm.v1.aes-sha2"],"device_id":"JLAFKJWSCS","keys":{"curve25519:JLAFKJWSCS":"3C5BFWi2Y8MaVvjM8M22DBmh24PmgR0nPvJOIArzgyI","ed25519:JLAFKJWSCS":"lEuiRJBit0IG6nUf5pUzWTUEsRVVe/HJkoKuEww9ULI"},"user_id":"@alice:example.com"}
 ```
 
 You can easily sign a key with libolm:
+
 ```dart
 String sign(String canonicalJson, Uint8List key) {
   final keyObj = olm.PkSigning();
@@ -1120,6 +1147,7 @@ support in-room verification.
 
 As the content of such an `m.room.message` for Alice to start an in-room verification request with Bob
 could look as follows:
+
 ```json
 {
   "methods": [
@@ -1139,6 +1167,7 @@ property is still added as usual.
 
 As transaction ID the event ID of the original request is used. That, however, is added in an `m.relates_to`
 block as follows:
+
 ```json
 {
   // other content of that specific type
@@ -1229,6 +1258,7 @@ you can just base64 the randomly generated salt.
 After that, you use PBKDF2 to get the key from the passphrase, and calculate the MAC and IV.
 
 Code for generating the key could look as follows:
+
 ```dart
 // "passphrase" is the passphrase by the user
 

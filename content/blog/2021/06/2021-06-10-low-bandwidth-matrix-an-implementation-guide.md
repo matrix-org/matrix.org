@@ -42,19 +42,24 @@ Steps:
 - Build the low bandwidth proxy: `go build ./cmd/proxy`
 - Generate a elliptic curve DTLS key/certificate: (we use curve keys as they are smaller than RSA
   keys, but both work.)
+
   ```bash
   openssl ecparam -name prime256v1 -genkey -noout -out private-key.pem
   openssl req -new -x509 -key private-key.pem -out cert.pem -days 365
   # you now have cert.pem and private-key.pem
   ```
+
 - Run it pointing at matrix.org:
+
   ```bash
   ./proxy -local 'https://matrix-client.matrix.org' \
   --tls-cert cert.pem --tls-key private-key.pem \
   --advertise "http://127.0.0.1:8008" \
   --dtls-bind-addr :8008
   ```
+
 - You should see something like this:
+
   ```
   INFO[0000] Listening on :8008/tcp to reverse proxy from http://127.0.0.1:8008 to https://matrix-client.matrix.org - HTTPS enabled: false 
   INFO[0000] Listening for DTLS on :8008 - ACK piggyback period: 5s
@@ -65,6 +70,7 @@ not LibreSSL which comes by default: `openssl version`. To use OpenSSL, `brew in
 then dumps the binary to `/usr/local/opt/openssl/bin/openssl`.
 
 To test it is working correctly:
+
 ```bash
 # build command line tools we can use to act as a low bandwidth client
 go build ./cmd/jc
@@ -111,18 +117,22 @@ Steps:
  - Clone the low bandwidth repo if you haven't already:
    `git clone https://github.com/matrix-org/lb.git`
  - In the low bandwidth repo, build the mobile bindings:
+
    ```
    go get golang.org/x/mobile/cmd/gomobile
    cd mobile
    # if gomobile isn't on your path, then ~/go/bin/gomobile
    gomobile bind -target=android
    ```
+
  - Copy the output files to a directory in the Element Android repo which Gradle will pick up:
+
    ```
    mkdir $PATH_TO_ELEMENT_ANDROID_REPO/matrix-sdk-android/libs
    cp mobile-sources.jar $PATH_TO_ELEMENT_ANDROID_REPO/matrix-sdk-android/libs
    cp mobile.aar $PATH_TO_ELEMENT_ANDROID_REPO/matrix-sdk-android/libs
    ```
+
  - Open the project in Android Studio.
  - Build and run on a device/emulator.
  - Configure the proxy's `--advertise` address. If you are running on a local device, restart the
@@ -171,4 +181,3 @@ and receive the response, including connection setup:
   network with so much data that the sync stream begins to fall behind. Future work will look
   to optimise the sync API.
 - The proxy currently doesn't implement the [low bandwidth response](https://github.com/matrix-org/matrix-doc/blob/kegan/low-bandwidth/proposals/3079-low-bandwidth-csapi.md#versioning) in `/versions`.
-

@@ -111,6 +111,8 @@ In this sample, `resp.headers` is a [twisted.web.http_headers.Headers](https://t
         headers = dict(resp.headers.getAllRawHeaders())
         reveal_type(headers)
 ```
+
+
 ```
 $ mypy
 sydent/sms/openmarket.py:110: note: Revealed type is "builtins.dict[builtins.bytes*, typing.Sequence*[builtins.bytes]]"

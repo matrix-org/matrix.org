@@ -198,6 +198,7 @@ After the sprint to improve coverage, I spent a short amount of time trying the 
 - Didn't seem to recognise `getLogger` as being imported from `logging`. Not sure what happened there—maybe something wrong with its bundled version of `typeshed`?
 - In a few places, Sydent uses `urllib.parse.quote` but only imports `urllib`. We must be unintentionally relying on our dependencies to `import urllib.parse` somewhere! Mypy didn't complain about this; pyright did.
 - Seemed to give a better explanations of why complex types were incompatible. For example:
+
   ```
   /home/dmr/workspace/sydent/sydent/replication/pusher.py
      /home/dmr/workspace/sydent/sydent/replication/pusher.py:77:16 - error: Expression of type "DeferredList" cannot be assigned to return type "Deferred[List[Tuple[bool, None]]]"
@@ -212,8 +213,10 @@ After the sprint to improve coverage, I spent a short amount of time trying the 
            Type "_KT@dict" is incompatible with constrained type variable "AnyStr"
          Type cannot be assigned to type "None" (reportGeneralTypeIssues)
   ```
+
   This would have been really helpful when interpreting mypy's error reports; I'd love to see something like it in mypy.
   Here's another example where I tried running against a Synapse file.
+
   ```
   /home/dmr/workspace/synapse/synapse/storage/databases/main/cache.py
   /home/dmr/workspace/synapse/synapse/storage/databases/main/cache.py:103:53 - error: Expression of type "list[tuple[Unknown, Tuple[Unknown, ...]]]" cannot be assigned to declared type "List[Tuple[int, _CacheData]]"
@@ -221,6 +224,7 @@ After the sprint to improve coverage, I spent a short amount of time trying the 
       Tuple entry 2 is incorrect type
         Tuple size mismatch; expected 3 but received indeterminate number (reportGeneralTypeIssues)
   ```
+
   This is really valuable information. It's worth considering Pyright as an option to get a second opinion!
 - It looks like Pyright's name for `Any` is `Unknown`. I think that does a better job of emphasising that `Unknown` won't be type checked. I'd certainly be more reluctant to type `x: Unknown` versus `x: Any`!
 - Pyright is the machinery behind [Pylance](https://github.com/microsoft/pylance-release), which drives [VS Code's Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). That alone probably makes it worthy of more eyes.

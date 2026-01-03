@@ -60,9 +60,11 @@ installation remains secure.
 * Administrators who have [installed Synapse from
   source](https://github.com/matrix-org/synapse/blob/master/INSTALL.md#installing-from-source)
   should upgrade Twisted within their virtualenv by running:
+
   ```sh
   <path_to_virtualenv>/bin/pip install 'Twisted>=20.3.0'
   ```
+
 * Administrators who have installed Synapse from distribution packages should
   consult the information from their distributions.
 

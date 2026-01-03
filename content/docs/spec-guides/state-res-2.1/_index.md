@@ -20,6 +20,7 @@ implemented.
 
 This is a trivial change to make. When performing the initial iterative auth checks, replace the
 unconflicted set with the empty set:
+
 ```py
     resolved_state = await _iterative_auth_checks(
         clock,
