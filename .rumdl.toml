@@ -6,7 +6,7 @@
 # disable = ["MD013", "MD033"]
 
 # List of rules to enable exclusively (if provided, only these rules will run)
-enable = ["MD001", "MD003", "MD011", "MD034", "MD039"]
+enable = ["MD001", "MD003", "MD011", "MD030", "MD034", "MD039"]
 
 # List of file/directory patterns to include for linting (if provided, only these will be linted)
 # include = [

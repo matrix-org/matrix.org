@@ -77,9 +77,9 @@ interest with commercial Matrix endeavours, including New Vector.
 That said, New Vector would not be taking money from any investors if they did
 not believe their goals are aligned with Matrix's. To clarify:
 
-*   Matrix exists to create an open secure decentralised communication network and protocol for the benefit of all.  
-*   New Vector exists to help grow Matrix and be one of many successful companies in the Matrix ecosystem. 
-*   Tech VCs exist to invest their money in growing companies in order to get a return when the company IPOs or gets bought.  
+* Matrix exists to create an open secure decentralised communication network and protocol for the benefit of all.  
+* New Vector exists to help grow Matrix and be one of many successful companies in the Matrix ecosystem. 
+* Tech VCs exist to invest their money in growing companies in order to get a return when the company IPOs or gets bought.  
 
 It turns out that these goals are not incompatible if one understands that the
 potential of the Matrix ecosystem is directly linked to its openness and size
@@ -149,4 +149,3 @@ We hope you’re as excited as we are to open a whole new chapter as Matrix
 picks up yet more momentum :D
 
 -- Matthew, Amandine, and the whole Matrix team
-
