@@ -22,7 +22,7 @@ We’ve covered a couple of the MSCs below, but read on to the full changelog fo
 
 ## MSC3030: Jump to date API
 
-_It’s here! The time machine we’ve been waiting for! _
+_It’s here! The time machine we’ve been waiting for!_
 
 Primarily part of the [Gitter feature parity project](https://github.com/vector-im/roadmap/issues/26) (congratulations to the team [going all-in on Matrix](https://blog.gitter.im/2023/02/13/gitter-has-fully-migrated-to-matrix/), by the way) to drive the [Matrix Public Archive](https://github.com/matrix-org/matrix-public-archive), the [new API](https://spec.matrix.org/v1.6/client-server-api/#get_matrixclientv1roomsroomidtimestamp_to_event) gives clients the ability to jump back in time to a nearby event. Being able to find something that was posted on a given day/week, but not being sure of which keywords to look for is a major usability improvement - many thanks to the Gitter team for making Matrix better!
 
