@@ -122,8 +122,7 @@ ask Alice's `example.com` a local copy of the room, and stay in sync with it.
     caption="Bob joins the room and automatically gets Power Level 0")
 }}
 
-If Carol joins from her homeserver `ergaster.org`, she will also get the power level
-0.
+If Carol joins from her homeserver `ergaster.org`, she will also get the power level 0.
 
 {{ figure(
     img="./room_federated.svg",
