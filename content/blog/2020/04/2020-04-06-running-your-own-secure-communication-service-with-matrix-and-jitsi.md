@@ -95,6 +95,7 @@ echo '{ "m.server": "matrix.dangerousdemos.net:443" }' > server
 ```
 
  * **Alternatively**, you could advertise the server via DNS, if you don't have write access to `/.well-known` on your main domain.  However, to prove you are allowed to host the Matrix traffic for dangerousdemos.net, you would have to configure nginx to use the dangerousdemos.net TLS certificate for the matrix.dangerousdemos.net vhost (i.e. the "wrong" one), and in general we think that `/.well-known` is much easier to reason about.  In this case you would advertise the server with an SRV record like this:
+
 ```
 _matrix._tcp.dangerousdemos.net. 300    IN  SRV 10 5 443 matrix.dangerousdemos.net.
 ```

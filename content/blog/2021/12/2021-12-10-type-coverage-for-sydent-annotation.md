@@ -93,6 +93,7 @@ and later, [the IResponse](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25
         res: IResponse
         res = yield agent.request(method, uri, headers, bodyProducer)
 ```
+
 - In this example:
 
 - We yield a value `y: Deferred[Any]`.
