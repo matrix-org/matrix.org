@@ -16,6 +16,7 @@ enable = [
   "MD039",  # Remove extra spaces in links
   "MD042",  # Avoid Empty Links
   "MD056",  # Keep table column count consistent
+  "MD058",  # Add blank lines around tables
 ]
 
 # List of file/directory patterns to include for linting (if provided, only these will be linted)
