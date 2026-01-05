@@ -223,7 +223,7 @@ Note that this release includes significant changes around 3pid verification. Ad
 - Cleanup event auth type initialisation. ([\#5975](https://github.com/matrix-org/synapse/issues/5975))
 - Clean up dependency checking at setup. ([\#5989](https://github.com/matrix-org/synapse/issues/5989))
 - Update OpenTracing docs to use the unified `trace` method. ([\#5776](https://github.com/matrix-org/synapse/issues/5776))
-- Small refactor of function arguments and docstrings in` RoomMemberHandler`. ([\#6009](https://github.com/matrix-org/synapse/issues/6009))
+- Small refactor of function arguments and docstrings in `RoomMemberHandler`. ([\#6009](https://github.com/matrix-org/synapse/issues/6009))
 - Remove unused `origin` argument on `FederationHandler.add_display_name_to_third_party_invite`. ([\#6010](https://github.com/matrix-org/synapse/issues/6010))
 - Add a `failure_ts` column to the `destinations` database table. ([\#6016](https://github.com/matrix-org/synapse/issues/6016), [\#6072](https://github.com/matrix-org/synapse/issues/6072))
 - Clean up some code in the retry logic. ([\#6017](https://github.com/matrix-org/synapse/issues/6017))
