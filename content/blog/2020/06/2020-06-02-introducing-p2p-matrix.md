@@ -38,9 +38,9 @@ Today, we’re shipping a major new alpha (v0.1.1) of this P2P demo up at [https
 
 The main features are:
 
-*   Your conversations are now persisted in your browser storage (via IndexedDB), meaning that as long as all the browsers participating in a given conversation don’t clear their local storage, rooms on the P2P network are here to stay!
-*   Your room directory lists all the aliases for all the rooms published by active nodes on the network.  Moreover, we now automatically publish a local room alias whenever you join a public room, so that others will be able to discover that room via you, even if the server who originally created the alias has disappeared.
-*   Lots and lots of federation improvements between the nodes - for instance, when a node comes online, others should now automatically detect and send scrollback to it.  Invites should work, and there should no longer be any unexpectedly redacted messages.
+* Your conversations are now persisted in your browser storage (via IndexedDB), meaning that as long as all the browsers participating in a given conversation don’t clear their local storage, rooms on the P2P network are here to stay!
+* Your room directory lists all the aliases for all the rooms published by active nodes on the network.  Moreover, we now automatically publish a local room alias whenever you join a public room, so that others will be able to discover that room via you, even if the server who originally created the alias has disappeared.
+* Lots and lots of federation improvements between the nodes - for instance, when a node comes online, others should now automatically detect and send scrollback to it.  Invites should work, and there should no longer be any unexpectedly redacted messages.
 
 Needless to say, all the code for this is open source under the Apache license, and if you’re feeling particularly adventurous you can embed your very own P2P Dendrite into Riot Web by using the Dockerfile at [https://github.com/matrix-org/dendrite/blob/master/build/docker/DendriteJS.Dockerfile](https://github.com/matrix-org/dendrite/blob/master/build/docker/DendriteJS.Dockerfile) or following the instructions at  [https://github.com/matrix-org/dendrite/blob/master/docs/p2p.md](https://github.com/matrix-org/dendrite/blob/master/docs/p2p.md).
 
@@ -52,12 +52,12 @@ Finally, please understand that the demo is very likely **not** what the final v
 
 For the current demo, there’s still lots of stuff remaining, including:
 
-*   More federation debugging (and hooking in [tardis](https://github.com/matrix-org/tardis) and writing up everything we’ve learned about implementing federation in Dendrite!)
-*   Making the content repository work in-browser (gotta fill up those IndexedDBs with some GIFs!)
-*   Hooking up E2E Encryption APIs in Dendrite (not that it buys us much in a pure P2P world)
-*   WebRTC transports.  Turns out that service workers aren’t allowed to speak WebRTC, so we’ll have to shim through to Riot to speak true peer-to-peer WebRTC data channels rather than relaying all the traffic through the websocket rendezvous server.
-*   Decentralised accounts for multidevice support - reviewing [MSC1228](https://github.com/matrix-org/matrix-doc/blob/rav/proposal/remove_mxids_from_events/proposals/1228-removing-mxids-from-events.md) and getting Dendrite supporting multihoming accounts!
-*   Finishing all of Dendrite’s other remaining APIs.
+* More federation debugging (and hooking in [tardis](https://github.com/matrix-org/tardis) and writing up everything we’ve learned about implementing federation in Dendrite!)
+* Making the content repository work in-browser (gotta fill up those IndexedDBs with some GIFs!)
+* Hooking up E2E Encryption APIs in Dendrite (not that it buys us much in a pure P2P world)
+* WebRTC transports.  Turns out that service workers aren’t allowed to speak WebRTC, so we’ll have to shim through to Riot to speak true peer-to-peer WebRTC data channels rather than relaying all the traffic through the websocket rendezvous server.
+* Decentralised accounts for multidevice support - reviewing [MSC1228](https://github.com/matrix-org/matrix-doc/blob/rav/proposal/remove_mxids_from_events/proposals/1228-removing-mxids-from-events.md) and getting Dendrite supporting multihoming accounts!
+* Finishing all of Dendrite’s other remaining APIs.
 
 Beyond this, there are some bigger picture questions left to be answered in future experiments.
 

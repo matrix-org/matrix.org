@@ -519,9 +519,9 @@ The `forwarded_room_key` property starts out empty, but each time a key is
 forwarded to another device, the previous sender in the chain is added to the
 end of the list. Consider the following example:
 
-> -   A -\> B : m.room\_key
-> -   B -\> C : m.forwarded\_room\_key
-> -   C -\> D : m.forwarded\_room\_key
+> - A -\> B : m.room\_key
+> - B -\> C : m.forwarded\_room\_key
+> - C -\> D : m.forwarded\_room\_key
 
 In the message B -\> C `forwarded_room_key` is empty, but in the message C -\> D
 it contains B's Curve25519 key. In order for D to believe that the session came
