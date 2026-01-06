@@ -18,6 +18,7 @@ threads = true
 sso = false
 multi_account = false
 multi_language = false
+[extra.packages]
 +++
 
 Neoment is a Matrix protocol client implementation for Neovim that allows you to chat, and stay connected without leaving your editor.
