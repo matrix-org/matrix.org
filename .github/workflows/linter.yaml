@@ -23,6 +23,6 @@ jobs:
       - uses: actions/checkout@v6
       - uses: rvben/rumdl@v0
         with:
-          version: "0.0.208"
+          version: "0.0.211"
           config: .rumdl.toml
           report-type: annotations
