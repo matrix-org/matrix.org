@@ -5,6 +5,7 @@ template = "ecosystem/client.html"
 maintainer = "Douglas Massolari"
 maturity = "Alpha"
 repo = "https://github.com/Massolari/neoment"
+matrix_room = "#neoment-nvim:matrix.org"
 licence = "MIT"
 language = "Lua"
 latest_release = "2026-01-05" # No formal releases; based on the latest non-trivial commit.
