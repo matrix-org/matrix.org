@@ -21,4 +21,4 @@ multi_language = false
 [extra.packages]
 +++
 
-Neoment is a Matrix protocol client implementation for Neovim that allows you to chat, and stay connected without leaving your editor.
+A Matrix client for Neovim, bringing chat functionality directly into your editor.
