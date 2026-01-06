@@ -3,7 +3,7 @@ title = "Neoment"
 template = "ecosystem/client.html"
 [extra]
 maintainer = "Douglas Massolari"
-maturity = "Alpha"
+maturity = "Beta"
 repo = "https://github.com/Massolari/neoment"
 matrix_room = "#neoment-nvim:matrix.org"
 licence = "MIT"
