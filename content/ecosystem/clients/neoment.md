@@ -19,6 +19,10 @@ sso = false
 multi_account = false
 multi_language = false
 [extra.packages]
+other_install_link = "https://github.com/Massolari/neoment/#installation"
+other_linux_link = "https://github.com/Massolari/neoment/#installation"
+windows_installer = "https://github.com/Massolari/neoment/#installation"
+macos_installer = "https://github.com/Massolari/neoment/#installation"
 +++
 
 A Matrix client for Neovim, bringing chat functionality directly into your editor.
