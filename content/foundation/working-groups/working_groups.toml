@@ -169,12 +169,12 @@ The T&S committee may decide to remove members from the WG if it sees a member a
 - Potentially collaborate on proposals with the T&S committee or other WGs
 - Turn some of their research into MSCs and collaboratively push them to completion as well as advise on other MSCs from a T&S perspective
 
-### Initial Members
+### Membership
 
 Interested members should be able to apply to the WG freely, but the WG and the T&S committee should do a short background check, if they are willing to give the applicant access to the information or if there are any active abuse concerns. This should be a low bar to clear, but is intended to keep malicious individuals out.
 """
 committee = "Trust & Safety Committee"
-members = ["Nico", "Cat", "Niko", "SFaulken", "Gnuxie"]
+members = ["Nico", "Cat", "Niko", "SFaulken", "Gnuxie", "Sky", "Andy Balaam", "Tobias Fella"]
 chairs = ["Niko", "Cat"]
 sponsor = "Nico"
 matrix_room_alias = "#tns-rnd-wg-office:neko.dev"

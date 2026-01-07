@@ -5,4 +5,4 @@ template = "governing-board/working_group.html"
 
 ## Activities
 
-Learn more about the room directory and how to add your room to it [here](@/homeserver/room_directory.md).
+This working group's primary purpose is receiving and processing requests about the [room directory](@/homeserver/room_directory.md) of the matrix.org homeserver.
