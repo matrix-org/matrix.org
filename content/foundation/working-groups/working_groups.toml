@@ -1,17 +1,87 @@
 [[working_groups]]
-name = "Website and Content"
+name = "Website & Content"
 summary = "Editoral and technical oversight of the main websites and socials"
 description = """
-The website and content working group is responsible for the editorial and technical oversight of the main Matrix websites and social media channels.
+The Website and Content Working Group is responsible for the editorial and technical oversight of the main Matrix websites and social media channels.
 This includes the main [matrix.org website](/), [conference website](https://conference.matrix.org), and the various social media channels.
 The group is responsible for ensuring that the websites are up to date, accurate, and reflect the current state of the Matrix ecosystem.
 It also includes [preparing and publishing](/twim-guide) the weekly This Week in Matrix news digest.
-The group is not responsible for domain-specific content of other teams like the [spec](https://spec.matrix.org) website, matrix.org Homeserver related configurations or the [legal](/legal) and [security](/security-disclosure-policy) sections of the website.
+The group is not responsible for domain-specific content of other teams like the [spec](https://spec.matrix.org) website, matrix.org homeserver related configurations or the [legal](/legal) and [security](/security-disclosure-policy) sections of the website.
 
 Note that this is not the complete list of responsibilities, but a high level overview.
 """
+charter = """
+### Purpose
+
+Paramount to all these formalities we are introducing by creating a WG from a Foundation staffer with some volunteers, is to provide a framework that enables their work. This should particularly mean that everything we establish here should streamline things, avoid discussion by drawing clear lines, etc. and NOT drowning in bureaucracy. Some of these processes will necessarily introduce a bit of potential friction and we should be careful to design these parts as lightweight and streamlinable as possible.
+
+### Membership
+
+- the WG can let any community member in good standing join on its own judgement
+- any GB member can join the WG
+- the GB can recommend people to be considered for joining/removal
+
+### Powers and responsibilities
+
+- editorial rights to the matrix.org website repo, including blog & TWIM
+  - except
+    - security team has the security hall of fame subpage content
+    - legal team has legal content
+    - matrix.org homeserver team ("backend team") has things directly related to running the HS such as .well-known
+    - (SCT has [spec.matrix.org](https://spec.matrix.org))
+  - create process around blog posts e.g. to coordinate publishing on certain time
+    - creates the responsibility of availability
+    - on certain topics might require more setup, e.g. blog posts on security issues
+    - this needs to be streamlined enough to avoid potential of e.g. too much nitpicking. for example pre-approving content, etc.
+  - the WG may decide to not publish things or ask for changes, according to the content policy/communication strategy (see below). changes to the content require the original author's approval before publishing.
+    - the WG can also delegate review approvals
+  - establish clear criteria about projects listed under /ecosystem (e.g. maturity status, featured), to be signed off by the GB
+  - create and maintain "core" content
+    - initially: improve documentation/onboarding experience for new users and communities (e.g. the /docs page)
+    - propose a list of things that are "core" content
+  - establish a policy/clean-up process for unverified content
+    - do docs authors have responsibility for their content?
+- conference website, in agreement with the Events WG
+  - here, events WG would be responsible for content, and Website WG for tech
+  - process for joint responsibilities like this to be created by the joint WGs/teams
+- TWIM helper/tooling repos
+- administration of (deployed) tooling
+  - e.g. TWIM bot
+  - e.g. cloudflare
+  - processes around this to be created by the WG. e.g. delegation of admin tasks (-> currently by SRE team on Fdn k8s)
+- Matrix Live
+  - for now, it seems to fit best in this WG
+  - content creation can be delegated
+  - review (content and technical e.g. editing) and publish it
+- manage respective rooms: TWIM, TWIM offtopic, website, news room
+  - Manage the [#community:matrix.org](https://matrix.to/#/#community:matrix.org) space
+    - making this known and establishing processes for it
+  - shared with T&S
+- socials
+  - YouTube: descriptions, playlists, comments, ...
+  - mastodon.matrix.org
+    - decide what is the commitment for the @matrix account here
+    - document some expectations to content posted/other interactions
+    - blog posts and other things published by the WG are posted
+    - set some baseline rules
+  - etc -> see list in the Fdn handbook
+    - see mastodon
+    - document any accounts and who has access
+- help establish the communication strategy/content policy and review any activity in the repo & other outlets to make sure we follow it
+  - also see the existing proposals in the handbook
+  - e.g. set a (technical) policy for pushes to main that all contributions must follow
+  - e.g. m.org blog posts
+  - e.g. label appearances of non-Foundation entities clearly on Matrix Live (e.g. Element Demos)
+  - mark authors and explain their role
+- technical oversight of shop.matrix.org
+  - access to administrate it
+  - ensuring that one can actually buy an article without the website exploding
+  - ability to update documentation, i.e. making sure the modalities are as clear and easy to find as possible
+  - this explicitly excludes decisions about the merchandise sold on the store and the financial aspects, but includes only the technical operation.
+"""
 committee = "Community Committee"
 members = ["Thib", "HarHarLinks", "MTRNord"]
+chairs = ["MTRNord"]
 sponsor = "HarHarLinks"
 meetings = "Thursdays, 16:00-17:00 Berlin time. Please reach out via our Matrix room to join."
 matrix_room_alias = "#matrix.org-website:matrix.org"
@@ -21,10 +91,41 @@ email = ""
 name = "Events"
 summary = "Organising the Foundation's official events and appearances at conferences"
 description = """
-The Events working group is the main organising team of the official events hosted by the Foundation, such as the Matrix Conference or co-hosting FOSDEM Fringe, as well as official appearances at other conferences, e.g. the FOSDEM booth and devroom. The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the Matrix Community Summit, or the FrOSCon Matrix Community devroom, and aims to foster an ecosystem of decentralised events and user groups.
+The Events Working Group is the main organising team of the official events hosted by the Foundation, such as The Matrix Conference or co-hosting FOSDEM Fringe, as well as official appearances at other conferences, e.g. the FOSDEM booth and devroom. The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the Matrix Community Summit, or the FrOSCon Matrix Community devroom, and tries to foster an ecosystem of decentralised events and user groups.
+"""
+charter = """
+### Purpose
+
+The Events Working Group is an outreach arm of The Matrix Foundation.
+It is the main organising team of the official events hosted by the Foundation, such as [The Matrix Conference](https://conference.matrix.org) or co-hosting [FOSDEM Fringe](https://fosdem.org/2026/fringe/), as well as official appearances at other conferences, e.g. the [FOSDEM](https://fosdem.org) booth and devroom.
+The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the [Matrix Community Summit](https://matrix-community.events), or the FrOSCon Matrix Community devroom, and tries to foster an ecosystem of decentralised events and user groups.
+
+### Typical Tasks
+
+- issue CfP, curation of talks, schedule building, pretalx
+- call for volunteers to staff events, shift assignment
+- merch
+  - [official merch](https://shop.matrix.org) available for sale/giveaway at event
+  - stickers available for giveaway
+  - event-specific, e.g. team shirts
+- design input
+- promotion & marketing, sponsoring, ticketing, pretix
+- coordinate video recording, podcasting, etc.
+- support community events
+  - Foundation-sponsored merch/stickers
+  - helpful hints how we handle running an event
+  - handling infrastructure support e.g. acting as financial entity
+- keeping tabs on all events globally that might be relevant
+  - for our own events to not collide with them
+  - to potentially participate in the future
+  - their CfPs etc
+- develop/maintain tooling/docs for running events on Matrix (pretix bot, FOSDEM widget, …)
+- maintain a knowledgebase at <https://handbook.matrix.org/>
+- make Matrix attractive to get invited to events
 """
 committee = "Community Committee"
 members = ["Yan", "Nadine", "Thib", "HarHarLinks", "The one with the braid", "Dominik"]
+chairs = ["HarHarLinks"]
 sponsor = "HarHarLinks"
 meetings = "Mondays, 16:00-17:00 Berlin time. Please reach out via our Matrix room."
 matrix_room_alias = "#events-wg:matrix.org"
@@ -34,13 +135,47 @@ email = "events-wg@foundation.matrix.org"
 name = "Trust & Safety Research & Documentation"
 summary = "Documenting and Researching the state of Trust and Safety in the ecosystem"
 description = """
+To make appropriate decisions, the T&S Committee needs to know about the state of T&S in the wider ecosystem. It needs to have insights into current challenges, solutions and initiatives.
+On the other hand the community can also benefit from having some of that information documented.
+The T&S R&D WG is a tool to help with that. It includes a wider set of individuals and reports their research results to the T&S Committee. The WG is also encouraged to enhance the [documentation](/docs) on the matrix.org website to help communities and users on Matrix moderate their rooms.
+The T&S Committee might sometimes ask the WG for help in researching specific topics in more detail to guide their decisions.
+"""
+charter = """
+### Purpose
+
 To make appropriate decisions, the T&S committee needs to know about the state of T&S in the wider ecosystem. It needs to have insights into current challenges, solutions and initiatives.
 On the other hand the community can also benefit from having some of that information documented.
-The T&S R&D WG is a tool to help with that. It includes a wider set of individuals and reports their research results to the T&S committee. The WG is also encouraged to enhance the [documentation](/docs) on the Matrix.org website to help communities and users on Matrix moderate their rooms.
+The T&S R&D WG is a tool to help with that. It includes a wider set of individuals and reports their research results to the T&S committee. In some cases the WG is also encouraged to enhance the documentation on matrix.org to help communities and users on Matrix moderate their rooms.
 The T&S committee might sometimes ask the WG for help in researching specific topics in more detail to guide their decisions.
+
+### Pledge of Confidentiality
+
+The WG will sometimes have to deal or come in contact with confidential data, possibly
+because of legal reasons, possibly because of active abuse concerns. While the
+WG is encouraged to be open, there
+will be times where the WG should keep certain information
+confidential and only share it with specific individuals. As the WG we pledge
+to keep information confidential when necessary while still being transparent
+and open where possible.
+The T&S committee may decide to remove members from the WG if it sees a member abusing their access to information or not acting in a trustworthy manner by sharing information the group agreed to keep confidential. This should be a last resort, needs a majority in the T&S committee and should be preceded by appropriate communication and warnings.
+
+### Typical Tasks
+
+- Gather information about current moderation challenges on Matrix and keep structured notes about them
+- Maintain an overview of available moderation tools and their capabilities
+- Create and maintain moderation guides on matrix.org in collaboration with the Website or Documentation WGs
+- Reach out to moderators to gather feedback or offer advice
+- Reports insights and opinions to the T&S committee and possibly other T&S working groups
+- Potentially collaborate on proposals with the T&S committee or other WGs
+- Turn some of their research into MSCs and collaboratively push them to completion as well as advise on other MSCs from a T&S perspective
+
+### Membership
+
+Interested members should be able to apply to the WG freely, but the WG and the T&S committee should do a short background check, if they are willing to give the applicant access to the information or if there are any active abuse concerns. This should be a low bar to clear, but is intended to keep malicious individuals out.
 """
 committee = "Trust & Safety Committee"
-members = ["Nico", "Cat", "Niko", "SFaulken", "Gnuxie"]
+members = ["Nico", "Cat", "Niko", "SFaulken", "Gnuxie", "Sky", "Andy Balaam", "Tobias Fella"]
+chairs = ["Niko", "Cat"]
 sponsor = "Nico"
 matrix_room_alias = "#tns-rnd-wg-office:neko.dev"
 email = ""
@@ -49,12 +184,25 @@ email = ""
 name = "Room Directory"
 summary = "Help maintain the room directory on the matrix.org homeserver"
 description = """
-The purpose of the room directory working group is to implement the matrix.org room directory policy, as described in that policy.
+The purpose of the room directory Working Group is to implement the matrix.org room directory policy, as described in that policy.
 
-Additionally the working group might propose improvements to the policy, which the T&S committee will then vote on.
+Additionally the Working Group might propose improvements to the policy, which the T&S Committee will then vote on.
+"""
+charter = """
+### Purpose
+
+The purpose of the Room Directory Working Group is to implement the matrix.org room directory policy, as described in that policy.
+
+Additionally the Working Group might propose improvements to the policy, which the T&S Committee will then vote on.
+
+### Membership
+
+The membership of the Room Directory Working Group will be determined by the [Trust & Safety Committee of the Governing Board](@/foundation/governing-board/committees.md#trust-safety).
+Members may be added or removed by a majority vote of the T&S Committee.
 """
 committee = "Trust & Safety Committee"
 members = ["Nico", "Sky", "mahdi", "Emma [it/its]", "Krille - Christian K."]
+chairs = ["Sky"]
 sponsor = "Nico"
 matrix_room_alias = "#room-dir-wg-office:neko.dev"
 email = ""
