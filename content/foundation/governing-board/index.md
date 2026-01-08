@@ -115,7 +115,7 @@ The current elected representatives are:
 
 #### Guardians
 
-* Amandine Le Pape (she/her)
+* (Amandine Le Pape (she/her) currently acting MD)
 * Matthew Hodgson (he/him)
 * Ross Schulman
 
@@ -132,7 +132,7 @@ The current elected representatives are:
 
 #### Managing Director
 
-* Robin Riley (they/them)
+* Amandine Le Pape (she/her)
 
 </div>
 </div>
@@ -208,8 +208,8 @@ The current chairs of the Governing Board are:
 
 ### Finance & Fundraising Committee
 
-* Robin Riley (they/them) — Chair
-* Vacant seat — Vice Chair
+* Gnuxie (she/her) — Chair
+* Amandine Le Pape (she/her) — Vice Chair
 
 </div>
 <div>
