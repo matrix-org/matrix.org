@@ -89,6 +89,11 @@ website = "https://www.lu-cix.lu/"
 logo = "lu-cix.svg"
 
 [[silver]]
+name = "meedio"
+website = "https://meedio.me/"
+logo = "meedio.png"
+
+[[silver]]
 name = "Rocket.Chat"
 website = "https://www.rocket.chat/"
 logo = "rocketchat.svg"
