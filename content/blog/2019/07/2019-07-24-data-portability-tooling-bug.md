@@ -24,6 +24,7 @@ We're still analysing the data but so far it looks like the bug resulted in only
 It is also worth noting that any encrypted events erroneously included in the dump will not have been decryptable (since the data subject would not have had access to the keys).
 
 ### Update (2019-08-06)
+
 > In our original analysis we stated that 19 events were shared erroneously. On closer analysis we missed 5 other timeline events - the correct figure is 24 timeline events originating from 4 users over 2 rooms. However, this figure focused on timeline data and does not take into account all state events (such as user joins, parts, topic changes etc). When considering these too, a further 56 state events were erroneously shared, referencing 64 users across these 2 rooms (mainly detailing when users had joined/left the room after the requesting user themselves had left). These membership events contained avatar & display name details which may not have been public (but in practice, the vast majority appear to be public data).
 >
 > Aside from the events referenced above, the full dump contained ~20,000 events that also ought not to have been included; however **these events were already publicly accessible due to being part of publicly accessible rooms** (eg Matrix HQ) and so we do not consider them a breach of data.
