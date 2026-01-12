@@ -59,6 +59,7 @@ Read on to learn how to upgrade anyway.
 #### Advanced upgrading  
 
 There are some reasons why your client might not be showing you the upgrading UI despite an upgrade being possible, including:
+
 - Your homeserver implementation or admin doesn't advertise support for the room version, via the [homeserver's configuration](https://spec.matrix.org/latest/client-server-api/#mroom_versions-capability).
 - Your client only recommends upgrading from or between certain versions.
 

@@ -37,6 +37,7 @@ However, we’re in the process today of releasing Synapse 1.4.0 and Riot/Web
 majority of the remaining issues.  The main changes are as follows:
 
 1. **Riot no longer automatically uses identity servers by default**.
+
 Identity servers are only useful when inviting users by email address, or when
 discovering whether your contacts are on Matrix.  Therefore, we now wait until
 the user tries to perform one of these operations before explaining that they
@@ -59,6 +60,7 @@ explicitly select their Integration Manager in Riot, in case they want to use
 provided by [Modular](https://modular.im).
 
 3. **Synapse no longer uses identity servers for verifying registrations or
+
 verifying password reset.** Originally, Synapse made use of the fact that the
 Identity Service contains email/msisdn verification logic to handle identity
 verification in general on behalf of the homeserver. However, in retrospect
@@ -90,10 +92,12 @@ days by default).  (It doesn’t yet garbage collect attachments referenced from
 redacted messages; we’re still working on that).
 
 7. Synapse now [deletes account access
+
 data](https://github.com/matrix-org/synapse/pull/6098/files) (IP addresses and
 User Agent) after N days (28 days by default) of a device being deleted.
 
 8. Riot warns before falling back to using STUN (and defaults to
+
 turn.matrix.org rather than stun.google.com) for firewall discovery (STUN)
 when placing VoIP calls, and makes it clear that this is an emergency fallback
 for misconfigured servers which are missing TURN support.  (We originally

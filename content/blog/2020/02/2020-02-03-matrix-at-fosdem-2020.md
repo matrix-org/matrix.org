@@ -17,6 +17,7 @@ Hi all,
 We're just back from an incredible time at [FOSDEM 2020](https://fosdem.org/2020) - Europe's biggest Free & Open Source Software conference.  Huge huge thanks to everyone who came to our talks (sorry if you couldn't get in :/), came to talk to us at the stand, or flagged us down to give feedback, chase PRs, file bugs, or just say thanks.  Thanks also to FOSDEM to accepting all of our talks this year, and to the FOSDEM organisers for pulling together yet another amazing event :)
 
 We ended up with three talks:
+
  * [Making and Breaking Matrix's E2E Encryption](https://fosdem.org/2020/schedule/event/matrix/)
  * [The Path to Peer-to-Peer Matrix](https://fosdem.org/2020/schedule/event/dip_p2p_matrix/)
  * [Crossing the Bifröst - Bridging All The Things with Matrix](https://fosdem.org/2020/schedule/event/matrix_bridge/)
