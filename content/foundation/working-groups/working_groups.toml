@@ -243,6 +243,6 @@ committee = "Governance Committee"
 members = ["Brad Murray", "Bram Noordstar", "Gnuxie", "Greg Sutcliffe", "Kim Brose", "Jan Kohnert", "Neil Johnson", "Nicolas Werner", "Travis Ralston"]
 chairs = ["Bram Noordstar", "Neil Johnson"]
 sponsor = "Bram Noordstar"
-meetings = "On the second Friday of the month, 17:00-18:00 Berlin time. Please reach out via our Matrix room to join."
+meetings = "On the second Friday of the month, 16:00-17:00 UTC. Please reach out via our Matrix room to join."
 matrix_room_alias = "#governance-wg:matrix.org"
 email = ""
