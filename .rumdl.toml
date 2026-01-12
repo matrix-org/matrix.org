@@ -6,7 +6,18 @@
 # disable = ["MD013", "MD033"]
 
 # List of rules to enable exclusively (if provided, only these rules will run)
-enable = ["MD001", "MD003", "MD011", "MD030", "MD031", "MD034", "MD039"]
+enable = [
+  "MD001",  # Heading levels should only increment by one
+  "MD003",  # Heading style should be consistent
+  "MD011",  # Fix reversed link syntax
+  "MD030",  # Add consistent spacing after list markers
+  "MD031",  # Code blocks need blank lines around them
+  "MD034",  # URLs should be formatted as links
+  "MD039",  # Remove extra spaces in links
+  "MD042",  # Avoid Empty Links
+  "MD056",  # Keep table column count consistent
+  "MD058",  # Add blank lines around tables
+]
 
 # List of file/directory patterns to include for linting (if provided, only these will be linted)
 # include = [
