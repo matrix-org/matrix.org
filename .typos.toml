@@ -85,6 +85,7 @@ extend-ignore-re = [
     "\\[96e9afe6\\]",
     "2020-03-06-oTyHd-",
     "Ca-bEgalTqs", # Matrix Live 2025-09-05
+    "ba-dum-tss",
 ]
 
 [default.extend-words]
