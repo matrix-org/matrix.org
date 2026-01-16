@@ -84,7 +84,7 @@ Vice Chair: Neil Johnson
 
 ### Meeting schedule
 
-The committee aims to meet every second Tuesday of the month. Given the high frequency, Governance Committee members are expected to attend at least once every quarter.
+Since we expect that the [Governance Working Group](@/foundation/working-groups/governance.md) will take over most of the Committee's daily business, separate Governance Committee meetings will be scheduled less frequently or on-demand in order to remove redundancy.
 
 ## Trust & Safety
 

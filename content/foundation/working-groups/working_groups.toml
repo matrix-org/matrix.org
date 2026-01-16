@@ -206,3 +206,43 @@ chairs = ["Sky"]
 sponsor = "Nico"
 matrix_room_alias = "#room-dir-wg-office:neko.dev"
 email = ""
+
+[[working_groups]]
+name = "Governance"
+summary = "Discuss the governance of the Governing Board and the Foundation"
+description = """
+The Governance Working Group is the intended Working Group for discussing most of the tasks that are considered the main responsibility of the [Governance Committee](@/foundation/governing-board/committees.md#governance) in the open, together with the community.
+"""
+charter = """
+### Purpose
+
+The Governance Working Group is the intended Working Group for discussing most of the tasks that are considered the main responsibility of the [Governance Committee](@/foundation/governing-board/committees.md#governance).
+
+By making much of this procedure open, we intend to achieve transparency and give the community direct access to participate in the discussion and creation of proposals, while keeping the overhead small.
+
+### Topics
+
+The Governance Working Group works on various topics, such as:
+
+* Maintenance of the Governing Board bylaws.
+* Coordination with the Managing Director and the Guardians to fill any vacant seats on the Governing Board.
+* Finding solutions to problems that withhold the Foundation from performing as intended, such as poor communication or bureaucracy.
+* Defining official relationship statuses with the community, such as ecosystem memberships and sponsor tiers.
+
+### Membership
+
+Since the Working Group is expected to replace most of the daily business of the Committee discussing and developing proposals, all Governing Board Governance Committee members are always defined to be Working Group members.
+
+Similarly, the Committee’s chair is considered the sponsor of the Working Group.
+
+### Meeting schedule
+
+The Working Group meets monthly by default. The frequency can be increased to biweekly if urgency and number of topics require it.
+"""
+committee = "Governance Committee"
+members = ["Brad Murray", "Bram Noordstar", "Gnuxie", "Greg Sutcliffe", "Kim Brose", "Jan Kohnert", "Neil Johnson", "Nicolas Werner", "Travis Ralston"]
+chairs = ["Bram Noordstar", "Neil Johnson"]
+sponsor = "Bram Noordstar"
+meetings = "On the second Friday of the month, 16:00-17:00 UTC. Please reach out via our Matrix room to join."
+matrix_room_alias = "#governance-wg:matrix.org"
+email = ""
