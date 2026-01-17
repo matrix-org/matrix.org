@@ -3,8 +3,26 @@ title = "Spec"
 href = "https://spec.matrix.org"
 
 [[header]]
+id = "foundation"
 title = "Foundation"
-section = "foundation"
+href = "/foundation/"
+
+[[header.children]]
+title = "About Matrix"
+href = "/aboutmatrix/"
+
+[[header.children]]
+title = "Members"
+href = "/membership/"
+
+[[header.children]]
+title = "Governing Board"
+href = "/governingboard/"
+
+[[header.children]]
+title = "Working Groups"
+href = "/workinggroups/"
+
 
 [[header]]
 id = "blog"
