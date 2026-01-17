@@ -14,9 +14,9 @@
             <input id="{{ link.section }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true"
                 {{ util::current_checked(if_path_starts_with="/" ~ link.section) }}>
             <label for="{{ link.section }}-submenu-checkbox" class="submenu-title">
-            <a href="/{{ link.section }}">
-                {{ link.title }}</a> <div class="arrow">
-                </div></label>
+                <a href="/{{ link.section }}">{{ link.title }}</a>
+                <span class="arrow"></span>
+            </label>
 
             <div class="section-submenu-wrap">
                 <div class="section-submenu">
@@ -50,7 +50,7 @@
                         <a href="{{ link.href }}">
                             {{ link.title }}
                         </a>
-                        <div class="arrow"></div>
+                        <span class="arrow"></span>
                     </label>
                     <div class="section-submenu-wrap">
                         <div class="section-submenu">
