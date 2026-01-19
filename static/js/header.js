@@ -25,7 +25,7 @@ const getRelatedToggles = (element) =>
 /**
  * Toggles the ARIA attributes of a given label element.
  *
- * @param {HTMLElement} element - The label element to toggle attributes.
+ * @param {HTMLElement} element - The label element to toggle attributes for.
  */
 const toggleAriaAttributes = (element) => {
     const isExpanded = element.getAttribute("aria-expanded") === "true";
@@ -39,7 +39,7 @@ const toggleAriaAttributes = (element) => {
  * Handles the toggle action for a given label element, including updating
  * ARIA attributes and checkbox state.
  *
- * @param {HTMLElement} element - The label element to handle toggle for.
+ * @param {HTMLElement} element - The label element to handle the toggle for.
  */
 const handleToggle = (element) => {
     toggleAriaAttributes(element);
@@ -63,9 +63,8 @@ toggles.forEach(element => {
     element.setAttribute("aria-pressed", "false");
 
     const checkbox = getCheckbox(element);
-    if (checkbox) {
+    if (checkbox)
         checkbox.checked = false; // Ensure a consistent state
-    }
 
     element.addEventListener("click", (event) => {
         event.preventDefault(); // Prevent the default browser behaviour (i.e., toggling).
