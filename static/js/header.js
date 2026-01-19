@@ -12,7 +12,7 @@ const getCheckbox = (element) =>
     );
 
 /**
- * Gets all related toggles for a given label element, excluding itself.
+ * Retrieves all related toggles for a given label element, excluding itself.
  *
  * @param {HTMLElement} element - The label element.
  * @returns {HTMLElement[]} An array of related label elements.
