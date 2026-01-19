@@ -31,7 +31,7 @@ Meanwhile, over to Dan for the Synapse 1.37 release notes.
 
 Synapse 1.37 is now available!
 
-> **Note: ** The legacy APIs for Spam Checker extension modules are now considered deprecated and targeted for removal in August. Please see [the module docs](https://matrix-org.github.io/synapse/v1.37/modules.html#porting-an-existing-module-that-uses-the-old-interface) for information on updating.
+> **Note:** The legacy APIs for Spam Checker extension modules are now considered deprecated and targeted for removal in August. Please see [the module docs](https://matrix-org.github.io/synapse/v1.37/modules.html#porting-an-existing-module-that-uses-the-old-interface) for information on updating.
 >
 > This release also removes Synapse's built-in support for the obsolete ACMEv1 protocol for automatically obtaining TLS certificates. Server administrators should place Synapse behind a [reverse proxy](https://matrix-org.github.io/synapse/v1.37/reverse_proxy.html) for TLS termination, or switch to a standalone ACMEv2 client like [certbot](https://certbot.eff.org/).
 
