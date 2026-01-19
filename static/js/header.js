@@ -1,58 +1,81 @@
-const dropdownToggle = document.querySelector("label#dropdown-button");
-const dropdownCheckbox = document
-    .querySelector("input[type='checkbox']#site-header-dropdown-checkbox");
+const toggles = document.querySelectorAll(".site-header label");
 
 /**
- * Toggles the aria-pressed attribute of a given element.
+ * Retrieves the checkbox associated with a given label element.
  *
- * @param {HTMLElement} element - The element whose aria-pressed attribute will be toggled.
+ * @param {HTMLElement} element - The label element.
+ * @returns {HTMLElement|null} The associated checkbox element or null if not found.
  */
-function toggleAriaPressed(element) {
+const getCheckbox = (element) =>
+    document.querySelector(
+        `.site-header input[type="checkbox"]#${element.getAttribute('for')}`
+    );
+
+/**
+ * Gets all related toggles for a given label element, excluding itself.
+ *
+ * @param {HTMLElement} element - The label element.
+ * @returns {HTMLElement[]} An array of related label elements.
+ */
+const getRelatedToggles = (element) =>
+    Array.from(document.querySelectorAll(
+        `.site-header label[for="${element.getAttribute('for')}"]`
+    )).filter(related => related !== element);
+
+/**
+ * Toggles the ARIA attributes of a given label element.
+ *
+ * @param {HTMLElement} element - The label element to toggle attributes.
+ */
+const toggleAriaAttributes = (element) => {
+    const isExpanded = element.getAttribute("aria-expanded") === "true";
     const isPressed = element.getAttribute("aria-pressed") === "true";
 
+    element.setAttribute("aria-expanded", !isExpanded);
     element.setAttribute("aria-pressed", !isPressed);
-}
+};
 
 /**
- * Toggles the checked state of a checkbox element.
+ * Handles the toggle action for a given label element, including updating
+ * ARIA attributes and checkbox state.
  *
- * @param {HTMLInputElement} element - The checkbox whose checked state will be toggled.
+ * @param {HTMLElement} element - The label element to handle toggle for.
  */
-function toggleCheckbox(element) {
-    element.checked = !element.checked;
-}
+const handleToggle = (element) => {
+    toggleAriaAttributes(element);
 
-document.addEventListener("DOMContentLoaded", () => {
-    /**
-     * Set the aria-pressed attribute on the dropdown toggle as a progressive enhancement
-     * since its value depends on being updated by JavaScript.
-     */
-    dropdownToggle.setAttribute("aria-pressed", dropdownCheckbox.checked);
+    const relatedToggles = getRelatedToggles(element);
+    relatedToggles.forEach(relatedElement => {
+        toggleAriaAttributes(relatedElement);
+        relatedElement.setAttribute("aria-pressed", false);
+    });
 
-    /**
-     * Set the tabindex attribute on the dropdown toggle as a progressive enhancement
-     * since it doesn't make much sense to mark it as focusable if JavaScript isn't enabled.
-     */
-    dropdownToggle.setAttribute("tabindex", 0);
+    const checkbox = getCheckbox(element);
+    if (checkbox)
+        checkbox.checked = !checkbox.checked;
+};
 
-    /**
-     * Set the role attribute on the dropdown toggle as a progressive enhancement
-     * since it doesn't make much sense to mark it as focusable if JavaScript isn't enabled.
-     */
-    dropdownToggle.setAttribute("role", "button");
-});
+// Initialise toggles
+toggles.forEach(element => {
+    element.setAttribute("role", "button");
+    element.setAttribute("tabindex", 0);
+    element.setAttribute("aria-expanded", "false");
+    element.setAttribute("aria-pressed", "false");
 
-dropdownToggle.addEventListener("click", () => {
-    toggleAriaPressed(dropdownToggle);
-});
-
-dropdownToggle.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-        // Prevent the page from scrolling if the space button is pressed.
-        event.preventDefault();
-
-        toggleCheckbox(dropdownCheckbox);
-
-        toggleAriaPressed(dropdownToggle);
+    const checkbox = getCheckbox(element);
+    if (checkbox) {
+        checkbox.checked = false; // Ensure a consistent state
     }
+
+    element.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent the default browser behaviour (i.e., toggling).
+        handleToggle(element);
+    });
+
+    element.addEventListener("keydown", (event) => {
+        if (event.key === " " || event.key === "Enter") {
+            event.preventDefault(); // Prevent the default browser behaviour (i.e., page scrolling).
+            handleToggle(element);
+        }
+    });
 });
