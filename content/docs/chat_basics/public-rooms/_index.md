@@ -16,9 +16,9 @@ safely.
 When you want to join larger public conversations, you have three major options
 at hand:
 
-1. [Joining a specific room](#joining-a-specific-room) from its address/alias or from a `matrix.to` link
-2. [Browsing a public directory](#browsing-the-public-directory) to find rooms of interest
-3. Joining a room that was listed in a [Space](#spaces)
+1. [Joining a specific room](@/docs/chat_basics/public-rooms/_index.md#joining-a-specific-room) from its address/alias or from a `matrix.to` link
+2. [Browsing a public directory](@/docs/chat_basics/public-rooms/_index.md#browsing-the-public-directory) to find rooms of interest
+3. Joining a room that was listed in a [Space](@/docs/chat_basics/public-rooms/_index.md#spaces)
 
 Some clients also allow applying specific settings to public rooms, such as
 [hiding images by default](#hiding-images-by-default).
