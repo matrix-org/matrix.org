@@ -13,6 +13,7 @@ enable = [
   "MD030",  # Add consistent spacing after list markers
   "MD031",  # Code blocks need blank lines around them
   "MD034",  # URLs should be formatted as links
+  "MD038",  # Remove extra spaces in code
   "MD039",  # Remove extra spaces in links
   "MD042",  # Avoid Empty Links
   "MD056",  # Keep table column count consistent

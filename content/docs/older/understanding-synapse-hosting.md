@@ -260,7 +260,7 @@ at is the homeserver.yaml file, which contains all the basic information to
 allow our server to run. Docker volumes data is located in
 `/var/lib/docker/volumes/your_volume_name/_data`. We asked this container to
 generate the files in the `infra_synapse_data` volumes. Let’s have a look at
-`/var/lib/docker/volumes/infra_synapse_data/_data/homeserver.yaml `and see what
+`/var/lib/docker/volumes/infra_synapse_data/_data/homeserver.yaml` and see what
 it contains:
 
 ```yaml
