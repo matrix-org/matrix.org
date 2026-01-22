@@ -107,6 +107,12 @@
                 framework }}{% if not loop.last %} &ndash; {% endif %}{% endfor %}</div>
             <span>{{ distribution.description | safe }}</span>
             <div class="distribution-links">
+                {% if distribution.website %}
+                <a href="{{ distribution.website }}">
+                    {{ load_data(path="/assets/home.svg") | safe }}
+                    Homepage
+                </a>
+                {% endif %}
                 {% if distribution.repository %}
                 <a href="{{ distribution.repository }}">
                     {{ load_data(path="/assets/projects/repo.svg") | safe }}
