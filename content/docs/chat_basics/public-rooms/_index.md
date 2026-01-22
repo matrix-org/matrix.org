@@ -16,9 +16,12 @@ safely.
 When you want to join larger public conversations, you have three major options
 at hand:
 
-1. Joining a specific room from its address / alias or from a `matrix.to` link
-2. Browsing a public directory to find rooms of interest
-3. Joining a room that was listed in a Space
+1. [Joining a specific room](@/docs/chat_basics/public-rooms/_index.md#joining-a-specific-room) from its address/alias or from a `matrix.to` link
+2. [Browsing a public directory](@/docs/chat_basics/public-rooms/_index.md#browsing-the-public-directory) to find rooms of interest
+3. Joining a room that was listed in a [Space](@/docs/chat_basics/public-rooms/_index.md#spaces)
+
+Some clients also allow applying specific settings to public rooms, such as
+[hiding images by default](#hiding-images-by-default).
 
 ## Joining a specific room
 
@@ -30,14 +33,14 @@ use.
 Clicking a `matrix.to` link you will open a new tab in your browser, showing you
 a UI that looks like the following.
 
-![](matrixto-HS.png)
+![matrix.to asks to confirm the choice of homeserver instance which it will use to preview the room.](matrixto-HS.png)
 
 Click on accept, and you will be redirected to a preview of the room you're
 trying to join, containing its name, address (on the format
 `#room-name:example.com`), and number of people currently in the room. Below
 this preview is a list of clients you can use to join the room.
 
-![](matrixto-client-choice.png)
+![Preview of the "RPG General" room on matrix.to. Room alias, amount of members, and topic are shown. The top of the list of clients is visible below, including Element and Weechat.](matrixto-client-choice.png)
 
 Since this documentation started with Element, let's carry on with it. You will
 be able to seamlessly change to another client when you're more used to Matrix.
@@ -51,11 +54,72 @@ app.
 Depending on the privacy settings set by the administrators of the room, you may
 or may not be able to see a preview of the conversation.
 
-![](room-preview.png)
+![Preview of the "RPG General" room using Element Web. A few example chat and status messages can be seen. The room is not yet in the room list. At the bottom is a button to join the room.](room-preview.png)
 
 Click on "Join the discussion": you can now participate in the room!
 
-![](room-participate.png)
+![The room now appears in the room list as selected. The same messages as before can be seen, but there is now an additional join status message and a greeting from the "thibiscus" tutorial user.](room-participate.png)
+
+## Browsing the public directory
+
+Joining a specific room is handy when you know exactly what you want to discuss
+or where, but sometimes you just want to find a casual place to talk of things
+of interest with people on the Internet.
+
+Matrix has a built-in directory where people can publish their public rooms for
+others to find them. The directory only shows rooms published on a single
+provider at once. If you have created an account on matrix.org, it's going to
+show you only rooms published on matrix.org's directory.
+
+To access the directory in Element Web, click on the `+` in the left bar,
+and on "Join public room".
+
+![After clicking on the plus symbol in the room list, there is a menu with the options to start a new chat, create a new room, or join a public room.](directory-menu.png)
+
+It will open a list of all the public rooms published in the directory of your
+provider.
+
+![A window titled "Explore rooms" has opened in front. It has a search box near the top, a selection box with "matrix.org" selected, and a list of rooms below. Each room has an avatar, name, topic, member count, and join button. Some also have a preview button.](directory-list.png)
+
+The directory can be very large sometimes, and the rooms displayed at the top of
+the list may not be of interest to you. You can type a center of interest to see
+if someone has created a room for it already.
+
+![The search box now contains "cycling" and rooms which contain this word in their name or topic make up the list of results, ordered by member count.](directory-filtered.png)
+
+You can click "Join" to join the room, and voilà, you're in!
+
+![A view of the "Cycling" room's couple last messages. The "thibiscus" test user has just joined.](directory-joined.png)
+
+## Spaces
+
+A Space is a way to group several rooms together. If you are familiar with other
+platforms, Matrix Spaces are similar to Slack Workspaces or Discord Servers. It
+looks like the following.
+
+![The space home of the "Warm Drinks Community". It has a cup of coffee as avatar and the name and description are shown prominently next to further details: the space is public and has two members, there is a summary of the member avatars next to an invite and a settings button. In the middle is a search box to filter the list of rooms and subspaces below. Some of the rooms are indicated as suggested. At the top of the list are buttons to add, remove, or mark rooms as suggested.](space_home.png)
+
+To join a Space, you need to either know its address, or click on a matrix.to
+link to that space someone would have shared with you. For example, to join the
+Space of the Matrix Community, you can click on
+[https://matrix.to/#/#community:matrix.org](https://matrix.to/#/#community:matrix.org)
+
+The process to join a Space is the same as for [Joining a specific room](#joining-a-specific-room).
+
+Once you have joined a Space, clicking on its icon on the leftmost bar will
+bring you to the index view of the space: you will see all the rooms contained
+in this space, and you will be able to join them by clicking on "Join".
+
+Note that when you join a Space, you are not automatically joining all the rooms
+inside it.
+
+Here are a few Spaces you might be interested in:
+
+- Matrix Community [https://matrix.to/#/#community:matrix.org](https://matrix.to/#/#community:matrix.org)
+- Science [https://matrix.to/#/#science-space:matrix.org](https://matrix.to/#/#science-space:matrix.org)
+- Libre Gaming [https://matrix.to/#/#libregaming-games:tchncs.de](https://matrix.to/#/#libregaming-games:tchncs.de)
+- Retro Computing & Gaming [https://matrix.to/#/#retro:nil.im](https://matrix.to/#/#retro:nil.im)
+- Mathematics [https://matrix.to/#/#mathematics-on:matrix.org](https://matrix.to/#/#mathematics-on:matrix.org)
 
 ## Hiding images by default
 
@@ -186,64 +250,3 @@ You can re-hide them by choosing the "eye" icon when you hover over the image.
     alt="Element Web, hovering over an image to show the pop-up menu. On this
     menu is an eye image that is highlighted. The tooltip says Hide."
 ) }}
-
-## Browsing the public directory
-
-Joining a specific room is handy when you know exactly what you want to discuss
-or where, but sometimes you just want to find a casual place to talk of things
-of interest with people on the Internet.
-
-Matrix has a built-in directory where people can publish their public rooms for
-others to find them. The directory only shows rooms published on a single
-provider at once. If you have created an account on matrix.org, it's going to
-show you only rooms published on matrix.org's directory.
-
-To access the directory, click on the `+` in the left bar, and on "Join public
-room".
-
-![](directory-menu.png)
-
-It will open a list of all the public rooms published in the directory of your
-provider.
-
-![](directory-list.png)
-
-The directory can be very large sometimes, and the rooms displayed at the top of
-the list may not be of interest to you. You can type a center of interest to see
-if someone has created a room for it already.
-
-![](directory-filtered.png)
-
-You can click "Join" to join the room, and voilà, you're in!
-
-![](directory-joined.png)
-
-## Spaces
-
-A Space is a way to group several rooms together. If you are familiar with other
-platforms, Matrix Spaces are similar to Slack Workspaces or Discord Servers. It
-looks like the following.
-
-![](space_home.png)
-
-To join a Space, you need to either know its address, or click on a matrix.to
-link to that space someone would have shared with you. For example, to join the
-Space of the Matrix Community, you can click on
-[https://matrix.to/#/#community:matrix.org](https://matrix.to/#/#community:matrix.org)
-
-The process to join a Space is the same as for [Joining a specific room](#joining-a-specific-room).
-
-Once you have joined a Space, clicking on its icon on the leftmost bar will
-bring you to the index view of the space: you will see all the rooms contained
-in this space, and you will be able to join them by clicking on "Join".
-
-Note that when you join a Space, you are not automatically joining all the rooms
-inside it.
-
-Here are a few Spaces you might be interested in:
-
-- Matrix Community [https://matrix.to/#/#community:matrix.org](https://matrix.to/#/#community:matrix.org)
-- Science [https://matrix.to/#/#science-space:matrix.org](https://matrix.to/#/#science-space:matrix.org)
-- Libre Gaming [https://matrix.to/#/#libregaming-games:tchncs.de](https://matrix.to/#/#libregaming-games:tchncs.de)
-- Retro Computing & Gaming [https://matrix.to/#/#retro:nil.im](https://matrix.to/#/#retro:nil.im)
-- Mathematics [https://matrix.to/#/#mathematics-on:matrix.org](https://matrix.to/#/#mathematics-on:matrix.org)
