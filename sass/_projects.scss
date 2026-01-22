@@ -19,11 +19,10 @@
 .project-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 24px;
-    gap: 1rem;
-
+    gap: .75rem;
     min-height: 100%;
 
     border: 1px solid #D2D2D2;
@@ -37,37 +36,85 @@
     }
 
     h3 {
-        margin: 0 .2rem 0 0;
-
+        margin: 0;
         font-style: normal;
         font-weight: 700;
-        font-size: 1.8rem;
-        line-height: 1;
+        font-size: 1.6rem;
+        line-height: 1.15;
         text-align: center;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
     }
 
-    a,
-    .open-project {
-        margin-block: auto 0;
+    a {
         color: var(--color-text-light);
         text-decoration: none;
     }
 
-    p {
-        line-height: 1;
+    .open-project {
+        margin: 0;
+        color: var(--color-text-light);
     }
 
+    p {
+        line-height: 1;
+        margin: 0;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    .metadata-pills,
     .licence-language {
         display: flex;
         flex-direction: row;
-        gap: .2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: .3rem;
     }
 
     .pill {
         background-color: #e9e9e9;
-        border-radius: 9999px;
-        padding-inline: .5rem;
+        border-radius: 16px;
+        padding: .2rem .5rem;
         color: var(--color-text);
+        font-size: .85rem;
+        line-height: 1.2;
+        text-align: center;
+
+        &.licence {
+            background-color: transparent;
+            border: 1px solid #888;
+            color: #555;
+        }
+    }
+
+    .subtitle {
+        font-size: .9rem;
+        color: var(--color-text-light);
+        text-align: center;
+    }
+
+    .description {
+        font-size: .9rem;
+        line-height: 1.4;
+        text-align: center;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        &:empty {
+            display: none;
+        }
     }
 }
 
@@ -223,10 +270,22 @@
     width: 100%;
     max-width: 100%;
     display: flex;
-    justify-content: space-between;
-    gap: .2rem;
-    align-items: start;
+    flex-direction: column;
+    align-items: center;
+    gap: .3rem;
+
+    h3 {
+        text-align: center;
+    }
+}
+
+.card-links {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
 }
 
 #filters-overlay {

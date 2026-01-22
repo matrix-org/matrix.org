@@ -83,9 +83,13 @@
                 <h3>{{ server.name }}</h3>
                 <div class="maturity {{ server.maturity | lower }}">{{ server.maturity }}</div>
             </div>
-            <div>{{ server.licence }} {{ server.language }}</div>
-            <span>{{ server.description | safe }}</span>
-            <div class="server-links">
+            {% if server.author %}<div class="subtitle">{{ server.author }}</div>{% endif %}
+            <div class="metadata-pills">
+                <div class="pill licence">{{ server.licence }}</div>
+                <div class="pill">{{ server.language }}</div>
+            </div>
+            <p class="description">{{ server.description | safe }}</p>
+            <div class="card-links server-links">
                 {% if server.website %}
                 <a href="{{ server.website }}">
                     {{ load_data(path="/assets/home.svg") | safe }}
