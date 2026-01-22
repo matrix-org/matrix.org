@@ -21,6 +21,7 @@ So, precisely why are we feeling so happy right now?
 <!-- more -->
 
 ### Matrix 2.0
+
 Matrix 2.0 is the project to ensure that Matrix can be used to build apps which outcompete the incumbent legacy mainstream communication apps.  Since announcing the project at FOSDEM 2023, we’ve been hard at work iterating on:
 
 * Sliding Sync, providing instant sync, instant login and instant launch.
@@ -125,4 +126,3 @@ Matrix feels like it entered a whole new era in 2024 – with the Foundation pro
 Meanwhile, 2025 is shaping up to be really exciting. It feels like we’ve come out of the darkness of the last few years with a 2.0 which is better than we could have possibly hoped, and I can’t wait to see where it goes from here!
 
 Thanks to everyone for supporting the project - especially if you are a member of the Foundation (and if not, [please join here!](http://matrix.org/membership)). We hope you have a fantastic end of the year; see you on the other side, and thanks for flying Matrix :)
-

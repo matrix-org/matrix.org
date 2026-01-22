@@ -103,6 +103,7 @@ An Email to Matrix bridge. 1 room = 1 mailbox.
 > * set `msgtype` by attachment's mime-type (received image -> got rendered image in your matrix client; received audio -> got audio player in your matrix client; etc)
 >
 > [Source code](https://gitlab.com/etke.cc/postmoogle), say hi in the [#postmoogle:etke.cc](https://matrix.to/#/#postmoogle:etke.cc) room
+
 ### matrix-hookshot ([website](https://github.com/Half-Shot/matrix-hookshot))
 
 A multi purpose multi platform bridge, formerly known as matrix-github
@@ -343,6 +344,7 @@ Your matrix server on your conditions
 Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
 
 ### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+
 Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|
@@ -359,6 +361,7 @@ Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience th
 |10|jacksonchen666.com|1824|
 
 ### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+
 Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|
