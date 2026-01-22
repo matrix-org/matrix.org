@@ -103,10 +103,15 @@
                 <h3>{{ distribution.name }}</h3>
                 <div class="maturity {{ distribution.maturity | lower }}">{{ distribution.maturity }}</div>
             </div>
-            <div>{{ distribution.licence }} &middot; {% for framework in distribution.frameworks %}{{
-                framework }}{% if not loop.last %} &ndash; {% endif %}{% endfor %}</div>
-            <span>{{ distribution.description | safe }}</span>
-            <div class="distribution-links">
+            {% if distribution.vendor %}<div class="subtitle">{{ distribution.vendor }}</div>{% endif %}
+            <div class="metadata-pills">
+                <div class="pill licence">{{ distribution.licence }}</div>
+                {% for framework in distribution.frameworks %}
+                <div class="pill">{{ framework }}</div>
+                {% endfor %}
+            </div>
+            <p class="description">{{ distribution.description | safe }}</p>
+            <div class="card-links distribution-links">
                 {% if distribution.website %}
                 <a href="{{ distribution.website }}">
                     {{ load_data(path="/assets/home.svg") | safe }}
