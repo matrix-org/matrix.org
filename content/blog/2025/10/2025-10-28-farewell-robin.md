@@ -21,7 +21,7 @@ Looking forward for Matrix, I’m excited to see the ecosystem continue to hit m
 
 I’d be remiss if I didn’t close with a familiar pitch. Seeing governments, particularly in Europe, expanding their investment in open source development as well as the organizations that steward the projects, is really encouraging. The French government’s support of the Matrix.org Foundation, through DINUM’s new membership, is a major milestone in that direction! But we have a long way to go before we achieve systemic funding at appropriate levels. 
 
-If you value privacy, digital autonomy, and data sovereignty, or if you benefit from Matrix, [become a member of the Foundation today](@/foundation/membership/index.md). Your donations are necessary to sustain and realize our goals!
+If you value privacy, digital autonomy, and data sovereignty, or if you benefit from Matrix, [become a member of the Foundation today](@/foundation/members/index.md). Your donations are necessary to sustain and realize our goals!
 
 Keep up the good work, folks. I’ll see you in the wild blue yonder.
 
