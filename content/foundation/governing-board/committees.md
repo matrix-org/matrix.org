@@ -1,6 +1,5 @@
 +++
 title = "Governing Board Committees"
-weight = 3
 extra.summary = """
 The Committees of the Governing Board are subgroups focusing on specific areas of interest to The Matrix Foundation.
 """
