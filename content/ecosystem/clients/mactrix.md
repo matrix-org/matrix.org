@@ -10,7 +10,7 @@ licence = "GPL-3.0"
 latest_release = ""
 featured = false
 [extra.features]
-e2ee = false
+e2ee = true
 spaces = true
 voip_1to1 = false
 voip_jitsi = false
