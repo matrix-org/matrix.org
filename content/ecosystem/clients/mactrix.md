@@ -7,7 +7,7 @@ maturity = "Beta"
 repo = "https://github.com/viktorstrate/mactrix"
 matrix_room = "#mactrix:qpqp.dk"
 licence = "GPL-3.0"
-latest_release = ""
+latest_release = "2026-01-21" # No formal releases; based on the latest non-trivial commit.
 featured = false
 [extra.features]
 e2ee = true
