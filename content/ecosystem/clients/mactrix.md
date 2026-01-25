@@ -19,6 +19,7 @@ sso = true
 multi_account = false
 multi_language = false
 [extra.packages]
+macos_installer = "https://github.com/viktorstrate/mactrix/#installation"
 +++
 
 A native macOS client for Matrix.
