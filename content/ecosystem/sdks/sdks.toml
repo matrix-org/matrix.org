@@ -368,11 +368,11 @@ featured_in = []
 
 [[sdks]]
 name = "Trixnity"
-maintainer = "Trixnity Team"
+maintainer = "connect2x GmbH"
 maturity = "Stable"
 language = "Kotlin"
 licence = "Apache-2.0"
-repository = "https://gitlab.com/trixnity/trixnity"
+repository = "https://gitlab.com/connect2x/trixnity/trixnity"
 purpose = ["client", "bot", "bridge"]
 featured_in = []
 description = """
