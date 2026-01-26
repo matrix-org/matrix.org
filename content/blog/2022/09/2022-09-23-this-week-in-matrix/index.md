@@ -210,7 +210,7 @@ Everything related to Element but not strictly bound to a client
 
 [Matthew](https://matrix.to/#/@matthew:matrix.org) announces
 
-> upcoming critical security update for matrix-{js,ios,android}-sdk on Wednesday Sept 28 at 16:00 UTC: https://matrix.org/blog/2022/09/23/pre-disclosure-upcoming-critical-security-release-of-matrix-sd-ks-and-clients
+> upcoming critical security update for matrix-{js,ios,android}-sdk on Wednesday Sept 28 at 16:00 UTC: <https://matrix.org/blog/2022/09/23/pre-disclosure-upcoming-critical-security-release-of-matrix-sd-ks-and-clients>
 
 ### Element Web/Desktop ([website](https://github.com/vector-im/element-web))
 
@@ -342,6 +342,7 @@ A TypeScript/JavaScript SDK for Matrix bots
 Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
 
 ### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+
 Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|
@@ -358,6 +359,7 @@ Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience th
 |10|aria-net.org|1518|
 
 ### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+
 Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|

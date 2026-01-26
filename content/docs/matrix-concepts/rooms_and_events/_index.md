@@ -122,8 +122,7 @@ ask Alice's `example.com` a local copy of the room, and stay in sync with it.
     caption="Bob joins the room and automatically gets Power Level 0")
 }}
 
-If Carol joins from her homeserver `ergaster.org`, she will also get the power level
-0.
+If Carol joins from her homeserver `ergaster.org`, she will also get the power level 0.
 
 {{ figure(
     img="./room_federated.svg",
@@ -145,8 +144,8 @@ else.
     caption="Walter joins the room and gets Power Level 0: he is a regular user")
 }}
 
-If Walter fiddled with its homeserver database to alter its local copy of the
-room, his change would not propagate: nobody has granted him power level 0: when
+If Walter fiddled with his homeserver database to alter its local copy of the
+room, his change would not propagate: nobody has granted him power level 100: when
 the other homeservers would want to update their local copy of the room, they
 would reject the change making Walter administrator of the room.
 
@@ -169,7 +168,7 @@ local copy of the room they will accept the change.
 }}
 
 What if Walter was the homeserver administrator of `ergaster.org` instead? Every
-user of `ergaster.org` in this room have the Power Level 0. If Walter called this API,
+user of `ergaster.org` in this room has the Power Level 0. If Walter called this API,
 his homeserver would only be able to control a user with Power Level 0,
 and would not be able to promote him.
 

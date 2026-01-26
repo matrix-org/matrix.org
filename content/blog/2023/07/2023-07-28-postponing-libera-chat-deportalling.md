@@ -13,7 +13,7 @@ Some stability issues on the bridge have prevented people from turning their por
 
 <!-- more -->
 
-Additionally, as part of the project we have been made aware of several new bridge security issues. These issues must be patched ahead of the plumbing stability work thereby increasing the overall scope of the project. The limited resources of the[ Matrix.org](http://Matrix.org) Foundation didn’t allow us to meet the deadline in time.
+Additionally, as part of the project we have been made aware of several new bridge security issues. These issues must be patched ahead of the plumbing stability work thereby increasing the overall scope of the project. The limited resources of the [Matrix.org](http://Matrix.org) Foundation didn’t allow us to meet the deadline in time.
 
 Rather than plough ahead with the original timeline and risking splitting communities, we have asked Libera Chat for an extension for turning off portal rooms to ensure successful migrations in order to make sure the bridge is ready to handle the traffic in plumbed rooms and to leave people enough time to migrate their rooms after the stabilisation work. We have asked the Libera Chat staff to allow us to postpone the deportalling to Friday 11 August, which they accepted. We’re grateful to the Libera Chat team for accommodating us.
 

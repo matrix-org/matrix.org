@@ -75,7 +75,7 @@ Matrix was featured as part of a Master's thesis by Florian Jacob.
 
 Florian's thesis was handed in last August. <a href="https://github.com/florianjacob/dsn-traveller">Source code is available</a>.
 
-> All details at <a href="https://dsn-traveller.dsn.scc.kit.edu/">https://dsn-traveller.dsn.scc.kit.edu/</a>, room at <a href="https://matrix.to/#/#dsn-traveller:dsn-traveller.dsn.scc.kit.edu">#dsn-traveller:dsn-traveller.dsn.scc.kit.edu</a>.
+> All details at <https://dsn-traveller.dsn.scc.kit.edu/>, room at <a href="https://matrix.to/#/#dsn-traveller:dsn-traveller.dsn.scc.kit.edu">#dsn-traveller:dsn-traveller.dsn.scc.kit.edu</a>.
 
 ## Still more
 

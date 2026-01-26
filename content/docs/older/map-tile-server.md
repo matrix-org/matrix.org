@@ -72,15 +72,7 @@ The [OSM tile server stack](https://github.com/Overv/openstreetmap-tile-server)
 is a map tile server that provides tiles via HTTP, and provides a simple web UI
 to browse the map data:
 
-<iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/gngwBZc8lYE"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-></iframe>
+{{ youtube_player(video_id="gngwBZc8lYE") }}
 
 ### Download the raw data
 
@@ -164,15 +156,7 @@ Element uses the [MapLibre GL](https://maplibre.org/) library to render maps,
 and MapLibre requires a style file that describes how to find map tiles.
 Here's how it looks:
 
-<iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/_c-V_kvIVj8"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-></iframe>
+{{ youtube_player(video_id="_c-V_kvIVj8") }}
 
 The style file is quite simple. To describe a tile server on this machine,
 we need to create a file `style.json` like this:

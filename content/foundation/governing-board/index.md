@@ -6,7 +6,7 @@ The Governing Board is an advisory board that is made up of elected representati
 """
 +++
 
-The Governing Board is an advisory board that is made up of elected representatives from all across the Matrix ecosystem. The role of the Governing Board is to offer guidance and support to the Guardians, Foundation staff, and Spec Core Team. It is organized under [these bylaws](/media/2025-04-governing-board-terms-of-reference.pdf) (v1.3, last updated April 2025).
+The Governing Board is an advisory board that is made up of elected representatives from all across the Matrix ecosystem. The role of the Governing Board is to offer guidance and support to the Guardians, Foundation staff, and Spec Core Team. It is organized under [these terms of reference](/media/2025-04-governing-board-terms-of-reference.pdf) (v1.3, last updated April 2025).
 
 There are nine different constituency groups that are allocated seats on the Governing Board, across three categories:
 
@@ -35,69 +35,94 @@ Elections are being held in the second quarter of each calendar year, alternatin
 
 The current elected representatives are:
 
-<div class="two-column">
+<div class="responsive-grid">
+<div class="category-group">
+
+### Community Representatives
+
+<div class="group-content">
 <div>
 
-### Individual Members
+#### Individual Members
 
 * Andy Balaam (he/him)
+* Gnuxie (she/her)
 * Greg Sutcliffe (he/him)
-* J.B. Crawford (they/them)
-* Sumner Evans
+* J. B. Crawford (they/them)
 
 </div>
 <div>
 
-### Ecosystem Members
+#### Ecosystem Members
 
-* Bram van den Heuvel (he/they), Elm SDK
-* Kim Brose (he/him), Matrix Community Events
-* Nicolas Werner (he/him), Nheko-Reborn
-
-</div>
-<div>
-
-### Associate Members
-
-* Cleo Menenez Jr. (he/him), GNOME Foundation
-* Tobias Fella (he/him), KDE e.V.
+* Bram van den Heuvel (he/they), *Elm SDK*
+* Kim Brose (he/him), *Matrix Community Events*
+* Nicolas Werner (he/him), *Nheko-Reborn*
 
 </div>
 <div>
 
-### Platinum Members
+#### Associate Members
 
-* Neil Johnson (he/him), Element
+* Tobias Fella (he/him), *KDE e.V.*
+* Vacant seat
+
+</div>
+</div>
+</div>
+
+<div class="category-group">
+
+### Funder Representatives
+
+<div class="group-content">
+<div>
+
+#### Platinum Members
+
+* Neil Johnson (he/him), *Element*
+* Vacant seat
+* Vacant seat
+* Vacant seat
 
 </div>
 <div>
 
-### Gold Members
+#### Gold Members
 
-* Brad Murray (he/him), Automattic (Beeper)
-* Kevin Boos (he/him), Futurewei Technologies
-
-</div>
-<div>
-
-### Silver Members
-
-* Jan Kohnert (he/him), Gematik GmbH
-* Thor Arne Johansen, Verji Tech AS
+* Brad Murray (he/him), *Automattic (Beeper)*
+* Vacant seat
+* Vacant seat
 
 </div>
 <div>
 
-### Guardians
+#### Silver Members
 
-* Amandine Le Pape (she/her)
+* Christian Kußowski (he/him), *Famedly*
+* Jan Kohnert (he/him), *Gematik GmbH*
+
+</div>
+</div>
+</div>
+
+<div class="category-group">
+
+### Foundation Representatives
+
+<div class="group-content">
+<div>
+
+#### Guardians
+
+* (Amandine Le Pape (she/her) currently acting MD)
 * Matthew Hodgson (he/him)
 * Ross Schulman
 
 </div>
 <div>
 
-### Spec Core Team
+#### Spec Core Team
 
 * Richard van der Hoff (he/him)
 * Travis Ralston (he/him)
@@ -105,10 +130,12 @@ The current elected representatives are:
 </div>
 <div>
 
-### Managing Director
+#### Managing Director
 
-* Robin Riley (they/them)
+* Amandine Le Pape (she/her)
 
+</div>
+</div>
 </div>
 
 </div>
@@ -118,7 +145,7 @@ The current elected representatives are:
 These documents cover the Matrix Governing Board, its purpose, operations, and
 processes. The content is divided into the following sections:
 
-- [**Terms of Reference (TOR)**](https://matrix.org/media/2024-04-governing-board-terms-of-reference.pdf):
+- [**Terms of Reference (TOR)**](/media/2025-04-governing-board-terms-of-reference.pdf):
   The immutable basis for the Governing Board. The TOR outline the Board's
   purpose, mandate, and authority.
 - [**Bylaws and Expectations**](./bylaws/02-bylaws): The comprehensive rules,
@@ -132,8 +159,8 @@ processes. The content is divided into the following sections:
 
 The Governance Committee is responsible for adapting these documents as needed,
 with the exception of the TOR, which requires formal amendment from the
-Guardians. These documents are currently v1.0.1 and were last modified on
-2025-05-21. The canonical versions of the bylaws and expectations, social contract,
+Guardians. These documents are currently v1.2.0 and were last modified on
+2025-11-24. The canonical versions of the bylaws and expectations, social contract,
 and processes are the markdown sources available through the matrix
 [website's git repo](https://github.com/matrix-org/matrix.org/tree/main/content/foundation/governing-board/bylaws).
 
@@ -146,11 +173,13 @@ There are currently 4 Committees:
 * Trust & Safety
 * Finance & Fundraising
 
+More information about each Committee is available on the dedicated [Committees](@/foundation/governing-board/committees.md) page.
+
 ## Current Chairs of the Governing Board
 
 The current chairs of the Governing Board are:
 
-<div class="two-column">
+<div class="responsive-grid chairs-section">
 <div>
 
 ### Governing Board
@@ -164,30 +193,30 @@ The current chairs of the Governing Board are:
 ### Governance Committee
 
 * Bram van den Heuvel (he/they) — Chair
-* Sumner Evans — Vice Chair
+* Neil Johnson (he/him) — Vice Chair
 
 </div>
 <div>
 
 ### Community Committee
 
-* Sumner Evans — Chair
-* Nicolas Werner (he/him) — Vice Chair
+* Nicolas Werner (he/him) — Chair
+* Vacant seat — Vice Chair
 
 </div>
 <div>
 
-### Finance Committee
+### Finance & Fundraising Committee
 
-* Robin Riley (they/them) — Chair
-* Kevin Boos (he/him) — Vice Chair
+* Gnuxie (she/her) — Chair
+* Amandine Le Pape (she/her) — Vice Chair
 
 </div>
 <div>
 
 ### Trust & Safety Committee
 
-* J.B. Crawford — Chair
+* J. B. Crawford — Chair
 * Nicolas Werner (he/him) — Vice Chair
 
 </div>
@@ -200,7 +229,7 @@ The Governing Board has a dedicated room on Matrix, [#governing-board-office:mat
 
 ## Publications and News
 
-The Governing Board as a whole meets (at least) twice a year and subsequently publish a report about its activities on the Matrix.org blog. You can find them and other posts concerning the Governing Board using the [Governing Board category filter](https://matrix.org/category/governing-board/) of the blog.
+The Governing Board as a whole meets (at least) twice a year and subsequently publishes a report about its activities on the Matrix.org blog. You can find them and other posts concerning the Governing Board using the [Governing Board category filter](https://matrix.org/category/governing-board/) of the blog.
 
 ## Working Groups
 

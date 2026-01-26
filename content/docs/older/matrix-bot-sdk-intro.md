@@ -153,8 +153,7 @@ client.sendText(roomId, "This is message text.")
 ```
 
 The reason for showing `client.sendMessage()` is to make it clear that the
-message format is [just the same as you'd find in the spec
-](https://matrix.org/docs/spec/client_server/latest#put-matrix-client-r0-rooms-roomid-send-eventtype-txnid).
+message format is [just the same as you'd find in the spec](https://matrix.org/docs/spec/client_server/latest#put-matrix-client-r0-rooms-roomid-send-eventtype-txnid).
 
 ## Implementing echobot functionality
 
@@ -188,8 +187,7 @@ client.on("room.message", (roomId, event) => {
 
 It's extremely simple to listen to messages with [matrix-bot-sdk] create an
 echobot! There are many more features, you can see the MatrixClient class is
-[very well documented
-](https://github.com/turt2live/matrix-bot-sdk/blob/master/src/MatrixClient.ts).
+[very well documented](https://github.com/turt2live/matrix-bot-sdk/blob/master/src/MatrixClient.ts).
 Next in this series, we'll explore Rich Replies, and take a look at the kick
 and ban functions for room administration.
 

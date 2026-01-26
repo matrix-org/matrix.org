@@ -1,4 +1,5 @@
 {% import "macros/util.html" as util %}
+{% import "macros/banner.html" as banner %}
 <!doctype html>
 <html lang="en">
 
@@ -45,8 +46,8 @@
     </title>
     <link rel="shortcut icon" href="/assets/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-    <link rel="stylesheet" href={{ get_url(path="/style.css" , cachebust=true) }} />
-    <script async src={{ get_url(path="/js/components.js" , cachebust=true) }}></script>
+    <link rel="stylesheet" href="{{ get_url(path="/style.css" , cachebust=true) }}" />
+    <script async src="{{ get_url(path="/js/components.js" , cachebust=true) }}"></script>
     <script defer data-domain="matrix.org" src="https://plausible.io/js/script.tagged-events.js"></script>
 
 
@@ -56,7 +57,7 @@
 <body>
     {% set navigation = load_data(path="navigation.toml") %}
     {% include "includes/header.html" %}
-
+    {{ banner::banner() }}
     <main>
         {% block content %}{% endblock content %}
     </main>

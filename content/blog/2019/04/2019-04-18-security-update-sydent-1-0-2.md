@@ -35,7 +35,7 @@ A flaw existed in sydent whereby it was possible to bypass the requirement speci
 
 This relied on two things:
 
-1. sydent uses python's email.utils.parseaddr function to parse the input email address before sending validation mail to it, but it turns out that if you hand parseaddr an malformed email address of form a@b.com@c.com, it silently discards the @c.com prefix without error.  The result of this is that if one requested a validation token for 'a@malicious.org@important.com', the token would be sent to 'a@malicious.org', but the address 'a@malicious.org@important.com' would be marked as validated.  This release fixes this behaviour by asserting that the parsed email address is the same as the input email address.
+1. sydent uses python's email.utils.parseaddr function to parse the input email address before sending validation mail to it, but it turns out that if you hand parseaddr an malformed email address of form `a@b.com@c.com`, it silently discards the @c.com prefix without error.  The result of this is that if one requested a validation token for `a@malicious.org@important.com`, the token would be sent to `a@malicious.org`, but the address `a@malicious.org@important.com` would be marked as validated.  This release fixes this behaviour by asserting that the parsed email address is the same as the input email address.
 2. synapse's checking of email addresses relies on regular expressions in the home server configuration file. synapse does not validate email addresses before checking them against these regular expressions, so naive regular expressions will detect the second domain in email addresses such as the above, causing them to pass the check.
 
 You can get sydent 1.0.2 from <https://github.com/matrix-org/sydent/releases/tag/v1.0.2>.

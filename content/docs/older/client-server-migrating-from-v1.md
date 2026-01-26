@@ -51,12 +51,12 @@ The return value takes a different structure to that from the previous
 `/initialSync` API. For full details see the API documentation, but the
 following summary may be useful to compare with `v1`:
 
-> -   `/initialSync` returned a `state` key containing the most recent
+> - `/initialSync` returned a `state` key containing the most recent
 >     state in the room, whereas the new `/sync` API's `state`
 >     corresponds to the room state at the start of the returned
 >     timeline. This makes it easier for clients to represent state
 >     changes that occur within the region of returned timeline.
-> -   In `/events`, if more events occurred since the `since` token than
+> - In `/events`, if more events occurred since the `since` token than
 >     the `limit` parameter allowed, then events from the start of this
 >     range were returned and the client had to perform another fetch to
 >     incrementally obtain more of them. In the `/sync` API the result
@@ -64,7 +64,7 @@ following summary may be useful to compare with `v1`:
 >     would be more events than the requested limit. If this occurs then
 >     the client can use the `prev_batch` token as a reference to
 >     obtaining more.
-> -   The `state` contained in the response to a `/sync` request that
+> - The `state` contained in the response to a `/sync` request that
 >     has a `since` parameter will contain only keys that have changed
 >     since the basis given in the `since` parameter, rather than
 >     containing a full set values.

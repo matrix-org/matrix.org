@@ -36,6 +36,7 @@ In the medium term, the vector.im and matrix.org identity servers will disable s
 Once delegated 3pid verification support has been disabled in the vector.im and matrix.org identity servers, all Synapse versions that depend on those instances will be unable to verify email and phone numbers through them. There are no imminent plans to remove delegated 3pid verification from Sydent generally. (Sydent is the identity server project that backs the vector.im and matrix.org instances).
 
 ## Why is this necessary?
+
 Prior to 1.4.0, the identity server was providing two related-but-separate functions:
 
 a directory for users to publish their contact details and to look up their contacts by their email addresses and phone numbers.
@@ -52,9 +53,11 @@ The best way to solve this problem is to have individual homeservers take owners
 This delegation is entirely separate from the user's choice of identity server for user directory services. As of right now the user is free to choose and trust whichever identity server they wish, or to choose not to use an identity server at all.
 
 ## Are there any other data privacy features?
+
 Yes, 1.4.0 now [automatically garbage collects redacted messages](https://github.com/matrix-org/synapse/issues/1287) (defaults to 7 days) and removes [unused IP and user agent information](https://github.com/matrix-org/synapse/pull/6098/files) stored in the user_ips table (defaults to 30 days). Finally, Synapse now [warns in its logs](https://github.com/matrix-org/synapse/pull/6090/files) if you are using matrix.org as a trusted key server, in case you wish to use a different server to help discover other servers’ keys.
 
 ## Anything else?
+
 Aside from privacy, we’ve expanded our OpenTracing support and fixed a host of bugs. However the thing that is most exciting is switching on our solution for [mitigating forward extremities build up](https://github.com/matrix-org/synapse/issues/5319)’ by default.
 
 In some cases rooms can accumulate ‘forward extremities’, which are simply an artefact of attempting to resolve the room state over multiple servers. Forward extremities are necessary to ensure that each server can independently arrive at the same view of the room eventually, however processing these extremities can be [computationally expensive and degrade server performance overall](https://github.com/matrix-org/synapse/issues/1760).
@@ -67,20 +70,16 @@ So that’s it folks, thanks for making it this far. As ever, you can get the ne
 
 The changelog since 1.3.1 follows:
 
-Synapse 1.4.0 (2019-10-03)
-=============================
+## Synapse 1.4.0 (2019-10-03)
 
-Bugfixes
---------
+### Bugfixes
 
 - Redact `client_secret` in server logs. ([\#6158](https://github.com/matrix-org/synapse/issues/6158))
 
 
-Synapse 1.4.0rc2 (2019-10-02)
-=============================
+## Synapse 1.4.0rc2 (2019-10-02)
 
-Bugfixes
---------
+### Bugfixes
 
 - Fix bug in background update that adds last seen information to the `devices` table, and improve its performance on Postgres. ([\#6135](https://github.com/matrix-org/synapse/issues/6135))
 - Fix bad performance of censoring redactions background task. ([\#6141](https://github.com/matrix-org/synapse/issues/6141))
@@ -88,19 +87,16 @@ Bugfixes
 - Fix exceptions when storing large retry intervals for down remote servers. ([\#6146](https://github.com/matrix-org/synapse/issues/6146))
 
 
-Internal Changes
-----------------
+### Internal Changes
 
 - Fix up sample config entry for `redaction_retention_period` option. ([\#6117](https://github.com/matrix-org/synapse/issues/6117))
 
 
-Synapse 1.4.0rc1 (2019-09-26)
-=============================
+## Synapse 1.4.0rc1 (2019-09-26)
 
 Note that this release includes significant changes around 3pid verification. Administrators are reminded to review the [upgrade notes](UPGRADE.rst#upgrading-to-v140).
 
-Features
---------
+### Features
 
 - Changes to 3pid verification:
   - Add the ability to send registration emails from the homeserver rather than delegating to an identity server. ([\#5835](https://github.com/matrix-org/synapse/issues/5835), [\#5940](https://github.com/matrix-org/synapse/issues/5940), [\#5993](https://github.com/matrix-org/synapse/issues/5993), [\#5994](https://github.com/matrix-org/synapse/issues/5994), [\#5868](https://github.com/matrix-org/synapse/issues/5868))
@@ -159,8 +155,7 @@ Features
 - Explicitly log when a homeserver does not have the `trusted_key_servers` config field configured. ([\#6090](https://github.com/matrix-org/synapse/issues/6090))
 - Add support for pruning old rows in `user_ips` table. ([\#6098](https://github.com/matrix-org/synapse/issues/6098))
 
-Bugfixes
---------
+### Bugfixes
 
 - Don't create broken room when `power_level_content_override.users` does not contain `creator_id`. ([\#5633](https://github.com/matrix-org/synapse/issues/5633))
 - Fix database index so that different backup versions can have the same sessions. ([\#5857](https://github.com/matrix-org/synapse/issues/5857))
@@ -189,15 +184,13 @@ Bugfixes
 - Ensure that servers which are not configured to support email address verification do not offer it in the registration flows. ([\#6107](https://github.com/matrix-org/synapse/issues/6107))
 
 
-Updates to the Docker image
----------------------------
+### Updates to the Docker image
 
 - Avoid changing `UID/GID` if they are already correct. ([\#5970](https://github.com/matrix-org/synapse/issues/5970))
 - Provide `SYNAPSE_WORKER` envvar to specify python module. ([\#6058](https://github.com/matrix-org/synapse/issues/6058))
 
 
-Improved Documentation
-----------------------
+### Improved Documentation
 
 - Convert documentation to markdown (from rst) ([\#5849](https://github.com/matrix-org/synapse/issues/5849))
 - Update `INSTALL.md` to say that Python 2 is no longer supported. ([\#5953](https://github.com/matrix-org/synapse/issues/5953))
@@ -206,15 +199,13 @@ Improved Documentation
 - Update the upgrade notes. ([\#6050](https://github.com/matrix-org/synapse/issues/6050))
 
 
-Deprecations and Removals
--------------------------
+### Deprecations and Removals
 
 - Remove shared-secret registration from `/_matrix/client/r0/register` endpoint. Contributed by Awesome Technologies Innovationslabor GmbH. ([\#5877](https://github.com/matrix-org/synapse/issues/5877))
 - Deprecate the `trusted_third_party_id_servers` option. ([\#5875](https://github.com/matrix-org/synapse/issues/5875))
 
 
-Internal Changes
-----------------
+### Internal Changes
 
 - Lay the groundwork for structured logging output. ([\#5680](https://github.com/matrix-org/synapse/issues/5680))
 - Retry well-known lookup before the cache expires, giving a grace period where the remote well-known can be down but we still use the old result. ([\#5844](https://github.com/matrix-org/synapse/issues/5844))
@@ -235,7 +226,7 @@ Internal Changes
 - Cleanup event auth type initialisation. ([\#5975](https://github.com/matrix-org/synapse/issues/5975))
 - Clean up dependency checking at setup. ([\#5989](https://github.com/matrix-org/synapse/issues/5989))
 - Update OpenTracing docs to use the unified `trace` method. ([\#5776](https://github.com/matrix-org/synapse/issues/5776))
-- Small refactor of function arguments and docstrings in` RoomMemberHandler`. ([\#6009](https://github.com/matrix-org/synapse/issues/6009))
+- Small refactor of function arguments and docstrings in `RoomMemberHandler`. ([\#6009](https://github.com/matrix-org/synapse/issues/6009))
 - Remove unused `origin` argument on `FederationHandler.add_display_name_to_third_party_invite`. ([\#6010](https://github.com/matrix-org/synapse/issues/6010))
 - Add a `failure_ts` column to the `destinations` database table. ([\#6016](https://github.com/matrix-org/synapse/issues/6016), [\#6072](https://github.com/matrix-org/synapse/issues/6072))
 - Clean up some code in the retry logic. ([\#6017](https://github.com/matrix-org/synapse/issues/6017))

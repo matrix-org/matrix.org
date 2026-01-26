@@ -1,10 +1,8 @@
 {% extends "page.html" %}
-{% import "macros/banner.html" as banner %}
 {% block head_extra %}
 <meta name="description" content="{{ page.extra.summary }}">
 {% endblock head_extra %}
 {% block content %}
-{{ banner::banner() }}
 <div class="page-header">
     <div class="hero-block">
         <h1>{{ page.title }}</h1>

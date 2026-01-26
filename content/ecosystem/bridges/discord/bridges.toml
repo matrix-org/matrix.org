@@ -1,6 +1,6 @@
 [[bridges]]
 name = "matrix-appservice-discord"
-maintainer = "Matrix.org Foundation"
+maintainer = "The Matrix.org Foundation"
 summary = "This project bridges Discord to Matrix via the Application Service API"
 maturity = "Beta"
 language = "TypeScript"

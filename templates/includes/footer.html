@@ -1,16 +1,17 @@
 <footer class="site-footer">
     <div class="internal-links">
-        {% for link in navigation.footer_internal %}
-        <a href="{{ link.href }}">{{ link.title }}</a>
+        {% for item in navigation.footer_internal %}
+        <a href="{{ item.href }}" {% if item.newTab %}target="_blank"{% endif %}>{{ item.title }}</a>
         {% endfor %}
     </div>
     <div class="external-links">
-        <div>
-            {% for link in navigation.footer_external %}
-            <a href="{{ link.href }}" rel="me"><img width="24px" height="24px" src="/assets/{{ link.image }}"
-                    alt="{{ link.alt }}"></a>
-            {% endfor %}
-        </div>
+        {% for item in navigation.footer_external %}
+        <a href="{{ item.href }}" {% if item.newTab %}target="_blank"{% endif %} {% if item.relMe %}rel="me"{% endif %} {% if item.alt %}aria-label="{{ item.alt }}"{% endif %}><span aria-hidden="true">{{ load_data(path="/assets/" ~ item.image) | safe }}</span></a>
+        {% endfor %}
     </div>
-    <p><a href="/legal/copyright-notice">Copyright Notice</a></p>
+    <div class="subfooter-links">
+        {% for item in navigation.footer_subfooter %}
+        <a href="{{ item.href }}" {% if item.newTab %}target="_blank"{% endif %}>{{ item.title }}</a>
+        {% endfor %}
+    </div>
 </footer>

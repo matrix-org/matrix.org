@@ -1,13 +1,8 @@
 {% extends "skel.html" %}
-{% import "macros/banner.html" as banner %}
 {% block head_extra %}
-<meta name="description"
-    content="The homepage of the matrix.org website. Chat securely with your family, friends, community, or build great apps with Matrix!">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 {% endblock head_extra %}
 {% block content %}
-
-{{ banner::banner() }}
 <div id="frontpage">
     <div id="hero" class="section">
         <div class="hero_content">
@@ -49,6 +44,25 @@
         <img src="/element-call.webp" id="complex-apps-image"
             alt="A conversation between four people on Element Call, a VoIP conference tool based on Matrix." />
     </div>
+    <div id="platinum-sponsor" class="section">
+        <h2>Platinum member</h2>
+        <div class="row">
+            <div class="membership-card">
+                <a target="_blank" rel="noreferrer noopener" href="https://element.io/built-on-matrix" class="membership-card__content">
+                    <img alt="Element.io Logo" src="images/element-creators-of-matrix--dark.svg">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="become-a-member" class="section">
+       <div id="become-a-member__content">
+           <h2>Become a member</h2>
+           <p>The Matrix.org Foundation members guide and support the Foundation's focus.</p>
+           <a href="/membership" class="call-to-action">Support us</a>
+       </div>
+    </div>
+
     <div id="buildonmatrix" class="section">
         <img class="logo" src="images/matrix-favicon.svg" alt="The Matrix Logo" />
         <img id="bridge_visual" src="/assets/frontpage/bridge-visual.svg"
@@ -70,4 +84,3 @@
     </div>
 </div>
 {% endblock content %}
-

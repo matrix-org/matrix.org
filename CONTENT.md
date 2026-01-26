@@ -4,6 +4,19 @@ The matrix.org website is powered by [Zola](https://www.getzola.org/), a [static
 
 This documentation is about helping you create new content that the static site generator will accept. To get your content actually deploy on matrix.org, you need to be familiar with git, GitHub and Pull Requests. If that's not the case, we suggest either finding someone who is and can help, or dropping us a line in the [Matrix.org Website chat room](https://matrix.to/#/#matrix.org-website:matrix.org).
 
+## General tips
+
+### Internal links
+
+Zola can automatically check internal links if they are added using the [Zola internal link syntax](https://www.getzola.org/documentation/content/linking/#internal-links).
+
+Tl;dr: Linking to a file located at content/pages/about.md would be `[my link](@/pages/about.md)`.
+
+There are some edge cases, for example this can only work when a file generating a page actually exists, e.g. not for entirely generated pages such as the blog's `/category/` pages.
+We collect such issues in [#2829](https://github.com/matrix-org/matrix.org/issues/2829) and welcome ideas to improve this approach.
+
+We still prefer this approach on a best effort basis as it has already proven useful.
+
 ## Publishing to the blog
 
 Articles on the blog are written in the markdown format. Markdown should generally be the same everywhere, but there are small variations around what you can or can't do with it. Zola supports the [CommonMark variant](https://commonmark.org/help/) of Markdown. Note that Zola's Markdown parser is pedantic about links and requires to use `<>` around a link without title.
@@ -25,6 +38,8 @@ Once this structure is in place, you need to write the actual blog post. It is a
 
 In the frontmatter, make sure to format the date as `year-month-day` (e.g. `2024-01-22`) then append `T` to specify the time as `hour:minute:seconds` (e.g. `12:30:00`) and add a final `Z` to specify that the time is on the UTC time zone. We use UTC to make it easier for humans to figure out which blog post is going to be published first if two blog posts are issued on the same day.
 
+The `taxonomies` automatically create groupings of blog posts and also filter into respective atom feeds readers can subscribe to. It is hence important to choose correct and consistent values for both author(s) and categories. You can browse existing ones at <https://matrix.org/author/> and <https://matrix.org/category/> to match them.
+
 You can use the following template to create a new blog post:
 
 ```markdown
@@ -41,10 +56,19 @@ category = ["Foundation"]
 
 We're excited to announce that our plan to conquer the world worked. We are everywhere, and people seem to be happy about it!
 
+<!-- more -->
+
 ## Our positive impact
 
 We are privacy-centric and don't want to track people individually, but we want to make sure we still have a positive impact. In our apps, we allow people to express their frustration whenever something doesn't work.
 ```
+
+### "Continue reading..." marker
+
+The blog overview page <https://matrix.org/blog/> and [taxonomy pages](https://www.getzola.org/documentation/content/taxonomies/) for categories <https://matrix.org/category/> and authors <https://matrix.org/author/> include blog posts verbatim by default.
+To keep these overviews tidy and easy to browse, we add the `<!-- more -->` to the markdown source of the page.
+This marker tells Zola where to stop and put a link to the individual post instead, resulting in only a teaser being shown on the overview pages.
+After the first section or 1-2 paragraphs is often a good place for this.
 
 ### Adding pictures in your post
 
@@ -53,8 +77,9 @@ It is possible to add pictures to your posts in markdown. First you need to drop
 ```jinja
 {{ figure(
     img="/blog/img/your-picture-name.avif"
-    caption="A description of the picture")
-}}
+    caption="A description of the picture"          # can be set to an empty string
+    alt="A picture description for screen readers"  # optional, should only be used when leaving the caption empty
+) }}
 ```
 
 This shortcode ensures that images have a consistent look across posts.
@@ -74,6 +99,14 @@ In your markdown file, add this line to embed the YouTube player in a way that r
 ```jinja
 {{ youtube_player(video_id="S1nBXjWWHoU") }}
 ```
+
+You can also provide a start time using `start` and noscript-text using `noscript_text`, e.g. 
+
+```jinja 
+{{ youtube_player(video_id="Xje32fIIUyg",start="1240",noscript_text="Matrix Live S11E05 - Project Hydra") }}
+```
+
+which will start the video at 20:40 and add custom text for users with JavaScript disabled.
 
 ### Adding a picture for the socials
 
@@ -196,6 +229,7 @@ maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 language = "The programming language of your server. For example 'Python'"
 licence = "PICK ONE identifier from https://spdx.org/licenses/"
 repository = "https://github.com/example-org/example-repo"
+website = "https://mymatrixserver.dev"
 room = "#your-matrix-room:example.com"
 ```
 
@@ -231,7 +265,7 @@ maintainer = "Your name or organisation"
 maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 language = "The programminglanguage of your server. For example 'Python'"
 licence = "PICK ONE identifier from https://spdx.org/licenses/"
-repository = "github.com/example-org/example-repo"
+repository = "https://github.com/example-org/example-repo"
 # In which type of application this SDK is meant to get used. This should be an array.
 # Possible values are "bridge", "bot", "client"
 purpose = ["bot", "bridge"]
@@ -240,11 +274,32 @@ A short description about the SDK.
 """
 ```
 
+### Distributions
+
+Distros are listed in [`/content/ecosystem/distributions/distributions.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/distributions/distributions.toml). A distribution is an artifact grouping multiple components of a Matrix stack and making them easy to deploy in one package.
+
+To add a distribution please use this template and append it to the `distributions.toml`:
+
+```toml
+[[distributions]]
+name = "My Matrix Distro"
+description = "This is my distro, exactly how I like it."
+vendor = "Your name or organisation"
+maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
+frameworks = ["Name at least one installation technology.", "You may also add more."]
+licence = "PICK ONE identifier from https://spdx.org/licenses/"
+repository = "https://github.com/example-org/example-repo"
+website = "https://mymatrixdistro.dev"
+room = "#your-matrix-room:example.com"
+support_level = "PICK ONE Community OR Commercial"
+matrix_standard = true if it is compatible with Matrix standard apps, false if it only works fully when self-contained
+```
+
 ### Hosting providers
 
 Hosting provders are listed in [`/content/ecosystem/hosting/providers.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/hosting/providers.toml). It lists providers which provide Matrix components like servers or bots to customers. We require this section to only contain providers that do the actual hosting. Providers which either provide a setup script or only provide selfhosting should go into the in the future existing Distributions section instead.
 
-To add a hosting provider entry, add the following template to the `providers.toml`. Logos should be placed next to the the toml file. A logo should be in the SVG format. However if this is not available a PNG is acceptable provided it has sufficient resolution while also having reasonable filesize.
+To add a hosting provider entry, add the following template to the `providers.toml`. Logos should be placed next to the toml file. A logo should be in the SVG format. However if this is not available a PNG is acceptable provided it has sufficient resolution while also having reasonable filesize.
 
 ```toml
 [[providers]]

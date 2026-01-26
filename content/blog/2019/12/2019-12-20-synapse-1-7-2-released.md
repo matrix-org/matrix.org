@@ -11,7 +11,7 @@ Hi all,
 
 We've just released Synapse 1.7.2 - a minor point release to address two regressions which snuck into 1.7.0 and 1.7.1.  Sorry for the upgrade faff; hopefully we will be back to a saner release cadence shortly.  Reminder that if you are on 1.7.0 or earlier you should upgrade asap as 1.7.1 contained security fixes.
 
-Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.7.2) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get the new release from [github](https://github.com/matrix-org/synapse/releases/tag/v1.7.2) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 The changelog since 1.7.1 is:
 

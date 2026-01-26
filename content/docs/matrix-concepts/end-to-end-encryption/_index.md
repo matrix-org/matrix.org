@@ -117,9 +117,9 @@ It should then publish these keys to the homeserver, which is done by using the
 [/keys/upload](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-upload)
 endpoint.
 
-In order to sign the `device_keys` payload as described in [Signing JSON
-](https://matrix.org/docs/spec/appendices.html#signing-json), clients should
-call `olm_account_sign`.
+In order to sign the `device_keys` payload as described in
+[Signing JSON](https://matrix.org/docs/spec/appendices.html#signing-json),
+clients should call `olm_account_sign`.
 
 ### Creating and registering one-time keys
 
@@ -195,10 +195,8 @@ There are currently two defined algorithms:
 
 ### `m.olm.v1.curve25519-aes-sha2`
 
-The spec gives [details on this algorithm
-](https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2)
-and an [example payload
-](https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-encrypted)
+The spec gives [details on this algorithm](https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2)
+and an [example payload](https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-encrypted)
 .
 
 The `sender_key` property of the event content gives the Curve25519 identity key
@@ -262,10 +260,8 @@ follows[^2].
 
 ### `m.megolm.v1.aes-sha2`
 
-The spec gives [details on this algorithm
-](https://matrix.org/docs/spec/client_server/r0.4.0.html#m-megolm-v1-aes-sha2)
-and an [example payload
-](https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-encrypted)
+The spec gives [details on this algorithm](https://matrix.org/docs/spec/client_server/r0.4.0.html#m-megolm-v1-aes-sha2)
+and an [example payload](https://matrix.org/docs/spec/client_server/r0.4.0.html#m-room-encrypted)
 .
 
 Encrypted events using this algorithm should have `sender_key`, `session_id` and
@@ -318,14 +314,12 @@ devices for each user in the room. This can be done proactively, or deferred
 until the first message is sent. The information is also required to allow
 users to verify or block devices.
 
-The client should use the [/keys/query
-](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-query)
+The client should use the [/keys/query](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-query)
 endpoint, passing the IDs of the members of the room in the `device_keys`
 property of the request.
 
 The client must first check the signatures on the `DeviceKeys` objects returned
-by [/keys/query
-](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-query).
+by [/keys/query](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-query).
 To do this, it should remove the `signatures` and `unsigned` properties, format
 the remainder as Canonical JSON, and pass the result into `olm_ed25519_verify`,
 using the Ed25519 key for the `key` parameter, and the corresponding signature
@@ -420,12 +414,10 @@ events for Megolm.
 
 When encrypting an event using Olm, the client should:
 
-- Build an encryption payload as illustrated in the [spec
-  ](https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2).
-- Check if it has an existing Olm session; if it does not, [start a new one
-  ](#starting-a-megolm-session). If it has several (as may happen due to races
-  when establishing sessions), it should use the session from which it last
-  received a message.
+- Build an encryption payload as illustrated in the [spec](https://matrix.org/docs/spec/client_server/r0.4.0.html#m-olm-v1-curve25519-aes-sha2).
+- Check if it has an existing Olm session; if it does not, [start a new one](#starting-a-megolm-session).
+  If it has several (as may happen due to races when establishing sessions), it
+  should use the session from which it last received a message.
 
 [Starting an Olm session](#starting-an-olm-session)
 
@@ -436,8 +428,7 @@ When encrypting an event using Olm, the client should:
 
 To start a new Olm session with another device, a client must first claim one of
 the other device's one-time keys. To do this, it should initiate a request to
-[/keys/claim
-](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-claim).
+[/keys/claim](https://matrix.org/docs/spec/client_server/r0.4.0.html#post-matrix-client-r0-keys-claim).
 
 The client should check the signatures on the signed key objects in the
 response. As with checking the signatures on the device keys, it should remove
@@ -462,8 +453,7 @@ When a new member joins a room, the client should first [download the device
 list](#downloading-the-device-list-for-users-in-the-room) for the new member,
 if it doesn't already have it.
 
-After giving the user an opportunity to [block
-](https://matrix.org/docs/spec/client_server/r0.4.0.html#device-verification)
+After giving the user an opportunity to [block](https://matrix.org/docs/spec/client_server/r0.4.0.html#device-verification)
 any suspicious devices, the client should share the keys for the outbound
 Megolm session with all the new member's devices. This is done in the same way
 as [creating a new session](#starting-a-megolm-session), except that there is
@@ -485,8 +475,7 @@ spec](https://matrix.org/docs/spec/client_server/r0.4.0.html#tracking-the-device
 ### Blocking / Verifying devices
 
 It should be possible for a user to mark each device belonging to another user
-as 'Blocked' or 'Verified', through a process detailed [in the spec
-](https://matrix.org/docs/spec/client_server/r0.4.0.html#sending-encrypted-attachments).
+as 'Blocked' or 'Verified', through a process detailed [in the spec](https://matrix.org/docs/spec/client_server/r0.4.0.html#sending-encrypted-attachments).
 
 When a user chooses to block a device, this means that no further encrypted
 messages should be shared with that device. In short, it should be excluded
@@ -505,8 +494,7 @@ from a verified device.
 ## Encrypted attachments
 
 Homeservers must not be able to read files shared in encrypted rooms. Clients
-should implement a strategy described [in the spec
-](https://matrix.org/docs/spec/client_server/r0.4.0#sending-encrypted-attachments).
+should implement a strategy described [in the spec](https://matrix.org/docs/spec/client_server/r0.4.0#sending-encrypted-attachments).
 
 Currently, the files are encrypted using AES-CTR, which is not included in
 libolm. Clients have to rely on a third party library.
@@ -531,9 +519,9 @@ The `forwarded_room_key` property starts out empty, but each time a key is
 forwarded to another device, the previous sender in the chain is added to the
 end of the list. Consider the following example:
 
-> -   A -\> B : m.room\_key
-> -   B -\> C : m.forwarded\_room\_key
-> -   C -\> D : m.forwarded\_room\_key
+> - A -\> B : m.room\_key
+> - B -\> C : m.forwarded\_room\_key
+> - C -\> D : m.forwarded\_room\_key
 
 In the message B -\> C `forwarded_room_key` is empty, but in the message C -\> D
 it contains B's Curve25519 key. In order for D to believe that the session came

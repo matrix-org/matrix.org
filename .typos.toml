@@ -1,6 +1,6 @@
 [files]
 extend-exclude = [
-    # files thta make no sense to be searched for typos
+    # files that make no sense to be searched for typos
     "*.jpg", "*.js*", "*.json", "*.mov", "*.png", "*.svg", "*.asc",
     "/static/jira",
     "/static/blog/wp-content/uploads/2016/07/predisclosure.signed.txt",
@@ -84,6 +84,8 @@ extend-ignore-re = [
     "\\[ba685b7\\]",
     "\\[96e9afe6\\]",
     "2020-03-06-oTyHd-",
+    "Ca-bEgalTqs", # Matrix Live 2025-09-05
+    "ba-dum-tss",
 ]
 
 [default.extend-words]

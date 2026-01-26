@@ -7,6 +7,10 @@ the Matrix Governing Board, including membership, meetings, elections, roles,
 responsibilities, and behavioral standards. All content must be consistent with
 the Terms of Reference (TOR).
 
+The canonical version of this document are the markdown sources available
+through the [matrix.org website’s git
+repo](https://github.com/matrix-org/matrix.org/tree/main/content/foundation/governing-board/bylaws).
+
 ## 1. Board Structure & Mandate
 
 The Governing Board is made up of members elected by the community. As a
@@ -65,7 +69,10 @@ provisional Chair, creates a charter, and establishes a meeting or discussion
 cadence/process. New Committees are expected to be infrequent, and proposed
 by at least 3 Board members. Proposals for new Committees must include an
 initial draft charter and be presented in the Board Discussions forum; a simple
-majority vote of the Board is sufficient to create a Committee.
+majority vote of the Board is sufficient to create a Committee. Henceforth the
+canonical versions of the Committee charters are maintained by the Governing
+Board [via the matrix.org website git
+repo](https://github.com/matrix-org/matrix.org/blob/main/content/foundation/governing-board/committees.md).
 
 Committees are primarily composed of Governing Board members (with rare
 exceptions). Their main role is to coordinate and provide strategic oversight
@@ -121,12 +128,15 @@ several Committees.
 
 Working Groups must have a dedicated public Matrix room (which will
 be listed on
-[the Working Groups webpage](https://matrix.org/foundation/working-groups/)
+[the Working Groups webpage](@/foundation/working-groups/index.md)
 and the [Working Groups Matrix space](https://matrix.to/#/#matrix-wgs:matrix.org))
 and have access to a Discourse category for communication with the Board,
 documentation, and voting. In order to ensure transparency and
 accountability, Working Groups should take notes in meetings and
-generally do their best to make their work public where possible.
+generally do their best to make their work public where possible. Similarly,
+the Governing Board maintains the canonical charters of the Working Groups [in
+the matrix.org website git
+repo](https://github.com/matrix-org/matrix.org/blob/main/content/foundation/working-groups/working_groups.toml).
 
 ### Proposing New Working Groups
 
@@ -168,13 +178,22 @@ Group to define this for themselves, providing:
 
 The role of (Vice) Chair in a Working Group is not expected to be onerous. The
 Board Sponsor will help with necessary process-related work such as reporting
-to the Committee Chair, and (if needed) drafting minutes. Most work in a
-Working Group is consensus driven, and in any case voting is difficult because
-of the fluid nature of the membership.
+to the Committee Chair, and (if needed) drafting minutes. The role of a Chair
+is a process role: it does not give the Chair special powers, but the
+responsibility to ensure the work of the Working Group is organized well.
 
-Where a consensus cannot be reached, the Chair can ask the Board Sponsor to
-help resolve the issue - likely by asking the Committee to decide on the
-direction needed.
+The Chair is responsible that the Working Group sticks to the charter, that
+regular meetings are set up and minutes of them kept, and that reports are given
+to the sponsor. The goal is to keep the Working Group active, drive consensus,
+and thus enable steady progress. A Working Group may name a Vice Chair in order
+to have someone to share this responsibility. Having this responsibility does
+not mean the Chair is expected to do all these tasks themselves, but only that
+they get done reliably - work can be delegated to any member.
+
+Most work in a Working Group is consensus driven, and in any case voting is
+difficult because of the fluid nature of the membership. Where a consensus
+cannot be reached, the Chair can ask the Board Sponsor to help resolve the
+issue - likely by asking the Committee to decide on the direction needed.
 
 ## 6. Chair & Vice Chair of the Governing Board
 

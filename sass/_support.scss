@@ -1,231 +1,36 @@
-.page-header.support {
-
-    .donate-row {
-        display: flex;
-        gap: 1rem;
-        margin-block-start: 2rem;
-
-        @media (max-width: 767px) {
-            flex-direction: column;
-        }
-    }
-
-    .call-to-action {
-        display: flex;
-        align-items: center;
-        gap: 0.625rem;
-        background: #fff;
-        color: #000;
-        border-radius: 9999px;
-        padding: .5rem 1rem;
-
-        font-size: 1.125rem;
-        font-weight: 600;
-
-        @media (max-width: 767px) {
-            justify-content: center;
-        }
-    }
-}
-
 .support.main {
 
     &>div {
+
         padding-block: 3rem;
 
         @media (max-width: 767px) {
             padding-block: 2rem;
         }
-    }
 
-    #join-foundation {
-        padding-inline: 1rem;
-        max-width: var(--page-max-width);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin-inline: auto;
-
-        h2 {
-            text-align: center;
+        &:nth-child(even) {
+            background-color: #eee;
         }
 
-        p {
-            text-align: center;
-        }
-
-        .call-to-action {
-            background-color: #000;
-            font-weight: 600;
-            color: #fff;
-            border-radius: 9999px;
-            padding: .5rem 2rem;
-        }
-    }
-
-    #platinum-supporters .supporters-card {
-        --cards-per-row: 4;
-    }
-
-    #gold-supporters .supporters-card {
-        --cards-per-row: 4;
-    }
-
-    #silver-supporters .supporters-card {
-        --cards-per-row: 5;
-    }
-
-    #associate-supporters .supporters-card {
-        --cards-per-row: 5;
-    }
-
-    #ecosystem-supporters .supporters-card {
-        --cards-per-row: 5;
-    }
-
-    #supporters {
-        display: flex;
-        flex-direction: column;
-        max-width: var(--page-max-width);
-        margin-inline: auto;
-        --supporters-padding-inline: 1rem;
-        padding-inline: var(--supporters-padding-inline);
-
-        .supporters-section {
-            display: flex;
-            flex-direction: column;
-
-            h2 {
-                text-align: center;
-            }
-
-            .cards {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                --cards-gap: 1rem;
-                gap: var(--cards-gap);
-                justify-content: center;
-
-                .supporters-card {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    --supporters-card-border-width: 1px;
-                    border: var(--supporters-card-border-width) solid var(--borders-color);
-                    border-radius: 16px;
-                    --supporters-card-hpadding: 8px;
-                    padding: var(--supporters-card-hpadding);
-                    // The whitespace of the text at the bottom visually adds to the padding so we account for this on the top a little.
-                    padding-top: calc(1.5 * var(--supporters-card-hpadding));
-                    // This adds some space between the text and the image
-                    gap: var(--supporters-card-hpadding);
-
-                    img {
-                        aspect-ratio: 1/1;
-                        object-fit: contain;
-                        width: calc((var(--page-max-width) - 2* var(--supporters-padding-inline) - calc(var(--cards-per-row) - 1)* var(--cards-gap)) / var(--cards-per-row) - 2* var(--supporters-card-hpadding) - 2* var(--supporters-card-border-width));
-                    }
-                }
-            }
-        }
-    }
-
-    #the-spec {
-        background-color: #fafafa;
-
-        .content {
-            display: flex;
-            flex-direction: row;
-            gap: 3rem;
-
-            @media (max-width: 767px) {
-                flex-direction: column-reverse;
-            }
-
-            img {
-                max-width: 50%;
-                margin-inline: auto;
-            }
-        }
-    }
-
-    #tangible-work {
-        background-color: #000;
-        color: #fff;
-
-        .content {
-            display: flex;
-            flex-direction: row;
-            gap: 3rem;
-
-            @media (max-width: 767px) {
-                flex-direction: column;
-            }
-        }
-    }
-
-    #all-your-comms {
-
-        .content {
-            display: flex;
-            flex-direction: row;
-            gap: 3rem;
-
-            div {
-                flex: 2;
-            }
-
-            img {
-                flex: 1;
-                min-width: 0;
-            }
-
-            @media (max-width: 767px) {
-                flex-direction: column-reverse;
-            }
-        }
-    }
-
-    #open-dev {
-        background-color: #000;
-        color: #fff;
-
-        .content {
-            max-width: 50rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3rem;
-        }
-    }
-
-    #help-us {
         .content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 1rem;
 
-            @media (max-width: 767px) {
-                grid-template-columns: 1fr;
+            h2 {
+                margin-block: 0;
             }
 
-            .blurb {
-                display: flex;
-                flex-direction: column;
-                align-items: start;
+            p:last-child {
+                margin-block-end: 0;
+            }
+
+            .call-to-action {
+                justify-self: left;
             }
         }
 
-        .call-to-action {
-            display: flex;
-            align-items: center;
-            gap: 0.625rem;
-            padding: .6rem 1.5rem;
-        }
     }
+
 }
 
 .membership {
@@ -310,6 +115,76 @@
                 li {
                     list-style-image: url('/assets/tick_supported.svg');
                     margin-block: .3em;
+                }
+            }
+        }
+    }
+}
+
+#platinum-supporters .supporters-card {
+    --cards-per-row: 4;
+}
+
+#gold-supporters .supporters-card {
+    --cards-per-row: 4;
+}
+
+#silver-supporters .supporters-card {
+    --cards-per-row: 5;
+}
+
+#associate-supporters .supporters-card {
+    --cards-per-row: 5;
+}
+
+#ecosystem-supporters .supporters-card {
+    --cards-per-row: 5;
+}
+
+#supporters {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--page-max-width);
+    margin-inline: auto;
+    margin-block-end: 5rem;
+    --supporters-padding-inline: 1rem;
+    padding-inline: var(--supporters-padding-inline);
+
+    .supporters-section {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            --cards-gap: 1rem;
+            gap: var(--cards-gap);
+            justify-content: center;
+
+            .supporters-card {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                --supporters-card-border-width: 1px;
+                border: var(--supporters-card-border-width) solid var(--borders-color);
+                border-radius: 16px;
+                --supporters-card-hpadding: 8px;
+                padding: var(--supporters-card-hpadding);
+                // The whitespace of the text at the bottom visually adds to the padding so we account for this on the top a little.
+                padding-top: calc(1.5 * var(--supporters-card-hpadding));
+                // This adds some space between the text and the image
+                gap: var(--supporters-card-hpadding);
+
+                img {
+                    aspect-ratio: 1/1;
+                    object-fit: contain;
+                    width: calc((var(--page-max-width) - 2* var(--supporters-padding-inline) - calc(var(--cards-per-row) - 1)* var(--cards-gap)) / var(--cards-per-row) - 2* var(--supporters-card-hpadding) - 2* var(--supporters-card-border-width));
                 }
             }
         }

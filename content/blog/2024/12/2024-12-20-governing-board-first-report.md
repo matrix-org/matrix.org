@@ -3,7 +3,7 @@ date = "2024-12-20T18:00:00Z"
 title = "First report from the Matrix Governing Board" 
 
 [taxonomies]
-author = ["Matrix Governing Board", "Greg Sutcliffe"]
+author = ["Matrix Governing Board", "Greg \"Gwmngilfen\" Sutcliffe"]
 category = ["Governing Board"]
 +++
 

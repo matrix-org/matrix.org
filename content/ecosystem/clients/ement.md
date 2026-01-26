@@ -9,7 +9,7 @@ repo = "https://github.com/alphapapa/ement.el"
 matrix_room = "#ement.el:matrix.org"
 licence = "GPL-3.0-or-later"
 language = "Emacs Lisp"
-latest_release = "2024-04-16"
+latest_release = "2024-10-13"
 featured = false
 [extra.features]
 e2ee = false
@@ -23,6 +23,8 @@ multi_language = false
 [extra.packages]
 other_install_link = "https://elpa.gnu.org/packages/ement.html"
 other_linux_link = "https://github.com/alphapapa/ement.el#installation"
+windows_installer = "https://elpa.gnu.org/packages/ement.html"
+macos_installer = "https://elpa.gnu.org/packages/ement.html"
 +++
 
 Ement.el is a Matrix client for [GNU Emacs](https://www.gnu.org/software/emacs/), the text editor and Lisp environment (which runs on GNU/Linux, MacOS, and Windows, as well as other platforms).  It aims to be simple, fast, featureful, and reliable, while integrating naturally with Emacs.

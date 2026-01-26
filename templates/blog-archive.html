@@ -1,0 +1,18 @@
+{% extends "page.html" %}
+{% block content %}
+{% set section = get_section(path="blog/_index.md") %}
+{% set pages = section.pages | sort(attribute="date") | reverse %}
+<article class="content">
+    <h1>Blog Archive</h1>
+    <ul>
+        {% for blog_page in pages %}
+            {% if blog_page.extra.hide_from_blog %}
+                {% continue %}
+            {% endif %}
+            <li>
+                {{ blog_page.date | date }} — <a href="{{ blog_page.path }}">{{ blog_page.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</article>
+{% endblock content %}

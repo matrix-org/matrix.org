@@ -4,7 +4,7 @@ title = "Libolm Deprecation"
 
 [taxonomies]
 author = ["Neil Johnson"]
-category = ["Cryptography"]
+category = ["Encryption"]
 +++
 
 It’s been a few weeks since we announced the [deprecation of libolm](https://gitlab.matrix.org/matrix-org/olm/-/blob/master/README.md?ref\_type=heads\#important-libolm-is-now-deprecated). Since then, we’ve fielded some questions on the subject and thought it would be helpful to collect this context in a blog post.

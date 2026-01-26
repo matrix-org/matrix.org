@@ -3,9 +3,8 @@ name = "mautrix-signal"
 maintainer = "Tulir"
 summary = """
 A Matrix-Signal puppeting bridge. Written in Go.
-
 """
-maturity = "Beta"
+maturity = "Stable"
 language = "Go"
 license = "AGPL-3.0-or-later"
 docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=signal"

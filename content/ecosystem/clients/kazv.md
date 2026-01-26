@@ -7,7 +7,7 @@ licence = "AGPL-3.0-or-later"
 language = "C++"
 latest_release = "2024-08-03"
 maturity = "Beta"
-repo = "https://lily-is.land/kazv/kazv"
+repo = "https://r.lily-is.land/the-kazv-project/kazv"
 website = "https://kazv.chat"
 matrix_room = "#kazv:tusooa.xyz"
 featured = false
@@ -20,8 +20,6 @@ sso = false
 multi_account = true
 multi_language = true
 [extra.packages]
-windows_installer = "https://lily-is.land/kazv/kazv/-/releases"
-other_linux_link = "https://lily-is.land/kazv/kazv/-/releases"
 +++
 
 A convergent Matrix client and secure messaging app

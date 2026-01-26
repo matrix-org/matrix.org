@@ -14,6 +14,7 @@ This is the third in a series of three posts which discuss recent work to improv
 While the primary goal was to improve Sydent's coverage and robustness, to some extent this was an experiment too. How much could we get out of typing and static analysis, if we _really_ invested in thorough annotations? Sydent is a small project that would make for a good testbed! I decided my goal would be to get Sydent passing mypy under [--strict mode](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict). This is a command line option which turns on a number of extra checks (though not everything); it feels similar to passing `-Wall -Wextra -Werror` to `gcc`. It's a little extreme, but Sydent is a small project and this would be a good chance to see how hard it would be. In my view, the most useful options implied by strict mode were as follows.
 
 ### [--check-untyped-defs](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs)
+
 By default, mypy will only analyze the implementation of functions that are annotated. On the one hand, without annotations for inputs and the return type, it's going to be hard for mypy to thoroughly check the soundness of your function. On the other, it can still do good work with the type information it has from other sources. Mypy can
 
 - infer the type of literals, e.g. deducing `x: str` from  `x = "hello"`;
@@ -198,6 +199,7 @@ After the sprint to improve coverage, I spent a short amount of time trying the 
 - Didn't seem to recognise `getLogger` as being imported from `logging`. Not sure what happened there—maybe something wrong with its bundled version of `typeshed`?
 - In a few places, Sydent uses `urllib.parse.quote` but only imports `urllib`. We must be unintentionally relying on our dependencies to `import urllib.parse` somewhere! Mypy didn't complain about this; pyright did.
 - Seemed to give a better explanations of why complex types were incompatible. For example:
+
   ```
   /home/dmr/workspace/sydent/sydent/replication/pusher.py
      /home/dmr/workspace/sydent/sydent/replication/pusher.py:77:16 - error: Expression of type "DeferredList" cannot be assigned to return type "Deferred[List[Tuple[bool, None]]]"
@@ -212,8 +214,10 @@ After the sprint to improve coverage, I spent a short amount of time trying the 
            Type "_KT@dict" is incompatible with constrained type variable "AnyStr"
          Type cannot be assigned to type "None" (reportGeneralTypeIssues)
   ```
+
   This would have been really helpful when interpreting mypy's error reports; I'd love to see something like it in mypy.
   Here's another example where I tried running against a Synapse file.
+
   ```
   /home/dmr/workspace/synapse/synapse/storage/databases/main/cache.py
   /home/dmr/workspace/synapse/synapse/storage/databases/main/cache.py:103:53 - error: Expression of type "list[tuple[Unknown, Tuple[Unknown, ...]]]" cannot be assigned to declared type "List[Tuple[int, _CacheData]]"
@@ -221,6 +225,7 @@ After the sprint to improve coverage, I spent a short amount of time trying the 
       Tuple entry 2 is incorrect type
         Tuple size mismatch; expected 3 but received indeterminate number (reportGeneralTypeIssues)
   ```
+
   This is really valuable information. It's worth considering Pyright as an option to get a second opinion!
 - It looks like Pyright's name for `Any` is `Unknown`. I think that does a better job of emphasising that `Unknown` won't be type checked. I'd certainly be more reluctant to type `x: Unknown` versus `x: Any`!
 - Pyright is the machinery behind [Pylance](https://github.com/microsoft/pylance-release), which drives [VS Code's Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). That alone probably makes it worthy of more eyes.

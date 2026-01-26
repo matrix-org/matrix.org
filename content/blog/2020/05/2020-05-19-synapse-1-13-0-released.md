@@ -23,7 +23,7 @@ Finally we've seen lots of improvements to our documentation and many thanks for
 
 It is also worth noting for those of you contributing to Synapse that the `develop` branch is now the default. More details in the changelog, so take a look.
 
-Get 1.13.0 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.13.0) or any of the sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md.
+Get 1.13.0 from [github](https://github.com/matrix-org/synapse/releases/tag/v1.13.0) or any of the sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>.
 
 
 Changelog since v1.12.4

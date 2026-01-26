@@ -260,7 +260,7 @@ at is the homeserver.yaml file, which contains all the basic information to
 allow our server to run. Docker volumes data is located in
 `/var/lib/docker/volumes/your_volume_name/_data`. We asked this container to
 generate the files in the `infra_synapse_data` volumes. Let’s have a look at
-`/var/lib/docker/volumes/infra_synapse_data/_data/homeserver.yaml `and see what
+`/var/lib/docker/volumes/infra_synapse_data/_data/homeserver.yaml` and see what
 it contains:
 
 ```yaml
@@ -642,7 +642,7 @@ here again adapt the labels to your own domain.
       - traefik.http.routers.synapse.tls.certresolver=letls
 ```
 
-We can try to reach https://matrix.example.org… and it should answer!
+We can try to reach <https://matrix.example.org>… and it should answer!
 
 ![Synapse serving its static page, behind nginx](/docs/legacy/understanding-synapse-hosting-nginx.png "Synapse serving its static page, behind nginx")
 
@@ -652,8 +652,7 @@ It looks like our server is online, that’s fantastic! Let’s connect to our n
 Matrix account then! But wait… registrations are closed by default on Synapse.
 We can’t register using a web client. Let’s get a prompt in the Synapse
 container with `docker exec -it infra-synapse-1 /bin/bash` to manually register
-a new user using the `register_new_matrix_user -c /data/homeserver.yaml
-http://localhost:8008` command:
+a new user using the `register_new_matrix_user -c /data/homeserver.yaml http://localhost:8008` command:
 
 
 ```

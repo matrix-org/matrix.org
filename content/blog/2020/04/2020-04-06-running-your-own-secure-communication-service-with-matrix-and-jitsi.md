@@ -66,11 +66,11 @@ If you want to follow along at home without listening to the video (and I can't 
    * Rename the `server_name` field in the new files to match the hostname of each host, and point `root` to an appropriate location per domain (e.g. `/var/www/dangerousdemos.net` for the main domain, or `/var/www/riot.dangerousdemos.net/riot` for riot)
    * For the Synapse domain (`matrix.dangerousdemos.net` here), you should replace the contents of the `location` block with `proxy_pass http://localhost:8008;` - telling nginx to pass the traffic through to synapse, which listens by default for plaintext HTTP traffic on port 8008.  (N.B. do **not** put a trailing slash on the URL here, otherwise nginx will mangle the forwarded URLs.)
  * Enable TLS via LetsEncrypt on nginx, by: `apt install -y python3-certbot-nginx && certbot --nginx -d dangerousdemos.net -d riot.dangerousdemos.net -d matrix.dangerousdemos.net` (or whatever your domains are).
- * You should be able to go to https://dangerousdemos.net at this point and see a page with valid HTTPS.
+ * You should be able to go to <https://dangerousdemos.net> at this point and see a page with valid HTTPS.
 
 ### Synapse
 
- * Then, install Synapse via Debian packages using the instructions at https://github.com/matrix-org/synapse/blob/master/INSTALL.md#debianubuntu (see below).  If you're not on Debian, keep an eye out for all the other OSes we support too!
+ * Then, install Synapse via Debian packages using the instructions at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md#debianubuntu> (see below).  If you're not on Debian, keep an eye out for all the other OSes we support too!
    * You should specify the server name to be the domain you want in your matrix IDs - i.e. `dangerousdemos.net` in this example.
    * Please report anonymous aggregate stats to us so we can gauge uptake and help justify funding for Matrix!
 
@@ -83,10 +83,10 @@ sudo apt update
 sudo apt install matrix-synapse-py3
 ```
 
- * You should now be able to go to https://matrix.dangerousdemos.net and see a valid "It works! Synapse is running" page.
+ * You should now be able to go to <https://matrix.dangerousdemos.net> and see a valid "It works! Synapse is running" page.
  * Then, you should enable registration on your synapse by switching `enable_registration: true` in `/etc/matrix-synapse/homeserver.yaml` and restarting synapse via `systemctl restart matrix-synapse`.
 
- * Now you need to tell the rest of Matrix how to find your server.  The easiest way to do this is to publish a file at https://dangerousdemos.net/.well-known/matrix/server which tells everyone the hostname and port where they can find the synapse for dangerousdemos.net - in this instance, it's `matrix.dangerousdemos.net:443`:
+ * Now you need to tell the rest of Matrix how to find your server.  The easiest way to do this is to publish a file at <https://dangerousdemos.net/.well-known/matrix/server> which tells everyone the hostname and port where they can find the synapse for dangerousdemos.net - in this instance, it's `matrix.dangerousdemos.net:443`:
 
 ```
 mkdir -p /var/www/dangerousdemos.net/.well-known/matrix
@@ -95,13 +95,14 @@ echo '{ "m.server": "matrix.dangerousdemos.net:443" }' > server
 ```
 
  * **Alternatively**, you could advertise the server via DNS, if you don't have write access to `/.well-known` on your main domain.  However, to prove you are allowed to host the Matrix traffic for dangerousdemos.net, you would have to configure nginx to use the dangerousdemos.net TLS certificate for the matrix.dangerousdemos.net vhost (i.e. the "wrong" one), and in general we think that `/.well-known` is much easier to reason about.  In this case you would advertise the server with an SRV record like this:
+
 ```
 _matrix._tcp.dangerousdemos.net. 300    IN  SRV 10 5 443 matrix.dangerousdemos.net.
 ```
 
 ### Riot/Web
 
- * Then, install Riot/Web.  Grab the latest .tgz release from https://github.com/vector-im/riot-web/releases.  You should check its GnuPG signature too:
+ * Then, install Riot/Web.  Grab the latest .tgz release from <https://github.com/vector-im/riot-web/releases>.  You should check its GnuPG signature too:
 
 ```
 mkdir /var/www/riot.dangerousdemos.net
@@ -134,7 +135,7 @@ cp config.sample.json config.json
 ```
 
  * You then tweak the `config.json` to change the `base_url` of the homeserver to be `https://matrix.dangerousdemos.net` (i.e. where to find the Client Server API for your server), and change the `server_name` to be `dangerousdemos.net` (i.e. the name of your server).
- * You should then be able to go to https://riot.dangerousdemos.net, register for an account, sign in, and talk to the rest of Matrix!
+ * You should then be able to go to <https://riot.dangerousdemos.net>, register for an account, sign in, and talk to the rest of Matrix!
 
 ### Jitsi
 
@@ -151,7 +152,7 @@ apt-get -y install jitsi-meet
  * The installer magically detects you have nginx installed and adds in an appropriate vhost!
  * We select a self-signed certificate for now, and then upgrade it to LetsEncrypt after the fact with `/usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh`.
    * Alternatively, you could have specified manual certificates, and then used `certbot` alongside the rest of nginx to create a certificate for `jitsi.dangerousdemos.net` - both work.
- * You should now be able to go to https://jitsi.dangerousdemos.net and use the Jitsi directly.
+ * You should now be able to go to <https://jitsi.dangerousdemos.net> and use the Jitsi directly.
 
  * Finally, and this is the cool new bit: you can now point Riot to use the new Jitsi by going to its config.json at `/var/www/riot.dangerousdemos.net/riot/config.json` and changing the `preferredDomain` of the `jitsi` block from `https://jitsi.riot.im` to your own self-hosted `https://jitsi.dangerousdemos.net`.
  * You then refresh your Riot/Web, and you should be all set to use Jitsi from within your new Riot - as Riot/Web 1.5.15 and later has the ability to natively embed Jitsi straight into the app without needing to use an integration manager.

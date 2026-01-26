@@ -22,7 +22,7 @@ Note, we have deprecated the `m.login.jwt` login method in favour of `org.matrix
 
 Enjoy!
 
-Get the new releases from any of the usual sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md. 1.16.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.16.0).
+Get the new releases from any of the usual sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>. 1.16.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.16.0).
 
 
 Changelog for 1.16.0 follows:

@@ -1,0 +1,25 @@
+[[bridges]]
+name = "mautrix-twitter"
+maintainer = "Tulir"
+summary = """
+A Matrix-Twitter DM puppeting bridge. Written in Python using
+[mautwitdm](https://github.com/mautrix/twitter/tree/master/mautwitdm) and
+[mautrix-python](https://matrix.org/docs/projects/sdk/mautrix-python.html).
+"""
+maturity = "Stable"
+language = "Python"
+license = "AGPL-3.0-or-later"
+docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=twitter"
+repo = "https://github.com/mautrix/twitter"
+room = "#twitter:maunium.net"
+featured = true
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+message_media = true
+redactions = true
+reactions = true
+presence = false
+typing_notifications = false
+read_receipts = true

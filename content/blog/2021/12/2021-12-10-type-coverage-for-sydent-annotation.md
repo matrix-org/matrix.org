@@ -93,6 +93,7 @@ and later, [the IResponse](https://github.com/matrix-org/sydent/blob/e4b4dbbdf25
         res: IResponse
         res = yield agent.request(method, uri, headers, bodyProducer)
 ```
+
 - In this example:
 
 - We yield a value `y: Deferred[Any]`.
@@ -239,7 +240,7 @@ It's worth a read through the [module documentation](https://docs.python.org/3/l
 
 - [Protocol](https://docs.python.org/3/library/typing.html?highlight=typing%20protocol#typing.Protocol): lets you formalise duck typing. To use it, define a class that inherits from `Protocol`. Its methods and attributes are all stubs which describe what you require of objects belonging to this type. It's like an [abstract base class](https://docs.python.org/3/library/abc.html?highlight=abc#module-abc) or interface, but purely at typecheck time.
 - [Generic](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.Generic): define your own generic types. A bit of a slippery slope to type mania!
-- [Optional`](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.Optional): I use this all the time. It's always good to make your `None`s explicit!
+- [Optional](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.Optional): I use this all the time. It's always good to make your `None`s explicit!
 - [NewType](https://docs.python.org/3/library/typing.html?highlight=typing%20generic#typing.NewType): I haven't had a chance to use it much. As I understand it, it's a way to define a "strong typedef". For example, we can use it to distinguish lengths from durations, even if they're both represented by a `float` at runtime.
 
 I want to call out two parts of `typing` in particular:

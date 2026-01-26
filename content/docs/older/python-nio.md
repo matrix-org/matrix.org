@@ -90,8 +90,7 @@ sync_response = await async_client.sync(30000)
 
 30000 means we will wait up to 30 seconds before returning. `sync_response` will
 now contain a Python object containing a mapping of the (JSON) [response from
-the Matrix homeserver
-](https://matrix.org/docs/spec/client_server/latest#get-matrix-client-r0-sync).
+the Matrix homeserver](https://matrix.org/docs/spec/client_server/latest#get-matrix-client-r0-sync).
 We'll inspect this response in the next section.
 
 In fact, we expect there to be updates regularly, so let's create a very simple
@@ -110,8 +109,7 @@ loop again.
 
 ## Explore the sync response object
 
-`sync_response` [can contain multitudes
-](https://matrix.org/docs/spec/client_server/latest#get-matrix-client-r0-sync),
+`sync_response` [can contain multitudes](https://matrix.org/docs/spec/client_server/latest#get-matrix-client-r0-sync),
 depending on the rooms this user is part of, or has been part of.
 `sync_response.rooms.join` contains updates for the rooms which the current
 user is "joined to" (meaning, is a member of.)

@@ -13,7 +13,7 @@ Matrix Application Service framework in Node.js.
 
 [[sdks]]
 name = "Matrix.org JS SDK"
-maintainer = "Matrix.org team"
+maintainer = "Element, on behalf of The Matrix.org Foundation"
 maturity = "Stable"
 language = "JavaScript"
 licence = "Apache-2.0"
@@ -27,7 +27,7 @@ Matrix Client-Server SDK for JavaScript.
 [[sdks]]
 name = "MatrixBot .NET Core SDK"
 maintainer = "enimatek-nl"
-maturity = "Stable"
+maturity = "Obsolete"
 language = "C#"
 licence = "MIT"
 repository = "https://github.com/enimatek-nl/matrixbot-dotnet-sdk"
@@ -227,7 +227,7 @@ featured_in = []
 [[sdks]]
 name = "Matrix-ClientServer-API-java"
 maintainer = "Jojii"
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Java"
 licence = "GPL-3.0-only"
 repository = "https://github.com/JojiiOfficial/Matrix-ClientServer-API-java"
@@ -330,7 +330,7 @@ repository = "https://github.com/quotient-im"
 purpose = ["client", "bot"]
 featured_in = []
 description = """
-A Qt5 library to write cross-platform clients for Matrix
+A Qt6 library to write cross-platform clients for Matrix
 """
 
 [[sdks]]
@@ -405,7 +405,7 @@ featured_in = []
 [[sdks]]
 name = "dial-phone"
 maintainer = "mtorials"
-maturity = "Alpha"
+maturity = "Obsolete"
 language = "Kotlin"
 licence = "Apache-2.0"
 repository = "https://github.com/mtorials/dial-phone"
@@ -484,7 +484,7 @@ featured_in = []
 [[sdks]]
 name = "matrix-kt"
 maintainer = "Dominic Fischer"
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Kotlin"
 licence = "Apache-2.0"
 repository = "https://github.com/Dominaezzz/matrix-kt"
@@ -506,7 +506,7 @@ featured_in = []
 
 [[sdks]]
 name = "matrix-rust-sdk"
-maintainer = "The Matrix.org Foundation"
+maintainer = "Element, on behalf of The Matrix.org Foundation"
 maturity = "Stable"
 language = "Rust"
 licence = "Apache-2.0"
@@ -560,7 +560,7 @@ featured_in = []
 [[sdks]]
 name = "µtrix"
 maintainer = "Dominik George; Project Hack'n'Fun @ Teckids e.V."
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Python"
 licence = "Apache-2.0"
 repository = "https://edugit.org/Teckids/hacknfun/libs/mytrix"
@@ -573,7 +573,7 @@ Matrix client library for MicroPython.
 [[sdks]]
 name = "matrix-communication-client"
 maintainer = "Réda Housni Alaoui"
-maturity = "Stable"
+maturity = "Obsolete"
 language = "Java"
 licence = "MIT"
 repository = "https://github.com/Cosium/matrix-communication-client"
@@ -593,7 +593,7 @@ repository = "https://cgit.rory.gay/matrix/LibMatrix.git"
 purpose = ["client", "bot", "bridge"]
 featured_in = ["client", "bot", "bridge"]
 description = """
-A .NET 8 library for interacting with Matrix.
+A .NET 10 library for interacting with Matrix.
 """
 
 [[sdks]]
@@ -638,10 +638,10 @@ A more consistent alternative to the matrix-js-sdk written in Elm.
 [[sdks]]
 name = "Matrix.swift"
 maintainer = "cvwright"
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Swift"
 licence = "Apache-2.0"
-repository = "https://gitlab.futo.org/circles/matrix.swift"
+repository = "https://github.com/circles-project/Matrix.swift"
 purpose = ["client"]
 featured_in = []
 description = """
@@ -651,7 +651,7 @@ Matrix client SDK in Swift
 [[sdks]]
 name = "matrix_dotnet"
 maintainer = "Greenscreener"
-maturity = "Beta"
+maturity = "Obsolete"
 language = "C#"
 licence = "GPL-3.0-or-later"
 repository = "https://gitlab.com/Greenscreener/matrix-dotnet"
@@ -685,4 +685,16 @@ licence = "LGPL-3.0-only"
 repository = "https://github.com/etkecc/go-msc1929"
 description = """
 Golang client for MSC1929 (/.well-known/matrix/support)
+"""
+
+[[sdks]]
+name = "Matrix Nim SDK"
+maintainer = "dylhack"
+maturity = "Obsolete"
+language = "Nim"
+licence = "GPL-3.0"
+repository = "https://github.com/dylhack/matrix-nim-sdk"
+purpose = ["client", "bot", "bridge"]
+description = """
+A Matrix library for the client-server and appservice API's written in Nim!
 """

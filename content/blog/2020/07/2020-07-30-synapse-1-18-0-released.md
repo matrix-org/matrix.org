@@ -14,7 +14,7 @@ The most important thing to know about 1.18.0 is that it contains support for sh
 
 Aside from that, we have new admin API support to list the users in a room, support for oEmbed for media previews (you can unfurl tweets again!) and a general slew of federation bug fixes.
 
-Get the new releases from any of the usual sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md. 1.18.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.18.0).
+Get the new releases from any of the usual sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>. 1.18.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.18.0).
 
 Changelog for 1.18.0 follows:
 

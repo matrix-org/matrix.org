@@ -13,9 +13,12 @@
   Referrer-Policy: strict-origin-when-cross-origin
 
 
-# Allow ACAO for well-known records
+# Allow ACAO for well-known records and serve them as JSON
 /.well-known/matrix/*
   Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+  Access-Control-Allow-Headers: X-Requested-With, Content-Type, Authorization
+  Content-Type: application/json
 
 # Add content type for jira archive
 /jira/browse/*

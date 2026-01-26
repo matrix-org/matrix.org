@@ -19,7 +19,7 @@ After releasing Synapse v0.34.1, we have become aware of a security vulnerabilit
 </li>
 </ul>
 
-You can get the new updates for <a href="https://github.com/matrix-org/synapse/releases/tag/v0.34.0.1">v0.34.0.1</a> and <a href="https://github.com/matrix-org/synapse/releases/tag/v0.34.1.1">v0.34.1.1</a> here or any of the sources mentioned at <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>. See also our <a href="/docs/guides/installing-synapse">Synapse installation guide page.</a>
+You can get the new updates for <a href="https://github.com/matrix-org/synapse/releases/tag/v0.34.0.1">v0.34.0.1</a> and <a href="https://github.com/matrix-org/synapse/releases/tag/v0.34.1.1">v0.34.1.1</a> here or any of the sources mentioned at <https://github.com/matrix-org/synapse>. Note, Synapse is now available from PyPI, pick it up <a href="https://pypi.org/project/matrix-synapse/">here</a>. See also our <a href="/docs/guides/installing-synapse">Synapse installation guide page.</a>
 
 We will publish more details of the vulnerability once admins have had a chance to upgrade. To our knowledge the vulnerability has not been exploited in the wild.
 

@@ -13,7 +13,9 @@
         <div class="section-wrap">
             <input id="{{ link.section }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true"
                 {{ util::current_checked(if_path_starts_with="/" ~ link.section) }}>
-            <label for="{{ link.section }}-submenu-checkbox" class="submenu-title">{{ link.title }} <div class="arrow">
+            <label for="{{ link.section }}-submenu-checkbox" class="submenu-title">
+            <a href="/{{ link.section }}">
+                {{ link.title }}</a> <div class="arrow">
                 </div></label>
 
             <div class="section-submenu-wrap">
@@ -35,10 +37,35 @@
             </div>
         </div>
         {% else %}
-        <a href="{{ link.href }}" class="{% if link.primary %}primary{% endif %}
-            {{ util::current_class(if_path_starts_with=link.href) }}">
-            {{ link.title }}
-        </a>
+            {% if link.children %}
+                <div class="section-wrap">
+                    <input
+                        id="{{ link.id }}-submenu-checkbox"
+                        type="checkbox"
+                        class="submenu-checkbox"
+                        aria-hidden="true"
+                        {{ util::current_checked(if_path_starts_with=link.href) }}
+                    >
+                    <label for="{{ link.id }}-submenu-checkbox" class="submenu-title">
+                        <a href="{{ link.href }}">
+                            {{ link.title }}
+                        </a>
+                        <div class="arrow"></div>
+                    </label>
+                    <div class="section-submenu-wrap">
+                        <div class="section-submenu">
+                            {% for child in link.children %}
+                                <a href="{{ child.href }}">{{ child.title }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <a href="{{ link.href }}" class="{% if link.primary %}primary{% endif %}
+                    {{ util::current_class(if_path_starts_with=link.href) }}">
+                    {{ link.title }}
+                </a>
+            {% endif %}
         {% endif %}
         {% endfor %}
     </nav>

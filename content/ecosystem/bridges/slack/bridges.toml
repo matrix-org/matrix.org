@@ -1,43 +1,11 @@
 [[bridges]]
-name = "matrix-appservice-slack"
-maintainer = "Matrix.org Foundation"
-summary = """
-The bridge allows you to connect Matrix rooms and Slack channels together. It supports bridging via webhooks or via a
-dedicated slack integration (using the Events API). The bridge supports nearly all matrix message types and client features
-with active development on new features as they arrive. Check the list below for feature support.
-
-The bridge is regularly hacked on and is accepting new PRs for bugfixes and features, come and get involved!
-"""
-maturity = "Stable"
-language = "TypeScript"
-license = "Apache-2.0"
-docs = "https://matrix-appservice-slack.readthedocs.io/en/latest/getting_started/"
-repo = "https://github.com/matrix-org/matrix-appservice-slack"
-room = "#matrix_appservice_slack:cadair.com"
-featured = true
-privilege.platform = "Admin" # Free text
-privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
-[bridges.supports]
-dm = true
-channels = true
-formatted_text = true
-message_media = true
-mentions = true
-threads = false
-redactions = true
-editing = true
-reactions = true
-presence = true
-typing_notifications = false
-
-[[bridges]]
 name = "mautrix-slack"
 maintainer = "Beeper, Tulir"
 summary = """
 A Matrix-Slack puppeting bridge. Written in Go using a fork of
 [slack-go](https://github.com/slack-go/slack)
 """
-maturity = "Beta"
+maturity = "Stable"
 language = "Go"
 license = "AGPL-3.0-or-later"
 docs = "https://docs.mau.fi/bridges/go/setup.html?bridge=slack"
@@ -60,6 +28,38 @@ presence = true
 typing_notifications = true
 
 [[bridges]]
+name = "matrix-appservice-slack"
+maintainer = "The Matrix.org Foundation"
+summary = """
+The bridge allows you to connect Matrix rooms and Slack channels together. It supports bridging via webhooks or via a
+dedicated slack integration (using the Events API). The bridge supports nearly all matrix message types and client features
+with active development on new features as they arrive. Check the list below for feature support.
+
+The bridge is regularly hacked on and is accepting new PRs for bugfixes and features, come and get involved!
+"""
+maturity = "Obsolete"
+language = "TypeScript"
+license = "Apache-2.0"
+docs = "https://matrix-appservice-slack.readthedocs.io/en/latest/getting_started/"
+repo = "https://github.com/matrix-org/matrix-appservice-slack"
+room = "#matrix_appservice_slack:cadair.com"
+featured = false
+privilege.platform = "Admin" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+channels = true
+formatted_text = true
+message_media = true
+mentions = true
+threads = false
+redactions = true
+editing = true
+reactions = true
+presence = true
+typing_notifications = false
+
+[[bridges]]
 name = "matrix-puppet-slack"
 maintainer = "Keyvan Fatehi"
 summary = """
@@ -71,7 +71,7 @@ part of the [matrix-puppet-bridge](https://github.com/matrix-hacks/matrix-puppet
 suite of puppetting bridges. It can be used for existing chats, rather than
 initiating new ones.
 """
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Javascript"
 license = "Licence unknown"
 repo = "https://github.com/matrix-hacks/matrix-puppet-slack"

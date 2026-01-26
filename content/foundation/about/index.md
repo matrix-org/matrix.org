@@ -111,7 +111,7 @@ experts and the founding Matrix team to ensure the project stays on track.
 
 ### Legal Details
 
-* The Matrix.org Foundation C.I.C is registered in the UK as Company
+* The Matrix.org Foundation C.I.C. is registered in the UK as Company
   [#11648710](https://beta.companieshouse.gov.uk/company/11648710)
 * The official articles of association of the Foundation may be
   downloaded [here](/media/2019-06-10%20-%20Matrix.org%20Foundation%20CIC%20Articles%20of%20Association.pdf)
@@ -165,6 +165,14 @@ In the interest of transparency, we think it's important for people to know that
 most of our staffers are employees of Element, working under a contract with, and
 funded by, the Foundation. The exception is our Managing Director who contracts
 directly with the Foundation.
+
+
+<div class="staff">
+    <div class="staff-details">
+        <h4 class="staff-name" id="managing-director">Managing Director</h4>
+        <p>The Foundation is currently looking for a new Managing Director. A job description will be out soon, but if you believe you may be a good fit to the role, feel free to <a href="https://cryptpad.fr/form/#/2/form/view/njWyj4-iIGOZxiehbmjr3FwMyQtbEG78bJThYnmdOyg/">get in touch</a>. In the mean time, the role is being covered by <a href="#the-guardians">Amandine</a> as Acting Managing Director.</p>
+    </div>
+</div>
 
 {{ staff() }}
 

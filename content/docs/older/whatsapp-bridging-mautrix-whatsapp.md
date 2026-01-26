@@ -49,10 +49,10 @@ Either way, you will soon have a functioning Matrix Synapse homeserver and
 ## Set up an Android VM
 
 The best way to run an Android Virtual Machine is to use the Android Studio
-tools from Google. First, [install Android Studio
-](https://developer.android.com/studio/install), making sure to follow the
-post-install steps, as they will install additional tools we need, including
-AVD Manager.
+tools from Google.
+First, [install Android Studio](https://developer.android.com/studio/install),
+making sure to follow the post-install steps, as they will install additional
+tools we need, including AVD Manager.
 
 Once installed, run AVD manager by choosing `Tools -> AVD Manager` from the
 menu.

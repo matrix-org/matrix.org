@@ -1,7 +1,7 @@
-{% extends "page.html" %}
+{% extends "section.html" %}
 {% import "macros/banner.html" as banner %}
 {% block head_extra %}
-<meta name="description" content="{{ page.extra.summary }}">
+<meta name="description" content="{{ section.extra.summary }}">
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         let mostPopular = document.getElementById("most-popular");
@@ -13,11 +13,11 @@
 </script>
 {% endblock head_extra %}
 {% block content %}
-{{ banner::banner() }}
+{% set supporters = load_data(path="content/membership/members.toml") %}
 <div class="page-header support">
     <div class="hero-block">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.extra.summary }}</p>
+        <h1>{{ section.title }}</h1>
+        <p>{{ section.extra.summary }}</p>
     </div>
 </div>
 
@@ -29,15 +29,20 @@
                 <h3>Individual</h3>
                 <div class="pricing">$60 / year</div>
                 <ul>
-                    <li>Free ticket to Matrix Conference</li>
+                    <li>Free ticket to <a
+                        href="https://conference.matrix.org">The Matrix
+                        Conference</a></li>
+                    <li>Free <a href="/homeserver/pricing">premium account</a> on Matrix.org</li>
                 </ul>
             </div>
             <div id="most-popular" class="tier-card">
                 <h3>Silver</h3>
                 <div class="pricing">$2k - 80k / year</div>
                 <ul>
-                    <li>Free ticket to Matrix Conference</li>
-                    <li>Logo on the sponsors page</li>
+                    <li>Free ticket to <a
+                        href="https://conference.matrix.org">The Matrix
+                        Conference</a></li>
+                    <li>Logo on the members page</li>
                     <li>Medium discount on Matrix conference sponsorship</li>
                     <li>Ability to post on the Matrix Job Board</li>
                 </ul>
@@ -47,7 +52,7 @@
                 <div class="pricing">$200k / year</div>
                 <ul>
                     <li>Everything from Silver</li>
-                    <li>Bigger logo on the sponsors page</li>
+                    <li>Bigger logo on the members page</li>
                     <li>A success story on the blog each year</li>
                 </ul>
             </div>
@@ -57,108 +62,76 @@
                 <ul>
                     <li>Everything from Gold</li>
                     <li>Logo on the frontpage of matrix.org</li>
-                    <li>Press release on sponsorship</li>
-                    <li>Bigger discount on Matrix conference</li>
-                    <li>A dedicated Matrix Live episode each year</li>
+                    <li>Press release on membership</li>
+                    <li>Biggest discount on Matrix conference sponsorship</li>
+                    <li>A dedicated <a
+                        href="https://www.youtube.com/@Matrixdotorg/videos">Matrix
+                        Live</a> episode each year</li>
                 </ul>
             </div>
         </div>
         <div class="cta-row">
-            <a href="https://cryptpad.fr/form/#/2/form/view/j1+wOJVZWyrDKvGP-G1r-zEOI3a52j5Y22brxhrdcmM/" class="call-to-action">Organisations membership</a>
             <a href="https://donorbox.org/membership-303" class="call-to-action secondary">Individuals membership</a>
+            <a href="https://cryptpad.fr/form/#/2/form/view/j1+wOJVZWyrDKvGP-G1r-zEOI3a52j5Y22brxhrdcmM/"
+                class="call-to-action">Organisations membership</a>
         </div>
     </div>
-    <div class="row">
-        <div>
-            <h2>The Governing Board</h2>
-            <p>
-                The Governing Board shall support the Guardians in their
-                governance of the Foundation by ensuring that the day to day
-                running of the Foundation is fair, equitable and supports the
-                overall balanced growth of the Matrix ecosystem and its
-                individual participants, without advantaging any specific
-                players.
-            </p>
-            <p>
-                The Governing Board shall carry out its advisory role under its
-                delegated authority from the Guardians and in accordance with
-                these Terms.
-            </p>
-            <p>
-                For the avoidance of doubt, the Guardians shall be under no
-                obligation to accept, act on or do anything analogous with the
-                Governing Board's recommendations.
-            </p>
-            <p>
-                <a href="/blog/2023/12/electing-our-first-governing-board/">Read the latest update from our Managing
-                    Director</a> to learn
-                more about the Governing Board and our first elections
-                which are scheduled for April through June 2024.
-            </p>
-            <div class="cta-row">
-                <a href="/media/2024-01-governing-board-prospective-members.pdf" class="call-to-action">Download the
-                    brochure</a>
-                <a href="/media/2024-04-governing-board-terms-of-reference.pdf"
-                    class="call-to-action secondary">Download the terms</a>
+
+    <div id="supporters">
+        <div class="supporters-section" id="platinum-supporters">
+            <h2>Platinum Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.platinum %}
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                    <img src="/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
             </div>
         </div>
-        <div class="specific-tasks">
-            <h3>Specific tasks will include</h3>
-            <div class="features-matrix">
-                <ul>
-                    <li class="supported">
-                        Approving the Foundation's budget, based on the Managing
-                        Director (MD)’s recommendations
-                    </li>
-                    <li class="supported">
-                        Approval of commercial partners and relationships for
-                        the Foundation with a value of over $50,000, be it as an
-                        individual contract or as a cumulative value with the
-                        same partner over the last 12 months.
-                    </li>
-                    <li class="supported">
-                        Approving initiatives and programs which will have a
-                        major impact on the brand and reputation of the
-                        Foundation, or create a new revenue stream.
-                    </li>
-                    <li class="supported">
-                        Providing a review and endorsement on a prioritised list
-                        of Spec Core Team ("SCT") priorities. The Governing
-                        Board shall not have the authority to appoint or remove
-                        SCT members (which rests solely with the Guardians).
-                    </li>
-                    <li class="supported">
-                        Providing post-meeting conclusions, recommendations and
-                        guidance on next steps to the Guardians.
-                    </li>
-                </ul>
+        <div class="supporters-section" id="gold-supporters">
+            <h2>Gold Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.gold %}
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                    <img src="/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="representatives">
-            <h3>Community representatives</h3>
-            <ul>
-                <li>4 Individual Members</li>
-                <li>3 Ecosystem Members</li>
-                <li>2 Associate Members</li>
-            </ul>
+        <div class="supporters-section" id="silver-supporters">
+            <h2>Silver Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.silver %}
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                    <img src="/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
         </div>
-        <div class="representatives">
-            <h3>Funder representatives</h3>
-            <ul>
-                <li>4 Platinum Members</li>
-                <li>3 Gold Members</li>
-                <li>2 Silver Members</li>
-            </ul>
+        <div class="supporters-section" id="ecosystem-supporters">
+            <h2>Ecosystem Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.ecosystem %}
+                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                    <img src="/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
         </div>
-        <div class="representatives">
-            <h3>Foundation representatives</h3>
-            <ul>
-                <li>3 Guardians</li>
-                <li>2 Spec Core Team Members</li>
-                <li>Managing Director</li>
-            </ul>
+        <div class="supporters-section" id="associate-supporters">
+            <h2>Associate Members</h2>
+            <div class="cards">
+                {% for supporter in supporters.associate %}
+                <a href="{{ supporter.website }}" class="supporters-card">
+                    <img src="/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <span>{{ supporter.name }}</span>
+                </a>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>

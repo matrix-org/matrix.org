@@ -1,4 +1,0 @@
-<details {% if open and open!=false %}open{% endif %}>
-    <summary>{{ summary | markdown | safe | replace(from="<p>", to="") | replace(from="</p>", to="") | safe}}</summary>
-    {{ body | markdown | safe }}
-</details>

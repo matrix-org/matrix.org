@@ -1,5 +1,5 @@
 +++
-title = "Element"
+title = "Element Web / Desktop"
 template = "ecosystem/client.html"
 [extra]
 thumbnail = "element.svg"
@@ -7,8 +7,8 @@ maintainer = "Element"
 maturity = "Stable"
 repo = "https://github.com/element-hq"
 matrix_room = "#element-web:matrix.org"
-licence = "Apache-2.0"
-latest_release = "2022-11-02"
+licence = "AGPL-3.0 OR GPL-3.0 OR Element Commercial License"
+latest_release = "2025-09-23"
 featured = true
 [extra.features]
 e2ee = true
@@ -22,11 +22,8 @@ multi_language = true
 [extra.packages]
 windows_installer = "https://element.io/download"
 macos_installer = "https://element.io/download"
-google_play_store.app_id = "im.vector.app"
-f_droid.app_id = "im.vector.app"
-apple_app_store = { app_id = "id1083446067", org = "vector" }
 flathub.app_id = "im.riot.Riot"
 webapp = "https://app.element.io"
 +++
 
-Element is a glossy client with an emphasis on performance and usability.
+A glossy web and desktop client with an emphasis on performance and usability.

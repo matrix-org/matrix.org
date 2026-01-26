@@ -17,7 +17,7 @@ Highlights of 1.20.0 include:-
 
 Also take note that in a future release, we will be dropping support for accessing Synapse's Admin API using the ```/_matrix/client/* prefixes```. More details follow in the changelog.
 
-Get the new releases from any of the usual sources mentioned at https://github.com/matrix-org/synapse/blob/master/INSTALL.md. 1.20.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.20.0), and 1.20.0rc4 is [here](https://github.com/matrix-org/synapse/releases/tag/v1.20.0rc4).
+Get the new releases from any of the usual sources mentioned at <https://github.com/matrix-org/synapse/blob/master/INSTALL.md>. 1.20.0 is on github [here](https://github.com/matrix-org/synapse/releases/tag/v1.20.0), and 1.20.0rc4 is [here](https://github.com/matrix-org/synapse/releases/tag/v1.20.0rc4).
 
 
 The changelog for 1.20.0 is as follows:

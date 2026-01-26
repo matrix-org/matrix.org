@@ -284,7 +284,7 @@ Native Decentralised End-to-end Encrypted Group Calls in Matrix, as a standalone
 >
 > ❓ Please help us test our new integration of Element Call into Element Web.
 >
-> (Details in https://matrix.to/#/#element-community-testing:matrix.org)
+> (Details in <https://matrix.to/#/#element-community-testing:matrix.org>)
 
 ## Dept of SDKs and Frameworks 🧰
 
@@ -342,7 +342,7 @@ Matrix server setup using Ansible and Docker
 
 [imbev](https://matrix.to/#/@imbev:matrix.org) reports
 
-> matrix-rss-bridge is a bridge for reading RSS feeds in Matrix rooms. You can find the repository at https://gitlab.com/imbev/matrix-rss-bridge
+> matrix-rss-bridge is a bridge for reading RSS feeds in Matrix rooms. You can find the repository at <https://gitlab.com/imbev/matrix-rss-bridge>
 >
 > ### Setup
 >
@@ -385,6 +385,7 @@ Matrix server setup using Ansible and Docker
 Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
 
 ### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+
 Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|
@@ -401,6 +402,7 @@ Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience th
 |10|rom4nik.pl|875|
 
 ### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+
 Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|

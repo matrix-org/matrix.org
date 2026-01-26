@@ -1,0 +1,81 @@
+[[distributions]]
+name = "openDesk CE"
+description = "The customisable office and collaboration suite designed specifically for your needs in public administration."
+vendor = "ZenDiS GmbH"
+maturity = "Stable"
+frameworks = ["Helmfile", "Helm", "Kubernetes"]
+licence = "Apache-2.0"
+repository = "https://gitlab.opencode.de/bmi/opendesk"
+support_level = "Community"
+matrix_standard = true
+
+[[distributions]]
+name = "BundesMessenger"
+description = "The free & secure messenger for the public sector."
+vendor = "BWI GmbH"
+maturity = "Stable"
+frameworks = ["Helm", "Kubernetes"]
+licence = "Apache-2.0"
+repository = "https://gitlab.opencode.de/bwi/bundesmessenger/backend/helm-chart"
+room = "#opencodebum:matrix.org"
+support_level = "Community"
+matrix_standard = true
+
+[[distributions]]
+name = "synapse-operator"
+description = "The Synapse operator offers a convenient way to deploy and manage a Synapse server. It was built with operator-sdk."
+vendor = "Red Hat"
+maturity = "Stable"
+frameworks = ["Kubernetes"]
+licence = "Apache-2.0"
+repository = "https://github.com/opdev/synapse-operator"
+support_level = "Community"
+matrix_standard = true
+
+[[distributions]]
+name = "ESS Community"
+description = "Element Server Suite Community is a Matrix distribution from Element, the creators of Matrix. It is built with a focus on quality and ease of use for non-commercial community use cases."
+vendor = "Element"
+maturity = "Stable"
+frameworks = ["Helm","Kubernetes"]
+licence = "AGPL-3.0"
+repository = "https://github.com/element-hq/ess-helm"
+room = "#ess-community:element.io"
+support_level = "Community"
+matrix_standard = true
+
+[[distributions]]
+name = "Ananace Helm Charts"
+description = "Kubernetes applications packaged into helm charts"
+vendor = "Ananace"
+maturity = "Stable"
+frameworks = ["Helm", "Kubernetes"]
+licence = "Apache-2.0"
+repository = "https://gitlab.com/ananace/charts"
+room = "#matrix-on-kubernetes:fiksel.info"
+support_level = "Community"
+matrix_standard = true
+
+[[distributions]]
+name = "matrix-docker-ansible-deploy"
+description = "🐳 Matrix (An open network for secure, decentralized communication) server setup using Ansible and Docker"
+vendor = "Splanteev"
+maturity = "Stable"
+frameworks = ["Ansible", "Docker"]
+licence = "AGPL-3.0"
+repository = "https://github.com/spantaleev/matrix-docker-ansible-deploy"
+room = "#matrix-docker-ansible-deploy:devture.com"
+support_level = "Community"
+matrix_standard = true
+
+[[distributions]]
+name = "ESS Pro"
+description = "Element Server Suite Pro is an enterprise backend for Matrix-based communications."
+vendor = "Element"
+maturity = "Stable"
+frameworks = ["Helm","Kubernetes"]
+licence = "Element Commercial License"
+website = "https://element.io/server-suite"
+support_level = "Commercial"
+matrix_standard = true
+

@@ -19,14 +19,18 @@ article.post {
     table {
         table-layout: fixed;
         border-spacing: 0;
+        border: unset;
+        border-collapse: unset;
 
         th {
+            border: unset;
             border-top: 1px solid var(--borders-color);
         }
 
         td,
         th {
             padding: .5rem;
+            border: unset;
             border-bottom: 1px solid var(--borders-color);
         }
 
@@ -61,12 +65,6 @@ article.post {
         tr:nth-child(odd) td {
             background-color: #eee;
         }
-    }
-
-    blockquote {
-        margin: 0 0 10px 0;
-        padding: 10px 20px;
-        border-left: 5px solid #E2E2E2;
     }
 
     header {

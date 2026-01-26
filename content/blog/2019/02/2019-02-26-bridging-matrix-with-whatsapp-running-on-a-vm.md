@@ -7,7 +7,7 @@ author = ["Ben Parsons"]
 category = ["Tutorials"]
 +++
 
-This guide will live with the documentation at <a href="/docs/guides/whatsapp-bridging-mautrix-whatsapp">https://matrix.org/docs/guides/whatsapp-bridging-mautrix-whatsapp</a>, but you can find the text below.
+This guide will live with the documentation at <https://matrix.org/docs/guides/whatsapp-bridging-mautrix-whatsapp>, but you can find the text below.
 
 <hr />
 

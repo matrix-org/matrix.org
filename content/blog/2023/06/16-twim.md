@@ -6,9 +6,6 @@ title = "This Week in Matrix 2023-06-16"
 [taxonomies]
 author = ["Thib"]
 category = ["This Week in Matrix"]
-
-[extra]
-image = "https://matrix.org/blog/img/matrix-logo.png"
 +++
 
 ## Matrix Live
@@ -312,7 +309,7 @@ A Matrix bot for the [Friendly Linux Players](https://friendlylinuxplayers.org/)
 > 
 > ### Get in touch
 > 
-> #### If you want to take part please contact [@oleg:fiksel.info](https://matrix.to/#/@oleg:fiksel.info) (or oleg@fiksel.info) ASAP to add you to the Devroom/booth participants list.
+> #### If you want to take part please contact [@oleg:fiksel.info](https://matrix.to/#/@oleg:fiksel.info) (or <oleg@fiksel.info>) ASAP to add you to the Devroom/booth participants list.
 > 
 > BTW: we also have a [Matrix FrOSCon room](https://matrix.to/#/#FrOSCon:fiksel.info)
 > 
@@ -338,7 +335,7 @@ A Matrix bot for the [Friendly Linux Players](https://friendlylinuxplayers.org/)
 > 
 > Beim Matrix-Stand werden wir auch Unterstützung brauchen.
 > 
-> Wenn ihr interessiert seid kontaktiert mich ([@oleg:fiksel.info](https://matrix.to/#/@oleg:fiksel.info) oder oleg@fiksel.info) bitte umgehend, damit wir kurzfristig einen Plan machen können.
+> Wenn ihr interessiert seid kontaktiert mich ([@oleg:fiksel.info](https://matrix.to/#/@oleg:fiksel.info) oder <oleg@fiksel.info>) bitte umgehend, damit wir kurzfristig einen Plan machen können.
 
 ## Dept of Guides 🧭
 
@@ -353,6 +350,7 @@ A Matrix bot for the [Friendly Linux Players](https://friendlylinuxplayers.org/)
 Here we reveal, rank, and applaud the homeservers with the lowest ping, as measured by [pingbot](https://github.com/maubot/echo), a [maubot](https://github.com/maubot/maubot) that you can host on your own server.
 
 ### [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net)
+
 Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|
@@ -369,6 +367,7 @@ Join [#ping:maunium.net](https://matrix.to/#/#ping:maunium.net) to experience th
 |10|nerdhouse.io|7082|
 
 ### [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net)
+
 Join [#ping-no-synapse:maunium.net](https://matrix.to/#/#ping-no-synapse:maunium.net) to experience the fun live, and to find out how to add YOUR server to the game.
 
 |Rank|Hostname|Median MS|
