@@ -64,8 +64,9 @@ characteristics above, including participants with disabilities.
 If you experience or witness unacceptable behaviour — or have any other concerns — please report it by contacting us via <abuse@matrix.org>. All reports will be handled with discretion. In your report please include:
 
 - Your contact information.
-- Names (usernames and nicks, real names, and/or pseudonyms) of any individuals involved. If there are additional witnesses, please
-include them as well. Your account of what occurred, and if you believe the incident is ongoing. 
+- Names (usernames and nicks, real names, and/or pseudonyms) of any individuals
+  involved. If there are additional witnesses, please include them as well.
+  Your account of what occurred, and if you believe the incident is ongoing. 
 - The date and time of the incident (or start of incident).
 - Any additional information that may be helpful.
 

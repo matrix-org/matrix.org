@@ -33,7 +33,7 @@ But what are those, and how to find out?
 The simplest approach to it is to say that:
 
 * Portalled rooms are primarily owned by the bridge and “obey” the IRC side.
-Everyone can join a portalled room.
+  Everyone can join a portalled room.
 * Plumbed rooms are primarily owned by an individual, and try to obey the IRC
   side as much as possible. Plumbed rooms require an IRC chanop to approve a
   plumbing request to establish the link between the Matrix room and the IRC
