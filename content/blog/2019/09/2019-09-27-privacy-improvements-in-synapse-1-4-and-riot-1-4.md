@@ -36,73 +36,70 @@ However, we’re in the process today of releasing Synapse 1.4.0 and Riot/Web
 1.4.0 (it’s coincidence the version numbers have lined up!) which resolve the
 majority of the remaining issues.  The main changes are as follows:
 
-1. **Riot no longer automatically uses identity servers by default**.
-
-Identity servers are only useful when inviting users by email address, or when
-discovering whether your contacts are on Matrix.  Therefore, we now wait until
-the user tries to perform one of these operations before explaining that they
-need an identity server to do so, and we prompt them to select one if they
-want to proceed. This makes it abundantly clear that the user is connecting to
-an independent service, and why.
+1. **Riot no longer automatically uses identity servers by default**.  
+   Identity servers are only useful when inviting users by email address, or when
+   discovering whether your contacts are on Matrix.  Therefore, we now wait until
+   the user tries to perform one of these operations before explaining that they
+   need an identity server to do so, and we prompt them to select one if they
+   want to proceed. This makes it abundantly clear that the user is connecting to
+   an independent service, and why.
 
 2. **Integration Managers and identity servers now have the ability to force
-users to accept terms of use before using them**.  This means they can
-explicitly spell out the data privacy & usage policy of the server as required
-by GDPR, and it should now be impossible for a user to use these services
-without realising it.  This was particularly fun in the case of identity
-servers, which previously had no concept of users and so couldn’t track
-whether users had agreed to their terms & conditions or not… and because
-homeservers sometimes talk to the identity server on behalf of users rather
-than the user talking direct, the privacy policy flow gets even hairier.  But
-it’s solved now, and a nice side-effect of this is that users can now
-explicitly select their Integration Manager in Riot, in case they want to use
-[Dimension](https://dimension.t2bot.io) or similar rather than the default
-provided by [Modular](https://modular.im).
+   users to accept terms of use before using them**.  
+   This means they can explicitly spell out the data privacy & usage policy of
+   the server as required by GDPR, and it should now be impossible for a user
+   to use these services without realising it.  This was particularly fun in
+   the case of identity servers, which previously had no concept of users and
+   so couldn’t track whether users had agreed to their terms & conditions or
+   not… and because homeservers sometimes talk to the identity server on behalf
+   of users rather than the user talking direct, the privacy policy flow gets
+   even hairier.  But it’s solved now, and a nice side-effect of this is that
+   users can now explicitly select their Integration Manager in Riot, in case
+   they want to use [Dimension](https://dimension.t2bot.io) or similar rather
+   than the default provided by [Modular](https://modular.im).
 
 3. **Synapse no longer uses identity servers for verifying registrations or
+   verifying password reset.**  
+   Originally, Synapse made use of the fact that the Identity Service contains
+   email/msisdn verification logic to handle identity verification in general
+   on behalf of the homeserver. However, in retrospect this was a mistake: why
+   should the entity running your identity server have the right to verify
+   password resets or registration details on your homeserver?  So, we have
+   moved this logic into Synapse.  **This means Synapse 1.4.0 requires new
+   configuration for email/msisdn verification to work - please see the upgrade
+   notes for full details.**
 
-verifying password reset.** Originally, Synapse made use of the fact that the
-Identity Service contains email/msisdn verification logic to handle identity
-verification in general on behalf of the homeserver. However, in retrospect
-this was a mistake: why should the entity running your identity server have
-the right to verify password resets or registration details on your
-homeserver?  So, we have moved this logic into Synapse.  **This means Synapse
-1.4.0 requires new configuration for email/msisdn verification to work -
-please see the upgrade notes for full details.**
-
-4. **Sydent now supports discovering contacts based on hashed identifiers.**
-[MSC2134](https://github.com/matrix-org/matrix-doc/blob/hs/hash-identity/proposals/2134-identity-hash-lookup.md)
-specifies entirely new IS APIs for discovering contacts using a hash of their
-identifier rather than directly exposing the raw identifiers being searched
-for.  This is implemented in
-[Riot/iOS](https://github.com/vector-im/riot-ios/issues/2652) and
-[Riot/Android](https://github.com/vector-im/riot-android/issues/3257) and
-should be in the next major release;
-[Riot/Web](https://github.com/vector-im/riot-web/issues/10556) 1.4.0 has it
-already.
+4. **Sydent now supports discovering contacts based on hashed identifiers.**  
+   [MSC2134](https://github.com/matrix-org/matrix-doc/blob/hs/hash-identity/proposals/2134-identity-hash-lookup.md)
+   specifies entirely new IS APIs for discovering contacts using a hash of
+   their identifier rather than directly exposing the raw identifiers being
+   searched for.  This is implemented in
+   [Riot/iOS](https://github.com/vector-im/riot-ios/issues/2652) and
+   [Riot/Android](https://github.com/vector-im/riot-android/issues/3257) and
+   should be in the next major release;
+   [Riot/Web](https://github.com/vector-im/riot-web/issues/10556) 1.4.0 has it
+   already.
 
 5. Synapse now [warns in its
-logs](https://github.com/matrix-org/synapse/pull/6090/files) if you are using
-matrix.org as a default trusted key server, in case you wish to use a
-different server to help discover other servers’ keys.
+   logs](https://github.com/matrix-org/synapse/pull/6090/files) if you are
+   using matrix.org as a default trusted key server, in case you wish to use a
+   different server to help discover other servers’ keys.
 
 6. Synapse now [garbage collects redacted
-messages](https://github.com/matrix-org/synapse/issues/1287) after N days (7
-days by default).  (It doesn’t yet garbage collect attachments referenced from
-redacted messages; we’re still working on that).
+   messages](https://github.com/matrix-org/synapse/issues/1287) after N days (7
+   days by default).  (It doesn’t yet garbage collect attachments referenced
+   from redacted messages; we’re still working on that).
 
 7. Synapse now [deletes account access
-
-data](https://github.com/matrix-org/synapse/pull/6098/files) (IP addresses and
-User Agent) after N days (28 days by default) of a device being deleted.
+   data](https://github.com/matrix-org/synapse/pull/6098/files) (IP addresses
+   and User Agent) after N days (28 days by default) of a device being deleted.
 
 8. Riot warns before falling back to using STUN (and defaults to
-
-turn.matrix.org rather than stun.google.com) for firewall discovery (STUN)
-when placing VoIP calls, and makes it clear that this is an emergency fallback
-for misconfigured servers which are missing TURN support.  (We originally
-deleted the fallback entirely, but this broke things for too many people, so
-we’ve kept it but warn instead).
+   turn.matrix.org rather than stun.google.com) for firewall discovery (STUN)
+   when placing VoIP calls, and makes it clear that this is an emergency
+   fallback for misconfigured servers which are missing TURN support.  (We
+   originally deleted the fallback entirely, but this broke things for too many
+   people, so we’ve kept it but warn instead).
 
 All of this is implemented in Riot/Web 1.4.0 and Synapse 1.4.0.  Riot/Web
 1.4.0 shipped today (Fri Sept 27th) and we have a release candidate
