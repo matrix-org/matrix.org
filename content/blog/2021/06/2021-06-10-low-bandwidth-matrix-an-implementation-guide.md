@@ -33,11 +33,13 @@ traffic. You do _not_ need to be running a homeserver to follow this tutorial.
 ## Setting up a low bandwidth proxy for your homeserver
 
 Prerequisites:
+
  - Go 1.13+
  - `openssl` to generate a self-signed DTLS certificate, or an existing certificate you want to use.
  - Linux or Mac user
 
 Steps:
+
 - Clone the repo: `git clone https://github.com/matrix-org/lb.git`
 - Build the low bandwidth proxy: `go build ./cmd/proxy`
 - Generate a elliptic curve DTLS key/certificate: (we use curve keys as they are smaller than RSA
@@ -83,6 +85,7 @@ go build ./cmd/coap
 ```
 
 If this doesn't work:
+
  - Check the proxy logs for errors (e.g bad hostname)
  - Try adding `-v` to `./coap` (e.g bad method or path)
  - Run the proxy with `SSLKEYLOGFILE=ssl.log` and inspect the decrypted traffic using Wireshark.
@@ -91,11 +94,13 @@ Otherwise, congratulations! You now have a low bandwidth proxy! You can connect 
 like you would to matrix.org or any other homeserver.
 
 ### Security considerations
+
 - The proxy acts as a man in the middle and can read all non-E2EE traffic, including login
   credentials. DO NOT USE UNTRUSTED LOW BANDWIDTH PROXY SERVERS. Only use proxy servers run by
   yourself or the homeserver admins.
 
 ### Further reading
+
 - The `proxy` [README](https://github.com/matrix-org/lb/tree/main/cmd/proxy)
 - `coap` [README](https://github.com/matrix-org/lb/tree/main/cmd/coap) and `jc`
   [README](https://github.com/matrix-org/lb/tree/main/cmd/jc)
@@ -107,9 +112,11 @@ while things are still experimental, here's a guide for how to build Element And
 yourself if you feel the urge.  This can be used as inspiration for other Matrix clients too.
 
 Prerequisites:
+
  - Android Studio
 
 Steps:
+
  - Clone the repo: `git clone https://github.com/vector-im/element-android.git`
  - Checkout `kegan/lb`: `git checkout kegan/lb`. This branch replaces all HTTP traffic going to
    `/_matrix/client/*` with LB traffic. `/_matrix/media` traffic is left untouched. This branch also
@@ -145,6 +152,7 @@ Steps:
    e.g `https://192.168.1.2:8008` or `https://10.0.2.2:8008`. The port is important.
 
 To verify it is running via low bandwidth:
+
  - Install Wireshark.
  - Restart the proxy with the environment variable `SSLKEYLOGFILE=ssl.log`.
  - Run tcpdump on the right interface e.g: `sudo tcpdump -i en0 -s 0 -v port 8008 -w lb.pcap` 
@@ -165,6 +173,7 @@ and receive the response, including connection setup:
 | CoAP+CBOR | 6 | 1440 |
 
 ## Limitations
+
 - CoAP [OBSERVE](https://datatracker.ietf.org/doc/html/rfc7641) is not enabled by default.
   This extension allows the server to push data to the client so the client doesn't need to
   long-poll. It is not yet enabled because of the risk of state synchronisation issues between the

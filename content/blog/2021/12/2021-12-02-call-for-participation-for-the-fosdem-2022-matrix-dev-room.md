@@ -25,6 +25,7 @@ We want this devroom to be a space where the Matrix community can show its work,
 The talks will be pre-recorded in January. They will be played during FOSDEM, followed by a session of live Q&A depending on the format. During the playback of the talk, people will be able to comment and ask questions in the chat (via Matrix!).
 
 The talks can follow one of three formats:
+
 * 5 min lightning talk, ideal to showcase your project and make people want to have a look at it
 * 20 min talk + 10 min Q&A, for topics that can be covered briefly
 * 50 min talk + 10 min Q&A for more complex subjects which need more focus

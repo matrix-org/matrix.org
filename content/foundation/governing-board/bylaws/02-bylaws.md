@@ -48,6 +48,7 @@ alignment with the TOR.*
 The Governing Board is not a vanity board, but a working board, and members
 stand for election being aware that they will have work to do. Board members
 are expected to:
+
 - contribute to the Committee's work and to the broader Governing Board.
 - be responsive to the Committee's members and to the broader Governing Board.
 - adhere to the social contract.
@@ -102,6 +103,7 @@ to the 'Committee Creation Process' section in
 Committee chairs are facilitators, their job is to enable the Committee to keep
 moving, work with Sponsors on Working Groups, and recommend reports to the Board
 and the Foundation. Chairs are expected to:
+
 - be responsive to the Committee's members and to the broader Governing Board.
 - lead their committee in a fair, transparent, and accountable manner.
 - report up to the Board Chair on a regular basis to keep the Board informed of
@@ -148,6 +150,7 @@ refer to the 'Working Group Creation Process' section in
 
 Sponsors provide a liaison role between the Working Group and the Board,
 channeling output to the Board. Sponsors are thus expected to:
+
 - be responsive to the Working Group's members and to the broader Governing
   Board.
 - report up to the Committee on a regular basis.
@@ -212,6 +215,7 @@ succession planning, to ensure operational continuity.
 
 One needn’t have been a Chair previously in order to be qualified for the role,
 but one should strive for these qualities:
+
 * Leadership skills  
 * Communication skills  
 * Strategic thinking  

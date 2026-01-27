@@ -70,73 +70,73 @@ introduction to using the API along with some common operations. A quick
 step-by-step guide would include:
 
 1. Get a user either by registering your user in an existing client or running
-the [new-user script](https://github.com/matrix-org/synapse/blob/master/scripts/register_new_matrix_user)
-if you are running your own Synapse homeserver.
+   the [new-user
+   script](https://github.com/matrix-org/synapse/blob/master/scripts/register_new_matrix_user)
+   if you are running your own Synapse homeserver.
 
 2. Assuming the homeserver you are using allows logins by password, log in via the login API:
 
-```bash
-curl -XPOST -d '{"type":"m.login.password", "user":"example", "password":"wordpass"}' \
-"http://localhost:8008/_matrix/client/api/v1/login"
-```
+   ```bash
+   curl -XPOST -d '{"type":"m.login.password", "user":"example", "password":"wordpass"}' \
+   "http://localhost:8008/_matrix/client/api/v1/login"
+   ```
 
 3. If successful, this returns the following, including an `access_token`:
 
-```json
-{
-    "access_token": "QGV4YW1wbGU6bG9jYWxob3N0.vRDLTgxefmKWQEtgGd",
-    "home_server": "localhost",
-    "user_id": "@example:localhost"
-}
-```
+   ```json
+   {
+       "access_token": "QGV4YW1wbGU6bG9jYWxob3N0.vRDLTgxefmKWQEtgGd",
+       "home_server": "localhost",
+       "user_id": "@example:localhost"
+   }
+   ```
 
 4. This `access_token` will be used for authentication for the rest of your API
-calls. Potentially the next step you want is to make a call to the sync API and
-get the last few events from each room your user is in:
+   calls. Potentially the next step you want is to make a call to the sync API
+   and get the last few events from each room your user is in:
 
-```bash
-curl -XGET "http://localhost:8008/_matrix/client/r0/sync?access_token=YOUR_ACCESS_TOKEN"
-```
+   ```bash
+   curl -XGET "http://localhost:8008/_matrix/client/r0/sync?access_token=YOUR_ACCESS_TOKEN"
+   ```
 
 5. The above will return something like this:
 
-```json
-{
-    "next_batch": "s72595_4483_1934",
-    "rooms": {
-        "join": {
-            "!726s6s6q:example.com": {
-                "state": {
-                    "events": [
-                        ...
-                    ]
-                },
-                "timeline": {
-                    "events": [
-                        ...
-                    ]
-                }
-            },
-            ...
-        }
-    }
-}
-```
+   ```json
+   {
+       "next_batch": "s72595_4483_1934",
+       "rooms": {
+           "join": {
+               "!726s6s6q:example.com": {
+                   "state": {
+                       "events": [
+                           ...
+                       ]
+                   },
+                   "timeline": {
+                       "events": [
+                           ...
+                       ]
+                   }
+               },
+               ...
+           }
+       }
+   }
+   ```
 
-
-You can then use the "next_batch" token to start listening for new events like 
-so:
-
-```bash
-curl -XGET "http://localhost:8008/_matrix/client/r0/sync?access_token=YOUR_ACCESS_TOKEN&since=s72595_4483_1934"
-```
+   You can then use the "next_batch" token to start listening for new events
+   like so:
+   
+   ```bash
+   curl -XGET "http://localhost:8008/_matrix/client/r0/sync?access_token=YOUR_ACCESS_TOKEN&since=s72595_4483_1934"
+   ```
 
 6. This request will block waiting for an incoming event, timing out after
-several seconds if there is no event. This ensures that you only get new
-events. Now you have the initial room states, and a stream of events - a good
-client should be able to process all these events and present them to the user.
-And potentially you might want to add functionality to generate events as well
-(such as messages from the user, for example)!
+   several seconds if there is no event. This ensures that you only get new
+   events. Now you have the initial room states, and a stream of events - a
+   good client should be able to process all these events and present them to
+   the user. And potentially you might want to add functionality to generate
+   events as well (such as messages from the user, for example)!
 
 ### Write your own server:
 

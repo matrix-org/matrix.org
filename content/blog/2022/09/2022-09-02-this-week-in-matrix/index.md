@@ -22,12 +22,15 @@ category = ["This Week in Matrix"]
 > ### MSC Status
 > 
 > **Merged MSCs:**
+> 
 > * *No MSCs were merged this week.*
 > 
 > **MSCs in Final Comment Period:**
+> 
 > * *No MSCs are in FCP.*
 > 
 > **New MSCs:**
+> 
 > * *There were no new MSCs this week.*
 > 
 > ### Spec Core Team
@@ -303,6 +306,7 @@ Synapse Maintenance Container – Docker container with tools for synapse & post
 [saces](https://matrix.to/#/@saces:c-base.org) announces
 
 > New in v0.4.2
+> 
 >   - MXPASSFILE - like PGPASSFILE, but for matrix tokens. See [MXPassfile.adoc](https://gitlab.com/mb-saces/synatainer/-/blob/main/MXPassfile.adoc) for details.
 > 
 > 
@@ -314,6 +318,8 @@ Synapse Maintenance Container – Docker container with tools for synapse & post
 > ```bash
 > [docker run -it --rm registry.gitlab.com/mb-saces/synatainer:0.4.2] stui 12507 --help
 > ```
+>
+>
 > ```bash
 > [docker run -it --rm registry.gitlab.com/mb-saces/synatainer:0.4.2] stui 13026 --help
 > ```
@@ -325,6 +331,7 @@ Synapse Maintenance Container – Docker container with tools for synapse & post
 > Start the container without command and let do its magic :)
 > 
 > What it does by default:
+> 
 > * daily:
 >   - purge all rooms without local members
 >   - run the state autocompressor (500/100)

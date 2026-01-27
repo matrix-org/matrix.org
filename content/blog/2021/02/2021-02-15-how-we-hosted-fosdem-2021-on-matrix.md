@@ -21,6 +21,7 @@ First of all, a quick (re)introduction to Matrix for any newcomers: Matrix is an
 The most unique thing about Matrix is that conversations get replicated across all servers whose users are present in the conversation, so there's never a single point of control or failure for a conversation (much as git repositories get replicated between all contributors).  And so hosting FOSDEM in Matrix meant that everyone already on Matrix (including users bridged to Matrix from IRC, XMPP, Slack, Discord etc) could attend directly - in addition to users signing up for the first time on the FOSDEM server.  Therefore the chat around FOSDEM 2021 now exists for posterity on all the Matrix servers whose users who participated; and we hope that the fosdem.org server will hang around for the benefit of all the newcomers for the foreseeable so they don't lose their accounts!
 
 Talking of which: the vital stats of the weekend were as follows:
+
  * We saw almost 30K local users on the FOSDEM server + 4K remote users from elsewhere in Matrix.
  * There were 24,826 guests (read-only invisible users) on the FOSDEM server.
  * There were 8,060 distinct users actively joined to the public FOSDEM rooms...
@@ -99,6 +100,7 @@ Ironically the Matrix server was largely working okay during this timeframe, giv
 The other main incident was briefly first thing on Sunday morning, where two Jibri livestreams ended up trying to broadcast video to the same RTMP URL (potentially due to a race when rapidly removing and re-adding the jitsi/livestream widget for one of the stands).  This caused a cascading failure which briefly impacted all RTMP streams, but was solved within about 30 minutes.  We also had a more minor problem with the active speaker recognition malfunctioning in Jitsi on Sunday (apparently a risk when using SCTP rather than Websockets as a transport within Jitsi) - this was solved around lunchtime.  Again, we're really sorry if you were impacted by this.  We've learned a lot from the experience, and if we end up doing this again we will make sure these failure modes don't repeat!
 
 Other things we'd change if we have the chance to do it again include:
+
  * Providing a to-the-second countdown via a widget in the talk room so the speaker & host can see precisely when they're going 'live' in the devroom (and when precisely they're going to be cut in favour of the next talk)
  * Providing a scratch-pad of some kind in the talk room so the host & speaker can track which questions they want to answer, and which they've already answered
  * Keep the questions scoreboard and scratchpad visible to the speaker/host after their Q&A has finished so they can keep answering the questions in the per-talk room, and advertise the per-talk room more effectively.

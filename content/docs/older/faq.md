@@ -625,8 +625,9 @@ To see the proposals currently under discussion, join us in
 See the documentation at <https://spec.matrix.org/proposals>. In summary:
 
 * Produce a publicly-accessible proposal describing your change
-* Make a new issue at <https://github.com/matrix-org/matrix-spec-proposals/issues>
-, and include the metadata as described
+* Make a new issue at
+  <https://github.com/matrix-org/matrix-spec-proposals/issues>, and include
+  the metadata as described
 * Gather feedback as widely as possible from the community and core team on the
   proposal
 * Show an implementation to prove that it works well in practice, iterate where

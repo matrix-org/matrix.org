@@ -57,7 +57,8 @@ first of 2025. Below are the edited highlights of the meeting:
   * Governance committee
     * almost approved their charter, but it was delayed discussing exactly what
       the focus is. Consensus is forming around being primarily dealing with
-governance of the board, but will have advice/input for wider scope matters
+      governance of the board, but will have advice/input for wider scope
+      matters
     * Fiscal Sponsorship Framework Working Group proposal in progress
     * Voted & passed an amendment to the Terms of Reference (approved by the
       Guardians)

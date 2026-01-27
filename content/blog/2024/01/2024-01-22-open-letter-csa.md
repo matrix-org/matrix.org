@@ -45,6 +45,7 @@ Even if not perfect in our eyes, the changes the European Parliament made in its
 **As representatives of the vibrant European small businesses community, we encourage EU Member States to continue championing the values of privacy, cybersecurity and data protection. These principles not only align with the EU's commitment to human rights, but also serve as a foundation for a thriving and competitive business environment. Let us defend and strengthen these principles, ensuring that the EU remains an advocate of privacy in the global marketplace.**
  
 For these reasons we call on you to:
+
  - Ensure that Council’s position is aligned as closely as possible to the European Parliament’s. This will allow for a swifter adoption of the Regulation while building on the important work of the European Parliament.
  - Maintain the high level of fundamental rights - and in particular data protection – enjoyed by citizens in the European Union.
  - Refrain from forcing companies like us to conduct mass surveillance of private correspondence on behalf of law enforcement agencies.

@@ -228,7 +228,7 @@ members. We hope you have a spam-free and enjoyable 2023!</p></blockquote>
 <p>Paul shares what they did in 2022. <a href="https://paul.totterman.name/" target="_blank" rel="nofollow noopener noreferrer">↗</a></p>
 
 <p>Paul mentions</p><blockquote>
-I haven't had much time, but I did write two tiny projects and small blog posts: <a href="https://paul.totterman.name/posts/matrix-menu-bot/">https://paul.totterman.name/posts/matrix-menu-bot/</a> &amp; <a href="https://paul.totterman.name/posts/remarkable-matrix/">https://paul.totterman.name/posts/remarkable-matrix/</a></blockquote>
+I haven't had much time, but I did write two tiny projects and small blog posts: <https://paul.totterman.name/posts/matrix-menu-bot/> &amp; <https://paul.totterman.name/posts/remarkable-matrix/></blockquote>
 <h2>Open Tech Will Save Us on PeerTube</h2>
 <p>Hosting of the Open Tech Will Save Us talks on PeerTube. <a href="https://wrily.foad.me.uk/open-tech-will-save-us-on-peertube" target="_blank" rel="nofollow noopener noreferrer">↗</a></p>
 

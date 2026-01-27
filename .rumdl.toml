@@ -13,6 +13,7 @@ enable = [
   "MD022",  # Add blank lines around headings
   "MD030",  # Add consistent spacing after list markers
   "MD031",  # Code blocks need blank lines around them
+  "MD032",  # Separate lists with blank lines
   "MD034",  # URLs should be formatted as links
   "MD038",  # Remove extra spaces in code
   "MD039",  # Remove extra spaces in links
@@ -53,3 +54,5 @@ respect-gitignore = true
 # Options: mkdocs, gfm, commonmark
 flavor = "commonmark"  # https://www.getzola.org/documentation/getting-started/overview/
 
+[MD032]
+allow-lazy-continuation = false

@@ -46,6 +46,7 @@ During the coding period, I've resorted to [the specification](https://matrix.or
 ## Future work
 
 Talking about future work, the status is going to be captured at [libQuotient project board](https://github.com/quotient-im/libQuotient/projects). Next steps are:
+
 - Managing devices list for users in the room
 - Sending encrypted messages
 

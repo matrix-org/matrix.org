@@ -479,6 +479,7 @@ So, the entire SAS verification flow in short is as follows:
     the verification process is concluded.
 
 ### Things to look out for
+
 1. *Always* verify that an incoming message has a valid, known transaction ID.
 2. *Always* verify that an incoming message is no more than 10 minutes in the past.
 3. *Always* stop the verification process as soon as you receive a `m.key.verification.cancel`, be
@@ -597,6 +598,7 @@ key of a user by looking for a cross-signing key which has `master` within their
 If a user is verified but all of their devices are not, it is a good idea to display a warning.
 
 ### Things to look out for
+
 1. *Never* trust invalid signatures. Just treat them as if there was no signature at all.
 2. Signature loops *will* exist. Add infinite recursion protection to your signature loop checking.
 3. While signature checking doesn't seem to be expensive, it might be a good idea to cache the results
@@ -721,6 +723,7 @@ This sends / shares a secret with another device
 ```
 
 #### Asking for a secret
+
 1. Only ask your own, verified devices for a secret. Be reasonably sure that they might have it (e.g.
    the other device sent you your master key to verify).
 2. When receiving a secret, verify that it was encrypted
@@ -733,6 +736,7 @@ This sends / shares a secret with another device
    yet.
 
 #### Sharing a secret
+
 1. Make sure the request is coming from ourself
 2. Make sure that that particular device is verified
 3. Make sure we have the secret cached
@@ -991,6 +995,7 @@ first, and only after that is working fine, debug any errors you might have in d
 the password.
 
 ### Things to look out for
+
  - *Only* cache a whitelisted set of secrets, that is `m.cross_signing.self_signing`,
    `m.cross_signing.user_signing` and `m.megolm_backup.v1`.
  - When fetching a secret from the store that is cacheable - cache it!
@@ -1159,6 +1164,7 @@ Content-Type: application/json
 ```
 
 ### Things to look out for
+
 1. *Only* sign the keys mentioned above, do *not* sign any other keys.
 2. Use the correct key to sign the correct key type - self_signing for your own things, user_signing
    for other users and your own device key for your own master key.
@@ -1233,6 +1239,7 @@ block as follows:
 ```
 
 ### Things to look out for
+
 1. Don't allow to directly verify other users devices
 2. Use in-room verification to verify other users, not specific devices
 3. Don't use in-room verification for self-verification, use device verification for that

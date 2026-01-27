@@ -157,6 +157,7 @@ sydent.validators.msisdnvalidator             0          8            0         
 ### The meaning of precision
 
 There are two metrics I chose to focus on:
+
 - the proportion of "imprecise" lines across the project; I also used the complement, `precision = 100% - imprecision`, and
 - the proportion of expressions whose type is not `Any`.
 
@@ -227,12 +228,14 @@ After the sprint to improve coverage, I spent a short amount of time trying the 
   ```
 
   This is really valuable information. It's worth considering Pyright as an option to get a second opinion!
+
 - It looks like Pyright's name for `Any` is `Unknown`. I think that does a better job of emphasising that `Unknown` won't be type checked. I'd certainly be more reluctant to type `x: Unknown` versus `x: Any`!
 - Pyright is the machinery behind [Pylance](https://github.com/microsoft/pylance-release), which drives [VS Code's Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance). That alone probably makes it worthy of more eyes.
 - Seemed like it was the best-placed alternative typechecker to challenge mypy (the de-facto standard).
 
 
 #### [Pytype](https://github.com/google/pytype) (Google)
+
 - Google internal? Seems to be maintained by one person semiregularly by "syncing" from Google.
 - Apparently contains a script [merge-pyi](https://github.com/google/pytype/tree/master/pytype/tools/merge_pyi) to annotate a source file given a stub file.
 - No support for TypedDict: as soon as it saw one in Sydent, it stopped all analysis.
