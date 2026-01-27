@@ -318,6 +318,8 @@ Synapse Maintenance Container – Docker container with tools for synapse & post
 > ```bash
 > [docker run -it --rm registry.gitlab.com/mb-saces/synatainer:0.4.2] stui 12507 --help
 > ```
+>
+>
 > ```bash
 > [docker run -it --rm registry.gitlab.com/mb-saces/synatainer:0.4.2] stui 13026 --help
 > ```
