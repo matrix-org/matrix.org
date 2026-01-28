@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 The Matrix.org Foundation C.I.C.
+// SPDX-FileContributor: awtj8o81ryywg793
+//
+// SPDX-License-Identifier: Apache-2.0
+
 const toggles = document.querySelectorAll(".site-header label");
 
 /**
