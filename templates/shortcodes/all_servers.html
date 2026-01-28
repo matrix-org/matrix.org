@@ -88,7 +88,7 @@
                 <div class="pill licence">{{ server.licence }}</div>
                 <div class="pill">{{ server.language }}</div>
             </div>
-            <p class="description">{{ server.description | safe }}</p>
+            <p class="description">{{ server.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>
             <div class="card-links server-links">
                 {% if server.website %}
                 <a href="{{ server.website }}">

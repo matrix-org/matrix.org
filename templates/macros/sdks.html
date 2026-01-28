@@ -99,7 +99,7 @@
                     <div class="pill licence">{{ sdk.licence }}</div>
                     <div class="pill">{{ sdk.language }}</div>
                 </div>
-                {% if sdk.description %}<p class="description">{{ sdk.description }}</p>{% endif %}
+                {% if sdk.description %}<p class="description">{{ sdk.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>{% endif %}
                 <div class="card-links server-links">
                     {% if sdk.repository %}
                     <a href="{{ sdk.repository }}">
