@@ -47,7 +47,7 @@
                 <div class="metadata-pills">
                     <div class="pill licence">{{ client.extra.licence }}</div>
                 </div>
-                <p class="description">{{ client.content | safe }}</p>
+                <p class="description">{{ client.content | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>
                 <div class="card-links platform-links">
                     {{ clients::platforms(packages=client.extra.packages) }}
                 </div>
@@ -215,7 +215,7 @@
                 <div class="metadata-pills">
                     <div class="pill licence">{{ client.extra.licence }}</div>
                 </div>
-                <p class="description">{{ client.content | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>
+                <p class="description">{{ client.content | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>
                 <div class="card-links platform-links">
                     {{ clients::platforms(packages=client.extra.packages) }}
                 </div>

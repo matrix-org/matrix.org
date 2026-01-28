@@ -110,7 +110,7 @@
                 <div class="pill">{{ framework }}</div>
                 {% endfor %}
             </div>
-            <p class="description">{{ distribution.description | safe }}</p>
+            <p class="description">{{ distribution.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>
             <div class="card-links distribution-links">
                 {% if distribution.website %}
                 <a href="{{ distribution.website }}">
