@@ -1,7 +1,7 @@
-{% extends "section.html" %}
+{% extends "page.html" %}
 {% import "macros/banner.html" as banner %}
 {% block head_extra %}
-<meta name="description" content="{{ section.extra.summary }}">
+<meta name="description" content="{{ page.extra.summary }}">
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         let mostPopular = document.getElementById("most-popular");
@@ -13,17 +13,17 @@
 </script>
 {% endblock head_extra %}
 {% block content %}
-{% set supporters = load_data(path="content/membership/members.toml") %}
+{% set supporters = load_data(path="content/foundation/members/members.toml") %}
 <div class="page-header support">
     <div class="hero-block">
-        <h1>{{ section.title }}</h1>
-        <p>{{ section.extra.summary }}</p>
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.extra.summary }}</p>
     </div>
 </div>
 
 <div class="membership">
     <div class="membership-tiers">
-        <h2>Membership tiers</h2>
+        <h2>Become a member</h2>
         <div class="tiers-row">
             <div class="tier-card">
                 <h3>Individual</h3>
@@ -83,7 +83,7 @@
             <div class="cards">
                 {% for supporter in supporters.platinum %}
                 <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
-                    <img src="/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <img src="/foundation/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <span>{{ supporter.name }}</span>
                 </a>
                 {% endfor %}
@@ -94,7 +94,7 @@
             <div class="cards">
                 {% for supporter in supporters.gold %}
                 <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
-                    <img src="/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <img src="/foundation/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <span>{{ supporter.name }}</span>
                 </a>
                 {% endfor %}
@@ -105,7 +105,7 @@
             <div class="cards">
                 {% for supporter in supporters.silver %}
                 <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
-                    <img src="/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <img src="/foundation/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <span>{{ supporter.name }}</span>
                 </a>
                 {% endfor %}
@@ -116,7 +116,7 @@
             <div class="cards">
                 {% for supporter in supporters.ecosystem %}
                 <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
-                    <img src="/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <img src="/foundation/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <span>{{ supporter.name }}</span>
                 </a>
                 {% endfor %}
@@ -127,7 +127,7 @@
             <div class="cards">
                 {% for supporter in supporters.associate %}
                 <a href="{{ supporter.website }}" class="supporters-card">
-                    <img src="/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
+                    <img src="/foundation/membership/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
                     <span>{{ supporter.name }}</span>
                 </a>
                 {% endfor %}

@@ -1,6 +1,7 @@
 +++
-title = "Why become a member?"
-aliases = ["/members/"]
+title = "Members"
+aliases = ["/members/", "/membership/"]
+weight = 2
 template = "membership.html"
 extra.summary = """
 Becoming a member of the Matrix.org Foundation allows you to support Matrix and
