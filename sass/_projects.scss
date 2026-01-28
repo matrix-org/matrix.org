@@ -4,7 +4,7 @@
     justify-content: center;
 
     @media (max-width: 767px) {
-        max-width: 17.6rem;
+        grid-template-columns: repeat(auto-fill, 20.5rem);
     }
 
     gap: 1rem;
