@@ -11,7 +11,7 @@ featured = false
 
 [extra.features]
 e2ee = false
-spaces = true
+spaces = false
 voip_1to1 = false
 voip_jitsi = false
 threads = false
