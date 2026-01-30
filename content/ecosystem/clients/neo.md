@@ -2,7 +2,7 @@
 title = "Neo"
 template = "ecosystem/client.html"
 [extra]
-thumbnail = "neo.webp"
+thumbnail = "neo.svg"
 maintainer = " Alexis Purslane"
 maturity = "Alpha"
 repo = "https://github.com/alexispurslane/neo"
