@@ -3,7 +3,7 @@ title = "Mactrix"
 template = "ecosystem/client.html"
 [extra]
 maintainer = "Viktor Strate Kløvedal"
-maturity = "Beta"
+maturity = "Alpha"
 repo = "https://github.com/viktorstrate/mactrix"
 matrix_room = "#mactrix:qpqp.dk"
 licence = "GPL-3.0"
