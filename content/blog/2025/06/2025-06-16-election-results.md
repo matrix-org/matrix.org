@@ -26,20 +26,24 @@ This year we are seating representatives for the following constituencies: [Indi
 These are the elected representatives for each of those constituencies:
 
 Individual Members
+
 - Andy Balaam (he/him)
 - Gnuxie (she/her)
 - Greg Sutcliffe (he/him)
 - J.B. Crawford (they/them)
 
 Associate Members
+
 - Tobias Fella (he/him), KDE e.V.
 - One vacant seat
 
 Silver Members
+
 - Christian Kußowski (he/him), Famedly
 - Jan Kohnert (he/him), Gematik GmbH
 
 Gold Members
+
 - Brad Murray (he/him), Automattic (Beeper)
 - Two vacant seats
 

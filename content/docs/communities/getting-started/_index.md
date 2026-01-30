@@ -104,6 +104,7 @@ visibility at any point in the room settings.
 
 The room visibility is not the only important parameter in a room. You can also
 change the _history_ visibility so people can either:
+
 - Not see what was said in this room before they joined
 - See what happened since the option was selected
 - See what happened since they were invited in the room

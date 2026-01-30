@@ -22,6 +22,7 @@ category = ["This Week in Matrix"]
 [Thib](https://matrix.to/#/@thib:ergaster.org) adds
 
 > For a balanced coveraged of the vulnerability, see the following articles:
+> 
 > * [Matrix.org Foundation — Upgrade now to address E2EE vulnerabilities in matrix-js-sdk, matrix-ios-sdk and matrix-android-sdk2](https://matrix.org/blog/2022/09/28/upgrade-now-to-address-encryption-vulns-in-matrix-sdks-and-clients)
 > * [The original paper — Practically-exploitable Cryptographic Vulnerabilities in Matrix](https://nebuchadnezzar-megolm.github.io)
 > * [ars technica — Serious vulnerabilities in Matrix’s end-to-end encryption have been patched](https://arstechnica.com/information-technology/2022/09/matrix-patches-vulnerabilities-that-completely-subvert-e2ee-guarantees/)
@@ -106,6 +107,7 @@ Synapse is a Matrix homeserver implementation developed by the matrix.org core t
 >
 > * Add an admin API endpoint to fetch messages within a particular window of time.
 > * Add an admin API endpoint to find a user based on their external ID in an auth provider.
+> 
 > Plus a host of bugfixes, internal changes to speed up Synapse 🚀(including work on faster joins-stay tuned as this is quickly approaching), improvements to the documentation, and more. Check it out here!: <https://matrix.org/blog/2022/09/27/synapse-1-68-released>
 
 ### Dendrite ([website](https://github.com/matrix-org/dendrite))
@@ -207,6 +209,7 @@ Matrix messaging app for GNOME written in Rust.
 
 > This week we tagged Fractal as 5.alpha1. This is our first release since Fractal has been rewritten to take advantage of GTK 4 and the Matrix Rust SDK. It is the result of eighteen months of work.
 > Currently supported features are:
+> 
 > * Sending and receiving messages and files
 > * Sending files via Drag-n-Drop and pasting in the message entry
 > * Rendering of rich formatted (HTML) messages, as well as media
@@ -229,6 +232,7 @@ Matrix messaging app for GNOME written in Rust.
 > * Deactivating the account
 >
 > Major missing features are:
+> 
 > * Notifications
 > * Read markers
 >
@@ -252,6 +256,7 @@ Matrix client for Emacs
 > Since the last announcement on TWIM, the following improvements have been made.  The most notable is the addition of the `ement-directory` commands that allow listing and searching public room directories.
 >
 > *Additions*
+> 
 > * Command `ement-directory` shows a server's room directory.
 > * Command `ement-directory-search` searches a server's room directory.
 > * Command `ement-directory-next` fetches the next batch of rooms in a directory.
@@ -260,12 +265,14 @@ Matrix client for Emacs
 > * Option `ement-notify-mark-frame-urgent-predicates` marks the frame as urgent when (by default) a message mentions the local user or "@room" and the message's room has an open buffer.
 >
 > *Changes*
+> 
 > * Read receipts are re-enabled.
 > * When determining whether a room is considered unread, non-message events like membership changes, reactions, etc. are ignored.  This fixes a bug that caused certain rooms that had no message events (like some bridged rooms) to appear as unread when they shouldn't have.
 > * The `ement-taxy-room-list` view no longer automatically refreshes the list if the region is active in the buffer.  (This allows the user to operate on multiple rooms without the contents of the buffer changing before completing the process.)
 > * Minor improvements to date/time headers.
 >
 > *Fixes*
+> 
 > * Links to only rooms (as opposed to links to events in rooms) may be activated to join them.
 > * Read receipts mark the last completely visible event (rather than one that's only partially displayed).
 > * Prevent error when a room avatar image fails to load.

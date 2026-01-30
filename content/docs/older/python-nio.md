@@ -244,5 +244,4 @@ async def main():
 With this, you can see that in very few lines, it's possible to write a working
 Matrix bot in Python, using [matrix-nio](https://github.com/poljar/matrix-nio).
 
-*The content in this article was first presented as a workshop at PyConWeb
- 2019.*
+*The content in this article was first presented as a workshop at PyConWeb 2019.*

@@ -104,6 +104,7 @@ Bugfixes
 
 Updates to the Docker image
 ---------------------------
+
 - Add ability to change Docker containers [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) with the `TZ` variable. ([\#5383](https://github.com/matrix-org/synapse/issues/5383))
 - Update docker image to use Python 3.7. ([\#5546](https://github.com/matrix-org/synapse/issues/5546))
 - Deprecate the use of environment variables for configuration, and make the use of a static configuration the default. ([\#5561](https://github.com/matrix-org/synapse/issues/5561), [\#5562](https://github.com/matrix-org/synapse/issues/5562), [\#5566](https://github.com/matrix-org/synapse/issues/5566), [\#5567](https://github.com/matrix-org/synapse/issues/5567))
@@ -124,6 +125,7 @@ Deprecations and Removals
 
 Improved Documentation
 ----------------------
+
 - Improve README section on performance troubleshooting. ([\#4276](https://github.com/matrix-org/synapse/issues/4276))
 - Add information about how to install and run `black` on the codebase to code_style.rst. ([\#5537](https://github.com/matrix-org/synapse/issues/5537))
 - Improve install docs on choosing server_name. ([\#5558](https://github.com/matrix-org/synapse/issues/5558))

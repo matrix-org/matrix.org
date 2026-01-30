@@ -138,6 +138,7 @@ Here’s the official changelog:
 ### Client-Server API Features
 
 #### Account registration and management
+
 - Registration: By password only.
 - Login: By password only. No fallback.
 - Logout: Yes.
@@ -149,6 +150,7 @@ Here’s the official changelog:
 - OpenID: No.
 
 #### Rooms
+
 - Room creation: Yes, including presets.
 - Joining rooms: Yes, including by alias or `?server_name=`.
 - Event sending: Yes, including transaction IDs.
@@ -162,20 +164,24 @@ Here’s the official changelog:
 - Tagging: Yes.
 
 #### User management
+
 - User directory: Basic support.
 - Ignoring users: No.
 - Groups/Communities: No.
 
 #### Device management
+
 - Creating devices: Yes.
 - Deleting devices: Yes.
 - Send-to-device messaging: Yes.
 
 #### Sync
+
 - Filters: Timeline limit only. Rest unimplemented.
 - Deprecated `/events` and `/initialSync`: No.
 
 #### Room events
+
 - Typing: Yes.
 - Receipts: No.
 - Read Markers: No.
@@ -187,6 +193,7 @@ Here’s the official changelog:
 - Reporting content: No.
 
 #### End-to-End Encryption
+
 - Uploading device keys: Yes.
 - Downloading device keys: Yes.
 - Claiming one-time keys: Yes.
@@ -194,6 +201,7 @@ Here’s the official changelog:
 - Cross-Signing: No.
 
 #### Misc
+
 - Server-side search: No.
 - Guest access: Partial.
 - Room previews: No, partial support for Peeking via MSC2753.
@@ -202,6 +210,7 @@ Here’s the official changelog:
 - Policy lists: No.
 
 ### Federation Features
+
 - Querying keys (incl. notary): Yes.
 - Server ACLs: Yes.
 - Sending transactions: Yes.

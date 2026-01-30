@@ -213,6 +213,7 @@ matrix=# select ctid, left(data, 77) as data from bt_page_items('state_groups_st
 ```
 
 Being a leaf index page, the `ctid` points to the actual row in the heap. This is an index on `(state_group, type, state_key)`, so the `data` here is:
+
  * a little-endian 64-bit representation of `353864583`
  * a length/flags byte (`1d` => 13 bytes of uncompressed text)
  * the event type (`m.room.member`) 

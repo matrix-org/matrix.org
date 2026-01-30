@@ -12,6 +12,7 @@ It was drawn to our attention this afternoon that there is a bug in our GDPR dat
 This tooling has recently been updated ([here is the new code](https://github.com/matrix-org/synapse/blob/baf081cd3b040926e2d14dfd1c555307bba59245/synapse/handlers/admin.py#L98)), and the bug only affects reports generated with the updated tool. So far we have generated one report using the updated tooling.
 
 The bug affects events which:
+
 - were sent in rooms in which, at the point at which the message was sent, the message visibility was set to 'shared' or 'world readable', and
 - were pulled in over federation from another server after the data subject left the room
 
@@ -34,6 +35,7 @@ It is also worth noting that any encrypted events erroneously included in the du
 Events that are pulled in over federation are assigned a negative 'stream ordering' ID. This is designed to avoid their being sent down the sync (where they would likely be out of sequence). In normal operation (accessing your homeserver via a Matrix client) these events would be appropriately filtered, but a bug in the data dump tooling caused them to be included.
 
 The bug was introduced as a result of two factors:
+
 - The event filtering code assumes that the user is currently in the room - this was not intuitive, and was not called out in the documentation
 - When we fetched the events from the database, we tried to limit to events sent before the user left the room. On reflection, we used the wrong ordering mechanism (stream ordering instead of topological ordering), resulting in the inclusion of events that were fetched from a remote server after the data subject had left
 
