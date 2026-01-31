@@ -66,4 +66,4 @@ skip_anchor_prefixes = [
 #
 # governing_board_elections: "We are holding our Governing Board elections. Find 
 # all the information [on the elections page](https:/matrix.org/foundation/governing-board-elections/<year>/)."
-banner = "The [Matrix FOSDEM hackathon](https://matrix.org/blog/2025/12/fosdem-presence/) is underway! Watch the results presentations livestream starting 17:00 Brussels time [on YouTube](https://youtube.com/live/U_YdrcrWw8M)!"
+banner = "Matrix is at [FOSDEM](/blog/2025/12/fosdem-presence/)! View the [schedule](https://fosdem.org/2026/schedule/track/decentralised-communication/) of talks and check out the [results](https://www.youtube.com/live/U_YdrcrWw8M) of the pre-FOSDEM hackathon."
