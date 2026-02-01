@@ -15,7 +15,7 @@ spaces = true
 voip_1to1 = false
 voip_jitsi = false
 threads = true
-sso = true
+sso = false
 multi_account = false
 multi_language = false
 [extra.packages]
