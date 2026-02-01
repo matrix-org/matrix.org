@@ -10,7 +10,7 @@ licence = "GPL-3.0"
 latest_release = "2026-01-21" # No formal releases; based on the latest non-trivial commit.
 featured = false
 [extra.features]
-e2ee = false
+e2ee = true
 spaces = true
 voip_1to1 = false
 voip_jitsi = false
