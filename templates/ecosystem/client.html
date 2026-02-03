@@ -50,7 +50,7 @@
             <ul>
                 {% for feature, supported in page.extra.features %}
                 <li {% if supported %}class="supported" {% endif %}>
-                    {{ feature | replace(from="_", to=" ") | title }}
+                    {{ clients::feature_label(feature_name=feature) | trim }}
                 </li>
                 {% endfor %}
             </ul>
