@@ -187,7 +187,7 @@ Encrypted events have a type of `m.room.encrypted`. They have a content property
 `algorithm` which gives the encryption algorithm in use, as well as other
 properties specific to the algorithm[^1].
 
-The encrypted payload is a JSON object with the properties `type`(giving the
+The encrypted payload is a JSON object with the properties `type` (giving the
 decrypted event type), and `content` (giving the decrypted content). Depending
 on the algorithm in use, the payload may contain additional keys.
 
