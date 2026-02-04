@@ -486,7 +486,7 @@ invalidated so that no further messages are sent over them.
 ### Marking events as 'verified'
 
 Once a device has been verified, it is possible to verify that events have been
-sent from a particular device. See the section on Handling an m.room.encrypted
+sent from a particular device. See the section on Handling an `m.room.encrypted`
 event for notes on how to do this for each algorithm. Events sent from a
 verified device can be decorated in the UI to show that they have been sent
 from a verified device.
