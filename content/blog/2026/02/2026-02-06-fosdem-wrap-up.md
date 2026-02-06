@@ -22,7 +22,7 @@ We started right before FOSDEM with a Hackathon on Friday, 30th of January. Abou
 
 We spent the day hacking and talking, took a short pizza break for lunch thanks to Famedly’s sponsorship, and went back to work. At the end of the day people presented the result of what they had been working on. Among others, people worked on:
 
-- [Nexus](https://github.com/Henry-Hiles/nexus), a brand new flutter client from the community  
+- [Nexus](https://git.federated.nexus/henry-hiles/nexus), a brand new flutter client from the community  
 - An IKEA-style assembly instructions to join a MatrixRTC call  
 - Encrypted Search in Element X Android (still in progress)  
 - Contributions to the [sticker and emoji MSC](https://github.com/matrix-org/matrix-spec-proposals/pull/2545)  
