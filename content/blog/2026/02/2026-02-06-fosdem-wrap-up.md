@@ -64,7 +64,7 @@ On Sunday, 1st February, we still had our booth, but we also coordinated the [De
 
 ![A picture of a lecture room that is full, while two speakers give a talk.](/blog/img/2026-02-06-fosdem-devroom.webp)
 
-We received representatives from [ROOST](https://fosdem.org/2026/schedule/event/U7ABHE-roost-osprey/), [Draupnir](https://fosdem.org/2026/schedule/event/SHYBQ7-draupnir_a_field_report_on_building_community_focussed_t_s_tooling_within_an_ope/) and [our own T&S team](https://fosdem.org/2026/schedule/event/JKWGWG-community_moderation_in_matrix/) to discuss how to keep people safe in decentralised environments.
+We received representatives from [ROOST](https://fosdem.org/2026/schedule/event/U7ABHE-roost-osprey/), [Draupnir](https://fosdem.org/2026/schedule/event/SHYBQ7-draupnir_a_field_report_on_building_community_focussed_t_s_tooling_within_an_ope/) and [our own Trust & Safety team](https://fosdem.org/2026/schedule/event/JKWGWG-community_moderation_in_matrix/) to discuss how to keep people safe in decentralised environments.
 
 ![A portrait of Cassidy and Anne, two speakers giving a talk in front of their slides](/blog/img/2026-02-06-fosdem-roost.webp)
 
