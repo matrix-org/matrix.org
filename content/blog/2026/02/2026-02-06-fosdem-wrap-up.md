@@ -20,7 +20,7 @@ We started right before FOSDEM with a Hackathon on Friday, 30th of January. Abou
 
 ![A picture of people gathered around a whiteboard](/blog/img/2026-02-06-fosdem-decision-making.webp)
 
-We spent the day hacking and talking, took a short pizza break for lunch thanks to Famedly’s sponsorship, and went back to work. At the end of the day people presented the result of what they had been working on. Among others, people worked on
+We spent the day hacking and talking, took a short pizza break for lunch thanks to Famedly’s sponsorship, and went back to work. At the end of the day people presented the result of what they had been working on. Among others, people worked on:
 
 - [Nexus](https://github.com/Henry-Hiles/nexus), a brand new flutter client from the community  
 - An IKEA-style assembly instructions to join a MatrixRTC call  
@@ -50,7 +50,7 @@ This could be because we gave away more than 100 T-shirts and a handful of caps,
 
 We also had cool demos on the stand. Dominik and Kim have set up an air-gapped deployment of Matrix to showcase the various clients and administration tools. Christian and Florian used the hackathon time to set up a demo with a receipt ticket printer that would print whatever you send in a specific room, and one with an e-ink screen that would display whatever you send in the same room.
 
-Overall, the discussions with attendees were overwhelmingly positive. Most of them were about how Matrix is useful to people, to tell us our work matters, or to tell us that the software had gone a long way. We're moved by all this gratitude and pleased to see that people believe that the ecosystem is going in a good direction.
+Overall, the discussions with attendees were overwhelmingly positive. Most of them were about how Matrix is useful to people, expressing that our work matters and that the software has come a long way. We're moved by all this gratitude and pleased to see that people believe that the ecosystem is going in a good direction.
 
 ![A picture of t-shirts stacked on a booth. There seems to be a lot of activity around the booth.](/blog/img/2026-02-06-fosdem-cyberdeck.webp)
 
@@ -64,7 +64,7 @@ On Sunday, 1st February, we still had our booth, but we also coordinated the [De
 
 ![A picture of a lecture room that is full, while two speakers give a talk.](/blog/img/2026-02-06-fosdem-devroom.webp)
 
-We received people from [ROOST](https://fosdem.org/2026/schedule/event/U7ABHE-roost-osprey/), [Draupnir](https://fosdem.org/2026/schedule/event/SHYBQ7-draupnir_a_field_report_on_building_community_focussed_t_s_tooling_within_an_ope/) and [our own T&S team](https://fosdem.org/2026/schedule/event/JKWGWG-community_moderation_in_matrix/) to discuss how to keep people safe in decentralised environments.
+We received representatives from [ROOST](https://fosdem.org/2026/schedule/event/U7ABHE-roost-osprey/), [Draupnir](https://fosdem.org/2026/schedule/event/SHYBQ7-draupnir_a_field_report_on_building_community_focussed_t_s_tooling_within_an_ope/) and [our own T&S team](https://fosdem.org/2026/schedule/event/JKWGWG-community_moderation_in_matrix/) to discuss how to keep people safe in decentralised environments.
 
 ![A portrait of Cassidy and Anne, two speakers giving a talk in front of their slides](/blog/img/2026-02-06-fosdem-roost.webp)
 
@@ -101,7 +101,7 @@ In the talk [From Policy To Practice; Open Source in The Dutch Government](https
 
 Both ZenDis and DINUM are using Matrix. They also both sent representatives in the [Open Source & EU Policy Track](https://fosdem.org/2026/schedule/track/open-source-eu-policy/), for example in this panel: [Public Procurement for Digital Sovereignty](https://fosdem.org/2026/schedule/event/WKCBGM-procurement-sovereignty/).
 
-In [Linux on the Desktop – Why Digital Sovereignty Starts Here](https://fosdem.org/2026/schedule/event/EZVWLC-linux_desktop/), the speaker highlights Matrix as the solution of choice for sovereign chat
+In [Linux on the Desktop – Why Digital Sovereignty Starts Here](https://fosdem.org/2026/schedule/event/EZVWLC-linux_desktop/), the speaker highlights Matrix as the solution of choice for sovereign chat.
 
 ![A slide presenting OpenDesk, which contains Element, a Matrix-based solution.](/blog/img/2026-02-06-fosdem-opendesk.webp)
 
