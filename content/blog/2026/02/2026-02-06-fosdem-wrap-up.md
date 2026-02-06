@@ -62,11 +62,11 @@ Finally, a big shout out to all the volunteers who helped us staffing the booth 
 
 On Sunday, 1st February, we still had our booth, but we also coordinated the [Decentralised Communication devroom](https://fosdem.org/2026/schedule/track/decentralised-communication/) next door. It was a full day devroom between 9am and 5pm. Traditionally Sunday morning is the slowest moment of FOSDEM, but the devroom filled up very quickly. By 10am every seat was taken and we had to start refusing people.
 
-![A picture of a lecture room that is full, while two speakers give a talk.](/blog/img/2026-02-06-fosdem-devroom.webp)
+![A picture of a lecture room that is full, while two speakers give a talk.](/blog/img/2026-02-06-fosdem-devroom.avif)
 
 We received representatives from [ROOST](https://fosdem.org/2026/schedule/event/U7ABHE-roost-osprey/), [Draupnir](https://fosdem.org/2026/schedule/event/SHYBQ7-draupnir_a_field_report_on_building_community_focussed_t_s_tooling_within_an_ope/) and [our own Trust & Safety team](https://fosdem.org/2026/schedule/event/JKWGWG-community_moderation_in_matrix/) to discuss how to keep people safe in decentralised environments.
 
-![A portrait of Cassidy and Anne, two speakers giving a talk in front of their slides](/blog/img/2026-02-06-fosdem-roost.webp)
+![A portrait of Cassidy and Anne, two speakers giving a talk in front of their slides](/blog/img/2026-02-06-fosdem-roost.avif)
 
 On the Matrix side, we gave our famous [State of the Union](https://fosdem.org/2026/schedule/event/URX89L-matrix-state-of-the-union/). Element explained how [making Element Web more modular](https://fosdem.org/2026/schedule/event/DZJVTS-an-element-web-client-for-the-future/) would help make it snappier. Neil also talked about the problem of [becoming sustainable when you give away software for free](https://fosdem.org/2026/schedule/event/BRRQYU-sustainable-matrix-at-element/). Finally, their VoIP team showed a [fun demo of a Godot game using MatrixRTC](https://fosdem.org/2026/schedule/event/UW9GKA-matrixrtc-godot-battle-royale/) behind the scenes for the multiplayer mode.
 
@@ -95,7 +95,7 @@ Finally, Matrix was also on the lips of many, regularly cited as an example of w
 
 The Foundation’s legal Data Protection Officer (DPO) monitors the evolution of the legal landscape, and shared her insights in her talk [Digital Omnibus: is the EU's tech simplification a Risk or Opportunity for Open Source?](https://fosdem.org/2026/schedule/event/GM7FZW-digital_omnibus_is_the_eus_tech_simplification_a_risk_or_opportunity_for_open_so/).
 
-![A picture of Denise, a speaker giving a talk, in front of her slides. Her slides mention risks from the upcoming Digital Omnibus regulation.](/blog/img/2026-02-06-fosdem-denise-omnibus.webp)
+![A picture of Denise, a speaker giving a talk, in front of her slides. Her slides mention risks from the upcoming Digital Omnibus regulation.](/blog/img/2026-02-06-fosdem-denise-omnibus.avif)
 
 In the talk [From Policy To Practice; Open Source in The Dutch Government](https://fosdem.org/2026/schedule/event/BNPJ7P-from-policy-to-practice-open-source-in-gov/), the Dutch government explained why they used OpenDesk, which includes Element, and why it makes sense for them to fund their upstreams more.
 
