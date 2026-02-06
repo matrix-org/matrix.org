@@ -28,13 +28,13 @@ We spent the day hacking and talking, took a short pizza break for lunch thanks 
 - Contributions to the [sticker and emoji MSC](https://github.com/matrix-org/matrix-spec-proposals/pull/2545)  
 - A bot that takes images posted in a specific room and prints them on a [receipt printer](https://wiki.chrpaul.de/web_of_things:fosdem_2026)  
 - The [Matrix Conference 2026 website](https://2026.matrix.org/) and [Call for Proposals](https://cfp.2026.matrix.org/matrix-conference-2026/cfp) launch  
-- But also discussions about [MSC4256](https://github.com/matrix-org/matrix-spec-proposals/pull/4256), the MLS mode for Matrix. 
+- But also discussions about [MSC4256](https://github.com/matrix-org/matrix-spec-proposals/pull/4256), the MLS mode for Matrix
 
-You can watch [the recording of our live stream](https://www.youtube.com/watch?v=U_YdrcrWw8M) to catch up with all the ideas people had! Some projects succeeded, some projects didn’t, but we’re happy about the outcome: in all cases people *tried* to create something new or to contribute to an existing project. In all cases people have learnt along the way, and that was the main point of the hackathon.
+You can watch [the recording of our live stream](https://www.youtube.com/watch?v=U_YdrcrWw8M) to catch up with all the ideas people had! Some projects succeeded, some projects didn’t, but we’re happy about the outcome: in all cases people *tried* to create something new or to contribute to an existing project. In each instance, participants learned along the way, which was the primary goal of the hackathon.
 
 Additionally, an attendee raised an important point. They said: “I came with questions, I expected to meet factions who want to solve the problem differently, but we could talk the problem through and make progress”. This is a real testament to the utility of such events, and we can only encourage more organizations to join the Foundation so we can make even more of these.
 
-After the presentations, we had a chill out evening with dinner sponsored by Element, with Spezi and other drinks still sponsored by Famedly. Everyone had earned their one-time edition Matrix Cap!
+After the presentations, we had a chill out evening with dinner sponsored by Element, with Spezi and other drinks sponsored by Famedly. Everyone had earned their one-time edition Matrix Cap!
 
 ![A picture of about a thousand people in a room, looking at the camera and smiling. All of them are wearing Matrix hats.](/blog/img/2026-02-06-fosdem-hackathon-group.webp)
 
@@ -48,9 +48,9 @@ The next morning, on Saturday, 31st January, [FOSDEM](https://fosdem.org/2026/) 
 
 This could be because we gave away more than 100 T-shirts and a handful of caps, or this could be because people wanted to try the famous Swedish liquorice sweets that our community member Magnus brought, like every year!
 
-We also had cool demos on the stand. Dominik and Kim have set up an air-gapped deployment of Matrix to showcase the various clients and administration tools. Christian and Florian used the hackathon time to set up a demo with a receipt ticket printer that would print whatever you send in a specific room, and one with an e-ink screen that would display whatever you send in the same room.
+We also had cool demos on the stand. Dominik and Kim have set up an air-gapped deployment of Matrix to showcase the various clients and administration tools. Christian and Florian used the hackathon time to set up a demo with a receipt ticket printer that would print whatever you send in a specific room, and one with an e-ink screen that would display whatever you sent in the same room.
 
-Overall, the discussions with attendees were overwhelmingly positive. Most of them were about how Matrix is useful to people, expressing that our work matters and that the software has come a long way. We're moved by all this gratitude and pleased to see that people believe that the ecosystem is going in a good direction.
+Overall, the discussions with attendees were overwhelmingly positive. Most of them were about how Matrix is useful to people, expressing that our work matters and that the software has come a long way. We're moved by all this gratitude and are pleased to see that people believe that the ecosystem is going in a good direction.
 
 ![A picture of t-shirts stacked on a booth. There seems to be a lot of activity around the booth.](/blog/img/2026-02-06-fosdem-cyberdeck.webp)
 
