@@ -27,7 +27,7 @@ We spent the day hacking and talking, took a short pizza break for lunch thanks 
 - Encrypted Search in Element X Android (still in progress)  
 - Contributions to the [sticker and emoji MSC](https://github.com/matrix-org/matrix-spec-proposals/pull/2545)  
 - A bot that takes images posted in a specific room and prints them on a [receipt printer](https://wiki.chrpaul.de/web_of_things:fosdem_2026)  
-- The [Matrix Conference 2026 website](https://2026.matrix.org/) and [Call for Proposals](https://cfp.2026.matrix.org/matrix-conference-2026/cfp) launch  
+- The [Matrix Conference 2026 website](https://conference.matrix.org/) and [Call for Proposals](https://cfp.2026.matrix.org/matrix-conference-2026/cfp) launch  
 - But also discussions about [MSC4256](https://github.com/matrix-org/matrix-spec-proposals/pull/4256), the MLS mode for Matrix
 
 You can watch [the recording of our live stream](https://www.youtube.com/watch?v=U_YdrcrWw8M) to catch up with all the ideas people had! Some projects succeeded, some projects didn’t, but we’re happy about the outcome: in all cases people *tried* to create something new or to contribute to an existing project. In each instance, participants learned along the way, which was the primary goal of the hackathon.
