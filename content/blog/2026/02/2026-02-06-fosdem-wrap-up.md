@@ -54,7 +54,7 @@ Overall, the discussions with attendees were overwhelmingly positive. Most of th
 
 ![A picture of t-shirts stacked on a booth. There seems to be a lot of activity around the booth.](/blog/img/2026-02-06-fosdem-cyberdeck.webp)
 
-Our gratitude goes to Dominik Rimpf who set up the infrastructure for volunteers to take shifts, and who helped us set up the demo at the booth, but also to Kim for setting up the demo on the laptops we had with us, as well as the rest of the [Events Working Group](https://matrix.org/foundation/working-groups/events/) for helping with the organisation of the event. We also want to thank Element who donated the three laptops we used to the Foundation, so that we can have a “Booth Box” ready to follow us everywhere we go.
+Our gratitude goes to Dominik Rimpf who set up the infrastructure for volunteers to take shifts, and who helped us set up the demo at the booth, but also to Kim for setting up the demo on the laptops we had with us, as well as the rest of the [Events Working Group](@/foundation/working-groups/events.md) for helping with the organisation of the event. We also want to thank Element who donated the three laptops we used to the Foundation, so that we can have a “Booth Box” ready to follow us everywhere we go.
 
 Finally, a big shout out to all the volunteers who helped us staffing the booth and answering the attendance's questions: Mikhail, Oleg, kitsune, Bruno, weeman, anoa, Nico, td, Mithgarthsormr, stereo, Dave, Denise, Pierre, Jade, Guillaume, Milton, Tom, Hans, Sergey, QuadRadical, and Kai.
 
