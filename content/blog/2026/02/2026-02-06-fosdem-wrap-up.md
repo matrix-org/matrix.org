@@ -56,7 +56,7 @@ Overall, the discussions with attendees were overwhelmingly positive. Most of th
 
 Our gratitude goes to Dominik Rimpf who set up the infrastructure for volunteers to take shifts, and who helped us set up the demo at the booth, but also to Kim for setting up the demo on the laptops we had with us, as well as the rest of the [Events Working Group](https://matrix.org/foundation/working-groups/events/) for helping with the organisation of the event. We also want to thank Element who donated the three laptops we used to the Foundation, so that we can have a “Booth Box” ready to follow us everywhere we go.
 
-Finally, a big shout out to all the volunteers who helped us staffing the booth and answering the attendance's questions: Mikhail, Oleg, kitsune, Bruno, weeman, anoa, Nico, td, Mithgarthsormr, stereo, Dave, Denise, Pierre, Jade, Guillaume, Milton, Tom, Hans, Sergey, QuadRadical, Kai.
+Finally, a big shout out to all the volunteers who helped us staffing the booth and answering the attendance's questions: Mikhail, Oleg, kitsune, Bruno, weeman, anoa, Nico, td, Mithgarthsormr, stereo, Dave, Denise, Pierre, Jade, Guillaume, Milton, Tom, Hans, Sergey, QuadRadical, and Kai.
 
 ## Devroom
 
@@ -76,7 +76,7 @@ The devroom also welcomed our friends from the XMPP, DASL, ATProto and ActivityP
 
 ## FOSDEM Online
 
-Not only did we have a Hackathon, a booth, and contributions to a devroom: Matrix was also *everywhere* at FOSDEM. Indeed, FOSDEM has an online side. Element hosted the infrastructure, and configured and monitored the rooms, widgets and bots that run the online side of FOSDEM.
+Not only did we have a Hackathon, a booth, and contributions to a devroom: Matrix was also *everywhere* at FOSDEM. Indeed, FOSDEM has an online side. Element hosted the infrastructure and configured and monitored the rooms, widgets, and bots that run the online side of FOSDEM.
 
 In terms of numbers:
 
@@ -89,7 +89,7 @@ We’re incredibly proud that the FOSDEM team renewed their trust in us, and tha
 
 ## Elsewhere at FOSDEM
 
-Finally, Matrix was also on many lips, regularly cited as an example of what to do. For example, in [The Hidden Layer: Bringing Protocol Governance into Digital Policy](https://fosdem.org/2026/schedule/event/NCRJWM-protocol-governance-in-digital-policy/), Matrix was presented as an example of good governance.
+Finally, Matrix was also on the lips of many, regularly cited as an example of what to do. For example, in [The Hidden Layer: Bringing Protocol Governance into Digital Policy](https://fosdem.org/2026/schedule/event/NCRJWM-protocol-governance-in-digital-policy/), Matrix was presented as an example of good governance.
 
 ![A picture where Tchap appears on slides](/blog/img/2026-02-06-fosdem-tchap.webp)
 
