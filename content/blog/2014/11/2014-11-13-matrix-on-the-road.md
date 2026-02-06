@@ -21,7 +21,7 @@ Three teams announced that they were using Matrix to build their hack but eventu
 
 Matrix team worked on <a href="http://challengepost.com/software/animatrix">Animatrix</a>: a chat app allowing you to build your own 3D animated cartoon and share it with any other friend using Matrix-compliant app using Unify. We had to hack together a basic Matrix Android client in order to do the demo .... You can see our project's presentation <a href="http://techcrunch.com/video/animatrix-presents-disrupt-sf-2014-hackathon/518404216/">here</a>!
 
-<a href="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_48581.jpg"><img class="size-medium wp-image-195 aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_48581-300x225.jpg" alt="IMG_4858[1]" width="300" height="225" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_48581.avif"><img class="size-medium wp-image-195 aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_48581-300x225.jpg" alt="IMG_4858[1]" width="300" height="225" /></a>
 
 The three days conference was great in terms of reaching out to devs and getting good feedback on Matrix! We love seeing people's eyes lighting up and people saying "Eventually someone is doing it!" when we explain what Matrix is about :) So thank you all for your support!
 
@@ -29,7 +29,7 @@ The three days conference was great in terms of reaching out to devs and getting
 
 After getting public in SF, <a href="http://techcrunch.com/events/disrupt-eu/event-home/">Disrupt London </a>was the next steps to release a more stable version of Matrix and encourage even more people to build on Matrix. Again we sponsored both the Hackathon and the Conference and we brought with us a very cool <a href="http://www.trossenrobotics.com/phantomx-ax-hexapod.aspx" target="_blank">PhantomX robot from Trossen Robotics</a> which was also the price we gave away during the hackathon.
 
-<a href="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_50191.jpg"><img class="size-medium wp-image-193 aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_50191-300x225.jpg" alt="IMG_5019[1]" width="300" height="225" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_50191.avif"><img class="size-medium wp-image-193 aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_50191-300x225.jpg" alt="IMG_5019[1]" width="300" height="225" /></a>
 
 Two teams pitched a Matrix project at the <a href="http://techcrunch.com/events/disrupt-europe-hackathon-2014-london/">Hackathon </a>this time:
 

@@ -23,11 +23,11 @@ One of the great things is it doesn’t require heavy modifications to Element: 
 
 New this year, we also generated a space hierarchy for the whole conference at [#fosdem2022:fosdem.org](https://matrix.to/#/#fosdem2022:fosdem.org) to help navigate the maze of rooms, making it even easier for users on their own servers to jump in:
 
-![FOSDEM Space listing all the FOSDEM rooms](/blog/img/2022-07-02-fosdem_space.png)
+![FOSDEM Space listing all the FOSDEM rooms](/blog/img/2022-07-02-fosdem_space.avif)
 
 Another greatly appreciated feature was the famous “maximised widgets” I (Thib) [keep telling you about in Matrix Live episodes](https://www.youtube.com/c/Matrixdotorg). Attendees and speakers could give the conference the central attention it deserved while simultaneously keeping an eye on what was happening in the chat. 
 
-![FOSDEM stand with maximised widget view](/blog/img/2022-07-02-fosdem_stand.png)
+![FOSDEM stand with maximised widget view](/blog/img/2022-07-02-fosdem_stand.avif)
 
 From the speaker's perspective, we tried to streamline the user journey as much as possible: a bot invited them to a backstage room, in which they joined a Jitsi widget while their talk was being played in the track or devroom. They could see the most upvoted questions by the audience in a dedicated widget. A few minutes before their pre-recorded talk was over, a countdown (new this year!) could be displayed to tell them and the host they were about to go live. At the end of the countdown, the backstage Jitsi was broadcasted to the track so the speaker could answer the questions.
 

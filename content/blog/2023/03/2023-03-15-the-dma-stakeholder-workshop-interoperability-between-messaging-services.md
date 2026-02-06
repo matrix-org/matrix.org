@@ -192,7 +192,7 @@ This was a fascinating opportunity to have a front-row seat at history being mad
 
 We saw the full spectrum of options on the table, from Meta’s implications that they would simply open their existing API complete with the existing Double Ratchet Encryption, to the pragmatic approach of Matrix (“at first we’ll bridge, and then the players should gradually converge on an open standard”) to the more idealistic approach of MIMI (“everyone should natively adopt an entirely new open standard built on MLS”).  The next step is to establish a reference implementation and approach, and in the end it seems likely that the approach that works will be the one which the gatekeepers can actually practically adopt within the punchy timeframes built into the legislation:
 
-![DMA timeline](/blog/img/dma.jpg)
+![DMA timeline](/blog/img/dma.avif)
 
 You can also check out [Carl Schwan’s writeup](https://carlschwan.eu/2023/03/02/digital-market-act-workshop-in-brussels/) (from NeoChat), as well as Eric Rescorla’s braindump on [DMA interoperability](https://educatedguesswork.org/posts/dma-interop/) that accompanies his talk.
 
