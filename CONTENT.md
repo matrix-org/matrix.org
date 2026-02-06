@@ -84,7 +84,8 @@ It is possible to add pictures to your posts in markdown. First you need to drop
 
 This shortcode ensures that images have a consistent look across posts.
 
-We prefer using avif or webp files when possible. However if this is not an option we also accept PNG files provided they are reasonable sized and the file size is appropriate for web usage.
+We prefer using AVIF, or failing that WebP, files when possible.
+However if this is not an option we also accept PNG files provided they are reasonable sized and the file size is appropriate for web usage.
 
 ### Embedding a YouTube player
 
