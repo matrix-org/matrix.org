@@ -3,7 +3,7 @@ date = "2026-02-06T12:30:00+00:00"
 title = "FOSDEM 2026 Wrap Up"
 
 [taxonomies]
-author = ["Thib", "Website & Events Working Group"]
+author = ["Thib", "Website & Content Working Group", "Events Working Group"]
 category = ["FOSDEM", "Events"]
 
 [extra]
