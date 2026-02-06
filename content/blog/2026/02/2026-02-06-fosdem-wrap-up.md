@@ -101,7 +101,7 @@ In the talk [From Policy To Practice; Open Source in The Dutch Government](https
 
 Both ZenDis and DINUM are using Matrix. They also both sent representatives in the [Open Source & EU Policy Track](https://fosdem.org/2026/schedule/track/open-source-eu-policy/), for example in this panel: [Public Procurement for Digital Sovereignty](https://fosdem.org/2026/schedule/event/WKCBGM-procurement-sovereignty/).
 
-In [Linux on the Desktop – Why Digital Sovereignty Starts Here](https://fosdem.org/2026/schedule/event/EZVWLC-linux_desktop/), the speaker highlights Matrix as the solution of choice for sovereign chat.
+In [Linux on the Desktop – Why Digital Sovereignty Starts Here](https://fosdem.org/2026/schedule/event/EZVWLC-linux_desktop/), the speaker highlighted Matrix as the solution of choice for sovereign chat.
 
 ![A slide presenting OpenDesk, which contains Element, a Matrix-based solution.](/blog/img/2026-02-06-fosdem-opendesk.webp)
 
