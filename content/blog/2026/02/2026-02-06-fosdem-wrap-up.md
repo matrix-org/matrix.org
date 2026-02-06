@@ -70,7 +70,7 @@ We received representatives from [ROOST](https://fosdem.org/2026/schedule/event/
 
 On the Matrix side, we gave our famous [State of the Union](https://fosdem.org/2026/schedule/event/URX89L-matrix-state-of-the-union/). Element explained how [making Element Web more modular](https://fosdem.org/2026/schedule/event/DZJVTS-an-element-web-client-for-the-future/) would help make it snappier. Neil also talked about the problem of [becoming sustainable when you give away software for free](https://fosdem.org/2026/schedule/event/BRRQYU-sustainable-matrix-at-element/). Finally, their VoIP team showed a [fun demo of a Godot game using MatrixRTC](https://fosdem.org/2026/schedule/event/UW9GKA-matrixrtc-godot-battle-royale/) behind the scenes for the multiplayer mode.
 
-![A portrait of Robin, a woman giving a talk in front of their slides. In the background we can read the word "Godot" on her slides.](/blog/img/2026-02-06-fosdem-robin.JPG)
+![A portrait of Robin, a woman giving a talk in front of their slides. In the background we can read the word "Godot" on her slides.](/blog/img/2026-02-06-fosdem-robin.avif)
 
 The devroom also welcomed our friends from the XMPP, DASL, ATProto and ActivityPub / Bonfire communities.
 
