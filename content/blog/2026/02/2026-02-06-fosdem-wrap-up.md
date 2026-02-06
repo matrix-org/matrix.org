@@ -113,7 +113,7 @@ Finally, Matrix community member Jade also gave a talk about the Continuwuity ho
 
 ## Where to Find Us Next
 
-FOSDEM is an important milestone for the Matrix ecosystem, and we’re proud of how successful it has been for us this year again. But FOSDEM is not the only conference we attend. Our next major milestone is The Matrix Conference 2026, and this year we will meet in Malmö, in Sweden, in October!
+FOSDEM is an important milestone for the Matrix ecosystem, and we’re proud of how successful it has been for us this year again. But FOSDEM is not the only conference we attend. Our next major milestone is [The Matrix Conference 2026](https://conference.matrix.org), and this year we will meet in Malmö, in Sweden, in October!
 
 We’re thrilled to launch our [Call for Proposals](https://cfp.2026.matrix.org/matrix-conference-2026/cfp) and encourage you to submit yours early on. We want to strike a good balance in talks between organisational and community talks - the Conference is for the whole ecosystem! Attendees should get a good idea of where Matrix is today, but we are always excited to go wild about what Matrix could be in the future.
 
