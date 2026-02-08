@@ -1,11 +1,13 @@
-// SPDX-FileCopyrightText: 2026 The Matrix.org Foundation C.I.C.
-// SPDX-FileContributor: awtj8o81ryywg793
-//
-// SPDX-License-Identifier: Apache-2.0
+/*
+ * SPDX-FileCopyrightText: 2026 The Matrix.org Foundation C.I.C.
+ * SPDX-FileContributor: awtj8o81ryywg793
+ * 
+ * SPDX-License-Identifier: Apache-2.0
+ */
 
 const toggles = document.querySelectorAll(".site-header label");
 
-/**
+/*
  * Retrieves the checkbox associated with a given label element.
  *
  * @param {HTMLElement} element - The label element.
@@ -16,7 +18,7 @@ const getCheckbox = (element) =>
         `.site-header input[type="checkbox"]#${element.getAttribute('for')}`
     );
 
-/**
+/*
  * Retrieves all related toggles for a given label element, excluding itself.
  *
  * @param {HTMLElement} element - The label element.
@@ -27,7 +29,7 @@ const getRelatedToggles = (element) =>
         `.site-header label[for="${element.getAttribute('for')}"]`
     )).filter(related => related !== element);
 
-/**
+/*
  * Toggles the ARIA attributes of a given label element.
  *
  * @param {HTMLElement} element - The label element to toggle attributes for.
@@ -40,7 +42,7 @@ const toggleAriaAttributes = (element) => {
     element.setAttribute("aria-pressed", !isPressed);
 };
 
-/**
+/*
  * Handles the toggle action for a given label element, including updating
  * ARIA attributes and checkbox state.
  *
