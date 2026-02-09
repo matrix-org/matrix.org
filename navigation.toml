@@ -114,6 +114,12 @@ href = "https://bsky.app/profile/matrix.org"
 newTab = true
 
 [[footer_external]]
+image = "linkedin.svg"
+alt = "Matrix on LinkedIn"
+href = "https://www.linkedin.com/company/matrix-org/"
+newTab = true
+
+[[footer_external]]
 image = "youtube.svg"
 alt = "Matrix on YouTube"
 href = "https://www.youtube.com/channel/UCVFkW-chclhuyYRbmmfwt6w"
