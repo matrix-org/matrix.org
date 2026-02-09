@@ -18,6 +18,7 @@ enable = [
   "MD038",  # Remove extra spaces in code
   "MD039",  # Remove extra spaces in links
   "MD042",  # Avoid Empty Links
+  "MD045",  # Images should have alt text
   "MD056",  # Keep table column count consistent
   "MD058",  # Add blank lines around tables
 ]
