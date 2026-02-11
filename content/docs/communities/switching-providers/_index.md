@@ -135,7 +135,7 @@ Foundation knows](@/ecosystem/hosting/index.md).
 
 Transferring ownership is one of the great strengths of Matrix. You can start
 your community with an account you have created on the matrix.org homeserver and
-then decide to move to another server.
+then [decide to move to another server](@/docs/advanced/account_migration/_index.md).
 
 Matrix before [room version 12](#) has not had a concept of ownership: it relies on
 [Power Levels](@/docs/communities/moderation/_index.md#power-levels) to define whether
