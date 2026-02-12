@@ -1,0 +1,27 @@
++++
+date = "2026-02-12T14:00:00+00:00"
+title = "Welcoming Discord users amidst the challenge of Age Verification"
+
+[taxonomies]
+author = ["Matthew Hodgson"]
+category = ["General", "Trust & Safety", "Policy"]
++++
+
+Hi all,
+
+We’ve seen a huge spike of signups on the [matrix.org homeserver](https://matrix.org/homeserver/about/) over the last few days due to [Discord announcing its plans to age-verify all users as of next month](https://discord.com/press-releases/discord-launches-teen-by-default-settings-globally). We’d like to give a warm welcome to the massive influx of users currently trying Matrix as an open decentralised alternative to centralised platforms like Discord. We wish we had more time and resources to develop all the features needed for mainstream adoption (see [The Road To Mainstream Matrix](https://www.youtube.com/watch?v=lkCKhP1jxdk) from last year’s FOSDEM), but we're happy to welcome you anyway!
+
+
+The biggest difference between Matrix and Discord is that Matrix is an open standard, like email or the Web. There’s a wide range of both clients and servers, and anyone can run their own server on their own terms while participating in the global Matrix network.
+
+However, it’s important to note that server admins are still subject to the law in the jurisdiction where they operate.
+
+Practically speaking, that means that people and organisations running a Matrix server with open registration must verify the ages of users in countries which require it. Last summer we announced a series of changes to the terms and conditions of the Matrix.org homeserver instance, to ensure UK-based users are handled in alignment with the UK’s Online Safety Act (OSA). Since then Australia, New Zealand and the EU have introduced similar legislation, with movement in the US and Canada too. If you’ve been around for a while, you will have seen that we started raising the alarm about the dangers and potential risks of the OSA back in 2021 - but the reality is that these laws already apply, and the consequences of getting it wrong are serious.
+
+From our perspective, the matrix.org homeserver instance has never been a service aimed at children, which our terms of use reflect by making it clear that users need to be at least 18 years old to use the server. However, the various age-verification laws require stricter forms of age verification measures than a self-declaration. Our Safety team and DPO are evaluating options that preserve your privacy while satisfying the age verification requirements in the jurisdictions where we have users. As a free service, we also have to be mindful of the cost of age-verification compliance. Paying for a matrix.org [Premium account](http://account.matrix.org) with a credit card is one approach which would verify your account and support our work. [Premium accounts](https://matrix.org/homeserver/pricing/) are currently going through a phased roll out, so if you’re on an older account you might not see the option to convert your account yet, you can mail <billing-support@matrix.org> if you wish to be upgraded.
+
+We also want to make it easy for users to move their account to another server with a feature called account portability. Account portability would give users more freedom to choose a server that matches their needs, and it would reduce the load on our matrix.org server. This takes significant work, but there should be some new Matrix Spec Change proposals (MSCs) in the coming weeks showing the direction of travel.
+
+Finally: we’re painfully aware that none of the Matrix clients available today provide a full drop-in replacement for Discord yet. All the ingredients are there, and the initial goal for the project was always to provide a decentralised, secure, open platform where communities and organisations could communicate together. However, the reality is that the team at Element who originally created Matrix have had to focus on providing deployments for the public sector (see [here](https://www.euractiv.com/news/commission-trials-european-open-source-communications-software/) or [here](https://www.theregister.com/2026/02/09/matrix_element_secure_chat/)) to be able to pay developers working on Matrix. Some of the key features expected by Discord users have yet to be prioritised (game streaming, push-to-talk, voice channels, custom emoji, extensible presence, richer hierarchical moderation, etc). Meanwhile no other organisation stepped up to focus on the “communication tool for communities” use case and provide a production ready Discord alternative, but clients like [Cinny](https://cinny.in) or [Commet](https://commet.chat) may feel much closer to Discord. On the other hand, Matrix goes far beyond Discord in other areas: both messages, files and calls are end-to-end-encrypted; we have read receipts; Matrix is an open protocol everyone can extend, and in the end, most Matrix clients are open source; there is nothing stopping developers from starting their own project based on existing ones and adding the missing features themselves. They may even eventually get accepted in the original projects!
+
+Anyway, TL;DR: Welcome to everyone trying Matrix for the first time; please understand that public Matrix servers will also have to uphold age verification laws, as misguided as they might be. However, at least in Matrix you have the opportunity to run your own servers as you wish: we actively encourage you to make your own assessments and seek legal advice where needed.
