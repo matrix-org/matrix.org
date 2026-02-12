@@ -151,7 +151,7 @@ was given to the other.
 Introduction of room version 12 adjusted this slightly by introducing room creators.
 The account creating a room has an implicit infinite power level.
 Additional accounts can be named as co-creators during room creation and will share
-the inifinite power level.
+the infinite power level.
 Creators' Power Level cannot be removed by others nor themselves.
 The only way to remove room creators from a room is by
 [upgrading](@/docs/communities/administration/_index.md#room-upgrades)
