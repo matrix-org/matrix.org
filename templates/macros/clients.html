@@ -5,7 +5,7 @@
 - voip_jitsi: Jitsi-based group calls
 - threads: Threading support
 - sso: Legacy Single Sign-On (m.login.sso)
-- oidc: Native OIDC/OAuth 2.0 authentication (Matrix Authentication Service, added in spec 1.15)
+- oauth: Native OIDC/OAuth 2.0 authentication (added in spec 1.15)
 - multi_account: Multiple account support
 - multi_language: Internationalization/localization support
 #}
@@ -18,7 +18,7 @@
 "voip_jitsi",
 "threads",
 "sso",
-"oidc",
+"oauth",
 "multi_account",
 "multi_language"
 ] %}
@@ -29,8 +29,8 @@
 E2EE
 {% elif feature_name == "sso" %}
 Legacy SSO
-{% elif feature_name == "oidc" %}
-OIDC
+{% elif feature_name == "oauth" %}
+OAuth 2.0
 {% elif feature_name == "voip_1to1" %}
 VoIP (1:1)
 {% elif feature_name == "voip_jitsi" %}
