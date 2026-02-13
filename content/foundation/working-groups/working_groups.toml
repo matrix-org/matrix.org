@@ -80,7 +80,7 @@ Paramount to all these formalities we are introducing by creating a WG from a Fo
   - this explicitly excludes decisions about the merchandise sold on the store and the financial aspects, but includes only the technical operation.
 """
 committee = "Community Committee"
-members = ["Thib", "HarHarLinks", "MTRNord"]
+members = ["Thib", "HarHarLinks", "MTRNord", "Jack"]
 chairs = ["MTRNord"]
 sponsor = "HarHarLinks"
 meetings = "Thursdays, 16:00-17:00 Berlin time. Please reach out via our Matrix room to join."
