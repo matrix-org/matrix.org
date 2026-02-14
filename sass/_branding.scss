@@ -1,0 +1,32 @@
+.branding-card-deck {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media screen and (min-width: 601px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.branding-card {
+    border: 1px solid #d2d2d2;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+    padding: 24px;
+    color: inherit;
+
+    img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    &.is-icon img {
+        max-width: 120px;
+    }
+}

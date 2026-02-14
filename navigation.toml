@@ -57,6 +57,10 @@ title = "Shop"
 href = "https://shop.matrix.org"
 
 [[footer_internal]]
+title = "Branding"
+href = "/branding"
+
+[[footer_internal]]
 title = "Security Disclosure Policy"
 href = "/security-disclosure-policy"
 
