@@ -12,11 +12,11 @@ latest_release = "2025-09-23"
 featured = true
 [extra.features]
 e2ee = true
-spaces = false
-voip_1to1 = false
+spaces = true
+voip_1to1 = true
 voip_jitsi = false
-threads = false
-sso = false
+threads = true
+sso = true
 multi_account = false
 multi_language = true
 
