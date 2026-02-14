@@ -1,0 +1,81 @@
+{% extends "page.html" %}
+{% block content %}
+<article class="content">
+    <header>
+        <h1>{{ page.title }}</h1>
+    </header>
+
+    <section class="branding-card-deck">
+        <a
+            class="branding-card"
+            href="{{ get_url(path='branding/matrix-logos.zip') }}"
+            download
+        >
+            <img
+                src="{{ get_url(path='branding/matrix-logos/matrix-logo.svg') }}"
+                alt="Matrix Logo"
+            />
+            <p>Matrix Logos</p>
+        </a>
+        <a
+            class="branding-card is-icon"
+            href="{{ get_url(path='branding/matrix-icons.zip') }}"
+            download
+        >
+            <img
+                src="{{ get_url(path='branding/matrix-icons/matrix-favicon.svg') }}"
+                alt="Matrix Icon"
+            />
+            <p>Matrix Icons</p>
+        </a>
+
+        <a
+            class="branding-card"
+            href="{{ get_url(path='branding/matrix-platinum-badge.zip') }}"
+            download
+        >
+            <img
+                src="{{ get_url(path='branding/matrix-platinum-badge/matrix-Membership--Platinum.svg') }}"
+                alt="Matrix Platinum Badge"
+            />
+            <p>Matrix Platinum Badge</p>
+        </a>
+
+        <a
+            class="branding-card"
+            href="{{ get_url(path='branding/matrix-gold-badge.zip') }}"
+            download
+        >
+            <img
+                src="{{ get_url(path='branding/matrix-gold-badge/matrix-Membership--Gold.svg') }}"
+                alt="Matrix Gold Badge"
+            />
+            <p>Matrix Gold Badge</p>
+        </a>
+
+        <a
+            class="branding-card"
+            href="{{ get_url(path='branding/matrix-silver-badge.zip') }}"
+            download
+        >
+            <img
+                src="{{ get_url(path='branding/matrix-silver-badge/matrix-Membership--Silver.svg') }}"
+                alt="Matrix Silver Badge"
+            />
+            <p>Matrix Silver Badge</p>
+        </a>
+
+        <a
+            class="branding-card"
+            href="{{ get_url(path='branding/matrix-individual-badge.zip') }}"
+            download
+        >
+            <img
+                src="{{ get_url(path='branding/matrix-individual-badge/matrix-Membership--Individual.svg') }}"
+                alt="Matrix Individual Badge"
+            />
+            <p>Matrix Individual Badge</p>
+        </a>
+    </section>
+</article>
+{% endblock content %}
