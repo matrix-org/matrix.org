@@ -64,7 +64,7 @@ We found this sort of grid approach to be really helpful in determining relative
 After many hours and plenty of blood, sweat and tears we ended up with something we could live with and wrote it up in the <a href="https://github.com/orgs/matrix-org/projects/9">shared board</a>.
 
 
-<a href="/blog/wp-content/uploads/2019/02/IMG_2247.jpg"><img class="alignnone size-medium wp-image-3996" src="/blog/wp-content/uploads/2019/02/IMG_2247-300x225.jpg" alt="" width="300" height="225" /></a><a href="/blog/wp-content/uploads/2019/02/IMG_2245.jpg"><img class="alignnone size-medium wp-image-3990" src="/blog/wp-content/uploads/2019/02/IMG_2245-300x225.jpg" alt="" width="300" height="225" /></a>
+<a href="/blog/wp-content/uploads/2019/02/IMG_2247.avif"><img class="alignnone size-medium wp-image-3996" src="/blog/wp-content/uploads/2019/02/IMG_2247-300x225.jpg" alt="" width="300" height="225" /></a><a href="/blog/wp-content/uploads/2019/02/IMG_2245.avif"><img class="alignnone size-medium wp-image-3990" src="/blog/wp-content/uploads/2019/02/IMG_2245-300x225.jpg" alt="" width="300" height="225" /></a>
 
 ### And this is written in blood right?
 
