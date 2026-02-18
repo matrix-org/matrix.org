@@ -7,7 +7,7 @@ author = ["Matrix.org Security Team"]
 category = ["Security", "Cryptography"]
 +++
 
-Today a [blog post](https://soatok.blog/2026/02/17/cryptographic-issues-in-matrixs-rust-library-vodozemac/#vuln-2) was published alleging a series of vulnerabilities in Matrix's vodozemac cryptographic library. The post follows a private disclosure to security@matrix.org. While we prefer coordinated disclosure, the author chose to publish prior to further technical discussion, including clarification of the claimed severity.
+Today a [blog post](https://soatok.blog/2026/02/17/cryptographic-issues-in-matrixs-rust-library-vodozemac/) was published alleging a series of vulnerabilities in Matrix's vodozemac cryptographic library. The post follows a private disclosure to <security@matrix.org>. While we prefer coordinated disclosure, the author chose to publish prior to further technical discussion, including clarification of the claimed severity.
 
 We take cryptographic concerns seriously and welcome scrutiny of our cryptographic protocols and implementations. However, we disagree with several conclusions in the post regarding exploitability and impact to Matrix deployments. Below we analyse the claims in terms of realistic attacker capabilities and protocol invariants.
 
