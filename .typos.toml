@@ -24,7 +24,7 @@ extend-exclude = [
     "content/blog/2024/11/2024-11-08-twim.md",
     # Contains german version
     "content/blog/2025/02/2025-02-14-building-a-safer-matrix.md",
-    "content/blog/2025/04/2025-04-11-twim.md" #username,
+    "content/blog/2025/04/2025-04-11-twim.md", #username
     "content/blog/2026/02/2026-02-20-twim.md" #the lib indead is "smal" and not "small"
 ]
 
