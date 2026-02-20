@@ -1,6 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2026 The Matrix.org Foundation C.I.C.
- * SPDX-FileContributor: awtj8o81ryywg793
+ * SPDX-FileContributor: awtj8o81ryywg793 <181536874+awtj8o81ryywg793@users.noreply.github.com>
  * 
  * SPDX-License-Identifier: Apache-2.0
  */
