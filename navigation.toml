@@ -40,6 +40,10 @@ title = "Homeserver"
 section = "homeserver"
 
 [[header]]
+title = "Conference"
+href = "https://conference.matrix.org"
+
+[[header]]
 title = "Support us"
 href = "/support"
 
