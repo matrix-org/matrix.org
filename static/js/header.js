@@ -54,7 +54,7 @@ const handleToggle = (element) => {
     const relatedToggles = getRelatedToggles(element);
     relatedToggles.forEach(relatedElement => {
         toggleAriaAttributes(relatedElement);
-        relatedElement.setAttribute("aria-pressed", false);
+        relatedElement.setAttribute("aria-pressed", "false");
     });
 
     const checkbox = getCheckbox(element);
