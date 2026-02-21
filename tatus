@@ -1,0 +1,249 @@
+[33mcommit ce18e8870f7b67927718e08e9436d0bc7e42b78d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfix/image_al/text[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Jack S. <181536874+awtj8o81ryywg793@users.noreply.github.com>
+Date:   Mon Feb 2 14:25:51 2026 +0000
+
+    Update: Add Mactrix client (#3176)
+    
+    * Add mactrix.md
+    
+    Signed-off-by: Jack S. <181536874+awtj8o81ryywg793@users.noreply.github.com>
+    
+    * Update E2EE support status
+    
+    Signed-off-by: Jack S. <181536874+awtj8o81ryywg793@users.noreply.github.com>
+    
+    * Set latest release date
+    
+    Signed-off-by: Jack S. <181536874+awtj8o81ryywg793@users.noreply.github.com>
+    
+    * Update E2EE support status
+    
+    Signed-off-by: Jack S. <181536874+awtj8o81ryywg793@users.noreply.github.com>
+    
+    * Add installer url
+    
+    Signed-off-by: Jack S. <181536874+awtj8o81ryywg793@users.noreply.github.com>
+    
+    * Update project maturity
+    
+    Signed-off-by: Jack S. <181536874+awtj8o81ryywg793@users.noreply.github.com>
+    
+    * Update E2EE support status
+    
+    Signed-off-by: Jack S. <181536874+awtj8o81ryywg793@users.noreply.github.com>
+    
+    * Update SSO support status
+    
+    Signed-off-by: Jack S. <181536874+awtj8o81ryywg793@users.noreply.github.com>
+    
+    ---------
+    
+    Signed-off-by: Jack S. <181536874+awtj8o81ryywg793@users.noreply.github.com>
+
+[33mcommit 97cbab6a83e3d01cb69ff5d748edebef3ca2485c[m
+Author: Neil Johnson <neil@matrix.org>
+Date:   Sat Jan 31 17:41:07 2026 +0100
+
+    change banner text since hackathon is over (#3187)
+    
+    Signed-off-by: Neil Johnson <neil@matrix.org>
+
+[33mcommit cc2608bbec72a9dee99c8be54a38cef838366cd2[m
+Author: Matthew Hodgson <matthew@matrix.org>
+Date:   Fri Jan 30 14:38:02 2026 +0100
+
+    temporary static home for ERA paper
+
+[33mcommit 1f62650ef70ddf0553ab24d3a14ffa7e6a793c7c[m
+Author: Kim Brose <2803622+HarHarLinks@users.noreply.github.com>
+Date:   Fri Jan 30 13:06:48 2026 +0000
+
+    enable linting MD032 separate lists with blank lines (#3134)
+    
+    * enable linting MD032 separate lists with blank lines
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * MD032 manual fixes
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * more fixes
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * update rumdl to 0.0.211 which fixes some issues
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * update rumdl to 0.0.214 which fixes some issues
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * update rumdl to 0.1.0 which fixes some issues
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * update rumdl to 0.1.1 which fixes some issues
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * fix list formatting
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * fix issues manually
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * update rumdl to 0.1.2 and fix issues detected by update and rebase
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    ---------
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+
+[33mcommit d703c02001422d6aec48e03d2b8e38126ca788e7[m
+Author: Kim Brose <2803622+HarHarLinks@users.noreply.github.com>
+Date:   Fri Jan 30 07:06:48 2026 +0000
+
+    update banner for the hackathon going live (#3182)
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+
+[33mcommit 8739cb46bfe6308f69428b4211496c436055b908[m
+Merge: b6b14457 3c955cc8
+Author: Marcel <MTRNord@users.noreply.github.com>
+Date:   Thu Jan 29 10:55:13 2026 +0100
+
+    Merge pull request #3181 from matrix-org/HarHarLinks/fix-membership-images
+    
+    Fix broken images hidden in templates
+
+[33mcommit 3c955cc865c5ac0714a2b0613a0545c6067b99e6[m
+Author: Kim Brose <2803622+HarHarLinks@users.noreply.github.com>
+Date:   Wed Jan 28 16:49:52 2026 +0100
+
+    Fix broken images hidden in templates
+    
+    Signed-off-by: Kim Brose <2803622+HarHarLinks@users.noreply.github.com>
+
+[33mcommit b6b1445791964ffc1add7feb410e4a8885f7f37e[m
+Author: Kim Brose <2803622+HarHarLinks@users.noreply.github.com>
+Date:   Wed Jan 28 14:25:55 2026 +0000
+
+    Fix broken link hidden in templates (#3180)
+    
+    Signed-off-by: Kim Brose <2803622+HarHarLinks@users.noreply.github.com>
+
+[33mcommit 19d7242e1e6a898c925e3129960976dade2fd6d8[m
+Author: Kim Brose <2803622+HarHarLinks@users.noreply.github.com>
+Date:   Wed Jan 28 13:56:58 2026 +0000
+
+    Add members page in navbar under foundation (#3175)
+    
+    * move /membership to /foundation/membership
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * rename membership to members
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * adjust heading text
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    ---------
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+
+[33mcommit a63df9e5a65b55b1c5628678e1d84ed0e8460063[m
+Author: Kim Brose <2803622+HarHarLinks@users.noreply.github.com>
+Date:   Wed Jan 28 09:09:48 2026 +0000
+
+    prettier download buttons (#3177)
+    
+    * prettier download buttons
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * add licenses
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    ---------
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+
+[33mcommit af78c2630a3d2b6b9c1c679ad9ef096f74684e60[m
+Author: Matthew Hodgson <matthew@matrix.org>
+Date:   Wed Jan 28 01:44:11 2026 +0000
+
+    shuffle paragraphs of cloudflare post to lead more positively
+
+[33mcommit af70e1f20755fd6cc4e24bfb094ba8f6e5175e39[m
+Author: Matthew Hodgson <matthew@matrix.org>
+Date:   Wed Jan 28 01:31:59 2026 +0000
+
+    matrix on cloudflare workers
+
+[33mcommit 25efe93c3c0cb8c0e136c759b7c45366a2f2bb60[m
+Author: Benedict <12199167+benkuly@users.noreply.github.com>
+Date:   Mon Jan 26 22:29:04 2026 +0100
+
+    Update Trixnity SDK maintainer and repository URL (#3178)
+    
+    Signed-off-by: benkuly <kontakt@folivo.net>
+
+[33mcommit 20fdec68c830c206c7af70347dcffee5b26e8c00[m
+Merge: 511225b5 4a5b0c3d
+Author: Marcel <MTRNord@users.noreply.github.com>
+Date:   Sat Jan 24 17:28:24 2026 +0100
+
+    Merge pull request #3174 from matrix-org/HarHarLinks/use-matrix-icon
+    
+    use matrix icon
+
+[33mcommit 4a5b0c3d3df3bd7091adf461fbf24f11e1beb85a[m
+Author: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+Date:   Fri Jan 23 20:18:08 2026 +0100
+
+    use matrix icon
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+
+[33mcommit 511225b544e2e36b3e8706d63b0fb434066ba2ed[m
+Author: Thibault Martin <thibaultamartin@users.noreply.github.com>
+Date:   Fri Jan 23 18:56:46 2026 +0100
+
+    Publish TWIM 2026-01-23 (#3173)
+    
+    * Publish TWIM 2026-01-23
+    
+    Signed-off-by: Thib <thib@ergaster.org>
+    
+    * add fixes and pings
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * Add Matrix Live title
+    
+    Co-authored-by: Marcel <MTRNord@users.noreply.github.com>
+    Signed-off-by: Kim Brose <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * lint markdown
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    * mirror schildi revenge screenshot
+    
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    
+    ---------
+    
+    Signed-off-by: Thib <thib@ergaster.org>
+    Signed-off-by: HarHarLinks <2803622+HarHarLinks@users.noreply.github.com>
+    Signed-off-by: Kim Brose <2803622+HarHarLinks@users.noreply.github.com>
+    Co-authored-by: HarHarLinks <2803622+HarHarLinks@users.norep
