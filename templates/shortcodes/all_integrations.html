@@ -3,7 +3,7 @@
     {% for integration in integrations_data.integrations %}
     <div class="project-card">
         <h3>{{ integration.name }}</h3>
-        <span>{{ integration.description | safe }}</span>
+        <p class="description">{{ integration.description | markdown(inline=true) | safe }}</p>
         <div class="server-links">
             {% if integration.repository %}
             <a href="{{ integration.repository }}">
