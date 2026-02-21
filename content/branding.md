@@ -3,9 +3,7 @@ title = "Branding & Assets"
 template = "branding.html"
 +++
 
-## Membership Badges
-
-These badges are available for members of the **Matrix.org Foundation** to showcase their support for the ecosystem. Whether you are an Individual, Silver, Gold, or Platinum member, you can use these assets on your website, GitHub profiles, or marketing materials.
+These badges are available for members of **The Matrix.org Foundation** to showcase their support for the ecosystem. Whether you are an Individual, Silver, Gold, or Platinum member, you can use these assets on your website, GitHub profiles, or marketing materials.
 
 [Not a member yet? Learn more about our membership tiers and benefits here.](@/foundation/members/index.md)
 

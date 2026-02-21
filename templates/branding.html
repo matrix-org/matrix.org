@@ -5,7 +5,8 @@
         <h1>{{ page.title }}</h1>
     </header>
 
-    <section class="branding-card-deck">
+    <section>
+        <div class="branding-card-deck">
         <a
             class="branding-card"
             href="{{ get_url(path='branding/logos/matrix-logos.zip') }}"
@@ -28,11 +29,11 @@
             />
             <p>Matrix Icons</p>
         </a>
+        </div>
     </section>
     <section>
-        {{ page.content | safe }}
-    </section>
-    <section class="branding-card-deck">
+    <h2>Membership Badges</h2>
+    <div class="branding-card-deck">
         <a
             class="branding-card"
             href="{{ get_url(path='branding/membership/matrix-membership-platinum.zip') }}"
@@ -80,6 +81,8 @@
             />
             <p>Matrix Individual Badge</p>
         </a>
+        </div>
+        {{ page.content | safe }}
     </section>
 </article>
 {% endblock content %}
