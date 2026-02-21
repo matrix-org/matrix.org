@@ -99,6 +99,8 @@ In his timeline, the reporter notes:
 
 We did not receive the referenced additional response prior to publication of the reporter's blog post. Our response was sent at 22:19 UTC while the blog post was published no later than 23:47 UTC.
 
+**Updated 2026-02-21**: The referenced response, sent at 23:28 UTC, was discovered to have been caught by a spam filter. Thanks to Gnuxie for working with us and the reporter to resolve this.
+
 ## Closing words
 
 In summary, Matrix's threat model relies on authenticated key distribution: identity keys and pre-keys are signed by device keys and verified prior to session establishment. This prevents a network adversary from substituting non-contributory public keys to force a predictable shared secret between honest clients. The absence of an all-zero check does not compromise this.
