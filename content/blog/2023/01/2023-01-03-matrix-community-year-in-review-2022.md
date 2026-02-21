@@ -141,7 +141,7 @@ members. We hope you have a spam-free and enjoyable 2023!</p></blockquote>
 <p>Nico mentions</p>
 <blockquote>
 <p>I built a Valheim Mod to bridge Matrix messages from and to Valheim, so that I didn't have to switch windows as often when playing with the other Nheko devs. You can find it here: <a href="https://nheko.im/nheko-reborn/valheimmatrix">https://nheko.im/nheko-reborn/valheimmatrix</a></p>
-<img src="/blog/img/neko.dev_cltTmMvhoxagKJMNiPHdcLLB.png" style="display: inline-block"/>
+<img src="/blog/img/neko.dev_cltTmMvhoxagKJMNiPHdcLLB.avif" style="display: inline-block"/>
 </blockquote>
 <h2>Postmoogle</h2>
 <p>An Email to Matrix bridge. Postmoogle is an actual SMTP server that allows you to send and receive emails on your matrix server. It can't be used with arbitrary email providers, because it acts as an actual email provider itself, so you can use it to send emails from your apps and scripts as well. <a href="https://gitlab.com/etke.cc/postmoogle" target="_blank" rel="nofollow noopener noreferrer">↗</a></p>

@@ -14,7 +14,7 @@ Hi all,
 
 Just over a week ago we had the honour of using Matrix to host FOSDEM: the world's largest free & open source software conference.  It's taken us a little while to write up the experience given we had to recover and catch up on business as usual... but better late than never, here's an overview of what it takes to run a ~30K attendee conference on Matrix!
 
-![](/blog/img/upload_5335e89b9ca474d844bdc37ea328967b.png)<small><center>*[confetti and firework easter-eggs explode over the closing keynote of FOSDEM 2021]*</center></small>
+![](/blog/img/upload_5335e89b9ca474d844bdc37ea328967b.avif)<small><center>*[confetti and firework easter-eggs explode over the closing keynote of FOSDEM 2021]*</center></small>
 
 First of all, a quick (re)introduction to Matrix for any newcomers: Matrix is an open source project which defines an open standard protocol for decentralised communication.  The global Matrix network makes up at least 28M Matrix IDs spread over around 60K servers.  For FOSDEM, we set up a fosdem.org server to host newcomers, provided by [Element Matrix Services (EMS)](https://ems.element.io) - [Element](https://element.io) being the startup formed by the Matrix core team to help fund Matrix development.
 
