@@ -10,6 +10,7 @@ matrix_room = "#element-x-ios:matrix.org"
 licence = "AGPL-3.0-or-later OR Element Commercial License"
 latest_release = "2025-09-23"
 featured = true
+
 [extra.features]
 e2ee = true
 spaces = false
@@ -17,6 +18,7 @@ voip_1to1 = false
 voip_jitsi = false
 threads = false
 sso = false
+oauth = true
 multi_account = false
 multi_language = true
 
