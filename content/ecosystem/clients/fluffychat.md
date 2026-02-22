@@ -1,6 +1,6 @@
 +++
 title = "FluffyChat"
-template = "ecosystem/client.html"
+
 [extra]
 thumbnail = "fluffychat.svg"
 maintainer = "Christian Pauly"

@@ -1,6 +1,6 @@
 +++
 title = "Extera"
-template = "ecosystem/client.html"
+
 [extra]
 thumbnail = "extera.svg"
 maintainer = "OfficialDakari"

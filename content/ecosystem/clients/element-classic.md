@@ -1,6 +1,6 @@
 +++
 title = "Element Classic"
-template = "ecosystem/client.html"
+
 [extra]
 thumbnail = "element-classic.svg"
 maintainer = "Element"
