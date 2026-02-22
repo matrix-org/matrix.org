@@ -2,7 +2,7 @@
 title = "Hydrogen"
 [extra]
 thumbnail = "hydrogen.svg"
-maintainer = "Element"
+maintainer = "Element Creations Ltd."
 licence = "Apache-2.0"
 language = "Javascript"
 latest_release = "2023-02-14"

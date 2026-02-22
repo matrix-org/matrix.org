@@ -3,7 +3,7 @@ title = "Element Web / Desktop"
 template = "ecosystem/client.html"
 [extra]
 thumbnail = "element.svg"
-maintainer = "Element"
+maintainer = "Element Creations Ltd."
 maturity = "Stable"
 repo = "https://github.com/element-hq"
 matrix_room = "#element-web:matrix.org"
