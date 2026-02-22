@@ -152,6 +152,7 @@ voip_1to1 = false
 voip_jitsi = false
 threads = false
 sso = false
+oauth = false
 multi_account = false
 multi_language = false
 
@@ -173,8 +174,9 @@ Supercharge your communications with Example Client.
   - `Beta` if there are rough edges but people won't lose any data
   - `Alpha` if your software is still experimental
   - `Obsolete` if your software is no longer maintained
-- `featured` should be left to false. We are working on [processes to formalise which project should be featured or not](https://github.com/matrix-org/matrix.org/issues/1584).
 - For the `licence`, please use [one of the identifiers listed by the SPDX](https://spdx.org/licenses/)
+- `featured` should be left to false. We are working on [processes to formalise which project should be featured or not](https://github.com/matrix-org/matrix.org/issues/1584).
+- For `extra.features`, see the descriptions in [clients.html](/templates/macros/clients.html)
 - All of the properties under `extra.packages` are optional: only add the installation methods your project supports!
   - In case your option is not available please let us know by opening an issue.
 
