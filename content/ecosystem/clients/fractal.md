@@ -1,6 +1,5 @@
 +++
 title = "Fractal"
-template = "ecosystem/client.html"
 
 [extra]
 thumbnail = "fractal.svg"

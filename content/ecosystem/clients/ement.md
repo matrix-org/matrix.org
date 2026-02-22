@@ -1,6 +1,6 @@
 +++
 title = "Ement.el"
-template = "ecosystem/client.html"
+
 [extra]
 thumbnail = "ement.svg"
 maintainer = "Adam Porter"

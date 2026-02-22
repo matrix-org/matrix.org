@@ -1,6 +1,6 @@
 +++
 title = "Element X"
-template = "ecosystem/client.html"
+
 [extra]
 thumbnail = "element-x.svg"
 maintainer = "Element"

@@ -1,6 +1,6 @@
 +++
 title = "Mactrix"
-template = "ecosystem/client.html"
+
 [extra]
 maintainer = "Viktor Strate Kløvedal"
 maturity = "Alpha"

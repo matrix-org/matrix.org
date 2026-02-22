@@ -1,6 +1,6 @@
 +++
 title = "Tammy"
-template = "ecosystem/client.html"
+
 [extra]
 thumbnail = "tammy.png"
 maintainer = "connect2x GmbH"

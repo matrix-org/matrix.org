@@ -1,6 +1,6 @@
 +++
 title = "Neoment"
-template = "ecosystem/client.html"
+
 [extra]
 maintainer = "Douglas Massolari"
 maturity = "Beta"

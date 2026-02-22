@@ -1,6 +1,6 @@
 +++
 title = "SchildiChat Next"
-template = "ecosystem/client.html"
+
 [extra]
 thumbnail = "schildichat-next.svg"
 maintainer = "SpiritCroc"

@@ -134,7 +134,7 @@ To add a client, add your client's logo (ideally in SVG format) as `your-client-
 ```markdown
 +++
 title = "My client name"
-template = "ecosystem/client.html"
+
 [extra]
 thumbnail = "your-client-name.svg"
 maintainer = "Your name or organisation"

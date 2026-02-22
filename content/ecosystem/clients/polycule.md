@@ -1,6 +1,6 @@
 +++
 title = "< polycule >"
-template = "ecosystem/client.html"
+
 [extra]
 thumbnail = "polycule.svg"
 maintainer = "The one with the braid"
