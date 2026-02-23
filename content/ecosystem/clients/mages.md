@@ -22,6 +22,7 @@ multi_language = false
 windows_installer = "https://github.com/mlm-games/Mages/releases"
 macos_installer = "https://github.com/mlm-games/Mages/releases"
 flathub.app_id = "io.github.mlm_games.mages"
+f_droid.app_id = "org.mlm.mages"
 +++
 
 Experimental Matrix client made using Compose Multiplatform (and Rust). 
