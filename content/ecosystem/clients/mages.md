@@ -17,7 +17,7 @@ voip_jitsi = false
 threads = true
 sso = true
 multi_account = true
-multi_language = false
+multi_language = true
 [extra.packages]
 windows_installer = "https://github.com/mlm-games/Mages/releases"
 macos_installer = "https://github.com/mlm-games/Mages/releases"
