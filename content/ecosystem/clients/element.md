@@ -17,6 +17,7 @@ voip_1to1 = true
 voip_jitsi = true
 threads = true
 sso = true
+oauth = true
 multi_account = false
 multi_language = true
 [extra.packages]
