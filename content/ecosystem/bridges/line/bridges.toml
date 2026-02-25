@@ -16,7 +16,7 @@ featured = false
 privilege.platform = "User" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
 [bridges.supports]
-dm = true
+direct_messages = true
 group_chats = true
 formatted_text = false
 message_media = false
