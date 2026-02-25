@@ -23,6 +23,11 @@
 
     border: 1px solid #D2D2D2;
     border-radius: 16px;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+        border-color: #000;
+    }
 
     img {
         margin: 0;
@@ -316,13 +321,17 @@
         border-radius: 9999px;
         padding: .1rem .4rem;
 
+        transition: background-color 0.3s ease;
+
         .fillme {
             fill: var(--color-text);
             stroke: var(--color-text);
+            transition: fill 0.3s ease, stroke 0.3s ease;
         }
 
         .fillme-inverse {
             stroke: #fff;
+            transition: stroke 0.3s ease;
         }
 
         &:hover {

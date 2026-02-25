@@ -27,16 +27,20 @@
 
         font-size: .8rem;
 
+        transition: background-color 0.3s ease;
+
         svg {
             width: 1.2em;
             height: 1.2em;
 
             * {
                 fill: #777;
+                transition: fill 0.3s ease;
             }
 
             line {
                 stroke: #777;
+                transition: stroke 0.3s ease;
             }
         }
     }
