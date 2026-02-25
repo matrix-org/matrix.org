@@ -12,7 +12,7 @@ featured = false
 privilege.platform = "Admin"
 privilege.matrix = "Homeserver Admin"
 [bridges.supports]
-dm = false
+direct_messages = false
 channels = true
 formatted_text = true
 message_media = true
