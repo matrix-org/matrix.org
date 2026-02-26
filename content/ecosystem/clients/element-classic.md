@@ -3,7 +3,7 @@ title = "Element Classic"
 
 [extra]
 thumbnail = "element-classic.svg"
-maintainer = "Element"
+maintainer = "Element Creations Ltd."
 maturity = "Stable"
 repo = "https://github.com/element-hq"
 matrix_room = "#element-ios:matrix.org"
