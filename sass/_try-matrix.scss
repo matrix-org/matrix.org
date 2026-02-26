@@ -111,6 +111,58 @@
         50%       { transform: translateY(6px); }
     }
 
+    // ── Platform filter buttons (CSS-only via :has() + hidden radios) ─────────
+
+    .platform-filter-radio {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .platform-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .platform-filter-btn {
+        padding: 0.3rem 0.85rem;
+        border: 1px solid #d2d2d2;
+        border-radius: 9999px;
+        background: transparent;
+        cursor: pointer;
+        font-size: 0.9rem;
+        color: var(--color-text);
+        transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+
+        &:hover {
+            border-color: #888;
+        }
+    }
+
+    // Active label — whichever radio is checked gets its label highlighted
+    .instructions:has(#pf-all:checked)     label[for="pf-all"],
+    .instructions:has(#pf-ios:checked)     label[for="pf-ios"],
+    .instructions:has(#pf-android:checked) label[for="pf-android"],
+    .instructions:has(#pf-web:checked)     label[for="pf-web"],
+    .instructions:has(#pf-windows:checked) label[for="pf-windows"],
+    .instructions:has(#pf-macos:checked)   label[for="pf-macos"],
+    .instructions:has(#pf-linux:checked)   label[for="pf-linux"] {
+        background-color: #000;
+        border-color: #000;
+        color: #fff;
+    }
+
+    // Row filtering — hide rows that don't have the selected platform pill
+    .instructions:has(#pf-ios:checked)     .client-comparison tbody tr:not(:has(.platform-pill--ios))     { display: none; }
+    .instructions:has(#pf-android:checked) .client-comparison tbody tr:not(:has(.platform-pill--android)) { display: none; }
+    .instructions:has(#pf-web:checked)     .client-comparison tbody tr:not(:has(.platform-pill--web))     { display: none; }
+    .instructions:has(#pf-windows:checked) .client-comparison tbody tr:not(:has(.platform-pill--windows)) { display: none; }
+    .instructions:has(#pf-macos:checked)   .client-comparison tbody tr:not(:has(.platform-pill--macos))   { display: none; }
+    .instructions:has(#pf-linux:checked)   .client-comparison tbody tr:not(:has(.platform-pill--linux))   { display: none; }
+
     // ── Client comparison table ───────────────────────────────────────────────
 
     .client-comparison-wrapper {
