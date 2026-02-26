@@ -1,72 +1,3 @@
-.hosting_providers {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 3.125rem;
-}
-
-.provider_card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    padding: 24px;
-
-    flex: 1 0 400px;
-    max-width: 400px;
-    @media (max-width: 767px) {
-        flex: 1 0 300px;
-        max-width: 300px;
-    }
-
-
-    border: 1px solid #D2D2D2;
-    border-radius: 16px;
-
-    .details {
-        text-align: center;
-
-        .provider_logo_container {
-            height: 10rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            img {
-                max-height: 100%;
-                max-width: 100%;
-                object-fit: contain;
-            }
-        }
-
-        h3 {
-            height: 5rem;
-            margin: 0;
-            text-align: center;
-
-            font-style: normal;
-            font-weight: 700;
-            font-size: 2rem;
-            line-height: 120%;
-        }
-
-        .operating_since {
-            height: 1.5rem;
-            font-size: .9rem;
-        }
-
-    }
-
-    .call-to-action {
-        background-color: #000;
-        color: #fff;
-        border-radius: 1000px;
-        padding: .4rem 2rem;
-        align-self: center;
-    }
-}
-
 .hosting_page {
     margin: 0 auto;
     padding: 5.625rem 0 2rem 0;
@@ -79,5 +10,65 @@
         font-weight: 700;
         font-size: 2.5rem;
         margin-bottom: 1rem;
+    }
+
+    .hosting_providers {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3.125rem;
+
+        .provider_card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            padding: 24px;
+
+            flex: 1 0 400px;
+            max-width: 400px;
+            @media (max-width: 767px) {
+                flex: 1 0 300px;
+                max-width: 300px;
+            }
+
+
+            border: 1px solid #D2D2D2;
+            border-radius: 16px;
+
+            .details {
+                text-align: center;
+
+                .provider_logo_container {
+                    height: 10rem;
+                }
+
+                h3 {
+                    height: 5rem;
+                    margin: 0;
+                    text-align: center;
+
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 2rem;
+                    line-height: 120%;
+                }
+
+                .operating_since {
+                    height: 1.5rem;
+                    font-size: .9rem;
+                }
+
+            }
+
+            .call-to-action {
+                background-color: #000;
+                color: #fff;
+                border-radius: 1000px;
+                padding: .4rem 2rem;
+                align-self: center;
+            }
+        }
     }
 }
