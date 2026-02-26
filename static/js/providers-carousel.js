@@ -1,52 +1,70 @@
 (function () {
-    const track = document.querySelector('.providers-track');
-    if (!track) return;
+    const carousel = document.querySelector('.providers-carousel');
+    if (!carousel) return;
 
-    const DURATION_S = 30; // keep in sync with CSS animation duration
-    const DRAG_THRESHOLD = 5; // px of movement before treating as a drag
+    const items = [...carousel.querySelectorAll('.provider-compact')];
+    const NUM_ITEMS = items.length;
+    const DURATION_S = 30; // keep in sync with CSS --carousel-duration
+    const DRAG_THRESHOLD = 5; // px of movement before treating as drag, not click
 
-    function getCurrentX() {
-        return new DOMMatrixReadOnly(getComputedStyle(track).transform).m41;
+    function baseDelay(i) {
+        return -(DURATION_S / NUM_ITEMS) * i;
     }
 
-    function resumeFrom(x) {
-        const halfWidth = track.scrollWidth / 2;
-        const pos = ((x % halfWidth) - halfWidth) % halfWidth;
-        const progress = pos / -halfWidth; // 0..1
-        const delay = (-progress * DURATION_S).toFixed(4);
-        track.style.transform = '';
-        track.style.animation = `providers-scroll ${DURATION_S}s linear ${delay}s infinite`;
+    function getItemCyclePx() {
+        const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        return 160 + remPx; // --item-width (160px) + --item-gap (1rem)
     }
+
+    // Both wheel and drag feed into a single pixel offset; updating the
+    // animation-delay of each card shifts its phase without pausing anything.
+    let totalOffset = 0;
+
+    function applyOffset() {
+        const totalCyclePx = NUM_ITEMS * getItemCyclePx();
+        const timePerPx = DURATION_S / totalCyclePx;
+        items.forEach((item, i) => {
+            item.style.animationDelay = `${baseDelay(i) - totalOffset * timePerPx}s`;
+        });
+    }
+
+    // ── Mouse wheel / trackpad ──────────────────────────────────────────────
+
+    carousel.addEventListener('wheel', e => {
+        e.preventDefault();
+        totalOffset += e.deltaX !== 0 ? e.deltaX : e.deltaY;
+        applyOffset();
+    }, { passive: false });
+
+    // ── Drag (mouse + touch) ────────────────────────────────────────────────
 
     let dragging = false;
     let hasDragged = false;
-    let startX = 0;
-    let startOffset = 0;
+    let dragStartX = 0;
+    let offsetAtDragStart = 0;
 
-    function onStart(clientX) {
+    function onDragStart(clientX) {
         dragging = true;
         hasDragged = false;
-        startX = clientX;
-        startOffset = getCurrentX();
-        track.style.animation = 'none';
-        track.style.transform = `translateX(${startOffset}px)`;
+        dragStartX = clientX;
+        offsetAtDragStart = totalOffset;
     }
 
-    function onMove(clientX) {
+    function onDragMove(clientX) {
         if (!dragging) return;
-        const dx = clientX - startX;
+        const dx = clientX - dragStartX;
         if (Math.abs(dx) > DRAG_THRESHOLD) hasDragged = true;
-        track.style.transform = `translateX(${startOffset + dx}px)`;
+        // Dragging left advances the carousel (same feel as scrolling down)
+        totalOffset = offsetAtDragStart - dx;
+        applyOffset();
     }
 
-    function onEnd(clientX) {
-        if (!dragging) return;
+    function onDragEnd() {
         dragging = false;
-        resumeFrom(startOffset + clientX - startX);
     }
 
-    // Prevent card navigation when the interaction was a drag, not a tap/click
-    track.addEventListener('click', e => {
+    // Swallow click events that were actually drag gestures
+    carousel.addEventListener('click', e => {
         if (hasDragged) {
             e.preventDefault();
             e.stopPropagation();
@@ -54,11 +72,11 @@
         }
     }, true);
 
-    track.addEventListener('mousedown', e => { onStart(e.clientX); e.preventDefault(); });
-    window.addEventListener('mousemove', e => onMove(e.clientX));
-    window.addEventListener('mouseup',   e => onEnd(e.clientX));
+    carousel.addEventListener('mousedown', e => { onDragStart(e.clientX); e.preventDefault(); });
+    window.addEventListener('mousemove',   e => onDragMove(e.clientX));
+    window.addEventListener('mouseup',     () => onDragEnd());
 
-    track.addEventListener('touchstart', e => onStart(e.touches[0].clientX), { passive: true });
-    track.addEventListener('touchmove',  e => onMove(e.touches[0].clientX), { passive: true });
-    track.addEventListener('touchend',   e => onEnd(e.changedTouches[0].clientX));
+    carousel.addEventListener('touchstart', e => onDragStart(e.touches[0].clientX), { passive: true });
+    carousel.addEventListener('touchmove',  e => onDragMove(e.touches[0].clientX),  { passive: true });
+    carousel.addEventListener('touchend',   () => onDragEnd());
 })();

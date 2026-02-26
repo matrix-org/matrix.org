@@ -234,16 +234,23 @@
 
     // ── Provider marquee ──────────────────────────────────────────────────────
     //
-    // Structure:
-    //   .providers-carousel  overflow:hidden wrapper with edge fades
-    //   .providers-track     animating flex row containing two .providers-set
-    //   .providers-set       each set uses gap + matching padding-right so both
-    //                        halves are exactly the same width; this makes the
-    //                        -50% translate land perfectly at the seam with no jump
-    //   .provider-compact    individual provider card
+    // Each .provider-compact is independently animated with a staggered delay
+    // so cards stream from right to left with no HTML duplication.
+    // Approach based on: https://developer.chrome.com/blog/infinite-marquee
+    //
+    // If providers are added/removed, update --items to match the count.
 
     .providers-carousel {
-        overflow: hidden;
+        --items: 8;
+        --carousel-duration: 30s;
+        --item-width: 160px;
+        --item-gap: 1rem;
+
+        position: relative;
+        height: 9rem;
+        overflow: clip;
+        margin-bottom: 0.25rem;
+
         mask-image: linear-gradient(
             to right,
             transparent,
@@ -258,46 +265,52 @@
             black 94%,
             transparent
         );
-        margin-bottom: 0.25rem;
-    }
 
-    .providers-track {
-        display: flex;
-        flex-wrap: nowrap;
-        width: max-content;
-        animation: providers-scroll 30s linear infinite;
         cursor: grab;
+        &:active { cursor: grabbing; }
 
-        &:active {
-            cursor: grabbing;
-        }
-
-        &:hover {
+        // Pause all cards on carousel hover
+        &:hover .provider-compact {
             animation-play-state: paused;
         }
     }
 
-    @keyframes providers-scroll {
-        from {
-            transform: translateX(0);
-        }
+    @keyframes providers-marquee {
         to {
-            transform: translateX(-50%);
+            transform: translateX(
+                calc(var(--items) * (var(--item-width) + var(--item-gap)) * -1)
+            );
         }
     }
 
     // ── Compact provider cards (managed hosting tier) ─────────────────────────
+
     .provider-compact {
+        position: absolute;
+        top: 0;
+        left: calc(100% + var(--item-gap));
+        width: var(--item-width);
+        height: 100%;
+
+        // Stagger each card evenly across one full duration cycle
+        animation: providers-marquee var(--carousel-duration) linear infinite;
+        animation-delay: calc(var(--carousel-duration) / var(--items) * var(--i) * -1);
+
+        &:nth-child(1) { --i: 0; }
+        &:nth-child(2) { --i: 1; }
+        &:nth-child(3) { --i: 2; }
+        &:nth-child(4) { --i: 3; }
+        &:nth-child(5) { --i: 4; }
+        &:nth-child(6) { --i: 5; }
+        &:nth-child(7) { --i: 6; }
+        &:nth-child(8) { --i: 7; }
+
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 0.5rem;
         padding: 1.25rem 1rem;
-
-        flex: 0 0 160px;
-        // margin-right (not flex gap) so every card — including the last of each
-        // half — contributes identical width; -50% then lands exactly at the seam
-        margin-right: 1rem;
 
         border: 1px solid #d2d2d2;
         border-radius: 16px;
