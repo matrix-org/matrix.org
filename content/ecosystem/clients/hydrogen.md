@@ -6,7 +6,7 @@ maintainer = "Element Creations Ltd."
 licence = "Apache-2.0"
 language = "Javascript"
 latest_release = "2023-02-14"
-maturity = "Beta"
+maturity = "Obsolete"
 repo = "https://github.com/vector-im/hydrogen-web"
 featured = false
 [extra.features]
