@@ -11,30 +11,102 @@
 </div>
 
 <div class="try_matrix">
-    <div class="step-background">
+    <div class="step-background quickstart">
+        <div class="step no-image">
+            <div class="instructions quickstart-instructions">
+                <h3>Just want to try it?</h3>
+                <p>
+                    Open Element in your browser — no download needed. You'll be on
+                    <strong>matrix.org</strong>, the server run by the Matrix.org Foundation,
+                    which is a fine place to start. If you're planning longer-term use or want
+                    your own domain, read through the steps below first.
+                </p>
+                <div class="cta-wrapper">
+                    <a href="https://app.element.io" class="call-to-action">Open Element Web</a>
+                    <a href="/ecosystem/clients/element-x/" class="call-to-action secondary">Get Element X (mobile)</a>
+                </div>
+                <a href="#get-an-app" class="scroll-down-indicator" aria-label="Scroll down to learn more">
+                    <img src="/assets/down-arrow.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="step-background" id="get-an-app">
         <div class="step choose-a-client no-image">
             <div class="instructions">
                 <h3>Get an app</h3>
                 <p>
-                    To use Matrix you need an app. Here are some well-established ones
-                    to get you started.
+                    To use Matrix you need an app. Here are the well-established featured
+                    clients — pick whichever fits your platform and needs. Switching between
+                    apps is easy since they all use the same account.
                 </p>
-                <div class="projects-card-deck">
-                    {% for client in clients_section.pages %}
-                    {% if client.extra.featured %}
-                    <div>
-                        <a href="{{ client.path }}" class="project-card client">
-                            <img src="/ecosystem/clients/{{ client.extra.thumbnail }}" alt="{{ client.title }} logo">
-                            <h3>{{ client.title }}</h3>
-                            <span>{{ client.content | safe }}</span>
-                            <div class="platform-links">
-                                {{ clients::platforms(packages=client.extra.packages) }}
-                            </div>
-                            <p class="open-project">View app details</p>
-                        </a>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
+                <div class="client-comparison-wrapper">
+                    <table class="client-comparison">
+                        <thead>
+                            <tr>
+                                <th scope="col">App</th>
+                                <th scope="col">Platforms</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">E2EE</th>
+                                <th scope="col">Spaces</th>
+                                <th scope="col">Threads</th>
+                                <th scope="col">VoIP (1:1)</th>
+                                <th scope="col">VoIP (Jitsi)</th>
+                                <th scope="col">SSO</th>
+                                <th scope="col">OAuth</th>
+                                <th scope="col">Multi-account</th>
+                                <th scope="col">Multi-language</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for client in clients_section.pages %}
+                            {% if client.extra.featured %}
+                            <tr>
+                                <td class="client-name-cell">
+                                    <a href="{{ client.path }}">
+                                        <img src="/ecosystem/clients/{{ client.extra.thumbnail }}"
+                                             alt="{{ client.title }} logo" class="client-table-icon">
+                                        {{ client.title }}
+                                    </a>
+                                </td>
+                                <td class="client-platforms-cell">
+                                    <div class="platform-links">
+                                        {{ clients::platforms(packages=client.extra.packages) }}
+                                    </div>
+                                </td>
+                                <td class="client-desc-cell">{{ client.content | markdown(inline=true) }}</td>
+                                <td class="{% if client.extra.features.e2ee %}feat-yes{% else %}feat-no{% endif %}">
+                                    {% if client.extra.features.e2ee %}&#10003;{% else %}&#10007;{% endif %}
+                                </td>
+                                <td class="{% if client.extra.features.spaces %}feat-yes{% else %}feat-no{% endif %}">
+                                    {% if client.extra.features.spaces %}&#10003;{% else %}&#10007;{% endif %}
+                                </td>
+                                <td class="{% if client.extra.features.threads %}feat-yes{% else %}feat-no{% endif %}">
+                                    {% if client.extra.features.threads %}&#10003;{% else %}&#10007;{% endif %}
+                                </td>
+                                <td class="{% if client.extra.features.voip_1to1 %}feat-yes{% else %}feat-no{% endif %}">
+                                    {% if client.extra.features.voip_1to1 %}&#10003;{% else %}&#10007;{% endif %}
+                                </td>
+                                <td class="{% if client.extra.features.voip_jitsi %}feat-yes{% else %}feat-no{% endif %}">
+                                    {% if client.extra.features.voip_jitsi %}&#10003;{% else %}&#10007;{% endif %}
+                                </td>
+                                <td class="{% if client.extra.features.sso %}feat-yes{% else %}feat-no{% endif %}">
+                                    {% if client.extra.features.sso %}&#10003;{% else %}&#10007;{% endif %}
+                                </td>
+                                <td class="{% if client.extra.features.oauth %}feat-yes{% else %}feat-no{% endif %}">
+                                    {% if client.extra.features.oauth %}&#10003;{% else %}&#10007;{% endif %}
+                                </td>
+                                <td class="{% if client.extra.features.multi_account %}feat-yes{% else %}feat-no{% endif %}">
+                                    {% if client.extra.features.multi_account %}&#10003;{% else %}&#10007;{% endif %}
+                                </td>
+                                <td class="{% if client.extra.features.multi_language %}feat-yes{% else %}feat-no{% endif %}">
+                                    {% if client.extra.features.multi_language %}&#10003;{% else %}&#10007;{% endif %}
+                                </td>
+                            </tr>
+                            {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
                 <div class="cta-wrapper">
                     <a href="/ecosystem/clients" class="call-to-action secondary">Browse all apps</a>

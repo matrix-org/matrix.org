@@ -73,54 +73,165 @@
         margin-top: 1.5rem;
     }
 
-    // Fix: projects-card-deck collapses in a flex-column context without explicit width.
-    // Also reduce column size from 17.6rem so cards match the compact feel of the page.
-    .projects-card-deck {
-        width: 100%;
-        margin-inline: 0;
-        margin-top: 1.5rem;
-        grid-template-columns: repeat(auto-fill, 12.5rem);
+    // ── Quick-start (TLDR) block ──────────────────────────────────────────────
 
-        @media (max-width: 767px) {
-            grid-template-columns: repeat(auto-fill, 12.5rem);
-            max-width: 100%;
+    .quickstart-instructions {
+        text-align: center;
+        align-items: center;
+
+        h3 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        > p {
+            max-width: 42rem;
+            font-size: 1.25rem;
         }
     }
 
-    // Strip the client cards down to logo + name + platform pills.
-    // The full description and CTA text belong on the ecosystem/clients page,
-    // not here where the user just needs to pick an app quickly.
-    .project-card.client {
-        padding: 1rem;
-        gap: 0.5rem;
-        transition: border-color 0.3s ease, background-color 0.3s ease;
-
-        &:hover {
-            border-color: #000;
-            background-color: #f5f5f5;
-        }
+    .scroll-down-indicator {
+        display: inline-block;
+        margin-top: 1.5rem;
 
         img {
-            width: 44px;
-            height: 44px;
+            width: 2rem;
+            height: 2rem;
+            opacity: 0.45;
+            animation: scroll-bounce 2s ease-in-out infinite;
         }
 
-        h3 {
-            font-size: 1.2rem;
+        &:hover img {
+            opacity: 0.75;
+        }
+    }
+
+    @keyframes scroll-bounce {
+        0%, 100% { transform: translateY(0); }
+        50%       { transform: translateY(6px); }
+    }
+
+    // ── Client comparison table ───────────────────────────────────────────────
+
+    .client-comparison-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .client-comparison {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+        // Override the global black table border from _base.scss
+        border: none;
+
+        th,
+        td {
+            padding: 0.55rem 0.65rem;
+            border: none;
+            border-bottom: 1px solid #ebebeb;
+            vertical-align: middle;
+            text-align: left;
         }
 
-        // Hide the prose description in this compact context
-        > span {
-            display: none;
+        thead th {
+            font-weight: 600;
+            font-size: 0.78rem;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--color-text-light);
+            border-bottom: 2px solid #d2d2d2;
         }
 
-        .open-project {
-            font-size: 0.8rem;
+        tbody tr:last-child td {
+            border-bottom: none;
         }
 
-        .platform-pill {
-            font-size: 0.75rem;
-            padding: 0.15rem 0.45rem;
+        tbody tr:hover td {
+            background-color: #fafafa;
+        }
+
+        .client-name-cell {
+            white-space: nowrap;
+
+            a {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+                color: var(--color-text);
+                font-weight: 600;
+                text-decoration: none;
+
+                &:hover {
+                    color: var(--color-link);
+                }
+            }
+        }
+
+        .client-table-icon {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            border-radius: 4px;
+        }
+
+        .client-platforms-cell {
+            .platform-links {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
+            }
+
+            .platform-pill {
+                font-size: 0.75rem;
+                padding: 0.1rem 0.4rem;
+            }
+        }
+
+        .client-desc-cell {
+            min-width: 8rem;
+            max-width: 13rem;
+            line-height: 1.4;
+            font-size: 0.9rem;
+            color: var(--color-text);
+        }
+
+        td.feat-yes,
+        td.feat-no {
+            text-align: center;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+
+        td.feat-yes { color: #245c0c; }
+        td.feat-no  { color: #b91c1c; }
+
+        // Platform pill colours
+        .platform-pill--ios     { background: #e8f1ff; color: #1a4db0; border-color: #99bbee; }
+        .platform-pill--android { background: #e6f4ea; color: #1a6b32; border-color: #7acc8a; }
+        .platform-pill--web     { background: #ede9fe; color: #5b21b6; border-color: #c4b5fd; }
+        .platform-pill--windows { background: #e0f0ff; color: #0061a4; border-color: #90caf9; }
+        .platform-pill--macos   { background: #f3f3f3; color: #374151; border-color: #d1d5db; }
+        .platform-pill--linux   { background: #fff4e5; color: #92400e; border-color: #fcd9a0; }
+
+        @media (max-width: 767px) {
+            font-size: 0.85rem;
+
+            th,
+            td {
+                padding: 0.4rem 0.45rem;
+            }
+
+            // Drop description column on small screens; table stays horizontally scrollable
+            .client-desc-cell,
+            thead th:nth-child(3) {
+                display: none;
+            }
         }
     }
 
