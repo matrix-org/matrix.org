@@ -1,5 +1,8 @@
 {% extends "page.html" %}
+{% import "macros/clients.html" as clients %}
 {% block content %}
+{% set clients_section = get_section(path="ecosystem/clients/_index.md") %}
+{% set providers_data = load_data(path="content/ecosystem/hosting/providers.toml") %}
 <div class="page-header">
     <div class="hero-block">
         <h1>{{ page.title }}</h1>
@@ -9,57 +12,145 @@
 
 <div class="try_matrix">
     <div class="step-background">
-        <div class="step choose-a-client">
+        <div class="step choose-a-client no-image">
             <div class="instructions">
-                <h3>Choose a client</h3>
+                <h3>Get an app</h3>
                 <p>
-                    We recommend Element as a safe default, but there are a variety of clients available.
+                    To use Matrix you need an app. Here are some well-established ones
+                    to get you started.
                 </p>
+                <div class="projects-card-deck">
+                    {% for client in clients_section.pages %}
+                    {% if client.extra.featured %}
+                    <div>
+                        <a href="{{ client.path }}" class="project-card client">
+                            <img src="/ecosystem/clients/{{ client.extra.thumbnail }}" alt="{{ client.title }} logo">
+                            <h3>{{ client.title }}</h3>
+                            <span>{{ client.content | safe }}</span>
+                            <div class="platform-links">
+                                {{ clients::platforms(packages=client.extra.packages) }}
+                            </div>
+                            <p class="open-project">View app details</p>
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
                 <div class="cta-wrapper">
-                    <a href="/ecosystem/clients/element/" class="call-to-action">Install Element</a>
-                    <a href="/ecosystem/clients" class="call-to-action secondary">Browse clients</a>
+                    <a href="/ecosystem/clients" class="call-to-action secondary">Browse all apps</a>
                 </div>
             </div>
-            <img src="/assets/try-matrix/client.svg" alt="Artist view of an abstract matrix client." />
         </div>
     </div>
     <div class="step-background coloured">
-        <div class="step choose-a-server">
+        <div class="step choose-a-server no-image">
             <div class="instructions">
-                <h3>Choose a server</h3>
+                <h3>Create an account</h3>
                 <p>
-                    Matrix is a decentralised protocol: like email, you need to have an account provider to start using
-                    matrix.
+                    Matrix is decentralised: like email, your account lives on a provider and you
+                    can reach anyone regardless of which provider they use. If you want your address
+                    to use your own domain (e.g. <code>@you:example.com</code>), managed hosting and
+                    self-hosting both support that. If you rely on
+                    <a href="/ecosystem/bridges">bridges</a> to other platforms, check that your
+                    chosen server supports them — availability varies by provider.
                 </p>
-                <p>
-                    But picking a provider can be overwhelming for your first steps. The Matrix.org Foundation is
-                    hosting
-                    the <a href="/homeserver">matrix.org Matrix server</a> for every newcomer to create an account. You can safely use it to
-                    create an account when getting started.
-                </p>
-                <div class="cta-wrapper">
-                    <a href="/ecosystem/hosting" class="call-to-action">Browse hosters</a>
-                    <a href="/ecosystem/servers" class="call-to-action secondary">Browse servers</a>
+                <div class="account-tiers">
+                    <div class="account-tier">
+                        <div class="account-tier-header">
+                            <h4>matrix.org homeserver</h4>
+                            <span class="tier-badge foundation">Foundation-run</span>
+                        </div>
+                        <p>
+                            The Matrix.org Foundation hosts a server open to everyone.
+                            Enter <code>matrix.org</code> in your app's server field when registering.
+                        </p>
+                        {% if page.extra.matrixorg_premium %}
+                        <div class="matrixorg-plans">
+                            <div class="plan-card">
+                                <h5>Free</h5>
+                                <ul>
+                                    <li>10 MB max attachment size</li>
+                                    <li>100 MB data / day</li>
+                                </ul>
+                                <a href="/docs/chat_basics/matrix-for-im/#creating-a-matrix-account" class="call-to-action secondary">How to create an account</a>
+                            </div>
+                            <div class="plan-card featured">
+                                <h5>Premium</h5>
+                                <ul>
+                                    <li>100 MB max attachment size</li>
+                                    <li>1 GB data / day</li>
+                                    <li>Faster room invitations</li>
+                                    <li>Foundation members: included</li>
+                                </ul>
+                                <a href="/homeserver/pricing" class="call-to-action">See pricing</a>
+                            </div>
+                        </div>
+                        {% else %}
+                        <a href="/docs/chat_basics/matrix-for-im/#creating-a-matrix-account" class="call-to-action">How to create an account</a>
+                        {% endif %}
+                        <p class="homeserver-info-link">
+                            <a href="/homeserver">More about the matrix.org homeserver →</a>
+                        </p>
+                    </div>
+                    <div class="account-tier">
+                        <div class="account-tier-header">
+                            <h4>Managed hosting</h4>
+                            <span class="tier-badge commercial">Commercial</span>
+                        </div>
+                        <p>
+                            These services run a Matrix server for you — good if you want your
+                            own domain, dedicated resources, or more storage.
+                        </p>
+                        <div class="providers-compact">
+                            {% for provider in providers_data.providers | slice(end=3) %}
+                            <a href="{{ provider.website }}" class="provider-compact">
+                                <img src="/ecosystem/hosting/{{ provider.image }}" alt="{{ provider.name }} logo">
+                                <span class="provider-name">{{ provider.name }}</span>
+                                {% if provider.operating_since %}
+                                <span class="provider-since">Since {{ provider.operating_since }}</span>
+                                {% endif %}
+                            </a>
+                            {% endfor %}
+                        </div>
+                        <div class="cta-wrapper">
+                            <a href="/ecosystem/hosting" class="call-to-action secondary">Browse all hosting providers</a>
+                        </div>
+                    </div>
+                    <div class="account-tier">
+                        <div class="account-tier-header">
+                            <h4>Self-hosting</h4>
+                            <span class="tier-badge community">Community</span>
+                        </div>
+                        <p>
+                            Run your own Matrix server for full control over your data and community.
+                            Browse available <a href="/ecosystem/servers">server software</a>, or use
+                            a <a href="/ecosystem/distributions">distribution</a> — pre-packaged setups
+                            like Ansible playbooks or Docker images that handle the hard parts for you.
+                        </p>
+                        <div class="cta-wrapper">
+                            <a href="/ecosystem/servers" class="call-to-action secondary">Server software</a>
+                            <a href="/ecosystem/distributions" class="call-to-action secondary">Distributions</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <img src="/assets/try-matrix/server.svg" alt="Artist view of an abstract server." />
         </div>
     </div>
     <div class="step-background">
-        <div class="step register-and-chat">
+        <div class="step register-and-chat no-image">
             <div class="instructions">
-                <h3>Register and start chatting</h3>
-                <p>That's all you need to get started! If you feel lost you can
-                    browse the <a href="/docs/chat_basics">chat basics</a>
-                    documentation.
-                </p>
+                <h3>Start chatting</h3>
+                <p>That's all you need to get started. Once you're in, you can:</p>
+                <ul>
+                    <li><a href="/docs/chat_basics/public-rooms">Browse public rooms and Spaces</a> to find communities</li>
+                    <li>Message people directly using their Matrix address (<code>@username:server</code>)</li>
+                </ul>
                 <div class="cta-wrapper">
                     <a href="/docs/chat_basics/matrix-for-im/#creating-a-matrix-account" class="call-to-action">Create
                         an account</a>
-                    <a href="/docs/chat_basics" class="call-to-action secondary">Read the docs</a>
+                    <a href="/docs/communities" class="call-to-action secondary">Set up a community</a>
                 </div>
             </div>
-            <img src="/assets/try-matrix/chat.svg" alt="Abstract representation of a chat." />
         </div>
     </div>
 </div>
