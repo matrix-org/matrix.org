@@ -412,11 +412,11 @@
     .providers-carousel {
         --items: 8;
         --carousel-duration: 30s;
-        --item-width: 160px;
+        --item-width: 190px;
         --item-gap: 1rem;
 
         position: relative;
-        height: 9rem;
+        height: 11rem;
         overflow: clip;
         margin-bottom: 0.25rem;
 
@@ -509,6 +509,33 @@
         .provider-since {
             font-size: 0.8rem;
             color: #666;
+        }
+
+        .provider-audience {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.2rem;
+            justify-content: center;
+        }
+
+        .audience-tag {
+            font-size: 0.7rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 9999px;
+            border: 1px solid;
+            white-space: nowrap;
+
+            &--consumer {
+                background: #e8f1ff;
+                color: #1a4db0;
+                border-color: #99bbee;
+            }
+
+            &--business {
+                background: #f3f3f3;
+                color: #374151;
+                border-color: #d1d5db;
+            }
         }
     }
 

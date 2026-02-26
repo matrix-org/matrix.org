@@ -13,7 +13,7 @@
 
     function getItemCyclePx() {
         const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
-        return 160 + remPx; // --item-width (160px) + --item-gap (1rem)
+        return 190 + remPx; // --item-width (190px) + --item-gap (1rem)
     }
 
     // Both wheel and drag feed into a single pixel offset; updating the

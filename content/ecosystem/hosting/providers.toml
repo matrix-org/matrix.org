@@ -8,6 +8,8 @@ description = """
 
 For information about different hosting plans, please check our [Matrix service webpage](https://communick.com/services/matrix).
 """
+b2b = false
+b2c = true
 
 [[providers]]
 name = "fairkom"
@@ -27,6 +29,8 @@ description = """
 fairkom has been building and hosting chat solutions with various open source frameworks. We are now focussing on Matrix based solutions as interoperability is a key demand of customers and users. Our largest deployment scales for half a million pupils, for whom we developed an app for smartphones with additional educational features. Hosting is climate neutral and GDPR compliant.
 [Try fairmatrix](https://www.fairkom.eu/fairmatrix)
 """
+b2b = true
+b2c = false
 
 [[providers]]
 name = "Ungleich.ch"
@@ -45,6 +49,8 @@ within a repurposed historic building, they utilise pre-owned server systems,
 passive cooling techniques, and 100% renewable energy. ungleich.ch also
 specialises in customised Matrix development for communities and organisations.
 """
+b2b = false
+b2c = true
 
 [[providers]]
 name = "etke.cc"
@@ -65,6 +71,8 @@ etke.cc is the only fully FOSS-based Matrix Hosting service. It's operated by a 
 
 [Matrix Space](https://matrix.to/#/#service:etke.cc) | [Announcements on Matrix](https://matrix.to/#/#news:etke.cc)
 """
+b2b = true
+b2c = true
 
 [[providers]]
 name = "Ossrox"
@@ -76,6 +84,8 @@ description = """
 
 Ossrox is a company from Germany dedicated to hosting open-source services. Not only has the company name been derived from the motto "Open-Source Software Rocks", but also their corporate culture. The three most important principles of the company are security, privacy and sustainability - thanks to open-source software. In addition to Matrix, Ossrox also provides many other solutions e.g. in the messaging, groupware and web meeting segments.
 """
+b2b = true
+b2c = true
 
 [[providers]]
 name = "Federated Computer"
@@ -87,6 +97,8 @@ description = """
 
 Federated Computer provides Element and Matrix hosting as part of a team collaboration suite (including Nextcloud, Jitsi, Listmonk, Vaultwarden, Baserow, Gitea, Caddy, Castopod, Wireguard, and single-sign-on LDAP).
 """
+b2b = true
+b2c = true
 
 [[providers]]
 name = "IndieHosters"
@@ -99,6 +111,8 @@ description = """
 
 We are a French collective specialized in hosting FOSS software and aimed at building a digital common, with a particular emphasis on collaboration.
 """
+b2b = true
+b2c = false
 
 [[providers]]
 name = "Datanauten"
@@ -111,3 +125,5 @@ description = """
 
 The Datanauten Matrix Homeserver offers an easy entry into the open and interoperable communication system of the future.
 """
+b2b = true
+b2c = true

@@ -183,7 +183,7 @@
                     <div class="account-tier">
                         <div class="account-tier-header">
                             <h4>Managed hosting</h4>
-                            <span class="tier-badge commercial">Commercial</span>
+                            <span class="tier-badge commercial">Paid</span>
                         </div>
                         <p>
                             These services run a Matrix server for you — good if you want your
@@ -197,6 +197,10 @@
                                 {% if provider.operating_since %}
                                 <span class="provider-since">Since {{ provider.operating_since }}</span>
                                 {% endif %}
+                                <span class="provider-audience">
+                                    {% if provider.b2c %}<span class="audience-tag audience-tag--consumer">Individuals</span>{% endif %}
+                                    {% if provider.b2b %}<span class="audience-tag audience-tag--business">Business</span>{% endif %}
+                                </span>
                             </a>
                             {% endfor %}
                         </div>
