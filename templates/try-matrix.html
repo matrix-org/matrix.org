@@ -101,16 +101,28 @@
                             These services run a Matrix server for you — good if you want your
                             own domain, dedicated resources, or more storage.
                         </p>
-                        <div class="providers-compact">
-                            {% for provider in providers_data.providers | slice(end=3) %}
-                            <a href="{{ provider.website }}" class="provider-compact">
-                                <img src="/ecosystem/hosting/{{ provider.image }}" alt="{{ provider.name }} logo">
-                                <span class="provider-name">{{ provider.name }}</span>
-                                {% if provider.operating_since %}
-                                <span class="provider-since">Since {{ provider.operating_since }}</span>
-                                {% endif %}
-                            </a>
-                            {% endfor %}
+                        <div class="providers-carousel">
+                            <div class="providers-track">
+                                {% for provider in providers_data.providers %}
+                                <a href="{{ provider.website }}" class="provider-compact">
+                                    <img src="/ecosystem/hosting/{{ provider.image }}" alt="{{ provider.name }} logo">
+                                    <span class="provider-name">{{ provider.name }}</span>
+                                    {% if provider.operating_since %}
+                                    <span class="provider-since">Since {{ provider.operating_since }}</span>
+                                    {% endif %}
+                                </a>
+                                {% endfor %}
+                                {# Duplicate for seamless loop — hidden from assistive tech #}
+                                {% for provider in providers_data.providers %}
+                                <a href="{{ provider.website }}" class="provider-compact" aria-hidden="true" tabindex="-1">
+                                    <img src="/ecosystem/hosting/{{ provider.image }}" alt="">
+                                    <span class="provider-name">{{ provider.name }}</span>
+                                    {% if provider.operating_since %}
+                                    <span class="provider-since">Since {{ provider.operating_since }}</span>
+                                    {% endif %}
+                                </a>
+                                {% endfor %}
+                            </div>
                         </div>
                         <div class="cta-wrapper">
                             <a href="/ecosystem/hosting" class="call-to-action secondary">Browse all hosting providers</a>
@@ -154,4 +166,5 @@
         </div>
     </div>
 </div>
+<script src="{{ get_url(path="/js/providers-carousel.js", cachebust=true) }}" defer></script>
 {% endblock content %}

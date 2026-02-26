@@ -232,32 +232,78 @@
         }
     }
 
-    // ── Compact provider cards (managed hosting tier) ─────────────────────────
+    // ── Provider marquee ──────────────────────────────────────────────────────
+    //
+    // Structure:
+    //   .providers-carousel  overflow:hidden wrapper with edge fades
+    //   .providers-track     animating flex row containing two .providers-set
+    //   .providers-set       each set uses gap + matching padding-right so both
+    //                        halves are exactly the same width; this makes the
+    //                        -50% translate land perfectly at the seam with no jump
+    //   .provider-compact    individual provider card
 
-    .providers-compact {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
+    .providers-carousel {
+        overflow: hidden;
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 6%,
+            black 94%,
+            transparent
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 6%,
+            black 94%,
+            transparent
+        );
         margin-bottom: 0.25rem;
     }
 
+    .providers-track {
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content;
+        animation: providers-scroll 30s linear infinite;
+        cursor: grab;
+
+        &:active {
+            cursor: grabbing;
+        }
+
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
+
+    @keyframes providers-scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    // ── Compact provider cards (managed hosting tier) ─────────────────────────
     .provider-compact {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
         padding: 1.25rem 1rem;
-        width: 200px;
+
+        flex: 0 0 160px;
+        // margin-right (not flex gap) so every card — including the last of each
+        // half — contributes identical width; -50% then lands exactly at the seam
+        margin-right: 1rem;
 
         border: 1px solid #d2d2d2;
         border-radius: 16px;
 
         color: var(--color-text);
         text-decoration: none;
-
-        @media (max-width: 767px) {
-            width: calc(50% - 0.5rem);
-        }
 
         &:hover {
             background-color: #f5f5f5;
