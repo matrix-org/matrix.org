@@ -4,7 +4,7 @@ template = "ecosystem/client.html"
 [extra]
 thumbnail = "nio.png"
 maintainer = "Kilian Koeltzsch"
-maturity = "Alpha"
+maturity = "Obsolete"
 repo = "https://github.com/niochat/nio"
 matrix_room = "#niochat:matrix.org"
 licence = "MPL-2.0"
