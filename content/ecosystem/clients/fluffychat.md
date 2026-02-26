@@ -9,7 +9,7 @@ language = "Flutter"
 latest_release = "2021-12-01"
 maturity = "Stable"
 repo = "https://github.com/krille-chan/fluffychat"
-website = "https://fluffychat.im"
+website = "https://fluffy.chat"
 matrix_room = "#fluffychat:matrix.org"
 featured = true
 [extra.features]
