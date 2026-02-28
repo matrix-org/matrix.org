@@ -33,7 +33,7 @@ explain why `--depth=1` is not ideal and which implications this has:
 
 ## Building the website
 
-Install the latest version of [Zola](https://www.getzola.org), clone the repo,
+Install version 0.20.0¹ of [Zola](https://www.getzola.org), clone the repo,
 and from the root of the repo type
 
 ```
@@ -43,3 +43,5 @@ zola serve
 Zola will build the website and start a web server, usually at
 <http://127.0.0.1:1111>
 
+¹ This is the Zola version that is being used to build the website in CI.
+See [`./.github/workflows/zola.yml`](./.github/workflows/zola.yml).
