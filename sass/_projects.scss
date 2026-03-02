@@ -287,7 +287,10 @@
 }
 
 .features-matrix {
-
+    p {
+        font-size: 80%;
+        text-align: center;
+    }
     ul {
         border: 1px solid var(--borders-color);
         border-radius: 16px;
