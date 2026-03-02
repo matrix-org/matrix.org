@@ -69,7 +69,7 @@ Massive massive thanks to everyone who has stuck with the project over the years
 
 Talking of which, we were looking through the photos we took from the first ever session hacking on Matrix back in May 2014…
 
-![Whiteboard 1](/blog/img/nightmare.jpg)
+![Whiteboard 1](/blog/img/nightmare.avif)
 
 ...suffice it to say that of the architectural options, we went with #3 in the end...
 

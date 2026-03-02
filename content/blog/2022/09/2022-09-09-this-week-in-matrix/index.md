@@ -256,7 +256,7 @@ Secure and independent communication for iOS, connected via Matrix. Come talk wi
 > * Also starting with this release, Direct Message rooms will only be created when the first message is sent
 > * In ElementX land we fixed the last issues on sliding sync, the timeline can now handle edits, redactions and reactions, we’re implementing proper signing out and started adding more timeline actions like copying permalinks and replies.
 >
-> ![](20220909-ios.gif)
+> ![](20220909-ios.webp)
 
 ### Element Android ([website](https://github.com/vector-im/element-android))
 
