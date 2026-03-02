@@ -16,7 +16,7 @@ Please describe or quote the information that is currently outdated or incorrect
 ## Suggested Correction
 
 What is the correct information?
-_If possible, please provide a source (link to a GitHub repo, official docs, or a blog post) to help maintainers verify the change._
+_If possible, please provide a source (link to a GitHub repo, official docs, or a blog post) or attach a screenshot to help maintainers verify the change._
 
 ## Additional Context
 
