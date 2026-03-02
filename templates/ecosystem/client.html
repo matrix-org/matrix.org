@@ -39,10 +39,19 @@
                 </a>
                 {% endif %}
                 {% if page.extra.repo %}
-                <a href="{{ page.extra.repo }}" class="pill">
-                    {{ load_data(path="/assets/repository.svg") | safe }}
-                    Source Code
-                </a>
+                    {% if page.extra.repo.0 is defined %}
+                        {% for repo_url in page.extra.repo %}
+                        <a href="{{ repo_url }}" class="pill">
+                            {{ load_data(path="/assets/repository.svg") | safe }}
+                            Source Code
+                        </a>
+                        {% endfor %}
+                    {% else %}
+                        <a href="{{ page.extra.repo }}" class="pill">
+                            {{ load_data(path="/assets/repository.svg") | safe }}
+                            Source Code
+                        </a>
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
