@@ -3,8 +3,8 @@
         <img src="/images/matrix-logo-white.svg" alt="Matrix logo">
     </a>
     <input id="site-header-dropdown-checkbox" type="checkbox" class="dropdown-checkbox" aria-hidden="true">
-    <label for="site-header-dropdown-checkbox" class="dropdown-button">&#xe602;</label>
-    <label for="site-header-dropdown-checkbox" class="page-overlay"></label>
+    <label for="site-header-dropdown-checkbox" class="dropdown-button" id="dropdown-button" aria-label="Toggle header drop-down">&#xe602;</label>
+    <label for="site-header-dropdown-checkbox" class="page-overlay" aria-label="Close header drop-down"></label>
     <nav>
         {% for link in navigation.header %}
         {% if link.section %}
