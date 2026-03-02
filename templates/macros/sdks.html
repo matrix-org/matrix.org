@@ -94,13 +94,13 @@
                     <h3>{{ sdk.name }}</h3>
                     <div class="maturity {{ sdk.maturity | lower }}">{{ sdk.maturity }}</div>
                 </div>
-                <div class="author">{{ sdk.maintainer }}</div>
-                <div class="licence-language">
-                    <div class="pill">{{ sdk.licence }}</div>
+                {% if sdk.maintainer %}<div class="subtitle">{{ sdk.maintainer }}</div>{% endif %}
+                <div class="metadata-pills">
+                    <div class="pill licence">{{ sdk.licence }}</div>
                     <div class="pill">{{ sdk.language }}</div>
                 </div>
-                {% if sdk.description %}<p>{{ sdk.description }}</p>{% endif %}
-                <div class="server-links">
+                {% if sdk.description %}<p class="description">{{ sdk.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>{% endif %}
+                <div class="card-links server-links">
                     {% if sdk.repository %}
                     <a href="{{ sdk.repository }}">
                         {{ load_data(path="/assets/projects/repo.svg") | safe }}

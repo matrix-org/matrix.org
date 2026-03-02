@@ -40,9 +40,15 @@
                 {# We're not using placeholders as a fallback because we want showcased clients to have an actual icon
                 #}
                 <img src="{{ client.extra.thumbnail }}" alt="{{ client.title }} Logo">
-                <h3>{{ client.title }}</h3>
-                <span>{{ client.content | safe }}</span>
-                <div class="platform-links">
+                <div class="title-row">
+                    <h3>{{ client.title }}</h3>
+                    <div class="maturity {{ client.extra.maturity | lower }}">{{ client.extra.maturity }}</div>
+                </div>
+                <div class="metadata-pills">
+                    <div class="pill licence">{{ client.extra.licence }}</div>
+                </div>
+                <p class="description">{{ client.content | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>
+                <div class="card-links platform-links">
                     {{ clients::platforms(packages=client.extra.packages) }}
                 </div>
                 <p class="open-project">Open client details</p>
@@ -202,9 +208,15 @@
         <div>
             <a href="{{ client.path }}" class="project-card client {{ clients::classes(client=client.extra) }}">
                 <img src="./{{ thumbnail }}" alt="{{ client.title }} Logo">
-                <h3>{{ client.title }}</h3>
-                <span>{{ client.content | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe  }}</span>
-                <div class="platform-links">
+                <div class="title-row">
+                    <h3>{{ client.title }}</h3>
+                    <div class="maturity {{ client.extra.maturity | lower }}">{{ client.extra.maturity }}</div>
+                </div>
+                <div class="metadata-pills">
+                    <div class="pill licence">{{ client.extra.licence }}</div>
+                </div>
+                <p class="description">{{ client.content | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>
+                <div class="card-links platform-links">
                     {{ clients::platforms(packages=client.extra.packages) }}
                 </div>
                 <p class="open-project">Open client details</p>
