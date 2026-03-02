@@ -1,5 +1,5 @@
 ---
-name: Ecosystem Data Correction
+name: Update Ecosystem Info
 about: Report outdated or inaccurate information on ecosystem project pages
 title: "Update for [Project Name]"
 labels: ["ecosystem"]
