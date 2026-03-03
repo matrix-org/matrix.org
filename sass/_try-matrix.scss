@@ -4,6 +4,14 @@
     }
 }
 
+.show-primary-on-mobile {
+    @media (max-width: 767px) {
+        background-color: #000 !important;
+        color: #fff !important;
+        border-color: #000 !important;
+    }
+}
+
 .try_matrix {
     display: flex;
     flex-direction: column;
