@@ -12,7 +12,7 @@ website = "https://nheko-reborn.github.io/"
 matrix_room = "#nheko:nheko.im"
 featured = true
 featured_order = 5
-screenshot = ""
+screenshots = []
 good_for = "Power users and tinkerers who prefer a lean native desktop app"
 
 [extra.features]

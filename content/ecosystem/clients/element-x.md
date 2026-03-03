@@ -11,7 +11,7 @@ licence = "AGPL-3.0-or-later OR Element Commercial License"
 latest_release = "2025-09-23"
 featured = true
 featured_order = 2
-screenshot = ""
+screenshots = []
 good_for = "Mobile-first users who want a fast, modern experience"
 
 [extra.features]
