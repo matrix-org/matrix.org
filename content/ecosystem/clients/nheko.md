@@ -11,6 +11,10 @@ repo = "https://github.com/Nheko-Reborn/nheko"
 website = "https://nheko-reborn.github.io/"
 matrix_room = "#nheko:nheko.im"
 featured = true
+featured_order = 5
+screenshot = ""
+good_for = "Power users and tinkerers who prefer a lean native desktop app"
+
 [extra.features]
 e2ee = true
 spaces = true

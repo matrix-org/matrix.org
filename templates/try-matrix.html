@@ -2,6 +2,7 @@
 {% import "macros/clients.html" as clients %}
 {% block content %}
 {% set clients_section = get_section(path="ecosystem/clients/_index.md") %}
+{% set featured_clients = clients_section.pages | filter(attribute="extra.featured", value=true) | sort(attribute="extra.featured_order") %}
 {% set providers_data = load_data(path="content/ecosystem/hosting/providers.toml") %}
 <div class="page-header">
     <div class="hero-block">
@@ -31,6 +32,7 @@
             </div>
         </div>
     </div>
+
     <div class="step-background" id="get-an-app">
         <div class="step choose-a-client no-image">
             <div class="instructions">
@@ -40,6 +42,7 @@
                     clients — pick whichever fits your platform and needs. Switching between
                     apps is easy since they all use the same account.
                 </p>
+
                 <input type="radio" name="pf" id="pf-all" class="platform-filter-radio" checked>
                 <input type="radio" name="pf" id="pf-ios" class="platform-filter-radio">
                 <input type="radio" name="pf" id="pf-android" class="platform-filter-radio">
@@ -56,80 +59,83 @@
                     <label for="pf-macos" class="platform-filter-btn">macOS</label>
                     <label for="pf-linux" class="platform-filter-btn">Linux</label>
                 </div>
-                <div class="client-comparison-wrapper">
-                    <table class="client-comparison">
-                        <thead>
-                            <tr>
-                                <th scope="col">App</th>
-                                <th scope="col">Platforms</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">E2EE</th>
-                                <th scope="col">Spaces</th>
-                                <th scope="col">Threads</th>
-                                <th scope="col">VoIP (1:1)</th>
-                                <th scope="col">VoIP (Jitsi)</th>
-                                <th scope="col">SSO</th>
-                                <th scope="col">OAuth</th>
-                                <th scope="col">Multi-account</th>
-                                <th scope="col">Multi-language</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for client in clients_section.pages %}
-                            {% if client.extra.featured %}
-                            <tr>
-                                <td class="client-name-cell">
-                                    <a href="{{ client.path }}">
-                                        <img src="/ecosystem/clients/{{ client.extra.thumbnail }}"
-                                             alt="{{ client.title }} logo" class="client-table-icon">
-                                        {{ client.title }}
-                                    </a>
-                                </td>
-                                <td class="client-platforms-cell">
-                                    <div class="platform-links">
-                                        {{ clients::platforms(packages=client.extra.packages) }}
-                                    </div>
-                                </td>
-                                <td class="client-desc-cell">{{ client.content | markdown(inline=true) }}</td>
-                                <td class="{% if client.extra.features.e2ee %}feat-yes{% else %}feat-no{% endif %}">
-                                    {% if client.extra.features.e2ee %}&#10003;{% else %}&#10007;{% endif %}
-                                </td>
-                                <td class="{% if client.extra.features.spaces %}feat-yes{% else %}feat-no{% endif %}">
-                                    {% if client.extra.features.spaces %}&#10003;{% else %}&#10007;{% endif %}
-                                </td>
-                                <td class="{% if client.extra.features.threads %}feat-yes{% else %}feat-no{% endif %}">
-                                    {% if client.extra.features.threads %}&#10003;{% else %}&#10007;{% endif %}
-                                </td>
-                                <td class="{% if client.extra.features.voip_1to1 %}feat-yes{% else %}feat-no{% endif %}">
-                                    {% if client.extra.features.voip_1to1 %}&#10003;{% else %}&#10007;{% endif %}
-                                </td>
-                                <td class="{% if client.extra.features.voip_jitsi %}feat-yes{% else %}feat-no{% endif %}">
-                                    {% if client.extra.features.voip_jitsi %}&#10003;{% else %}&#10007;{% endif %}
-                                </td>
-                                <td class="{% if client.extra.features.sso %}feat-yes{% else %}feat-no{% endif %}">
-                                    {% if client.extra.features.sso %}&#10003;{% else %}&#10007;{% endif %}
-                                </td>
-                                <td class="{% if client.extra.features.oauth %}feat-yes{% else %}feat-no{% endif %}">
-                                    {% if client.extra.features.oauth %}&#10003;{% else %}&#10007;{% endif %}
-                                </td>
-                                <td class="{% if client.extra.features.multi_account %}feat-yes{% else %}feat-no{% endif %}">
-                                    {% if client.extra.features.multi_account %}&#10003;{% else %}&#10007;{% endif %}
-                                </td>
-                                <td class="{% if client.extra.features.multi_language %}feat-yes{% else %}feat-no{% endif %}">
-                                    {% if client.extra.features.multi_language %}&#10003;{% else %}&#10007;{% endif %}
-                                </td>
-                            </tr>
+
+                <div class="client-cards">
+                    {% for client in featured_clients %}
+                    <details class="client-card{% if client.extra.packages.apple_app_store %} platform-ios{% endif %}{% if client.extra.packages.google_play_store or client.extra.packages.f_droid %} platform-android{% endif %}{% if client.extra.packages.webapp %} platform-web{% endif %}{% if client.extra.packages.windows_installer %} platform-windows{% endif %}{% if client.extra.packages.macos_installer %} platform-macos{% endif %}{% if client.extra.packages.flathub or client.extra.packages.other_linux_link %} platform-linux{% endif %}">
+                        <summary class="client-card-summary">
+                            <div class="client-card-summary-inner">
+                                <img src="/ecosystem/clients/{{ client.extra.thumbnail }}"
+                                     alt="{{ client.title }} logo"
+                                     class="client-card-icon">
+                                <div class="client-card-header-text">
+                                    <span class="client-card-name">{{ client.title }}</span>
+                                    {% if client.extra.good_for %}
+                                    <span class="client-card-good-for">Good for: {{ client.extra.good_for }}</span>
+                                    {% endif %}
+                                </div>
+                                <div class="client-card-summary-platforms">
+                                    {{ clients::platforms(packages=client.extra.packages) }}
+                                </div>
+                            </div>
+                        </summary>
+
+                        <div class="client-card-body">
+                            {% set aspect = client.extra.screenshot_aspect | default(value="landscape") %}
+                            {% set lightbox_id = "lightbox-" ~ client.slug %}
+                            {% if client.extra.screenshot %}
+                            <div class="client-card-screenshot-wrap client-card-screenshot-wrap--{{ aspect }}">
+                                <a href="#{{ lightbox_id }}" class="client-card-screenshot-trigger" aria-label="Enlarge screenshot">
+                                    <img src="/ecosystem/clients/{{ client.extra.screenshot }}"
+                                         alt="{{ client.title }} screenshot"
+                                         class="client-card-screenshot">
+                                </a>
+                            </div>
+                            <div class="client-lightbox" id="{{ lightbox_id }}" role="dialog" aria-label="{{ client.title }} screenshot">
+                                <a href="#/" class="client-lightbox-backdrop" aria-label="Close"></a>
+                                <a href="#/" class="client-lightbox-close" aria-label="Close">&times;</a>
+                                <img src="/ecosystem/clients/{{ client.extra.screenshot }}"
+                                     alt="{{ client.title }} screenshot">
+                            </div>
+                            {% else %}
+                            <div class="client-card-screenshot-wrap client-card-screenshot-wrap--{{ aspect }} client-card-screenshot-placeholder">
+                                <span>Screenshot coming soon</span>
+                            </div>
                             {% endif %}
-                            {% endfor %}
-                        </tbody>
-                    </table>
+
+                            <div class="client-card-details">
+                                <p class="client-card-description">{{ client.content | markdown(inline=true) }}</p>
+
+                                <div class="client-card-features">
+                                    {% set feat = client.extra.features %}
+                                    {% if feat.e2ee %}<span class="client-feat-pill">E2EE</span>{% endif %}
+                                    {% if feat.spaces %}<span class="client-feat-pill">Spaces</span>{% endif %}
+                                    {% if feat.threads %}<span class="client-feat-pill">Threads</span>{% endif %}
+                                    {% if feat.voip_1to1 %}<span class="client-feat-pill">Voice &amp; video calls</span>{% endif %}
+                                    {% if feat.voip_jitsi %}<span class="client-feat-pill">Group calls (Jitsi)</span>{% endif %}
+                                    {% if feat.multi_account %}<span class="client-feat-pill">Multi-account</span>{% endif %}
+                                    {% if feat.oauth %}<span class="client-feat-pill">OAuth 2.0</span>{% endif %}
+                                    {% if feat.sso %}<span class="client-feat-pill">SSO</span>{% endif %}
+                                </div>
+
+                                <div class="client-card-downloads">
+                                    {{ clients::install_links(packages=client.extra.packages) }}
+                                </div>
+
+                                <a href="{{ client.path }}" class="client-card-more-link">Full details &rarr;</a>
+                            </div>
+                        </div>
+                    </details>
+                    {% endfor %}
                 </div>
+
                 <div class="cta-wrapper">
                     <a href="/ecosystem/clients/" class="call-to-action secondary">Browse all apps</a>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="step-background coloured">
         <div class="step choose-a-server no-image">
             <div class="instructions">
@@ -177,7 +183,7 @@
                         <a href="/docs/chat_basics/matrix-for-im/#creating-a-matrix-account" class="call-to-action">How to create an account</a>
                         {% endif %}
                         <p class="homeserver-info-link">
-                            <a href="/homeserver">More about the matrix.org homeserver →</a>
+                            <a href="/homeserver">More about the matrix.org homeserver &rarr;</a>
                         </p>
                     </div>
                     <div class="account-tier">
@@ -189,8 +195,9 @@
                             These services run a Matrix server for you — good if you want your
                             own domain, dedicated resources, or more storage.
                         </p>
-                        <div class="providers-carousel">
-                            {% for provider in providers_data.providers %}
+                        {% set b2c_providers = providers_data.providers | filter(attribute="b2c", value=true) %}
+                        <div class="providers-carousel" style="--items: {{ b2c_providers | length }}">
+                            {% for provider in b2c_providers %}
                             <a href="{{ provider.website }}" class="provider-compact">
                                 <img src="/ecosystem/hosting/{{ provider.image }}" alt="{{ provider.name }} logo">
                                 <span class="provider-name">{{ provider.name }}</span>
@@ -198,7 +205,7 @@
                                 <span class="provider-since">Since {{ provider.operating_since }}</span>
                                 {% endif %}
                                 <span class="provider-audience">
-                                    {% if provider.b2c %}<span class="audience-tag audience-tag--consumer">Individuals</span>{% endif %}
+                                    <span class="audience-tag audience-tag--consumer">Individuals</span>
                                     {% if provider.b2b %}<span class="audience-tag audience-tag--business">Business</span>{% endif %}
                                 </span>
                             </a>
@@ -228,6 +235,7 @@
             </div>
         </div>
     </div>
+
     <div class="step-background">
         <div class="step register-and-chat no-image">
             <div class="instructions">
