@@ -12,6 +12,16 @@
         &.coloured {
             background-color: #fafafa;
         }
+
+        &.quickstart {
+            @media (max-width: 767px) {
+                min-height: calc(
+                    100svh - var(--page-header-height) - var(--navbar-height)
+                );
+                display: flex;
+                align-items: center;
+            }
+        }
     }
 
     .step {
@@ -32,12 +42,12 @@
             padding-block: 1rem;
 
             h3 {
-                font-size: 2.2rem;
+                font-size: clamp(1.4rem, 5vw, 2.2rem);
                 margin-top: 0;
             }
 
             p {
-                font-size: 1.3rem;
+                font-size: clamp(1rem, 3.5vw, 1.3rem);
             }
         }
 
@@ -80,13 +90,13 @@
         align-items: center;
 
         h3 {
-            font-size: 2.8rem;
+            font-size: clamp(1.6rem, 6vw, 2.8rem);
             margin-bottom: 0.5rem;
         }
 
         > p {
             max-width: 42rem;
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 3.5vw, 1.25rem);
         }
     }
 
@@ -291,6 +301,24 @@
         @media (max-width: 600px) {
             font-size: 1rem;
         }
+    }
+
+    .client-card-anchor {
+        font-size: 0.85rem;
+        font-weight: 400;
+        color: #aaa;
+        text-decoration: none;
+        margin-left: 0.3rem;
+        opacity: 0;
+        transition: opacity 0.15s ease;
+
+        &:hover {
+            color: var(--color-link);
+        }
+    }
+
+    .client-card-summary:hover .client-card-anchor {
+        opacity: 1;
     }
 
     .client-card-good-for {

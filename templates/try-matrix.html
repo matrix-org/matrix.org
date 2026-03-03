@@ -1,5 +1,10 @@
 {% extends "page.html" %}
 {% import "macros/clients.html" as clients %}
+{% block head_extra %}
+<style>
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 1rem); }
+</style>
+{% endblock head_extra %}
 {% block content %}
 {% set clients_section = get_section(path="ecosystem/clients/_index.md") %}
 {% set featured_clients = clients_section.pages | filter(attribute="extra.featured", value=true) | sort(attribute="extra.featured_order") %}
@@ -62,14 +67,17 @@
 
                 <div class="client-cards">
                     {% for client in featured_clients %}
-                    <details class="client-card{% if client.extra.packages.apple_app_store %} platform-ios{% endif %}{% if client.extra.packages.google_play_store or client.extra.packages.f_droid %} platform-android{% endif %}{% if client.extra.packages.webapp %} platform-web{% endif %}{% if client.extra.packages.windows_installer %} platform-windows{% endif %}{% if client.extra.packages.macos_installer %} platform-macos{% endif %}{% if client.extra.packages.flathub or client.extra.packages.other_linux_link %} platform-linux{% endif %}">
+                    <details id="{{ client.slug }}" class="client-card{% if client.extra.packages.apple_app_store %} platform-ios{% endif %}{% if client.extra.packages.google_play_store or client.extra.packages.f_droid %} platform-android{% endif %}{% if client.extra.packages.webapp %} platform-web{% endif %}{% if client.extra.packages.windows_installer %} platform-windows{% endif %}{% if client.extra.packages.macos_installer %} platform-macos{% endif %}{% if client.extra.packages.flathub or client.extra.packages.other_linux_link %} platform-linux{% endif %}">
                         <summary class="client-card-summary">
                             <div class="client-card-summary-inner">
                                 <img src="/ecosystem/clients/{{ client.extra.thumbnail }}"
                                      alt="{{ client.title }} logo"
                                      class="client-card-icon">
                                 <div class="client-card-header-text">
-                                    <span class="client-card-name">{{ client.title }}</span>
+                                    <span class="client-card-name">
+                                        {{ client.title }}
+                                        <a href="#{{ client.slug }}" class="client-card-anchor" aria-label="Link to {{ client.title }}">#</a>
+                                    </span>
                                     {% if client.extra.good_for %}
                                     <span class="client-card-good-for">Good for: {{ client.extra.good_for }}</span>
                                     {% endif %}
