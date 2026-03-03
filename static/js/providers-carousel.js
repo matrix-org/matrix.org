@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: 2026 The Matrix.org Foundation C.I.C.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 (function () {
     const carousel = document.querySelector(".providers-carousel");
     if (!carousel) return;
