@@ -48,22 +48,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
                     apps is easy since they all use the same account.
                 </p>
 
-                <input type="radio" name="pf" id="pf-all" class="platform-filter-radio" checked>
-                <input type="radio" name="pf" id="pf-ios" class="platform-filter-radio">
-                <input type="radio" name="pf" id="pf-android" class="platform-filter-radio">
-                <input type="radio" name="pf" id="pf-web" class="platform-filter-radio">
-                <input type="radio" name="pf" id="pf-windows" class="platform-filter-radio">
-                <input type="radio" name="pf" id="pf-macos" class="platform-filter-radio">
-                <input type="radio" name="pf" id="pf-linux" class="platform-filter-radio">
-                <div class="platform-filters">
-                    <label for="pf-all" class="platform-filter-btn">All</label>
-                    <label for="pf-ios" class="platform-filter-btn">iOS</label>
-                    <label for="pf-android" class="platform-filter-btn">Android</label>
-                    <label for="pf-web" class="platform-filter-btn">Web</label>
-                    <label for="pf-windows" class="platform-filter-btn">Windows</label>
-                    <label for="pf-macos" class="platform-filter-btn">macOS</label>
-                    <label for="pf-linux" class="platform-filter-btn">Linux</label>
-                </div>
+
 
                 <div class="client-cards">
                     {% for client in featured_clients %}
