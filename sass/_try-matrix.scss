@@ -1,3 +1,9 @@
+.hide-on-mobile {
+    @media (max-width: 767px) {
+        display: none !important;
+    }
+}
+
 .try_matrix {
     display: flex;
     flex-direction: column;
@@ -42,7 +48,7 @@
             padding-block: 1rem;
 
             h3 {
-                font-size: clamp(1.4rem, 5vw, 2.2rem);
+                font-size: clamp(1.7rem, 5vw, 2.2rem);
                 margin-top: 0;
             }
 
@@ -529,13 +535,23 @@
     }
 
     .client-card-more-link {
-        font-size: 0.9rem;
-        color: var(--color-link);
-        text-decoration: none;
+        display: inline-block;
         align-self: flex-start;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--color-text);
+        background-color: #f0f0f0;
+        border: 1px solid #d2d2d2;
+        border-radius: 9999px;
+        padding: 0.3rem 0.9rem;
+        text-decoration: none;
+        transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease;
 
         &:hover {
-            text-decoration: underline;
+            background-color: #e4e4e4;
+            border-color: #aaa;
         }
     }
 
@@ -566,9 +582,9 @@
         border-color: #c4b5fd;
     }
     .platform-pill--windows {
-        background: #e0f0ff;
-        color: #0061a4;
-        border-color: #90caf9;
+        background: #e6f9f7;
+        color: #0a6b62;
+        border-color: #7fd6ce;
     }
     .platform-pill--macos {
         background: #f3f3f3;
