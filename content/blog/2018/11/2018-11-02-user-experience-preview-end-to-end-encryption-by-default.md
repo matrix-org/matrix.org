@@ -39,7 +39,7 @@ When using encrypted messages, most existing services fall short in one or all o
 
 ## Cross-signing personal devices
 
-<a href="/blog/wp-content/uploads/2018/11/E2E-UX-Cross-signing.png"><img class="alignnone wp-image-3708 size-large" src="/blog/wp-content/uploads/2018/11/E2E-UX-Cross-signing-1024x576.png" alt="" width="1024" height="576" /></a>
+<a href="/blog/wp-content/uploads/2018/11/E2E-UX-Cross-signing.png"><img class="alignnone size-large" src="/blog/wp-content/uploads/2018/11/E2E-UX-Cross-signing-1024x576.png" alt="" width="1024" height="576" /></a>
 
 <span style="font-weight: 400">When logging in to a new device, you'll be able to use an existing device to verify your new one. Verification is done by </span>
 <a href="https://github.com/matrix-org/matrix-doc/issues/1543"><span style="font-weight: 400">scanning a QR code</span></a><span style="font-weight: 400"> on whichever device has the most convenient camera to use, or by </span>
@@ -49,7 +49,7 @@ When using encrypted messages, most existing services fall short in one or all o
 
 ## Secure Message Recovery
 
-<a href="/blog/wp-content/uploads/2018/11/E2E-UX-Secure-Message-Recovery.gif.gif"><img class="alignnone size-large wp-image-3725" src="/blog/wp-content/uploads/2018/11/E2E-UX-Secure-Message-Recovery.gif.gif" alt="" width="1024" height="577" /></a>
+<a href="/blog/wp-content/uploads/2018/11/E2E-UX-Secure-Message-Recovery.gif.gif"><img class="alignnone size-large" src="/blog/wp-content/uploads/2018/11/E2E-UX-Secure-Message-Recovery.gif.gif" alt="" width="1024" height="577" /></a>
 
 <span style="font-weight: 400">To the end user, Secure Message Recovery works a lot like setting up disk encryption or a password manager. A user can optionally secure their message history using a recovery passphrase and/or key. If logged out, or using another device, the user can use the recovery passphrase or key to access their encrypted message history.</span>
 
@@ -63,7 +63,7 @@ When using encrypted messages, most existing services fall short in one or all o
 
 ## People should trust people
 
-<a href="/blog/wp-content/uploads/2018/11/E2E-UX-Verification.gif"><img class="alignnone size-large wp-image-3726" src="/blog/wp-content/uploads/2018/11/E2E-UX-Verification.gif" alt="" width="1024" height="577" /></a>
+<a href="/blog/wp-content/uploads/2018/11/E2E-UX-Verification.gif"><img class="alignnone size-large" src="/blog/wp-content/uploads/2018/11/E2E-UX-Verification.gif" alt="" width="1024" height="577" /></a>
 
 <span style="font-weight: 400">With both cross-signing and Secure Message Recovery in place, we think that people should trust people, instead of individual devices. Now, when you verify a device, it'll mark all of that users trusted devices as trusted.</span>
 
@@ -72,7 +72,7 @@ When using encrypted messages, most existing services fall short in one or all o
 
 ## Sensible and extensible
 
-<a href="/blog/wp-content/uploads/2018/11/E2E-UX-Settings.gif"><img class="alignnone size-large wp-image-3727" src="/blog/wp-content/uploads/2018/11/E2E-UX-Settings.gif" alt="" width="1024" height="577" /></a>
+<a href="/blog/wp-content/uploads/2018/11/E2E-UX-Settings.gif"><img class="alignnone size-large" src="/blog/wp-content/uploads/2018/11/E2E-UX-Settings.gif" alt="" width="1024" height="577" /></a>
 
 <span style="font-weight: 400">In Riot, we're implementing these features with a sensible default experience that strikes a balance between usability and security. We think most people would prefer to trust cross-signed devices, and that user trust shouldn't block encryption. However, if you aren't most people, you'll be free to configure whatever level of security you need.
 </span>

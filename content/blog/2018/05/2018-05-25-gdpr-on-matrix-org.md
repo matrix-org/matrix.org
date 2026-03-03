@@ -9,7 +9,7 @@ category = ["Privacy"]
 
 If you've connected to the matrix.org homeserver today, you'll have noticed some activity in support of GDPR compliance. The most obvious of these is an invite from <strong>System Alerts</strong> (aka @server:matrix.org):
 
-<a href="/blog/wp-content/uploads/2018/05/system_alerts_invite.png"><img class="alignnone size-full wp-image-3247" src="/blog/wp-content/uploads/2018/05/system_alerts_invite.png" alt="" width="227" height="66" /></a>
+<a href="/blog/wp-content/uploads/2018/05/system_alerts_invite.png"><img class="alignnone size-full" src="/blog/wp-content/uploads/2018/05/system_alerts_invite.png" alt="" width="227" height="66" /></a>
 
 We've rolled out the System Alerts feature to communicate important platform information to all of a homeserver's users. Today, we're using it to communicate the arrival of our new (and much-improved) <a href="/docs/guides/privacy_notice.html">Privacy Notice</a> and <a href="/docs/guides/terms_and_conditions.html">Terms and Conditions</a> to users on matrix.org.
 

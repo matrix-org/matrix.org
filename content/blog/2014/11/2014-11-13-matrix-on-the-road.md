@@ -13,7 +13,7 @@ So you'll find here a summary of the 4 events Matrix attended in September and O
 
 ##### Disrupt San Francisco (September 6-10)
 
-<a href="http://matrix.org/blog/wp-content/uploads/2014/09/6am.jpg"><img class="alignnone size-medium wp-image-191" src="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_48491-300x225.jpg" alt="IMG_4849[1]" width="300" height="225" /></a> <a href="http://matrix.org/blog/wp-content/uploads/2014/09/6am.jpg"><img class="alignnone wp-image-138 size-medium" src="http://matrix.org/blog/wp-content/uploads/2014/09/6am-300x225.jpg" alt="" width="300" height="225" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2014/09/6am.jpg"><img class="alignnone size-medium" src="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_48491-300x225.jpg" alt="IMG_4849[1]" width="300" height="225" /></a> <a href="http://matrix.org/blog/wp-content/uploads/2014/09/6am.jpg"><img class="alignnone size-medium" src="http://matrix.org/blog/wp-content/uploads/2014/09/6am-300x225.jpg" alt="" width="300" height="225" /></a>
 
 <a href="http://techcrunch.com/events/disrupt-sf-2014/event-home/">Disrupt SF</a> was the launchpad of Matrix! We participated in the <a href="http://techcrunch.com/events/disrupt-sf-hackathon-2014/">Hackathon </a>as both a sponsor and a competitor (see our live <a title="Techcrunch Update!" href="http://matrix.org/blog/2014/09/09/techcrunch-update/">update</a>!), and exhibited at the conference as a Product Sponsor.
 
@@ -21,7 +21,7 @@ Three teams announced that they were using Matrix to build their hack but eventu
 
 Matrix team worked on <a href="http://challengepost.com/software/animatrix">Animatrix</a>: a chat app allowing you to build your own 3D animated cartoon and share it with any other friend using Matrix-compliant app using Unify. We had to hack together a basic Matrix Android client in order to do the demo .... You can see our project's presentation <a href="http://techcrunch.com/video/animatrix-presents-disrupt-sf-2014-hackathon/518404216/">here</a>!
 
-<a href="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_48581.jpg"><img class="size-medium wp-image-195 aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_48581-300x225.jpg" alt="IMG_4858[1]" width="300" height="225" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_48581.jpg"><img class="size-medium aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_48581-300x225.jpg" alt="IMG_4858[1]" width="300" height="225" /></a>
 
 The three days conference was great in terms of reaching out to devs and getting good feedback on Matrix! We love seeing people's eyes lighting up and people saying "Eventually someone is doing it!" when we explain what Matrix is about :) So thank you all for your support!
 
@@ -29,7 +29,7 @@ The three days conference was great in terms of reaching out to devs and getting
 
 After getting public in SF, <a href="http://techcrunch.com/events/disrupt-eu/event-home/">Disrupt London </a>was the next steps to release a more stable version of Matrix and encourage even more people to build on Matrix. Again we sponsored both the Hackathon and the Conference and we brought with us a very cool <a href="http://www.trossenrobotics.com/phantomx-ax-hexapod.aspx" target="_blank">PhantomX robot from Trossen Robotics</a> which was also the price we gave away during the hackathon.
 
-<a href="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_50191.jpg"><img class="size-medium wp-image-193 aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_50191-300x225.jpg" alt="IMG_5019[1]" width="300" height="225" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_50191.jpg"><img class="size-medium aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/IMG_50191-300x225.jpg" alt="IMG_5019[1]" width="300" height="225" /></a>
 
 Two teams pitched a Matrix project at the <a href="http://techcrunch.com/events/disrupt-europe-hackathon-2014-london/">Hackathon </a>this time:
 
@@ -49,15 +49,15 @@ Matrix was a Silver sponsor at <a href="http://rich-communication.com/webrtc-sum
 
 The first day was the WebRTC Summit where the focus was on the challenges and next steps of the standard. Matthew presented Matrix explained how it can be used as the missing signaling layer to WebRTC raising lots of questions and interest. You can see the presentation <a title="Matrix, the missing link to WebRTC" href="http://matrix.org/blog/wp-content/uploads/2014/11/2014-11-03-Matrix_Missing-Link_IOT.pdf">here</a>.
 
-<a href="http://matrix.org/blog/wp-content/uploads/2014/11/photo.jpg"><img class="size-medium wp-image-201 aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/photo-300x225.jpg" alt="photo" width="300" height="225" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2014/11/photo.jpg"><img class="size-medium aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/photo-300x225.jpg" alt="photo" width="300" height="225" /></a>
 
 The two next days were focusing more on <a href="http://www.gsma.com/network2020/rcs/" target="_blank">Rich Communication Services </a>(RCS) and again Matrix didn't go unnoticed, and not only because of the lightspeed presentation from Matthew waking everyone up on Wednesday morning! This time Matthew addressed Telcos and RCS vendors with the compelling proposition of using Matrix as the bridge between RCS/IMS/PSTN and the world of over-the-top applications.  The presentation is downloadable <a href="http://matrix.org/blog/wp-content/uploads/2014/11/2014-10-29-OTT-Federation-Strategies.pdf">here</a>.
 
 Again some great feedback and lots of animated discussions over the future of the IP communication world!
 
-<a href="http://matrix.org/blog/wp-content/uploads/2014/11/apex.png"><img class="wp-image-202 aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/apex-300x176.png" alt="apex" width="406" height="238" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2014/11/apex.png"><img class="aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/apex-300x176.png" alt="apex" width="406" height="238" /></a>
 
-<a href="http://matrix.org/blog/wp-content/uploads/2014/11/Sebastian_2.png"><img class="wp-image-203 aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/Sebastian_2-300x53.png" alt="Sebastian_2" width="425" height="75" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2014/11/Sebastian_2.png"><img class="aligncenter" src="http://matrix.org/blog/wp-content/uploads/2014/11/Sebastian_2-300x53.png" alt="Sebastian_2" width="425" height="75" /></a>
 
 ##### WebRTC Summit (Santa Clara - November 4-5)
 

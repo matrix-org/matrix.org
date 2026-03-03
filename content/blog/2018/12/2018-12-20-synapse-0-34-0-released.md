@@ -13,11 +13,11 @@ The big news for 0.34.0 is that we now <strong>recommend Python 3 for production
 
 Performance improvements have been marked, in some contexts we have seen 50% reductions in RAM and CPU usage. Here are some illustrative graphs to get you going but look out for a dedicated post delving into much more detail on the port. You can also see a Matrix Live interview with the project lead Amber (hawkowl) <a href="https://www.youtube.com/watch?v=Ad3oqEo5leM">here</a>.
 
-<a href="/blog/wp-content/uploads/2018/12/image2.png"><img class="alignnone wp-image-3822 size-large" src="/blog/wp-content/uploads/2018/12/image2-1024x296.png" alt="" width="1024" height="296" /></a>
+<a href="/blog/wp-content/uploads/2018/12/image2.png"><img class="alignnone size-large" src="/blog/wp-content/uploads/2018/12/image2-1024x296.png" alt="" width="1024" height="296" /></a>
 
 Matrix.org federation reader workers, the big drops signify roll over to python 3
 
-<a href="/blog/wp-content/uploads/2018/12/image1.png"><img class="alignnone size-large wp-image-3824" src="/blog/wp-content/uploads/2018/12/image1-1024x237.png" alt="" width="1024" height="237" /></a>
+<a href="/blog/wp-content/uploads/2018/12/image1.png"><img class="alignnone size-large" src="/blog/wp-content/uploads/2018/12/image1-1024x237.png" alt="" width="1024" height="237" /></a>
 
 Synapse master on matrix.org, again the drop in RAM signifies the roll over to python 3
 

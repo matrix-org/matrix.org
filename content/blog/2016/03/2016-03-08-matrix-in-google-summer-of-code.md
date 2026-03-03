@@ -7,7 +7,7 @@ author = ["Oddvar Lovaas"]
 category = ["GSOC"]
 +++
 
-<img src="/blog/wp-content/uploads/2016/03/GSoC2016Logo.jpg" alt="GSoC2016Logo" width="920" height="147" class="aligncenter size-full wp-image-1555" />
+<img src="/blog/wp-content/uploads/2016/03/GSoC2016Logo.jpg" alt="GSoC2016Logo" width="920" height="147" class="aligncenter size-full" />
 
 We are very happy to be one of the companies selected for <a href="https://summerofcode.withgoogle.com/organizations/?sp-page=2">Google Summer of Code (GSoC) 2016</a>!
 

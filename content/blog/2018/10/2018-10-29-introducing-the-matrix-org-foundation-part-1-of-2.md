@@ -15,7 +15,7 @@ We were originally aiming for end of August to publish a stable release of all M
 
 So, in preparation for the upcoming Matrix 1.0 release, we've been moving ahead with the rest of the open governance plan - and we're happy to announce that as of a few hours ago,<strong> the initial incarnation of The Matrix.org Foundation exists!</strong>
 
-<a href="/blog/wp-content/uploads/2018/10/Certificate.png"><img class="aligncenter wp-image-3691" src="/blog/wp-content/uploads/2018/10/Certificate-723x1024.png" alt="" width="496" height="702" /></a>
+<a href="/blog/wp-content/uploads/2018/10/Certificate.png"><img class="aligncenter" src="/blog/wp-content/uploads/2018/10/Certificate-723x1024.png" alt="" width="496" height="702" /></a>
 
 Now, it's important to understand that <strong>this process is not finished </strong>- what we've done is to set up a solid initial basis for the Foundation in order to finish refining <a href="https://github.com/matrix-org/matrix-doc/issues/1318">MSC1318</a> and turning it into the full Articles of Association of the Foundation (i.e. the legal framework which governs the remit of the Foundation), which we'll be working on over the coming weeks.
 

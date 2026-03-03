@@ -13,7 +13,7 @@ Matrix was started by Matthew Hodgson and Amandine Le Pape whilst building Amdoc
 
 ## Matthew
 
-<a href="http://matrix.org/blog/wp-content/uploads/2014/10/me.jpg"><img class="alignnone size-medium wp-image-162" style="float: right; margin-left: 1em; margin-bottom: 1em;" src="http://matrix.org/blog/wp-content/uploads/2014/10/me-257x300.jpg" alt="Matthew Hodgson" width="128" height="150" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2014/10/me.jpg"><img class="alignnone size-medium" style="float: right; margin-left: 1em; margin-bottom: 1em;" src="http://matrix.org/blog/wp-content/uploads/2014/10/me-257x300.jpg" alt="Matthew Hodgson" width="128" height="150" /></a>
 
 Matthew Hodgson is technical co-founder of matrix.org, responsible for defining Matrix's vision with Amandine and moving obstacles out of the way of the team in order to build it.  Matthew has spent the last 15 years mainly designing and building various communication solutions on top of an alarming array of different technologies (IRC, IM, NNTP, IMAP, IAX, SIP/RTP, RTMP, XMPP... and now Matrix).
 
@@ -21,7 +21,7 @@ Matthew's day job is running the Unified Communications team at Amdocs, creating
 
 ## Amandine
 
-<a href="http://matrix.org/blog/wp-content/uploads/2014/10/am.jpg"><img class="alignnone size-full wp-image-163" style="float: right; margin-left: 1em; margin-bottom: 1em;" src="http://matrix.org/blog/wp-content/uploads/2014/10/am.jpg" alt="Amandine Le Pape" width="128" height="150" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2014/10/am.jpg"><img class="alignnone size-full" style="float: right; margin-left: 1em; margin-bottom: 1em;" src="http://matrix.org/blog/wp-content/uploads/2014/10/am.jpg" alt="Amandine Le Pape" width="128" height="150" /></a>
 
 Amandine Le Pape is business co-founder of matrix.org, responsible for defining the Matrix vision with Matthew and then organising the non-technical activities required to support and promote it and make it successful.
 

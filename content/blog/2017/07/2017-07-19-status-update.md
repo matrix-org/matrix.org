@@ -26,7 +26,7 @@ Finally on the funding side of things: we're setting up the Matrix.org Foundatio
 
 ### Announcing <strong>UpCloud</strong>: our very first official Matrix.org Corporate Sponsor!
 
-<a href="https://www.upcloud.com/matrix"><img style="padding: 1em" src="/blog/wp-content/uploads/2017/07/upcloud-logo-horizontal-300x60.png" alt="" width="300" height="60" class="aligncenter size-medium wp-image-2631" /></a>
+<a href="https://www.upcloud.com/matrix"><img style="padding: 1em" src="/blog/wp-content/uploads/2017/07/upcloud-logo-horizontal-300x60.png" alt="" width="300" height="60" class="aligncenter size-medium" /></a>
 
 As hinted above, we're incredibly excited and happy that UpCloud have signed up as our first official corporate sponsor.  UpCloud has already been hosting all of Matrix.org's infrastructure for the last 6 months (no mean feat, given the scale of the Matrix.org synapse & postgres!) - and last week they committed to extend their sponsorship further to help the project out in our time of need.
 

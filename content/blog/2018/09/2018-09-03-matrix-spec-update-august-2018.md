@@ -73,7 +73,7 @@ Meanwhile, on the Server to Server API, there has also been a massive amount of 
 </li>
 </ul>
 However, we haven't finished it all: despite our best efforts we're running slightly past the original target of Aug 31.  The current state of play for the r0 release overall (in terms of pending issues) is:
-<a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-16.56.18.png"><img class="aligncenter size-full wp-image-3525" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-16.56.18.png" alt="" width="576" height="214" /></a>...and you can see the full breakdown over at the <a href="https://github.com/matrix-org/matrix-doc/projects/1">public Github project dashboard</a>.
+<a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-16.56.18.png"><img class="aligncenter size-full" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-16.56.18.png" alt="" width="576" height="214" /></a>...and you can see the full breakdown over at the <a href="https://github.com/matrix-org/matrix-doc/projects/1">public Github project dashboard</a>.
 
 
 The main stuff we still have remaining on the Server/Server API at this point is:
@@ -97,20 +97,20 @@ The plan here is to continue speccing and implementing these at top priority (wi
 In terms of visualising progress on this spec mission it's interesting to look at the rate at which we've been closing PRs: this graph shows the total number of PRs which are in state ‘open' or ‘closed' on any given day:
 
 
-<a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-00.56.38.png"><img class="aligncenter size-large wp-image-3526" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-00.56.38-1024x722.png" alt="" width="1024" height="722" /></a>
+<a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-00.56.38.png"><img class="aligncenter size-large" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-00.56.38-1024x722.png" alt="" width="1024" height="722" /></a>
 
 ...which clearly shows the original sprint to get the r0 of the CS API out the door at the end 2015, and then a more leisurely pace until the beginning of July 2018 since which the pace has picked up massively.  Other ways of looking at include the number of open issues...
 
 
-<a href="/blog/wp-content/uploads/2018/09/image-1.png"><img class="aligncenter size-large wp-image-3527" src="/blog/wp-content/uploads/2018/09/image-1-1024x691.png" alt="" width="1024" height="691" /></a>
+<a href="/blog/wp-content/uploads/2018/09/image-1.png"><img class="aligncenter size-large" src="/blog/wp-content/uploads/2018/09/image-1-1024x691.png" alt="" width="1024" height="691" /></a>
 ...or indeed the number of commits per week…
 
 
-<a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.02.27.png"><img class="aligncenter wp-image-3528" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.02.27-1024x195.png" alt="" width="710" height="135" /></a>
+<a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.02.27.png"><img class="aligncenter" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.02.27-1024x195.png" alt="" width="710" height="135" /></a>
 ...or the overall Github Project activity for August.  (It's impressive to see Zil0 sneaking in there on second place on the commit count, thanks to all his GSoC work documenting E2E encryption in the spec as part of implementing it in matrix-python-sdk!)
 
 
-<a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.03.57.png"><img class="aligncenter wp-image-3529" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.03.57-1024x925.png" alt="" width="744" height="672" /></a>
+<a href="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.03.57.png"><img class="aligncenter" src="/blog/wp-content/uploads/2018/09/Screen-Shot-2018-09-03-at-01.03.57-1024x925.png" alt="" width="744" height="672" /></a>
 Anyway, enough numerology.  It's worth noting that all of the dev for r0 has generally followed the proposed <a href="/blog/2018/06/20/towards-open-governance-for-matrix-org/">Open Governance Model for Matrix</a>, with the core spec team made up of both historical core team folk (erik, richvdh, dave & matthew), new core team folk (uhoreg & travis) and community folk (kitsune, anoa & mujx) working together to review and approve the changes - and we've been doing MSCs (albeit with an accelerated pace) for anything which we feel requires input from the wider community.  Once the Server/Server r0 release is out the door we'll be finalising the open governance model and switching to a slightly more measured (but productive!) model of spec development as outlined there.
 
 

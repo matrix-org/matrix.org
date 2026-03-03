@@ -87,7 +87,6 @@ Finally, to really show off WebSG at its best, we’ve gone and written a simple
 
 {{ youtube_player(video_id="bgGWswezi7M") }}
 
-<br/>
 
 Or if you’re impatient you can jump ahead and play with the game [here](https://thirdroom.io/world/#basketball-court:thirdroom.io).
 
@@ -162,7 +161,6 @@ Aside from all the WebSG API excitement, another key area in this release is the
 
 {{ youtube_player(video_id="TWC6MpUh6KY") }}
 
-<br/>
 
 If it wasn’t obvious, this is Third Room’s equivalent of your browser’s developer tools: letting you jump straight into the scene and see precisely what’s going on, and directly manipulate it in real-time.
 
@@ -239,7 +237,6 @@ To try to spell out the opportunities and why it clearly makes sense for commerc
 
 {{ youtube_player(video_id="cFKJ-IuGaKA") }}
 
-<br/>
 
 Otherwise, we hope you enjoy the new update - and please let us know how you get on with it!
 

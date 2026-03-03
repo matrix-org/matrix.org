@@ -65,7 +65,6 @@ something like this:
 <div style="text-align: center">
 <img src="/blog/img/2022-03-29-warning.jpg" width="430"/>
 </div>
-<br/>
 
 ### Why is the DMA good?
 

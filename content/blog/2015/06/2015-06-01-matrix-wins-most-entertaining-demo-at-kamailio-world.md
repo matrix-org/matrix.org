@@ -9,7 +9,7 @@ category = ["General"]
 
 We are back from <a href="http://matrix.org/blog/2015/05/26/next-up-kamailio-world/">Kamailio World</a>, where we presented and participated in James Body's "Dangerous Demos". We were racing against the deadline, but managed to join the demos at the very last minute - and even win the award for "Most Entertaining Demo"!
 
-<a href="http://matrix.org/blog/wp-content/uploads/2015/06/mostentertainingdemo1.jpg"><img src="http://matrix.org/blog/wp-content/uploads/2015/06/mostentertainingdemo1.jpg" alt="mostentertainingdemo" width="600" height="450" class="aligncenter size-full wp-image-1055" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2015/06/mostentertainingdemo1.jpg"><img src="http://matrix.org/blog/wp-content/uploads/2015/06/mostentertainingdemo1.jpg" alt="mostentertainingdemo" width="600" height="450" class="aligncenter size-full" /></a>
 
 It was great to catch up with old acquaintances - and meet many new ones! There were only around 150 people at Kamailio World, but given the area of expertise is very specialised, you can pretty much start talking to anyone and have a really interesting conversation.
 
