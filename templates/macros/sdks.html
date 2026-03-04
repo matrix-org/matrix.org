@@ -96,8 +96,8 @@
                 </div>
                 <div class="author">{{ sdk.maintainer }}</div>
                 <div class="licence-language">
-                    <div class="pill">{{ sdk.licence }}</div>
-                    <div class="pill">{{ sdk.language }}</div>
+                    <div class="pill pill--licence pill--licence-{{ sdk.licence | slugify }}">{{ sdk.licence }}</div>
+                    <div class="pill pill--lang pill--lang-{{ lang_helper::normalize_language(lang=sdk.language) }}">{{ sdk.language }}</div>
                 </div>
                 {% if sdk.description %}<p>{{ sdk.description }}</p>{% endif %}
                 <div class="server-links">

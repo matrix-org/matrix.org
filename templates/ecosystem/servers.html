@@ -1,13 +1,15 @@
 {% extends "page.html" %}
+{% import "macros/breadcrumb.html" as breadcrumb %}
 {% block head_extra %}
 <meta name="description" content="{{ page.extra.summary }}">
 <noscript>
     <link rel="stylesheet" href={{ get_url(path="/no-js.css" , cachebust=true) }} />
 </noscript>
 <script type="module" src={{ get_url(path="/js/servers.js" , cachebust=true) }}></script>
-{% endblock head_extra%}
+{% endblock head_extra %}
 {% block content %}
 <div class="page-header">
+    {{ breadcrumb::breadcrumb(l1_label="Ecosystem", l1_path="/ecosystem/", l2_label="Servers") }}
     <div class="hero-block">
         <h1>{{ page.title }}</h1>
         <p>{{ page.extra.summary }}</p>
