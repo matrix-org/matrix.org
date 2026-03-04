@@ -1,70 +1,161 @@
 {% extends "section.html" %}
+{% import "macros/bridges.html" as bridges %}
+{% import "macros/breadcrumb.html" as breadcrumb %}
 {% block content %}
-<div class="page-header">
-    <div class="hero-block">
-        <h1>{{ section.title }}</h1>
-        <p>All the {{ section.title }} bridges</p>
-    </div>
-</div>
+{% set bridges_data = load_data(path=section.path~"bridges.toml") %}
 
-<div class="bridges_implem">
-    {% set bridges_data = load_data(path=section.path~"bridges.toml") %}
-    {% for bridge in bridges_data.bridges %}
-    <div class="implementation-bg">
-        <div class="implementation">
-            <div class="leftcol">
-                {% if bridge.featured %}<div class="recommended-chip">Recommended</div>{% endif %}
-                <div class="title-row">
-                    <h3 id="{{ bridge.name | slugify }}">{{ bridge.name }}</h3>
-                    <div class="maturity {{ bridge.maturity | lower }}">{{ bridge.maturity | title }}</div>
-                </div>
-                <p>{{ bridge.summary | markdown | safe }}</p>
-                <div class="project-links">
-                    {% if bridge.docs %}
-                    <a href="{{ bridge.docs }}" class="pill">
-                        {{ load_data(path="/assets/documentation.svg") | safe }}
-                        Documentation
-                    </a>
-                    {% endif %}
-                    {% if bridge.room %}
-                    <a href="https://matrix.to/#/{{ bridge.room }}" class="pill">
-                        {{ load_data(path="/assets/support.svg") | safe }}
-                        Support room
-                    </a>
-                    {% endif %}
-                    {% if bridge.repo %}
-                    <a href="{{ bridge.repo }}" class="pill">
-                        {{ load_data(path="/assets/repository.svg") | safe }}
-                        Repository
-                    </a>
-                    {% endif %}
-                </div>
-                <div class="privileges">
-                    Access needed:
-                    <div>
-                        <div>{{ section.title }} {{ bridge.privilege.platform }}</div>
-                        <div>Matrix {{ bridge.privilege.matrix }}</div>
-                    </div>
-                </div>
-                <div class="licence">
-                    Licence: 
-                    <div>
-                        <a href="https://spdx.org/licenses/{{ bridge.license }}.html">{{ bridge.license }}</a>
-                    </div>
-                </div>
+<article class="content ecosystem-detail-page">
+    {{ breadcrumb::breadcrumb(l1_label="Ecosystem", l1_path="/ecosystem/", l2_label="Bridges", l2_path="/ecosystem/bridges/", l3_label=section.title) }}
+    <div class="bridge-network-header">
+        <div class="ecosystem-detail-header">
+            <div class="ecosystem-detail-logo-wrap">
+                <img
+                    src="{{ section.path }}logo.svg"
+                    alt="{{ section.title }} logo"
+                    class="ecosystem-detail-logo"
+                />
             </div>
-            <div class="features-matrix">
-                <ul>
-                    {% for feature, supported in bridge.supports %}
-                    <li {% if supported %}class="supported" {% endif %}>
-                        {{ feature | replace(from="_", to=" ") | title }}
-                    </li>
-                    {% endfor %}
-                </ul>
+            <div class="ecosystem-detail-header-text">
+                <h1 class="ecosystem-detail-name">{{ section.title }}</h1>
+                <div class="ecosystem-detail-meta">
+                    <span class="ecosystem-detail-meta-item">
+                        {{ bridges_data.bridges | length }} bridge{% if
+                        bridges_data.bridges | length != 1 %}s{% endif %}
+                    </span>
+                    {% set featured_count = 0 %} {% for bridge in
+                    bridges_data.bridges %} {% if bridge.featured %}{% set_global featured_count = featured_count + 1 %}{% endif %}
+                    {% endfor %} {% if featured_count > 0 %}
+                    <span class="ecosystem-detail-meta-item">
+                        {{ featured_count }} recommended
+                    </span>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
-    {% endfor %}
 
-</div>
+    <div class="bridge-cards">
+        {% for bridge in bridges_data.bridges %}
+        <div class="bridge-card" id="{{ bridge.name | slugify }}">
+            <div class="bridge-card-grid">
+                <div class="bridge-card-left">
+                    <div class="bridge-card-header">
+                        <div class="bridge-card-title-row">
+                            <h2 class="bridge-card-name">
+                                <a
+                                    href="#{{ bridge.name | slugify }}"
+                                    class="bridge-card-anchor"
+                                    >{{ bridge.name }}</a
+                                >
+                                <span class="maturity {{ bridge.maturity | lower }}"
+                                    >{{ bridge.maturity | title }}</span
+                                >
+                            </h2>
+                            {% if bridge.featured %}
+                            <span class="bridge-card-recommended">Recommended</span>
+                            {% endif %}
+                        </div>
+                        <div class="ecosystem-detail-meta">
+                            {% if bridge.maintainer %}
+                            <span class="ecosystem-detail-meta-item"
+                                >By {{ bridge.maintainer }}</span
+                            >
+                            {% endif %} {% if bridge.language %}
+                            <span class="ecosystem-detail-meta-item"
+                                >{{ bridge.language }}</span
+                            >
+                            {% endif %} {% if bridge.license %}
+                            <span class="ecosystem-detail-meta-item">
+                                <a
+                                    href="https://spdx.org/licenses/{{ bridge.license }}.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >{{ bridge.license }}</a
+                                >
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="bridge-card-main">
+                        <div class="ecosystem-detail-description">
+                            {{ bridge.summary | markdown | safe }}
+                        </div>
+
+                        <div class="bridge-card-access">
+                            <span class="bridge-card-access-label"
+                                >Access needed</span
+                            >
+                            <span class="bridge-card-access-pill bridge-card-access-pill--platform"
+                                >{{ section.title }} {{ bridge.privilege.platform }}</span
+                            >
+                            <span class="bridge-card-access-pill bridge-card-access-pill--matrix"
+                                >Matrix {{ bridge.privilege.matrix }}</span
+                            >
+                        </div>
+
+                        <div class="ecosystem-detail-actions">
+                            {% if bridge.docs %}
+                            <a
+                                href="{{ bridge.docs }}"
+                                class="call-to-action secondary"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {{ load_data(path="/assets/documentation.svg") | safe }}
+                                Documentation
+                            </a>
+                            {% endif %} {% if bridge.room %}
+                            <a
+                                href="https://matrix.to/#/{{ bridge.room }}"
+                                class="call-to-action secondary"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {{ load_data(path="/assets/support.svg") | safe }}
+                                Support room
+                            </a>
+                            {% endif %} {% if bridge.repo %}
+                            <a
+                                href="{{ bridge.repo }}"
+                                class="call-to-action secondary"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {{ load_data(path="/assets/repository.svg") | safe }}
+                                Source Code
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                {% if bridge.supports %}
+                <aside class="bridge-card-features">
+                    <h3 class="ecosystem-detail-aside-title">
+                        Supported features
+                    </h3>
+                    <div class="ecosystem-detail-features">
+                        <dl>
+                            {% for feature, supported in bridge.supports %}
+                            <div
+                                class="feature-row{% if supported %} supported{% else %} unsupported{% endif %}"
+                            >
+                                <dt>
+                                    <span class="feature-row-indicator"></span>
+                                    {{ bridges::feature_label(feature_name=feature) | trim }}
+                                </dt>
+                                <dd>{{ bridges::feature_description(feature_name=feature) | trim }}</dd>
+                            </div>
+                            {% endfor %}
+                        </dl>
+                    </div>
+                </aside>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</article>
+
 {% endblock content %}

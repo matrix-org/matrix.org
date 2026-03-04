@@ -4,62 +4,265 @@
 
 .platforms-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 17.6rem);
-    row-gap: .8rem;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 0.75rem;
     margin-block: 2rem 3rem;
     margin-inline: auto;
+}
 
-    .platform {
+.platform {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.1rem;
+
+    color: var(--color-text);
+    text-decoration: none;
+
+    border: 1px solid #d2d2d2;
+    border-radius: 16px;
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+
+    &:hover {
+        border-color: #999;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    img {
+        width: 52px;
+        height: 52px;
+        flex-shrink: 0;
+        object-fit: contain;
+        border-radius: 10px;
+        border: 1px solid #e8e8e8;
+        padding: 0.3rem;
+        background: #fafafa;
+        box-sizing: border-box;
+    }
+
+    .details {
         display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        align-items: center;
-        padding-block: .5rem;
-        padding-inline: .5rem 1rem;
-        max-width: fit-content;
-        cursor: pointer;
+        flex-direction: column;
+        gap: 0.15rem;
+        min-width: 0;
 
-        color: var(--color-text);
-
-        img {
-            width: 64px;
-            height: 64px;
-
-            border: 1px solid #d2d2d2;
-            border-radius: 15px;
+        h2 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
         }
 
-        .details {
-            display: flex;
-            flex-direction: column;
-
-            h2 {
-                font-size: 1.5rem;
-                font-weight: 700;
-                margin: 0;
-                line-height: 1.2;
-            }
-
-            p {
-                margin: 0;
-                font-size: .875rem;
-                color: #545454;
-            }
-        }
-
-        &:hover {
-            background-color: #e9e9e9;
-            border-radius: 12px;
+        p {
+            margin: 0;
+            font-size: 0.82rem;
+            color: #555;
+            line-height: 1.3;
         }
     }
 }
 
 .platform.no-bridge {
-    opacity: 0.15;          
-    pointer-events: none;  
+    opacity: 0.35;
+    pointer-events: none;
+
+    img {
+        filter: grayscale(1);
+    }
 }
 
-.bridges_implem> :nth-child(even) {
+// ── Bridge network detail page ────────────────────────────────────────────────
+
+.bridge-network-header {
+    max-width: 60rem;
+    margin-inline: auto;
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.bridge-network-back {
+    align-self: flex-start;
+}
+
+.bridge-cards {
+    max-width: 60rem;
+    margin-inline: auto;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bridge-card {
+    border: 1px solid #d2d2d2;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.bridge-card-header {
+    padding: 1.25rem 1.5rem 1rem;
+    border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.bridge-card-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+}
+
+.bridge-card-name {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bridge-card-anchor {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.bridge-card-recommended {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #245c0c;
+    background-color: #dff6d5;
+    border: 1px solid #245c0c;
+    border-radius: 9999px;
+    padding: 0.1rem 0.55rem;
+    line-height: 1.6;
+}
+
+.bridge-card-access {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.1rem;
+}
+
+.bridge-card-access-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-right: 0.15rem;
+}
+
+.bridge-card-access-pill {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8rem;
+    border-radius: 9999px;
+    padding: 0.1rem 0.6rem;
+    line-height: 1.6;
+    border: 1px solid;
+
+    // Platform side — muted indigo/blue
+    &--platform {
+        background-color: #eef0fb;
+        border-color: #8892d4;
+        color: #2c3894;
+    }
+
+    // Matrix side — Matrix green
+    &--matrix {
+        background-color: #dff6d5;
+        border-color: #4a9e2f;
+        color: #245c0c;
+    }
+}
+
+.bridge-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 15rem;
+
+    @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.bridge-card-left {
+    // Left column holds both the header and main — the aside spans full height
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.bridge-card-main {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
+.bridge-card-features {
+    background-color: #fafafa;
+    border-left: 1px solid #e8e8e8;
+    padding: 1.25rem 1rem;
+    @media (max-width: 700px) {
+        border-left: none;
+        border-top: 1px solid #e8e8e8;
+        background-color: #fafafa;
+    }
+
+    .ecosystem-detail-features {
+        dl {
+            border: none;
+            border-radius: 0;
+        }
+
+        .feature-row {
+            gap: 0.1rem;
+            padding: 0.4rem 0.5rem;
+            border-radius: 8px;
+
+            & + .feature-row {
+                border-top: none;
+            }
+
+            &.supported {
+                background-color: transparent;
+            }
+
+            &.unsupported {
+                opacity: 0.5;
+            }
+        }
+
+        dt {
+            font-size: 0.85rem;
+        }
+
+        dd {
+            font-size: 0.75rem;
+            padding-left: calc(1em + 0.4rem);
+            color: #666;
+        }
+    }
+}
+
+// ── Legacy styles (kept for any other pages still referencing them) ────────────
+
+.bridges_implem > :nth-child(even) {
     background-color: #fafafa;
 }
 
@@ -83,7 +286,7 @@
     .title-row {
         align-items: center;
         justify-content: flex-start;
-        gap: .5rem;
+        gap: 0.5rem;
 
         h3 {
             margin-block: 1rem;
@@ -93,7 +296,7 @@
     .recommended-chip {
         display: flex;
         align-items: center;
-        gap: .2rem;
+        gap: 0.2rem;
         max-width: fit-content;
         font-style: normal;
         border-bottom: 1px dotted var(--borders-color);
@@ -103,23 +306,23 @@
     .licence {
         display: flex;
         flex-wrap: wrap;
-        gap: .5rem;
-        margin-block: .5rem;
+        gap: 0.5rem;
+        margin-block: 0.5rem;
         margin-bottom: 1rem;
     }
 
-    .privileges>div,
-    .licence>div {
+    .privileges > div,
+    .licence > div {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: .5rem;
+        gap: 0.5rem;
 
         div,
         a {
             background-color: #e9e9e9;
             border-radius: 9999px;
-            padding-inline: .5rem;
+            padding-inline: 0.5rem;
             color: var(--color-text);
         }
     }
