@@ -1,9 +1,11 @@
 {% extends "section.html" %}
+{% import "macros/breadcrumb.html" as breadcrumb %}
 {% block head_extra %}
 <meta name="description" content="{{ section.extra.summary }}">
 {% endblock head_extra %}
 {% block content %}
 <div class="page-header">
+    {{ breadcrumb::breadcrumb(l1_label="Ecosystem", l1_path="/ecosystem/", l2_label="Bridges") }}
     <div class="hero-block">
         <h1>{{ section.title }}</h1>
         <p>{{ section.extra.summary }}</p>
@@ -18,7 +20,7 @@
         {% for subsection_path in section.subsections %}
         {% set subsection = get_section(path=subsection_path) %}
         {% set bridges_data = load_data(path=subsection.path~"bridges.toml") %}
-        <a href="{{ subsection.path }}" 
+        <a href="{{ subsection.path }}"
            class="platform {% if not bridges_data.bridges %}no-bridge{% endif %}">
             <img src="{{ subsection.path }}logo.svg" alt="{{ subsection.title }} Logo" />
             <div class="details">
