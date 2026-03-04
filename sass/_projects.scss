@@ -494,6 +494,84 @@ a.pill {
     }
 }
 
+// ── Breadcrumb navigation ─────────────────────────────────────────────────────
+// Used on all ecosystem pages. Two contexts:
+//   1. Inside .page-header (dark background) — text is white/muted-white
+//   2. Inside .ecosystem-detail-page (light background) — text is muted grey
+
+.breadcrumb {
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 0.25rem;
+        font-size: 0.85rem;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+
+        // Chevron separator before every item except the first
+        & + li::before {
+            content: "/";
+            margin-right: 0.25rem;
+            opacity: 0.45;
+        }
+    }
+
+    a,
+    span {
+        text-decoration: none;
+        line-height: 1;
+    }
+
+    // ── Dark context (inside .page-header) ───────────────────────────────────
+    .page-header & {
+        margin-bottom: 0.75rem;
+
+        a {
+            color: rgba(255, 255, 255, 0.7);
+
+            &:hover {
+                color: #fff;
+            }
+        }
+
+        span {
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        li + li::before {
+            color: rgba(255, 255, 255, 0.45);
+        }
+    }
+
+    // ── Light context (inside .ecosystem-detail-page) ────────────────────────
+    .ecosystem-detail-page & {
+        margin-bottom: 1.25rem;
+
+        a {
+            color: #555;
+
+            &:hover {
+                color: var(--color-text);
+            }
+        }
+
+        span {
+            color: #aaa;
+        }
+
+        li + li::before {
+            color: #ccc;
+        }
+    }
+}
+
 // ── Shared ecosystem intro paragraph ─────────────────────────────────────────
 // Used by .servers > p and .distributions > p (and any future listing pages)
 // for the centred intro text that sits below the page heading.
