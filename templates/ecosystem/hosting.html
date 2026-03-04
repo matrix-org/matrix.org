@@ -1,18 +1,60 @@
-{% extends "page.html" %}
+{% extends "section.html" %}
+{% import "macros/breadcrumb.html" as breadcrumb %}
 {% block head_extra %}
-<meta name="description" content="{{ page.extra.summary }}">
+<meta name="description" content="{{ section.extra.summary }}" />
+<style>
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: calc(var(--navbar-height) + 1rem);
+    }
+</style>
 {% endblock head_extra %}
 {% block content %}
 <div class="page-header">
+    {{ breadcrumb::breadcrumb(l1_label="Ecosystem", l1_path="/ecosystem/", l2_label="Hosting") }}
     <div class="hero-block">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.extra.summary }}</p>
+        <h1>{{ section.title }}</h1>
+        <p>{{ section.extra.summary }}</p>
     </div>
 </div>
 
 <div class="content hosting_page">
-
-    {{ page.content | safe }}
-
+    {{ section.content | safe }}
+    {% if section.pages %}
+    <div class="hosting-provider-cards">
+        {% for provider in section.pages %}
+        <div>
+            <a
+                href="{{ provider.path }}"
+                class="project-card hosting-provider-card"
+            >
+                {% if provider.extra.image %}
+                <div class="hosting-provider-logo-container">
+                    <img
+                        src="/ecosystem/hosting/{{ provider.extra.image }}"
+                        alt="{{ provider.title }} logo"
+                    />
+                </div>
+                {% endif %}
+                <h3>{{ provider.title }}</h3>
+                {% if provider.extra.operating_since %}
+                <p class="provider-since">
+                    Since {{ provider.extra.operating_since }}
+                </p>
+                {% endif %}
+                <div class="provider-audience-tags">
+                    {% if provider.extra.b2c %}
+                    <span class="audience-tag audience-tag--consumer">Individuals</span>
+                    {% endif %}
+                    {% if provider.extra.b2b %}
+                    <span class="audience-tag audience-tag--business">Business</span>
+                    {% endif %}
+                </div>
+                <p class="open-project">View details</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 </div>
 {% endblock content %}
