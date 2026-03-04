@@ -1,0 +1,67 @@
+{# Bridge feature macros for the matrix.org website. #}
+
+{# Human-readable label for a bridge feature key #}
+{% macro feature_label(feature_name) %}
+{% if feature_name == "dm" %}Direct messages
+{% elif feature_name == "channels" %}Channels
+{% elif feature_name == "channel" %}Channels
+{% elif feature_name == "groups" %}Groups
+{% elif feature_name == "group_chats" %}Group chats
+{% elif feature_name == "group_chat" %}Group chats
+{% elif feature_name == "formatted_text" %}Formatted text
+{% elif feature_name == "message_media" %}Media messages
+{% elif feature_name == "attachments" %}Attachments
+{% elif feature_name == "replies" %}Replies
+{% elif feature_name == "mentions" %}Mentions
+{% elif feature_name == "threads" %}Threads
+{% elif feature_name == "redactions" %}Redactions
+{% elif feature_name == "editing" %}Message editing
+{% elif feature_name == "reactions" %}Reactions
+{% elif feature_name == "presence" %}Presence
+{% elif feature_name == "typing_notifications" %}Typing notifications
+{% elif feature_name == "read_receipts" %}Read receipts
+{% elif feature_name == "encryption" %}Encryption
+{% elif feature_name == "history" %}History sync
+{% elif feature_name == "history_from_android" %}History from Android
+{% elif feature_name == "mms" %}MMS
+{% elif feature_name == "sms" %}SMS
+{% elif feature_name == "rcs" %}RCS
+{% elif feature_name == "sending_mail" %}Sending mail
+{% elif feature_name == "receiving_mail" %}Receiving mail
+{% elif feature_name == "quotes" %}Quotes
+{% elif feature_name == "communities" %}Communities
+{% elif feature_name == "multi_domain" %}Multi-domain
+{% else %}{{ feature_name | replace(from="_", to=" ") | title }}
+{% endif %}
+{% endmacro %}
+
+{# Short description for a bridge feature key #}
+{% macro feature_description(feature_name) %}
+{% if feature_name == "dm" %}Bridge direct/private messages between users.
+{% elif feature_name == "channels" or feature_name == "channel" %}Bridge public or private channels to Matrix rooms.
+{% elif feature_name == "groups" or feature_name == "group_chats" or feature_name == "group_chat" %}Bridge group conversations to Matrix rooms.
+{% elif feature_name == "formatted_text" %}Rich text formatting such as bold, italic, and code blocks is preserved.
+{% elif feature_name == "message_media" %}Images, video, audio and other file attachments are bridged.
+{% elif feature_name == "attachments" %}File attachments are bridged across platforms.
+{% elif feature_name == "replies" %}Threaded replies are bridged and displayed correctly on both sides.
+{% elif feature_name == "mentions" %}User @mentions are bridged and resolve to the correct users.
+{% elif feature_name == "threads" %}Threaded conversations are kept intact across the bridge.
+{% elif feature_name == "redactions" %}Deleted messages are removed on the other side of the bridge.
+{% elif feature_name == "editing" %}Edited messages are updated on both sides of the bridge.
+{% elif feature_name == "reactions" %}Emoji reactions are synced across the bridge.
+{% elif feature_name == "presence" %}Online/offline presence status is synced across the bridge.
+{% elif feature_name == "typing_notifications" %}Typing indicators are shown while the other party is composing.
+{% elif feature_name == "read_receipts" %}Read receipts are synced so you can see when messages have been read.
+{% elif feature_name == "encryption" %}End-to-end encryption is supported across the bridge.
+{% elif feature_name == "history" %}Past message history is available after connecting the bridge.
+{% elif feature_name == "history_from_android" %}Message history can be imported from an Android device.
+{% elif feature_name == "mms" %}MMS multimedia messages are bridged.
+{% elif feature_name == "sms" %}SMS text messages are bridged.
+{% elif feature_name == "rcs" %}RCS rich communication messages are bridged.
+{% elif feature_name == "sending_mail" %}You can send emails from Matrix.
+{% elif feature_name == "receiving_mail" %}Incoming emails appear as Matrix messages.
+{% elif feature_name == "quotes" %}Quoted messages are preserved when bridging.
+{% elif feature_name == "communities" %}Platform communities or servers are bridged as Matrix spaces.
+{% elif feature_name == "multi_domain" %}Bridging across multiple domains or workspaces is supported.
+{% endif %}
+{% endmacro %}
