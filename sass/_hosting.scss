@@ -1,9 +1,8 @@
+// ── Hosting section page ──────────────────────────────────────────────────────
+
 .hosting_page {
     margin: 0 auto;
-    padding: 5.625rem 0 2rem 0;
-    @media (max-width: 767px) {
-        padding: 5.625rem 32px 2rem 32px;
-    }
+    padding-top: 3rem;
 
     h2 {
         text-align: center;
@@ -12,63 +11,97 @@
         margin-bottom: 1rem;
     }
 
-    .hosting_providers {
+    > p {
+        text-align: left;
+        font-weight: 400;
+        font-size: 1.125rem;
+        line-height: 1.6;
+        margin: 0 0 1rem 0;
+    }
+}
+
+// ── Provider listing grid ─────────────────────────────────────────────────────
+// Mirrors the .projects-card-deck pattern used by clients.
+
+.hosting-provider-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 17.6rem);
+    justify-content: center;
+    gap: 1rem;
+    margin-inline: auto;
+    margin-bottom: 5rem;
+
+    @media (max-width: 767px) {
+        max-width: 17.6rem;
+    }
+}
+
+.hosting-provider-cards > div {
+    height: 100%;
+    width: 100%;
+}
+
+.hosting-provider-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    gap: 0.75rem;
+    min-height: 100%;
+
+    border: 1px solid #d2d2d2;
+    border-radius: 16px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+        border-color: #888;
+    }
+
+    .hosting-provider-logo-container {
+        width: 100%;
+        height: 3.5rem;
         display: flex;
-        flex-direction: row;
+        align-items: center;
         justify-content: center;
+    }
+
+    img {
+        height: 3.5rem;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        margin: 0;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .provider-since {
+        margin: 0;
+        font-size: 0.85rem;
+        color: #666;
+        line-height: 1;
+    }
+
+    .provider-audience-tags {
+        display: flex;
         flex-wrap: wrap;
-        gap: 3.125rem;
+        gap: 0.3rem;
+        justify-content: center;
+    }
 
-        .provider_card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            padding: 24px;
-
-            flex: 1 0 400px;
-            max-width: 400px;
-            @media (max-width: 767px) {
-                flex: 1 0 300px;
-                max-width: 300px;
-            }
-
-
-            border: 1px solid #D2D2D2;
-            border-radius: 16px;
-
-            .details {
-                text-align: center;
-
-                .provider_logo_container {
-                    height: 10rem;
-                }
-
-                h3 {
-                    height: 5rem;
-                    margin: 0;
-                    text-align: center;
-
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 2rem;
-                    line-height: 120%;
-                }
-
-                .operating_since {
-                    height: 1.5rem;
-                    font-size: .9rem;
-                }
-
-            }
-
-            .call-to-action {
-                background-color: #000;
-                color: #fff;
-                border-radius: 1000px;
-                padding: .4rem 2rem;
-                align-self: center;
-            }
-        }
+    .open-project {
+        margin-top: auto;
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+        line-height: 1;
     }
 }

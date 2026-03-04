@@ -1,0 +1,66 @@
+{% extends "page.html" %}
+{% import "macros/breadcrumb.html" as breadcrumb %}
+{% block head_extra %}
+<meta
+    name="description"
+    content="{{ page.content | striptags | truncate(length=160) }}"
+/>
+{% endblock head_extra %}
+{% block content %}
+<article class="content ecosystem-detail-page">
+    {{ breadcrumb::breadcrumb(l1_label="Ecosystem", l1_path="/ecosystem/", l2_label="Hosting", l2_path="/ecosystem/hosting/", l3_label=page.title) }}
+    <div class="ecosystem-detail ecosystem-detail--single">
+        <div class="ecosystem-detail-header">
+            {% if page.extra.image %}
+            <div class="ecosystem-detail-logo-wrap">
+                <img
+                    src="/ecosystem/hosting/{{ page.extra.image }}"
+                    alt="{{ page.title }} logo"
+                    class="ecosystem-detail-logo"
+                />
+            </div>
+            {% endif %}
+            <div class="ecosystem-detail-header-text">
+                <h1 class="ecosystem-detail-name">{{ page.title }}</h1>
+                <div class="ecosystem-detail-meta">
+                    {% if page.extra.operating_since %}
+                    <span class="ecosystem-detail-meta-item"
+                        >Operating since {{ page.extra.operating_since }}</span
+                    >
+                    {% endif %}
+                    <span class="ecosystem-detail-meta-item">
+                        {% if page.extra.b2c %}
+                        <span class="audience-tag audience-tag--consumer"
+                            >Individuals</span
+                        >
+                        {% endif %} {% if page.extra.b2b %}
+                        <span class="audience-tag audience-tag--business"
+                            >Business</span
+                        >
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="ecosystem-detail-main">
+            <div class="ecosystem-detail-description">
+                {{ page.content | safe }}
+            </div>
+
+            <div class="ecosystem-detail-actions">
+            {% if page.extra.website %}
+            <a
+                href="{{ page.extra.website }}"
+                class="call-to-action"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Visit {{ page.title }}
+            </a>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock content %}

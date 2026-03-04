@@ -1,16 +1,24 @@
-{% set providers_data = load_data(path="content/ecosystem/hosting/providers.toml") %}
+{% set providers_data =
+load_data(path="content/ecosystem/hosting/providers.toml") %}
 <div class="hosting_providers">
     {% for provider in providers_data.providers %}
     <div class="provider_card">
         <div class="details">
             <div class="provider_logo_container">
-                <img src="/ecosystem/hosting/{{ provider.image }}" alt="Logo of {{ provider.name }}" />
+                <img
+                    src="/ecosystem/hosting/{{ provider.image }}"
+                    alt="Logo of {{ provider.name }}"
+                />
             </div>
             <h3>{{ provider.name }}</h3>
-            <div class="operating_since">Operating since {{ provider.operating_since }}</div>
+            <div class="operating_since">
+                Operating since {{ provider.operating_since }}
+            </div>
         </div>
         <p>{{ provider.description | markdown | safe }}</p>
-        <a href="{{ provider.website }}" class="call-to-action">Try {{ provider.name }}</a>
+        <a href="{{ provider.website }}" class="call-to-action"
+            >Try {{ provider.name }}</a
+        >
     </div>
     {% endfor %}
 </div>
