@@ -5,14 +5,15 @@
         <h1>{{ section.title }}</h1>
     </header>
 
-    {% if section.pages | filter(attribute="extra.active", value=true) | length < 1 %}
-    <p>We don't have any open positions at the moment.</p>
-    {% else %}
+    {% if section.pages | filter(attribute="extra.active", value=true) | length > 0 %}
     <ul>
-    {% for page in section.pages %}
+    {% set active_offers = section.pages | filter(attribute="extra.active", value=true) %}
+    {% for page in active_offers %}
         <li><a href="{{ page.path }}">{{ page.title }}</a></li>
     {% endfor %}
     </ul>
+    {% else %}
+    <p>We don't have any open positions at the moment.</p>
     {% endif %}
 </div>
 {% endblock content %}
