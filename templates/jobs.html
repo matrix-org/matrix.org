@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="content">
+    <header>
+        <h1>{{ section.title }}</h1>
+    </header>
+
+    {% set active_offers = section.pages | filter(attribute="extra.active", value=true) %}
+    {% if active_offers | length > 0 %}
+    <ul>
+    {% for page in active_offers %}
+        <li><a href="{{ page.path }}">{{ page.title }}</a></li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>We don't have any open positions at the moment.</p>
+    {% endif %}
+</div>
+{% endblock content %}

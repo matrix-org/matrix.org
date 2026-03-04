@@ -92,6 +92,10 @@ href = "https://status.matrix.org"
 title = "Site Source"
 href = "https://github.com/matrix-org/matrix.org/"
 
+[[footer_internal]]
+title = "Jobs"
+href = "/jobs"
+
 [[footer_external]]
 image = "github.svg"
 alt = "Matrix on GitHub"
