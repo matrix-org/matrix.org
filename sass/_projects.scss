@@ -493,3 +493,67 @@ a.pill {
         }
     }
 }
+
+// ── Shared ecosystem intro paragraph ─────────────────────────────────────────
+// Used by .servers > p and .distributions > p (and any future listing pages)
+// for the centred intro text that sits below the page heading.
+
+%ecosystem-page-intro {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 120%;
+    margin: 0 auto 4rem auto;
+}
+
+// ── Shared ecosystem link-pill row ────────────────────────────────────────────
+// Wrapping flex row of pill-shaped links used by .server-links and
+// .distribution-links.  Extend this placeholder to get the full set of rules
+// without duplicating them.
+
+%eco-link-pills {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        border: 1px solid var(--borders-color);
+        border-radius: 9999px;
+        padding: 0.1rem 0.5rem;
+
+        font-size: 0.78rem;
+        color: var(--color-text);
+        text-decoration: none;
+        transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease,
+            color 0.15s ease;
+
+        svg {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+
+            * {
+                fill: currentColor;
+            }
+
+            line {
+                stroke: currentColor;
+            }
+        }
+    }
+
+    a:hover {
+        background-color: var(--color-text);
+        border-color: var(--color-text);
+        color: #fff;
+    }
+}
