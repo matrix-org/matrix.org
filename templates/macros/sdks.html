@@ -94,10 +94,10 @@
                     <h3>{{ sdk.name }}</h3>
                     <div class="maturity {{ sdk.maturity | lower }}">{{ sdk.maturity }}</div>
                 </div>
-                {% if sdk.maintainer %}<div class="subtitle">{{ sdk.maintainer }}</div>{% endif %}
-                <div class="metadata-pills">
-                    <div class="pill licence">{{ sdk.licence }}</div>
-                    <div class="pill">{{ sdk.language }}</div>
+                <div class="author">{{ sdk.maintainer }}</div>
+                <div class="licence-language">
+                    <div class="pill pill--licence pill--licence-{{ sdk.licence | slugify }}">{{ sdk.licence }}</div>
+                    <div class="pill pill--lang pill--lang-{{ lang_helper::normalize_language(lang=sdk.language) }}">{{ sdk.language }}</div>
                 </div>
                 {% if sdk.description %}<p class="description">{{ sdk.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>{% endif %}
                 <div class="card-links server-links">
