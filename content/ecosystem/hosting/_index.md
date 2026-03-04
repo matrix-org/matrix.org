@@ -1,6 +1,8 @@
 +++
 title = "Hosting"
 template = "ecosystem/hosting.html"
+page_template = "ecosystem/hosting-provider.html"
+sort_by = "title"
 weight = 6
 extra.summary = """
 Everyone can host their Matrix server, but not everybody wants to. These are the providers the Matrix.org Foundation knows about. 
@@ -30,7 +32,3 @@ of the data of their organisation.
 The following providers have been brought to the attention of the Matrix.org
 Foundation. Please note that the Matrix.org Foundation doesn't endorse them,
 nor provides any warranties for using them.
-
-## Known providers
-
-{{ hosting_providers() }}
