@@ -1,91 +1,83 @@
-{# Client macros for the matrix.org website Features Schema (all boolean values):
-- e2ee: End-to-end encryption support, including media and calls if supported
-- spaces: Matrix Spaces support
-- voip_1to1: 1-to-1 voice/video calls, see https://spec.matrix.org/v1.17/client-server-api/#voice-over-ip
-- voip_jitsi: Jitsi-based group calls
-- threads: Threading support
-- sso: Legacy Single Sign-On (m.login.sso)
-- oauth: Native OIDC/OAuth 2.0 authentication (added in spec 1.15)
-- multi_account: Multiple account support
-- multi_language: Internationalization/localization support
+{# Client macros for the matrix.org website.
+
+Features schema (all boolean values):
+  e2ee          - End-to-end encryption support, including media and calls
+  spaces        - Matrix Spaces support
+  voip_1to1     - 1-to-1 voice/video calls
+  voip_jitsi    - Jitsi-based group calls
+  threads       - Threading support
+  sso           - Legacy Single Sign-On (m.login.sso)
+  oauth         - Native OIDC/OAuth 2.0 authentication (spec 1.15+)
+  multi_account - Multiple account support
+  multi_language- Internationalization/localization support
 #}
 
-{# List of valid feature names for validation #}
 {% set VALID_FEATURES = [
-"e2ee",
-"spaces",
-"voip_1to1",
-"voip_jitsi",
-"threads",
-"sso",
-"oauth",
-"multi_account",
-"multi_language"
+    "e2ee",
+    "spaces",
+    "voip_1to1",
+    "voip_jitsi",
+    "threads",
+    "sso",
+    "oauth",
+    "multi_account",
+    "multi_language"
 ] %}
 
-{# Human-readable labels for features #}
+{# Human-readable label for a feature #}
 {% macro feature_label(feature_name) %}
-{% if feature_name == "e2ee" %}
-E2EE
-{% elif feature_name == "sso" %}
-Legacy SSO
-{% elif feature_name == "oauth" %}
-OAuth 2.0
-{% elif feature_name == "voip_1to1" %}
-VoIP (1:1)
-{% elif feature_name == "voip_jitsi" %}
-VoIP (Jitsi)
-{% else %}
-    {{feature_name | replace(from="_", to=" ") | title }}
+{% if feature_name == "e2ee" %}E2EE
+{% elif feature_name == "sso" %}Legacy SSO
+{% elif feature_name == "oauth" %}OAuth 2.0
+{% elif feature_name == "voip_1to1" %}VoIP (1:1)
+{% elif feature_name == "voip_jitsi" %}VoIP (Jitsi)
+{% else %}{{ feature_name | replace(from="_", to=" ") | title }}
 {% endif %}
 {% endmacro %}
 
+{# Short legend description for a feature #}
+{% macro feature_description(feature_name) %}
+{% if feature_name == "e2ee" %}Messages and media are encrypted end-to-end so only participants can read them.
+{% elif feature_name == "spaces" %}Organise rooms and people into nested communities called Spaces.
+{% elif feature_name == "voip_1to1" %}One-to-one voice and video calls directly over Matrix.
+{% elif feature_name == "voip_jitsi" %}Group voice and video calls via an embedded Jitsi widget.
+{% elif feature_name == "threads" %}Reply chains that branch off from a message and stay organised in a sidebar.
+{% elif feature_name == "sso" %}Sign in via a third-party identity provider using the legacy Matrix SSO flow.
+{% elif feature_name == "oauth" %}Sign in via a third-party identity provider using native OIDC / OAuth 2.0.
+{% elif feature_name == "multi_account" %}Use more than one Matrix account simultaneously without switching profiles.
+{% elif feature_name == "multi_language" %}The interface is available in multiple languages.
+{% endif %}
+{% endmacro %}
+
+{# CSS filter classes for the all-clients card deck #}
 {% macro classes(client) %}
-{% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
-platform-ios
-{% endif %}
-{% if client.packages.google_play_store.app_id %}
-platform-android
-{% endif %}
-{% if client.packages.flathub.app_id %}
-platform-flathub
-{% endif %}
-{% if client.packages.other_linux_link %}
-platform-linux
-{% endif %}
-{% if client.packages.webapp %}
-platform-web
-{% endif %}
-{% if client.packages.windows_installer %}
-platform-windows
-{% endif %}
-{% if client.packages.macos_installer %}
-platform-macos
-{% endif %}
-
+{% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}platform-ios {% endif %}
+{% if client.packages.google_play_store.app_id %}platform-android {% endif %}
+{% if client.packages.flathub.app_id %}platform-flathub {% endif %}
+{% if client.packages.other_linux_link %}platform-linux {% endif %}
+{% if client.packages.webapp %}platform-web {% endif %}
+{% if client.packages.windows_installer %}platform-windows {% endif %}
+{% if client.packages.macos_installer %}platform-macos {% endif %}
 maturity-{{ client.maturity | lower }}
-
 licence-{{ client.licence | slugify }}
-
 {% for feature_name, feature_supported in client.features %}
 {% if feature_supported %}feature-{{ feature_name | replace(from="_", to="-") }}{% endif %}
 {% endfor %}
-{% endmacro classes %}
+{% endmacro %}
 
+{# Supported / unsupported feature list used in the legacy popup overlay #}
 {% macro features(features, supported) %}
 {% set_global matching = 0 %}
 {% for feature_name, supports in features %}
-    {# Validate feature value is boolean before processing #}
     {% if supports is same_as(true) or supports is same_as(false) %}
         {% if supports == supported %}
             {% set_global matching = matching + 1 %}
-            {# Check if feature is in our known list #}
             {% set_global feature_is_valid = false %}
             {% for valid in VALID_FEATURES %}
                 {% if valid == feature_name %}
                     {% set_global feature_is_valid = true %}
                 {% endif %}
-            {%endfor %}
+            {% endfor %}
             {% if feature_is_valid %}
                 <p>{{ self::feature_label(feature_name=feature_name) | trim }}</p>
             {% else %}
@@ -97,36 +89,32 @@ licence-{{ client.licence | slugify }}
 {% if matching == 0 %}None!{% endif %}
 {% endmacro %}
 
+{# Store badge install links #}
 {% macro install_links(packages) %}
 {% if packages.windows_installer %}
-<a href="{{ packages.windows_installer }}"><img src="/assets/stores/download_for_windows.svg"
-        alt="Download for Windows" /></a>
+<a href="{{ packages.windows_installer }}"><img src="/assets/stores/download_for_windows.svg" alt="Download for Windows" /></a>
 {% endif %}
 {% if packages.macos_installer %}
-<a href="{{ packages.macos_installer }}"><img src="/assets/stores/download_for_macos.svg"
-        alt="Download for macOS" /></a>
+<a href="{{ packages.macos_installer }}"><img src="/assets/stores/download_for_macos.svg" alt="Download for macOS" /></a>
 {% endif %}
 {% if packages.flathub %}
-<a href="https://flathub.org/apps/details/{{ packages.flathub.app_id }}"><img src="/assets/stores/flathub.svg"
-        alt="Download on Flathub" /></a>
+<a href="https://flathub.org/apps/details/{{ packages.flathub.app_id }}"><img src="/assets/stores/flathub.svg" alt="Download on Flathub" /></a>
 {% endif %}
 {% if packages.webapp %}
 <a href="{{ packages.webapp }}"><img src="/assets/stores/use_in_browser.svg" alt="Use in your browser" /></a>
 {% endif %}
 {% if packages.apple_app_store %}
-<a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"><img
-        src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
+<a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"><img src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
 {% endif %}
 {% if packages.f_droid %}
-<a href="https://f-droid.org/packages/{{ packages.f_droid.app_id }}"><img src="/assets/stores/f-droid.svg"
-        alt="Download on F-Droid" /></a>
+<a href="https://f-droid.org/packages/{{ packages.f_droid.app_id }}"><img src="/assets/stores/f-droid.svg" alt="Download on F-Droid" /></a>
 {% endif %}
 {% if packages.google_play_store %}
-<a href="https://play.google.com/store/apps/details?id={{ packages.google_play_store.app_id }}"><img
-        src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
+<a href="https://play.google.com/store/apps/details?id={{ packages.google_play_store.app_id }}"><img src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
 {% endif %}
 {% endmacro %}
 
+{# Colored platform pills #}
 {% macro platforms(packages) %}
 {% if packages.apple_app_store %}<div class="platform-pill platform-pill--ios">iOS</div>{% endif %}
 {% if packages.google_play_store or packages.f_droid %}<div class="platform-pill platform-pill--android">Android</div>{% endif %}

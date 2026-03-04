@@ -11,7 +11,7 @@
     margin-inline: auto;
 }
 
-.projects-card-deck>div {
+.projects-card-deck > div {
     height: 100%;
     width: 100%;
 }
@@ -19,55 +19,232 @@
 .project-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
-    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.25rem 1.1rem;
+    gap: 0;
+    text-align: left;
 
     min-height: 100%;
 
-    border: 1px solid #D2D2D2;
+    border: 1px solid #d2d2d2;
     border-radius: 16px;
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
 
+    &:hover {
+        border-color: #999;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    // ── Logo + name header row ────────────────────────────────────────────────
     img {
-        margin: 0;
-        width: 65px;
-        height: 65px;
-        box-sizing: content-box;
+        margin: 0 0 0.65rem;
+        width: 44px;
+        height: 44px;
+        object-fit: contain;
+        border-radius: 10px;
+        border: 1px solid #e8e8e8;
+        padding: 0.25rem;
+        background: #fafafa;
+        box-sizing: border-box;
+        flex-shrink: 0;
     }
 
     h3 {
-        margin: 0 .2rem 0 0;
-
+        margin: 0 0 0.4rem;
         font-style: normal;
         font-weight: 700;
-        font-size: 1.8rem;
-        line-height: 1;
-        text-align: center;
+        font-size: 1.05rem;
+        line-height: 1.25;
+        text-align: left;
     }
 
-    a,
-    .open-project {
-        margin-block: auto 0;
-        color: var(--color-text-light);
-        text-decoration: none;
+    // ── Description ───────────────────────────────────────────────────────────
+    p,
+    & > span {
+        font-size: 0.85rem;
+        line-height: 1.45;
+        color: #555;
+        margin: 0 0 0.75rem;
+        flex-shrink: 0;
+        text-align: left;
     }
 
-    p {
-        line-height: 1;
-    }
-
+    // ── Pills row — always immediately above the CTA ──────────────────────────
+    .platform-links,
     .licence-language {
         display: flex;
         flex-direction: row;
-        gap: .2rem;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        margin-top: auto;
+        margin-bottom: 0.6rem;
+        align-self: stretch;
+        justify-content: center;
     }
 
     .pill {
-        background-color: #e9e9e9;
+        display: inline-block;
+        font-size: 0.75rem;
+        background-color: #f3f3f3;
+        border: 1px solid #d1d5db;
         border-radius: 9999px;
-        padding-inline: .5rem;
+        padding: 0.05rem 0.5rem;
         color: var(--color-text);
+        line-height: 1.6;
+    }
+
+    // ── Licence pill colour families ──────────────────────────────────────────
+    // Permissive (MIT, Apache, ISC, BSD, CC0, Artistic, MIT-Modern-Variant)
+    .pill--licence-mit,
+    .pill--licence-mit-modern-variant,
+    .pill--licence-apache-2-0,
+    .pill--licence-isc,
+    .pill--licence-bsd,
+    .pill--licence-cc0-1-0,
+    .pill--licence-artistic-2-0 {
+        background-color: #e6f4ea;
+        border-color: #7acc8a;
+        color: #1a6b32;
+    }
+
+    // Strong copyleft (GPL family, AGPL)
+    .pill--licence-gpl-1-0-or-later,
+    .pill--licence-gpl-3-0,
+    .pill--licence-gpl-3-0-only,
+    .pill--licence-gpl-3-0-or-later,
+    .pill--licence-agpl-3-0,
+    .pill--licence-agpl-3-0-only,
+    .pill--licence-agpl-3-0-or-later {
+        background-color: #fff4e5;
+        border-color: #fcd9a0;
+        color: #92400e;
+    }
+
+    // Weak copyleft (LGPL, MPL, EUPL)
+    .pill--licence-lgpl-2-1-only,
+    .pill--licence-lgpl-3-0-only,
+    .pill--licence-lgpl-3-0-or-later,
+    .pill--licence-mpl-2-0,
+    .pill--licence-eupl-1-2 {
+        background-color: #e8f1ff;
+        border-color: #99bbee;
+        color: #1a4db0;
+    }
+
+    // Unknown / no licence
+    .pill--licence-none {
+        background-color: #f3f3f3;
+        border-color: #d1d5db;
+        color: #555;
+    }
+
+    // ── Language pill colour families ─────────────────────────────────────────
+    // Systems (C, C++, Rust)
+    .pill--lang-c,
+    .pill--lang-cplusplus,
+    .pill--lang-rust {
+        background-color: #fff4e5;
+        border-color: #fcd9a0;
+        color: #92400e;
+    }
+
+    // JVM (Java, Kotlin)
+    .pill--lang-java,
+    .pill--lang-kotlin {
+        background-color: #ede9fe;
+        border-color: #c4b5fd;
+        color: #5b21b6;
+    }
+
+    // JavaScript / TypeScript
+    .pill--lang-javascript,
+    .pill--lang-typescript {
+        background-color: #fefce8;
+        border-color: #fde68a;
+        color: #854d0e;
+    }
+
+    // Python
+    .pill--lang-python {
+        background-color: #e8f1ff;
+        border-color: #99bbee;
+        color: #1a4db0;
+    }
+
+    // Go
+    .pill--lang-go {
+        background-color: #e6f9f7;
+        border-color: #7fd6ce;
+        color: #0a6b62;
+    }
+
+    // Apple (Swift, Objective-C)
+    .pill--lang-swift,
+    .pill--lang-objective-c {
+        background-color: #fff0eb;
+        border-color: #fdb99a;
+        color: #9a3412;
+    }
+
+    // Dynamic / functional (Ruby, Perl, Raku, Erlang, Elixir, Lisp, Racket)
+    .pill--lang-ruby,
+    .pill--lang-perl,
+    .pill--lang-raku,
+    .pill--lang-erlang,
+    .pill--lang-elixir,
+    .pill--lang-lisp,
+    .pill--lang-racket {
+        background-color: #fce7f3;
+        border-color: #f9a8d4;
+        color: #9d174d;
+    }
+
+    // Web / cross-platform (PHP, Dart, Elm, Haxe)
+    .pill--lang-php,
+    .pill--lang-dart,
+    .pill--lang-elm,
+    .pill--lang-haxe {
+        background-color: #e6f4ea;
+        border-color: #7acc8a;
+        color: #1a6b32;
+    }
+
+    // Shell / scripting (POSIX Shell, Nim)
+    .pill--lang-posix-shell,
+    .pill--lang-nim {
+        background-color: #f3f3f3;
+        border-color: #d1d5db;
+        color: #374151;
+    }
+
+    // C# (separate from C/C++ — .NET ecosystem)
+    .pill--lang-csharp {
+        background-color: #eef0fb;
+        border-color: #8892d4;
+        color: #2c3894;
+    }
+
+    // ── CTA label pinned to the bottom ────────────────────────────────────────
+    // The whole card is already a link — this is a visual affordance only,
+    // not an interactive element, so it carries no hover state of its own.
+    a.open-project,
+    .open-project {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: stretch;
+        margin-top: 0;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #555;
+        background-color: transparent;
+        border: 1px solid #d1d5db;
+        border-radius: 9999px;
+        padding: 0.2rem 0.75rem;
+        text-decoration: none;
+        pointer-events: none;
     }
 }
 
@@ -92,10 +269,10 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            gap: .8rem;
+            gap: 0.8rem;
             z-index: 100;
 
-            padding: .5rem .8rem;
+            padding: 0.5rem 0.8rem;
 
             background-color: #fafafa;
             color: #000;
@@ -112,7 +289,7 @@
             }
 
             img {
-                height: .9em;
+                height: 0.9em;
                 margin-block: auto;
             }
 
@@ -139,7 +316,7 @@
             max-width: 20rem;
             z-index: 200;
 
-            padding: .5rem 1rem;
+            padding: 0.5rem 1rem;
 
             background-color: #fafafa;
             border: 1px solid var(--borders-color);
@@ -147,8 +324,8 @@
 
             p {
                 margin: 0;
-                margin-bottom: .5rem;
-                font-size: .8rem;
+                margin-bottom: 0.5rem;
+                font-size: 0.8rem;
                 text-align: start;
             }
 
@@ -163,7 +340,7 @@
             }
 
             .reset-links {
-                font-size: .8rem;
+                font-size: 0.8rem;
 
                 a {
                     cursor: pointer;
@@ -186,36 +363,37 @@
 }
 
 .maturity {
-    border: 1px solid var(--borders-color);
+    border: 1px solid;
     border-radius: 9999px;
-    padding: 0 .6rem;
-    font-size: 1rem;
-    font-weight: 400;
+    padding: 0.1rem 0.45rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    line-height: 1.6;
     max-width: fit-content;
     justify-self: flex-end;
 
     &.stable {
-        background-color: #DFF6D5;
-        border-color: #245C0C;
-        color: #245C0C
+        background-color: #dff6d5;
+        border-color: #245c0c;
+        color: #245c0c;
     }
 
     &.beta {
-        background-color: #F6E7D5;
-        border-color: #6F420F;
-        color: #6F420F;
+        background-color: #f6e7d5;
+        border-color: #6f420f;
+        color: #6f420f;
     }
 
     &.alpha {
-        background-color: #F6D5D5;
-        border-color: #8B1212;
-        color: #8B1212;
+        background-color: #f6d5d5;
+        border-color: #8b1212;
+        color: #8b1212;
     }
 
     &.obsolete {
-        background-color: #E6E6E6;
-        border-color: #4A4A4A;
-        color: #4A4A4A;
+        background-color: #e6e6e6;
+        border-color: #4a4a4a;
+        color: #4a4a4a;
     }
 }
 
@@ -224,7 +402,7 @@
     max-width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: .2rem;
+    gap: 0.2rem;
     align-items: start;
     flex-wrap: wrap;
 }
@@ -237,7 +415,7 @@
     bottom: 0;
     z-index: 100;
 
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0.5);
 
     &:not(.display) {
         display: none;
@@ -247,63 +425,69 @@
 .project-links {
     display: flex;
     flex-wrap: wrap;
-    gap: .3rem;
+    gap: 0.3rem;
 
     margin-bottom: 1rem;
+}
 
-    .pill {
-        display: flex;
-        align-items: center;
-        gap: .2rem;
+a.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
 
-        border: 1px solid var(--color-text);
-        color: var(--color-text);
-        border-radius: 9999px;
-        padding: .1rem .4rem;
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
+    border-radius: 9999px;
+    padding: 0.1rem 0.4rem;
+    text-decoration: none;
+
+    svg {
+        flex-shrink: 0;
+        width: 1em;
+        height: 1em;
+    }
+
+    .fillme {
+        fill: var(--color-text);
+        stroke: var(--color-text);
+    }
+
+    .fillme-inverse {
+        stroke: #fff;
+    }
+
+    &:hover {
+        background-color: var(--color-text);
+        color: #fff;
 
         .fillme {
-            fill: var(--color-text);
-            stroke: var(--color-text);
-        }
-
-        .fillme-inverse {
+            fill: #fff;
             stroke: #fff;
         }
 
-        &:hover {
-            background-color: var(--color-text);
-            color: #fff;
-
-            .fillme {
-                fill: #fff;
-                stroke: #fff;
-            }
-
-            .fillme-inverse {
-                stroke: var(--color-text);
-            }
+        .fillme-inverse {
+            stroke: var(--color-text);
         }
     }
 }
 
 .features-matrix {
-
     ul {
         border: 1px solid var(--borders-color);
         border-radius: 16px;
         padding-inline: 1rem;
 
         li {
-            padding: .5rem;
+            padding: 0.5rem;
             line-height: 1.6;
             list-style-position: inside;
-            list-style-image: url('/assets/cross_unsupported.svg');
+            list-style-image: url("/assets/cross_unsupported.svg");
 
             &.supported {
-                list-style-image: url('/assets/tick_supported.svg');
+                list-style-image: url("/assets/tick_supported.svg");
             }
 
-            &+li {
+            & + li {
                 border-top: 1px solid #d2d2d2;
             }
         }

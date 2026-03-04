@@ -1,7 +1,11 @@
 {% extends "page.html" %}
 {% import "macros/clients.html" as clients %}
+{% import "macros/breadcrumb.html" as breadcrumb %}
 {% block head_extra %}
-<meta name="description" content="{{ page.content | replace(from=" <p>", to="") | replace(from="</p>", to="") }}">
+<meta
+    name="description"
+    content="{{ page.content | striptags | truncate(length=160) }}"
+/>
 {% endblock head_extra %}
 {% block content %}
 {% if page.extra.thumbnail %}
@@ -9,55 +13,159 @@
 {% else %}
 {% set thumbnail = "client-placeholder.svg" %}
 {% endif %}
-<article class="content">
-    <div class="client-details">
-        <div class="details">
-            <img class="app-logo" src="../{{ thumbnail }}" alt="{{ page.title }} Logo">
-            <div class="name-and-release-date">
-                <h3>{{ page.title }}<div class="maturity {{ page.extra.maturity | lower }}">{{ page.extra.maturity }}
-                    </div>
-                </h3>
+<article class="content ecosystem-detail-page">
+    {{ breadcrumb::breadcrumb(l1_label="Ecosystem", l1_path="/ecosystem/", l2_label="Clients", l2_path="/ecosystem/clients/", l3_label=page.title) }}
+    <div class="ecosystem-detail">
+        <div class="ecosystem-detail-header">
+            <div class="ecosystem-detail-logo-wrap">
+                <img
+                    src="../{{ thumbnail }}"
+                    alt="{{ page.title }} logo"
+                    class="ecosystem-detail-logo"
+                />
             </div>
-            <p class="summary">{{ page.content | markdown | safe }}</p>
-            <div class="project-links">
-                {% if page.extra.website %}
-                <a href="{{ page.extra.website }}" class="pill">
-                    {{ load_data(path="/assets/home.svg") | safe }}
-                    Homepage
+            <div class="ecosystem-detail-header-text">
+                <h1 class="ecosystem-detail-name">
+                    {{ page.title }}
+                    <span class="maturity {{ page.extra.maturity | lower }}"
+                        >{{ page.extra.maturity }}</span
+                    >
+                </h1>
+                <div class="ecosystem-detail-meta">
+                    {% if page.extra.maintainer %}
+                    <span class="ecosystem-detail-meta-item"
+                        >By {{ page.extra.maintainer }}</span
+                    >
+                    {% endif %} {% if page.extra.latest_release %}
+                    <span class="ecosystem-detail-meta-item"
+                        >Latest release: {{ page.extra.latest_release }}</span
+                    >
+                    {% endif %} {% if page.extra.licence %}
+                    <span class="ecosystem-detail-meta-item"
+                        >{{ page.extra.licence }}</span
+                    >
+                    {% endif %}
+                </div>
+                <div class="platform-links">
+                    {{ clients::platforms(packages=page.extra.packages) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="ecosystem-detail-main">
+            <div class="ecosystem-detail-description">
+                {{ page.content | safe }}
+            </div>
+
+            {% set screenshots = page.extra.screenshots | default(value=[]) %}
+            {% if screenshots | length > 0 %} {% set lightbox_id =
+            "detail-lightbox-" ~ page.slug %} {% set multi = screenshots |
+            length > 1 %}
+            <div
+                class="client-card-screenshot-wrap{% if multi %} client-card-screenshot-wrap--multi{% endif %}"
+            >
+                {% for shot in screenshots %} {% set shot_lightbox_id =
+                lightbox_id ~ "-" ~ loop.index %}
+                <a
+                    href="#{{ shot_lightbox_id }}"
+                    class="client-card-screenshot-trigger"
+                    aria-label="Enlarge screenshot"
+                >
+                    <img
+                        src="../{{ shot }}"
+                        alt="{{ page.title }} screenshot {{ loop.index }}"
+                        class="client-card-screenshot"
+                    />
                 </a>
-                {% endif %}
-                {% if page.extra.docs %}
-                <a href="{{ page.extra.docs }}" class="pill">
+                {% endfor %}
+            </div>
+            {% for shot in screenshots %} {% set shot_lightbox_id = lightbox_id
+            ~ "-" ~ loop.index %}
+            <div
+                class="client-lightbox"
+                id="{{ shot_lightbox_id }}"
+                role="dialog"
+                aria-label="{{ page.title }} screenshot"
+            >
+                <a
+                    href="#/"
+                    class="client-lightbox-backdrop"
+                    aria-label="Close"
+                ></a>
+                <a href="#/" class="client-lightbox-close" aria-label="Close"
+                    >&times;</a
+                >
+                <img
+                    src="../{{ shot }}"
+                    alt="{{ page.title }} screenshot {{ loop.index }}"
+                />
+            </div>
+            {% endfor %} {% endif %}
+
+            <div class="stores">
+                {{ clients::install_links(packages=page.extra.packages) }}
+            </div>
+
+            <div class="ecosystem-detail-actions">
+                {% if page.extra.website %}
+                <a
+                    href="{{ page.extra.website }}"
+                    class="call-to-action"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Visit {{ page.title }}</a
+                >
+                {% endif %} {% if page.extra.docs %}
+                <a
+                    href="{{ page.extra.docs }}"
+                    class="call-to-action secondary"
+                >
                     {{ load_data(path="/assets/documentation.svg") | safe }}
                     Documentation
                 </a>
-                {% endif %}
-                {% if page.extra.matrix_room %}
-                <a href="https://matrix.to/#/{{ page.extra.matrix_room }}" class="pill">
-                    {{ load_data(path="/assets/support.svg") | safe }}
-                    Support room
+                {% endif %} {% if page.extra.matrix_room %}
+                <a
+                    href="https://matrix.to/#/{{ page.extra.matrix_room }}"
+                    class="call-to-action secondary"
+                >
+                    {{ load_data(path="/assets/support.svg") | safe }} Support
+                    room
                 </a>
-                {% endif %}
-                {% if page.extra.repo %}
-                <a href="{{ page.extra.repo }}" class="pill">
-                    {{ load_data(path="/assets/repository.svg") | safe }}
-                    Source Code
+                {% endif %} {% if page.extra.repo %}
+                <a
+                    href="{{ page.extra.repo }}"
+                    class="call-to-action secondary"
+                >
+                    {{ load_data(path="/assets/repository.svg") | safe }} Source
+                    Code
                 </a>
                 {% endif %}
             </div>
         </div>
-        <div class="features-matrix">
-            <ul>
-                {% for feature, supported in page.extra.features %}
-                <li {% if supported %}class="supported" {% endif %}>
-                    {{ clients::feature_label(feature_name=feature) | trim }}
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-    <div class="stores">
-        {{ clients::install_links(packages=page.extra.packages) }}
+
+        <aside class="ecosystem-detail-aside">
+            <h3 class="ecosystem-detail-aside-title">Features</h3>
+            <div class="ecosystem-detail-features">
+                <dl>
+                    {% for feature, supported in page.extra.features %}
+                    <div
+                        class="feature-row{% if supported %} supported{% else %} unsupported{% endif %}"
+                    >
+                        <dt>
+                            <span class="feature-row-indicator"></span>
+                            {{ clients::feature_label(feature_name=feature) |
+                            trim }}
+                        </dt>
+                        <dd>
+                            {{
+                            clients::feature_description(feature_name=feature) |
+                            trim }}
+                        </dd>
+                    </div>
+                    {% endfor %}
+                </dl>
+            </div>
+        </aside>
     </div>
 </article>
 {% endblock content %}

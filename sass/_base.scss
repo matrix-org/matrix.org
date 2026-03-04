@@ -306,13 +306,39 @@ a>code {
 }
 
 .call-to-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
     background-color: #000;
     border: 2px solid #000;
     color: #fff;
     font-size: 1.125rem;
     font-weight: 600;
     border-radius: 1000px;
-    padding: .6em 2em;
+    padding: 0.6em 2em;
+
+    svg {
+        width: 1.1em;
+        height: 1.1em;
+        flex-shrink: 0;
+
+        .fillme {
+            fill: currentColor;
+            stroke: currentColor;
+        }
+
+        .fillme-inverse {
+            stroke: #000;
+        }
+    }
+
+    &.secondary svg .fillme-inverse {
+        stroke: #fff;
+    }
+
+    &.secondary:hover svg .fillme-inverse {
+        stroke: #000;
+    }
 
     &.inverted {
         border: 2px solid #fff;
@@ -325,7 +351,7 @@ a>code {
 
             &:hover {
                 background-color: #fff;
-                color: #000
+                color: #000;
             }
         }
     }

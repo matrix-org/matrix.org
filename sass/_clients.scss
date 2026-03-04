@@ -1,6 +1,10 @@
+// ── Body lock when a client popup is open (legacy checkbox overlay) ───────────
+
 body:has(.projects-card-deck > div > .client-checkbox:checked) {
     overflow: hidden;
 }
+
+// ── Clients section page layout ───────────────────────────────────────────────
 
 .clients_page {
     padding-top: 3rem;
@@ -12,7 +16,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         margin-bottom: 1rem;
     }
 
-    p {
+    p:not(.project-card *) {
         text-align: center;
         font-weight: 400;
         font-size: 1.125rem;
@@ -35,22 +39,605 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: center;
-    gap: 16px 4px;
+    justify-content: flex-start;
+    gap: 4px;
     flex-wrap: wrap;
 }
 
-.platform-pill {
-    background: #E9E9E9;
-    border-radius: 16px;
-    padding: .375rem .625rem;
+// ── Platform pills ─────────────────────────────────────────────────────────────
+// Colored variants matching the Try Matrix design language.
+// Used on both the ecosystem client list and inside <details> cards.
 
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 120%;
-    color: #000000;
+.platform-pill {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 9999px;
+    border: 1px solid;
+    white-space: nowrap;
+    font-weight: 500;
 }
+
+.platform-pill--ios {
+    background: #e8f1ff;
+    color: #1a4db0;
+    border-color: #99bbee;
+}
+
+.platform-pill--android {
+    background: #e6f4ea;
+    color: #1a6b32;
+    border-color: #7acc8a;
+}
+
+.platform-pill--web {
+    background: #ede9fe;
+    color: #5b21b6;
+    border-color: #c4b5fd;
+}
+
+.platform-pill--windows {
+    background: #e6f9f7;
+    color: #0a6b62;
+    border-color: #7fd6ce;
+}
+
+.platform-pill--macos {
+    background: #f3f3f3;
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+.platform-pill--linux {
+    background: #fff4e5;
+    color: #92400e;
+    border-color: #fcd9a0;
+}
+
+// ── Audience tags (hosting providers) ────────────────────────────────────────
+// Reused from Try Matrix provider compact cards.
+
+.audience-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 9999px;
+    border: 1px solid;
+    white-space: nowrap;
+    font-weight: 500;
+
+    &--consumer {
+        background: #e8f1ff;
+        color: #1a4db0;
+        border-color: #99bbee;
+    }
+
+    &--business {
+        background: #f3f3f3;
+        color: #374151;
+        border-color: #d1d5db;
+    }
+}
+
+// ── Shared <details> expand card component ────────────────────────────────────
+// Used on /ecosystem/clients/ (featured section) and /ecosystem/hosting/.
+// Mirrors the .client-card design from _try-matrix.scss so both pages share
+// the same design language.
+
+.ecosystem-client-cards,
+.hosting-provider-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+// The <details> card itself
+.client-card {
+    border: 1px solid #d2d2d2;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+
+    &[open] {
+        border-color: #aaa;
+    }
+
+    &:hover {
+        border-color: #888;
+    }
+}
+
+// Summary row — always visible
+.client-card-summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.85rem 1.1rem;
+    user-select: none;
+
+    @media (max-width: 600px) {
+        padding: 0.5rem 0.75rem;
+    }
+
+    &::-webkit-details-marker {
+        display: none;
+    }
+
+    &::marker {
+        display: none;
+    }
+
+    &:hover {
+        background-color: #fafafa;
+    }
+}
+
+.client-card-summary-inner {
+    display: grid;
+    // icon | header text | tags/platforms | chevron
+    grid-template-columns: 40px 1fr auto 0.75rem;
+    align-items: center;
+    gap: 0 0.85rem;
+
+    @media (max-width: 600px) {
+        grid-template-columns: 36px 1fr 0.75rem;
+    }
+
+    // Chevron via pseudo-element in the last column
+    &::after {
+        content: "";
+        display: block;
+        justify-self: center;
+        width: 0.55rem;
+        height: 0.55rem;
+        border-right: 2px solid #666;
+        border-bottom: 2px solid #666;
+        transform: rotate(45deg);
+        transition: transform 0.2s ease;
+    }
+}
+
+.client-card[open] .client-card-summary-inner::after {
+    transform: rotate(-135deg) translateY(-2px);
+}
+
+.client-card-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    object-fit: contain;
+
+    @media (max-width: 600px) {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        border-radius: 10px;
+    }
+}
+
+.client-card-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.client-card-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+
+    @media (max-width: 600px) {
+        font-size: 1rem;
+    }
+}
+
+.client-card-anchor {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 0.1rem;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+
+    &:hover {
+        color: var(--color-link);
+    }
+}
+
+.client-card-summary:hover .client-card-anchor {
+    opacity: 1;
+}
+
+.client-card-description-short {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media (max-width: 600px) {
+        font-size: 0.8rem;
+        white-space: normal;
+    }
+}
+
+// "good for" subtext — used on try-matrix; available here too if needed
+.client-card-good-for {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.3;
+
+    @media (max-width: 600px) {
+        font-size: 0.8rem;
+    }
+}
+
+.client-card-summary-platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    justify-content: flex-end;
+
+    @media (max-width: 600px) {
+        display: none;
+    }
+}
+
+// ── Expanded card body ────────────────────────────────────────────────────────
+
+.client-card-body {
+    display: grid;
+    grid-template-columns: 440px minmax(0, 1fr);
+    gap: 0;
+    border-top: 1px solid #e8e8e8;
+
+    @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+// Screenshot container — always full grid-row height in cards, 16:9 on detail pages
+.client-card-screenshot-wrap {
+    // overflow: hidden is intentionally omitted here so the expand badge
+    // (::after) is never clipped by the container. Each screenshot trigger
+    // clips its own image via overflow: hidden instead.
+    position: relative;
+    background-color: #f5f5f5;
+    // Fill the full height of the .client-card-body grid row so the screenshot
+    // panel always matches the details column, regardless of description length.
+    // A min-height prevents collapse when the details side is very short.
+    align-self: stretch;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    gap: 0.5rem;
+    border-radius: 4px;
+
+    // Expand badge anchored to the wrap so it is never clipped
+    &::after {
+        content: "⤢";
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 0.75rem;
+        line-height: 1;
+        background: rgba(0, 0, 0, 0.55);
+        color: #fff;
+        padding: 0.2rem 0.35rem;
+        border-radius: 4px;
+        pointer-events: none;
+        opacity: 0.85;
+        z-index: 2;
+    }
+}
+
+.ecosystem-detail-main .client-card-screenshot-wrap {
+    // On detail pages use a 16:9 frame. The trigger fills the whole frame and
+    // the image covers it from the top, so the screenshot is never cut off at
+    // the top and baked-in bottom whitespace is cropped away naturally.
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+    align-items: stretch;
+
+    // Move the badge inside the rounded corner area
+    &::after {
+        bottom: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .client-card-screenshot-trigger {
+        flex: 1;
+        overflow: hidden;
+        border-radius: 0;
+    }
+
+    .client-card-screenshot {
+        width: 100%;
+        height: 100%;
+        max-width: unset;
+        max-height: unset;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: 0;
+    }
+}
+
+.client-card-screenshot-trigger {
+    // Each trigger clips its own image; z-index keeps it above the wrap's
+    // ::after badge so a hovered trigger can still be a zoom target.
+    position: relative;
+    display: block;
+    cursor: zoom-in;
+    line-height: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    // Fill the full height of the wrap so the image covers the whole panel.
+    flex: 1;
+    align-self: stretch;
+}
+
+.client-card-screenshot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 0;
+}
+
+// Multi-screenshot layout
+.client-card-screenshot-wrap--multi {
+    padding: 0.5rem;
+    align-items: stretch;
+    overflow: hidden;
+
+    // Hide the single wrap-level badge; each trigger has its own image
+    &::after {
+        display: none;
+    }
+
+    .client-card-screenshot-trigger {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        border-radius: 4px;
+
+        // Per-trigger expand badge for multi-screenshot layouts
+        &::after {
+            content: "⤢";
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            font-size: 0.75rem;
+            line-height: 1;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            padding: 0.2rem 0.35rem;
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0.85;
+            z-index: 2;
+        }
+    }
+
+    .client-card-screenshot {
+        width: 100%;
+        height: 100%;
+        max-width: unset;
+        max-height: unset;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: 0;
+    }
+}
+
+// ── CSS-only lightbox ─────────────────────────────────────────────────────────
+
+.client-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+
+    &:target {
+        display: flex;
+    }
+
+    img {
+        position: relative;
+        z-index: 2;
+        max-width: min(90vw, 1200px);
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 10px;
+
+        margin: 0;
+    }
+}
+
+.client-lightbox-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: zoom-out;
+}
+
+.client-lightbox-close {
+    position: fixed;
+    top: 1rem;
+    right: 1.25rem;
+    z-index: 3;
+    font-size: 2rem;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+// ── Details column ────────────────────────────────────────────────────────────
+
+.client-card-details {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (max-width: 700px) {
+        padding: 0.85rem 1rem;
+        gap: 0.75rem;
+    }
+}
+
+.client-card-description {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--color-text);
+
+    @media (max-width: 700px) {
+        font-size: 0.9rem;
+    }
+}
+
+// Feature pills
+.client-card-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.client-feat-pill {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    background-color: #e9f0ff;
+    color: #1a3a80;
+    border: 1px solid #bcd0f7;
+    white-space: nowrap;
+}
+
+// Store badge download links row
+.client-card-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+
+    a {
+        display: inline-block;
+        line-height: 0;
+
+        img {
+            height: 36px;
+            width: auto;
+            max-width: none;
+            margin: 0;
+            border-radius: 6px;
+
+            @media (max-width: 700px) {
+                height: 30px;
+            }
+        }
+    }
+}
+
+// "Full details →" pill link
+.client-card-more-link {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+    background-color: #f0f0f0;
+    border: 1px solid #d2d2d2;
+    border-radius: 9999px;
+    padding: 0.3rem 0.9rem;
+    text-decoration: none;
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease;
+
+    &:hover {
+        background-color: #e4e4e4;
+        border-color: #aaa;
+    }
+}
+
+// ── Hosting provider card overrides ──────────────────────────────────────────
+// The hosting page reuses the same .client-card shell but needs a wider logo
+// placeholder instead of a square app icon, and the body is single-column
+// (no screenshot panel).
+
+.hosting-provider-logo {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 4px;
+    }
+}
+
+// Single-column body (no screenshot slot)
+.hosting-provider-body {
+    grid-template-columns: 1fr !important;
+}
+
+.hosting-provider-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+
+    p,
+    ul,
+    ol {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    ul,
+    ol {
+        padding-left: 1.4rem;
+    }
+
+    a {
+        color: var(--color-link);
+    }
+}
+
+// ── Legacy popup overlay (all-clients list) ───────────────────────────────────
 
 .client-details {
     padding-top: 3rem;
@@ -75,7 +662,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 
         h3 {
             display: flex;
-            gap: .5rem;
+            gap: 0.5rem;
             margin: 0 auto;
             align-items: center;
             justify-content: center;
@@ -85,7 +672,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
             font-size: 2rem;
 
             .maturity {
-                padding-block: .3rem;
+                padding-block: 0.3rem;
             }
         }
 
@@ -97,10 +684,9 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 
         .latest-release {
             margin-bottom: 0 auto;
-            font-size: .8rem;
+            font-size: 0.8rem;
             text-align: center;
         }
-
     }
 
     .project-links {
@@ -112,21 +698,21 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 .client-checkbox {
     display: none;
 
-    &:checked~.client-details-overlay {
+    &:checked ~ .client-details-overlay {
         position: fixed;
         z-index: 150;
         top: var(--navbar-height);
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: rgba(0, 0, 0, .5);
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
-    &:not(:checked)~.client-details-overlay {
+    &:not(:checked) ~ .client-details-overlay {
         display: none;
     }
 
-    &:not(:checked)~.client-details {
+    &:not(:checked) ~ .client-details {
         display: none;
     }
 }
@@ -134,7 +720,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 .stores {
     display: flex;
     justify-content: center;
-    gap: .3rem 1rem;
+    gap: 0.3rem 1rem;
     flex-wrap: wrap;
     margin-block: 2rem;
 
@@ -142,4 +728,233 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         height: 54px;
         display: block;
     }
+}
+
+// ── Shared ecosystem detail page layout ───────────────────────────────────────
+// Used by client.html and hosting-provider.html (and any future detail pages).
+
+.ecosystem-detail-page {
+    padding-top: 3rem;
+}
+
+.ecosystem-detail {
+    display: grid;
+    grid-template-columns: 1fr 18rem;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "header aside"
+        "main   aside";
+    column-gap: 2rem;
+    row-gap: 2rem;
+    max-width: 60rem;
+    margin-inline: auto;
+    padding-bottom: 3rem;
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "aside"
+            "main";
+    }
+
+    // Single-column variant for pages without a features aside (e.g. hosting)
+    &--single {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main";
+
+        .ecosystem-detail-aside {
+            display: none;
+        }
+    }
+}
+
+.ecosystem-detail-header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+.ecosystem-detail-main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ecosystem-detail-aside {
+    grid-area: aside;
+    position: sticky;
+    top: calc(var(--navbar-height) + 1.5rem);
+}
+
+.ecosystem-detail-logo-wrap {
+    flex-shrink: 0;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    padding: 0.75rem;
+    background: #fafafa;
+
+    @media (max-width: 600px) {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+.ecosystem-detail-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.ecosystem-detail-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ecosystem-detail-name {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ecosystem-detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.75rem;
+}
+
+.ecosystem-detail-meta-item {
+    font-size: 0.9rem;
+    color: #666;
+
+    // Dot separator between items
+    & + &::before {
+        content: "·";
+        margin-right: 0.75rem;
+        color: #ccc;
+    }
+}
+
+.ecosystem-detail-description {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--color-text);
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+    }
+
+    ul,
+    ol {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        padding-left: 1.4rem;
+    }
+
+    li {
+        margin-bottom: 0.25rem;
+    }
+
+    a {
+        color: var(--color-link);
+    }
+}
+
+// Feature aside heading
+.ecosystem-detail-aside-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666;
+    margin: 0 0 0.6rem 0;
+}
+
+// Feature support list as a definition list
+.ecosystem-detail-features {
+    dl {
+        border: 1px solid var(--borders-color);
+        border-radius: 16px;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .feature-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        padding: 0.6rem 0.85rem;
+
+        & + .feature-row {
+            border-top: 1px solid #e8e8e8;
+        }
+    }
+
+    dt {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    // Tick / cross indicator element
+    .feature-row-indicator {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("/assets/cross_unsupported.svg");
+    }
+
+    .feature-row.supported .feature-row-indicator {
+        background-image: url("/assets/tick_supported.svg");
+    }
+
+    dd {
+        margin: 0;
+        // Indent to align with the label text, past the indicator
+        padding-left: calc(1em + 0.4rem);
+        font-size: 0.8rem;
+        color: #666;
+        line-height: 1.4;
+    }
+}
+
+// CTA + pill link row at the bottom
+.ecosystem-detail-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
 }

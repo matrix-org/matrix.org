@@ -1,21 +1,27 @@
 {% extends "section.html" %}
 {% import "macros/clients.html" as clients %}
 {% import "macros/client_details.html" as client_details %}
+{% import "macros/breadcrumb.html" as breadcrumb %}
 {% block head_extra %}
 <meta name="description" content="{{ section.extra.summary }}">
 <noscript>
     <link rel="stylesheet" href={{ get_url(path="/no-js.css" , cachebust=true) }} />
 </noscript>
 <script type="module" src={{ get_url(path="/js/clients.js" , cachebust=true) }}></script>
+<style>
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 1rem); }
+</style>
 {% endblock head_extra%}
 {% block content %}
 {% set clients = section.pages %}
+{% set featured_clients = clients | filter(attribute="extra.featured", value=true) | sort(attribute="extra.featured_order") %}
 {% set licences = [] %}
 {% for client in clients %}
 {% set_global licences = licences | concat(with=client.extra.licence) %}
 {% endfor %}
 {% set licences = licences | unique | sort %}
 <div class="page-header">
+    {{ breadcrumb::breadcrumb(l1_label="Ecosystem", l1_path="/ecosystem/", l2_label="Clients") }}
     <div class="hero-block">
         <h1>{{ section.title }}</h1>
         <p>{{ section.extra.summary }}</p>
@@ -32,23 +38,81 @@
         mature ones you can safely use.
     </p>
 
-    <div class="projects-card-deck">
-        {% for client in clients %}
-        {% if client.extra.featured %}
-        <div>
-            <a href="{{ client.path }}" class="project-card client {{ clients::classes(client=client.extra) }}">
-                {# We're not using placeholders as a fallback because we want showcased clients to have an actual icon
-                #}
-                <img src="{{ client.extra.thumbnail }}" alt="{{ client.title }} Logo">
-                <h3>{{ client.title }}</h3>
-                <span>{{ client.content | safe }}</span>
-                <div class="platform-links">
-                    {{ clients::platforms(packages=client.extra.packages) }}
+    <div class="ecosystem-client-cards">
+        {% for client in featured_clients %}
+        <details id="{{ client.slug }}" class="client-card">
+            <summary class="client-card-summary">
+                <div class="client-card-summary-inner">
+                    <img src="/ecosystem/clients/{{ client.extra.thumbnail }}"
+                         alt="{{ client.title }} logo"
+                         class="client-card-icon">
+                    <div class="client-card-header-text">
+                        <span class="client-card-name">
+                            {{ client.title }}
+                            <span class="maturity {{ client.extra.maturity | lower }}">{{ client.extra.maturity }}</span>
+                            <a href="#{{ client.slug }}" class="client-card-anchor" aria-label="Link to {{ client.title }}">#</a>
+                        </span>
+                        {% if client.extra.good_for %}
+                        <span class="client-card-good-for">Good for: {{ client.extra.good_for }}</span>
+                        {% else %}
+                        <span class="client-card-description-short">{{ client.content | markdown(inline=true) }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="client-card-summary-platforms">
+                        {{ clients::platforms(packages=client.extra.packages) }}
+                    </div>
                 </div>
-                <p class="open-project">Open client details</p>
-            </a>
-        </div>
-        {% endif %}
+            </summary>
+
+            <div class="client-card-body">
+                {% set lightbox_id = "eco-lightbox-" ~ client.slug %}
+                {% set screenshots = client.extra.screenshots | default(value=[]) %}
+                {% if screenshots | length > 0 %}
+                {% set multi = screenshots | length > 1 %}
+                <div class="client-card-screenshot-wrap{% if multi %} client-card-screenshot-wrap--multi{% endif %}">
+                    {% for shot in screenshots %}
+                    {% set shot_lightbox_id = lightbox_id ~ "-" ~ loop.index %}
+                    <a href="#{{ shot_lightbox_id }}" class="client-card-screenshot-trigger" aria-label="Enlarge screenshot">
+                        <img src="/ecosystem/clients/{{ shot }}"
+                             alt="{{ client.title }} screenshot {{ loop.index }}"
+                             class="client-card-screenshot">
+                    </a>
+                    {% endfor %}
+                </div>
+                {% for shot in screenshots %}
+                {% set shot_lightbox_id = lightbox_id ~ "-" ~ loop.index %}
+                <div class="client-lightbox" id="{{ shot_lightbox_id }}" role="dialog" aria-label="{{ client.title }} screenshot">
+                    <a href="#/" class="client-lightbox-backdrop" aria-label="Close"></a>
+                    <a href="#/" class="client-lightbox-close" aria-label="Close">&times;</a>
+                    <img src="/ecosystem/clients/{{ shot }}"
+                         alt="{{ client.title }} screenshot {{ loop.index }}">
+                </div>
+                {% endfor %}
+                {% endif %}
+
+                <div class="client-card-details">
+                    <p class="client-card-description">{{ client.content | markdown(inline=true) }}</p>
+
+                    <div class="client-card-features">
+                        {% set feat = client.extra.features %}
+                        {% if feat.e2ee %}<span class="client-feat-pill">E2EE</span>{% endif %}
+                        {% if feat.spaces %}<span class="client-feat-pill">Spaces</span>{% endif %}
+                        {% if feat.threads %}<span class="client-feat-pill">Threads</span>{% endif %}
+                        {% if feat.voip_1to1 %}<span class="client-feat-pill">Voice &amp; video calls</span>{% endif %}
+                        {% if feat.voip_jitsi %}<span class="client-feat-pill">Group calls (Jitsi)</span>{% endif %}
+                        {% if feat.multi_account %}<span class="client-feat-pill">Multi-account</span>{% endif %}
+                        {% if feat.oauth %}<span class="client-feat-pill">OAuth 2.0</span>{% endif %}
+                        {% if feat.sso %}<span class="client-feat-pill">SSO</span>{% endif %}
+                    </div>
+
+                    <div class="client-card-downloads">
+                        {{ clients::install_links(packages=client.extra.packages) }}
+                    </div>
+
+                    <a href="{{ client.path }}" class="client-card-more-link">Full details &rarr;</a>
+                </div>
+            </div>
+        </details>
         {% endfor %}
     </div>
 
