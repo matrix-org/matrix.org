@@ -95,6 +95,13 @@
         gap: 1rem;
         justify-content: center;
         margin-top: 1.5rem;
+
+        .call-to-action {
+            @media (max-width: 767px) {
+                font-size: clamp(0.85rem, 4vw, 1.125rem);
+                text-align: center;
+            }
+        }
     }
 
     // ── Quick-start (TLDR) block ──────────────────────────────────────────────
@@ -334,6 +341,13 @@
             pointer-events: none;
             opacity: 0.85;
             z-index: 1;
+
+            @media (max-width: 767px) {
+                font-size: 1.1rem;
+                padding: 0.3rem 0.5rem;
+                bottom: 0.5rem;
+                right: 0.5rem;
+            }
         }
     }
 
@@ -495,7 +509,7 @@
                 border-radius: 6px;
 
                 @media (max-width: 700px) {
-                    height: 30px;
+                    height: 44px;
                 }
             }
         }
