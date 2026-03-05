@@ -38,8 +38,9 @@
         justify-content: center;
         align-items: center;
         color: var(--footer-link-color);
-        gap: 2rem;
+        gap: 1rem 2rem;
         line-height: 1;
+        flex-wrap: wrap;
     }
 
     .subfooter-links {
