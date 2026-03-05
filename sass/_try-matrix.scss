@@ -332,22 +332,15 @@
             position: absolute;
             bottom: 0.4rem;
             right: 0.4rem;
-            font-size: 0.75rem;
+            font-size: 1.1rem;
             line-height: 1;
             background: rgba(0, 0, 0, 0.55);
             color: #fff;
-            padding: 0.2rem 0.35rem;
+            padding: 0.3rem 0.5rem;
             border-radius: 4px;
             pointer-events: none;
             opacity: 0.85;
             z-index: 1;
-
-            @media (max-width: 767px) {
-                font-size: 1.1rem;
-                padding: 0.3rem 0.5rem;
-                bottom: 0.5rem;
-                right: 0.5rem;
-            }
         }
     }
 
