@@ -219,6 +219,7 @@ the website repository to finish it up:
 - add Matrix Live video embed and title
 - poll the ping stats and include them in the post
 - add any submitted images to the repo and write `alt` text for accessibility
+- add an [Open Graph](https://ogp.me/) preview image
 - upload any submitted videos to YouTube and embed them in the post
 - verify Markdown correctness regarding e.g. headings, links
 
