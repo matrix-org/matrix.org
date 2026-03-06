@@ -94,6 +94,11 @@ website = "https://meedio.me/"
 logo = "meedio.png"
 
 [[silver]]
+name = "Pangea Chat"
+website = "https://pangea.chat/"
+logo = "pangea-chat.svg"
+
+[[silver]]
 name = "Rocket.Chat"
 website = "https://www.rocket.chat/"
 logo = "rocketchat.svg"
