@@ -98,12 +98,12 @@
             <ul style="list-style: none; padding-left: 0px;">
                 {% for h1 in page.toc %}
                 <li>
-                    <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                    <a href="{{ h1.permalink | safe }}">{{ h1.title | split(pat=" (website)") | first }}</a>
                     {% if h1.children %}
                     <ul>
                         {% for h2 in h1.children %}
                         <li>
-                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                            <a href="{{ h2.permalink | safe }}">{{ h2.title | split(pat=" (website)") | first }}</a>
                         </li>
                         {% endfor %}
                     </ul>
