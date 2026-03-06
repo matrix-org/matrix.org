@@ -29,7 +29,7 @@ article.post {
 
         td,
         th {
-            padding: .5rem;
+            padding: 0.5rem;
             border: unset;
             border-bottom: 1px solid var(--borders-color);
         }
@@ -74,13 +74,18 @@ article.post {
 
 .post-main {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 2rem;
+
+    @media (min-width: 1024px) {
+        &:has(aside) {
+            grid-template-columns: 1fr 320px;
+        }
+    }
 
     .callout {
-
         display: grid;
         grid-template-columns: 300px auto;
         color: #fff;
@@ -119,7 +124,7 @@ article.post {
             font-size: 1.125rem;
             font-weight: 700;
             background-color: rgba(34, 109, 227);
-            padding: .5rem 1.5rem;
+            padding: 0.5rem 1.5rem;
             border-radius: 9999px;
             color: #fff;
             margin-block-start: 1rem;
@@ -144,26 +149,21 @@ article.post {
             }
         }
 
-        &>:first-child {
+        & > :first-child {
             margin-top: 0;
         }
 
-        &>ul>li:not(:last-child) {
-            margin-bottom: .5rem;
+        & > ul > li:not(:last-child) {
+            margin-bottom: 0.5rem;
         }
 
-        flex: 1 1;
-        max-width: 320px;
-        margin-left: 4rem;
         padding: 1.5rem;
         background-color: #f4f4f4;
     }
 }
 
 .post-content {
-    // Use all of the space not taken by the sidebar
-    flex: 3;
-    // Necessary to allow the pre to scroll on overflow
+    // min-width: 0 prevents grid blowout when content (e.g. pre blocks) is wider than the column
     min-width: 0;
 
     blockquote {
@@ -191,7 +191,7 @@ h3 a {
     color: var(--color-link);
 }
 
-.footnote-definition>p {
+.footnote-definition > p {
     display: inline;
 }
 
