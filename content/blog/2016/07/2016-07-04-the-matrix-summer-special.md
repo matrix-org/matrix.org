@@ -38,7 +38,7 @@ Future work on Vector is focused on showcasing end-to-end encryption, providing 
 
 If you haven't checked it out recently, it's really worth a look :)
 
-<a href="https://vector.im"><img class="aligncenter size-large wp-image-1658" src="/blog/wp-content/uploads/2016/07/Screen-Shot-2016-07-04-at-12.18.10-1024x591.png" alt="Vector" width="1024" height="591" /></a>
+<a href="https://vector.im"><img class="aligncenter size-large" src="/blog/wp-content/uploads/2016/07/Screen-Shot-2016-07-04-at-12.18.10-1024x591.png" alt="Vector" width="1024" height="591" /></a>
 
 ## Matrix Spec 0.1.0
 
@@ -66,7 +66,7 @@ Matrix had a major presence as a sponsor at the first ever <a href="http://www.d
 
 We strongly recommend checking out the videos which have all been published at <a href="http://www.decentralizedweb.net/">Decentralised Web Summit</a>, including <a href="https://archive.org/details/DWebSummit2016_Lightning_Talks_Session_B">lightning talks introducing both Matrix and Vector</a>, and digging into as many of the projects advertised as possible.  It was particularly interesting for us to get to know Tim Berners-Lee's latest project at MIT: <a href="https://solid.mit.edu/">Solid</a> - which shares quite a lot of the same goals as Matrix, and subsequently seeing Tim pop up on <a href="https://vector.im/develop/#/room/#decentralizedweb-general:matrix.org/$146549767249761pyAQF:matrix.org">Matrix via Vector</a>.  We're really looking forward to working out how Matrix & Solid can complement each other in future.
 
-<a href="https://twitter.com/parkan/status/740324969884700672"><img class="aligncenter wp-image-1660 size-large" src="/blog/wp-content/uploads/2016/07/timbl-768x1024.jpg" alt="Matthew, Tim Berners-Lee and Matrix" width="384" height="512" /></a>
+<a href="https://twitter.com/parkan/status/740324969884700672"><img class="aligncenter size-large" src="/blog/wp-content/uploads/2016/07/timbl-768x1024.jpg" alt="Matthew, Tim Berners-Lee and Matrix" width="384" height="512" /></a>
 
 ## Matrix.to
 

@@ -9,7 +9,7 @@ category = ["Events"]
 
 This weekend was spent at <a href="http://www.idea-london.co.uk/" title="IDEA-London">IDEA-London</a> where the <a href="tadhack.com/2015/tadhack-mini-london" title="TADHack-mini London">TADHack-mini London</a> hackathon was going on. In total, there were around 18 different projects being hacked on all day Saturday and Sunday morning, before a 5-minute presentation on Sunday afternoon. 
 
-<a href="https://twitter.com/telestax/status/586835787892842496" title="picture credit: twitter.com/telestax"><img src="http://matrix.org/blog/wp-content/uploads/2015/04/tadhack.jpg" alt="tadhack" class="aligncenter size-full wp-image-720" /></a>
+<a href="https://twitter.com/telestax/status/586835787892842496" title="picture credit: twitter.com/telestax"><img src="http://matrix.org/blog/wp-content/uploads/2015/04/tadhack.jpg" alt="tadhack" class="aligncenter size-full" /></a>
 
 Four different projects used Matrix in one way or another: Matrixbot - a robot controlled through standard messages in a Matrix room - done by Scott Barstow and Anders Brownworth (project <a href="https://github.com/scottbarstow/tadhackLondon2015" title="code">code</a> and presentation <a href="https://www.youtube.com/watch?v=gvDIkqyxnac" title="video">video</a> and <a href="https://twitter.com/matrixdotorg/status/587253016463564801" title="picture">picture</a>). Neil Stratford's hack included lighting up his roll of LEDs whenever a push-notification hit his Matrix webclient (<a href="https://twitter.com/matrixdotorg/status/587262829390123009" title="picture">picture</a> from the presentation). 
 

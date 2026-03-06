@@ -37,7 +37,7 @@ Predictably enough, it's this last point of the 'missing data layer for cyberspa
 
 In fact, the best way is to test it live: we've put together a quick demo at <a href="/vrdemo">https://matrix.org/vrdemo</a> to show it off, so please <a href="/vrdemo">give it a go!</a>
 
-<a href="/vrdemo"><img class="aligncenter size-large wp-image-2424" src="/blog/wp-content/uploads/2017/04/table-1024x333.jpg" alt="" width="1024" height="333" /></a>
+<a href="/vrdemo"><img class="aligncenter size-large" src="/blog/wp-content/uploads/2017/04/table-1024x333.jpg" alt="" width="1024" height="333" /></a>
 
 <a href="/vrdemo">In the demo</a> you get:
 <ol>

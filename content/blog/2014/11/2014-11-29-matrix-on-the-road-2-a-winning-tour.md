@@ -17,7 +17,7 @@ Great techie discussions and debates down there, the stand was flooded with inte
 
 But he still found a few minutes to do a TV interview for SYSCon TV on Tuesday evening! :)
 
-[embed]http://youtu.be/JVq6S9V1Jcg[/embed]
+{{ youtube_player(video_id="JVq6S9V1Jcg") }}
 
 ## TAD Summit (Istanbul, November 12-13)
 
@@ -25,9 +25,9 @@ Matrix was a partner at <a href="http://tadsummit.com/2014/">TAD Summit</a> in 
 
 Matthew's talk was fully recorded so just watch the video to get the real pitch!
 
-[embed]http://youtu.be/ER3g4-4bFYk?list=PLO-gJ4-4x_IIYVTuLmVr8iUedvVdduYY4[/embed]
+{{ youtube_player(video_id="ER3g4-4bFYk") }}
 
-[embed]https://www.youtube.com/watch?v=As-5vVdXhu0[/embed]
+{{ youtube_player(video_id="As-5vVdXhu0") }}
 
 ## WebRTC World (San Jose, November 18-20)
 
@@ -35,10 +35,10 @@ Matrix's attendance at <a href="http://www.webrtcworld.com/conference/west/defau
  as the audience's favourite demo of the 10 shown on Tuesday, and also the overall <span style="color: #0000ff;"><strong>Best Social Integration Award</strong> </span>
 from the Jury! So a big congrats to the dev team who were rushing to get the fine details ready in time and to Matthew for getting the audience's attention! And of course a even bigger thank you to everyone who voted for us, including in the Jury!
 
-<a href="http://matrix.org/blog/wp-content/uploads/2014/11/sj.jpg"><img class="aligncenter size-medium wp-image-239" src="http://matrix.org/blog/wp-content/uploads/2014/11/sj-300x168.jpg" alt="Matthew at WebRTC World 2014" width="300" height="168" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2014/11/sj.jpg"><img class="aligncenter size-medium" src="http://matrix.org/blog/wp-content/uploads/2014/11/sj-300x168.jpg" alt="Matthew at WebRTC World 2014" width="300" height="168" /></a>
 
 Of course this drew lots of interest, and WebRTC Expo ended up the busiest show ever for the team who pitched solidly at the booth for 2 days in a row!
-<div style="text-align: center;"><a href="http://matrix.org/blog/wp-content/uploads/2014/11/Audience_Choice_14.png"><img class="size-full wp-image-240" style="box-shadow: none ! important;" src="http://matrix.org/blog/wp-content/uploads/2014/11/Audience_Choice_14.png" alt="Audience_Choice_14" width="300" height="229" /></a> <a href="http://matrix.org/blog/wp-content/uploads/2014/11/Best_Social_Integration_14.png"><img class="size-medium wp-image-241" style="box-shadow: none ! important;" src="http://matrix.org/blog/wp-content/uploads/2014/11/Best_Social_Integration_14.png" alt="Best_Social_Integration_14" width="300" height="229" /></a></div>
+<div style="text-align: center;"><a href="http://matrix.org/blog/wp-content/uploads/2014/11/Audience_Choice_14.png"><img class="size-full" style="box-shadow: none ! important;" src="http://matrix.org/blog/wp-content/uploads/2014/11/Audience_Choice_14.png" alt="Audience_Choice_14" width="300" height="229" /></a> <a href="http://matrix.org/blog/wp-content/uploads/2014/11/Best_Social_Integration_14.png"><img class="size-medium" style="box-shadow: none ! important;" src="http://matrix.org/blog/wp-content/uploads/2014/11/Best_Social_Integration_14.png" alt="Best_Social_Integration_14" width="300" height="229" /></a></div>
 
 ## fOSSa (Rennes, November 20)
 
@@ -46,4 +46,4 @@ And eventually, while Matthew and John were celebrating in San José (or flying 
 
 So if you speak French or are not afraid to only read from <a href="http://matrix.org/blog/wp-content/uploads/2014/11/2014-11-17.2-Matrix.pdf">the slides</a>, check out the video the team made of the pitch. The official one should be available soon!
 
-[embed]http://youtu.be/DyL9Ue0KlBU[/embed]
+{{ youtube_player(video_id="DyL9Ue0KlBU") }}

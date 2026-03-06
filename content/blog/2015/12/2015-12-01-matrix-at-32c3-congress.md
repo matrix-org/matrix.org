@@ -7,7 +7,7 @@ author = ["Oddvar Lovaas"]
 category = ["General"]
 +++
 
-<a href="http://ccc.de/"><img src="http://matrix.org/blog/wp-content/uploads/2015/12/fairydust.jpg" alt="fairydust" width="128" height="128" class="alignright size-full wp-image-1399" /></a>
+<a href="http://ccc.de/"><img src="http://matrix.org/blog/wp-content/uploads/2015/12/fairydust.jpg" alt="fairydust" width="128" height="128" class="alignright size-full" /></a>
 Matrix will be represented at the 32nd Chaos Computer Club, Dec 27th-30th, 2015. We hope to be arranging an <a href="https://events.ccc.de/congress/2015/wiki/Assembly:Matrix">assembly</a>, where people can come along to learn about Matrix and our recent work on end-to-end encryption, find out what they can use Matrix for - and also do some hacking at the same time!
 
 <b>UPDATE: We've snagged a table for the assembly at: "hackcenter room with C-base, a table along the pathway". In practice only Mjark is there from Matrix and may be moving around, so may be easiest to coordinate meetups via #32C3:matrix.org</b>

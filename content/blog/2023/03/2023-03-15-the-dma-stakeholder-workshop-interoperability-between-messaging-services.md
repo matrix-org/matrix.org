@@ -34,7 +34,6 @@ The first panel focused on setting up the scene and highlighting the challenges 
 
 {{ youtube_player(video_id="yoKjXN3G8a8") }}
 
-<br/>
 
 * [00:00](https://www.youtube.com/watch?v=yoKjXN3G8a8&t=0s) Welcome to the second DMA stakeholder workshop about interoperability between messaging services
 * [08:03](https://www.youtube.com/watch?v=yoKjXN3G8a8&t=483s) Introduction of the panelists
@@ -75,7 +74,6 @@ The panel ended up being a relatively exciting tour through the landscape of DMA
 
 <iframe width="1280" height="720" src="/blog/img/matrix-dma-slides.pdf"></iframe>
 
-<br/>
 
 When DMA first became headline news last year, there was a lot of [very vocal concern](https://www.theverge.com/2022/3/28/23000148/eu-dma-damage-whatsapp-encryption-privacy) that it would somehow end up undermining end-to-end encryption (despite the legislation explicitly requiring that E2EE must be preserved when interoperating). Hopefully this session demonstrated that both the European Commission and the various panellists are dead serious about achieving interoperability without sacrificing privacy - whether that’s via the brute-force approach of client-side bridges, or the more sophisticated approach of client-side bridges which bridge to client-side APIs, or by incrementally or entirely adopting a true open standard protocol like Matrix, XMPP, or whatever MIMI comes up with.
 
@@ -83,7 +81,6 @@ You can see the whole panel split into the various sections below:
 
 {{ youtube_player(video_id="FDnUJXzVn3s") }}
 
-<br/>
 
 * [00:00](https://www.youtube.com/watch?v=FDnUJXzVn3s&t=0s) Opening
 * [01:23](https://www.youtube.com/watch?v=FDnUJXzVn3s&t=83s) Introduction of the panellists
@@ -140,7 +137,6 @@ Finally, we launched into the third and final session of the day - a second tech
 
 {{ youtube_player(video_id="ZtRmAaHUxWw") }}
 
-<br/>
 
 * [00:00](https://www.youtube.com/watch?v=ZtRmAaHUxWw&t=0s) Opening and panellists introduction
 * **Meta / WhatsApp**

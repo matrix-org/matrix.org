@@ -16,10 +16,10 @@ The Google Summer of Code 2019 is coming to an end for me, so it means that it�
 
 I’ve been taking care of the project “Matrix Visualisations” during these past months. This project aimed at initiating the development of a tool which allows the real-time visualisation of the events DAG of a given Matrix room, as seen from the perspective of one or more homeservers (HS’s).
 
-Regarding my initial proposal, I’ve completed every task proposed and even implemented some additional functionalities. The application is not finished yet and there could be a lot of improvements added to it (especially regarding the design of the UI) but the core functionalities have been implemented.<br/>
+Regarding my initial proposal, I’ve completed every task proposed and even implemented some additional functionalities. The application is not finished yet and there could be a lot of improvements added to it (especially regarding the design of the UI) but the core functionalities have been implemented.
 I am going to precise what has been accomplished and then give some ideas of features to improve.
 
-During GSoC, I have used two separate repositories for [the frontend](https://github.com/Kagamihime/matrix-visualisations) and [the backend](https://github.com/Kagamihime/matrix-visualisations-backend). I will keep both of them because I’m referencing PRs from them (as PRs are easier to link than lengthy lists of commits).<br/>
+During GSoC, I have used two separate repositories for [the frontend](https://github.com/Kagamihime/matrix-visualisations) and [the backend](https://github.com/Kagamihime/matrix-visualisations-backend). I will keep both of them because I’m referencing PRs from them (as PRs are easier to link than lengthy lists of commits).
 However, this is [the repository](https://github.com/Kagamihime/matrix-visualisations-complete) regrouping these two parts and this one will be moved to matrix-org for the continuation of this project.
 
 ### Complete the implementation of the CS API backend
@@ -34,7 +34,7 @@ I also did a lot of clean up in the source code from the prototype during this t
 
 ### Implement the first UI to interact with the DAG
 
-First of all, a lot of work had to be made in order to properly update the displayed DAG when adding new events to it. At this point, I previously used the `setData` method of the `Network` object of [the visjs library](https://visjs.org/) (which is used for displaying the graph and interacting with it) each time a node was added, but it was resetting the display each time it was called.<br/>
+First of all, a lot of work had to be made in order to properly update the displayed DAG when adding new events to it. At this point, I previously used the `setData` method of the `Network` object of [the visjs library](https://visjs.org/) (which is used for displaying the graph and interacting with it) each time a node was added, but it was resetting the display each time it was called.
 The proper solution was to progressively add nodes and edges to the `DataSet` object passed to the constructor of the network (see the documentation of [DataSet](https://visjs.github.io/vis-data/data/index.html) and [Network](https://visjs.github.io/vis-network/docs/network/) for more details).
 
 The DAG has been set to be displayed vertically, the events with the same depth are at the same level, the deepest events are at the bottom. The events which origin is the HS on which we are making the observation are in green, those which are coming from other servers are in orange.
@@ -52,9 +52,9 @@ I’ve also implemented the possibility to choose which particular fields of the
 
 ### Synapse PostgreSQL backend
 
-Next, I implemented a backend for retrieving events from the PostgreSQL database of a Synapse HS. It is a small HTTP server which receives requests from the frontend application and then makes queries to the Synapse database to get the requested events.<br/>
-You can find details about the API for using this backend in [this readme](https://github.com/Kagamihime/matrix-visualisations-backend/blob/master/README.md), in the “HTTP REST API” section.<br/>
-You can find more details about this initial implementation: [here](https://github.com/Kagamihime/matrix-visualisations-backend/pull/1), [here](https://github.com/Kagamihime/matrix-visualisations-backend/pull/2), [here](https://github.com/Kagamihime/matrix-visualisations-backend/pull/3) (my mentor helped me on this one, thanks to him), and [here](https://github.com/Kagamihime/matrix-visualisations-backend/pull/5).<br/>
+Next, I implemented a backend for retrieving events from the PostgreSQL database of a Synapse HS. It is a small HTTP server which receives requests from the frontend application and then makes queries to the Synapse database to get the requested events.
+You can find details about the API for using this backend in [this readme](https://github.com/Kagamihime/matrix-visualisations-backend/blob/master/README.md), in the “HTTP REST API” section.
+You can find more details about this initial implementation: [here](https://github.com/Kagamihime/matrix-visualisations-backend/pull/1), [here](https://github.com/Kagamihime/matrix-visualisations-backend/pull/2), [here](https://github.com/Kagamihime/matrix-visualisations-backend/pull/3) (my mentor helped me on this one, thanks to him), and [here](https://github.com/Kagamihime/matrix-visualisations-backend/pull/5).
 I’ve added the support of this backend in the frontend application, as well as a way to choose which backend to use (between this one and the CS API) in [this PR](https://github.com/Kagamihime/matrix-visualisations/pull/4).
 
 ### Multiple views
@@ -63,7 +63,7 @@ I implemented the ability to observe the same DAG of a room from multiple HS’s
 
 ![View selection](https://raw.githubusercontent.com/Kagamihime/gsoc-2019-final-report/master/backend_selection.png "View selection")
 
-In the picture above, you can see that there is a drop down menu from which you can select the view. The fields under this line are used to control the selected view: indicate where it will be connecting, for which room (you could as well observe a different room in a different view), etc…<br/>
+In the picture above, you can see that there is a drop down menu from which you can select the view. The fields under this line are used to control the selected view: indicate where it will be connecting, for which room (you could as well observe a different room in a different view), etc…
 By default, there is only one view but you can add as many as you want by clicking “Add a view”.
 
 All the DAGs from the different views are displayed side-by-side within the same canvas, like this:
@@ -82,12 +82,12 @@ The backend uses [the Federation API](https://matrix.org/docs/spec/server_server
 * In order to get new events, the backend listens for pushed events from other HS’s with the [/send](https://matrix.org/docs/spec/server_server/r0.1.3#put-matrix-federation-v1-send-txnid) request.
 * When the observation is done, the backend makes the “imaginary user” leave the room by sending [/make_leave](https://matrix.org/docs/spec/server_server/r0.1.3#get-matrix-federation-v1-make-leave-roomid-userid) and [/send_leave](https://matrix.org/docs/spec/server_server/r0.1.3#put-matrix-federation-v1-send-leave-roomid-eventid) requests.
 
-The full details of the implementation are in [this PR](https://github.com/Kagamihime/matrix-visualisations-backend/pull/8). My mentor also helped me get the usage of the `Future`s  right thanks to [this PR](https://github.com/Kagamihime/matrix-visualisations-backend/pull/7).<br/>
+The full details of the implementation are in [this PR](https://github.com/Kagamihime/matrix-visualisations-backend/pull/8). My mentor also helped me get the usage of the `Future`s  right thanks to [this PR](https://github.com/Kagamihime/matrix-visualisations-backend/pull/7).
 There has been a small modification in the frontend too, because of the addition of the `/stop` endpoint in the backend’s HTTP API, these modifications are in [this PR](https://github.com/Kagamihime/matrix-visualisations/pull/7).
 
 ### Display the state of the room for a given event
 
-For each event, there is a state of the room associated with it, which describes what was the state of the room at the moment this event was accepted (the name of the room, its topic, its members and parameters, etc…).<br/>
+For each event, there is a state of the room associated with it, which describes what was the state of the room at the moment this event was accepted (the name of the room, its topic, its members and parameters, etc…).
 So I’ve added a way to display this: when you have selected and displayed the JSON body of a given event, you can also request the associated room’s state. I have made it possible to use this feature with every backends: the CS API, the PostgreSQL database and the Federation API. You can have the full details of the implementation [here](https://github.com/Kagamihime/matrix-visualisations-backend/pull/9) (for the backend) and [here](https://github.com/Kagamihime/matrix-visualisations/pull/8) (for the frontend).
 
 You can see the result of this feature in the picture below (there is a button “Room state at the selected event”, which allows to ask the application to fetch the state, and the text area under this button where the state is displayed):
@@ -111,7 +111,7 @@ The objective of this project was to develop the core functionalities of this ap
 
 This experience has been really rewarding for me. I could discover more about the Matrix community and how the Matrix ecosystem works (on a technical point of view). I want to thank my mentor, Erik Johnston, for his guidance during these past months, and the people in this community who gave me advice.
 
-GSoC has also allowed me to further improve my programming skills in general and discover many various things: the WASM technology, how to use Rust in this context thanks to the various existing libraries/frameworks available, the practical usage of SQL requests as well as TLS certificates and how to apply cryptographic signatures.<br/>
+GSoC has also allowed me to further improve my programming skills in general and discover many various things: the WASM technology, how to use Rust in this context thanks to the various existing libraries/frameworks available, the practical usage of SQL requests as well as TLS certificates and how to apply cryptographic signatures.
 It was sometimes challenging to use such experimental technologies (due to the lack of clear documentation) but also very exiting!
 
 Mid-September, I will start my class for my second and final year of my master degree (software engineering, specialised in distributed systems and applications) at Sorbonne Université so I will definitely have less free time. So I don’t think I’ll be able to actively continue to contribute but I will do my best to help other people to continue the work I’ve initiated.

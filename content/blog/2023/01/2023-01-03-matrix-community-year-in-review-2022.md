@@ -415,26 +415,26 @@ so we can spread the blobby joy together! <img data-mx-emoticon height="32" src=
 
 <p>Jae (Beep) shares</p><blockquote>
 
-<p>Yet another year well spent on Matrix, which was a bit more <em>dynamic</em> than the previous ones.<br/>
+<p>Yet another year well spent on Matrix, which was a bit more <em>dynamic</em> than the previous ones.
 From mitigating spam attacks to creating brand-new projects and also contributing to others, there's no shortage of news.</p>
 <h3><a href="https://sr.ht/~jae/cert-monitor/">cert-monitor</a></h3>
-<p><code>cert-monitor</code> is a small program made entirely in vanilla Python that checks the validity of your SSL certificates and warn you when they are about to expire.<br/>
-The idea for it originated in a Matrix room in which the other administrator would usually forget to renew SSL (bringing down their homeserver).<br/>
+<p><code>cert-monitor</code> is a small program made entirely in vanilla Python that checks the validity of your SSL certificates and warn you when they are about to expire.
+The idea for it originated in a Matrix room in which the other administrator would usually forget to renew SSL (bringing down their homeserver).
 The software can send notifications to e-mails and Matrix and other methods are in the works like NTFy (but a bit on stale since Matrix support was the main goal).</p>
 <h3><a href="https://github.com/matrix-org/matrix-spec-proposals/pull/3868">MSC3868: Room Contribution</a></h3>
-<p>The MSC3868 (currently still a draft) is a spec proposal by me and Aminda to add a way for rooms to advertise easily official links like code repositories, ways to contribute to translations, donations and more but only showing to users inside the room.<br/>
-The start of it is that we noticed that usually users don't even bother reading the topic/MOTD of the room, which renders putting links inside of it just about useless in most cases.<br/>
+<p>The MSC3868 (currently still a draft) is a spec proposal by me and Aminda to add a way for rooms to advertise easily official links like code repositories, ways to contribute to translations, donations and more but only showing to users inside the room.
+The start of it is that we noticed that usually users don't even bother reading the topic/MOTD of the room, which renders putting links inside of it just about useless in most cases.
 The proposal is still being refined, but the big lines are there already!</p>
 <h3><a href="https://git.sr.ht/~jae/gh-bot">gh-bot</a></h3>
-<p><code>gh-bot</code> is a small bot made to be used with the webhook function of various Git forges (namely GitHub, GitLab and Gitea/Forgejo).<br/>
+<p><code>gh-bot</code> is a small bot made to be used with the webhook function of various Git forges (namely GitHub, GitLab and Gitea/Forgejo).
 The bot itself is pretty simple and will just output new commits, new stars and build statuses in all the rooms the bot is.</p>
 <h3><a href="https://git.sr.ht/~jae/hsl-matrix-notifier">hsl-matrix-notifier</a></h3>
-<p><code>hsl-matrix-notifier</code> has a bit of an exotic use case: it is made to track problems with the Helsinki public transports company and warn about potential disruptions.<br/>
-For now, it is very basic and is still being worked on to have a better version (like if no news, it will still post old stuff when I would like in term something more like an RSS feed).<br/>
+<p><code>hsl-matrix-notifier</code> has a bit of an exotic use case: it is made to track problems with the Helsinki public transports company and warn about potential disruptions.
+For now, it is very basic and is still being worked on to have a better version (like if no news, it will still post old stuff when I would like in term something more like an RSS feed).
 When I move, I'll probably spin off this bot to make a local version or even build something, so it can be configured by city.</p>
 <hr/>
-<p>In the end, this year has been a very dynamic one in the Matrix world, and I can't wait to see what is coming next.<br/>
-For my part, I don't intend to stop there, and I have even more Matrix related projects, so stay tuned!<br/>
+<p>In the end, this year has been a very dynamic one in the Matrix world, and I can't wait to see what is coming next.
+For my part, I don't intend to stop there, and I have even more Matrix related projects, so stay tuned!
 Oh also, I almost forgot, happy new year Matrixians, stay awesome!</p>
 </blockquote>
 <h2>Cinny</h2>

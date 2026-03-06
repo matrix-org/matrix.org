@@ -25,4 +25,4 @@ For other connection means:
 	<li>Start a chat with @vucbot:matrix.org by entering the ID in the appropriate textfield at the bottom of the public rooms list on <a href="http://matrix.org/beta">http://matrix.org/beta</a> and click on "Message User"</li>
 	<li>In the chat room start a voice call by clicking on the mic icon in the top right corner. Don't forget to allow your browser to access your mic and speakerphones!</li>
 </ol>
-<a href="http://matrix.org/blog/wp-content/uploads/2014/11/vuc.png"><img class="alignnone size-full wp-image-231" src="http://matrix.org/blog/wp-content/uploads/2014/11/vuc.png" alt="vuc" width="144" height="172" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2014/11/vuc.png"><img class="alignnone size-full" src="http://matrix.org/blog/wp-content/uploads/2014/11/vuc.png" alt="vuc" width="144" height="172" /></a>

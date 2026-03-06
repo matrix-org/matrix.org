@@ -178,7 +178,6 @@ or their government has blocked access, etc), or join BobChat yourself.
 <img src="/blog/img/2022-03-29-bob-invite.jpg"  />
 <img src="/blog/img/2022-03-29-bob-invite-b.png"  />
 </div>
-<br/>
 
 However, imagine if instead the gatekeeper app had a user experience where the
 app prompted you to talk to the user via a different platform instead.  It’d
@@ -189,7 +188,6 @@ to one of their own apps - another win for user rights [led by the EU](https://e
 <div style="text-align: center">
 <img src="/blog/img/2022-03-29-bob-invite2.jpg" />
 </div>
-<br/>
 
 Now, the simplest approach in the short term would be for each gatekeeper to
 pre-provision a set of options of possible alternative networks.  (The DMA
@@ -329,7 +327,6 @@ warn Alice that the conversation is no longer end-to-end encrypted:
 <div style="text-align: center">
 <img src="/blog/img/2022-03-29-warning.jpg" />
 </div>
-<br/>
 
 To be clear: right now, today, if Bob were on AliceChat, he could be
 copy-pasting all your messages into (say) Google Translate in a frantic

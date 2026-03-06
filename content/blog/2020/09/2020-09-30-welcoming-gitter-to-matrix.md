@@ -70,7 +70,7 @@ Any questions, come talk to us on [#gitter:matrix.org](https://matrix.to/#/#gitt
 
 <div style="text-align: center">
     <img src="/blog/img/2020-09-30-gitter-photo.jpg" width="480" alt="Matthew & Amandine being dorky"/>
-    <br/>
+    
     <i><small>Matthew and Amandine model 2014-vintage Matrix & Gitter swag in celebration :D</small></i>
 </div>
 
@@ -78,7 +78,7 @@ Any questions, come talk to us on [#gitter:matrix.org](https://matrix.to/#/#gitt
 
 Sid Sijbrandij (CEO at GitLab) and Matthew had a chance to sit down with [The Changelog](https://changelog.com) to talk about Gitter's Big Adventure - so tune in to hear the story first hand!  Warning: contains non-ironic use of the word "synergy" :D
 
-<br/>
+
 <div style="text-align: center">
 
 <a rel="noopener" href="https://cdn.changelog.com/uploads/podcast/414/the-changelog-414.mp3">
