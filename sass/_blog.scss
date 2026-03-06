@@ -69,6 +69,11 @@ article.post {
 
     header {
         margin-bottom: 1rem;
+
+        span {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
     }
 }
 
