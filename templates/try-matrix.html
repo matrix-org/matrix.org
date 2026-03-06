@@ -1,5 +1,14 @@
 {% extends "page.html" %}
+{% import "macros/clients.html" as clients %}
+{% block head_extra %}
+<style>
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 1rem); }
+</style>
+{% endblock head_extra %}
 {% block content %}
+{% set clients_section = get_section(path="ecosystem/clients/_index.md") %}
+{% set featured_clients = clients_section.pages | filter(attribute="extra.featured", value=true) | sort(attribute="extra.featured_order") %}
+{% set providers_data = load_data(path="content/ecosystem/hosting/providers.toml") %}
 <div class="page-header">
     <div class="hero-block">
         <h1>{{ page.title }}</h1>
@@ -8,59 +17,242 @@
 </div>
 
 <div class="try_matrix">
-    <div class="step-background">
-        <div class="step choose-a-client">
-            <div class="instructions">
-                <h3>Choose a client</h3>
+    <div class="step-background quickstart">
+        <div class="step no-image">
+            <div class="instructions quickstart-instructions">
+                <h3>Just want to try it?</h3>
                 <p>
-                    We recommend Element as a safe default, but there are a variety of clients available.
+                    Open Element in your browser — no download needed. You'll be on
+                    <strong>matrix.org</strong>, the server run by the Matrix.org Foundation,
+                    which is a fine place to start. If you're planning longer-term use or want
+                    your own domain, read through the steps below first.
                 </p>
                 <div class="cta-wrapper">
-                    <a href="/ecosystem/clients/element/" class="call-to-action">Install Element</a>
-                    <a href="/ecosystem/clients" class="call-to-action secondary">Browse clients</a>
+                    <a href="https://app.element.io" class="call-to-action hide-on-mobile">Open Element Web</a>
+                    <a href="/ecosystem/clients/element-x/" class="call-to-action secondary show-primary-on-mobile">Get Element X (mobile)</a>
                 </div>
+                <a href="#get-an-app" class="scroll-down-indicator" aria-label="Scroll down to learn more">
+                    <img src="/assets/down-arrow.svg" alt="">
+                </a>
             </div>
-            <img src="/assets/try-matrix/client.svg" alt="Artist view of an abstract matrix client." />
         </div>
     </div>
+
+    <div class="step-background" id="get-an-app">
+        <div class="step choose-a-client no-image">
+            <div class="instructions">
+                <h3>Get an app</h3>
+                <p>
+                    To use Matrix you need a client. Here are the well-established featured
+                    clients — pick whichever fits your platform and needs. Switching between
+                    apps is easy since they all use the same account.
+                </p>
+
+
+
+                <div class="client-cards">
+                    {% for client in featured_clients %}
+                    <details id="{{ client.slug }}" class="client-card{% if client.extra.packages.apple_app_store %} platform-ios{% endif %}{% if client.extra.packages.google_play_store or client.extra.packages.f_droid %} platform-android{% endif %}{% if client.extra.packages.webapp %} platform-web{% endif %}{% if client.extra.packages.windows_installer %} platform-windows{% endif %}{% if client.extra.packages.macos_installer %} platform-macos{% endif %}{% if client.extra.packages.flathub or client.extra.packages.other_linux_link %} platform-linux{% endif %}">
+                        <summary class="client-card-summary">
+                            <div class="client-card-summary-inner">
+                                <img src="/ecosystem/clients/{{ client.extra.thumbnail }}"
+                                     alt="{{ client.title }} logo"
+                                     class="client-card-icon">
+                                <div class="client-card-header-text">
+                                    <span class="client-card-name">
+                                        {{ client.title }}
+                                        <a href="#{{ client.slug }}" class="client-card-anchor" aria-label="Link to {{ client.title }}">#</a>
+                                    </span>
+                                    {% if client.extra.good_for %}
+                                    <span class="client-card-good-for">Good for: {{ client.extra.good_for }}</span>
+                                    {% endif %}
+                                </div>
+                                <div class="client-card-summary-platforms">
+                                    {{ clients::platforms(packages=client.extra.packages) }}
+                                </div>
+                            </div>
+                        </summary>
+
+                        <div class="client-card-body">
+                            {% set lightbox_id = "lightbox-" ~ client.slug %}
+                            {% set screenshots = client.extra.screenshots | default(value=[]) %}
+                            {% if screenshots | length > 0 %}
+                            {% set multi = screenshots | length > 1 %}
+                            <div class="client-card-screenshot-wrap{% if multi %} client-card-screenshot-wrap--multi{% endif %}">
+                                {% for shot in screenshots %}
+                                {% set shot_lightbox_id = lightbox_id ~ "-" ~ loop.index %}
+                                <a href="#{{ shot_lightbox_id }}" class="client-card-screenshot-trigger" aria-label="Enlarge screenshot">
+                                    <img src="/ecosystem/clients/{{ shot }}"
+                                         alt="{{ client.title }} screenshot {{ loop.index }}"
+                                         class="client-card-screenshot">
+                                </a>
+                                {% endfor %}
+                            </div>
+                            {% for shot in screenshots %}
+                            {% set shot_lightbox_id = lightbox_id ~ "-" ~ loop.index %}
+                            <div class="client-lightbox" id="{{ shot_lightbox_id }}" role="dialog" aria-label="{{ client.title }} screenshot">
+                                <a href="#/" class="client-lightbox-backdrop" aria-label="Close"></a>
+                                <a href="#/" class="client-lightbox-close" aria-label="Close">&times;</a>
+                                <img src="/ecosystem/clients/{{ shot }}"
+                                     alt="{{ client.title }} screenshot {{ loop.index }}">
+                            </div>
+                            {% endfor %}
+                            {% else %}
+                            <div class="client-card-screenshot-wrap client-card-screenshot-placeholder">
+                                <span>Screenshot coming soon</span>
+                            </div>
+                            {% endif %}
+
+                            <div class="client-card-details">
+                                <p class="client-card-description">{{ client.content | markdown(inline=true) }}</p>
+
+                                <div class="client-card-features">
+                                    {% set feat = client.extra.features %}
+                                    {% if feat.e2ee %}<span class="client-feat-pill">E2EE</span>{% endif %}
+                                    {% if feat.spaces %}<span class="client-feat-pill">Spaces</span>{% endif %}
+                                    {% if feat.threads %}<span class="client-feat-pill">Threads</span>{% endif %}
+                                    {% if feat.voip_1to1 %}<span class="client-feat-pill">Voice &amp; video calls</span>{% endif %}
+                                    {% if feat.voip_jitsi %}<span class="client-feat-pill">Group calls (Jitsi)</span>{% endif %}
+                                    {% if feat.multi_account %}<span class="client-feat-pill">Multi-account</span>{% endif %}
+                                    {% if feat.oauth %}<span class="client-feat-pill">OAuth 2.0</span>{% endif %}
+                                    {% if feat.sso %}<span class="client-feat-pill">SSO</span>{% endif %}
+                                </div>
+
+                                <div class="client-card-downloads">
+                                    {{ clients::install_links(packages=client.extra.packages) }}
+                                </div>
+
+                                <a href="{{ client.path }}" class="client-card-more-link">Full details &rarr;</a>
+                            </div>
+                        </div>
+                    </details>
+                    {% endfor %}
+                </div>
+
+                <div class="cta-wrapper">
+                    <a href="/ecosystem/clients/" class="call-to-action secondary">Browse all apps</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="step-background coloured">
-        <div class="step choose-a-server">
+        <div class="step choose-a-server no-image">
             <div class="instructions">
-                <h3>Choose a server</h3>
+                <h3>Create an account</h3>
                 <p>
-                    Matrix is a decentralised protocol: like email, you need to have an account provider to start using
-                    matrix.
+                    Matrix is decentralised: like email, your account lives on a provider and you
+                    can reach anyone regardless of which provider they use. If you want your address
+                    to use your own domain (e.g. <code>@you:example.com</code>), managed hosting and
+                    self-hosting both support that. If you rely on
+                    <a href="/ecosystem/bridges">bridges</a> to other platforms, check that your
+                    chosen server supports them — availability varies by provider.
                 </p>
-                <p>
-                    But picking a provider can be overwhelming for your first steps. The Matrix.org Foundation is
-                    hosting
-                    the <a href="/homeserver">matrix.org Matrix server</a> for every newcomer to create an account. You can safely use it to
-                    create an account when getting started.
-                </p>
-                <div class="cta-wrapper">
-                    <a href="/ecosystem/hosting" class="call-to-action">Browse hosters</a>
-                    <a href="/ecosystem/servers" class="call-to-action secondary">Browse servers</a>
+                <div class="account-tiers">
+                    <div class="account-tier">
+                        <div class="account-tier-header">
+                            <h4>matrix.org homeserver</h4>
+                            <span class="tier-badge foundation">Foundation-run</span>
+                        </div>
+                        <p>
+                            The Matrix.org Foundation hosts a server open to everyone.
+                            Enter <code>matrix.org</code> in your app's server field when registering.
+                        </p>
+                        {% if page.extra.matrixorg_premium %}
+                        <div class="matrixorg-plans">
+                            <div class="plan-card">
+                                <h5>Free</h5>
+                                <ul>
+                                    <li>10 MB max attachment size</li>
+                                    <li>100 MB data / day</li>
+                                </ul>
+                                <a href="/docs/chat_basics/matrix-for-im/#creating-a-matrix-account" class="call-to-action secondary">How to create an account</a>
+                            </div>
+                            <div class="plan-card featured">
+                                <h5>Premium</h5>
+                                <ul>
+                                    <li>100 MB max attachment size</li>
+                                    <li>1 GB data / day</li>
+                                    <li>Lower room invite limits</li>
+                                    <li>Free for Foundation members</li>
+                                </ul>
+                                <a href="/homeserver/pricing" class="call-to-action">See pricing</a>
+                            </div>
+                        </div>
+                        {% else %}
+                        <a href="/docs/chat_basics/matrix-for-im/#creating-a-matrix-account" class="call-to-action">How to create an account</a>
+                        {% endif %}
+                        <p class="homeserver-info-link">
+                            <a href="/homeserver">More about the matrix.org homeserver &rarr;</a>
+                        </p>
+                    </div>
+                    <div class="account-tier">
+                        <div class="account-tier-header">
+                            <h4>Managed hosting</h4>
+                            <span class="tier-badge commercial">Paid</span>
+                        </div>
+                        <p>
+                            These services run a Matrix server for you — good if you want your
+                            own domain, dedicated resources, or more storage.
+                        </p>
+                        {% set b2c_providers = providers_data.providers | filter(attribute="b2c", value=true) %}
+                        <div class="providers-carousel" style="--items: {{ b2c_providers | length }}">
+                            {% for provider in b2c_providers %}
+                            <a href="{{ provider.website }}" class="provider-compact">
+                                <img src="/ecosystem/hosting/{{ provider.image }}" alt="{{ provider.name }} logo">
+                                <span class="provider-name">{{ provider.name }}</span>
+                                {% if provider.operating_since %}
+                                <span class="provider-since">Since {{ provider.operating_since }}</span>
+                                {% endif %}
+                                <span class="provider-audience">
+                                    <span class="audience-tag audience-tag--consumer">Individuals</span>
+                                    {% if provider.b2b %}<span class="audience-tag audience-tag--business">Business</span>{% endif %}
+                                </span>
+                            </a>
+                            {% endfor %}
+                        </div>
+                        <div class="cta-wrapper">
+                            <a href="/ecosystem/hosting" class="call-to-action secondary">Browse all hosting providers</a>
+                        </div>
+                    </div>
+                    <div class="account-tier">
+                        <div class="account-tier-header">
+                            <h4>Self-hosting</h4>
+                            <span class="tier-badge community">Community</span>
+                        </div>
+                        <p>
+                            Run your own Matrix server for full control over your data and community.
+                            Browse available <a href="/ecosystem/servers">server software</a>, or use
+                            a <a href="/ecosystem/distributions">distribution</a> — pre-packaged setups
+                            like Ansible playbooks or Docker images that handle the hard parts for you.
+                        </p>
+                        <div class="cta-wrapper">
+                            <a href="/ecosystem/servers" class="call-to-action secondary">Browse server software</a>
+                            <a href="/ecosystem/distributions" class="call-to-action secondary">Browse Distributions</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <img src="/assets/try-matrix/server.svg" alt="Artist view of an abstract server." />
         </div>
     </div>
+
     <div class="step-background">
-        <div class="step register-and-chat">
+        <div class="step register-and-chat no-image">
             <div class="instructions">
-                <h3>Register and start chatting</h3>
-                <p>That's all you need to get started! If you feel lost you can
-                    browse the <a href="/docs/chat_basics">chat basics</a>
-                    documentation.
+                <h3>Start chatting</h3>
+                <p>
+                    Once you have an account, explore <a href="/docs/chat_basics/public-rooms">public
+                    rooms and Spaces</a> to find communities built around topics you care about.
+                    You can message anyone on Matrix directly using their address
+                    (<code>@username:server</code>) — no matter which server or app they use.
                 </p>
                 <div class="cta-wrapper">
-                    <a href="/docs/chat_basics/matrix-for-im/#creating-a-matrix-account" class="call-to-action">Create
-                        an account</a>
-                    <a href="/docs/chat_basics" class="call-to-action secondary">Read the docs</a>
+                    <a href="/docs/chat_basics/matrix-for-im" class="call-to-action">Chat basics guide</a>
+                    <a href="/docs/communities" class="call-to-action secondary">Set up a community</a>
                 </div>
             </div>
-            <img src="/assets/try-matrix/chat.svg" alt="Abstract representation of a chat." />
         </div>
     </div>
 </div>
+<script src="{{ get_url(path="/js/providers-carousel.js", cachebust=true) }}" defer></script>
 {% endblock content %}

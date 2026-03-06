@@ -10,6 +10,10 @@ matrix_room = "#element-web:matrix.org"
 licence = "AGPL-3.0 OR GPL-3.0 OR Element Commercial License"
 latest_release = "2025-09-23"
 featured = true
+featured_order = 1
+screenshots = ["element-web-screenshot.png"]
+good_for = "New users and those coming from Slack or Teams"
+
 [extra.features]
 e2ee = true
 spaces = true
