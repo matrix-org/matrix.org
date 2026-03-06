@@ -172,6 +172,35 @@ article.post {
     min-width: 0;
 
     blockquote {
+        position: relative;
+        overflow: hidden;
+        border-left: none;
+        padding-left: 2rem;
+        margin: 0 0 1rem 0;
+
+        &::before,
+        &::after {
+            position: absolute;
+            color: #777;
+        }
+
+        // "//" rotated 90deg sits naturally at top-left
+        &::before {
+            content: "//";
+            transform: rotate(90deg);
+            left: 0;
+        }
+
+        // Thin vertical line below the slashes, clipped by overflow: hidden
+        &::after {
+            content: "";
+            left: 5px;
+            top: 40px;
+            width: 1px;
+            height: 100%;
+            background-color: currentColor;
+        }
+
         h2 {
             font-size: 1.5rem;
         }
