@@ -222,6 +222,7 @@ the website repository to finish it up:
 - add an [Open Graph](https://ogp.me/) preview image
 - upload any submitted videos to YouTube and embed them in the post
 - verify Markdown correctness regarding e.g. headings, links
+  - linkify room aliases and Matrix-IDs
 
 The blog post is pushed to a new pull request on the matrix.org website repository and a review requested
 from the week's assigned reviewer.
