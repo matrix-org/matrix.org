@@ -28,8 +28,8 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
                     your own domain, read through the steps below first.
                 </p>
                 <div class="cta-wrapper">
-                    <a href="https://app.element.io" class="call-to-action hide-on-mobile">Open Element Web</a>
-                    <a href="/ecosystem/clients/element-x/" class="call-to-action secondary show-primary-on-mobile">Get Element X (mobile)</a>
+                    <a href="https://app.element.io" class="call-to-action hide-on-mobile" target="_blank" rel="noopener noreferrer">Open Element Web</a>
+                    <a href="/ecosystem/clients/element-x/" class="call-to-action secondary show-primary-on-mobile" target="_blank" rel="noopener noreferrer">Get Element X (mobile)</a>
                 </div>
                 <a href="#get-an-app" class="scroll-down-indicator" aria-label="Scroll down to learn more">
                     <img src="/assets/down-arrow.svg" alt="">
@@ -41,7 +41,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
     <div class="step-background" id="get-an-app">
         <div class="step choose-a-client no-image">
             <div class="instructions">
-                <h3>Get an app</h3>
+                <h3>Get a client app</h3>
                 <p>
                     To use Matrix you need a client. Here are the well-established featured
                     clients — pick whichever fits your platform and needs. Switching between
@@ -64,7 +64,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
                                         <a href="#{{ client.slug }}" class="client-card-anchor" aria-label="Link to {{ client.title }}">#</a>
                                     </span>
                                     {% if client.extra.good_for %}
-                                    <span class="client-card-good-for">Good for: {{ client.extra.good_for }}</span>
+                                    <span class="client-card-good-for">{{ client.extra.good_for }}</span>
                                     {% endif %}
                                 </div>
                                 <div class="client-card-summary-platforms">
@@ -166,7 +166,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
                                     <li>10 MB max attachment size</li>
                                     <li>100 MB data / day</li>
                                 </ul>
-                                <a href="/docs/chat_basics/matrix-for-im/#creating-a-matrix-account" class="call-to-action secondary">How to create an account</a>
+                                <a href="/docs/chat_basics/matrix-for-im/#creating-a-matrix-account" class="call-to-action secondary">Read account creation guide</a>
                             </div>
                             <div class="plan-card featured">
                                 <h5>Premium</h5>
@@ -180,7 +180,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
                             </div>
                         </div>
                         {% else %}
-                        <a href="/docs/chat_basics/matrix-for-im/#creating-a-matrix-account" class="call-to-action">How to create an account</a>
+                        <a href="/docs/chat_basics/matrix-for-im/#creating-a-matrix-account" class="call-to-action">Read account creation guide</a>
                         {% endif %}
                         <p class="homeserver-info-link">
                             <a href="/homeserver">More about the matrix.org homeserver &rarr;</a>
@@ -228,7 +228,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
                         </p>
                         <div class="cta-wrapper">
                             <a href="/ecosystem/servers" class="call-to-action secondary">Browse server software</a>
-                            <a href="/ecosystem/distributions" class="call-to-action secondary">Browse Distributions</a>
+                            <a href="/ecosystem/distributions" class="call-to-action secondary">Browse distributions</a>
                         </div>
                     </div>
                 </div>
@@ -247,7 +247,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
                     (<code>@username:server</code>) — no matter which server or app they use.
                 </p>
                 <div class="cta-wrapper">
-                    <a href="/docs/chat_basics/matrix-for-im" class="call-to-action">Chat basics guide</a>
+                    <a href="/docs/chat_basics/matrix-for-im" class="call-to-action">Read the chat basics guide</a>
                     <a href="/docs/communities" class="call-to-action secondary">Set up a community</a>
                 </div>
             </div>
