@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/usr/bin/env bash
 
 if [ "$CF_PAGES_BRANCH" == "main" ]; then
   # build production using base_url from the site config.toml
