@@ -36,7 +36,7 @@ You may use the Foundation’s trademarks without requesting prior written permi
 
 * Explaining that your software is compatible with the Matrix protocol as defined by its official specification, available at [https://spec.matrix.org/latest/](https://spec.matrix.org/latest/).  
 
-* Using the Matrix trademarks for social and small non-profit events like meetups, tutorials, and the like is allowed for events that are free to attend. Your materials for the event must not imply that the event is officially endorsed or run by the Matrix.org Foundation unless you have written permission. For commercial events (including sponsored ones), please contact us at <legal@matrix.org>.
+* Using the Matrix trademarks for social and small non-profit events like meetups, tutorials, and the like is allowed for events that are free to attend. Your materials for the event must not imply that the event is officially endorsed or run by The Matrix.org Foundation unless you have written permission. For commercial events (including sponsored ones), please contact us at <legal@matrix.org>.
 
 * Describing a social media account, page, or community — provided it doesn’t mislead users about affiliation with the Foundation.
 

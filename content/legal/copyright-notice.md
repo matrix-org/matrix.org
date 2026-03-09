@@ -3,7 +3,7 @@ title = "Matrix.org Copyright Notice"
 version = "2.0.0"
 +++
 
-When you read 'the Matrix.org homeserver' or 'the Service' below, it refers to the services made available at **Matrix.org** which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
+When you read 'the matrix.org homeserver' or 'the Service' below, it refers to the services made available at **Matrix.org** which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
 
 If the terms of this copyright notice are not acceptable, please use a Matrix server provided by someone else!
 
