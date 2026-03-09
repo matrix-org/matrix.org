@@ -23,14 +23,14 @@ collective, board members have the following rights and responsibilities:
 * updating this governance structure and eventually adopting it as formal
   bylaws,  
 * handling community reports and complaints about governance violations  
-* making and responding to requests from the community, the Matrix.org
+* making and responding to requests from the community, The Matrix.org
   Foundation, and other stakeholders,  
 * and making official communications on behalf of the Governing Board.
 
 ## 2. Voting
 
 The rules and procedures for voting by the Governing Board are governed by the
-Terms of Reference (TOR) of the Matrix.org Foundation. Please refer to the TOR
+Terms of Reference (TOR) of The Matrix.org Foundation. Please refer to the TOR
 for the current, authoritative rules on voting, quorum, and decision-making
 processes for the Board.
 
@@ -86,7 +86,7 @@ not the norm.
 Committees are required to take notes in meetings and strive to make their work
 public where possible, for transparency and accountability. Members of the
 Trust & Safety committee (and potentially other committees handling sensitive
-information) must sign an NDA with the Matrix.org Foundation to meet compliance
+information) must sign an NDA with The Matrix.org Foundation to meet compliance
 obligations.
 
 Each Committee should maintain a dedicated Matrix room and Discourse category

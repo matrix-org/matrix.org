@@ -3,7 +3,7 @@ title = "Contact"
 +++
 
 The best place to get information and connect is on Matrix itself - starting in
-[Matrix HQ (#matrix:matrix.org)](https://matrix.to/#/#matrix:matrix.org) or in the [Office of the Matrix.org Foundation (#foundation-office:matrix.org)](https://matrix.to/#/#foundation-office:matrix.org).
+[Matrix HQ (#matrix:matrix.org)](https://matrix.to/#/#matrix:matrix.org) or in the [Office of The Matrix.org Foundation (#foundation-office:matrix.org)](https://matrix.to/#/#foundation-office:matrix.org).
 
 For direct inquiries about the following topics, please email us:
 

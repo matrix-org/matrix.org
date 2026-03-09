@@ -73,7 +73,7 @@ Matrix network.
 
 ### Values
 
-As Matrix evolves, it's critical that the Matrix.org Foundation team members
+As Matrix evolves, it's critical that The Matrix.org Foundation team members
 remain aligned on the overall philosophy of the project, particularly in more
 subjective areas. The values we follow are:
 

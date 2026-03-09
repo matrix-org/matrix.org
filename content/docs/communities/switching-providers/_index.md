@@ -59,7 +59,7 @@ A community managed by people who have `@xxx:matrix.org` accounts depends on the
 support team of matrix.org to escalate issues and try to get back in control of
 a room. The Matrix.org Foundation has limited means, and its support team works
 in best effort mode. Proving the room belonged to you and you shared it by
-accident can be a tedious process since the Matrix.org Foundation takes
+accident can be a tedious process since The Matrix.org Foundation takes
 particular care about social engineering issues.
 
 For a more advanced explanation of how room ownership works, please head to the
@@ -76,15 +76,15 @@ rooms section of the technical documentation.
 
 The Matrix.org Foundation and [t2bot.io](https://t2bot.io/) are hosting some
 public bridges for the convenience of users. They are of course bridging public
-services with the Matrix.org homeserver.
+services with the matrix.org homeserver.
 
 If you want to bridge a private service such as your company's Slack Workspace,
-you will need to deploy a bridge by yourself since the Matrix.org homeserver
+you will need to deploy a bridge by yourself since the matrix.org homeserver
 doesn't accept bridges to new private systems.
 
-Finally, relying on bridges hosted by the Matrix.org Foundation creates
-unnecessary centralisation around it: if either the Matrix.org homeserver or the
-bridge hosted by the Matrix.org Foundation are down, you temporarily lose access
+Finally, relying on bridges hosted by The Matrix.org Foundation creates
+unnecessary centralisation around it: if either the matrix.org homeserver or the
+bridge hosted by The Matrix.org Foundation are down, you temporarily lose access
 to this system. To understand why, please read the [app services](/docs/matrix-concepts/elements-of-matrix/#appservice-bridges-and-some-bots)
 and [room](/docs/matrix-concepts/rooms_and_events/) sections of the Matrix
 Concepts documentation.
@@ -108,12 +108,12 @@ convenience, but strongly encourages organisations to get their own homeserver.
 
 The simplest route to get your own homeserver is to pay a provider to host a
 Matrix instance for you. You can find such a provider among the [list of hosting
-providers the Matrix.org Foundation is aware of](/ecosystem/hosting).
+providers The Matrix.org Foundation is aware of](/ecosystem/hosting).
 
 {{ page_card(
     title="Hosting",
     path="/ecosystem/hosting",
-    summary="Discover hosting providers the Matrix.org Foundation knows, and
+    summary="Discover hosting providers The Matrix.org Foundation knows, and
              find the best suited for you.")
 }}
 
