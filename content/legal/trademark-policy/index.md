@@ -3,7 +3,7 @@ title = "The Matrix.org Foundation Trademark Policy"
 version = "1.0.0"
 +++
 
-The Matrix.org Foundation (the “**Foundation**”) is a not-for-profit organisation responsible for  nurturing and maintaining the Matrix ecosystem. It is the Foundation’s responsibility to ensure that the Matrix brand can be trusted by those looking to rely on it.
+The Matrix.org Foundation (the “**Foundation**”) is a not-for-profit organisation responsible for nurturing and maintaining the Matrix ecosystem. It is the Foundation’s responsibility to ensure that the Matrix brand can be trusted by those looking to rely on it.
 
 The Foundation stewards projects which are freely available for download and modification, so it’s important that our trademarks are used in accordance with this policy. This policy is intended to help users understand whether a product/service claiming to be compatible with the Matrix protocol is compatible in reality, and whether such products/services are officially supported by the Foundation. If you're using any of the Foundation’s trademarks, you must follow the guidelines outlined in this policy.
 
@@ -22,7 +22,7 @@ They may not be used:
 * In software or projects which support an incompatible version of the protocol.  
 * In a manner that is misleading or implies association of unrelated projects with the Foundation  
 * In a manner that confuses the users as to whether the Matrix protocol and the Foundation’s software is open source and free.  
-* By commercial organisations using the brand for profit and for any purpose other than growing the ecosystem  without referencing or supporting the Foundation.
+* By commercial organisations using the brand for profit and for any purpose other than growing the ecosystem without referencing or supporting the Foundation.
 
 The following sections within this policy aim to clarify how to use the Foundation’s trademarks in an appropriate way. If in doubt about a particular use please contact us at [legal@matrix.org](mailto:legal@matrix.org).
 
@@ -36,7 +36,7 @@ You may use the Foundation’s trademarks without requesting prior written permi
 
 * Explaining that your software is compatible with the Matrix protocol as defined by its official specification, available at [https://spec.matrix.org/latest/](https://spec.matrix.org/latest/).  
 
-* Using the Matrix trademarks for social and small non-profit events like meetups, tutorials, and the like is allowed for events that are free to attend. Your materials for the event must not imply that the event is officially endorsed or run by the Matrix.org  Foundation unless you have written permission. For commercial events (including sponsored ones), please contact us at <legal@matrix.org>.
+* Using the Matrix trademarks for social and small non-profit events like meetups, tutorials, and the like is allowed for events that are free to attend. Your materials for the event must not imply that the event is officially endorsed or run by the Matrix.org Foundation unless you have written permission. For commercial events (including sponsored ones), please contact us at <legal@matrix.org>.
 
 * Describing a social media account, page, or community — provided it doesn’t mislead users about affiliation with the Foundation.
 
@@ -44,7 +44,7 @@ You may use the Foundation’s trademarks without requesting prior written permi
 
 **All uses which are not included in section 2 of this policy require prior written consent from the Foundation.**
 
-This includes, but is not limited to, use in commercial products, company names, domain names or commercial applications which are related to the Matrix protocol.  This is primarily to ensure that when the users buy Matrix products they are actually buying products compatible with the protocol.
+This includes, but is not limited to, use in commercial products, company names, domain names or commercial applications which are related to the Matrix protocol. This is primarily to ensure that when the users buy Matrix products they are actually buying products compatible with the protocol.
 
 Derived logos must also be approved by the Foundation. We will easily approve derived logos for not-for-profit efforts that we know support the Foundation or the ecosystem as a whole. It is less likely we will approve derived logos for commercial products to avoid confusion with official commercial products/services provided by the Foundation.
 
