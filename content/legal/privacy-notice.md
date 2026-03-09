@@ -1,5 +1,5 @@
 +++
-title = "Matrix.org Foundation Privacy Policy"
+title = "The Matrix.org Foundation Privacy Policy"
 version = "3.4.0"
 +++
 
