@@ -25,7 +25,7 @@ body:
     attributes:
       label: Suggested Correction
       description: What is the correct information?
-      placeholder: It says that VoIP is not supported.
+      placeholder: VoIP is actually supported
     validations:
       required: true
   - type: input
