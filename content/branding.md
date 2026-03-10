@@ -25,8 +25,7 @@ These badges are available for **members of The Matrix.org Foundation** to showc
 
 ## Commonly Used Terms
 
-The following table lists some commonly used terms that either are or are
-related to wordmarks of The Matrix.org Foundation.
+The following table lists some terms that either are wordmarks of The Matrix.org Foundation or simply commonly used in the context of Matrix, alongside their canonical spelling.
 
 | Official Term | Variants | Explanation |
 |---|---|---|
@@ -41,5 +40,5 @@ related to wordmarks of The Matrix.org Foundation.
 | Committee | | [Committees](https://matrix.org/foundation/governing-board/committees/) are subsets of the Governing Board. Capitalised, including specific ones ("Community Committee"). |
 | Working Group | WG | [Working Groups](https://matrix.org/foundation/working-groups/) are an instrument of the Governing Board. Capitalised, including specific ones ("Events Working Group"). |
 | other organs | | Other organs of the Foundation are similarly capitalised, e.g. "Guardians", "Spec Core Team", "Trust & Safety". |
-| `#room:server.tld` | | pronounced "[hash room on server dot tld](https://matrix.org/blog/wp-content/uploads/2014/09/Introducing-matrix.pdf)". |
-| `@user:server.tld` | | pronounced "[at user on server dot tld](https://matrix.org/blog/wp-content/uploads/2014/09/Introducing-matrix.pdf)". |
+| `#room:server.tld` | | Pronounced "[hash room on server dot tld](https://matrix.org/blog/wp-content/uploads/2014/09/Introducing-matrix.pdf)". |
+| `@user:server.tld` | | Pronounced "[at user on server dot tld](https://matrix.org/blog/wp-content/uploads/2014/09/Introducing-matrix.pdf)". |
