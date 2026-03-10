@@ -59,7 +59,7 @@ Placing any large server into a production environment requires extensive monito
 In Dendrite, we are taking this one step further by introducing <a href="https://opentracing.io/">OpenTracing</a>, a language and platform-agnostic framework for tracking the journey of an endpoint call from incoming request to outgoing response, with every method, hierarchy change and database call in between. It will be immensely useful in tracking down performance issues, as well as providing insight into the most critical paths throughout the codebase and where we should focus most of our optimization efforts on. It also comes with a lovely dashboard courtesy of <a href="https://www.jaegertracing.io/">Jaeger</a>:
 
 
-<a href="/blog/wp-content/uploads/2018/07/image1.png"><img class="alignnone size-large wp-image-3432" src="/blog/wp-content/uploads/2018/07/image1-1024x527.png" alt="" width="1024" height="527" /></a>
+<a href="/blog/wp-content/uploads/2018/07/image1.png"><img class="alignnone size-large" src="/blog/wp-content/uploads/2018/07/image1-1024x527.png" alt="" width="1024" height="527" /></a>
 
 ## Community
 

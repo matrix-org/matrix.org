@@ -105,7 +105,7 @@ customer. We call the solution Ericsson Contextual Communication Cloud, or ECCC 
 high level by the following picture:
 
 
-<img class="aligncenter size-full wp-image-1852" src="/blog/wp-content/uploads/2016/11/Picture1.png" alt="ECCC in a nutshell" width="975" height="546" />
+<img class="aligncenter size-full" src="/blog/wp-content/uploads/2016/11/Picture1.png" alt="ECCC in a nutshell" width="975" height="546" />
 
 If you are interested in ECCC, feel free to reach out at <a href="https://discuss.c3.ericsson.net">https://discuss.c3.ericsson.net</a>
 

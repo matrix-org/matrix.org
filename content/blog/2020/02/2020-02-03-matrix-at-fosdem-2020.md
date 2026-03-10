@@ -28,11 +28,9 @@ So, until then, please take a look at the videos if you missed the livestream or
 
 {{ youtube_player(video_id="PUg574WphuQ") }}
 
-<br/>
 
 {{ youtube_player(video_id="nZBKzQzH2NA") }}
 
-<br/>
 
 {{ youtube_player(video_id="B2vCFAeSUpw") }}
 

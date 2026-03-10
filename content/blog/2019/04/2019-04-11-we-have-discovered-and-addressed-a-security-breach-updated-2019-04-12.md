@@ -8,7 +8,6 @@ category = ["General"]
 +++
 
 <b>Update: for the full story here, please see <a href="https://matrix.org/blog/2019/05/08/post-mortem-and-remediations-for-apr-11-security-incident">the post mortem</a>.</b>
-<br/>
 
 ## Here's what you need to know.
 

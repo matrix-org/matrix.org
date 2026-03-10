@@ -7,7 +7,7 @@ author = ["Oddvar Lovaas"]
 category = ["FOSDEM", "Events"]
 +++
 
-<img src="/blog/wp-content/uploads/2016/02/stand.jpg" alt="stand" width="1024" height="576" class="aligncenter size-full wp-image-1493" />
+<img src="/blog/wp-content/uploads/2016/02/stand.jpg" alt="stand" width="1024" height="576" class="aligncenter size-full" />
 
 The Matrix team had a very successful trip to FOSDEM '16 last weekend. Many, many words were exchanged, and at times there was a queue of people just waiting to have a chat! We spoke to a whole lot of interested and interesting people, some of which had heard of Matrix already, and some who hadn't. The nice thing with the crowd at FOSDEM is that they very quickly "get" what we're trying to do with Matrix - and then start thinking aloud about how they might want to use it or extend it - which means we have many great conversations!
 

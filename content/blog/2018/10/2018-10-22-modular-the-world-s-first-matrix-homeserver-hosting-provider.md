@@ -17,7 +17,7 @@ Today is one of those pivotal days for the Matrix ecosystem: we're incredibly ex
 Modular lets anyone spin up a dedicated homeserver and Riot via a super-simple web interface, rather than having to run and admin their own server.  It's built by New Vector (the startup who makes Riot and hires many of the Matrix core team), and comes from taking the various custom homeserver deployments for people like Status and TADHack and turning them into a paid service available to everyone.  You can even point your own DNS at it to get a fully branded dedicated homeserver for your own domain!
 
 
-<a href="https://modular.im"><img class="aligncenter wp-image-3662 size-full" src="/blog/wp-content/uploads/2018/10/181022-Modular-featured.png" alt="" width="800" height="241" /></a>
+<a href="https://modular.im"><img class="aligncenter size-full" src="/blog/wp-content/uploads/2018/10/181022-Modular-featured.png" alt="" width="800" height="241" /></a>
 
 
 Anyway, for full details, check out the <a href="https://medium.com/@RiotChat/introducing-modular-awesome-hosting-for-riot-matrix-665a7a0c616">announcement over at the Riot blog</a>.  We're particularly excited that Modular helps increase Matrix's decentralisation, and is really forcing us to ensure that the Federation API is getting the attention it deserves.  Hopefully it'll also reduce some load from the Matrix.org homeserver! Modular will also help Matrix by directly funding Matrix development by the folks working at New Vector, which should in turn of course benefit the whole ecosystem.

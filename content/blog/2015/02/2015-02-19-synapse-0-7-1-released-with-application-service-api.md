@@ -17,7 +17,7 @@ Other than the federation improvements, the big new feature that lands here is t
 
 We'll post another blog post shortly to give a lot more information; in the interim you can read more about it in the newly updated spec at <a href="http://matrix.org/docs/spec/#application-service-api">http://matrix.org/docs/spec/#application-service-api</a>.
 
-<br/>
+
 <pre>
 Changes in synapse v0.7.1 (2015-02-19)
 ======================================

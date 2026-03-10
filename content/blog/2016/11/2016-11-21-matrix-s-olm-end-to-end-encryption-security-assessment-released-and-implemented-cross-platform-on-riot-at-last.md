@@ -64,7 +64,7 @@ In practice the system is working very usably, especially for 1:1 chats.  Big g
 In Riot you can turn it on a per-room basis if you're an administrator that room by flipping the little padlock button in Room Settings.  Warning: once enabled, you cannot turn it off again for that room (to avoid the race condition of people suddenly decrypting a room before someone says something sensitive):
 
 
-<img class="aligncenter wp-image-1849" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-21-at-15.21.15-1024x646.png" alt="screen-shot-2016-11-21-at-15-21-15" width="552" height="348" />
+<img class="aligncenter" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-21-at-15.21.15-1024x646.png" alt="screen-shot-2016-11-21-at-15-21-15" width="552" height="348" />
 
 The journey to end-to-end encryption has been a bit convoluted, with work beginning in Feb 2015 by the Matrix team on <a href="/git/olm"><b>Olm</b></a>: an independent Apache-licensed implementation in C/C++11 of the Double Ratchet algorithm designed by Trevor Perrin and Moxie Marlinspike (
 <a href="https://github.com/trevp/double_ratchet/wiki">https://github.com/trevp/double_ratchet/wiki</a> - then called ‘axolotl').  We picked the Double Ratchet in its capacity as the most ubiquitous, respected and widely studied e2e algorithm out there - mainly thanks to Open Whisper Systems implementing it in Signal, and subsequently licensing it to Facebook for WhatsApp and Messenger, Google for Allo, etc.  And we reasoned that if we are ever to link huge networks like WhatsApp into Matrix whilst preserving end-to-end encrypted semantics, we'd better be using at least roughly the same technology :D

@@ -7,7 +7,7 @@ author = ["Matthew Hodgson"]
 category = ["In the News"]
 +++
 
-<a href="http://www.webrtcworld.com/topics/newsfeed/articles/403642-webrtc-conference-expo-announces-demo-winners.htm"><img src="/blog/wp-content/uploads/2015/05/WebRTC-Best-in-ShowLogo-Only.jpg" alt="WebRTC Best in Show" width="282" height="214" class="alignright size-full wp-image-1022" /></a>
+<a href="http://www.webrtcworld.com/topics/newsfeed/articles/403642-webrtc-conference-expo-announces-demo-winners.htm"><img src="/blog/wp-content/uploads/2015/05/WebRTC-Best-in-ShowLogo-Only.jpg" alt="WebRTC Best in Show" width="282" height="214" class="alignright size-full" /></a>
 
 Amandine and I just got back from WebRTC World 2015 in Miami - the conference was a great success: a fantastic opportunity to meet up with many of the companies who are supporting Matrix and give everyone an update on what Matrix is up to with our Keynote: <a href="/blog/wp-content/uploads/2015/05/2015-05-13.2-Matrix-Keynote.pdf">Defragmenting the Internet for fun and non-profit!</a>.
 
@@ -17,7 +17,7 @@ Meanwhile, we also showed <a href="http://openwebrtc.io">OpenWebRTC</a>-powered 
 
 It turns out that all the demo excitement was worth it in the end, as the jury seemed to like what Matrix is up to and was kind enough to award us more points than any of the other 13 demos... meaning that <b>we won <a href="https://twitter.com/webrtcexpo/status/598901296100462592">Best In Show!!</a></b>.  Huge thanks to the judges for believing in the Matrix vision, and congratulations to all the other demoists too :)
 
-<a href="http://matrix.org/blog/wp-content/uploads/2015/05/prize-e1431964418791.jpg"><img src="/blog/wp-content/uploads/2015/05/prize-e1431964418791-300x225.jpg" alt="Best in Show at WebRTC World!" width="300" height="225" class="aligncenter size-medium wp-image-1017" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2015/05/prize-e1431964418791.jpg"><img src="/blog/wp-content/uploads/2015/05/prize-e1431964418791-300x225.jpg" alt="Best in Show at WebRTC World!" width="300" height="225" class="aligncenter size-medium" /></a>
 
 Meanwhile, the slides from the demo presentation can be found here: <a href="/blog/wp-content/uploads/2015/05/2015-05-12-Matrix-Demo-Miami.pdf">Building bridges between islands of communication</a>, and you can see the full video of our Demo here:
 

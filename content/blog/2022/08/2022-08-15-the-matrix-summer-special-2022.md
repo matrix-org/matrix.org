@@ -211,7 +211,6 @@ Meanwhile, here are some shots of Robert and Nate chasing each other around the 
 
 {{ youtube_player(video_id="QEt80wvO4yY") }}
 
-<br/>
 
 And don't forget, it's just a Matrix client - with no infrastructure required other than a normal Matrix server:
 

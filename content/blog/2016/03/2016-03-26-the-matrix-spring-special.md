@@ -15,7 +15,7 @@ It's been 3 months since the <a href="/blog/2015/12/25/the-matrix-holiday-specia
 
 Work on <a href="http://github.com/matrix-org/synapse">Synapse</a> (our reference homeserver) has been primarily focused on improving performance.  This may sound boring, but there's been a huge amount of improvement here since synapse 0.12 was released on Jan 4. Synapse 0.13 on Feb 10 brought huge CPU savings thanks to a whole fleet of caching and other optimisation work - the best way of seeing the difference here is to look at the load graph of the server that hosts matrix.org's synapse+postgres over the last few months:
 
-<img src="/blog/wp-content/uploads/2016/03/matrix-org-load.png" alt="matrix-org-load" width="497" height="173" class="aligncenter size-full wp-image-1563" />
+<img src="/blog/wp-content/uploads/2016/03/matrix-org-load.png" alt="matrix-org-load" width="497" height="173" class="aligncenter size-full" />
 
 Ignoring the unrelated blip during March, you can see an enormous step change in system load (which had a matching decrease in actual CPU usage) at the beginning of Feb when the 0.13 optimisations landed on matrix.org :)
 
@@ -51,7 +51,7 @@ There have been three releases so far, with the <a href="https://github.com/tdfi
 
 There's one catch though - XChat was never quite built to handle the hundreds of rooms that we've got used to Matrix supporting... :D
 
-<img src="/blog/wp-content/uploads/2016/03/Screen-Shot-2016-03-26-at-00.17.08-988x1024.png" alt="Screen Shot 2016-03-26 at 00.17.08" width="988" height="1024" class="aligncenter size-large wp-image-1565" />
+<img src="/blog/wp-content/uploads/2016/03/Screen-Shot-2016-03-26-at-00.17.08-988x1024.png" alt="Screen Shot 2016-03-26 at 00.17.08" width="988" height="1024" class="aligncenter size-large" />
 
 Come hang out in <a href="https://vector.im/beta/#/room/#pto:oob.systems">#pto:oob.systems</a> if you're interested in PTO!
 
@@ -59,7 +59,7 @@ Come hang out in <a href="https://vector.im/beta/#/room/#pto:oob.systems">#pto:o
 
 <a href="https://github.com/Fxrh/Quaternion">Quaternion</a> is a new Qt/QML/C++ desktop client created by Felix Rohrbach.  It's a fairly early alpha but still quite usable and in very active development. <a href="https://vector.im/beta/#/room/#quaternion:matrix.org">#quaternion:matrix.org</a> is the place to talk all things Quaternion :)
 
-<img src="/blog/wp-content/uploads/2016/03/quaternion-1024x702.png" alt="quaternion" width="1024" height="702" class="aligncenter size-large wp-image-1566" />
+<img src="/blog/wp-content/uploads/2016/03/quaternion-1024x702.png" alt="quaternion" width="1024" height="702" class="aligncenter size-large" />
 
 ### matrix-glib-sdk
 
@@ -69,12 +69,11 @@ Meanwhile, over on the GTK side of the world, Gergely Polonkai has been been mak
 
 Finally, huge amounts of time and effort have continued to be pumped into the official <a href="http://github.com/matrix-org/matrix-react-sdk">matrix-react-sdk</a>, <a href="http://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a> and <a href="http://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a> - driven substantially by requirements for <a href="http://vector.im">Vector</a>, the <a href="http://github.com/vector-im">FOSS</a> Matrix-powered collaboration app that we've been helping with:
 
-<br/>
-<img src="/blog/wp-content/uploads/2016/03/Screen-Shot-2016-03-21-at-14.39.16-1024x753.png" alt="Screen Shot 2016-03-21 at 14.39.16" width="1024" height="753" class="aligncenter size-large wp-image-1567" />
+
+<img src="/blog/wp-content/uploads/2016/03/Screen-Shot-2016-03-21-at-14.39.16-1024x753.png" alt="Screen Shot 2016-03-21 at 14.39.16" width="1024" height="753" class="aligncenter size-large" />
 <p style="text-align: center">
-<img src="/blog/wp-content/uploads/2016/03/android-vector.png" alt="android-vector" width="330" height="640" class="size-full wp-image-1568" /><img src="/blog/wp-content/uploads/2016/03/Screen-Shot-2016-03-26-at-00.58.48-505x1024.png" alt="Screen Shot 2016-03-26 at 00.58.48" width="316" height="640" class="size-large wp-image-1569" />
+<img src="/blog/wp-content/uploads/2016/03/android-vector.png" alt="android-vector" width="330" height="640" class="size-full" /><img src="/blog/wp-content/uploads/2016/03/Screen-Shot-2016-03-26-at-00.58.48-505x1024.png" alt="Screen Shot 2016-03-26 at 00.58.48" width="316" height="640" class="size-large" />
 </p>
-<br/>
 
 The best way of seeing what's been going on here is probably by considering Vector itself, which is currently in formal beta (0.4.1 for web, 0.1.2 for iOS and #116 on Android).  The big news includes:
 

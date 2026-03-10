@@ -26,7 +26,7 @@ A critical step towards this goal is the release of Synapse 1.0. We want to ship
 
 We'd like to introduce <a href="http://arewereadyyet.com/"> AreWeReadyYet.com</a> - a quick and easy way for everyone to track the progress and check if their federation is ready for Matrix 1.0!!
 
-<p style="text-align: center;"><a href="https://www.arewereadyyet.com/"><img class="alignnone wp-image-4110 size-medium" src="/blog/wp-content/uploads/2019/03/Screenshot-2019-03-15-at-10.05.19-300x214.png" alt="Are we ready yet?" width="300" height="214" /></a></p>
+<p style="text-align: center;"><a href="https://www.arewereadyyet.com/"><img class="alignnone size-medium" src="/blog/wp-content/uploads/2019/03/Screenshot-2019-03-15-at-10.05.19-300x214.png" alt="Are we ready yet?" width="300" height="214" /></a></p>
 Synapse 1.0 is good news for anyone running a Synapse installation - it contains critical bug fixes, security patches, a new room algorithm version and dramatically improved user and room search. However, as part of the security work it also 
 <b>contains a breaking change from previous Synapse versions. From 1.0 onwards it will necessary to ensure a valid TLS certificate on the federation API. Self signed certificates will no longer be accepted</b>. <a href="https://github.com/matrix-org/synapse/blob/master/docs/MSC1711_certificates_FAQ.md#it-used-to-work-just-fine-why-are-you-breaking-everything">Why would we do such a thing?</a>
 

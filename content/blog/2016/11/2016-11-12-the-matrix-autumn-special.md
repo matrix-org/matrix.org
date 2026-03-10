@@ -75,7 +75,7 @@ When E2E first landed on Riot/Web (now Element) in September we were missing mob
 
 One of the new features which arrived in Riot (now Element) is the ability to add "single click" integrations (i.e. bots, bridges, application services) into rooms from Riot/Web (now Element) by clicking the "Manage Integrations" button in Room Settings. These integrations are hosted for free by Riot (now Element) in its production infrastructure (codenamed Scalar), but all the actual bots/bridges/services themselves are normal opensource Matrix apps and you can of course run them yourself too.
 
-<img class="aligncenter wp-image-1827" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-12-at-11.47.29-1024x913.png" alt="screen-shot-2016-11-12-at-11-47-29" width="894" height="797" />
+<img class="aligncenter" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-12-at-11.47.29-1024x913.png" alt="screen-shot-2016-11-12-at-11-47-29" width="894" height="797" />
 
 The Bot integrations are all provided by <a href="https://github.com/matrix-org/go-neb">go-neb</a> - a complete rewrite in Golang and general reimagining of the old <a href="https://github.com/matrix-org/Matrix-NEB">python NEB bot</a> which old-timers will recall as the very first bot written for the Matrix ecosystem. Go-neb has effectively now become a general purpose golang bot/integration framework for Matrix, with the various different services implemented as plugins for <a href="https://github.com/matrix-org/go-neb/tree/master/src/github.com/matrix-org/go-neb/services/github">Github</a>, <a href="https://github.com/matrix-org/go-neb/tree/master/src/github.com/matrix-org/go-neb/services/jira">JIRA</a>, <a href="https://github.com/matrix-org/go-neb/tree/master/src/github.com/matrix-org/go-neb/services/giphy">Giphy</a>, <a href="https://github.com/matrix-org/go-neb/tree/master/src/github.com/matrix-org/go-neb/services/guggy">Guggy</a> etc. Critically it supports <a href="https://github.com/matrix-org/go-neb#configuring-realms">authenticating Matrix users through to the remote service</a>, letting normal Matrix users interact with Github and friends using their actual Github identity rather than via a bot user - this is a huge huge improvement over the original naive python NEB.
 
@@ -151,7 +151,7 @@ This obviously has some major advantages (your actions on Gitter use your real G
 ### telematrix
 
 Telematrix is Telegram&lt;-&gt;Matrix bridge, written by Sijmen Schoon using python3 and asyncio. Right now it's a fairly early alpha hardcoded to bridge a specific Telegram channel into a specific Matrix room, but it works and in use and could be an excellent base for folks interested in a more comprehensive Matrix/Telegram bridge. Go check it out at <a href="https://github.com/SijmenSchoon/telematrix">https://github.com/SijmenSchoon/telematrix</a>
-<img class="aligncenter wp-image-1832" src="/blog/wp-content/uploads/2016/11/telematrix-1024x828.png" alt="telematrix" width="641" height="518" />
+<img class="aligncenter" src="/blog/wp-content/uploads/2016/11/telematrix-1024x828.png" alt="telematrix" width="641" height="518" />
 
 ### Ruma
 
@@ -161,7 +161,7 @@ Meanwhile, the Ruma project to write a Matrix homeserver in Rust has been progre
 
 An entirely new client on the block since the last update is <a href="http://github.com/ralith/nachat">NaChat</a>, written by Ralith. NaChat is a pure cross-platform Qt/C++ desktop client written from the ground up, supporting local history synchronisation, excellent performance, native Qt theming, and generally being a lean and mean Matrix client machine. It's still alpha, but it's easy to build and a lot of fun to play with.
 
-<img class="aligncenter wp-image-1828" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-12-at-12.01.03-1024x664.png" alt="screen-shot-2016-11-12-at-12-01-03" width="1009" height="654" />
+<img class="aligncenter" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-12-at-12.01.03-1024x664.png" alt="screen-shot-2016-11-12-at-12-01-03" width="1009" height="654" />
 
 Please give a spin, encourage Ralith to finish the <a href="https://github.com/ralith/nachat/tree/timeline-view-rewrite">timeline-view-rewrite</a> branch (which is probably the one you want to be running!), and come hang out on <a href="https://matrix.to/#/#nachat:matrix.org">#nachat:matrix.org</a>.
 
@@ -169,7 +169,7 @@ Please give a spin, encourage Ralith to finish the <a href="https://github.com/r
 
 Meanwhile, the <a href="https://github.com/fxrh/quaternion">Quaternion</a> Qt/QML desktop client and its <a href="https://github.com/fxrh/libqmatrixclient">libqmatrixclient</a> library has been making sure and steady progress, with fxrh, kitsune, maralorn and others working away at it. The difference with NaChat here is using QML rather than native Qt widgets, and a focus on more advanced UX features like a custom infinite-scrolling scrollbar widget, unread message notifications, and read-up-to markers.  Recent developments include the <a href="https://github.com/Fxrh/Quaternion/releases/tag/v0.0.1">first official release (0.0.1)</a> on Sept 12, official Windows builds, lots of work on implementing better Read-up-to Markers, scrolling behaviour etc. Again, it's worth keeping a checkout of Quaternion handy and playing with the client - it's loads of fun!
 
-<img class="aligncenter size-large wp-image-1829" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-12-at-12.12.48-1024x535.png" alt="screen-shot-2016-11-12-at-12-12-48" width="1024" height="535" />
+<img class="aligncenter size-large" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-12-at-12.12.48-1024x535.png" alt="screen-shot-2016-11-12-at-12-12-48" width="1024" height="535" />
 
 ## Google Summer of Code 2016 Retrospective
 
@@ -189,7 +189,7 @@ Just in case you missed them, there have been a couple of high profile articles 
 
 More recently, we were lucky enough to get an <a href="https://www.youtube.com/watch?v=LhCfI-xdvlE">indepth video interview with Bryan Lunduke</a> as part of his 'Linux & Whatnot' series, and also a <a href="http://www.networkworld.com/article/3140014/open-source-tools/down-the-rabbit-hole-part-5-secure-and-private-instant-messaging.html#tk.twt_nww.">write-up in NetworkWorld</a> alongside Signal & Wire as part of Bryan's journeys in the land of encrypted messaging.
 
-<a href="https://www.youtube.com/watch?v=LhCfI-xdvlE"><img class="aligncenter wp-image-1830 size-large" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-12-at-12.31.34-1024x571.png" alt="screen-shot-2016-11-12-at-12-31-34" width="1024" height="571" /></a>
+<a href="https://www.youtube.com/watch?v=LhCfI-xdvlE"><img class="aligncenter size-large" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-12-at-12.31.34-1024x571.png" alt="screen-shot-2016-11-12-at-12-31-34" width="1024" height="571" /></a>
 
 Huge thanks to everyone who's been nice enough to spread the word of Matrix!
 
@@ -251,7 +251,7 @@ Most of the core team hangs out in London or Rennes (France), but we're also ope
 
 Apologies once again for an overdue and overlong update, but hopefully this gives a good taste of how Matrix is progressing. Just to give a different datapoint: this graph is quite interesting - showing the volume of events per day sent by native (i.e. non-bridged) Matrix users visible to the matrix.org homeserver since we turned the service on back in 2014:
 
-<img class="aligncenter wp-image-1833" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-04-at-11.02.58-1-1024x778.png" alt="screen-shot-2016-11-04-at-11-02-58-1" width="958" height="728" />
+<img class="aligncenter" src="/blog/wp-content/uploads/2016/11/Screen-Shot-2016-11-04-at-11.02.58-1-1024x778.png" alt="screen-shot-2016-11-04-at-11-02-58-1" width="958" height="728" />
 
 As you can see, things are accelerating quite nicely - and this is ignoring all the traffic in the rest of the Matrix ecosystem that happens not to be federated onto the matrix.org HS, not to mention the *huge* amounts of traffic due to bridging.
 

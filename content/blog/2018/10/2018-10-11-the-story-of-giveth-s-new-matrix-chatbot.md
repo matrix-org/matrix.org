@@ -11,7 +11,7 @@ Guest post today from <a href="https://giveth.io/">Giveth</a>: <em>Giveth is re
 
 <hr />
 
-<a href="/blog/wp-content/uploads/2018/10/giveth1.png"><img class="alignnone size-full wp-image-3629" src="/blog/wp-content/uploads/2018/10/giveth1.png" alt="" width="901" height="253" /></a>
+<a href="/blog/wp-content/uploads/2018/10/giveth1.png"><img class="alignnone size-full" src="/blog/wp-content/uploads/2018/10/giveth1.png" alt="" width="901" height="253" /></a>
 
 <i>Giveth's new chatbot in action!
 </i>
@@ -25,7 +25,7 @@ I recently joined <a href="https://giveth.io">Giveth's</a> Riot community, where
 The Giveth Bot actually started out as an attempt to solve a completely different problem: helping Giveth efficiently distribute internal reward points. Giveth's system for rewarding people who meaningfully contribute to the project is called RewardDAO. “If someone contributes in a meaningful way, a core contributor from each of the Giveth Campaigns can dish them points to recognize the contribution”, describes <a href="https://medium.com/@cle0">Cleo</a> in an article explaining <a href="https://medium.com/giveth/how-rewarddao-works-aka-what-are-points-7388f70269a">how RewardDAO works</a>. At the end of each month, contributors receive Ether based on how many points they have earned.
 
 
-<a href="/blog/wp-content/uploads/2018/10/giveth2.png"><img class="alignnone size-large wp-image-3626" src="/blog/wp-content/uploads/2018/10/giveth2-1024x246.png" alt="" width="1024" height="246" /></a>
+<a href="/blog/wp-content/uploads/2018/10/giveth2.png"><img class="alignnone size-large" src="/blog/wp-content/uploads/2018/10/giveth2-1024x246.png" alt="" width="1024" height="246" /></a>
 
 <i>The Giveth RewardDAO motto. Photo from https://medium.com/giveth.
 </i>
@@ -37,7 +37,7 @@ A lot of great work was submitted, and ultimately Deam's (
 <a href="https://twitter.com/deamlabs">@deamlabs</a>) code was chosen to power the bot and the code for the pointsbot itself was further developed and refined by <a href="https://github.com/FrederikBolding">Frederik Bolding</a>. Now, by using a command of the form “!dish [number] [type] points to [contributor] for [contribution]”, Giveth core contributors can distribute points as needed, and the bot will automatically update the spreadsheet accordingly.
 
 
-<a href="/blog/wp-content/uploads/2018/10/giveth3.png"><img class="alignnone size-full wp-image-3628" src="/blog/wp-content/uploads/2018/10/giveth3.png" alt="" width="918" height="520" /></a>
+<a href="/blog/wp-content/uploads/2018/10/giveth3.png"><img class="alignnone size-full" src="/blog/wp-content/uploads/2018/10/giveth3.png" alt="" width="918" height="520" /></a>
 
 <i>The Giveth Bot dishing points like a champion! 
 </i>

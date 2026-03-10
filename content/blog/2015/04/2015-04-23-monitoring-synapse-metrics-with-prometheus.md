@@ -53,7 +53,7 @@ job: {'{'}
 
 And the end result looks something like...
 
-<a href="http://matrix.org/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-23-at-16.32.01.png"><img src="http://matrix.org/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-23-at-16.32.01-1024x930.png" alt="Prometheus screenshot" width="1024" height="930" class="aligncenter size-large wp-image-905" /></a>
+<a href="http://matrix.org/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-23-at-16.32.01.png"><img src="http://matrix.org/blog/wp-content/uploads/2015/04/Screen-Shot-2015-04-23-at-16.32.01-1024x930.png" alt="Prometheus screenshot" width="1024" height="930" class="aligncenter size-large" /></a>
 
 ...amongst many many other system & application metrics.
 
