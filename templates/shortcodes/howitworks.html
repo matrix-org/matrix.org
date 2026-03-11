@@ -1,6 +1,9 @@
 <div id="howitworks">
     <svg id="diagram"></svg>
     <div id="legendBox">
+        <button class="legendNav next">
+            Next
+        </button>
         <div class="legend" id="legend1">
             <p>Here are three Matrix homeservers, each with one client connected.</p>
             <p>The clients are all participating in the same Matrix room, which
@@ -140,8 +143,5 @@ curl "https://matrix.bob.com/_matrix/client/v3/sync" \
             same rules, ensuring eventual consistency and integrity of the
             distributed room history.
         </div>
-        <button class="legendNav">
-            Next
-        </button>
     </div>
 </div>
