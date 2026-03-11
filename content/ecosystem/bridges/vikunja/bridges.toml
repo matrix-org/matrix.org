@@ -1,0 +1,28 @@
+[[bridges]]
+name = "matrix-appservice-vikunja"
+maintainer = "Projex Labs"
+summary = """
+A Matrix Application Service bridge for [Vikunja](https://vikunja.io) task management.
+Enables bidirectional task management from Matrix chat rooms — create, assign, complete,
+and track tasks using bot commands, with real-time webhook notifications for task events.
+"""
+maturity = "Beta"
+language = "TypeScript"
+license = "MIT"
+docs = "https://github.com/emadomedher/matrix-appservice-vikunja#readme"
+repo = "https://github.com/emadomedher/matrix-appservice-vikunja"
+featured = false
+privilege.platform = "Admin"
+privilege.matrix = "Homeserver Admin"
+[bridges.supports]
+dm = false
+channels = true
+formatted_text = true
+message_media = false
+mentions = false
+threads = false
+redactions = false
+editing = false
+reactions = false
+presence = false
+typing_notifications = false
