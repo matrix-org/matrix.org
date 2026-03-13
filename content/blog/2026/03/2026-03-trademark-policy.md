@@ -7,7 +7,7 @@ author = ["Denise Almeida"]
 category = ["Foundation", "Policy"]
 +++
 
-Today we are publishing The Matrix.org Foundation’s first trademark policy. As a foundation we believe that everyone should have control over their own communications and that secure communication should be available to everyone as a free and open standard. We exist to act as a neutral custodian for the Matrix protocol and to ensure that it operates as an unfragmented standard, which benefits the whole ecosystem. If the Matrix ecosystem is thriving everyone benefits, from people using Matrix for their daily conversations to companies building products on Matrix.
+Today we are publishing The Matrix.org Foundation’s first [trademark policy](@/legal/trademark-policy/index.md). As a foundation we believe that everyone should have control over their own communications and that secure communication should be available to everyone as a free and open standard. We exist to act as a neutral custodian for the Matrix protocol and to ensure that it operates as an unfragmented standard, which benefits the whole ecosystem. If the Matrix ecosystem is thriving everyone benefits, from people using Matrix for their daily conversations to companies building products on Matrix.
 
 A big part of our work as custodians is ensuring that there is clarity in sources of information and services, in which trademark protection plays a big role. Our aim with this trademark policy is to help people understand if a product claiming to be compatible with the protocol is actually compatible, and if a specific product or service is officially supported by the Foundation.
 
