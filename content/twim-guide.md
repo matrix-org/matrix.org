@@ -39,7 +39,7 @@ Images and other media are supported as well. To add them you should react with
 to the correct entry and not to another project of yours.
 
 {% notice_box() %}
-At times, sending media to Matrix rooms moderated by the Matrix Foundation may be prohibited
+At times, sending media to Matrix rooms moderated by The Matrix Foundation may be prohibited
 for moderation reasons. If this is the case, please reach out to the TWIM editors via chat.
 {% end %}
 
@@ -116,7 +116,7 @@ The static site generator that matrix.org is using uses CommonMark for content,
 and requires bare links to be surrounded by angled brackets to produce
 [autolinks](https://spec.commonmark.org/0.31.2/#autolinks). For example:
 `Take a look at the TWIM entry guidelines <https://matrix.org/twim-guide/>`.
-Most matrix clients will not automatically emit the CommonMark the site
+Most Matrix clients will not automatically emit the CommonMark the site
 generator expects for these links. If you are able to add them around your links,
 it will help us in making sure your links will be clickable on the blog.
 
@@ -154,7 +154,7 @@ Please approach the [Website and Content Working Group](https://matrix.to/#/#mat
 with any questions or ideas about TWIM and its process.
 {% end %}
 
-This Week in Matrix is part of the outreach programme of the Matrix Foundation.
+This Week in Matrix is part of the outreach programme of The Matrix Foundation.
 
 The Matrix Foundation hosts the [TWIM Matrix room](https://matrix.to/#/#twim:matrix.org) for the purpose of
 communicating with the wider ecosystem and allowing everyone to announce Matrix-related news to be published

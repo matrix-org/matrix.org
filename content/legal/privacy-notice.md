@@ -1,5 +1,5 @@
 +++
-title = "Matrix.org Foundation Privacy Policy"
+title = "The Matrix.org Foundation Privacy Policy"
 version = "3.4.0"
 +++
 
@@ -13,13 +13,13 @@ Please read this document carefully before accessing or using this service.
 
 Most Privacy Policy documents are unreadable. They are written by lawyers and for lawyers, and in our opinion are not very effective. Data protection and privacy are important, and we want you to understand the issues involved. For that reason we decided to use plain English instead as much as possible, to make our terms as clear as possible.
 
-When you read 'the Matrix.org homeserver', ‘matrix.org’ or 'the Service' below, it refers to the services made available at matrix.org which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
+When you read 'the matrix.org homeserver', ‘matrix.org’ or 'the Service' below, it refers to the services made available at matrix.org which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
 
 The public Matrix Network is a decentralised and openly federated communication network. This means that user messages are replicated on each participant's server and messages posted to a room are visible to all participants including in some cases any new joiners. This is further explained at 2.3.
 
 Where you read Matrix.org, Matrix.org Foundation C.I.C., The Matrix.org Foundation, or The Foundation, it refers to the Community Interest Company incorporated on 29 October 2018 to be the neutral custodian of the Matrix protocol: The Matrix.org Foundation C.I.C., and their agents.
 
-The Matrix protocol is licensed by the Matrix.org Foundation which makes it available to third parties who set up their own homeserver. This privacy policy does not apply to such Matrix servers run by anyone else - Matrix is an open network like the Web and this agreement only applies to the server (Matrix.org) provided by the Foundation.
+The Matrix protocol is licensed by The Matrix.org Foundation which makes it available to third parties who set up their own homeserver. This privacy policy does not apply to such Matrix servers run by anyone else - Matrix is an open network like the Web and this agreement only applies to the server (matrix.org) provided by the Foundation.
 
 Matrix.org is the Data Controller for the Service and works with [Element](https://element.io) as a Processor for data processing, hosting and management purposes. We can be contacted as per the details below:
 
@@ -133,7 +133,7 @@ Additionally, we collect data associated with each of your sessions, specificall
 * the user agent we saw when it got created  
 * which client you used
 
-Your email address and/or telephone number are used so that other users can look up your Matrix ID from these identifiers via the Matrix.org Identity Server. We will also use your email address to let you reset your password if you forget it, and to send you notifications about missed messages from users trying to contact you on Matrix if you enable the option. We may also send you infrequent urgent messages about platform updates.
+Your email address and/or telephone number are used so that other users can look up your Matrix ID from these identifiers via the matrix.org Identity Server. We will also use your email address to let you reset your password if you forget it, and to send you notifications about missed messages from users trying to contact you on Matrix if you enable the option. We may also send you infrequent urgent messages about platform updates.
 
 #### 2.2.1.2 Content you provide through using the Service
 
@@ -141,7 +141,7 @@ We store and distribute the messages and files you share using the Service (and 
 
 This content includes any information about yourself that you choose to share.
 
-#### 2.2.1.3 Information you provide through purchases in the Matrix.org Foundation shop
+#### 2.2.1.3 Information you provide through purchases in The Matrix.org Foundation shop
 
 The Matrix.org Shop is an online store at which you can purchase Matrix.org-branded merchandise, such as stickers or tee-shirts. All proceeds go to The Matrix.org Foundation. Data you provide for this purpose is processed under Performance of Contract. This means that we process your data for the purposes of fulfilling orders you make from us, getting in touch with you, responding to your requests, working with our suppliers to deliver the Service and enabling its features, ensuring the security of our Service, developing, fixing and improving our Service, administering our business and complying with the law.
 

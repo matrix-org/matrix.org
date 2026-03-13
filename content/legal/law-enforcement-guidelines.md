@@ -4,7 +4,7 @@ title = "Law Enforcement Guidelines"
 
 # Legal Guidelines
 
-Like any online service, the Matrix.org Foundation receives requests for information about users. Those requests come from government agencies, law enforcement, individuals, and companies. We aim to be transparent about the data we collect about our users, through our [privacy notice](https://matrix.org/legal/privacy-notice). This document describes the steps we take when engaging with law enforcement, and how we safeguard privacy rights. We also set out how law enforcement can send us requests.
+Like any online service, The Matrix.org Foundation receives requests for information about users. Those requests come from government agencies, law enforcement, individuals, and companies. We aim to be transparent about the data we collect about our users, through our [privacy notice](https://matrix.org/legal/privacy-notice). This document describes the steps we take when engaging with law enforcement, and how we safeguard privacy rights. We also set out how law enforcement can send us requests.
 
 Before revealing any non-public information about a site, an account, or a user, we require a valid subpoena, search warrant, or court order. The only exception is when we have a good faith belief that there is an emergency involving imminent danger of death or serious physical injury.
 
@@ -25,7 +25,7 @@ We will only transfer information using end to end encryption.
 
 ## Emergency Requests from Government Agencies/Law Enforcement
 
-We may disclose user information to government or law enforcement agencies – without a warrant  – if we have a good faith belief that an emergency involving** imminent danger of death or serious physical injury** requires disclosure of information related to the emergency without delay. 
+We may disclose user information to government or law enforcement agencies – without a warrant  – if we have a good faith belief that an emergency involving **imminent danger of death or serious physical injury** requires disclosure of information related to the emergency without delay.
 
 Send your emergency request to [abuse@matrix.org](mailto:abuse@matrix.org) and include “emergency” in the subject line.
 
@@ -38,12 +38,12 @@ Send your emergency request to [abuse@matrix.org](mailto:abuse@matrix.org) and i
 
 ## What Information Do We Have?
 
-The data available on Matrix.org users is limited to that which is described in our [privacy notice](https://matrix.org/legal/privacy-notice). As per the Matrix protocol, homeserver administrators are unable to view data which is end-to-end encrypted, making this type of data out of scope for these requests. 
+The data available on matrix.org users is limited to that which is described in our [privacy notice](https://matrix.org/legal/privacy-notice). As per the Matrix protocol, homeserver administrators are unable to view data which is end-to-end encrypted, making this type of data out of scope for these requests.
 
 We do not voluntarily provide governments with access to data about users for any reason, including for the purposes of law enforcement, intelligence gathering, or other surveillance. As noted above, we only provide information to third parties after receiving a valid search warrant.
 
 
-## Notification to Matrix.org Users
+## Notification to matrix.org Users
 
 We aim for total transparency with our users when legal requests for information or complaints affect their account. It is our policy to notify users and provide them with a copy of any legal requests regarding their account or site, unless we are prohibited from doing so by the warrant. When the prohibition from notifying users expires, we will notify users and provide them with a copy of the legal request at that time. 
 
@@ -77,7 +77,7 @@ Matrix.org complies with properly formatted notices sent in accordance with the 
 ## Our stances
 
 
-### Who Is Liable for Content Hosted on Matrix.org?
+### Who Is Liable for Content Hosted on matrix.org?
 
 We do not control or endorse the materials or message content found in any rooms or communities. To the maximum extent permitted by law, Matrix.org will have no liability related to user materials arising under intellectual property rights, libel, privacy, publicity, obscenity or other laws. Matrix.org also disclaims all liability with respect to the misuse, loss, modification or unavailability of any user messages or files.
 

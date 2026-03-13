@@ -11,7 +11,7 @@ Everyone can host their Matrix server, but not everybody wants to. These are the
 
 Matrix could be described as what happens when email, instant messaging and
 encryption meet. To be able to use Matrix, you need a Matrix account which is
-provided by... a provider! The matrix accounts identifiers look like
+provided by... a provider! The Matrix accounts identifiers look like
 `@username:example.com`. People on different providers can talk to one another,
 in the same way you can send emails to someone using another email provider.
 
@@ -27,8 +27,8 @@ main reasons: they can proudly display their identity with their own domain
 in username and rooms identifiers, and their administrators remain in control
 of the data of their organisation.
 
-The following providers have been brought to the attention of the Matrix.org
-Foundation. Please note that the Matrix.org Foundation doesn't endorse them,
+The following providers have been brought to the attention of The Matrix.org
+Foundation. Please note that The Matrix.org Foundation doesn't endorse them,
 nor provides any warranties for using them.
 
 ## Known providers

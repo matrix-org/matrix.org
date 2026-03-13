@@ -5,109 +5,154 @@
         <h1>{{ page.title }}</h1>
     </header>
 
+    <p>This page gives you some practical guidelines for working with the
+    branding assets and trademarks of The Matrix.org Foundation. Please read our <a href="/legal/trademark-policy">trademark policy</a> to learn more about how you may use these assets.</p>
+
     <section>
+        <h2>Matrix Logos</h2>
         <div class="branding-card-deck">
-        <a
-            class="branding-card"
-            href="{{ get_url(path='branding/logos/matrix-logos.zip') }}"
-            download
-        >
-            <img
-                src="{{ get_url(path='branding/logos/matrix-logo.svg') }}"
-                alt="Matrix Logo"
-            />
-            <p>Matrix Logos</p>
-        </a>
-        <a
-            class="branding-card is-icon"
-            href="{{ get_url(path='branding/icons/matrix-icons.zip') }}"
-            download
-        >
-            <img
-                src="{{ get_url(path='branding/icons/matrix-icon.svg') }}"
-                alt="Matrix Icon"
-            />
-            <p>Matrix Icons</p>
-        </a>
+            <a
+                class="branding-card"
+                href="{{ get_url(path='branding/logos/matrix-logos.zip') }}"
+                download
+            >
+                <img
+                    src="{{ get_url(path='branding/logos/matrix-logo.svg') }}"
+                    alt="Matrix Logo"
+                />
+                <p>Matrix Logos</p>
+            </a>
+            <a
+                class="branding-card is-icon"
+                href="{{ get_url(path='branding/icons/matrix-icons.zip') }}"
+                download
+            >
+                <img
+                    src="{{ get_url(path='branding/icons/matrix-icon.svg') }}"
+                    alt="Matrix Icon"
+                />
+                <p>Matrix Icons</p>
+            </a>
         </div>
+
+        <h3>How to use them</h3>
+        <p>When reproducing the Matrix logo, please include an appropriate
+        disclaimer and link back to matrix.org, for example<br />
+            <blockquote>
+                This logo is the trademark of <a href="https://matrix.org">The Matrix.org Foundation</a>. Use of this logo does not imply endorsement or affiliation.
+            </blockquote>
+        </p>
+        <p>The Foundation's <a href="/legal/trademark-policy">trademark policy</a> allows you to create derivative works using the above logos within the defined limits.</p>
+        <ul>
+            <li>Please do not skew or alter the aspect ratio of the logos.</li>
+            <li>The official colors are <code style="color: black; background-color: white;">#000000</code> Black and <code style="color: white; background-color: black;">#FFFFFF</code> White.</li>
+            <li>The font is based on Helvetica Neue bold, which you can easily use to create visually fitting variations of the logo.</li>
+        </ul>
+        <p> Here are some great examples of approved modifications to the logo:</p>
+        <div class="branding-card-deck">
+            <div class="branding-card">
+                <img
+                    src="/branding/examples/matrix-community-events.svg"
+                    alt="Logo of Matrix Community Events"
+                />
+            </div>
+            <div class="branding-card">
+                <img
+                    src="/branding/examples/MCS25-Logo-on-light.svg"
+                    alt="Logo of Matrix Community Summit Berlin 2025"
+                />
+            </div>
+            <div class="branding-card">
+                <img
+                    src="/branding/examples/matrix-spezifikation.svg"
+                    alt="The Matrix logo using a colourful wave for the writing"
+                />
+            </div>
+        </div>
+        <p>Please include an appropriate disclaimer with logos based on
+        trademarks of the Foundation and link back to matrix.org, for example
+            <blockquote>
+                This logo is based on a trademark of <a href="https://matrix.org">The Matrix.org Foundation</a>. Use of this logo does not imply endorsement or affiliation.
+            </blockquote>
+        </p>
     </section>
+
     <section>
-    <h2>Membership Badges</h2>
-    <div class="branding-card-deck">
-        <a
-            class="branding-card"
-            href="{{ get_url(path='branding/membership/matrix-membership-platinum.zip') }}"
-            download
-        >
-            <img
-                src="{{ get_url(path='branding/membership/matrix-membership-platinum.svg') }}"
-                alt="Matrix Platinum Badge"
-            />
-            <p>Matrix Platinum Badge</p>
-        </a>
+        <h2>Membership Badges</h2>
+        <div class="branding-card-deck">
+            <a
+                class="branding-card"
+                href="{{ get_url(path='branding/membership/matrix-membership-platinum.zip') }}"
+                download
+            >
+                <img
+                    src="{{ get_url(path='branding/membership/matrix-membership-platinum.svg') }}"
+                    alt="Matrix Platinum Badge"
+                />
+                <p>Matrix Platinum Badge</p>
+            </a>
 
-        <a
-            class="branding-card"
-            href="{{ get_url(path='branding/membership/matrix-membership-gold.zip') }}"
-            download
-        >
-            <img
-                src="{{ get_url(path='branding/membership/matrix-membership-gold.svg') }}"
-                alt="Matrix Gold Badge"
-            />
-            <p>Matrix Gold Badge</p>
-        </a>
+            <a
+                class="branding-card"
+                href="{{ get_url(path='branding/membership/matrix-membership-gold.zip') }}"
+                download
+            >
+                <img
+                    src="{{ get_url(path='branding/membership/matrix-membership-gold.svg') }}"
+                    alt="Matrix Gold Badge"
+                />
+                <p>Matrix Gold Badge</p>
+            </a>
 
-        <a
-            class="branding-card"
-            href="{{ get_url(path='branding/membership/matrix-membership-silver.zip') }}"
-            download
-        >
-            <img
-                src="{{ get_url(path='branding/membership/matrix-membership-silver.svg') }}"
-                alt="Matrix Silver Badge"
-            />
-            <p>Matrix Silver Badge</p>
-        </a>
+            <a
+                class="branding-card"
+                href="{{ get_url(path='branding/membership/matrix-membership-silver.zip') }}"
+                download
+            >
+                <img
+                    src="{{ get_url(path='branding/membership/matrix-membership-silver.svg') }}"
+                    alt="Matrix Silver Badge"
+                />
+                <p>Matrix Silver Badge</p>
+            </a>
 
-        <a
-            class="branding-card"
-            href="{{ get_url(path='branding/membership/matrix-membership-individual.zip') }}"
-            download
-        >
-            <img
-                src="{{ get_url(path='branding/membership/matrix-membership-individual.svg') }}"
-                alt="Matrix Individual Badge"
-            />
-            <p>Matrix Individual Badge</p>
-        </a>
+            <a
+                class="branding-card"
+                href="{{ get_url(path='branding/membership/matrix-membership-individual.zip') }}"
+                download
+            >
+                <img
+                    src="{{ get_url(path='branding/membership/matrix-membership-individual.svg') }}"
+                    alt="Matrix Individual Badge"
+                />
+                <p>Matrix Individual Badge</p>
+            </a>
 
-        <a
-            class="branding-card"
-            href="{{ get_url(path='branding/membership/matrix-membership-ecosystem.zip') }}"
-            download
-        >
-            <img
-                src="{{ get_url(path='branding/membership/matrix-membership-ecosystem.svg') }}"
-                alt="Matrix Ecosystem Badge"
-            />
-            <p>Matrix Ecosystem Badge</p>
-        </a>
+            <a
+                class="branding-card"
+                href="{{ get_url(path='branding/membership/matrix-membership-ecosystem.zip') }}"
+                download
+            >
+                <img
+                    src="{{ get_url(path='branding/membership/matrix-membership-ecosystem.svg') }}"
+                    alt="Matrix Ecosystem Badge"
+                />
+                <p>Matrix Ecosystem Badge</p>
+            </a>
 
-        <a
-            class="branding-card"
-            href="{{ get_url(path='branding/membership/matrix-membership-associate.zip') }}"
-            download
-        >
-            <img
-                src="{{ get_url(path='branding/membership/matrix-membership-associate.svg') }}"
-                alt="Matrix Associate Badge"
-            />
-            <p>Matrix Associate Badge</p>
-        </a>
-
+            <a
+                class="branding-card"
+                href="{{ get_url(path='branding/membership/matrix-membership-associate.zip') }}"
+                download
+            >
+                <img
+                    src="{{ get_url(path='branding/membership/matrix-membership-associate.svg') }}"
+                    alt="Matrix Associate Badge"
+                />
+                <p>Matrix Associate Badge</p>
+            </a>
         </div>
+
         {{ page.content | safe }}
-    </section>
 </article>
 {% endblock content %}

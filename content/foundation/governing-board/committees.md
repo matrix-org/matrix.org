@@ -121,7 +121,7 @@ Since we expect that the [Governance Working Group](@/foundation/working-groups/
 > - driving initiatives to improve T&S for one or multiple of the groups listed under "Purpose"
 > - enable collaboration and interactions between different individuals and groups trying to improve T&S
 > - collaborating with the Matrix.org T&S team
-> - together with the Matrix.org T&S team propose changes to policies for the operation of the Matrix.org homeserver as well as community interactions in other public channels (Code of Conduct and its application)
+> - together with the Matrix.org T&S team propose changes to policies for the operation of the matrix.org homeserver as well as community interactions in other public channels (Code of Conduct and its application)
 > - document best practices related to T&S for communities and server operators
 
 ### Members
