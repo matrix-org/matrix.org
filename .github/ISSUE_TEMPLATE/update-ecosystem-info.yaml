@@ -1,0 +1,44 @@
+name: Update Ecosystem Info
+description: Report outdated or inaccurate information on ecosystem project pages.
+title: "Update for [Project Name]"
+labels: ["ecosystem"]
+type: task
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Project Affected
+      description: Which ecosystem project or page is this regarding?
+      placeholder: FluffyChat
+    validations:
+      required: true
+  - type: input
+    id: wrong
+    attributes:
+      label: Current Information
+      description: Please describe or quote the information that is currently outdated or incorrect.
+      placeholder: It says that VoIP is not supported.
+    validations:
+      required: true
+  - type: input
+    id: right
+    attributes:
+      label: Suggested Correction
+      description: What is the correct information?
+      placeholder: VoIP is actually supported
+    validations:
+      required: true
+  - type: input
+    id: evidence
+    attributes:
+      label: Source
+      description: If possible, please provide a source (link to a GitHub repo, official docs, or a blog post) or attach a screenshot of the feature working to help maintainers verify the change.
+    validations:
+      required: false
+  - type: input
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any other details that would help us update this entry?
+    validations:
+      required: false
