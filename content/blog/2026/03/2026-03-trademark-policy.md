@@ -1,5 +1,5 @@
 +++
-date = "2026-03-11"
+date = "2026-03-13"
 title = "Announcing Our First Trademark Policy"
 
 [taxonomies]
