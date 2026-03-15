@@ -53,7 +53,7 @@ You should land on the following page.
 
 {{ 
     figure(
-        img="../element-io-sign-up.png",
+        img="../element-io-sign-up.avif",
         caption="Sign up page of app.element.io")
 }}
 
