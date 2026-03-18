@@ -4,7 +4,7 @@ Thank you for taking the time to contribute to Matrix!
 
 This is the repository for the matrix.org website, available at <https://matrix.org/>.
 
-## How to start contibuting
+## How to start contributing
 
 Contributors to this repository are very welcome and we try to make it easy for newcomers and infrequent contributors to help!
 Please always let the maintainers know when something is unclear.
