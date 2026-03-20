@@ -266,6 +266,7 @@
         .twim__latest {
             background-color: #000;
             color: #fff;
+            border: 1px solid #d2d2d2;
             border-radius: 14px;
             padding: 28px;
             display: flex;
@@ -274,14 +275,14 @@
             text-decoration: none;
             width: 280px;
             flex-shrink: 0;
-            transition: background-color 0.2s ease;
+            transition: border-color 0.2s ease;
 
             @media (max-width: 767px) {
                 width: 100%;
             }
 
             &:hover {
-                background-color: #222;
+                border-color: #888;
             }
 
             .twim__latest-eyebrow {
@@ -410,6 +411,7 @@
             border-radius: 4px;
             background-color: #333;
             color: #fff;
+            white-space: nowrap;
         }
 
         .blog-preview-readmore {

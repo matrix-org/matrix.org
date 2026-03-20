@@ -113,11 +113,9 @@
             {% set_global blog_count = blog_count + 1 %}
             <div class="blog-preview-card">
                 <div class="blog-preview-meta">
-                    <span class="blog-preview-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+                    <span class="blog-preview-date">{{ page.date | date(format="%B %d, %Y") }}</span>
                     {% if page.taxonomies.category %}
-                    {% for cat in page.taxonomies.category %}
-                    <span class="blog-preview-tag">{{ cat }}</span>
-                    {% endfor %}
+                    <span class="blog-preview-tag">{{ page.taxonomies.category | first }}</span>
                     {% endif %}
                 </div>
                 <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
