@@ -76,6 +76,32 @@
     </div>
 
     {% set blog = get_section(path="blog/_index.md") %}
+    <div id="twim" class="section">
+        <div id="twim__content">
+            <div class="twim__text">
+                <p class="twim__eyebrow">Every Friday</p>
+                <h2>This Week in Matrix</h2>
+                <p>A community-curated weekly digest of the latest news, releases, and projects from across the Matrix ecosystem. Find out what's happening, discover new apps and servers, and see how you can get involved.</p>
+                <div class="cta-row twim__ctas">
+                    <a href="/category/this-week-in-matrix/" class="call-to-action">Browse all editions</a>
+                    <a href="https://matrix.to/#/#twim:matrix.org" class="call-to-action secondary">Contribute in #twim:matrix.org</a>
+                </div>
+            </div>
+            {% set_global twim_found = false %}
+            {% for page in blog.pages %}
+            {% if not twim_found and page.taxonomies.category and "This Week in Matrix" in page.taxonomies.category %}
+            {% set_global twim_found = true %}
+            <a href="{{ page.permalink }}" class="twim__latest">
+                <p class="twim__latest-eyebrow">Latest edition</p>
+                <h3>{{ page.title }}</h3>
+                <p class="twim__latest-date">{{ page.date | date(format="%B %d, %Y") }}</p>
+                <span class="twim__readmore">Read more →</span>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
     <div id="blog-preview" class="section">
         <h2>Latest from the Blog</h2>
         <p class="blog-preview-description">Stay up to date with the latest news, updates, and insights from the Matrix community.</p>

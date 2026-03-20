@@ -212,6 +212,110 @@
         }
     }
 
+    #twim {
+        background-color: #fff;
+        padding: 80px 2rem;
+
+        #twim__content {
+            max-width: 60rem;
+            margin: 0 auto;
+            display: flex;
+            gap: 48px;
+            align-items: flex-start;
+
+            @media (max-width: 767px) {
+                flex-direction: column;
+            }
+        }
+
+        .twim__text {
+            flex: 1;
+        }
+
+        .twim__eyebrow {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000;
+            margin-block: 0 1rem;
+
+            @media (max-width: 767px) {
+                font-size: 2.125rem;
+            }
+        }
+
+        p {
+            color: #000;
+            font-size: 1.125rem;
+            line-height: 1.75;
+        }
+
+        .twim__ctas {
+            justify-content: flex-start;
+            margin-top: 1.5rem;
+        }
+
+        .twim__latest {
+            background-color: #000;
+            color: #fff;
+            border-radius: 14px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-decoration: none;
+            width: 280px;
+            flex-shrink: 0;
+            transition: background-color 0.2s ease;
+
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+
+            &:hover {
+                background-color: #222;
+            }
+
+            .twim__latest-eyebrow {
+                font-size: 0.75rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                color: rgba(255, 255, 255, 0.6);
+                margin: 0;
+            }
+
+            h3 {
+                font-size: 1.125rem;
+                font-weight: 700;
+                color: #fff;
+                margin: 0;
+                line-height: 1.4;
+            }
+
+            .twim__latest-date {
+                font-size: 0.875rem;
+                color: rgba(255, 255, 255, 0.6);
+                margin: 0;
+            }
+
+            .twim__readmore {
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.8);
+                margin-top: auto;
+            }
+        }
+    }
+
     #blog-preview {
         background-color: #000;
         color: #fff;
