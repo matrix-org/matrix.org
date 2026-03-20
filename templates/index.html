@@ -8,48 +8,109 @@
         <div class="hero_content">
             <img src="images/matrix-logo-white.svg" alt="The Matrix Logo" />
             <h2>An open network for secure, decentralised communication</h2>
+            <p class="hero-description">Connect with anyone, anywhere through an open protocol that gives you control over your conversations and data.</p>
+            <div class="cta-row hero-cta-row">
+                <a href="/try-matrix" class="call-to-action inverted">Try Matrix</a>
+                <a href="/foundation/about" class="call-to-action inverted secondary">Learn More</a>
+            </div>
         </div>
         <div id="hero_curve1"></div>
         <div id="hero_curve2"></div>
         <div id="hero_curve3"></div>
         <div id="hero_curve4"></div>
     </div>
-    <div id="use-case-personal" class="section">
-        <div class="use-case-personal-content">
-            <div class="col">
-                <h2>Chat with friends, family, communities and co-workers</h2>
-                <div class="cta-row">
-                    <a href="/try-matrix" class="call-to-action">Start a conversation</a>
-                    <a href="/support" class="call-to-action secondary">Support us</a>
+
+    <div id="what-is-matrix" class="section">
+        <div id="what-is-matrix__content">
+            <h2>What is Matrix?</h2>
+            <p>Matrix is an open standard for interoperable, decentralised, real-time communication over the Internet. It provides a way for anyone to communicate securely across different platforms and services—without being locked into a single vendor.</p>
+            <p>From individual users to large organisations, Matrix provides the tools for secure, private communication that you control.</p>
+            <a href="/foundation/about" class="call-to-action">Learn More About Matrix</a>
+        </div>
+    </div>
+
+    <div id="matrix-difference" class="section">
+        <h2>The Matrix Difference</h2>
+        <div class="matrix-features">
+            <div class="feature-item">
+                <h3>True Privacy by Design</h3>
+                <p>Not just end-to-end encrypted, but with cross-signed device verification and decentralised key management. No backdoors, no data harvesting, no surveillance.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Own Your Conversations</h3>
+                <p>Host your own server or choose one you trust. No single corporation owns Matrix—it's a global open network where you control your data and who can access it.</p>
+            </div>
+            <div class="feature-item">
+                <h3>One Network, Many Apps</h3>
+                <p>Choose from dozens of compatible apps and servers built by the community. Matrix bridges to other platforms so you can reach everyone, everywhere.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Community Powered</h3>
+                <p>Built by its community, for its community. An open, transparent project governed by the Matrix.org Foundation—not a corporate walled garden.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="use-cases" class="section">
+        <h2>Built for everyone</h2>
+        <div class="use-cases-grid">
+            <div class="use-case-card">
+                <img src="assets/frontpage/personal-graphic.svg" alt="" />
+                <h3>Individuals &amp; families</h3>
+                <p>Chat securely with friends, family, and co-workers. Your conversations, on your terms, with full end-to-end encryption.</p>
+                <a href="/try-matrix" class="call-to-action">Start a conversation</a>
+            </div>
+            <div class="use-case-card">
+                <img src="assets/frontpage/community-graphic.svg" alt="" />
+                <h3>Communities &amp; organisations</h3>
+                <p>Create a cozy, supercharged space for your community. Own your data, set your rules, and never lose access to your history.</p>
+                <a href="/docs/communities" class="call-to-action">Reclaim your Space</a>
+            </div>
+            <div class="use-case-card">
+                <img src="/element-call.webp" alt="Element Call — a VoIP application built on Matrix" />
+                <h3>Developers &amp; businesses</h3>
+                <p>Build rich communication applications on an open standard. Full interoperability, no vendor lock-in, backed by a global ecosystem.</p>
+                <a href="/docs/" class="call-to-action">Start building</a>
+            </div>
+        </div>
+    </div>
+
+    {% set blog = get_section(path="blog/_index.md") %}
+    <div id="blog-preview" class="section">
+        <h2>Latest from the Blog</h2>
+        <p class="blog-preview-description">Stay up to date with the latest news, updates, and insights from the Matrix community.</p>
+        <div class="blog-preview-grid">
+            {% set_global blog_count = 0 %}
+            {% for page in blog.pages %}
+            {% if page.extra.hide_from_blog %}{% continue %}{% endif %}
+            {% if blog_count >= 3 %}{% break %}{% endif %}
+            {% set_global blog_count = blog_count + 1 %}
+            <div class="blog-preview-card">
+                <div class="blog-preview-meta">
+                    <span class="blog-preview-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+                    {% if page.taxonomies.category %}
+                    {% for cat in page.taxonomies.category %}
+                    <span class="blog-preview-tag">{{ cat }}</span>
+                    {% endfor %}
+                    {% endif %}
                 </div>
+                <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+                {% if page.description %}
+                <p>{{ page.description }}</p>
+                {% endif %}
+                <a href="{{ page.permalink }}" class="blog-preview-readmore">Read more →</a>
             </div>
-            <img src="assets/frontpage/personal-graphic.svg" alt="An artist view of a chat timeline." />
+            {% endfor %}
         </div>
-        <div id="personal_bottom"></div>
+        <a href="/blog/" class="call-to-action inverted">View All Posts</a>
     </div>
-    <div id="use-case-community" class="section">
-        <h2>A cozy, safe, supercharged place for your community</h2>
-        <div class="cta-row">
-            <a href="/docs/communities" class="call-to-action inverted">Reclaim your Space</a>
-        </div>
-        <img src="assets/frontpage/community-graphic.svg" alt="An artist view of a chat community." />
-    </div>
-    <div id="complex-apps" class="section">
-        <div class="col">
-            <h2>Build advanced, rich communication applications on top of Matrix.</h2>
-            <div class="cta-row">
-                <a href="/docs/technical" class="call-to-action">Start building apps</a>
-            </div>
-        </div>
-        <img src="/element-call.webp" id="complex-apps-image"
-            alt="A conversation between four people on Element Call, a VoIP conference tool based on Matrix." />
-    </div>
+
     <div id="platinum-sponsor" class="section">
         <h2>Platinum member</h2>
         <div class="row">
             <div class="membership-card">
                 <a target="_blank" rel="noreferrer noopener" href="https://element.io/built-on-matrix" class="membership-card__content">
-                    <img alt="Element.io Logo" src="images/element-creators-of-matrix--dark.svg">
+                    <img alt="Element.io Logo" src="images/element-creators-of-matrix--light.svg">
                 </a>
             </div>
         </div>
