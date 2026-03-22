@@ -6,17 +6,16 @@ This is the repository for the matrix.org website, available at <https://matrix.
 
 ## How to start contributing
 
-Contributors to this repository are very welcome and we try to make it easy for newcomers and infrequent contributors to help!
-Please always let the maintainers know when something is unclear.
+Contributions to this repository are welcome. We try to make it easy for newcomers and infrequent contributors to help!
+Please let the maintainers know when something is unclear.
 
-Helping out can take many shapes:
-For a good amount of work on the website, you have to deal with some light coding, but maintaining the website also means
+Helping out can take many forms. A lot of work on the website involves coding, but maintaining the website also includes:
 
-- making sure the content is up to date - opening issues about outdated things to let us know can be a great help!
-- writing new documentation - there are constantly new developments and insights around Matrix. If you feel knowledgeable about a topic, you could for example consider adding to our `/docs`!
-- illustrations - a picture can be worth a thousand words! There are many places on the website that benefit from keeping illustrations up to date, or creating new ones!
-- design - matrix.org has a lot of content to deal with, and we need to make sure it is structured well so it is easy to find what you are looking for. On top, we want it to look nice, inviting, and exciting. If you have ideas around either form of design, reach out to us!
-- responsiveness and accessibility - the information on this website is for everyone, whether they use a big PC monitor, a vertical smartphone screen, or a screen reader. We can always use feedback from testing and and more insights!
+- Making sure the content is up to date - opening issues to highlight out-of-date content is a great help!
+- Writing new documentation - there are constantly new developments and insights around Matrix. If you feel knowledgeable about a topic, consider adding to our `/docs`!
+- Illustrations - a picture can be worth a thousand words! There are many places on the website that benefit from keeping illustrations up to date, or creating new ones!
+- Design - matrix.org has a lot of content, so we need to make sure it's well structured and easy to navigate. We also want it to look nice, inviting, and exciting. If you have ideas about the design, reach out to us!
+- Responsiveness and accessibility - the information on this website is for everyone, whether they use a big PC monitor, a vertical smartphone screen, or a screen reader. We are always open to feedback and insights on how we can improve in this area.
 
 Join [#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website%3Amatrix.org) to reach out!
 
