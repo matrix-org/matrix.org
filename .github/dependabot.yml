@@ -6,6 +6,10 @@
 version: 2
 updates:
   - package-ecosystem: "github-actions" # See documentation for possible values
-    directory: "/.github" # Location of package manifests
+    directory: "/.github/workflows" # Location of package manifests
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 7
+    labels:
+      - dependencies

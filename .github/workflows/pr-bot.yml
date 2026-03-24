@@ -1,7 +1,7 @@
 name: PR Bot
 
 on:
-  pull_request_target:  # unblock read/write repository permission, even when it is triggered from a public fork - https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#permissions
+  pull_request_target:  # zizmor: ignore[dangerous-triggers] -- unblock read/write repository permission, even when it is triggered from a public fork - https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#permissions
     types: [opened, reopened, ready_for_review]  # https://docs.github.com/en/webhooks/webhook-events-and-payloads?actionType=ready_for_review#pull_request
 
 jobs:
