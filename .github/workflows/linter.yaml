@@ -14,17 +14,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Actions Repository
-      uses: actions/checkout@v6
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
     - name: Check spelling
-      uses: crate-ci/typos@v1.20.3
+      uses: crate-ci/typos@c4bcca1d1827153dc0f3ac281fe1048eaaf743d5 # v1.20.3
 
   rumdl-check:
     name: Lint Markdown with rumdl
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: rvben/rumdl@v0
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: rvben/rumdl@717c12ced0042eac2d68dc0948875d3f7001c293 # v0
         with:
           version: "0.1.2"
           config: .rumdl.toml
