@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="128"
+   height="128"
+   viewBox="0 0 128 128"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   inkscape:export-filename="icon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="3.3476562"
+     inkscape:cx="17.922987"
+     inkscape:cy="85.880981"
+     inkscape:window-width="1536"
+     inkscape:window-height="902"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient9"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#240b36;stop-opacity:0.90423864;"
+         offset="0"
+         id="stop10" />
+      <stop
+         style="stop-color:#5d1575;stop-opacity:1;"
+         offset="1"
+         id="stop11" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient9"
+       id="radialGradient11"
+       cx="63.999999"
+       cy="-64.000008"
+       fx="63.999999"
+       fy="-64.000008"
+       r="64"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0231093,0,0,1.0231094,-1.4789939,1.4790094)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="font-variation-settings:'opsz' 32;opacity:1;fill:url(#radialGradient11);fill-opacity:1;stroke:none;stroke-width:2.95801;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect9"
+       width="127.99999"
+       height="128"
+       x="7.0333481e-06"
+       y="-128"
+       ry="24.554626"
+       transform="rotate(90)" />
+    <path
+       style="font-variation-settings:'opsz' 32;opacity:0.9;fill:none;fill-opacity:1;stroke:#e0c3fc;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       d="m 80.593772,60.908538 c 0,0 9.790502,-17.291068 5.474325,-20.897634 -4.316177,-3.606565 -19.151754,8.892761 -19.151754,8.892761 z"
+       id="path3"
+       sodipodi:nodetypes="cscc" />
+    <path
+       style="font-variation-settings:'opsz' 32;opacity:0.9;fill:none;fill-opacity:1;stroke:#e0c3fc;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       d="m 48.506583,67.249832 c 0,0 -9.790502,17.291068 -5.474325,20.897634 4.316177,3.606565 19.151754,-8.892761 19.151754,-8.892761 z"
+       id="path2"
+       sodipodi:nodetypes="cscc" />
+    <path
+       style="font-variation-settings:'opsz' 32;opacity:0.8;fill:none;fill-opacity:1;stroke:#e0c3fc;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       d="m 83.884265,63.466313 c 0,0 13.932612,-24.606475 7.790371,-29.738887 -6.142241,-5.13241 -27.254369,12.65506 -27.254369,12.65506 z"
+       id="path5"
+       sodipodi:nodetypes="cscc" />
+    <path
+       style="font-variation-settings:'opsz' 32;display:inline;opacity:0.8;fill:none;fill-opacity:1;stroke:#e0c3fc;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       d="m 45.005333,64.688475 c 0,0 -13.932612,24.606475 -7.790371,29.738887 6.142241,5.13241 27.254369,-12.65506 27.254369,-12.65506 z"
+       id="path1"
+       sodipodi:nodetypes="cscc" />
+    <rect
+       style="font-variation-settings:'opsz' 32;display:inline;opacity:1;fill:#00e5ff;fill-opacity:1;stroke:#e0c3fc;stroke-width:3.908;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+       id="rect14"
+       width="40.59251"
+       height="46.639668"
+       x="3.1293695"
+       y="-110.74547"
+       ry="23.319834"
+       transform="rotate(120)"
+       rx="20.296255"
+       inkscape:label="Planet" />
+    <path
+       id="rect12"
+       style="font-variation-settings:'opsz' 32;opacity:1;fill:#0097a7;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;stroke-dasharray:none"
+       d="M 3.163846 -88.801308 C 5.8727713 -98.013502 13.437419 -104.6097 22.392435 -104.6097 C 33.63656 -104.6097 42.689421 -94.209411 42.689421 -81.290223 C 42.689421 -80.82837 42.676703 -80.369338 42.653879 -79.914283 C 43.346344 -82.269133 43.721256 -84.794784 43.721256 -87.424907 C 43.721256 -100.34409 34.670086 -110.74536 23.425961 -110.74536 C 12.583805 -110.74536 3.779468 -101.0753 3.163846 -88.801308 z "
+       transform="rotate(120)"
+       inkscape:label="ShadowBottom" />
+    <path
+       id="rect11"
+       style="font-variation-settings:'opsz' 32;display:inline;opacity:1;fill:#006064;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+       d="m 6.5860388,-74.36999 c 3.6402442,6.201163 9.8116732,10.264096 16.8392522,10.264096 11.244125,0 20.295965,-10.399825 20.295965,-23.319013 0,-1.043258 -0.05891,-2.071337 -0.173352,-3.077597 -1.586065,11.07763 -9.92018,19.477049 -20.024301,19.477049 -10.336133,0 -18.8191573,-8.788083 -20.1219431,-20.242853 -0.1789491,1.249842 -0.2716642,2.532129 -0.2716642,3.841963 0,4.844696 1.2718964,9.335657 3.4560431,13.056355 z"
+       transform="rotate(120)"
+       inkscape:label="ShadowTop" />
+    <rect
+       style="font-variation-settings:'opsz' 32;display:inline;opacity:1;fill:none;fill-opacity:1;stroke:#e0c3fc;stroke-width:3.908;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+       id="rect8"
+       width="40.59251"
+       height="46.639668"
+       x="3.1293695"
+       y="-110.74547"
+       ry="23.319834"
+       transform="rotate(120)"
+       rx="20.296255"
+       inkscape:label="PlanetStroke" />
+  </g>
+</svg>
