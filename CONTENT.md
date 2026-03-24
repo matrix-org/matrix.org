@@ -2,9 +2,9 @@
 
 The matrix.org website is powered by [Zola](https://www.getzola.org/), a [static site generator](https://en.wikipedia.org/wiki/Static_site_generator). It ingests content in rather human-friendly formats, and turns it into the beautiful matrix.org website we all love. The format you need to use depends on the type of content you want to add.
 
-This documentation is about helping you create new content that the static site generator will accept. To get your content actually deploy on matrix.org, you need to be familiar with git, GitHub and Pull Requests. If that's not the case, we suggest either finding someone who is and can help, or dropping us a line in the [Matrix.org Website chat room](https://matrix.to/#/#matrix.org-website:matrix.org).
+This documentation is about helping you create new content that the static site generator will accept. To get your content actually deploy on matrix.org, you need to be familiar with git, GitHub and Pull Requests. If that's not the case, we suggest either finding someone who is and can help, or dropping us a line in the [matrix.org website chat room](https://matrix.to/#/#matrix.org-website:matrix.org).
 
-## General tips
+## General
 
 ### Internal links
 
@@ -16,6 +16,16 @@ There are some edge cases, for example this can only work when a file generating
 We collect such issues in [#2829](https://github.com/matrix-org/matrix.org/issues/2829) and welcome ideas to improve this approach.
 
 We still prefer this approach on a best effort basis as it has already proven useful.
+
+### Style guide
+
+We stick to our own style guide as best as possible for any content officially published as the Foundation.
+It is published at <https://matrix.org/branding>.
+This means some user generated content, e.g. TWIM submissions, may but do not need to be fixed.
+
+Additionally we have these internal guidelines for consistent and clear naming:
+
+- Differentiate between "Element" (clients, ideally specifically using the specific name) and "Element Creations (Ltd.)" by using the latter properly when meaning the company.
 
 ## Publishing to the blog
 
