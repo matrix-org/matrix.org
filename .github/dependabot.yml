@@ -9,3 +9,5 @@ updates:
     directory: "/.github" # Location of package manifests
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 7
