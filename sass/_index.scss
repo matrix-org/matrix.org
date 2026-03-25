@@ -530,12 +530,17 @@
         .membership-card {
             max-width: 648px;
             padding: 28px;
-            border-radius: 16px;
+            border-radius: 14px;
             border: 1px #d2d2d2 solid;
             display: flex;
             flex-direction: column;
             text-align: center;
             gap: 28px;
+            transition: border-color 0.2s ease;
+
+            &:hover {
+                border-color: #888;
+            }
         }
 
         .membership-card__content {
