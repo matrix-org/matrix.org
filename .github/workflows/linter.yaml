@@ -19,7 +19,7 @@ jobs:
         persist-credentials: false
 
     - name: Check spelling
-      uses: crate-ci/typos@c4bcca1d1827153dc0f3ac281fe1048eaaf743d5 # v1.20.3
+      uses: crate-ci/typos@631208b7aac2daa8b707f55e7331f9112b0e062d # v1.44.0
 
   rumdl-check:
     name: Lint Markdown with rumdl
