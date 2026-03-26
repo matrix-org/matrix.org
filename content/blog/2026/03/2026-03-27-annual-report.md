@@ -7,11 +7,11 @@ author = ["Amandine Le Pape"]
 category = ["Reports"]
 +++
 
-Seven years after incorporation, we have eventually put together a proper Public Annual Report intended for the wider community and the rest of the world to read. It is not a mandatory artefact but one we've been keen to make available for transparency to our community. Obviously, as a Community of Interest Company incorporated in the UK, we have certain [reporting obligations](https://www.gov.uk/government/publications/community-interest-companies-how-to-form-a-cic/community-interest-companies-guidance-chapters) towards the government, which we have fulfilled appropriately since day 1\. We have also been sharing progress, news and activities with the community through various blogs (like the seasonal [Matrix Holiday Special](@/blog/2025/12/2025-12-24-matrix-holiday-special.md)), [Matrix Lives](https://youtu.be/qwfx0M1oWWw?si=vMZuAe9XbZMtvxkD), [talks](https://www.youtube.com/watch?v=-Keu8aE8t08), etc, but so far there hadn't been a structured published report gathering detailed updates on the activities of the various teams in the Foundation, high level financials and the plan for the future.
-
-<!-- more -->
+Seven years after incorporation, we have eventually put together a proper Public Annual Report intended for the wider community and the rest of the world to read. It is not a mandatory artefact but one we've been keen to make available for transparency to our community. Obviously, as a Community of Interest Company incorporated in the UK, we have certain [reporting obligations](https://www.gov.uk/government/publications/community-interest-companies-how-to-form-a-cic/community-interest-companies-guidance-chapters) towards the government, which we have fulfilled appropriately since day 1. We have also been sharing progress, news and activities with the community through various blogs (like the seasonal [Matrix Holiday Special](@/blog/2025/12/2025-12-24-matrix-holiday-special.md)), [Matrix Lives](https://youtu.be/qwfx0M1oWWw), [talks](https://www.youtube.com/watch?v=-Keu8aE8t08), etc, but so far there hadn't been a structured published report gathering detailed updates on the activities of the various teams in the Foundation, high level financials and the plan for the future.
 
 So here we go, you now have in your hands the very first Public Annual Report of The Matrix.org Foundation for the financial year 2025! As a first edition the format may need some iteration, but we have written it with very specific goals in mind.
+
+<!-- more -->
 
 First, we want this report to remind the readers of the role of the Foundation, and the importance it plays in promoting the standard, maintaining a balanced ecosystem, developing a fair and unfragmented protocol, and keeping the network safe.
 
@@ -25,7 +25,7 @@ Trust and Safety is still a major investment for the Foundation, both via reacti
 
 ## Navigating scarcity
 
-Third, we have been talking a lot about the serious financial situation the Foundation is in, so the report includes an overview of the financials for the financial year 2025 (Nov 2024-Oct 2025\) to share more of the details.
+Third, we have been talking a lot about the serious financial situation the Foundation is in, so the report includes an overview of the financials for the financial year 2025 (Nov 2024-Oct 2025) to share more of the details.
 
 In short, we've managed to keep our costs stable, despite the growth of the ecosystem in general and the usage of the matrix.org server in particular. Meanwhile we have increased our revenue by 38%, which decreased our loss for the year from 50% of our costs down to 34%.
 
