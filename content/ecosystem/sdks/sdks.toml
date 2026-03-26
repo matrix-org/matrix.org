@@ -698,3 +698,15 @@ purpose = ["client", "bot", "bridge"]
 description = """
 A Matrix library for the client-server and appservice API's written in Nim!
 """
+
+[[sdks]]
+name = "matrix_bot_light"
+maintainer = "roquess"
+maturity = "Beta"
+language = "Erlang"
+licence = "Apache-2.0"
+repository = "https://github.com/roquess/matrix_bot_light"
+purpose = ["bot"]
+description = """
+A simple lightweight library for creating Matrix bots. Available on Hex.pm.
+"""
