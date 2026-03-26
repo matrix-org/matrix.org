@@ -21,7 +21,7 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
         run: |
           cmd="gh pr -R ${{ github.repository }}"
-          is_bot="$($cmd view $PR_NUMBER --json 'author' | jq -e '.author.is_bot')"
+          is_bot="$($cmd view $PR_NUMBER --json 'author' | jq '.author.is_bot')"
           if [ $is_bot = "true" ]; then exit 0; fi
           if ! $cmd view $PR_NUMBER --json 'body' | grep -q "Description"; then
             $cmd ready $PR_NUMBER --undo  # mark as draft
