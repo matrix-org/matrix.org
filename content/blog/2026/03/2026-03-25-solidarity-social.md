@@ -15,7 +15,7 @@ The Solidar app is derived from the Bluesky app and combines the AT Protocol wit
 
 Users can opt for Solidarity Social’s default Matrix server, or their own existing Matrix account (and server) - a concept Solidarity Social calls Bring Your Own Matrix Account (BYOMA). The Matrix account used can be switched to another at any time. No other social network offers direct control of the servers used for encrypted messaging.
 
-The default Matrix server for Solidarity Social is Element Server Suite Pro managed by Element on behalf of the Matrix Foundation. The Solidar app roadmap includes adding Matrix-based group chat, and Matrix-based voice and video calls.
+The default Matrix server for Solidarity Social is Element Server Suite Pro managed by Element Creations Ltd on behalf of The Matrix Foundation. The Solidar app roadmap includes adding Matrix-based group chat, and Matrix-based voice and video calls.
 
 Solidarity Social is a space where movements advancing justice, democracy and resisting authoritarianism around the globe can find each other, collaborate safely, and rise together. The combination of a Bluesky PDS and Matrix end-to-end encrypted communication enables novel modes for public engagement by linking public facing social networking to secure chat.
 
