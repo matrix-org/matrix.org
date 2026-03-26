@@ -30,7 +30,7 @@ Third, we have been talking a lot about the serious financial situation the Foun
 In short, we've managed to keep our costs stable, despite the growth of the ecosystem in general and the usage of the matrix.org server in particular. Meanwhile we have increased our revenue by 38%, which decreased our loss for the year from 50% of our costs down to 34%.
 
 {{ figure(
-    img="/blog/img/2026-03-27_financial-profile.avif"
+    img="/blog/img/2026-03-27_financial-profile.png"
     caption="The Matrix.org Foundation’s financial profile over time"
 ) }}
 
