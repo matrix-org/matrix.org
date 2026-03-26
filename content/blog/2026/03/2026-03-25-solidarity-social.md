@@ -1,5 +1,5 @@
 +++
-date = "2026-03-25T10:00:00Z"
+date = "2026-03-26T10:00:00Z"
 title = "Solidarity Social operates a Bluesky PDS and uses Matrix for private DMs"
 
 [taxonomies]
