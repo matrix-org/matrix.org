@@ -90,6 +90,18 @@
                     <a class="call-to-action plausible-event-name=BlogPostCtaSupportUs" href="/support">Support us</a>
                 </div>
             </div>
+            {% set share_url = page.permalink | urlencode %}
+            {% set share_title = page.title | urlencode %}
+            {% set share_text = page.title ~ " " ~ page.permalink | urlencode %}
+            <div class="share-bar">
+                <span>Share this post:</span>
+                <a href="https://share.joinmastodon.org/?text={{ share_text }}" target="_blank" rel="noopener" title="Share on the Fediverse">Fediverse</a>
+                <a href="https://bsky.app/intent/compose?text={{ share_text }}" target="_blank" rel="noopener" title="Share on Bluesky">Bluesky</a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" target="_blank" rel="noopener" title="Share on LinkedIn">LinkedIn</a>
+                <a href="https://news.ycombinator.com/submitlink?u={{ share_url }}&t={{ share_title }}" target="_blank" rel="noopener" title="Share on Hacker News">Hacker News</a>
+                <a href="https://lobste.rs/stories/new?url={{ share_url }}&title={{ share_title }}" target="_blank" rel="noopener" title="Share on Lobste.rs">Lobste.rs</a>
+                <a href="https://www.reddit.com/submit?url={{ share_url }}&title={{ share_title }}" target="_blank" rel="noopener" title="Share on Reddit">Reddit</a>
+            </div>
         </div>
         {% if page.toc %}
         <aside>

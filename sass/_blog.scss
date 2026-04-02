@@ -131,6 +131,31 @@ article.post {
         }
     }
 
+    .share-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 2rem;
+        padding: 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 0.9rem;
+
+        span {
+            font-weight: 600;
+        }
+
+        a {
+            color: rgba(34, 109, 227);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
     aside {
         @media (max-width: 1023px) {
             display: none;
