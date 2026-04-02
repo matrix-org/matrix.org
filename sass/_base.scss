@@ -75,10 +75,6 @@ p {
     margin-bottom: 1rem;
 }
 
-table {
-    margin-bottom: 1rem;
-}
-
 blockquote {
     margin: 0 0 10px 0;
     padding: 10px 20px;
@@ -145,17 +141,6 @@ pre mark {
 pre table {
     width: 100%;
     border-collapse: collapse;
-}
-
-:not(pre)>table {
-    border-collapse: collapse;
-    border: 1px solid #000000;
-
-    td,
-    th {
-        padding: .5rem;
-        border: 1px solid #000000;
-    }
 }
 
 /* The black block on pages at the top. */
