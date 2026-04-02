@@ -1,5 +1,5 @@
 name: Update Ecosystem Info
-description: Report outdated or inaccurate information on ecosystem project pages.
+description: Report outdated or inaccurate information on https://matrix.org/ecosystem/ project pages.
 title: "Update for [Project Name]"
 labels: ["ecosystem"]
 type: task
@@ -8,8 +8,8 @@ body:
     id: name
     attributes:
       label: Project Affected
-      description: Which ecosystem project or page is this regarding?
-      placeholder: FluffyChat
+      description: Which ecosystem project page is this regarding?
+      placeholder: https://matrix.org/ecosystem/clients/fluffychat/
     validations:
       required: true
   - type: input
