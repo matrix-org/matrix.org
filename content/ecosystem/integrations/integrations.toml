@@ -142,18 +142,18 @@ licence = "MIT"
 repository = "https://gitlab.com/jpypi/rustix"
 
 [[integrations]]
-name = "Synapse Admin"
+name = "Ketesa"
 description = """
-Admin console for synapse Matrix homeserver with additional features
+Admin UI for Matrix servers, formerly Synapse Admin.
+Drop-in replacement with extended features, multi-backend support, and visual customization.
 
-(Maintained by etke.cc fork)
 CDN version: https://admin.etke.cc
 """
 maintainer = "etke.cc"
 language = "TypeScript"
 licence = "Apache-2.0"
-repository = "https://github.com/etkecc/synapse-admin"
-room = "#synapse-admin:etke.cc"
+repository = "https://github.com/etkecc/ketesa"
+room = "#ketesa:etke.cc"
 
 [[integrations]]
 name = "matrix-hookshot"
