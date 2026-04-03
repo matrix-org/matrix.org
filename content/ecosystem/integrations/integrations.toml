@@ -272,3 +272,13 @@ maintainer = "urmaul"
 language = "TypeScript"
 license = "MIT"
 repository = "https://codeberg.org/urmaul/toot-feed-bot"
+
+[[integrations]]
+name = "matrix-soundboard"
+description = """
+Self-hosted web soundboard that plays audio directly into Element Call (Matrix RTC) voice/video calls via LiveKit. Features multi-user control, live state sync via SSE, drag-and-drop file upload, password-protected sounds, and a lock code to prevent accidental input.
+"""
+maintainer = "Linuxifyy"
+language = "JavaScript"
+licence = "MIT"
+repository = "https://github.com/Linuxifyy/matrix-soundboard"
