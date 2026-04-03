@@ -13,7 +13,7 @@ featured = true
 
 [extra.features]
 e2ee = true
-spaces = false
+spaces = true
 voip_1to1 = false
 voip_jitsi = false
 threads = false
