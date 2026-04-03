@@ -25,6 +25,7 @@ multi_language = true
 windows_installer = "https://tammy.connect2x.de"
 macos_installer = "https://tammy.connect2x.de"
 google_play_store.app_id = "de.connect2x.tammy"
+apple_app_store = { app_id = "id6760345615", org = "tammy-chat" }
 webapp = "https://app.tammy.connect2x.de"
 +++
 
