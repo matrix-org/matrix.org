@@ -2,10 +2,12 @@
 title = "Public Rooms"
 weight = 300
 template = "docs/with_menu.html"
+
 [extra]
 emoji = "🌐"
 tile = "I want to join public conversations"
-updated = "2022-10-18T16:00:00Z"
+updated = "2025-12-11T16:00:00Z"
+authors = ["Website & Content WG, T&S R&D WG"]
 meta_description = """
 Matrix is often use for public online discussions. Being an interoperable
 protocol, it allows people using different providers to talk together online,
