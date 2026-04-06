@@ -88,7 +88,10 @@ It is built on the state of the art matrix-rust-sdk and has features including d
 
 TODO: can it produce a log of rooms it is unable to migrate?
 
-TODO list more? Check the "migration" tag on tune-your-chat.github.io/ecosystem/tune/ for more hints
+You can find more tools (and guides) about account migration 
+via community maintained lists.
+For example, check out the "migration" tag filter of
+[Tune Your Chat](https://tune-your-chat.github.io/ecosystem/tune/)
 
 ## Finishing up
 
