@@ -52,7 +52,7 @@ Additionally, each room can configure a [history visibility](@/docs/communities/
 Finally, there are also rare exceptions:
 
 - Rooms can be configured not to federate, so if the new account is on another server
-it will never be able to join that room.
+  it will never be able to join that room.
 - Some homeservers might also implement other measures to block other servers,
   e.g. [ACL-bans](https://spec.matrix.org/v1.18/client-server-api/#server-access-control-lists-acls-for-rooms)
   or via [custom policies](https://spec.matrix.org/v1.18/client-server-api/#policy-servers).
