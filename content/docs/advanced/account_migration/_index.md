@@ -79,12 +79,11 @@ than just a handful of rooms.
 Resourceful community members have created multiple tools over the years to
 meet each of their individual requirements.
 
-The easiest to use tool ???
-
-The most comprehensive tool at the time of writing is possibly unfokus' fork of
-[matrix-migrate](https://github.com/unfokus/matrix-migrate).
+One of the most comprehensive tools at the time of writing is Dominik's fork of
+[matrix-migrate](https://gitlab.com/domrim/matrix-migrate),
+merging the features from multiple earlier forks of the same tool.
 You will need to use a command line to run it.
-Is uses the state of the art matrix-rust-sdk and has features including dry run
+It is built on the state of the art matrix-rust-sdk and has features including dry run
 (simulation without executing), rate limit handling, and more.
 
 TODO: can it produce a log of rooms it is unable to migrate?
