@@ -60,6 +60,9 @@ it will never be able to join that room.
 Of course you can always decide to only migrate a subset of rooms from your old
 account for a little spring cleaning.
 
+If you are the admin of some communities,
+make sure to also read our [transferring ownership](@/docs/communities/switching-providers/_index.md#transferring-ownership) guide.
+
 ## Speeding things up
 
 You will be sending a lot of invites with the old account and join a lot of
@@ -79,13 +82,15 @@ The process of inviting and joining can be very tedious if you are migrating mor
 than just a handful of rooms.
 Resourceful community members have created multiple tools over the years to
 meet each of their individual requirements.
+We recommend evaluating any tool against your individual needs so you can take
+additional steps or precautions as needed.
 
 One of the most comprehensive tools at the time of writing is Dominik's fork of
 [matrix-migrate](https://gitlab.com/domrim/matrix-migrate),
-merging the features from multiple earlier forks of the same tool.
+which merges the features from multiple earlier forks of the same tool.
 You will need to use a command line to run it.
 It is built on the state of the art matrix-rust-sdk and has features including dry run
-(simulation without executing), rate limit handling, and more.
+(simulation without executing), rate limit handling, SSO, key backup migration, and more.
 
 TODO: can it produce a log of rooms it is unable to migrate?
 
@@ -100,9 +105,9 @@ Exploring your new account with the freshly migrated rooms, you might notice
 that in End-to-End Encrypted rooms, our new account does not yet have the keys
 to decrypt the historical messages.
 Clients with support for End-to-End Encryption usually also allow to export and
-import encryption keys.
+import encryption keys, and some migration tools may also support doing this automatically.
 Simply export your old account's keys and import them to your new account, and
-messages should become legible!
+messages should become readable once more!
 
 Depending on the approach you took to migrate, the direct messages might not
 appear as such in your new account.
@@ -113,7 +118,7 @@ it.
 
 You should now have migrated your account! 🎉
 
-This process should be largely invisible for for the conversations you migrated.
+This process should be largely invisible for the conversations you migrated.
 However, don't forget to let everyone else know to reach you under your new ID
 as needed!
 A common way to do this is to change your old account's display name to include
