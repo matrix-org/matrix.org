@@ -1,5 +1,6 @@
 +++
 title = "Cinny"
+
 [extra]
 thumbnail = "cinny.svg"
 maintainer = "Ajay Bura"
@@ -12,8 +13,9 @@ website = "https://cinny.in"
 matrix_room = "#cinny:matrix.org"
 featured = true
 featured_order = 4
-screenshots = []
+screenshots = ["cinny-screenshot.avif"]
 good_for = "Users coming from Discord who want a familiar layout"
+
 [extra.features]
 e2ee = true
 spaces = true

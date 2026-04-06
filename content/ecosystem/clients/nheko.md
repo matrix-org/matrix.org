@@ -1,5 +1,6 @@
 +++
 title = "Nheko"
+
 [extra]
 thumbnail = "nheko.svg"
 maintainer = "red_sky, deepbluev7"
@@ -12,7 +13,7 @@ website = "https://nheko-reborn.github.io/"
 matrix_room = "#nheko:nheko.im"
 featured = true
 featured_order = 5
-screenshots = []
+screenshots = ["nheko-screenshot.avif"]
 good_for = "Power users and tinkerers who prefer a lean native desktop app"
 
 [extra.features]

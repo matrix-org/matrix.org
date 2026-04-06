@@ -13,7 +13,7 @@ website = "https://fluffychat.im"
 matrix_room = "#fluffychat:matrix.org"
 featured = true
 featured_order = 3
-screenshots = []
+screenshots = ["fluffychat-screenshot-roomlist.avif", "fluffychat-screenshot-timeline.avif"]
 good_for = "Users who want something simple and approachable, especially on mobile"
 
 [extra.features]
