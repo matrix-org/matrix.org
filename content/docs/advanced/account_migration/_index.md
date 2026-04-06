@@ -2,9 +2,10 @@
 title = "Account Migration"
 template = "docs/with_menu.html"
 weight = 100
+
 [extra]
-updated = "2026-02-11T17:55:00Z"
-authors = ["Website & Content WG", "Matrix Stammtisch Aachen"]
+updated = "2026-04-06T13:55:00Z"
+authors = ["HarHarLinks", "Website & Content WG", "Matrix Stammtisch Aachen"]
 +++
 
 It is possible that it becomes necessary to migrate from one account to another.
@@ -22,11 +23,11 @@ The following guide hopes to support you to make the transition as smooth as pos
 The goal of migrating to a new account is create a new account and then transfer
 all the conversations you are participating in to it, optionally removing the old account.
 It is useful to know that despite often different presentation in clients,
-direct messages and group conversations both use use the technical concept of a
+direct messages and group conversations both use the technical concept of a
 "room" in the background.
 The process for both is hence largely the same.
 
-There are two major types each room you are migrating can fall into:
+There are generally two major types each room you are migrating can fall into:
 
 1. The room can be joined autonomously
    (e.g. [Public Rooms](@/docs/chat_basics/public-rooms/_index.md))
