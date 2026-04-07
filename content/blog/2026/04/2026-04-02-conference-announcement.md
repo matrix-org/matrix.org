@@ -29,7 +29,7 @@ The [Call for Proposals is open](https://cfp.2026.matrix.org/matrix-conference-2
 
 - Individuals innovating around Matrix  
 - Organisations working with Matrix in any context  
-- Toy projects, hacks, and experiments worth sharing  
+- Authors of toy projects, hacks, and experiments worth sharing
 - Anyone contributing to digital sovereignty
 
 If you have something to share with the Matrix community, now is the time to put together a proposal! The Call for Proposals ends on 14th June at midnight.
