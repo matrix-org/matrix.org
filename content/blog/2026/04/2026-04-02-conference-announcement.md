@@ -1,5 +1,5 @@
 +++
-date = "2026-04-02T14:00:00Z"
+date = "2026-04-07T09:00:00Z"
 title = "The Matrix Conference 2026: See You in Malmö!"
 
 [taxonomies]
