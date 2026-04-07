@@ -77,9 +77,13 @@
                 <div class="metadata">
                     Last updated: <time datetime="{{ iso_date }}"> {{ iso_date }}</time>
                 </div>
-                {% if section.author %}
+                {% if section.extra.authors %}
                 <div class="metadata">
-                    Author: {{ section.author }}
+                    Author:
+                    {% for author in section.extra.authors %}
+                        {{- author | default(value=["unknown author"]) -}}
+                    {%- if not loop.last %}, {% endif %}
+                    {% endfor %}
                 </div>
                 {% endif %}
             </header>

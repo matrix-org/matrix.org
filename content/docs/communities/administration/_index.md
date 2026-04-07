@@ -2,6 +2,7 @@
 title = "Room Administration"
 template = "docs/with_menu.html"
 weight = 250
+
 [extra]
 updated = "2025-08-06T17:00:00Z"
 authors = ["T&S R&D WG", "Website & Content WG"]

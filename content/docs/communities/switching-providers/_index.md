@@ -2,10 +2,12 @@
 title = "Switching Providers"
 template = "docs/with_menu.html"
 weight = 300
+
 [extra]
 emoji = "🏡"
 tile = "I want to get my own homeserver"
-updated = "2023-01-30T14:00:00Z"
+updated = "2026-02-12T02:00:00Z"
+authors = ["Website & Content WG", "HarHarLinks"]
 meta_description = """
 Even after creating a community on a provider, it's possible to switch to
 another one. This allows communities to get more sovereignty on their
