@@ -7,7 +7,7 @@ author = ["Thib", "Events Working Group"]
 category = ["The Matrix Conference", "Events"]
 +++
 
-We are excited to announce that The Matrix Conference 2026 will be held in **Malmö, Sweden** from **20th to 22nd October, 2026**, and a Post-Conf Hackathon on **23rd October**. Save the date!
+We are excited to announce that [The Matrix Conference 2026](https://conference.matrix.org) will be held in **Malmö, Sweden** from **20th to 22nd October, 2026**, and a Post-Conf Hackathon on **23rd October**. Save the date!
 
 ## What to expect
 
@@ -45,6 +45,8 @@ We still have a few sponsorship packages available. Sponsoring The Matrix Confer
 Take a look at our [sponsorship brochure](https://2026.matrix.org/matrix-conference-sponsors-deck-20260317.pdf) and reach out to us at <conference@foundation.matrix.org> to open a conversation.
 
 ## Stay informed
+
+All info is gathered on our [conference website](https://conference.matrix.org).
 
 To keep up with all the announcements leading up to the conference, follow us on our [blog](@/blog/_index.md) and on our socials: [Fediverse](https://mastodon.matrix.org/@matrix), [LinkedIn](https://www.linkedin.com/company/matrix-org/), and [Bluesky](https://bsky.app/profile/matrix.org).
 
