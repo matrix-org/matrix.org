@@ -25,7 +25,7 @@ As always, the talks will be streamed live and recordings will be available afte
 
 ## Submit a talk: the CfP is open
 
-The [Call for Proposals is open](https://cfp.2026.matrix.org/matrix-conference-2026/) and we would love to hear from you! We welcome proposals from:
+The [Call for Proposals is open](https://cfp.2026.matrix.org/matrix-conference-2026/cfp) and we would love to hear from you! We welcome proposals from:
 
 - Individuals innovating around Matrix  
 - Organisations working with Matrix in any context  
