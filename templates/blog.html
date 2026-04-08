@@ -31,7 +31,7 @@
             <small>Last update: {{ page.updated | date(format="%Y-%m-%d %H:%M") }}</small>
             {%- endif %}
         </header>
-        <div>
+        <div class="post-content">
             {% if page.summary -%}
             {{ page.summary | safe }}
             <p><a href="{{ page.path | safe }}#continue-reading">Continue reading…</a></p>
