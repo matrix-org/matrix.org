@@ -1,4 +1,14 @@
+{%- set img_id = img | slugify -%}
 <figure style="height:100%;">
-    <img src="{{ img }}" {% if alt %}alt="{{ alt }}{% endif %}" />
+    <a href="#lightbox-{{ img_id }}" class="lightbox-trigger" aria-label="Enlarge image">
+        <img src="{{ img }}" {% if alt %}alt="{{ alt }}"{% else %}alt=""{% endif %} />
+    </a>
+    {%- if caption %}
     <figcaption>{{ caption | markdown | safe }}</figcaption>
+    {%- endif %}
 </figure>
+<div class="lightbox" id="lightbox-{{ img_id }}" role="dialog" {% if alt %}aria-label="{{ alt }}"{% endif %}>
+    <a href="#/" class="lightbox-backdrop" aria-label="Close"></a>
+    <a href="#/" class="lightbox-close" aria-label="Close">&times;</a>
+    <img src="{{ img }}" {% if alt %}alt="{{ alt }}"{% else %}alt=""{% endif %} />
+</div>

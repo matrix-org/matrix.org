@@ -1,0 +1,91 @@
+// ── CSS-only lightbox via :target ─────────────────────────────────────────────
+//
+// Usage (in a Zola shortcode or template):
+//
+//   <!-- trigger -->
+//   <a href="#lightbox-my-image" class="lightbox-trigger" aria-label="Enlarge image">
+//     <img src="..." alt="...">
+//   </a>
+//
+//   <!-- lightbox overlay -->
+//   <div class="lightbox" id="lightbox-my-image" role="dialog" aria-label="...">
+//     <a href="#/" class="lightbox-backdrop" aria-label="Close"></a>
+//     <a href="#/" class="lightbox-close" aria-label="Close">&times;</a>
+//     <img src="..." alt="...">
+//   </div>
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+
+    &:target {
+        display: flex;
+    }
+
+    img {
+        position: relative;
+        z-index: 2;
+        max-width: min(90vw, 1200px);
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+        margin: 0;
+    }
+}
+
+.lightbox-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: zoom-out;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 1rem;
+    right: 1.25rem;
+    z-index: 3;
+    font-size: 2rem;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+// Trigger wrapper — gives the "zoom-in" cursor and renders the ⤢ expand badge
+.lightbox-trigger {
+    position: relative;
+    display: inline-block;
+    cursor: zoom-in;
+    line-height: 0;
+
+    // Expand badge visible in the bottom-right corner
+    &::after {
+        content: "⤢";
+        position: absolute;
+        bottom: 0.4rem;
+        right: 0.4rem;
+        font-size: 1.1rem;
+        line-height: 1;
+        background: rgba(0, 0, 0, 0.55);
+        color: #fff;
+        padding: 0.3rem 0.5rem;
+        border-radius: 4px;
+        pointer-events: none;
+        opacity: 0.85;
+        z-index: 1;
+    }
+}
