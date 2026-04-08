@@ -21,7 +21,6 @@ sso = false
 multi_account = false
 multi_language = false
 [extra.packages]
-<!-- no installer yet, just use repo link? -->
 macos_installer = "https://github.com/subpop/Relay"
 +++
 
