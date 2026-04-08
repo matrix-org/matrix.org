@@ -38,12 +38,12 @@ skip_anchor_prefixes = [
 ]
 
 [extra]
-# To enable the banner, either copy a pre-made template from below, paste it, and  modify it if need be,
+# To enable the banner, either copy a pre-made template from below, paste it, and modify it if need be,
 # or write custom Markdown. To disable the banner, simply set the value to an empty string ("").
 #
 # cfp: "We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
 # on <dates> in <location>. [Learn more](https://conference.matrix.org) about it, 
-# or [submit a proposal](https://cfp.<year>.matrix.org/matrix-conf-<year>/cfp)!"
+# or [submit a proposal](https://cfp.<year>.matrix.org/matrix-conference-<year>/cfp)!"
 #
 # awaiting_schedule: "We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
 # on <dates> in <location>. [Learn more](https://conference.matrix.org) about it, 
@@ -66,4 +66,4 @@ skip_anchor_prefixes = [
 #
 # governing_board_elections: "We are holding our Governing Board elections. Find 
 # all the information [on the elections page](https:/matrix.org/foundation/governing-board-elections/<year>/)."
-banner = ""
+banner = "We are happy to launch [The Matrix Conference](https://conference.matrix.org) on 20th-23rd October in Malmö, Sweden. [Learn more](https://conference.matrix.org) about it, or [submit a proposal](https://cfp.2026.matrix.org/matrix-conference-2026/cfp)!"
