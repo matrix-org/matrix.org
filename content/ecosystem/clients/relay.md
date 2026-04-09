@@ -24,4 +24,4 @@ multi_language = false
 macos_installer = "https://github.com/subpop/Relay"
 +++
 
-A friendly Matrix client that doesn't look like a Matrix client
+All the power of Matrix. None of the complexity.
