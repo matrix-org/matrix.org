@@ -144,8 +144,10 @@ repository = "https://gitlab.com/jpypi/rustix"
 [[integrations]]
 name = "Ketesa"
 description = """
-Admin UI for Matrix servers, formerly Synapse Admin.
-Drop-in replacement with extended features, multi-backend support, and visual customization.
+Admin UI for Synapse servers - the evolution of Synapse Admin. 
+Manage, monitor, and maintain your Synapse homeserver from one clean interface.
+Built for small private servers and large federated communities alike.
+Formerly Synapse Admin.
 
 CDN version: https://admin.etke.cc
 """
