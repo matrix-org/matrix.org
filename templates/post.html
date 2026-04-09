@@ -1,4 +1,5 @@
 {% extends "page.html" %}
+{% import "macros/citation.html" as citation %}
 {% block head_extra %}
 {#
 {% if page.summary %}
@@ -8,20 +9,6 @@
 {%- if page.authors | length > 0 or page.taxonomies.author is undefined -%}
 {{ throw(message="Please put author under the taxonomies area.") }}
 {%- endif -%}
-
-<style>
-.cite-btn{display:inline-block;margin-top:.5rem;padding:.2rem .7rem;font-size:.82rem;border:1px solid #0098d4;border-radius:4px;background:transparent;color:#0098d4;cursor:pointer}
-.cite-btn:hover{background:#0098d4;color:#fff}
-.cite-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center}
-.cite-modal.open{display:flex}
-.cite-modal__box{background:#fff;border-radius:8px;padding:1.5rem;max-width:560px;width:90%;box-shadow:0 4px 24px rgba(0,0,0,.15)}
-.cite-modal__box h3{margin-top:0}
-.cite-modal__textarea{width:100%;box-sizing:border-box;font-family:monospace;font-size:.82rem;padding:.5rem;border:1px solid #ccc;border-radius:4px;resize:vertical}
-.cite-modal__actions{display:flex;gap:.5rem;justify-content:flex-end;margin-top:.75rem}
-.cite-modal__actions button{padding:.3rem .9rem;border-radius:4px;border:1px solid #ccc;background:transparent;cursor:pointer}
-.cite-modal__actions button:first-child{border-color:#0098d4;color:#0098d4}
-.cite-modal__actions button:first-child:hover{background:#0098d4;color:#fff}
-</style>
 
 <script type="application/ld+json">
 {
@@ -58,6 +45,7 @@
 </script>
 {% endblock head_extra %}
 {% block content %}
+
 <article class="content post {%- if page.toc %} with-sidebar{% endif %}">
     <header>
         <h1>{{ page.title }}</h1>
@@ -82,91 +70,9 @@
         {% if page.updated %}
         <br><small>Last update: {{ page.updated | date(format="%Y-%m-%d %H:%M") }}</small>
         {% endif %}
-        <button
-            class="cite-btn"
-            data-title="{{ page.title | escape_xml }}"
-            data-date="{{ page.date | date(format="%Y-%m-%d") }}"
-            data-permalink="{{ page.permalink }}"
-            data-authors="{{ page.taxonomies.author | join(sep=", ") | escape_xml }}"
-        >Cite</button>
+        {{ citation::render(page=page) }}
     </header>
 
-    <div id="cite-modal" class="cite-modal" role="dialog" aria-modal="true" aria-label="Cite this post" aria-labelledby="cite-title">
-        <div class="cite-modal__box">
-            <h3 id="cite-title">Cite this post</h3>
-            <textarea id="cite-text" class="cite-modal__textarea" readonly rows="4"></textarea>
-            <div class="cite-modal__actions">
-                <button id="cite-copy">Copy</button>
-                <button id="cite-close">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-    (function(){
-        var btns     = document.querySelectorAll('.cite-btn');
-        var modal    = document.getElementById('cite-modal');
-        var textarea = document.getElementById('cite-text');
-        var copyBtn  = document.getElementById('cite-copy');
-        var closeBtn = document.getElementById('cite-close');
-        if(!btns.length || !modal) return;
-
-        function buildApa(title, dateStr, permalink, authorsStr){
-            var names = authorsStr ? authorsStr.split(',') : [];
-            var formatted = names.map(function(n){
-                var parts = n.trim().split(/\s+/);
-                if(parts.length < 2) return parts[0];
-                var last = parts[parts.length - 1];
-                var inits = parts.slice(0, parts.length - 1)
-                    .map(function(p){ return p.charAt(0).toUpperCase() + '.'; }).join(' ');
-                return last + ', ' + inits;
-            });
-            var months = ['January','February','March','April','May','June',
-                          'July','August','September','October','November','December'];
-            var parts = dateStr.split('-');
-            var d = new Date(parts[0], parts[1]-1, parts[2]);
-            var datePart = d.getFullYear() + ', ' + months[d.getMonth()] + ' ' + d.getDate();
-            var authorPart = 'Matrix.org';
-            if (formatted.length === 1) {
-              authorPart = formatted[0];
-            } else if (formatted.length === 2) {
-              authorPart = formatted[0] + ' & ' + formatted[1];
-            } else if (formatted.length > 2) {
-              authorPart = formatted.slice(0, -1).join(', ') + ', & ' + formatted.slice(-1);
-            }
-            return authorPart + ' (' + datePart + '). ' + title + '. Matrix.org. ' + permalink;
-        }
-
-        btns.forEach(function(btn){
-            btn.addEventListener('click', function(){
-                textarea.value = buildApa(
-                    btn.dataset.title,
-                    btn.dataset.date,
-                    btn.dataset.permalink,
-                    btn.dataset.authors
-                );
-                copyBtn.textContent = 'Copy';
-                modal.classList.add('open');
-                textarea.focus();
-            });
-        });
-        function close(){ modal.classList.remove('open'); }
-        closeBtn.addEventListener('click', close);
-        modal.addEventListener('click', function(e){ if(e.target === modal) close(); });
-        document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
-        copyBtn.addEventListener('click', function(){
-            if(navigator.clipboard){
-                navigator.clipboard.writeText(textarea.value).then(function(){
-                    copyBtn.textContent = 'Copied!';
-                });
-            } else {
-                textarea.select();
-                document.execCommand('copy');
-                copyBtn.textContent = 'Copied!';
-            }
-        });
-    })();
-    </script>
     <div class="post-main">
         <div class="post-content">
             {{ page.content | safe | markdown | safe }}

@@ -1,0 +1,171 @@
+{# citation popup — {% import "macros/citation.html" as citation %} #}
+
+{% macro render(page) %}
+
+{# unique id #}
+{% set cb_id = "cite-toggle-" ~ page.slug %}
+
+<div class="citation">
+
+<input
+    id="{{ cb_id }}"
+    type="checkbox"
+    class="cite-checkbox"
+    aria-hidden="true"
+>
+
+<label for="{{ cb_id }}" class="cite-btn" role="button">
+    Cite
+</label>
+
+<label for="{{ cb_id }}" class="cite-overlay" aria-hidden="true"></label>
+
+<div class="cite-modal" role="dialog" aria-modal="true" aria-labelledby="{{ cb_id }}-title">
+    <div class="cite-modal__box">
+
+        <label for="{{ cb_id }}" class="cite-modal__close" aria-label="Close citation dialog">
+            &times;
+        </label>
+
+        <h3 id="{{ cb_id }}-title">Cite this post</h3>
+
+        <div class="cite-formats">
+
+            {% set formats = ["apa", "mla", "chicago", "harvard", "bibtex"] %}
+
+            {% for fmt in formats %}
+            <input
+                id="{{ cb_id }}-{{ fmt }}"
+                type="radio"
+                name="{{ cb_id }}-format"
+                class="cite-format-radio"
+                {% if loop.first %}checked{% endif %}
+                aria-hidden="true"
+            >
+            <label for="{{ cb_id }}-{{ fmt }}" class="cite-format-tab">
+                {{ fmt | upper }}
+            </label>
+            {% endfor %}
+
+            {# apa #}
+            <div class="cite-panel cite-panel--apa">
+                <pre class="cite-text">{{ self::cite_apa(page=page) }}</pre>
+            </div>
+
+            {# mla #}
+            <div class="cite-panel cite-panel--mla">
+                <pre class="cite-text">{{ self::cite_mla(page=page) }}</pre>
+            </div>
+
+            {# chicago #}
+            <div class="cite-panel cite-panel--chicago">
+                <pre class="cite-text">{{ self::cite_chicago(page=page) }}</pre>
+            </div>
+
+            {# harvard #}
+            <div class="cite-panel cite-panel--harvard">
+                <pre class="cite-text">{{ self::cite_harvard(page=page) }}</pre>
+            </div>
+
+            {# bibtex #}
+            <div class="cite-panel cite-panel--bibtex">
+                <pre class="cite-text">{{ self::cite_bibtex(page=page) }}</pre>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+{% endmacro render %}
+
+
+{# apa #}
+{% macro cite_apa(page) %}
+{%- if page.taxonomies is defined and page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
+  {%- set authors = page.taxonomies.author | join(sep=", ") -%}
+{%- else -%}
+  {%- set authors = "Matrix.org" -%}
+{%- endif -%}
+{%- if page.date -%}
+  {%- set year = page.date | date(format="%Y") -%}
+{%- else -%}
+  {%- set year = "n.d." -%}
+{%- endif -%}
+{{ authors }}. ({{ year }}). {{ page.title }}. Matrix.org. {{ page.permalink }}
+{%- endmacro cite_apa %}
+
+
+{# mla #}
+{% macro cite_mla(page) %}
+{%- if page.taxonomies is defined and page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
+  {%- set authors = page.taxonomies.author | join(sep=", ") -%}
+{%- else -%}
+  {%- set authors = "Matrix.org" -%}
+{%- endif -%}
+{%- if page.date -%}
+  {%- set date_fmt = page.date | date(format="%d %b. %Y") -%}
+{%- else -%}
+  {%- set date_fmt = "n.d." -%}
+{%- endif -%}
+{{ authors }}. "{{ page.title }}." Matrix.org, {{ date_fmt }}, {{ page.permalink }}.
+{%- endmacro cite_mla %}
+
+
+{# chicago #}
+{% macro cite_chicago(page) %}
+{%- if page.taxonomies is defined and page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
+  {%- set authors = page.taxonomies.author | join(sep=", ") -%}
+{%- else -%}
+  {%- set authors = "Matrix.org" -%}
+{%- endif -%}
+{%- if page.date -%}
+  {%- set date_fmt = page.date | date(format="%B %d, %Y") -%}
+{%- else -%}
+  {%- set date_fmt = "n.d." -%}
+{%- endif -%}
+{{ authors }}. "{{ page.title }}." Matrix.org. {{ date_fmt }}. {{ page.permalink }}.
+{%- endmacro cite_chicago %}
+
+
+{# harvard #}
+{% macro cite_harvard(page) %}
+{%- if page.taxonomies is defined and page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
+  {%- set authors = page.taxonomies.author | join(sep=", ") -%}
+{%- else -%}
+  {%- set authors = "Matrix.org" -%}
+{%- endif -%}
+{%- if page.date -%}
+  {%- set year = page.date | date(format="%Y") -%}
+  {%- set date_fmt = page.date | date(format="%d %B %Y") -%}
+{%- else -%}
+  {%- set year = "n.d." -%}
+  {%- set date_fmt = "n.d." -%}
+{%- endif -%}
+{{ authors }} ({{ year }}) '{{ page.title }}', Matrix.org, viewed {{ date_fmt }}, <{{ page.permalink }}>.
+{%- endmacro cite_harvard %}
+
+
+{# bibtex #}
+{% macro cite_bibtex(page) %}
+{%- if page.taxonomies is defined and page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
+  {%- set authors = page.taxonomies.author | join(sep=" and ") -%}
+{%- else -%}
+  {%- set authors = "Matrix.org" -%}
+{%- endif -%}
+{%- if page.date -%}
+  {%- set year = page.date | date(format="%Y") -%}
+{%- else -%}
+  {%- set year = "n.d." -%}
+{%- endif -%}
+{%- set slug = page.slug -%}
+@misc{ {{ authors | lower | replace(from=" ", to="") }}{{ year }},
+  author    = { {{ authors }} },
+  title     = { {{ page.title }} },
+  year      = { {{ year }} },
+  url       = { {{ page.permalink }} },
+  note      = {Matrix.org}
+}
+{%- endmacro cite_bibtex %}
