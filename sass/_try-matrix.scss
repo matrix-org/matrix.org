@@ -107,6 +107,12 @@
     .quickstart-instructions {
         text-align: center;
         align-items: center;
+        .desktop-only {
+            display: block;
+        }
+        .mobile-only {
+            display: none;
+        }
 
         h2 {
             font-size: clamp(1.6rem, 6vw, 2.8rem);
@@ -116,6 +122,15 @@
         > p {
             max-width: 42rem;
             font-size: clamp(1rem, 2.5vw, 1.1rem);
+        }
+
+        @media (max-width: 767px) {
+            .desktop-only {
+                display: none;
+            }
+            .mobile-only {
+                display: block;
+            }
         }
     }
 
