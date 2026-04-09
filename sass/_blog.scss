@@ -29,7 +29,7 @@ article.post {
 
         td,
         th {
-            padding: .5rem;
+            padding: 0.5rem;
             border: unset;
             border-bottom: 1px solid var(--borders-color);
         }
@@ -80,7 +80,6 @@ article.post {
     align-self: center;
 
     .callout {
-
         display: grid;
         grid-template-columns: 300px auto;
         color: #fff;
@@ -119,7 +118,7 @@ article.post {
             font-size: 1.125rem;
             font-weight: 700;
             background-color: rgba(34, 109, 227);
-            padding: .5rem 1.5rem;
+            padding: 0.5rem 1.5rem;
             border-radius: 9999px;
             color: #fff;
             margin-block-start: 1rem;
@@ -144,19 +143,51 @@ article.post {
             }
         }
 
-        &>:first-child {
+        & > :first-child {
             margin-top: 0;
         }
 
-        &>ul>li:not(:last-child) {
-            margin-bottom: .5rem;
+        h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--color-text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        // H2 dept-level entries — full weight
+        & > ul > li {
+            font-size: 1rem;
+            font-weight: 600;
+
+            &:not(:last-child) {
+                margin-bottom: 0.4rem;
+            }
+        }
+
+        // H3 project-level entries — lighter, indented
+        & > ul > li > ul {
+            padding-left: 1rem;
+            margin-top: 0.25rem;
+
+            li {
+                font-size: 0.9rem;
+                font-weight: 400;
+
+                &:not(:last-child) {
+                    margin-bottom: 0.2rem;
+                }
+            }
         }
 
         flex: 1 1;
         max-width: 320px;
         margin-left: 4rem;
         padding: 1.5rem;
-        background-color: #f4f4f4;
+        background-color: #fafafa;
+        border: 1px solid var(--borders-color);
+        border-radius: 16px;
     }
 }
 
@@ -191,7 +222,7 @@ h3 a {
     color: var(--color-link);
 }
 
-.footnote-definition>p {
+.footnote-definition > p {
     display: inline;
 }
 
