@@ -16,57 +16,6 @@ article.post {
         margin-bottom: 1.5rem;
     }
 
-    table {
-        table-layout: fixed;
-        border-spacing: 0;
-        border: unset;
-        border-collapse: unset;
-
-        th {
-            border: unset;
-            border-top: 1px solid var(--borders-color);
-        }
-
-        td,
-        th {
-            padding: .5rem;
-            border: unset;
-            border-bottom: 1px solid var(--borders-color);
-        }
-
-        td:first-of-type,
-        th:first-of-type {
-            border-left: 1px solid var(--borders-color);
-        }
-
-        td:last-of-type,
-        th:last-of-type {
-            border-right: 1px solid var(--borders-color);
-        }
-
-        th:first-of-type {
-            border-top-left-radius: 16px;
-        }
-
-        th:last-of-type {
-            border-top-right-radius: 16px;
-        }
-
-        tbody tr:last-of-type {
-            td:first-of-type {
-                border-bottom-left-radius: 16px;
-            }
-
-            td:last-of-type {
-                border-bottom-right-radius: 16px;
-            }
-        }
-
-        tr:nth-child(odd) td {
-            background-color: #eee;
-        }
-    }
-
     header {
         margin-bottom: 1rem;
     }
