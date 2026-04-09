@@ -42,3 +42,4 @@ The following table lists some terms that either are wordmarks of The Matrix.org
 | other organs | | Other organs of the Foundation are similarly capitalised, e.g. "Guardians", "Spec Core Team", "Trust & Safety". |
 | `#room:server.tld` | | Pronounced "[hash room on server dot tld](https://matrix.org/blog/wp-content/uploads/2014/09/Introducing-matrix.pdf)". |
 | `@user:server.tld` | | Pronounced "[at user on server dot tld](https://matrix.org/blog/wp-content/uploads/2014/09/Introducing-matrix.pdf)". |
+| [vodozemac](https://github.com/matrix-org/vodozemac) | | Named after [vodozémac](https://hjp.znanje.hr/index.php?show=search_by_id&id=f19vXxZ%2F), the Croatian word for "amphibian". Pronounced "[vo-do-ze-mats](https://www.youtube.com/watch?v=mjndO734kco&t=38)". |
