@@ -1,0 +1,196 @@
+.cite-checkbox,
+.cite-format-radio {
+    display: none;
+}
+
+.citation {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.cite-btn {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.82rem;
+    border: 1px solid var(--color-link);
+    border-radius: 4px;
+    color: var(--color-link);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-link);
+        color: #fff;
+    }
+}
+
+// overlay
+
+.cite-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 400;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: default;
+}
+
+// modal
+
+.cite-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 800;
+    pointer-events: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.cite-modal__box {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--borders-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 560px;
+    width: 90%;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    pointer-events: auto;
+
+    h3 {
+        margin-top: 0;
+    }
+}
+
+.cite-modal__close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    line-height: 1;
+
+    &:hover {
+        color: var(--color-text);
+    }
+}
+
+.cite-checkbox:checked {
+    ~ .cite-overlay {
+        display: block;
+    }
+
+    ~ .cite-modal {
+        display: flex;
+    }
+}
+
+// tabs
+
+.cite-formats {
+    margin-top: 1rem;
+}
+
+.cite-format-tab {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    margin-right: 0.25rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border: 1px solid var(--borders-color);
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--color-text-light);
+
+    &:hover {
+        border-color: var(--color-link);
+        color: var(--color-link);
+    }
+}
+
+.cite-panel {
+    display: none;
+}
+
+[id$="-apa"]:checked {
+    ~ [for$="-apa"].cite-format-tab {
+        border-color: var(--color-link);
+        color: var(--color-link);
+        background-color: rgba(0, 152, 212, 0.08);
+    }
+
+    ~ .cite-formats .cite-panel--apa,
+    ~ .cite-panel--apa {
+        display: block;
+    }
+}
+
+[id$="-mla"]:checked {
+    ~ [for$="-mla"].cite-format-tab {
+        border-color: var(--color-link);
+        color: var(--color-link);
+        background-color: rgba(0, 152, 212, 0.08);
+    }
+
+    ~ .cite-formats .cite-panel--mla,
+    ~ .cite-panel--mla {
+        display: block;
+    }
+}
+
+[id$="-chicago"]:checked {
+    ~ [for$="-chicago"].cite-format-tab {
+        border-color: var(--color-link);
+        color: var(--color-link);
+        background-color: rgba(0, 152, 212, 0.08);
+    }
+
+    ~ .cite-formats .cite-panel--chicago,
+    ~ .cite-panel--chicago {
+        display: block;
+    }
+}
+
+[id$="-harvard"]:checked {
+    ~ [for$="-harvard"].cite-format-tab {
+        border-color: var(--color-link);
+        color: var(--color-link);
+        background-color: rgba(0, 152, 212, 0.08);
+    }
+
+    ~ .cite-formats .cite-panel--harvard,
+    ~ .cite-panel--harvard {
+        display: block;
+    }
+}
+
+[id$="-bibtex"]:checked {
+    ~ [for$="-bibtex"].cite-format-tab {
+        border-color: var(--color-link);
+        color: var(--color-link);
+        background-color: rgba(0, 152, 212, 0.08);
+    }
+
+    ~ .cite-formats .cite-panel--bibtex,
+    ~ .cite-panel--bibtex {
+        display: block;
+    }
+}
+
+// text
+
+.cite-text {
+    font-family: monospace;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    padding: 0.5rem;
+    margin: 0;
+    border: 1px solid var(--borders-color);
+    border-radius: 4px;
+    background: #f9f9f9;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: var(--color-text);
+}
