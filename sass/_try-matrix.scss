@@ -656,6 +656,15 @@
             border: 1px solid #d2d2d2;
             border-radius: 12px;
 
+            @media (max-width: 767px) {
+                border-radius: 0;
+                border-left: 0;
+                border-right: 0;
+                .call-to-action {
+                    font-size: clamp(0.85rem, 4vw, 1.125rem);
+                }
+            }
+
             &.featured {
                 border-color: #245c0c;
                 background-color: #f7fff5;
