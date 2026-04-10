@@ -128,10 +128,10 @@ licence-{{ client.licence | slugify }}
 {% endmacro %}
 
 {% macro platforms(packages) %}
-{% if packages.apple_app_store %}<div class="platform-pill">iOS</div>{% endif %}
-{% if packages.google_play_store or packages.f_droid %}<div class="platform-pill">Android</div>{% endif %}
-{% if packages.windows_installer %}<div class="platform-pill">Windows</div>{% endif %}
-{% if packages.macos_installer %}<div class="platform-pill">macOS</div>{% endif %}
-{% if packages.flathub or packages.other_linux_link %}<div class="platform-pill">Linux</div>{% endif %}
-{% if packages.webapp %}<div class="platform-pill">Web</div>{% endif %}
+{% if packages.apple_app_store %}<div class="platform-pill platform-pill--ios">iOS</div>{% endif %}
+{% if packages.google_play_store or packages.f_droid %}<div class="platform-pill platform-pill--android">Android</div>{% endif %}
+{% if packages.windows_installer %}<div class="platform-pill platform-pill--windows">Windows</div>{% endif %}
+{% if packages.macos_installer %}<div class="platform-pill platform-pill--macos">macOS</div>{% endif %}
+{% if packages.flathub or packages.other_linux_link %}<div class="platform-pill platform-pill--linux">Linux</div>{% endif %}
+{% if packages.webapp %}<div class="platform-pill platform-pill--web">Web</div>{% endif %}
 {% endmacro %}
