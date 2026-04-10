@@ -59,6 +59,7 @@ extend-ignore-re = [
     "Konversation",
     "MCH", # May Contain Hackers
     "MUC", # Multi-user chat
+    "PNGs", # CI chokes thinking it should be "ON"
     "“Twosday”",
 
     "add-ons",
