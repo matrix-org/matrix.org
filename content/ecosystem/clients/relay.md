@@ -23,7 +23,7 @@ multi_account = false
 multi_language = false
 
 [extra.packages]
-macos_installer = "https://github.com/subpop/Relay"
+macos_installer = "https://testflight.apple.com/join/ehFD9g5c"
 +++
 
 All the power of Matrix. None of the complexity.
