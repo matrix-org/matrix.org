@@ -11,6 +11,7 @@ maturity = "Beta"
 repo =  "https://github.com/subpop/Relay"
 matrix_room = "#relayapp:matrix.org"
 featured = false
+
 [extra.features]
 e2ee = true
 spaces = false
@@ -20,6 +21,7 @@ threads = false
 sso = false
 multi_account = false
 multi_language = false
+
 [extra.packages]
 macos_installer = "https://github.com/subpop/Relay"
 +++
