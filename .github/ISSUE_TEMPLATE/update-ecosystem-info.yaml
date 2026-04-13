@@ -42,3 +42,8 @@ body:
       description: Any other details that would help us update this entry?
     validations:
       required: false
+  - type: markdown
+    attributes:
+      value: |
+        Note that if you're comfortable with using GitHub, you're also welcome to skip
+        creating an issue go straight to creating a PR to `./content/ecosystem`.
