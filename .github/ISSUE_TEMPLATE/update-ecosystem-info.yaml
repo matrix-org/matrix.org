@@ -46,4 +46,4 @@ body:
     attributes:
       value: |
         Note that if you're comfortable with using GitHub, you're also welcome to skip
-        creating an issue go straight to creating a PR to `./content/ecosystem`.
+        creating an issue and go straight to creating a PR to `./content/ecosystem`.
