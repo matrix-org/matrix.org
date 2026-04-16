@@ -47,27 +47,22 @@
             </label>
             {% endfor %}
 
-            {# apa #}
             <div class="cite-panel cite-panel--apa">
                 <pre class="cite-text">{{ self::cite_apa(page=page) }}</pre>
             </div>
 
-            {# mla #}
             <div class="cite-panel cite-panel--mla">
                 <pre class="cite-text">{{ self::cite_mla(page=page) }}</pre>
             </div>
 
-            {# chicago #}
             <div class="cite-panel cite-panel--chicago">
                 <pre class="cite-text">{{ self::cite_chicago(page=page) }}</pre>
             </div>
 
-            {# harvard #}
             <div class="cite-panel cite-panel--harvard">
                 <pre class="cite-text">{{ self::cite_harvard(page=page) }}</pre>
             </div>
 
-            {# bibtex #}
             <div class="cite-panel cite-panel--bibtex">
                 <pre class="cite-text">{{ self::cite_bibtex(page=page) }}</pre>
             </div>
@@ -82,9 +77,8 @@
 {% endmacro render %}
 
 
-{# apa #}
 {% macro cite_apa(page) %}
-{%- if page.taxonomies is defined and page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
+{%- if page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
   {%- set authors = page.taxonomies.author | join(sep=", ") -%}
 {%- else -%}
   {%- set authors = "Matrix.org" -%}
@@ -98,9 +92,8 @@
 {%- endmacro cite_apa %}
 
 
-{# mla #}
 {% macro cite_mla(page) %}
-{%- if page.taxonomies is defined and page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
+{%- if page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
   {%- set authors = page.taxonomies.author | join(sep=", ") -%}
 {%- else -%}
   {%- set authors = "Matrix.org" -%}
@@ -114,9 +107,8 @@
 {%- endmacro cite_mla %}
 
 
-{# chicago #}
 {% macro cite_chicago(page) %}
-{%- if page.taxonomies is defined and page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
+{%- if page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
   {%- set authors = page.taxonomies.author | join(sep=", ") -%}
 {%- else -%}
   {%- set authors = "Matrix.org" -%}
@@ -130,9 +122,8 @@
 {%- endmacro cite_chicago %}
 
 
-{# harvard #}
 {% macro cite_harvard(page) %}
-{%- if page.taxonomies is defined and page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
+{%- if page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
   {%- set authors = page.taxonomies.author | join(sep=", ") -%}
 {%- else -%}
   {%- set authors = "Matrix.org" -%}
@@ -148,9 +139,8 @@
 {%- endmacro cite_harvard %}
 
 
-{# bibtex #}
 {% macro cite_bibtex(page) %}
-{%- if page.taxonomies is defined and page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
+{%- if page.taxonomies.author is defined and page.taxonomies.author | length > 0 -%}
   {%- set authors = page.taxonomies.author | join(sep=" and ") -%}
 {%- else -%}
   {%- set authors = "Matrix.org" -%}
