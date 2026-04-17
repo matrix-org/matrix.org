@@ -6,7 +6,7 @@ thumbnail = "singularity.svg"
 maintainer = "Luxuride"
 maturity = "Alpha"
 language = "Rust"
-repo = "[https://github.com/Luxuride/singularity](https://github.com/Luxuride/singularity)"
+repo = "https://github.com/Luxuride/singularity"
 matrix_room = "#singularity:matrix.luxuride.eu"
 licence = "GPL-3.0"
 
