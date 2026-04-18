@@ -12,7 +12,7 @@ licence = "GPL-3.0"
 
 [extra.features]
 e2ee = true
-spaces = true
+spaces = false
 voip_1to1 = false
 voip_jitsi = false
 threads = false
