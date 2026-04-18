@@ -25,6 +25,6 @@ The Matrix Community Summit is hosted by Matrix Community Events at c-base, a le
 
 Don't miss the chance to get your ticket now! There is barely one month left before it starts. The Matrix Community Summit 2026 starts on Thu, 21st May and ends on Mon, 25th May. Friday and Saturday are deep work days, so it might be the perfect coworking opportunity for your job. However, don't worry if you cannot make it on all five days.
 
-Curious about the summit? https://matrix-community.events/conferences/2026-summit.html
+Curious about the [Matrix Community Summit 2026](https://matrix-community.events/conferences/2026-summit.html)? The link contains all up-to-date info about the event.
 
-Learn more about Matrix Community Events on their website at https://matrix-community.events/. There are also Matrix rooms to get in touch or learn about the latest news. TODO add link
+Learn more on the [website of Matrix Community Events](https://matrix-community.events/) and join the [matrix room of Matrix Community Events](https://matrix.to/#/#community-events:matrix.org) to get in touch with other members and to learn about the latest news.
