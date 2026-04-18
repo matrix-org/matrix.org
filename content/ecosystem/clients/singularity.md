@@ -20,6 +20,11 @@ sso = true
 oauth = true
 multi_account = false
 multi_language = false
+
+[extra.packages]
+windows_installer = "https://github.com/Luxuride/singularity/releases/latest"
+macos_installer = "https://github.com/Luxuride/singularity/releases/latest"
+other_linux_link = "https://github.com/Luxuride/singularity/releases/latest"
 +++
 
 Client focusing on speed and interactivity.
