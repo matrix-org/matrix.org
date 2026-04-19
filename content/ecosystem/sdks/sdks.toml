@@ -712,7 +712,7 @@ A simple lightweight library for creating Matrix bots. Available on Hex.pm.
 """
 
 [[sdks]]
-name = "halcyon"
+name = "Halcyon"
 maintainer = "Wes Ring"
 maturity = "Beta"
 language = "Python"
