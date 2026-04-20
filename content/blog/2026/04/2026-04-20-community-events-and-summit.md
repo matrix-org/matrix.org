@@ -9,7 +9,7 @@ category = ["Events"]
 
 A big strength of Matrix is its popularity among IT hobbyists. These people discover and adopt the chat ecosystem early and often advocate for its introduction at their university, workplace and in their groups of friends. In order to bring these innovators and tinkerers together, a group called Matrix Community Events has been founded by passionate individuals.
 
-In-person events are an important part of the Matrix community in Europe. The annual conferences FOSDEM, FrOSCon and the Chaos Communication Congress are some events where many of our community members meet. These events allow us to exchange ideas across organisations, find new members on our quest to popularise Matrix and consolidate efforts on projects and spec proposals. To focus solely on Matrix, dedicated Matrix events take place, like meetups, workations ((group trips combining work and vacation)) and the annual Matrix Community Summit in Berlin.
+In-person events are an important part of the Matrix community in Europe. The annual conferences FOSDEM, FrOSCon and the Chaos Communication Congress are some events where many of our community members meet. These events allow us to exchange ideas across organisations, find new members on our quest to popularise Matrix and consolidate efforts on projects and spec proposals. To focus solely on Matrix, dedicated Matrix events take place, like meetups, workations (group trips combining work and vacation) and the annual Matrix Community Summit in Berlin.
 
 <!-- more -->
 
