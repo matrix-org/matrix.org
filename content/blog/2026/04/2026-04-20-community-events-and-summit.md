@@ -27,4 +27,4 @@ Don't miss the chance to get your ticket now! There is barely one month left bef
 
 Curious about the [Matrix Community Summit 2026](https://matrix-community.events/conferences/2026-summit.html)? The link contains all up-to-date info about the event.
 
-Learn more on the [website of Matrix Community Events](https://matrix-community.events/) and join the [matrix room of Matrix Community Events](https://matrix.to/#/#community-events:matrix.org) to get in touch with other members and to learn about the latest news.
+Learn more on the [website of Matrix Community Events](https://matrix-community.events/) and join the [Matrix room of Matrix Community Events](https://matrix.to/#/#community-events:matrix.org) to get in touch with other members and to learn about the latest news.
