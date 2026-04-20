@@ -13,7 +13,7 @@ In-person events are an important part of the Matrix community in Europe. The an
 
 <!-- more -->
 
-## Matrix Conference or Matrix Community Summit?
+## The Matrix Conference or Matrix Community Summit?
 
 As an enthusiast, the answer to the question which event to participate in is likely both. The Matrix Conference and the Matrix Community Summit are annual events for people to learn from other experts and connect with others.
 
