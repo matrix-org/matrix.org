@@ -12,7 +12,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         margin-bottom: 1rem;
     }
 
-    p {
+    >p {
         text-align: center;
         font-weight: 400;
         font-size: 1.125rem;
@@ -29,6 +29,10 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 .project-card.client {
     color: var(--color-text);
     cursor: pointer;
+
+    img {
+        margin: 0 auto;
+    }
 }
 
 .platform-links {
@@ -67,6 +71,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: 1rem;
 
         .app-logo {
             width: 8rem;
@@ -83,6 +88,10 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
             font-style: normal;
             font-weight: 700;
             font-size: 2rem;
+
+            @media (max-width: 767px) {
+                flex-direction: column;
+            }
 
             .maturity {
                 padding-block: .3rem;
@@ -137,6 +146,10 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     gap: .3rem 1rem;
     flex-wrap: wrap;
     margin-block: 2rem;
+
+    @media (max-width: 767px) {
+        gap: .3rem;
+    }
 
     a img {
         height: 54px;
