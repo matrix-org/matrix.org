@@ -4,6 +4,7 @@
         background: #fafafa;
         padding: 2rem;
         border: 1px solid var(--borders-color);
+        border-radius: 16px;
 
         &:last-child {
             margin-bottom: 0;
@@ -24,6 +25,7 @@
                 display: flex;
                 flex-direction: column;
                 border: 1px solid var(--borders-color);
+                border-radius: 16px;
             }
         }
     }
@@ -55,6 +57,7 @@
             background: #fafafa;
             padding: 1.5rem;
             border: 1px solid var(--borders-color);
+            border-radius: 16px;
 
             &:first-child {
                 grid-column: 1 / -1;
