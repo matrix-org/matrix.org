@@ -233,14 +233,14 @@ Membership is maintained to foster a collaborative environment of mutual trust b
 
 To be eligible, applicants must either:
 
-- Contribute to an open source Matrix project and be responsible for a safety-sensitive concern within that project.
-- Be actively involved with the moderation of a Matrix community that has significant ties to, or contributes feedback to, a safety guild project.
+- Contribute to an open source project in the Matrix ecosystem and be responsible for a safety-sensitive concern within that project.
+- Be actively involved with the moderation of a community on the public Matrix network that has significant ties to, or contributes feedback to, a safety guild project.
 
 Guild members may introduce other applicants to the gateway procedure when they can provide sufficient reasoning to the rest of the guild and address any raised concerns.
 
 ### Gateway Procedure
 
-To join the guild, first join the Matrix Shared Safety Guild - Join Here - Landing and answer the following questions:
+To join the guild, first join the [landing room](https://matrix.to/#/#shared-safety-guild-landing:matrix.org) and answer the following questions:
 
 1. Which project are you affiliated with? Can you please also link the repository url?
 2. Why are you interested in the guild specifically?
@@ -295,7 +295,7 @@ The informational section summarises project updates and announcements, and any 
 The attentive section is used to escalate discussion or make the committee aware of events.
 An example would be a new spam pattern within the community that is driving people away.
 
-#### Foundation
+#### The Foundation
 
 Amendments to the charter must be explicitly agreed by consensus of safety guild contributors.
 The sponsor and chairs are responsible for proposing amendments when changes are requested by the Foundation.
@@ -313,7 +313,7 @@ Chairs are responsible for ensuring continuity of the community. Chairs have fin
 
 Should chairs become vacant, it is the responsibility of guild members to field volunteers and elect new chairs.
 Should the position of sponsor and both chairs become vacant or unaccountable, the Foundation's Trust & Safety Committee should organise replacements or amend the charter while respecting the membership process, autonomy, and consent of contributors.
-If this option has been exhausted, the Foundation should close the working group.
+If this option has been exhausted, the Foundation should close the Working Group.
 """
 committee = "Trust & Safety Committee"
 members = []
