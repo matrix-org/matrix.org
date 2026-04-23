@@ -10,7 +10,28 @@ Those updates are collected through the Matrix room
 and published every Friday on the [matrix.org blog](/category/this-week-in-matrix/).
 It aims to allow the community to show off their work in the Matrix ecosystem.
 
-## Prerequisites
+## The Essentials
+
+  1. **Follow the [Code of Conduct](/legal/code-of-conduct).** Like all things on matrix.org, your post must comply with it.
+  2. **Join [#thisweekin:matrix.org](https://matrix.to/#/#thisweekin:matrix.org)** and mention the bot "TWIM" at the start of your message.
+  Everything after the mention becomes your entry.
+  3. **Write in Markdown.** The bot expects Markdown in the plaintext event body — you'll make the editors' life much easier!
+  4. **Use `###` for your project title.** Your entry is embedded in a blog post, so H3 keeps the hierarchy correct.
+  5. **One entry per project.** If you have news about multiple projects, submit separate messages so they can be categorised properly.
+  6. **Add images or videos** by reacting with `⭕` on your media right after your text submission.
+  7. **Wrap bare URLs in angle brackets** (<https://...>) so they render as clickable links on the blog.
+  8. **Link to your project room and source code** so readers know where to follow up.
+  9. **You can edit your entry** just edit the message in your Matrix client.
+  10. **Please Don't** use TWIM as a change log
+
+  Want to go further? Read the [detailed guide below](#detailed-guide) for tips on editing entries, linking, heading usage, and adding your
+  project to the bot.
+
+  ---
+
+## Detailed Guide
+
+### Prerequisites
 
 There are some guidelines you should be aware of before publishing your
 update to TWIM:
@@ -19,7 +40,7 @@ Like all things on matrix.org, your post has to follow and comply with the
 [Matrix.org Code of Conduct](/legal/code-of-conduct). Additionally, the editors
 can decline entries related to dangerous or unethical software.
 
-## Publishing
+### Publishing
 
 For publishing to TWIM all you need is a Matrix account and [participate](/docs/chat_basics/public-rooms/#joining-a-specific-room)
 in the [#thisweekin:matrix.org](https://matrix.to/#/#thisweekin:matrix.org) Matrix room.
@@ -47,18 +68,18 @@ By submitting content to TWIM, you agree to publishing it under the [matrix.org 
 licenses](https://github.com/matrix-org/matrix.org/blob/main/LICENSE.md).
 Videos will be uploaded to the [Matrixdotorg](https://www.youtube.com/@Matrixdotorg) YouTube channel.
 
-## How to Write a Good Entry
+### How to Write a Good Entry
 
 Writing a good entry can be challenging. Below are some recommendations
 to help the editors by lowering their workload when publishing the post.
 
-### Submitting Multiple Entries
+#### Submitting Multiple Entries
 
 If you want to share news about more than one project, please submit individual entries, one for each project.
 This allows us to sort and categorise your entries appropriately, since this is done on a
 per-message basis.
 
-### Editing an Entry
+#### Editing an Entry
 
 Matrix supports editing messages, and our TWIM bot also supports reading them.
 
@@ -67,13 +88,13 @@ through your Matrix client.
 If for some reason that does not work for you, deleting the previous entry and submitting
 a new one works just as well.
 
-### Markdown
+#### Markdown
 
 The bot expects Markdown as part of the plaintext event body. Please use a client which
 sends the Markdown formatted text in the "plaintext" body. While we currently accept other formats as well,
 it will add manual work for a human to format the post.
 
-### Do Not Treat TWIM as a Changelog
+#### Do Not Treat TWIM as a Changelog
 
 Copying the list of your commit messages of this week is easy, but not what TWIM is about.
 Ideally, we prefer posts which are a few paragraphs long outlining some highlights
@@ -81,13 +102,13 @@ over a long detailed list.
 This makes your announcement more digestable to humans.
 You may of course still link to the changelog.
 
-### Add Images or Videos
+#### Add Images or Videos
 
 A picture says more than a thousand words.
 Adding images or a demo to your post can help explaining the feature to other people.
 It also can help getting people interested in your project.
 
-### Contact Info and Source Link
+#### Contact Info and Source Link
 
 Many times people will ask about things published in TWIM. Often times people will
 use the TWIM Matrix room itself to do that. However, often time it would have been a better
@@ -97,7 +118,7 @@ If your project appears frequently on TWIM, consider to
 [add it to the bot](#reactions-and-adding-a-project-to-the-bot),
 so all the boilerplate can get added to your post automatically.
 
-### Correct Usage of Headings
+#### Correct Usage of Headings
 
 As the [TWIM helper bot](https://github.com/haecker-felix/hebbot) takes messages
 as verbatim, it is helpful to the editors to use the right heading level.
@@ -110,7 +131,7 @@ your project's title automatically when it knows your project.
 Additionally please do not use headings for links but instead use bold links if you
 want to highlight the links.
 
-### Correct Linking
+#### Correct Linking
 
 The static site generator that matrix.org is using uses CommonMark for content,
 and requires bare links to be surrounded by angled brackets to produce
