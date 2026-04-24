@@ -83,7 +83,7 @@ end.
   * We can help by promoting membership - explaining the benefits and explaining positive experience of the GB. 
 * Premium accounts: big influx of users around Discord time. No more than usual people leaving after that, which is good news.
 * Discussions
-  * Public annual report
+  * [Public annual report](@/blog/2026/03/2026-03-27-annual-report.md)
     * Lots support & thanks for getting this done
     * Plenty of discussion, especially around the finance figures and in-kind contributions
     * Discussion around the need to clarify the distinction between Element & Foundation further, and also link to the overall technical strategy (see note about scrutiny and independence above)
