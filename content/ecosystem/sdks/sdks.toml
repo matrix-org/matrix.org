@@ -588,7 +588,6 @@ language = "Swift"
 licence = "Apache-2.0"
 repository = "https://github.com/circles-project/Matrix.swift"
 purpose = ["client"]
-
 description = """
 Matrix client SDK in Swift
 """
