@@ -10,7 +10,8 @@ The Matrix.org Foundation offers a room directory as a public service via its ma
 
 The matrix.org public room directory is highly visible and widely used by users from across the federation. To give new users a safe way to find interesting rooms, The Matrix.org Foundation curates the directory. The management of the directory is handled by the [Room Directory Working Group](@/foundation/working-groups/room-directory.md).
 
-Currently, the Foundation aims to showcase rooms and communities related to Matrix and other open-source projects. If you’d like to have your room(s) listed in the directory, you can **submit an application via [this form](https://cryptpad.fr/form/#/2/form/view/BIhKmupHthnfRK9e7rdJnG0ilU2k0dJtazvIMlfNCds/)**.
+Currently, the Foundation aims to showcase rooms and communities related to Matrix and other topics of interest to the Matrix community. More detailed rules are included in the form.
+If you’d like to have your room(s) listed in the directory, you can **submit an application via [this form](https://forms.fillout.com/t/mdaJEWYt3Sus)**.
 
 If you want to explore a even wider range of public Matrix rooms, you can also browse the directories of other homeservers or community projects such as [matrixrooms.info](https://matrixrooms.info)
 (these directories are independently operated and not affiliated with The Matrix.org Foundation).
