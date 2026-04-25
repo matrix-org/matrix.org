@@ -2,7 +2,7 @@
 name = "MandM-bridge"
 maintainer = "karlpip"
 summary = """
-Bridges between one matrix room and a murmur channels.
+Bridges between a Matrix room and a Murmur channel.
 
 ICE is used to communicate with the Murmur server, and an appservice is used for Matrix.
 """
