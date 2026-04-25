@@ -719,7 +719,6 @@ language = "Python"
 licence = "BSD-3-Clause"
 repository = "https://github.com/WesR/Halcyon"
 purpose = ["bot"]
-featured_in = ["bot"]
 description = """
 An easy to use Matrix library inspired by discord.py.
 """
