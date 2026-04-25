@@ -48,22 +48,42 @@
             {% endfor %}
 
             <div class="cite-panel cite-panel--apa">
+                <div class="cite-copy-controls">
+                    <button type="button" class="cite-copy-btn" data-cite-copy>Copy</button>
+                    <span class="cite-copy-status" role="status" aria-live="polite"></span>
+                </div>
                 <pre class="cite-text">{{ self::cite_apa(page=page) }}</pre>
             </div>
 
             <div class="cite-panel cite-panel--mla">
+                <div class="cite-copy-controls">
+                    <button type="button" class="cite-copy-btn" data-cite-copy>Copy</button>
+                    <span class="cite-copy-status" role="status" aria-live="polite"></span>
+                </div>
                 <pre class="cite-text">{{ self::cite_mla(page=page) }}</pre>
             </div>
 
             <div class="cite-panel cite-panel--chicago">
+                <div class="cite-copy-controls">
+                    <button type="button" class="cite-copy-btn" data-cite-copy>Copy</button>
+                    <span class="cite-copy-status" role="status" aria-live="polite"></span>
+                </div>
                 <pre class="cite-text">{{ self::cite_chicago(page=page) }}</pre>
             </div>
 
             <div class="cite-panel cite-panel--harvard">
+                <div class="cite-copy-controls">
+                    <button type="button" class="cite-copy-btn" data-cite-copy>Copy</button>
+                    <span class="cite-copy-status" role="status" aria-live="polite"></span>
+                </div>
                 <pre class="cite-text">{{ self::cite_harvard(page=page) }}</pre>
             </div>
 
             <div class="cite-panel cite-panel--bibtex">
+                <div class="cite-copy-controls">
+                    <button type="button" class="cite-copy-btn" data-cite-copy>Copy</button>
+                    <span class="cite-copy-status" role="status" aria-live="polite"></span>
+                </div>
                 <pre class="cite-text">{{ self::cite_bibtex(page=page) }}</pre>
             </div>
 
