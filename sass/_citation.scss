@@ -121,6 +121,42 @@
     display: none;
 }
 
+.cite-copy-controls {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.citation.cite-copy-enabled .cite-copy-controls {
+    display: flex;
+}
+
+.cite-copy-btn {
+    appearance: none;
+    border: 1px solid var(--borders-color);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--color-text);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.78rem;
+    line-height: 1.2;
+    padding: 0.3rem 0.7rem;
+
+    &:hover {
+        border-color: var(--color-link);
+        color: var(--color-link);
+    }
+}
+
+.cite-copy-status {
+    color: var(--color-text-light);
+    font-size: 0.78rem;
+    min-height: 1em;
+}
+
 [id$="-apa"]:checked {
     ~ [for$="-apa"].cite-format-tab {
         border-color: var(--color-link);
