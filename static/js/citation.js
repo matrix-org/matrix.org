@@ -30,30 +30,35 @@ function scheduleReset(button, status) {
 }
 
 function enableCitationCopy(citation) {
+    const button = citation.querySelector("[data-cite-copy]");
+    const status = citation.querySelector(".cite-copy-status");
+
+    if (!button || !status) {
+        return;
+    }
+
     citation.classList.add("cite-copy-enabled");
 
-    for (const button of citation.querySelectorAll("[data-cite-copy]")) {
-        button.addEventListener("click", async () => {
-            const panel = button.closest(".cite-panel");
-            const text = panel?.querySelector(".cite-text");
-            const status = panel?.querySelector(".cite-copy-status");
+    button.addEventListener("click", async () => {
+        const checkedRadio = citation.querySelector(".cite-format-radio:checked");
+        const activeFormat = checkedRadio?.dataset.citeFormat;
+        const text = citation.querySelector(`[data-cite-panel="${activeFormat}"] .cite-text`);
 
-            if (!text || !status) {
-                return;
-            }
+        if (!activeFormat || !text) {
+            return;
+        }
 
-            try {
-                await navigator.clipboard.writeText(text.textContent.trim());
-                button.textContent = "Copied";
-                status.textContent = "Copied";
-            } catch (error) {
-                button.textContent = "Copy";
-                status.textContent = "Copy failed";
-            }
+        try {
+            await navigator.clipboard.writeText(text.textContent.trim());
+            button.textContent = "Copied";
+            status.textContent = "Copied";
+        } catch (error) {
+            button.textContent = "Copy";
+            status.textContent = "Copy failed";
+        }
 
-            scheduleReset(button, status);
-        });
-    }
+        scheduleReset(button, status);
+    });
 }
 
 if (window.isSecureContext && navigator.clipboard?.writeText) {
