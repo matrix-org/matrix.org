@@ -39,6 +39,7 @@
                 type="radio"
                 name="{{ cb_id }}-format"
                 class="cite-format-radio"
+                data-cite-format="{{ fmt }}"
                 {% if loop.first %}checked{% endif %}
                 aria-hidden="true"
             >
@@ -47,44 +48,27 @@
             </label>
             {% endfor %}
 
-            <div class="cite-panel cite-panel--apa">
-                <div class="cite-copy-controls">
-                    <button type="button" class="cite-copy-btn" data-cite-copy>Copy</button>
-                    <span class="cite-copy-status" role="status" aria-live="polite"></span>
-                </div>
-                <pre class="cite-text">{{ self::cite_apa(page=page) }}</pre>
+            {% for fmt in formats %}
+            <div class="cite-panel cite-panel--{{ fmt }}" data-cite-panel="{{ fmt }}">
+                <pre class="cite-text">
+                    {%- if fmt == "apa" -%}
+                        {{ self::cite_apa(page=page) }}
+                    {%- elif fmt == "mla" -%}
+                        {{ self::cite_mla(page=page) }}
+                    {%- elif fmt == "chicago" -%}
+                        {{ self::cite_chicago(page=page) }}
+                    {%- elif fmt == "harvard" -%}
+                        {{ self::cite_harvard(page=page) }}
+                    {%- elif fmt == "bibtex" -%}
+                        {{ self::cite_bibtex(page=page) }}
+                    {%- endif -%}
+                </pre>
             </div>
+            {% endfor %}
 
-            <div class="cite-panel cite-panel--mla">
-                <div class="cite-copy-controls">
-                    <button type="button" class="cite-copy-btn" data-cite-copy>Copy</button>
-                    <span class="cite-copy-status" role="status" aria-live="polite"></span>
-                </div>
-                <pre class="cite-text">{{ self::cite_mla(page=page) }}</pre>
-            </div>
-
-            <div class="cite-panel cite-panel--chicago">
-                <div class="cite-copy-controls">
-                    <button type="button" class="cite-copy-btn" data-cite-copy>Copy</button>
-                    <span class="cite-copy-status" role="status" aria-live="polite"></span>
-                </div>
-                <pre class="cite-text">{{ self::cite_chicago(page=page) }}</pre>
-            </div>
-
-            <div class="cite-panel cite-panel--harvard">
-                <div class="cite-copy-controls">
-                    <button type="button" class="cite-copy-btn" data-cite-copy>Copy</button>
-                    <span class="cite-copy-status" role="status" aria-live="polite"></span>
-                </div>
-                <pre class="cite-text">{{ self::cite_harvard(page=page) }}</pre>
-            </div>
-
-            <div class="cite-panel cite-panel--bibtex">
-                <div class="cite-copy-controls">
-                    <button type="button" class="cite-copy-btn" data-cite-copy>Copy</button>
-                    <span class="cite-copy-status" role="status" aria-live="polite"></span>
-                </div>
-                <pre class="cite-text">{{ self::cite_bibtex(page=page) }}</pre>
+            <div class="cite-copy-controls">
+                <button type="button" class="call-to-action secondary cite-copy-btn" data-cite-copy>Copy</button>
+                <span class="cite-copy-status" role="status" aria-live="polite"></span>
             </div>
 
         </div>
