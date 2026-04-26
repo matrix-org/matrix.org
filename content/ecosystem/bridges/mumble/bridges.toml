@@ -2,16 +2,16 @@
 name = "MandM-bridge"
 maintainer = "karlpip"
 summary = """
-Bridges between one matrix room and a murmur channels.
+Bridges between a Matrix room and a Murmur channel.
 
-ICE is used to communicate with the Murmur server, matrix-nio is used for Matrix.
+ICE is used to communicate with the Murmur server, and an appservice is used for Matrix.
 """
 maturity = "Alpha"
 language = "Python"
 license = "MIT"
-docs = "https://github.com/karlpip/MandM-bridge#setup"
-repo = "https://github.com/karlpip/MandM-bridge"
-room = "#imessage:maunium.net"
+docs = "https://codeberg.org/karlpip/MandM-bridge/#setup"
+repo = "https://codeberg.org/karlpip/MandM-bridge"
+room = "#mandm-bridge:og.lushkush.nl"
 featured = false
 privilege.platform = "Admin" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
