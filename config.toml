@@ -69,5 +69,5 @@ skip_anchor_prefixes = [
 banner = """
 We are happy to launch [The Matrix Conference](https://conference.matrix.org) on 20th-23rd October in Malmö, Sweden. [Submit a proposal](https://cfp.2026.matrix.org/matrix-conference-2026/cfp)!
 
-We are holding our Governing Board elections. Find all the information [on the elections page](https:/matrix.org/foundation/governing-board-elections/2025/).
+We are holding our Governing Board elections. Find all the information [on the elections page](/foundation/governing-board-elections/2026/).
 """
