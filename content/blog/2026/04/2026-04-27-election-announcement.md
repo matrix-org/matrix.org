@@ -243,7 +243,7 @@ there are a few things you should know:
 ### Expectations: what to consider before accepting a nomination
 
 You can familiarise yourself with the Terms of Reference, Bylaws, expectations
-and other processes on [the Governing Board page of the website](@/foundation/governing-board/index.md).
+and other processes on [the Governing Board page of the website](@/foundation/governing-board/index.md#bylaws-processes-and-norms).
 
 Besides, as mentioned above, the Governing Board exists to support the project.
 The role of the Governing Board is to offer guidance and support to the Guardians,
