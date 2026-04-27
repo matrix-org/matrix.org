@@ -40,7 +40,7 @@ across the following constituencies this year:
 * Silver (out of cycle, both seats)
 * Individual (out of cycle, one seat)
 * Associate (out of cycle, one seat as the other one is filled)
-* Gold (out of cycle, one seat)
+* Gold (out of cycle, tbc seats)
 
 We’ll be doing our best to reach out to every constituent group
 to let them know they are eligible to nominate candidates for the election.
@@ -111,14 +111,14 @@ next year when the cycle repeats for their constituency.
 
 In short, the seats up for election this year are as follows:
 
-| Constituency | In or out of cycle | Nb of seats up for election in 2026 | Term for the elected member | Notes |
+| Constituency | In or out of cycle | Seats for election in 2026 | Term for the elected member | Notes |
 | :---- | :---: | :---: | :---: | :---- |
 | Guardians | In-cycle | 3 | 2 years |  |
 | SCT | In-cycle | 2 | 2 years |  |
 | Platinum | In-cycle | 1 | 2 years | 4 seats total. |
 | Ecosystem | In-cycle | 3 | 2 years |  |
-| Individual | Out of cycle | 1 | 1 year | GB member stepped down.  |
-| Silver | Out of cycle | 2 | 1 year | GB members stepped down. |
+| Individual | Out of cycle | 1 | 1 year | 1 GB member stepped down.  |
+| Silver | Out of cycle | 2 | 1 year | 2 GB members stepped down. |
 | Associate | Out of cycle | 1 | 1 year | Empty seat. |
 | Gold | Out of cycle | tbc | 1 year | 3 seats total. |
 
