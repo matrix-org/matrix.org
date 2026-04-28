@@ -149,3 +149,32 @@ h3 a {
     margin-right: 0.5rem;
     color: inherit;
 }
+
+.share-bar {
+    display: flex;
+    gap: 12px;
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e5e5;
+    font-size: 14px;
+    flex-wrap: wrap;
+
+    > span {
+        font-weight: 600;
+    }
+
+    a {
+        text-decoration: none;
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    @media (max-width: 767px) {
+        font-size: 12px;
+        gap: 8px;
+    }
+}
