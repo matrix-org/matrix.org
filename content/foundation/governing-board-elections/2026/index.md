@@ -31,7 +31,7 @@ This page is focused on the 2026 election cycle. We encourage you to [learn more
 
 ### Announcement (27th April)
 
-[We kickstarted the election process](@/blog/2026/04/2026-04-02-conference-announcement.md) in a blog post announcing the schedule, eligibility, and conditions of the vote.
+[We kickstarted the election process](@/blog/2026/04/2026-04-27-election-announcement.md) in a blog post announcing the schedule, eligibility, and conditions of the vote.
 
 This year, we are running elections for the following [constituency groups](@/foundation/governing-board/index.md):
 
@@ -95,7 +95,7 @@ there are a few things you should know:
   Please note our
   [community Code of Conduct](@/legal/code-of-conduct.md) while campaigning.
 
-For reference, you can find previous years' nominations in our [election center](@/foundation/governing-board-elections/_index.md) pages.
+For reference, you can find previous years' nominations in our [election centre](@/foundation/governing-board-elections/_index.md) pages.
 
 #### Expectations: what to consider before accepting a nomination
 

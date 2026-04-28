@@ -19,7 +19,7 @@ Read on for our [election schedule](#schedule), our current [elected representat
 
 ## What is the Governing Board
 
-This page is focused on the 2025 election cycle. We encourage you to [learn more about the Governing Board itself here.](/foundation/governing-board/) 
+This page is focused on the 2025 election cycle. We encourage you to [learn more about the Governing Board itself here](/foundation/governing-board/).
 
 ## Schedule
 
@@ -61,7 +61,7 @@ If you want to be a candidate in the election, there are a few things you should
 * You are encouraged to make yourself available for conversation with members of your constituency group.
 * The period for campaigning runs from May 17th to May 30th. Please note our [community Code of Conduct](/legal/code-of-conduct/) while campaigning.
 
-For reference, you can find last year's nominations on our [2024 election center](/foundation/governing-board-elections/2024/) page.
+For reference, you can find last year's nominations on our [2024 election centre](/foundation/governing-board-elections/2024/) page.
 
 ### Campaigning (May 17)
 
