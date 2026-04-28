@@ -17,17 +17,26 @@
 
 .cite-btn {
     display: inline-block;
-    padding: 0.2rem 0.7rem;
-    font-size: 0.82rem;
-    border: 1px solid var(--color-link);
-    border-radius: 4px;
-    color: var(--color-link);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-text);
+    background-color: #f0f0f0;
+    border: 1px solid #d2d2d2;
+    border-radius: 9999px;
+    padding: 0.3rem 0.9rem;
+    text-decoration: none;
     cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
 
     &:hover {
-        background-color: var(--color-link);
-        color: #fff;
+        background-color: #e4e4e4;
+        border-color: #aaa;
     }
+}
+
+.cite-copy-btn {
+    font-size: 0.78rem;
+    cursor: pointer;
 }
 
 // overlay
@@ -100,16 +109,18 @@
 }
 
 .cite-format-tab {
-    display: inline-block;
-    padding: 0.25rem 0.6rem;
     margin-right: 0.25rem;
     margin-bottom: 0.5rem;
+    cursor: pointer;
+    display: inline-block;
     font-size: 0.78rem;
     font-weight: 600;
-    border: 1px solid var(--borders-color);
-    border-radius: 4px;
-    cursor: pointer;
-    color: var(--color-text-light);
+    background-color: #f0f0f0;
+    border: 1px solid #d2d2d2;
+    border-radius: 9999px;
+    padding: 0.3rem 0.9rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
 
     &:hover {
         border-color: var(--color-link);
