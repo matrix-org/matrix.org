@@ -8,7 +8,6 @@
 const RESET_DELAY_MS = 2000;
 
 function resetCopyFeedback(button, status, timeoutId) {
-    button.textContent = "Copy";
     status.textContent = "";
     if (timeoutId !== undefined) {
         window.clearTimeout(timeoutId);
@@ -50,10 +49,8 @@ function enableCitationCopy(citation) {
 
         try {
             await navigator.clipboard.writeText(text.textContent.trim());
-            button.textContent = "Copied";
             status.textContent = "Copied";
         } catch (error) {
-            button.textContent = "Copy";
             status.textContent = "Copy failed";
         }
 
