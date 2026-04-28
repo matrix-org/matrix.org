@@ -4,7 +4,7 @@ title = "WanChat"
 [extra]
 thumbnail = "wanchat.png"
 maintainer = "WanChat"
-maturity = "Stable"
+maturity = "Beta"
 repo = "https://github.com/lj92458/wanchat-android"
 website = "https://wanchat.info"
 matrix_room = ""
