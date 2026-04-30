@@ -651,3 +651,15 @@ purpose = ["bot"]
 description = """
 A simple lightweight library for creating Matrix bots. Available on Hex.pm.
 """
+
+[[sdks]]
+name = "Halcyon"
+maintainer = "Wes Ring"
+maturity = "Beta"
+language = "Python"
+licence = "BSD-3-Clause"
+repository = "https://github.com/WesR/Halcyon"
+purpose = ["bot"]
+description = """
+An easy to use Matrix library inspired by discord.py.
+"""
