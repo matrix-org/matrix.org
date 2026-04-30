@@ -180,6 +180,7 @@ f_droid.app_id = "com.example.app"
 apple_app_store = { app_id = "id1234567890", org = "example" }
 flathub.app_id = "com.example.app"
 webapp = "https://chat.example.com"
+other_linux_link = "https://example.com/download"
 +++
 
 Supercharge your communications with Example Client.
