@@ -5,5 +5,6 @@ sort_by = "title"
 extra.navigation = false
 +++
 
+* [2026](2026) elections
 * [2025](2025) elections
 * [2024](2024) elections
