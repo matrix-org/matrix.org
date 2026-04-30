@@ -24,6 +24,8 @@ multi_account = true
 multi_language = true
 
 [extra.packages]
+windows_installer = "https://github.com/SchildiChat/schildi-revenge/releases/"
+other_linux_link = "https://github.com/SchildiChat/schildi-revenge/releases/"
 +++
 
 Desktop client focusing on customizable keyboard navigation and native multi-account support.
