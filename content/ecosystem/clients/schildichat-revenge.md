@@ -4,7 +4,7 @@ title = "SchildiChat Revenge"
 [extra]
 thumbnail = "schildichat-next.svg"
 maintainer = "SpiritCroc"
-maturity = "Beta"
+maturity = "Alpha"
 repo = "https://github.com/SchildiChat/schildi-revenge"
 website = "https://schildi.chat/revenge"
 matrix_room = "#revenge:schildi.chat"
