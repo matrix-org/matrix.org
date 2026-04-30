@@ -81,7 +81,7 @@ By making a contribution to this project, I certify that:
     this project or the open source license(s) involved.
 ```
 
-If you agree to this for your contribution, then all that's needed is to include the line in your commit or pull request comment:
+If you agree to this for your contribution, then all that's needed is to include the line in your commit:
 
 ```
 Signed-off-by: Your Name <your@email.example.org>
