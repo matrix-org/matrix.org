@@ -51,7 +51,7 @@ to be a candidate in the election within the same constituency.
 
 ## How to nominate?
 
-You can nominate someone to be a Governing Board member candidate by filling up
+You can nominate someone to be a Governing Board member candidate by filling in
 [this form](https://cryptpad.fr/form/#/2/form/view/EV0n4-jfuxdelALG05JSfMM0FL1FiBjj5asZ5AWo-n0/).
 Remember that all nominees must have consented to nomination *before being nominated*.
 
