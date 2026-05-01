@@ -17,7 +17,7 @@ We encourage you to read our [membership page](@/foundation/members/index.md) an
 Read on for our [election schedule](@/foundation/governing-board-elections/2026/index.md#schedule) and more information about the election process.
 This page will be continually updated over the course of the elections to list all of the [nominees](@/foundation/governing-board-elections/2026/index.md#nominees) and eventually [elected representatives](@/foundation/governing-board-elections/2026/index.md#elected-representatives).
 
-## What is the Governing Board
+## What is the Governing Board?
 
 This page is focused on the 2026 election cycle. We encourage you to [learn more about the Governing Board itself here](@/foundation/governing-board/index.md).
 
@@ -60,17 +60,20 @@ We want our Governing Board to be a clearing house for
 a variety of priorities and perspectives,
 and to be able to hold space for each other even when there are disagreements.
 
-<!-- Eligible members can proceed to nominations using [the Cryptpad nomination form]() or email the filled out [pdf form](/media/2026-nomination-form.pdf). -->
+You can nominate someone to be a Governing Board member candidate by filling out
+[this form](https://cryptpad.fr/form/#/2/form/view/EV0n4-jfuxdelALG05JSfMM0FL1FiBjj5asZ5AWo-n0/).
 
-We will share a link to a nomination form and a template document on Friday,
-1st May.
+We will review all nominations
+and confirm whether they have been accepted within 2 working days
+by emailing the nominee and the person who nominated them if relevant.
+
+If you encounter any issues with the form,
+you may fill in [this nomination form](/media/2026-nomination-form.pdf)
+and email it to <elections@foundation.matrix.org>.
+
 We’ll be reaching out to everyone who is eligible
 and whose contact information we have to let them know.
 We’ll also be announcing it on our social channels.
-
-All nominations should be submitted through the form,
-though anyone who has technical difficulties can fill out the template document
-and email it to [elections@foundation.matrix.org](mailto:elections@foundation.matrix.org).
 
 We will publish all of the nominees, and other details,
 here on this page on May 16th.
@@ -119,7 +122,7 @@ before signing up for a nomination.
 **All in all,
 we expect a GB member to spend a few hours a week on average
 in Governing Board activities,
-including Committee and WG involvement.**
+including Committee and Working Group involvement.**
 
 ### Campaigning (16th May)
 
