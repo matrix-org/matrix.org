@@ -1,0 +1,22 @@
+<div class="share-bar">
+  <span>Share:</span>
+
+  {% set full_url = config.base_url ~ page.permalink %}
+  {% set encoded_url = full_url | urlencode %}
+  {% set encoded_title = page.title | urlencode %}
+
+  {% set share_text = page.title ~ " " ~ full_url %}
+  {% set share_text_encoded = share_text | urlencode %}
+
+  <a href="https://share.joinmastodon.org/?text={{ share_text_encoded }}" target="_blank" rel="noopener noreferrer">Mastodon</a>
+
+  <a href="https://bsky.app/intent/compose?text={{ share_text_encoded }}" target="_blank" rel="noopener noreferrer">Bluesky</a>
+
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ full_url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+  <a href="https://news.ycombinator.com/submitlink?u={{ encoded_url }}&t={{ encoded_title }}" target="_blank" rel="noopener noreferrer">Hacker News</a>
+
+  <a href="https://lobste.rs/stories/new?url={{ encoded_url }}&title={{ encoded_title }}" target="_blank" rel="noopener noreferrer">Lobsters</a>
+
+  <a href="https://www.reddit.com/submit?url={{ encoded_url }}&title={{ encoded_title }}" target="_blank" rel="noopener noreferrer">Reddit</a>
+</div>

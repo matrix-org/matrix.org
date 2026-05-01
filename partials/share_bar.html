@@ -1,0 +1,20 @@
+<div class="share-bar">
+  <span>Share:</span>
+
+  {% set encoded_url = page.permalink | urlencode %}
+  {% set encoded_title = page.title | urlencode %}
+
+  {% set share_text = (page.title ~ " by @matrix@mastodon.matrix.org " ~ page.permalink) | urlencode %}
+
+  <a href="https://share.joinmastodon.org/?text={{ share_text }}" target="_blank" rel="noopener noreferrer">Mastodon</a>
+
+  <a href="https://bsky.app/intent/compose?text={{ share_text }}" target="_blank" rel="noopener noreferrer">Bluesky</a>
+
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ encoded_url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+  <a href="https://news.ycombinator.com/submitlink?u={{ encoded_url }}&t={{ encoded_title }}" target="_blank" rel="noopener noreferrer">Hacker News</a>
+
+  <a href="https://lobste.rs/stories/new?url={{ encoded_url }}&title={{ encoded_title }}" target="_blank" rel="noopener noreferrer">Lobsters</a>
+
+  <a href="https://www.reddit.com/submit?url={{ encoded_url }}&title={{ encoded_title }}" target="_blank" rel="noopener noreferrer">Reddit</a>
+</div>
