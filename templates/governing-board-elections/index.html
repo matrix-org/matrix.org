@@ -1,0 +1,18 @@
+{% extends "section.html" %}
+{% block content %}
+<div class="content">
+    <header>
+        <h1>{{ section.title }}</h1>
+    </header>
+
+    <ul>
+    {% for page in section.pages | reverse %}
+        <li>
+            <a href="{{ page.path }}">
+                {{ page.title | replace(from="Governing Board Elections", to="") }} elections
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
