@@ -4,7 +4,7 @@ title = "Starting the tickets sale for The Matrix Conference"
 
 [taxonomies]
 author = ["Thib"]
-category = ["Conference", "Events"]
+category = ["The Matrix Conference", "Events"]
 +++
 
 As announced previously, The Matrix Conference is set to take place in Malmö, Sweden, in October 2026.
@@ -17,6 +17,10 @@ To ensure you get the best deal, don’t wait until the last minute to register.
 
 We also have a special opportunity for those who want to contribute their time to make the event a success. Volunteers who enroll for two shifts or more on our [volunteering platform](https://volunteer.matrix.org/) will get a free ticket and a special-edition zipper hoodie.
 
-![A blue zipper hoodie as seen from the back. It has a logo of The Matrix Conference 2026 embroidered in yellow.](/blog/img/2026-05-04-conference-volunteer-hoodie.avif)
+{{ figure(
+    img="/blog/img/2026-05-04-conference-volunteer-hoodie.avif"
+    caption="Volunteers will receive an exclusive version of the zipper hoodie in Sweden colors."
+    alt="A blue zipper hoodie as seen from the back. It has a logo of The Matrix Conference 2026 embroidered in yellow."
+) }}
 
 We’re looking forward to seeing you in Malmö!
