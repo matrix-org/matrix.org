@@ -316,7 +316,7 @@ matrix_standard = true if it is compatible with Matrix standard apps, false if i
 
 ### Hosting providers
 
-Hosting provders are listed in [`/content/ecosystem/hosting/providers.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/hosting/providers.toml). It lists providers which provide Matrix components like servers or bots to customers. We require this section to only contain providers that do the actual hosting. Providers which either provide a setup script or only provide selfhosting should go into the in the future existing Distributions section instead.
+Hosting provders are listed in [`/content/ecosystem/hosting/providers.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/hosting/providers.toml). It lists providers which provide Matrix components like servers or bots to customers. We require this section to only contain providers that do the actual hosting. Providers which either provide a setup script or only provide selfhosting should go into the Distributions section instead.
 
 To add a hosting provider entry, add the following template to the `providers.toml`. Logos should be placed next to the toml file. A logo should be in the SVG format. However if this is not available a PNG is acceptable provided it has sufficient resolution while also having reasonable filesize.
 
