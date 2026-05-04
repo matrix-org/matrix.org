@@ -41,33 +41,33 @@ skip_anchor_prefixes = [
 # To enable the banner, either copy a pre-made template from below, paste it, and modify it if need be,
 # or write custom Markdown. To disable the banner, simply set the value to an empty string ("").
 #
-# cfp: "We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
+# cfp: "📢 We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
 # on <dates> in <location>. [Learn more](https://conference.matrix.org) about it, 
 # or [submit a proposal](https://cfp.<year>.matrix.org/matrix-conference-<year>/cfp)!"
 #
-# awaiting_schedule: "We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
+# awaiting_schedule: "🎟️ We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
 # on <dates> in <location>. [Learn more](https://conference.matrix.org) about it, 
 # [buy a ticket](https://conference.matrix.org/register/)!"
 #
-# scheduled: "We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
+# scheduled: "🗓️ We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
 # on <dates> in <location>. [Learn more](https://conference.matrix.org) about it, 
 # [buy a ticket](https://conference.matrix.org/register/), or 
 # [check the schedule](https://conference.matrix.org/schedule/)!"
 #
-# no_tickets: "We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
+# no_tickets: "🗓️ We are happy to launch [The Matrix Conference](https://conference.matrix.org) 
 # on <dates> in <location>. [Learn more](https://conference.matrix.org) about it, 
 # or [check the schedule](https://conference.matrix.org/schedule/)!"
 #
-# live: "[The Matrix Conference](https://conference.matrix.org) is live. 
+# live: "🗣️ [The Matrix Conference](https://conference.matrix.org) is live. 
 # [Check the livestreams](https://conference.matrix.org/watch/)!"
 #
-# watch-recordings: "[The Matrix Conference](https://conference.matrix.org) is over, 
+# watch-recordings: "📺 [The Matrix Conference](https://conference.matrix.org) is over, 
 # and the [recordings](https://conference.matrix.org/watch/) are here!"
 #
-# governing_board_elections: "We are holding our Governing Board elections. Find 
+# governing_board_elections: "🗳️ We are holding our Governing Board elections. Find 
 # all the information [on the elections page](https:/matrix.org/foundation/governing-board-elections/<year>/)."
 banner = """
-We are happy to launch [The Matrix Conference](https://conference.matrix.org) on 20th-23rd October in Malmö, Sweden. [Submit a proposal](https://cfp.2026.matrix.org/matrix-conference-2026/cfp)!
+📢 We are happy to launch [The Matrix Conference](https://conference.matrix.org) on 20th-23rd October in Malmö, Sweden. [Submit a proposal](https://cfp.2026.matrix.org/matrix-conference-2026/cfp)!
 
-We are holding our Governing Board elections. Find all the information [on the elections page](/foundation/governing-board-elections/2026/).
+🗳️ We are holding our Governing Board elections. Find all the information [on the elections page](/foundation/governing-board-elections/2026/).
 """
