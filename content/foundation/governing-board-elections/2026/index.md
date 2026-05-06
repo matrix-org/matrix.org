@@ -50,8 +50,8 @@ This year, we are running elections for the following [constituency groups](@/fo
 <!-- Nominations for the 2026 elections are complete, and you can [find the nominees below](@/foundation/governing-board-elections/2026/index.md#nominees). -->
 
 You must be a member of one of the constituency groups
-in order to nominate yourself or someone else
-to be a candidate in the election within the same constituency.
+in order to nominate yourself or another member of the same constituency
+to be a candidate in the election.
 
 All nominees must have consented to nomination *before being nominated*
 and must be a community member in good standing.
