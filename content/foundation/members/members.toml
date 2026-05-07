@@ -134,6 +134,11 @@ website = "https://conduit.rs/"
 logo = "conduit.svg"
 
 [[ecosystem]]
+name = "Continuwuity"
+website = "https://continuwuity.org/"
+logo = "continuwuity.svg"
+
+[[ecosystem]]
 name = "Draupnir"
 website = "https://github.com/the-draupnir-project/Draupnir"
 logo = "draupnir.png"
