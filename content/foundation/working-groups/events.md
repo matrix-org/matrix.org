@@ -1,6 +1,7 @@
 +++
 title = "Events WG"
 template = "governing-board/working_group.html"
+extra.summary = "Information about the Matrix.org Events Working Group"
 +++
 
 ## Activities
@@ -37,4 +38,3 @@ If you have an event you're organizing and want listed in the space, you should 
 Please reach out to the WG via its Matrix room [#events-wg:matrix.org](https://matrix.to/#events-wg:matrix.org) or privately by email to [events-wg@foundation.matrix.org](mailto:events-wg@foundation.matrix.org).
 The Events WG will check against the policy and notify you about the decision to include it or not.
 WG decisions may be overruled by the Foundation's Trust & Safety team.
-

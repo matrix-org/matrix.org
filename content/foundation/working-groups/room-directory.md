@@ -1,6 +1,7 @@
 +++
 title = "Room Directory WG"
 template = "governing-board/working_group.html"
+extra.summary = "This working group's primary purpose is receiving and processing requests about the room directory of the matrix.org homeserver."
 +++
 
 ## Activities

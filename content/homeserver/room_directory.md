@@ -1,6 +1,7 @@
 +++
 title = "Matrix.org Room Directory"
 weight = 30
+extra.summary = "The published room directory of a Matrix homeserver is a great way to discover rooms and spaces."
 +++
 
 The published room directory of a Matrix homeserver is a great way to discover rooms and spaces. It’s often the starting point for new users who want to explore the network.
