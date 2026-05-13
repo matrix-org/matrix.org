@@ -49,7 +49,7 @@ This year, we are running elections for the following [constituency groups](@/fo
 
 <!-- Nominations for the 2026 elections are complete, and you can [find the nominees below](@/foundation/governing-board-elections/2026/index.md#nominees). -->
 
-You must be a member of a constituency group to nominate yourself,
+You must be a [member](@/foundation/members/index.md) of a constituency group to nominate yourself,
 or another member of that group, as a candidate in the election.
 
 All nominees must have consented to nomination *before being nominated*
@@ -144,7 +144,7 @@ We have [a dedicated Matrix space](https://matrix.to/#/#governing-board-nominee-
 
 <!-- Voting is complete and ran till June 13th. -->
 
-All members of each constituency group are entitled to vote on
+All [members](@/foundation/members/index.md) of each constituency group are entitled to vote on
 the candidates within that constituency group.
 We will be reaching out to everyone we have contact information for,
 to ensure we have our voter rolls together before voting begins at the end of May.
