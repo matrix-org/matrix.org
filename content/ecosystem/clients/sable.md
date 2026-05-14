@@ -18,6 +18,7 @@ spaces = true
 voip_1to1 = false
 voip_jitsi = false
 sso = true
+oauth = false
 threads = true
 multi_account = true
 multi_language = false
