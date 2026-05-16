@@ -40,8 +40,8 @@
         <div class="nominees-buttons-row">
             <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
         </div>
-        {% for individual in nominees.individual_members %}
-        {{ nominee::individual(individual=individual) }}
+        {% for candidate in nominees.individual_members %}
+        {{ nominee::candidate(candidate=candidate) }}
         {% endfor %}
     </div>
     {% endif %}
@@ -54,8 +54,8 @@
         <div class="nominees-buttons-row">
             <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
         </div>
-        {% for representative in nominees.ecosystem_members %}
-        {{ nominee::project(representative=representative) }}
+        {% for candidate in nominees.ecosystem_members %}
+        {{ nominee::candidate(candidate=candidate) }}
         {% endfor %}
     </div>
     {% endif %}
@@ -67,8 +67,8 @@
         <div class="nominees-buttons-row">
             <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
         </div>
-        {% for representative in nominees.associate_members %}
-        {{ nominee::project(representative=representative) }}
+        {% for candidate in nominees.associate_members %}
+        {{ nominee::candidate(candidate=candidate) }}
         {% endfor %}
     </div>
     {% endif %}
@@ -80,8 +80,8 @@
         <div class="nominees-buttons-row">
             <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
         </div>
-        {% for representative in nominees.platinum_members %}
-        {{ nominee::project(representative=representative) }}
+        {% for candidate in nominees.platinum_members %}
+        {{ nominee::candidate(candidate=candidate) }}
         {% endfor %}
     </div>
     {% endif %}
@@ -93,8 +93,8 @@
         <div class="nominees-buttons-row">
             <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
         </div>
-        {% for representative in nominees.gold_members %}
-        {{ nominee::project(representative=representative) }}
+        {% for candidate in nominees.gold_members %}
+        {{ nominee::candidate(candidate=candidate) }}
         {% endfor %}
     </div>
     {% endif %}
@@ -106,8 +106,8 @@
         <div class="nominees-buttons-row">
             <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
         </div>
-        {% for representative in nominees.silver_members %}
-        {{ nominee::project(representative=representative) }}
+        {% for candidate in nominees.silver_members %}
+        {{ nominee::candidate(candidate=candidate) }}
         {% endfor %}
     </div>
     {% endif %}
@@ -119,8 +119,8 @@
         <div class="nominees-buttons-row">
             <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
         </div>
-        {% for guardian in nominees.guardians %}
-        {{ nominee::individual(individual=guardian) }}
+        {% for candidate in nominees.guardians %}
+        {{ nominee::candidate(candidate=candidate) }}
         {% endfor %}
     </div>
     {% endif %}
@@ -130,12 +130,10 @@
     <h3 id="sct-nominees">Spec Core Team Members (Max. {{ seats }} Seat{{ seats | pluralize }})</h3>
     <div class="nominees">
         <div class="nominees-buttons-row">
-            <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">
-                Collapse all
-            </button>
+            <button class="expand-all">Expand all</button> &ndash; <button class="collapse-all">Collapse all</button>
         </div>
-        {% for individual in nominees.sct_members %}
-        {{ nominee::individual(individual=individual) }}
+        {% for candidate in nominees.sct_members %}
+        {{ nominee::candidate(candidate=candidate) }}
         {% endfor %}
     </div>
     {% endif %}

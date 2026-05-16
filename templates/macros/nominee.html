@@ -1,39 +1,18 @@
-{% macro individual(individual) %}
+{% macro candidate(candidate) %}
 <details class="nominee">
-    <summary>{{ individual.name }} {% if individual.pronouns %}({{ individual.pronouns }}){% endif %}</summary>
+    <summary>{{ candidate.name }} {% if candidate.pronouns %}({{ candidate.pronouns }}){% endif %}{% if candidate.project %} - {{
+        candidate.project }}{% endif %}</summary>
     <h4>Biography</h4>
-    {% if individual.bio %}
-    {{ individual.bio | markdown() | safe }}
+    {% if candidate.bio %}
+    {{ candidate.bio | markdown() | safe }}
     {% else %}
     <p>(The candidate submitted no biography.)</p>
     {% endif %}
     <h4>Platform Statement</h4>
-    {% if individual.platform_statement %}
-    {{ individual.platform_statement | markdown() | safe }}
-    {% if individual.extended_platform %}
-    <p><a href="{{ individual.extended_platform | safe }}" target="_blank">Read this candidate's extended platform.</a></p>
-    {% endif %}
-    {% else %}
-    <p>(The candidate submitted no platform statement.)</p>
-    {% endif %}
-</details>
-{% endmacro %}
-
-{% macro project(representative) %}
-<details class="nominee">
-    <summary>{{ representative.name }} {% if representative.pronouns %}({{ representative.pronouns }}){% endif %} - {{
-        representative.project }}</summary>
-    <h4>Biography</h4>
-    {% if representative.bio %}
-    {{ representative.bio | markdown() | safe }}
-    {% else %}
-    <p>(The candidate submitted no biography.)</p>
-    {% endif %}
-    <h4>Platform Statement</h4>
-    {% if representative.platform_statement %}
-    {{ representative.platform_statement | markdown() | safe }}
-    {% if representative.extended_platform %}
-    <p><a href="{{ representative.extended_platform | safe }}" target="_blank">Read this candidate's extended platform.</a></p>
+    {% if candidate.platform_statement %}
+    {{ candidate.platform_statement | markdown() | safe }}
+    {% if candidate.extended_platform %}
+    <p><a href="{{ candidate.extended_platform | safe }}" target="_blank">Read this candidate's extended platform.</a></p>
     {% endif %}
     {% else %}
     <p>(The candidate submitted no platform statement.)</p>
