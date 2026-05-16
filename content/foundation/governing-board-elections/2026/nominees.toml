@@ -7,3 +7,14 @@
 # [[silver_members]]
 # [[guardians]]
 # [[sct_members]]
+
+# Off-cycle elections may use different amounts of seats that can be given by this list
+[seats]
+individual = 1
+# ecosystem = 3
+associate = 1
+# platinum = 4
+# gold = 3
+# silver = 2
+# guardians = 3
+# sct = 2
