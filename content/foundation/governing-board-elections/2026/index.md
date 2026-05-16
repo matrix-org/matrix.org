@@ -14,6 +14,7 @@ We encourage you to read our [membership page](@/foundation/members/index.md) an
 
 * 2026-04 [Announcing the 2026 Governing Board elections](@/blog/2026/04/2026-04-27-election-announcement.md)
 * 2026-05 [Kicking off the nomination period for the 2026 Governing Board elections](@/blog/2026/05/2026-05-02-election-nomination.md)
+* 2026-05 [Announcing the candidates and kicking off the campaigning](@/blog/2026/05/2026-05-16-election-campaigning.md)
 
 Read on for our [election schedule](@/foundation/governing-board-elections/2026/index.md#schedule) and more information about the election process.
 This page will be continually updated over the course of the elections to list all of the [nominees](@/foundation/governing-board-elections/2026/index.md#nominees) and eventually [elected representatives](@/foundation/governing-board-elections/2026/index.md#elected-representatives).
