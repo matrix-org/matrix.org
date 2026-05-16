@@ -48,6 +48,7 @@ platform_statement = """I want to help strengthen Matrix as a foundation for ind
 I believe open protocols and interoperable platforms are essential for Europe’s digital sovereignty and long-term strategic autonomy.
 My focus will be on supporting broader adoption of Matrix in professional and public-sector environments, while helping build stronger collaboration between companies and communities across the ecosystem.
 I believe the long-term success of Matrix depends not only on strong technology, but also on sustainable commercial ecosystems, practical usability, and partnerships that enable open infrastructure to compete with centralized platforms at scale."""
+extended_platform = "https://meedio.me"
 
 [[silver_members]]
 name = "Yoan Pintas"
@@ -90,6 +91,7 @@ Jade is passionate about resilience, technology, safety in online communities (w
 You may occasionally find her writing explainers or investigating something new."""
 platform_statement = """Jade likes to listen more than she speaks – and she knows there's a lot to listen to! She will bring concerns, knowledge and advice from the ecosystem together to drive forwards a coherent vision for the public's experience of matrix, with a strong focus on safety, user experience and reliability.
 With the support of the Continuwuity team behind her, she aims to leave Matrix better than she found it."""
+extended_platform = "https://jade.ellis.link"
 
 [[ecosystem_members]]
 name = "Ajay Bura"
@@ -111,6 +113,7 @@ Apart from that, I’m a community member not affiliated with any for-profit org
 I'm already in process of contributing by pushing my work on Cinny and around.
 If elected, I can help steward the foundation for common good and to grow trust.
 """
+extended_platform = "https://ajbura.github.io"
 
 [[ecosystem_members]]
 name = "Nico (Nicolas Werner)"
@@ -244,6 +247,7 @@ Works at Red Hat as a solution architect for telecommunications, specialising in
 Based in the Netherlands."""
 platform_statement = """As a long-time SCT member, I’ve seen our team evolving over many years and I can articulate my observations, the course we take, and the value we give to the community from an independent, “unincorporated” position that I’ve been in for all that time.
 Matrix is growing bigger and the world around it is more complex than ever, technologically as well; with my software architect background I can help the Governing Board to navigate it in both technical and non-technical discussions, as well as translate the external requirements and situation between the SCT and the wider Matrix community."""
+extended_platform = "https://linkedin.com/in/alexeyrusakov"
 
 [[guardians]]
 name = "Ross Schulman"
