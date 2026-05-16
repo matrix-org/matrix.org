@@ -14,6 +14,7 @@ We encourage you to read our [membership page](@/foundation/members/index.md) an
 
 * 2026-04 [Announcing the 2026 Governing Board elections](@/blog/2026/04/2026-04-27-election-announcement.md)
 * 2026-05 [Kicking off the nomination period for the 2026 Governing Board elections](@/blog/2026/05/2026-05-02-election-nomination.md)
+* 2026-05 [Announcing the candidates and kicking off the campaigning](@/blog/2026/05/2026-05-16-election-campaigning.md)
 
 Read on for our [election schedule](@/foundation/governing-board-elections/2026/index.md#schedule) and more information about the election process.
 This page will be continually updated over the course of the elections to list all of the [nominees](@/foundation/governing-board-elections/2026/index.md#nominees) and eventually [elected representatives](@/foundation/governing-board-elections/2026/index.md#elected-representatives).
@@ -47,7 +48,7 @@ This year, we are running elections for the following [constituency groups](@/fo
 
 ### Nominations (2nd May)
 
-<!-- Nominations for the 2026 elections are complete, and you can [find the nominees below](@/foundation/governing-board-elections/2026/index.md#nominees). -->
+Nominations for the 2026 elections are complete, and you can [find the nominees below](@/foundation/governing-board-elections/2026/index.md#nominees).
 
 You must be a member of a constituency group to nominate yourself,
 or another member of that group, as a candidate in the election.
@@ -126,6 +127,8 @@ including Committee and Working Group involvement.**
 
 ### Campaigning (16th May)
 
+We now have a [final list of nominees](@/foundation/governing-board-elections/2026/index.md#nominees) for the 2026 elections of the Governing Board!
+
 The campaign period is an opportunity for candidates to share more about themselves and their priorities. We encourage candidates to engage with the rest of the ecosystem, and in particular those who are part of the same constituency group.
 
 We have [a dedicated Matrix space](https://matrix.to/#/#governing-board-nominee-campaigning-bonfire:matrix.org) with rooms for candidates and constituents to communicate with one another:
@@ -201,6 +204,6 @@ All of the winners will be announced here on 15th June.
 
 ## Nominees
 
-All of the candidates will be listed here starting 16th May.
+<!-- All of the candidates will be listed here starting 16th May. -->
 
-<!-- We are honored to present the nominees for the Governing Board elections, and are grateful to everyone who has raised their hands. We are positively overwhelmed by the enthusiasm and vision expressed by our nominees. -->
+We are honored to present the nominees for the Governing Board elections, and are grateful to everyone who has raised their hands. We are positively overwhelmed by the enthusiasm and vision expressed by our nominees!

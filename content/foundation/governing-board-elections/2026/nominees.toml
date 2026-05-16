@@ -1,9 +1,278 @@
 # Categories can be any of
+# [[individual_members]]
+# [[ecosystem_members]]
+# [[associate_members]]
 # [[platinum_members]]
 # [[gold_members]]
 # [[silver_members]]
-# [[ecosystem_members]]
-# [[associate_members]]
-# [[individual_members]]
-# [[sct_members]]
 # [[guardians]]
+# [[sct_members]]
+
+# Off-cycle elections may use different amounts of seats that can be given by this list
+[seats]
+individual = 1
+# ecosystem = 3
+associate = 1
+# platinum = 4
+# gold = 3
+# silver = 2
+# guardians = 3
+# sct = 2
+
+[[platinum_members]]
+name = "Neil Johnson"
+pronouns = ""
+project = "Element"
+bio = """Neil has been a Matrix community member since before launch in 2014. Since 2017, he has held the role of VP of Engineering Management and, later, Chief Engineering Officer at Element.
+
+In this capacity, he has grown and supported the Element engineering organisation and has been involved in all aspects of Element’s technical contribution to Matrix overall.
+
+Before that, he held various engineering leadership roles, starting his career as a software engineer with a focus on messaging and telephony.
+"""
+platform_statement = """At [FOSDEM this year](https://www.youtube.com/watch?v=EngsGD30Ow0&list=PLiJeGYCxF7INHmqgSgGu8BaNROz63vUnK&index=3) I made the point that ‘decentralisation without sustainability is just deferred centralisation’.
+
+To be sustainable, we need a Matrix with a strong, independent Foundation, separate from Element. Disentangling can be surprisingly tricky, and the Matrix Governing board is there to help the Foundation (along with other Foundation staff) to help set it up for success.
+
+Over the past two years, I have been working primarily towards governance and finance. Informally taking on chair responsibilities for the Governance committee. In particular, I have been trying to figure out how to help projects express their maturity and also trying to make it easier for community members to contribute to Foundation projects.
+
+If I am re-elected, I will continue on this path, working across the board and ecosystem to create a truly independent Foundation.
+"""
+
+[[silver_members]]
+name = "Runi Hammer"
+pronouns = ""
+project = "Meedio"
+bio = """Runi Hammer is an entrepreneur and TEDx speaker who has co-founded several technology startups in artificial intelligence and nanotechnology, where he holds a patent.
+He is the founder and CEO of Meedio, a European software company delivering a professional collaboration and communications platform built on Matrix, combining secure messaging, video meetings, and modern workplace communication tools."""
+platform_statement = """I want to help strengthen Matrix as a foundation for independent European communications infrastructure.
+I believe open protocols and interoperable platforms are essential for Europe’s digital sovereignty and long-term strategic autonomy.
+My focus will be on supporting broader adoption of Matrix in professional and public-sector environments, while helping build stronger collaboration between companies and communities across the ecosystem.
+I believe the long-term success of Matrix depends not only on strong technology, but also on sustainable commercial ecosystems, practical usability, and partnerships that enable open infrastructure to compete with centralized platforms at scale."""
+extended_platform = "https://meedio.me"
+
+[[silver_members]]
+name = "Yoan Pintas"
+pronouns = ""
+project = "DINUM"
+bio = """Yoan is a long time member of the Matrix ecosystem.
+He was at first an employee of Element developing Android/iOS client customisation in relation with customers (mainly Tchap), before continuing his Matrix journey by working directly for the French government deployment, Tchap.
+He is now the product lead of Tchap, and promote actively Matrix around all French public sector (local authorities) and beyond (EU states or commission)."""
+platform_statement = """As a representative supported by DINUM, I want to help establish Matrix as the trusted open communication standard for European public administrations.
+
+My goal is to promote Matrix as an official interoperable messaging protocol used across EU member states, European institutions, and the wider public sector. At a time when digital sovereignty has become a strategic priority, it is more important than ever to ensure that governments retain control over their communications, infrastructure, and data rather than depending on proprietary platforms.
+
+I believe Matrix provides a unique opportunity to build secure, federated, and interoperable public communications based on open standards and open-source technologies.
+
+On the Governing Board, I would support the long-term sustainability of the Foundation, encourage collaboration between governments and the Matrix ecosystem, and help accelerate adoption of Matrix in large-scale public-sector environments across Europe.
+"""
+
+[[silver_members]]
+name = "Niklas Zender"
+pronouns = ""
+project = "Famedly"
+bio = """I'm the founder of Famedly.
+I've been working with Matrix since 2019, deploying it in some of the most regulated environments around — German hospitals.
+I was one of the key drivers behind getting Matrix adopted as Germany's TI-Messenger, and I'm currently pushing for Matrix as the basis for sovereign communication infrastructure in the German public sector.
+I'm technology-open by nature and always focused on what's best for users — which is why I keep coming back to Matrix as the right answer."""
+platform_statement = """Matrix only wins long-term if it's genuinely independent.
+That's not a given — and it's the main reason I want to be on the board.  
+What I want to bring to the board is a founder's perspective — someone who thinks about the technical and the business side at the same time.
+Running an organisation means dealing with funding, governance, and hard trade-offs constantly. That's exactly what a foundation needs too, and it's often underrepresented at board level.  
+I'd focus on three things: the Foundation's financial sustainability and how it communicates its value to potential members and sponsors; making sure Matrix delivers on its core promise for everyone — private, interoperable, secure communication that doesn't depend on any single company; and making the Foundation work better for everyone building on or with Matrix — whether that's an organisation shipping a product or an individual contributing to the ecosystem.  
+I want to be more involved in what Matrix becomes. This is how.
+"""
+
+[[ecosystem_members]]
+name = "Jade Ellis"
+pronouns = ""
+project = "Continuwuity"
+bio = """Jade is a longtime contributor to open source, and currently heads up the Continuwuity Matrix server project.
+Jade is passionate about resilience, technology, safety in online communities (working with the Matrix Shared Safety Guild) and music (contributing to the MusicBrainz project, too!) Her work is felt across the ecosystem.
+You may occasionally find her writing explainers or investigating something new."""
+platform_statement = """Jade likes to listen more than she speaks – and she knows there's a lot to listen to! She will bring concerns, knowledge and advice from the ecosystem together to drive forwards a coherent vision for the public's experience of matrix, with a strong focus on safety, user experience and reliability.
+With the support of the Continuwuity team behind her, she aims to leave Matrix better than she found it."""
+extended_platform = "https://jade.ellis.link"
+
+[[ecosystem_members]]
+name = "Ajay Bura"
+pronouns = ""
+project = "Cinny"
+bio = """Hello, I am Ajay Bura.
+I am a lead developer of [Cinny](https://cinny.in) Matrix client from five-years, and was in the team behind [Third Room](https://thirdroom.io).
+I have been continuously gaining experience in matrix spec based development and known to a lot of twist and turns.
+My expertise also involved UI designing, implementing them in pixel perfect accuracy on Web."""
+platform_statement = """Matrix is growing in masses than ever before, so does their demands from the ecosystem.
+Therefore, ecosystem will have to grow out of standard chat based product offerings.
+However, it is not as simple as stated, one has to build these to be served.
+It is hard for ecosystem members to provide these by going out of their own tracks.
+
+Thus, I wanted to push more barebone composable kits/features within the current ecosystem, which can than be consumed by the incoming commons.
+This will not only help in creating more application on-top Matrix protocol, but will also create more stakes into the community, resulting in overall rich growth.
+
+Apart from that, I’m a community member not affiliated with any for-profit organization.
+I'm already in process of contributing by pushing my work on Cinny and around.
+If elected, I can help steward the foundation for common good and to grow trust.
+"""
+extended_platform = "https://ajbura.github.io"
+
+[[ecosystem_members]]
+name = "Nico (Nicolas Werner)"
+pronouns = ""
+project = "Nheko"
+bio = """I am one of the Nheko maintainers.
+I am heavily involved in the Community Moderation Effort.
+
+I am currently employed by Famedly to work on their Matrix stuff.
+I chose Famedly originally, because it was one of the smaller Matrix companies in the ecosystem and I wanted to support a more equal power distribution of companies in the Matrixsphere.
+
+I wrote a few MSCs, primarily trying to clean up old warts in Matrix and improving edge cases.
+I fixed a few big bugs in various projects all over Matrix (unbanning users from single user servers, calls via Element on not-synapse, replies, etc).
+
+I've been active on the Governing Board for 2 years.
+"""
+platform_statement = """I want Matrix to be a comfy place.
+This sounds trivial, but actually requires work in many areas:
+- Fixing UX issues in clients and the protocol to reduce frustration and friction.
+- Ensure people exist where you need them. Be that active moderators, people who can answer questions or people who can review your contributions.
+- Community guidelines and guidance to ensure anybody feels welcome and empowered to contribute.
+- Reduce grudges and tear down walls, that might block people from collaborating.
+
+Additionally I want to make sure Matrix is sustainable long-term.
+This means long standing issues get addressed.
+But it also means to ensure diversity and reduce single points of failure.
+One big example here is the historic special relationship of Element in the Foundation.
+Matrix should not be reliant on a single major sponsor pushing the ecosystem forward.
+Instead governance and transparency should ensure a balance is kept between the community and between all of the different commercial interests in Matrix.
+And it also means people shouldn't feel like they have to solve everything alone.
+
+Because of how draining GB work is, I actually only decided last minute to run a second time.
+Feel free to vote for others if there are other nominees.
+Or chat with me in the ecosystem room!
+"""
+
+[[ecosystem_members]]
+name = "Kim Brose (HarHarLinks)"
+pronouns = ""
+project = "Matrix Community Events"
+bio = """I started my free software as well as privacy centric journey at university.
+The amount of services I host for my family and friends is steadily growing ever since.
+In early 2017 I discovered Matrix in an effort to move my friends off proprietary messengers and into a self-hosted, sovereign, end-to-end encrypted, modern and feature-rich system.
+I joined Matrix Community Summit 2022 and have been rallying a group "Matrix Community Events" organising Matrix-related events or representing at other events since.
+I work on all kinds of Matrix-related software as a systems architect at Nordeck."""
+platform_statement = """I joined the Matrix ecosystem first as a homeserver owner and admin for a small community, giving me the perspective of the private and less technical end user through my server's users.
+Nowadays, I also get to experience the business side of Matrix every day at work.
+
+I was lucky to be elected to the first Governing Board 2 years ago and serve a full term as its vice chair.
+A lot of the work has been bootstrapping a lot of the processes we have today.
+Beyond that, I successfully established and continue to sponsor the Events Working Group and Website & Content Working Group who are taking over significant everyday work at the Foundation today and help shape its public relations in doing so.
+
+I look forward to growing the activity and involvement of the Board at the Foundation, expanding the set of Working Groups and community contributors therein, continuing to introduce missing policies and processes for the Foundation, and continuing efforts for more transparency.
+"""
+
+[[individual_members]]
+name = "Max"
+pronouns = ""
+project = ""
+bio = """Max is a self-hoster in his early 30s, a longtime Linux user, and an out member of the LGBTQ+ community.
+He runs his own Matrix homeserver and has been active in online and in-person communities since his late teens.
+Across years of volunteering, he has organized community spaces, led volunteer teams, moderated difficult discussions, and helped groups get practical work done through consensus and shared responsibility.
+He is passionate about making federated, sovereign communication easier to understand, maintain, and advocate for.
+Outside of Matrix, he tinkers with container tooling and helps others navigate self-hosting."""
+platform_statement = """Matrix already has the foundation for a sovereign, federated future.
+I want to contribute by making it easier for more people to use, run, contribute to, and feel welcome in Matrix.
+As a homeserver admin and community volunteer, I would focus on practical work that strengthens the ecosystem.  
+If elected, my priorities would be:
+- Adoption and onboarding: Make Matrix easier to explain and start using, with clearer user journeys, better defaults, and friendlier docs.
+- Homeserver admins and self-hosting: Support people who run Matrix infrastructure with practical docs, upgrade guidance, troubleshooting resources, and admin support.
+- Education and outreach: Tell the Matrix story clearly: why sovereign communication matters, how federation works, and how people can participate.
+- Trust and safety: Continue supporting Trust and Safety work, better moderation tooling, and a culture where people feel safe and welcome.
+- Foundation coordination: Encourage coordination between board members, clearer shared goals, accessible governance, and outreach to community members and ecosystem partners.
+- Community and non-commercial use: Support personal, community-led, volunteer, and self-hosted uses of Matrix alongside business adoption, recognizing the people who keep the network vibrant.
+"""
+
+[[individual_members]]
+name = "Reid Anderson"
+pronouns = ""
+project = ""
+bio = """Reid has closely followed open-source software for 15 years, Matrix since 2018, and has donated monthly to the Matrix Foundation since 2021.
+He started as a developer building extensions and making small code contributions to Mozilla products.
+He unfortunately saw first-hand the danger and difficulty in open-source funding as a community contributor to Songbird, a now-defunct open-source music player whose corporate sponsor went out of business.
+He is a fundraiser and president of a local service club and currently works as a principal software engineer for a large logistics company."""
+platform_statement = """I believe the most important factor for the future of Matrix is that the Matrix Foundation must be able to function, grow, and fund itself independently of Element - even with the significant progress that has been made.
+It's impossible to overstate how much of a debt the Matrix community owes Element for their generosity in creating and shepherding the standard to this point, and continued support.
+But for Matrix to be sustainable in the long term, there needs to be true independence between the Foundation and any individual corporate sponsor.
+This means strong institutions that are responsive to the community, with members that are independent.
+Helping to build and fund an effective community body is what motivates me.
+My focus would be to communicate the work that the Foundation is doing as an independent entity and additional potential pathways for fundraising.
+Specifically highlighting the exciting things that could be done with additional funding and how similar software foundations pursue funding.
+As just one of many members on the board, I believe a positive and transparent fundraising message will help me contribute beyond just my vote.
+Let's fund and build some cool stuff together."""
+
+[[individual_members]]
+name = "Mathieu Velten"
+pronouns = ""
+project = ""
+bio = """Mathieu is a long time advocate and contributor to Matrix, first as an amateur and then professionally, for Element then Tchap French deployment.
+He is currently working to open the French federation to third trusted parties."""
+platform_statement = """As an individual member of the Matrix Foundation, I want to help strengthen technical collaboration across the Matrix ecosystem and encourage closer cooperation between the teams building and operating Matrix-based solutions.
+
+My goal is to foster a more active and structured community around interoperability, knowledge sharing, and collaboration on common technical challenges.
+I believe that stronger cooperation between contributors can significantly improve the quality, maturity, and adoption of Matrix.
+
+I also want to contribute to improving the Matrix protocol itself by supporting better standardization around registration flows, onboarding mechanisms, and interoperability features that can make Matrix-based services easier to adopt and integrate.
+
+Matrix has the potential to become a core communication layer for open and interoperable digital infrastructures.
+On the Governing Board, I would support the continued evolution of the protocol, collaboration across the ecosystem, and practical improvements that make Matrix easier to deploy, operate, and adopt at scale.
+"""
+
+[[sct_members]]
+name = "Richard van der Hoff"
+pronouns = ""
+project = ""
+bio = """I joined the Matrix Project in 2015 and was part of the founding "Matrix Core Team" that formed New Vector in 2017.
+Since then, I have worked as a software engineer in a number of areas, including Synapse, Element Web and Cryptography, and have played a significant role in the evolution of the Matrix protocol.
+
+I have over 25 years of experience as a software engineer, mostly working on internet and communications applications.
+I believe in developing well-designed but pragmatic solutions to engineering problems.
+"""
+platform_statement = """(The candidate submitted no platform statement.)"""
+
+[[sct_members]]
+name = "Alexey “Kitsune” Rusakov"
+pronouns = ""
+project = ""
+bio = """Lead developer of libQuotient and Quaternion.
+Joined the Matrix project in 2016; became a part of Spec Core Team in 2018, its first independent member.
+Works at Red Hat as a solution architect for telecommunications, specialising in Ansible and AI infrastructure.
+Based in the Netherlands."""
+platform_statement = """As a long-time SCT member, I’ve seen our team evolving over many years and I can articulate my observations, the course we take, and the value we give to the community from an independent, “unincorporated” position that I’ve been in for all that time.
+Matrix is growing bigger and the world around it is more complex than ever, technologically as well; with my software architect background I can help the Governing Board to navigate it in both technical and non-technical discussions, as well as translate the external requirements and situation between the SCT and the wider Matrix community."""
+extended_platform = "https://linkedin.com/in/alexeyrusakov"
+
+[[guardians]]
+name = "Ross Schulman"
+pronouns = ""
+project = ""
+bio = """Ross is a policy technologist with a background in privacy, identity, cybersecurity, and surveillance.
+He has been involved in the Matrix community since he met the founders at an Internet Archive decentralized web event over a decade ago and currently sits as a Guardian on the Matrix Foundation board of directors.
+In his non-Matrix time, he works as a software engineer for a digital identity company."""
+platform_statement = """My overarching goal is to keep the Matrix ecosystem developing, and to see the Foundation continue its important work of helping the community be as strong as it can be.
+I am interested in increasing the stability of the Foundation, helping it become self-sufficient, and helping it address its most severe challenges, such as ongoing content moderation and increasing the pace of spec development.
+As a Guardian I also aim to be a conduit between the Governing Board and the legal leadership of the Foundation."""
+
+[[guardians]]
+name = "Matthew Hodgson"
+pronouns = ""
+project = ""
+bio = """Matthew is co-founder of Matrix and project lead, and a Guardian of The Matrix.org Foundation.
+His day job is CEO/CTO at Element, the company founded by the team who created Matrix in order to grow it."""
+platform_statement = """My priority will continue to be on helping ensure the GB keeps focused on the long-term goals of the Foundation as laid out at [https://matrix.org/about](/about).
+In particular, I want to ensure the GB focuses on ways to accelerate Matrix uptake & remove blockers on progress: helping secure funding; encouraging implementations; scaling up trust & safety work; add new memberships; finding ways to speed up spec work.
+
+My prime directive continues to be to look for ways to help Matrix go mainstream and avoid getting stuck as a tech just for geeks and governments.
+
+This means evolving Matrix to sustainably benefit the maximum number of people.
+This can result in tough choices: how much to piggyback on the govt momentum; how to prioritise funding impls versus providing an environment for impls to grow; how to handle competing MSCs.
+I hope to bring my experience leading the project so far to help navigate these choices most effectively, and work with the wider governing board to multiply Matrix's success in future.
+I will also help with the interface to the SCT, sponsoring the Decentralisation WG, and translating direction from the GB into prioritising MSCs - and help navigate how to keep the braintrust of the Matrix Core Team intact while also accelerating the wider ecosystem.
+"""
