@@ -24,8 +24,9 @@ extend-exclude = [
     "content/blog/2024/11/2024-11-08-twim.md",
     # Contains german version
     "content/blog/2025/02/2025-02-14-building-a-safer-matrix.md",
-    "content/blog/2025/04/2025-04-11-twim.md", #username
-    "content/blog/2026/02/2026-02-20-twim.md" #the lib indead is "smal" and not "small"
+    "content/blog/2025/04/2025-04-11-twim.md", # username
+    "content/blog/2026/02/2026-02-20-twim.md", # the lib indeed is "smal" and not "small"
+    "content/docs/older/stateres-v2.md",
 ]
 
 [default]
@@ -61,6 +62,10 @@ extend-ignore-re = [
     "MUC", # Multi-user chat
     "PNGs", # CI chokes thinking it should be "ON"
     "“Twosday”",
+    "commet",
+    "Automattic",
+    "Linerly",
+    "Tristan Lins",
 
     "add-ons",
     "json-clos",
@@ -73,6 +78,7 @@ extend-ignore-re = [
     "loca\\.lt",
     "programm\\.fr",
     "supercable\\.onl",
+    "shema\\.lv",
 
     "#interop-sme:matrix.org",
 

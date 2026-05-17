@@ -25,7 +25,7 @@ Even though the Draft Council Resolution does not explicitly call for backdoors,
 ...makes it quite clear that they are seeking the ability to break encryption on demand: i.e. a backdoor.
 
 Please help us spread the word that backdoors are fundamentally flawed - read on for the rationale, and an alternative
-approach to combatting online abuse.
+approach to combating online abuse.
 
 ---
 

@@ -128,7 +128,7 @@ Bug fixes:
 Improvements:
  * Fixed warnings with 64bits builds.
  * Room history: Improve scrolling handling when keyboard appears.
- * Contacts: Prompt user when local contacts tab is selected if constact sync is disabled.
+ * Contacts: Prompt user when local contacts tab is selected if contact sync is disabled.
  
 Bug fixes:
  * Fix crash when switching rooms while the event stream is resuming.
