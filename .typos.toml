@@ -4,9 +4,11 @@ extend-exclude = [
     "*.jpg", "*.js*", "*.json", "*.mov", "*.png", "*.svg", "*.asc",
     "/static/jira",
     "/static/blog/wp-content/uploads/2016/07/predisclosure.signed.txt",
+    "/static/blog/wp-content/uploads/2018/09/signed_disclosure.txt",
     # external typo that must be replicated for technical correctness
     "content/blog/2020/09/2020-09-04-this-week-in-matrix-2020-09-04.md",
     # contains non-English
+    "content/blog/2019/03/2019-03-01-this-week-in-matrix-2019-03-01.md",
     "content/blog/2021/07/2021-07-02-this-week-in-matrix-2021-07-02.md",
     "content/blog/2021/09/2021-09-17-this-week-in-matrix-2021-09-17.md",
     "content/blog/2023/06/16-twim.md",
@@ -24,8 +26,9 @@ extend-exclude = [
     "content/blog/2024/11/2024-11-08-twim.md",
     # Contains german version
     "content/blog/2025/02/2025-02-14-building-a-safer-matrix.md",
-    "content/blog/2025/04/2025-04-11-twim.md", #username
-    "content/blog/2026/02/2026-02-20-twim.md" #the lib indead is "smal" and not "small"
+    "content/blog/2025/04/2025-04-11-twim.md", # username
+    "content/blog/2026/02/2026-02-20-twim.md", # the lib indeed is "smal" and not "small"
+    "content/docs/older/stateres-v2.md",
 ]
 
 [default]
@@ -61,6 +64,11 @@ extend-ignore-re = [
     "MUC", # Multi-user chat
     "PNGs", # CI chokes thinking it should be "ON"
     "“Twosday”",
+    "[cC]ommet",
+    "[aA]utomattic",
+    "Linerly",
+    "Tristan Lins",
+    "Lyche, Tom",
 
     "add-ons",
     "json-clos",
@@ -73,6 +81,7 @@ extend-ignore-re = [
     "loca\\.lt",
     "programm\\.fr",
     "supercable\\.onl",
+    "shema\\.lv",
 
     "#interop-sme:matrix.org",
 
@@ -88,6 +97,7 @@ extend-ignore-re = [
     "2020-03-06-oTyHd-",
     "Ca-bEgalTqs", # Matrix Live 2025-09-05
     "ba-dum-tss",
+    "\\*\\*S\\*\\*ource",
 ]
 
 [default.extend-words]
