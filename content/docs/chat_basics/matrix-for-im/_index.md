@@ -43,37 +43,40 @@ particular for DMs.
 
 The Matrix.org Foundation is a public provider everybody can register an account
 on for free. For your first steps, the simplest is to register an account there.
+You can learn more about this service [here](@/homeserver/_index.md).
 
 To register an account, you need to use an app. In our case, we're going to get
-started with Element, but you can seamlessly move to using any other client at
+started with Element, but you can seamlessly move to using any other client app at
 any point in time, even if you started with Element.
+We provide an overview of more recommended clients at [Try Matrix](@/try-matrix.md).
 
 Go to [app.element.io](https://app.element.io), and click on "Create Account".
 You should land on the following page.
 
-{{ 
+{{
     figure(
         img="../element-io-sign-up.avif",
         caption="Sign up page of app.element.io")
 }}
 
-For simplicity you can connect with a Google, Facebook, Apple, GitHub or GitLab
+For simplicity, some providers allow you to connect with a Google, Facebook, Apple, GitHub, GitLab or similar
 account if you have any of these. They will be notified that you're using your
 account to create a Matrix one. This is sometimes called "Social Login".
 
 If you're more privacy conscious, you can also register by entering a username,
 password and email in the form below the Social Login buttons.
+In the screenshot below you can see we chose the name "thibiscus" for this
+tutorial.
 
-You might be challenged with a captcha (a set of tiles or pictures where you
-need to find certain objects), and will be asked to accept Matrix.org's terms
-and conditions.
+You might be challenged with a CAPTCHA (to prove you're human),
+and will be asked to accept your provider's terms and conditions.
 
 After accepting the terms, you will end on a screen that asks you to confirm
 your email address. You can safely close this window.
 
 Check your inbox, and click the link to verify your email address. The link will
 bring you to the homepage of Element, the Matrix web application to participate
-to Matrix conversations.
+in Matrix conversations.
 
 {{ figure(
     img="../element-landing-page.png"
@@ -82,8 +85,16 @@ to Matrix conversations.
 
 You now have an account, and are using the web version of Element. We recommend
 you to [download the desktop version of Element](https://element.io/download),
-which makes following Matrix links much easier. If you don't want to download a
-desktop app you can carry on with the web version.
+which makes following Matrix links much easier.
+If you don't want to download a desktop app you can carry on with the web version.
+Similarly, apps for smartphones and many other devices are available.
+You can browse them [here](@/ecosystem/clients/_index.md).
+
+Your account is identified by a unique handle called a Matrix ID.
+You can find it in the settings of Element by clicking the round avatar picture
+in the top left.
+It looks like `@thibiscus:matrix.org`, with an @ in the front and the address of your provider in the back.
+Exchange your Matrix ID with your friends so you can invite each other to chat!
 
 Now you can either decide to create a private group chat to experiment with and
 invite friends later, or join public rooms to participate in existing
