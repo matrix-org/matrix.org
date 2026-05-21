@@ -1,10 +1,7 @@
 +++
 title = "Governing Board Elections"
 sort_by = "title"
+template = "elections.html"
 # Hidden from navigation. The links are still accessible.
 extra.navigation = false
 +++
-
-* [2026](2026) elections
-* [2025](2025) elections
-* [2024](2024) elections
