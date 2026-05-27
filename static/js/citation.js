@@ -7,7 +7,7 @@
 
 const RESET_DELAY_MS = 2000;
 
-function resetCopyFeedback(button, status, timeoutId) {
+function resetCopyFeedback(status, timeoutId) {
     status.textContent = "";
     if (timeoutId !== undefined) {
         window.clearTimeout(timeoutId);
@@ -21,7 +21,7 @@ function scheduleReset(button, status) {
     }
 
     const timeoutId = window.setTimeout(() => {
-        resetCopyFeedback(button, status);
+        resetCopyFeedback(status);
         delete button.dataset.resetTimeoutId;
     }, RESET_DELAY_MS);
 
@@ -29,33 +29,34 @@ function scheduleReset(button, status) {
 }
 
 function enableCitationCopy(citation) {
-    const button = citation.querySelector("[data-cite-copy]");
-    const status = citation.querySelector(".cite-copy-status");
+    const buttons = citation.querySelectorAll("[data-cite-copy]");
 
-    if (!button || !status) {
+    if (buttons.length === 0) {
         return;
     }
 
     citation.classList.add("cite-copy-enabled");
 
-    button.addEventListener("click", async () => {
-        const checkedRadio = citation.querySelector(".cite-format-radio:checked");
-        const activeFormat = checkedRadio?.dataset.citeFormat;
-        const text = citation.querySelector(`[data-cite-panel="${activeFormat}"] .cite-text`);
+    for (const button of buttons) {
+        button.addEventListener("click", async () => {
+            const panel = button.closest("[data-cite-panel]");
+            const text = panel?.querySelector(".cite-text");
+            const status = panel?.querySelector(".cite-copy-status");
 
-        if (!activeFormat || !text) {
-            return;
-        }
+            if (!text || !status) {
+                return;
+            }
 
-        try {
-            await navigator.clipboard.writeText(text.textContent.trim());
-            status.textContent = "Copied";
-        } catch (error) {
-            status.textContent = "Copy failed";
-        }
+            try {
+                await navigator.clipboard.writeText(text.textContent.trim());
+                status.textContent = "Copied";
+            } catch (error) {
+                status.textContent = "Copy failed";
+            }
 
-        scheduleReset(button, status);
-    });
+            scheduleReset(button, status);
+        });
+    }
 }
 
 if (window.isSecureContext && navigator.clipboard?.writeText) {
