@@ -201,8 +201,8 @@ The membership of the Room Directory Working Group will be determined by the [Tr
 Members may be added or removed by a majority vote of the T&S Committee.
 """
 committee = "Trust & Safety Committee"
-members = ["Nico", "Sky", "mahdi", "Emma [it/its]", "Krille - Christian K.", "LogN"]
-chairs = ["Sky"]
+members = ["Nico", "Sky", "mahdi", "Emma [it/its]", "Krille - Christian K.", "LogN", "Max (TheDarkWizard)"]
+chairs = ["Sky", "LogN"]
 sponsor = "Nico"
 matrix_room_alias = "#room-dir-wg-office:neko.dev"
 email = ""
