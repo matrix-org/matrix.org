@@ -23,7 +23,7 @@ This is the penultimate milestone in our election schedule and runs until the 12
 
 All voters should keep an eye out for an email from [OpaVote](https://opavote.com/), the platform we will be using to run the election.
 
-A big thank you again to [all our candidates](https://matrix.org/foundation/governing-board-elections/2026/#nominees) who have stepped up to drive the growth of Matrix, and good luck to all!
+A big thank you again to [all our candidates](@/foundation/governing-board-elections/2026/index.md#nominees) who have stepped up to drive the growth of Matrix, and good luck to all!
 
 I, for one, am looking forward to announcing the results in two weeks!
 
