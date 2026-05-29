@@ -15,6 +15,7 @@ We encourage you to read our [membership page](@/foundation/members/index.md) an
 * 2026-04 [Announcing the 2026 Governing Board elections](@/blog/2026/04/2026-04-27-election-announcement.md)
 * 2026-05 [Kicking off the nomination period for the 2026 Governing Board elections](@/blog/2026/05/2026-05-02-election-nomination.md)
 * 2026-05 [Announcing the candidates and kicking off the campaigning](@/blog/2026/05/2026-05-16-election-campaigning.md)
+* 2026-05 [Kicking off the voting period for the Governing Board election](@/blog/2026/05/2026-05-29-kicking-off-gb-voting.md)
 
 Read on for our [election schedule](@/foundation/governing-board-elections/2026/index.md#schedule) and more information about the election process.
 This page will be continually updated over the course of the elections to list all of the [nominees](@/foundation/governing-board-elections/2026/index.md#nominees) and eventually [elected representatives](@/foundation/governing-board-elections/2026/index.md#elected-representatives).
@@ -149,23 +150,20 @@ We have [a dedicated Matrix space](https://matrix.to/#/#governing-board-nominee-
 
 All members of each constituency group are entitled to vote on
 the candidates within that constituency group.
-We will be reaching out to everyone we have contact information for,
-to ensure we have our voter rolls together before voting begins at the end of May.
 Anyone who has
 [signed up to be a member to one of the constituencies](@/foundation/members/index.md)
 before 15th May is eligible to vote for it.
 
-We will hold an election in each of the constituencies that are up for election this year,
+We are holding an election in each of the constituencies that are up for election this year,
 even if a given constituency has fewer candidates than there are seats allocated
 for them on the Governing Board.
 This is, effectively, a vote of confidence.
 
-If you believe you are eligible to participate but have not heard from us or
-[OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections – by 23rd May,
+If you believe you are eligible to participate but have not heard from
+[OpaVote](https://www.opavote.com/) – the election system we have chosen for this year’s elections – by 1st June,
 [please email us promptly](mailto:elections@foundation.matrix.org).
-We cannot change our voter rolls after voting begins on 30th May!!
 
-All of the candidates will be listed
+Check out the candidates listed
 [below](@/foundation/governing-board-elections/2026/index.md#nominees)
 starting 16th May.
 
