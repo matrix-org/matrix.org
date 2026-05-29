@@ -11,7 +11,7 @@ category = ["Elections", "Foundation", "Governing Board"]
 
 At midnight tonight representatives of the Platinum members, Silver members and Ecosystem members, as well asIndividual members, Spec Core Team members and Guardians will be able to start voting to choose the representatives of their constituency on the Governing Board!
 
-The [final list of candidates for the 2026 election of the Foundation's Governing Board](https://matrix.org/foundation/governing-board-elections/2026/) and their details are available on the website for reference, and folks have been campaigning in [the bonfire rooms](https://matrix.to/#/#governing-board-nominee-campaigning-bonfire:matrix.org) during the last two weeks. 
+The [final list of candidates for the 2026 election of the Foundation's Governing Board](@/foundation/governing-board-elections/2026/index.md) and their details are available on the website for reference, and folks have been campaigning in [the bonfire rooms](https://matrix.to/#/#governing-board-nominee-campaigning-bonfire:matrix.org) during the last two weeks. 
 
 This is the penultimate milestone in our election schedule and runs until the 12th of June 11:59pm UTC:  
 
