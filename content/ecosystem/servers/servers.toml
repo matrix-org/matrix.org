@@ -167,3 +167,13 @@ language = "Rust"
 licence = "Apache-2.0"
 repository = "https://forgejo.ellis.link/continuwuation/continuwuity"
 room = "#continuwuity:continuwuity.org"
+
+[[servers]]
+name = "Venator"
+description = "Versatile experimental Matrix homeserver written in Golang from scratch using mautrix-go."
+author = "timedout"
+maturity = "Alpha"
+licence = "MPL-2.0"
+repository = "https://codeberg.org/timedout/venator"
+room = "#venator:nexy7574.co.uk"
+language = "Go"
