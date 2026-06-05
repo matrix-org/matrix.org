@@ -6,7 +6,7 @@ thumbnail = "relay.png"
 maintainer = "Link Dupont"
 licence = "Apache-2.0"
 language = "Swift"
-latest_release = "2026-04-08"
+latest_release = "2026-05-26"
 maturity = "Alpha"
 repo =  "https://github.com/subpop/Relay"
 matrix_room = "#relayapp:matrix.org"
@@ -14,7 +14,7 @@ featured = false
 
 [extra.features]
 e2ee = true
-spaces = false
+spaces = true
 voip_1to1 = false
 voip_jitsi = false
 threads = false
