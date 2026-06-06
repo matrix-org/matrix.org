@@ -56,7 +56,7 @@
             <div class="features-matrix">
                 <ul>
                     {% for feature, supported in bridge.supports %}
-                    <li {% if supported %}class="supported" {% endif %}>
+                    <li class="{% if not supported %}un{% endif %}supported">
                         {{ feature | replace(from="_", to=" ") | title }}
                     </li>
                     {% endfor %}

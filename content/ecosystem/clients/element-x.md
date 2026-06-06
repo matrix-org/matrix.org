@@ -14,14 +14,21 @@ featured_order = 2
 screenshots = ["element-x-screenshot-roomlist.avif", "element-x-screenshot-timeline.avif"]
 good_for = "Mobile-first users who want a fast, modern experience"
 
-[extra.features]
+[extra.features.1spec]
 e2ee = true
 spaces = true
 voip_1to1 = false
-voip_jitsi = false
 threads = false
 sso = false
+
+[extra.features.2matrix2]
 oauth = true
+voip_matrixrtc = true
+sliding_sync = true
+invisible_crypto = true
+
+[extra.features.3extra]
+voip_jitsi = false
 multi_account = false
 multi_language = true
 

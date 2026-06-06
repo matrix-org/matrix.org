@@ -56,7 +56,7 @@
                 <h5>{{ clients::category_label(category_name=category) }}</h3>
                 <ul>
                     {% for feature, supported in my_features %}
-                        <li {% if supported %}class="supported" {% endif %}>
+                        <li class="{{ supported }}">
                             {{ clients::feature_label(feature_name=feature) | trim }}
                         </li>
                     {% endfor %}
