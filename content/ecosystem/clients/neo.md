@@ -2,7 +2,6 @@
 title = "Neo"
 template = "ecosystem/client.html"
 [extra]
-thumbnail = "neo.svg"
 maintainer = " Alexis Purslane"
 maturity = "Obsolete"
 repo = "https://github.com/alexispurslane/neo"

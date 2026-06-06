@@ -2,7 +2,6 @@
 title = "Tensor"
 template = "ecosystem/client.html"
 [extra]
-thumbnail = "tensor.png"
 maintainer = "David A. Roberts"
 maturity = "Obsolete"
 repo = "https://github.com/davidar/tensor"

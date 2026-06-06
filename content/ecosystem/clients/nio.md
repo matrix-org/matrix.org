@@ -2,7 +2,6 @@
 title = "Nio"
 template = "ecosystem/client.html"
 [extra]
-thumbnail = "nio.png"
 maintainer = "Kilian Koeltzsch"
 maturity = "Obsolete"
 repo = "https://github.com/niochat/nio"
