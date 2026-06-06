@@ -25,7 +25,7 @@ sso = "supported"
 
 [extra.features.2matrix2]
 oauth = "unknown"
-voip_matrixrtc = "unknown"
+voip_matrixrtc = "supported"
 sliding_sync = "unknown"
 invisible_crypto = "unknown"
 
