@@ -45,20 +45,26 @@
                 </a>
                 {% endif %}
             </div>
+            <div class="stores">
+                {{ clients::install_links(packages=page.extra.packages) }}
+            </div>
         </div>
+        <h4>Features</h4>
         <div class="features-matrix">
-            <ul>
-                {% for feature, supported in page.extra.features %}
-                <li {% if supported %}class="supported" {% endif %}>
-                    {{ clients::feature_label(feature_name=feature) | trim }}
-                </li>
-                {% endfor %}
-            </ul>
-            <p>Something wrong? Report the issue <a href="https://github.com/matrix-org/matrix.org/issues/new?template=update-ecosystem-info.yaml">here</a>.</p>
+            {% for category, my_features in page.extra.features %}
+            <div class="features-category">
+                <h5>{{ clients::category_label(category_name=category) }}</h3>
+                <ul>
+                    {% for feature, supported in my_features %}
+                        <li {% if supported %}class="supported" {% endif %}>
+                            {{ clients::feature_label(feature_name=feature) | trim }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
         </div>
-    </div>
-    <div class="stores">
-        {{ clients::install_links(packages=page.extra.packages) }}
+        <p>Something wrong? Report the issue <a href="https://github.com/matrix-org/matrix.org/issues/new?template=update-ecosystem-info.yaml">here</a>.</p>
     </div>
 </article>
 {% endblock content %}
