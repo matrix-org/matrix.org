@@ -206,7 +206,7 @@ If you operate in a time zone that makes it difficult to keep to this time frame
 if may thus be advisable to share your news on the preceding (European) day.
 Sometimes life happens and the editors have to announce an earlier deadline on a best effort basis,
 but this is extremely rare.
-Usually, submissions will close at or shortly after 17:00.
+Usually, submissions will close at or shortly after 16:00.
 It is possible depending on the circumstances of the editor that submissions also remain open for a while longer.
 Whichever is the case, the editor will announce the fact that submissions have been closed via
 impersonating the TWIM bot.
