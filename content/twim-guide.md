@@ -203,7 +203,7 @@ Whether such a request is granted depends entirely on the editor and their circu
 The regular deadline is 16:00 CE(S)T "Paris time" and submitting in time will ensure your news get
 included in the blog if you have followed the above steps successfully.
 If you operate in a time zone that makes it difficult to keep to this time frame on the same day,
-if may thus be advisable to share your news on the preceding (European) day.
+it may thus be advisable to share your news on the preceding (European) day.
 Sometimes life happens and the editors have to announce an earlier deadline on a best effort basis,
 but this is extremely rare.
 Usually, submissions will close at or shortly after 16:00.
