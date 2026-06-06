@@ -21,4 +21,4 @@ multi_language = false
 [extra.packages]
 +++
 
-An Android-native, Material You-based, slick, clean, UX-first Matrix client
+An Android-native, Material You-based, slick, clean, UX-first Matrix client.
