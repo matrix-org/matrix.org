@@ -23,4 +23,4 @@ multi_language = false
 [extra.packages]
 +++
 
-Cross-platform Qt5/QML-based Matrix client
+Cross-platform Qt5/QML-based Matrix client.
