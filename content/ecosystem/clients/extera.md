@@ -12,15 +12,25 @@ repo = "https://github.com/officialdakari/Extera"
 website = "https://extera.xyz"
 matrix_room = "#extera:extera.xyz"
 featured = false
-[extra.features]
-e2ee = true
-spaces = true
-voip_1to1 = true
-voip_jitsi = true
-threads = true
-sso = true
-multi_account = false
-multi_language = true
+
+[extra.features.1spec]
+e2ee = "supported"
+spaces = "supported"
+voip_1to1 = "supported"
+threads = "supported"
+sso = "supported"
+
+[extra.features.2matrix2]
+oauth = "unknown"
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.3extra]
+voip_jitsi = "supported"
+multi_account = "unsupported"
+multi_language = "supported"
+
 [extra.packages]
 webapp = "https://app.extera.xyz/"
 +++

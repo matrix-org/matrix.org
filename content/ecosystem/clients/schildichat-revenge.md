@@ -12,16 +12,23 @@ licence = "GPL-3.0-only"
 latest_release = "2026-04-04"
 featured = false
 
-[extra.features]
-e2ee = true
-spaces = true
-voip_1to1 = false
-voip_jitsi = false
-threads = true
-sso = false
-oauth = false
-multi_account = true
-multi_language = true
+[extra.features.1spec]
+e2ee = "supported"
+spaces = "supported"
+voip_1to1 = "unsupported"
+threads = "supported"
+sso = "unsupported"
+
+[extra.features.2matrix2]
+oauth = "unsupported"
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.3extra]
+voip_jitsi = "unsupported"
+multi_account = "supported"
+multi_language = "supported"
 
 [extra.packages]
 windows_installer = "https://github.com/SchildiChat/schildi-revenge/releases/"

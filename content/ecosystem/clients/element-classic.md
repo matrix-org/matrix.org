@@ -10,15 +10,25 @@ matrix_room = "#element-ios:matrix.org"
 licence = "AGPL-3.0-or-later OR Element Commercial License"
 latest_release = "2025-08-06"
 featured = false
-[extra.features]
-e2ee = true
-spaces = true
-voip_1to1 = true
-voip_jitsi = true
-threads = true
-sso = true
-multi_account = false
-multi_language = true
+
+[extra.features.1spec]
+e2ee = "supported"
+spaces = "supported"
+voip_1to1 = "supported"
+threads = "supported"
+sso = "supported"
+
+[extra.features.2matrix2]
+oauth = "unknown"
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.3extra]
+voip_jitsi = "supported"
+multi_account = "unsupported"
+multi_language = "supported"
+
 [extra.packages]
 google_play_store.app_id = "im.vector.app"
 f_droid.app_id = "im.vector.app"

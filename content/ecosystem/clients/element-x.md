@@ -15,22 +15,22 @@ screenshots = ["element-x-screenshot-roomlist.avif", "element-x-screenshot-timel
 good_for = "Mobile-first users who want a fast, modern experience"
 
 [extra.features.1spec]
-e2ee = true
-spaces = true
-voip_1to1 = false
-threads = false
-sso = false
+e2ee = "supported"
+spaces = "supported"
+voip_1to1 = "unsupported"
+threads = "partial"
+sso = "unsupported"
 
 [extra.features.2matrix2]
-oauth = true
-voip_matrixrtc = true
-sliding_sync = true
-invisible_crypto = true
+oauth = "supported"
+voip_matrixrtc = "supported"
+sliding_sync = "supported"
+invisible_crypto = "supported"
 
 [extra.features.3extra]
-voip_jitsi = false
-multi_account = false
-multi_language = true
+voip_jitsi = "unsupported"
+multi_account = "unsupported"
+multi_language = "supported"
 
 [extra.packages]
 google_play_store.app_id = "io.element.android.x"

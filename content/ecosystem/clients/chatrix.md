@@ -1,5 +1,6 @@
 +++
 title = "chatrix"
+
 [extra]
 thumbnail = "chatrix.svg"
 maintainer = "wordpressdotorg, akirk, ashfame, psrpinto"
@@ -11,15 +12,25 @@ repo = "https://github.com/Automattic/chatrix"
 website = "https://wordpress.com/plugins/chatrix"
 matrix_room = "#chatrix:matrix.org"
 featured = false
-[extra.features]
-e2ee = false
-spaces = false
-voip_1to1 = false 
-voip_jitsi = false
-threads = false
-sso = false
-multi_account = false
-multi_language = false
+
+[extra.features.1spec]
+e2ee = "unsupported"
+spaces = "unsupported"
+voip_1to1 = "unsupported" 
+threads = "unsupported"
+sso = "unsupported"
+
+[extra.features.2matrix2]
+oauth = "unknown"
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.3extra]
+voip_jitsi = "unsupported"
+multi_account = "unsupported"
+multi_language = "unsupported"
+
 [extra.packages]
 webapp = "https://wordpress.com/plugins/chatrix"
 +++

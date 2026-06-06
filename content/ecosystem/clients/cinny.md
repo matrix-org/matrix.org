@@ -16,15 +16,24 @@ featured_order = 4
 screenshots = ["cinny-screenshot.avif"]
 good_for = "Users coming from Discord who want a familiar layout"
 
-[extra.features]
-e2ee = true
-spaces = true
-voip_1to1 = false
-voip_jitsi = false
-threads = false
-sso = true
-multi_account = false
-multi_language = false
+[extra.features.1spec]
+e2ee = "supported"
+spaces = "supported"
+voip_1to1 = "unsupported"
+threads = "unsupported"
+sso = "supported"
+
+[extra.features.2matrix2]
+oauth = "unknown"
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.3extra]
+voip_jitsi = "unsupported"
+multi_account = "unsupported"
+multi_language = "unsupported"
+
 [extra.packages]
 windows_installer = "https://github.com/cinnyapp/cinny-desktop/releases"
 macos_installer = "https://github.com/cinnyapp/cinny-desktop/releases"

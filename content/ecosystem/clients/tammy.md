@@ -11,16 +11,25 @@ matrix_room = "#tammy:imbitbu.de"
 licence = "AGPL-3.0-only"
 latest_release = "2026-03-18"
 featured = false
-[extra.features]
-e2ee = true
-spaces = false
-voip_1to1 = false
-voip_jitsi = false
-threads = false
-sso = true
-oauth = true
-multi_account = true
-multi_language = true
+
+[extra.features.1spec]
+e2ee = "supported"
+spaces = "unsupported"
+voip_1to1 = "unsupported"
+threads = "unsupported"
+sso = "supported"
+
+[extra.features.2matrix2]
+oauth = "supported"
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.3extra]
+voip_jitsi = "unsupported"
+multi_account = "supported"
+multi_language = "supported"
+
 [extra.packages]
 windows_installer = "https://tammy.connect2x.de"
 macos_installer = "https://tammy.connect2x.de"

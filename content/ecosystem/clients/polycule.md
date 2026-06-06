@@ -11,15 +11,25 @@ maturity = "Beta"
 repo = "https://gitlab.com/polycule_client/polycule/"
 website = "https://polycule.im"
 featured = false
-[extra.features]
-e2ee = true
-spaces = false
-voip_1to1 = false
-voip_jitsi = true
-threads = false
-sso = true
-multi_account = true
-multi_language = true
+
+[extra.features.1spec]
+e2ee = "supported"
+spaces = "unsupported"
+voip_1to1 = "unsupported"
+threads = "unsupported"
+sso = "supported"
+
+[extra.features.2matrix2]
+oauth = "unknown"
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.3extra]
+voip_jitsi = "supported"
+multi_account = "supported"
+multi_language = "supported"
+
 [extra.packages]
 f_droid.app_id = "business.braid.polycule"
 webapp = "https://polycule.im/web"

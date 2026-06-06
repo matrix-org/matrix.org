@@ -11,15 +11,25 @@ licence = "GPL-3.0-or-later"
 language = "Emacs Lisp"
 latest_release = "2024-10-13"
 featured = false
-[extra.features]
-e2ee = false
-spaces = true
-voip_1to1 = false
-voip_jitsi = false
-threads = false
-sso = true
-multi_account = true
-multi_language = false
+
+[extra.features.1spec]
+e2ee = "unsupported"
+spaces = "supported"
+voip_1to1 = "unsupported"
+threads = "unsupported"
+sso = "supported"
+
+[extra.features.2matrix2]
+oauth = "unknown"
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.3extra]
+voip_jitsi = "unsupported"
+multi_account = "supported"
+multi_language = "unsupported"
+
 [extra.packages]
 other_install_link = "https://elpa.gnu.org/packages/ement.html"
 other_linux_link = "https://github.com/alphapapa/ement.el#installation"
