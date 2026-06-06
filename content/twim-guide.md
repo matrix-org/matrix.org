@@ -32,7 +32,7 @@ We collect submissions with help of the [TWIM bot](https://github.com/haecker-fe
 `@this-week-in:matrix.org`, who will confirm having received your entry if everything went well.
 
 The digest gets published on Friday evening, so make sure to post your submission before
-entries close around 17:00 Paris time.
+entries close around 16:00 Paris time.
 
 Images and other media are supported as well. To add them you should react with
 `⭕` on your media file. Please make sure to do this right after submitting your text so it gets added
@@ -200,7 +200,7 @@ Similarly, a submitter may sometimes have (publicly or privately) asked the edit
 deadline so they can finish writing their entry.
 Whether such a request is granted depends entirely on the editor and their circumstances.
 
-The regular deadline is 17:00 CE(S)T "Paris time" and submitting in time will ensure your news get
+The regular deadline is 16:00 CE(S)T "Paris time" and submitting in time will ensure your news get
 included in the blog if you have followed the above steps successfully.
 If you operate in a time zone that makes it difficult to keep to this time frame on the same day,
 if may thus be advisable to share your news on the preceding (European) day.
