@@ -1,4 +1,22 @@
 [[findings]]
+date = "2025-03-04"
+reporter.name = "Fatih Bozkurt"
+reporter.link = "https://instagram.com/fatihbozkurt.1453"
+summary = """
+Discovered a stored XSS vulnerability in Pinecone Simulator ([CVE-2025-27155](https://www.cve.org/CVERecord?id=CVE-2025-27155) / [GHSA-fr62-mg2q-7wqv](https://github.com/matrix-org/pinecone/security/advisories/GHSA-fr62-mg2q-7wqv)).
+"""
+project = "Pinecone"
+
+[[findings]]
+date = "2025-02-25"
+reporter.name = "Ferass"
+reporter.link = "https://github.com/funderscore1"
+summary = """
+Discovered an IRC command injection as the puppeted user ([CVE-2025-27146](https://www.cve.org/CVERecord?id=CVE-2025-27146) / [GHSA-5mvm-89c9-9gm5](https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-5mvm-89c9-9gm5)).
+"""
+project = "matrix-appservice-irc"
+
+[[findings]]
 date = "2024-05-26"
 reporter.name = "Charlotte"
 reporter.link = "https://github.com/DarkKirb"
