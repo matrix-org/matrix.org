@@ -133,14 +133,20 @@ class YoutubePlayer extends HTMLElement {
     loadPlayer() {
         const videoId = this.getAttribute("video-id");
         const start = this.getAttribute("start");
+
+        const iframe = document.createElement("iframe");
         let embedUrl = `https://www.youtube.com/embed/${videoId}`;
         if (start) embedUrl += `?start=${start}`;
-        const innerHTML = `<iframe src="${embedUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+        iframe.src = embedUrl;
+        iframe.title = "YouTube video player";
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allowfullscreen", "");
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
 
         for (const child of this.shadowRoot.children) {
             if (child.classList.contains("youtube_placeholder")) {
-                child.replaceChildren();
-                child.innerHTML = innerHTML;
+                child.replaceChildren(iframe);
             }
         }
     }
