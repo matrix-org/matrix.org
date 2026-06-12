@@ -13,23 +13,21 @@ website = "https://docs.sable.moe/"
 matrix_room = "#sable:sable.moe"
 featured = false
 
-[extra.features.1spec]
+[extra.features.1stable]
 e2ee = "supported"
 spaces = "supported"
 voip_1to1 = "unsupported"
 sso = "supported"
 threads = "supported"
+voip_jitsi = "unsupported"
+multi_account = "supported"
+multi_language = "unsupported"
 
-[extra.features.2matrix2]
+[extra.features.2experimental]
 oauth = "unsupported"
 voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
 invisible_crypto = "unknown"
-
-[extra.features.3extra]
-voip_jitsi = "unsupported"
-multi_account = "supported"
-multi_language = "unsupported"
 
 [extra.packages]
 webapp = "https://app.sable.moe/"

@@ -16,23 +16,21 @@ featured_order = 5
 screenshots = ["nheko-screenshot.avif"]
 good_for = "Power users and tinkerers who prefer a lean native desktop app"
 
-[extra.features.1spec]
+[extra.features.1stable]
 e2ee = "supported"
 spaces = "supported"
 voip_1to1 = "supported"
 threads = "supported"
 sso = "supported"
+voip_jitsi = "unsupported"
+multi_account = "unsupported"
+multi_language = "supported"
 
-[extra.features.2matrix2]
+[extra.features.2experimental]
 oauth = "unknown"
 voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
 invisible_crypto = "unknown"
-
-[extra.features.3extra]
-voip_jitsi = "unsupported"
-multi_account = "unsupported"
-multi_language = "supported"
 
 [extra.packages]
 windows_installer = "https://github.com/Nheko-Reborn/nheko/releases"

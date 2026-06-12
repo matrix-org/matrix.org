@@ -110,7 +110,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     .features-matrix {
         display: grid;
         grid-gap: 1rem;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
 
         @media (max-width: 767px) {
             grid-template-columns: 1fr;

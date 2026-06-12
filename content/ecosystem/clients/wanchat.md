@@ -14,23 +14,21 @@ featured = false
 screenshots = []
 good_for = "Mobile-first users who want additional security (e.g., self-deleting messages). Tailored for China"
 
-[extra.features.1spec]
+[extra.features.1stable]
 e2ee = "supported"
 spaces = "supported"
 voip_1to1 = "unsupported"
 threads = "unsupported"
 sso = "unsupported"
+voip_jitsi = "unsupported"
+multi_account = "unsupported"
+multi_language = "supported"
 
-[extra.features.2matrix2]
+[extra.features.2experimental]
 oauth = "supported"
 voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
 invisible_crypto = "unknown"
-
-[extra.features.3extra]
-voip_jitsi = "unsupported"
-multi_account = "unsupported"
-multi_language = "supported"
 
 [extra.packages]
 +++

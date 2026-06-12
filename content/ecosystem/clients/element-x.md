@@ -14,23 +14,21 @@ featured_order = 2
 screenshots = ["element-x-screenshot-roomlist.avif", "element-x-screenshot-timeline.avif"]
 good_for = "Mobile-first users who want a fast, modern experience"
 
-[extra.features.1spec]
+[extra.features.1stable]
 e2ee = "supported"
 spaces = "supported"
 voip_1to1 = "unsupported"
 threads = "partial"
 sso = "unsupported"
+voip_jitsi = "unsupported"
+multi_account = "unsupported"
+multi_language = "supported"
 
-[extra.features.2matrix2]
+[extra.features.2experimental]
 oauth = "supported"
 voip_matrixrtc = "supported"
 sliding_sync = "supported"
 invisible_crypto = "supported"
-
-[extra.features.3extra]
-voip_jitsi = "unsupported"
-multi_account = "unsupported"
-multi_language = "supported"
 
 [extra.packages]
 google_play_store.app_id = "io.element.android.x"

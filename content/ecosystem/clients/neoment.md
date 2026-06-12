@@ -11,23 +11,21 @@ language = "Lua"
 latest_release = "2026-01-05" # No formal releases; based on the latest non-trivial commit.
 featured = false
 
-[extra.features.1spec]
+[extra.features.1stable]
 e2ee = "unsupported"
 spaces = "supported"
 voip_1to1 = "unsupported"
 threads = "supported"
 sso = "unsupported"
+voip_jitsi = "unsupported"
+multi_account = "unsupported"
+multi_language = "unsupported"
 
-[extra.features.2matrix2]
+[extra.features.2experimental]
 oauth = "unknown"
 voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
 invisible_crypto = "unknown"
-
-[extra.features.3extra]
-voip_jitsi = "unsupported"
-multi_account = "unsupported"
-multi_language = "unsupported"
 
 [extra.packages]
 other_install_link = "https://github.com/Massolari/neoment/#installation"

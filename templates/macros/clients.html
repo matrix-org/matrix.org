@@ -1,11 +1,9 @@
 {# Human-readable labels for feature categories #}
 {% macro category_label(category_name) %}
-{% if category_name == "1spec" %}
-Matrix Standard
-{% elif category_name == "2matrix2" %}
-Future Matrix Standard
-{% elif category_name == "3extra" %}
-Extras
+{% if category_name == "1stable" %}
+Stable Features
+{% elif category_name == "2experimental" %}
+Experimental Features
 {% else %}
     {{category_name | replace(from="_", to=" ") | title }}
 {% endif %}
