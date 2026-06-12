@@ -22,12 +22,12 @@ sso = "supported"
 voip_jitsi = "unsupported"
 multi_account = "supported"
 multi_language = "unsupported"
+oauth = "unknown"
+invisible_crypto = "unknown"
 
 [extra.features.2experimental]
-oauth = "unknown"
 voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
-invisible_crypto = "unknown"
 
 [extra.packages]
 other_linux_link = "https://iamb.chat/install.html"

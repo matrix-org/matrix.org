@@ -25,12 +25,12 @@ sso = "supported"
 voip_jitsi = "unsupported"
 multi_account = "unsupported"
 multi_language = "supported"
+oauth = "unknown"
+invisible_crypto = "unknown"
 
 [extra.features.2experimental]
-oauth = "unknown"
 voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
-invisible_crypto = "unknown"
 
 [extra.packages]
 windows_installer = "https://github.com/Nheko-Reborn/nheko/releases"

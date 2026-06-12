@@ -19,12 +19,12 @@ sso = "supported"
 voip_jitsi = "unsupported"
 multi_account = "unsupported"
 multi_language = "unsupported"
+oauth = "supported"
+invisible_crypto = "unknown"
 
 [extra.features.2experimental]
-oauth = "supported"
 voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
-invisible_crypto = "unknown"
 
 [extra.packages]
 windows_installer = "https://github.com/Luxuride/singularity/releases/latest"

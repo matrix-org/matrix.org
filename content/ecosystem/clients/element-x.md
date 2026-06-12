@@ -23,12 +23,12 @@ sso = "unsupported"
 voip_jitsi = "unsupported"
 multi_account = "unsupported"
 multi_language = "supported"
+oauth = "supported"
+invisible_crypto = "supported"
 
 [extra.features.2experimental]
-oauth = "supported"
 voip_matrixrtc = "supported"
 sliding_sync = "supported"
-invisible_crypto = "supported"
 
 [extra.packages]
 google_play_store.app_id = "io.element.android.x"

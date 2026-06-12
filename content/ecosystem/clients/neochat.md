@@ -22,12 +22,12 @@ sso = "supported"
 voip_jitsi = "unsupported"
 multi_account = "supported"
 multi_language = "supported"
+oauth = "unknown"
+invisible_crypto = "unknown"
 
 [extra.features.2experimental]
-oauth = "unknown"
 voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
-invisible_crypto = "unknown"
 
 [extra.packages]
 windows_installer = "https://www.microsoft.com/store/apps/9PNXWVNRC29H"

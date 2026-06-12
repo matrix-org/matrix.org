@@ -25,12 +25,12 @@ sso = "supported"
 voip_jitsi = "unsupported"
 multi_account = "unsupported"
 multi_language = "unsupported"
+oauth = "unknown"
+invisible_crypto = "unknown"
 
 [extra.features.2experimental]
-oauth = "unknown"
 voip_matrixrtc = "supported"
 sliding_sync = "unknown"
-invisible_crypto = "unknown"
 
 [extra.packages]
 windows_installer = "https://github.com/cinnyapp/cinny-desktop/releases"

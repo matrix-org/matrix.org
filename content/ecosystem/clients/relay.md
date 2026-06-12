@@ -21,12 +21,12 @@ sso = "unsupported"
 voip_jitsi = "unsupported"
 multi_account = "unsupported"
 multi_language = "unsupported"
+oauth = "unknown"
+invisible_crypto = "unknown"
 
 [extra.features.2experimental]
-oauth = "unknown"
 voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
-invisible_crypto = "unknown"
 
 [extra.packages]
 macos_installer = "https://testflight.apple.com/join/ehFD9g5c"

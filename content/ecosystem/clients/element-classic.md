@@ -20,12 +20,12 @@ sso = "supported"
 voip_jitsi = "supported"
 multi_account = "unsupported"
 multi_language = "supported"
+oauth = "unknown"
+invisible_crypto = "unknown"
 
 [extra.features.2experimental]
-oauth = "unknown"
 voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
-invisible_crypto = "unknown"
 
 [extra.packages]
 google_play_store.app_id = "im.vector.app"

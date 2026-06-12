@@ -21,12 +21,12 @@ sso = "unsupported"
 voip_jitsi = "unsupported"
 multi_account = "supported"
 multi_language = "supported"
+oauth = "unsupported"
+invisible_crypto = "unknown"
 
 [extra.features.2experimental]
-oauth = "unsupported"
 voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
-invisible_crypto = "unknown"
 
 [extra.packages]
 windows_installer = "https://github.com/SchildiChat/schildi-revenge/releases/"

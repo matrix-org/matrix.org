@@ -23,12 +23,12 @@ sso = "unsupported"
 voip_jitsi = "unsupported"
 multi_account = "unsupported"
 multi_language = "supported"
+oauth = "supported"
+invisible_crypto = "unknown"
 
 [extra.features.2experimental]
-oauth = "supported"
 voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
-invisible_crypto = "unknown"
 
 [extra.packages]
 +++
