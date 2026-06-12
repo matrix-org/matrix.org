@@ -51,11 +51,11 @@
         </div>
         <h4>Features</h4>
         <div class="features-matrix">
-            {% for category, my_features in page.extra.features %}
+            {% for category, features in page.extra.features %}
             <div class="features-category">
                 <h5>{{ clients::category_label(category_name=category) }}</h3>
                 <ul>
-                    {% for feature, supported in my_features %}
+                    {% for feature, supported in features %}
                         <li class="{{ supported }}">
                             {{ clients::feature_label(feature_name=feature) | trim }}
                         </li>
