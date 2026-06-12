@@ -32,7 +32,7 @@ We collect submissions with help of the [TWIM bot](https://github.com/haecker-fe
 `@this-week-in:matrix.org`, who will confirm having received your entry if everything went well.
 
 The digest gets published on Friday evening, so make sure to post your submission before
-entries close around 17:00 Paris time.
+entries close around 16:00 Paris time.
 
 Images and other media are supported as well. To add them you should react with
 `⭕` on your media file. Please make sure to do this right after submitting your text so it gets added
@@ -200,16 +200,14 @@ Similarly, a submitter may sometimes have (publicly or privately) asked the edit
 deadline so they can finish writing their entry.
 Whether such a request is granted depends entirely on the editor and their circumstances.
 
-The regular deadline is 17:00 CE(S)T "Paris time" and submitting in time will ensure your news get
+The regular deadline is 16:00 CE(S)T "Paris time" and submitting in time will ensure your news get
 included in the blog if you have followed the above steps successfully.
 If you operate in a time zone that makes it difficult to keep to this time frame on the same day,
-if may thus be advisable to share your news on the preceding (European) day.
+it may thus be advisable to share your news on the preceding (European) day.
 Sometimes life happens and the editors have to announce an earlier deadline on a best effort basis,
 but this is extremely rare.
-Usually, submissions will close at or shortly after 17:00.
-It is possible depending on the circumstances of the editor that submissions also remain open for a while longer.
-Whichever is the case, the editor will announce the fact that submissions have been closed via
-impersonating the TWIM bot.
+Usually, submissions close at, or shortly after, 16:00. The editor will announce that submissions have
+closed by impersonating the TWIM bot.
 
 After closing the entries, the editor does a last manual best-effort check if all submissions have
 been collected by the bot and assigned the right project or category, fixing any stragglers.
