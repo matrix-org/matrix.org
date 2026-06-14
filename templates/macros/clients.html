@@ -90,31 +90,6 @@ licence-{{ client.licence | slugify }}
 {% endfor %}
 {% endmacro classes %}
 
-{% macro features(features, supported) %}
-{% set_global matching = 0 %}
-{% for feature_name, supports in features %}
-    {# Validate feature value is boolean before processing #}
-    {% if supports is same_as(true) or supports is same_as(false) %}
-        {% if supports == supported %}
-            {% set_global matching = matching + 1 %}
-            {# Check if feature is in our known list #}
-            {% set_global feature_is_valid = false %}
-            {% for valid in VALID_FEATURES %}
-                {% if valid == feature_name %}
-                    {% set_global feature_is_valid = true %}
-                {% endif %}
-            {%endfor %}
-            {% if feature_is_valid %}
-                <p>{{ self::feature_label(feature_name=feature_name) | trim }}</p>
-            {% else %}
-                {{ throw(message="Invalid feature found. Make sure it is within the VALID_FEATURES table!") }}
-            {% endif %}
-        {% endif %}
-    {% endif %}
-{% endfor %}
-{% if matching == 0 %}None!{% endif %}
-{% endmacro %}
-
 {% macro install_links(packages) %}
 {% if packages.windows_installer %}
 <a href="{{ packages.windows_installer }}"><img src="/assets/stores/download_for_windows.svg"
