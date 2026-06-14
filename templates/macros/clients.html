@@ -60,19 +60,23 @@ VoIP (MatrixRTC)
 
 {# Feature aria-label #}
 {% macro feature_aria_label(feature_name, feature_status) %}
-    {% set verb = "is" %}
+    {% if feature_status == "unknown" %}
+        {{ self::feature_label(feature_name=feature_name) }} support is unknown
+    {% else %}
+        {% set verb = "is" %}
 
-    {% if feature_name == "spaces" or feature_name == "threads" %}
-        {% set verb = "are" %}
+        {% if feature_name == "spaces" or feature_name == "threads" %}
+            {% set verb = "are" %}
+        {% endif %}
+
+        {% set display_status = feature_status %}
+
+        {% if feature_status == "partial" %}
+            {% set display_status = "partially supported" %}
+        {% endif %}
+
+        {{ self::feature_label(feature_name=feature_name) }} {{ verb }} {{ display_status }}
     {% endif %}
-
-    {% set display_status = feature_status %}
-
-    {% if feature_status == "partial" %}
-        {% set display_status = "partially supported" %}
-    {% endif %}
-
-    {{ self::feature_label(feature_name=feature_name) }} {{ verb }} {{ display_status }}
 {% endmacro %}
 
 {% macro classes(client) %}
