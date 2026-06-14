@@ -63,6 +63,7 @@
                             <span aria-hidden>
                                 {{ clients::feature_label(feature_name=feature) | trim }}
                             </span>
+                            <img src="/assets/circle_question.svg" title="{{ clients::feature_description(feature_name=feature) | trim }}">
                         </li>
                     {% endfor %}
                 </ul>
