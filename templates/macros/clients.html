@@ -27,6 +27,10 @@ OAuth 2.0
 Invisible Cryptography
 {%- elif feature_name == "sliding_sync" -%}
 Simplified Sliding Sync
+{%- elif feature_name == "multi_account" -%}
+Multi-Account
+{%- elif feature_name == "multi_language" -%}
+Multi-Language
 {%- else -%}
     {{feature_name | replace(from="_", to=" ") | title }}
 {%- endif -%}
