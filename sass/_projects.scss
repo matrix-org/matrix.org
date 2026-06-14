@@ -287,10 +287,6 @@
 }
 
 .features-matrix {
-    p {
-        font-size: 80%;
-        text-align: center;
-    }
     ul {
         border: 1px solid var(--borders-color);
         border-radius: 16px;
@@ -300,7 +296,15 @@
             padding: .5rem;
             line-height: 1.6;
             list-style-position: inside;
-            list-style-image: url('/assets/cross_unsupported.svg');
+            list-style-image: url('/assets/question_unknown.svg');
+
+            &.unsupported {
+                list-style-image: url('/assets/cross_unsupported.svg');
+            }
+
+            &.partial {
+                list-style-image: url('/assets/flask_partial.svg');
+            }
 
             &.supported {
                 list-style-image: url('/assets/tick_supported.svg');

@@ -1,5 +1,6 @@
 +++
 title = "NeoChat"
+
 [extra]
 thumbnail = "neochat.svg"
 maintainer = "Carl Schwan, Tobias Fella, and James Graham"
@@ -11,14 +12,23 @@ repo = "https://invent.kde.org/network/neochat"
 website = "https://apps.kde.org/neochat"
 matrix_room = "#neochat:kde.org"
 featured = false
-[extra.features]
-e2ee = true
-spaces = true
-voip_1to1 = false
-voip_jitsi = false
-sso = true
-multi_account = true
-multi_language = true
+
+[extra.features.1stable]
+e2ee = "supported"
+spaces = "supported"
+voip_1to1 = "unsupported"
+threads = "unknown"
+sso = "supported"
+voip_jitsi = "unsupported"
+multi_account = "supported"
+multi_language = "supported"
+oauth = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.2experimental]
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+
 [extra.packages]
 windows_installer = "https://www.microsoft.com/store/apps/9PNXWVNRC29H"
 #f_droid.app_id = "" https://community.kde.org/Android/FDroid

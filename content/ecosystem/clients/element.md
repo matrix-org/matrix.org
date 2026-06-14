@@ -14,16 +14,22 @@ featured_order = 1
 screenshots = ["element-web-screenshot.avif"]
 good_for = "New users and those coming from Slack or Teams"
 
-[extra.features]
-e2ee = true
-spaces = true
-voip_1to1 = true
-voip_jitsi = true
-threads = true
-sso = true
-oauth = true
-multi_account = false
-multi_language = true
+[extra.features.1stable]
+e2ee = "supported"
+spaces = "supported"
+voip_1to1 = "supported"
+threads = "supported"
+sso = "supported"
+voip_jitsi = "supported"
+multi_account = "unsupported"
+multi_language = "supported"
+oauth = "supported"
+invisible_crypto = "unknown"
+
+[extra.features.2experimental]
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+
 [extra.packages]
 windows_installer = "https://element.io/download"
 macos_installer = "https://element.io/download"

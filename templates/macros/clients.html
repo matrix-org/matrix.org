@@ -1,3 +1,14 @@
+{# Human-readable labels for feature categories #}
+{% macro category_label(category_name) %}
+{% if category_name == "1stable" %}
+Stable Features
+{% elif category_name == "2experimental" %}
+Experimental Features
+{% else %}
+    {{category_name | replace(from="_", to=" ") | title }}
+{% endif %}
+{% endmacro %}
+
 {# Client macros for the matrix.org website Features Schema (all boolean values):
 - e2ee: End-to-end encryption support, including media and calls if supported
 - spaces: Matrix Spaces support
@@ -6,7 +17,9 @@
 - threads: Threading support
 - sso: Legacy Single Sign-On (m.login.sso)
 - oauth: Native OIDC/OAuth 2.0 authentication (added in spec 1.15)
-- multi_account: Multiple account support
+- invisible_crypto: Implements https://github.com/matrix-org/matrix-spec-proposals/pull/4153
+- sliding_sync: Uses the new sync API https://github.com/matrix-org/matrix-spec-proposals/pull/4186
+- multi_account: Supports multiple accounts in a single client instance
 - multi_language: Internationalization/localization support
 #}
 
@@ -16,9 +29,12 @@
 "spaces",
 "voip_1to1",
 "voip_jitsi",
+"voip_matrixrtc",
 "threads",
 "sso",
 "oauth",
+"invisible_crypto",
+"sliding_sync",
 "multi_account",
 "multi_language"
 ] %}
@@ -35,6 +51,8 @@ OAuth 2.0
 VoIP (1:1)
 {% elif feature_name == "voip_jitsi" %}
 VoIP (Jitsi)
+{% elif feature_name == "voip_matrixrtc" %}
+VoIP (MatrixRTC)
 {% else %}
     {{feature_name | replace(from="_", to=" ") | title }}
 {% endif %}

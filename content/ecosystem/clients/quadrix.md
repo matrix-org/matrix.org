@@ -1,5 +1,6 @@
 +++
 title = "Quadrix"
+
 [extra]
 thumbnail = "quadrix.svg"
 maintainer = "Jean-François Alarie"
@@ -11,14 +12,23 @@ repo = "https://github.com/alariej/quadrix"
 website = "https://quadrix.chat"
 matrix_room = "#quadrix:matrix.org"
 featured = false
-[extra.features]
-e2ee = false
-spaces = false
-voip_1to1 = false
-voip_jitsi = false
-sso = false
-multi_account = false
-multi_language = false
+
+[extra.features.1stable]
+e2ee = "unsupported"
+spaces = "unsupported"
+voip_1to1 = "unsupported"
+threads = "unknown"
+sso = "unsupported"
+voip_jitsi = "unsupported"
+multi_account = "unsupported"
+multi_language = "unsupported"
+oauth = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.2experimental]
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+
 [extra.packages]
 apple_app_store = { org = "quadrix-chat", app_id = "id1576110553" }
 google_play_store.app_id = "chat.quadrix.android"

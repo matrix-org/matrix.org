@@ -161,16 +161,22 @@ screenshots = []
 # Should describe the target user group
 good_for = "Useful for users coming from another platform"
 
-[extra.features]
-e2ee = false
-spaces = false
-voip_1to1 = false
-voip_jitsi = false
-threads = false
-sso = false
-oauth = false
-multi_account = false
-multi_language = false
+[extra.features.1stable]
+e2ee = "supported"
+spaces = "partial"
+voip_1to1 = "unsupported"
+threads = "partial"
+sso = "supported"
+voip_jitsi = "unsupported"
+multi_account = "supported"
+multi_language = "supported"
+oauth = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.2experimental]
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+
 
 [extra.packages]
 windows_installer = "https://example.com/download"

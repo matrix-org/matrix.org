@@ -1,5 +1,6 @@
 +++
 title = "Sable"
+
 [extra]
 thumbnail = "sable.svg"
 maintainer = "Seven"
@@ -12,16 +13,22 @@ website = "https://docs.sable.moe/"
 matrix_room = "#sable:sable.moe"
 featured = false
 
-[extra.features]
-e2ee = true
-spaces = true
-voip_1to1 = false
-voip_jitsi = false
-sso = true
-oauth = false
-threads = true
-multi_account = true
-multi_language = false
+[extra.features.1stable]
+e2ee = "supported"
+spaces = "supported"
+voip_1to1 = "unsupported"
+sso = "supported"
+threads = "supported"
+voip_jitsi = "unsupported"
+multi_account = "supported"
+multi_language = "unsupported"
+oauth = "unsupported"
+invisible_crypto = "unknown"
+
+[extra.features.2experimental]
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+
 [extra.packages]
 webapp = "https://app.sable.moe/"
 +++

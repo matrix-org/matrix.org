@@ -13,16 +13,23 @@ latest_release = "2026-04-12"
 featured = false
 screenshots = []
 good_for = "Mobile-first users who want additional security (e.g., self-deleting messages). Tailored for China"
-[extra.features]
-e2ee = true
-spaces = true
-voip_1to1 = false
-voip_jitsi = false
-threads = false
-sso = false
-oauth = true
-multi_account = false
-multi_language = true
+
+[extra.features.1stable]
+e2ee = "supported"
+spaces = "supported"
+voip_1to1 = "unsupported"
+threads = "unsupported"
+sso = "unsupported"
+voip_jitsi = "unsupported"
+multi_account = "unsupported"
+multi_language = "supported"
+oauth = "supported"
+invisible_crypto = "unknown"
+
+[extra.features.2experimental]
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+
 [extra.packages]
 +++
 

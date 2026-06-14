@@ -16,15 +16,22 @@ featured_order = 3
 screenshots = ["fluffychat-screenshot-roomlist.avif", "fluffychat-screenshot-timeline.avif"]
 good_for = "Users who want something simple and approachable, especially on mobile"
 
-[extra.features]
-e2ee = true
-spaces = true
-voip_1to1 = false
-voip_jitsi = false
-threads = true
-sso = true
-multi_account = true
-multi_language = true
+[extra.features.1stable]
+e2ee = "supported"
+spaces = "supported"
+voip_1to1 = "unsupported"
+threads = "supported"
+sso = "supported"
+voip_jitsi = "unsupported"
+multi_account = "supported"
+multi_language = "supported"
+oauth = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.2experimental]
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+
 [extra.packages]
 google_play_store.app_id = "chat.fluffy.fluffychat"
 f_droid.app_id = "chat.fluffy.fluffychat"

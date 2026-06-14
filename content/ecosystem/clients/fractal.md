@@ -11,16 +11,21 @@ repo = "https://gitlab.gnome.org/World/fractal"
 matrix_room = "#fractal:gnome.org"
 featured = false
 
-[extra.features]
-e2ee = true
-spaces = false
-voip_1to1 = false
-voip_jitsi = false
-threads = false
-sso = true
-oauth = true
-multi_account = true
-multi_language = true
+[extra.features.1stable]
+e2ee = "supported"
+spaces = "unsupported"
+voip_1to1 = "unsupported"
+threads = "unsupported"
+sso = "supported"
+voip_jitsi = "unsupported"
+multi_account = "supported"
+multi_language = "supported"
+oauth = "supported"
+invisible_crypto = "unknown"
+
+[extra.features.2experimental]
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
 
 [extra.packages]
 flathub.app_id = "org.gnome.Fractal"

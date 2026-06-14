@@ -1,5 +1,6 @@
 +++
 title = "Thunderbird"
+
 [extra]
 thumbnail = "thunderbird.svg"
 maintainer = "Mozilla"
@@ -11,14 +12,23 @@ repo = "https://hg.mozilla.org/comm-central"
 website = "https://www.thunderbird.net"
 matrix_room = "#thunderbird:mozilla.org"
 featured = false
-[extra.features]
-e2ee = true
-spaces = false
-voip_1to1 = false
-voip_jitsi = false
-sso = true
-multi_account = true
-multi_language = true
+
+[extra.features.1stable]
+e2ee = "supported"
+spaces = "unsupported"
+voip_1to1 = "unsupported"
+threads = "unknown"
+sso = "supported"
+voip_jitsi = "unsupported"
+multi_account = "supported"
+multi_language = "supported"
+oauth = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.2experimental]
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+
 [extra.packages]
 windows_installer = "https://www.thunderbird.net"
 macos_installer = "https://www.thunderbird.net"

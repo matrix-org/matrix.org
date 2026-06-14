@@ -1,5 +1,6 @@
 +++
 title = "chooj"
+
 [extra]
 thumbnail = "chooj.png"
 maintainer = "Farooq Karimi Zadeh"
@@ -11,15 +12,23 @@ repo = "https://codeberg.org/chooj/chooj"
 website = "https://chooj.app"
 matrix_room = "#chooj:matrix.org"
 featured = false
-[extra.features]
-e2ee = false
-spaces = false
-voip_1to1 = false
-voip_jitsi = false
-threads = false
-sso = false
-multi_account = false
-multi_language = false
+
+[extra.features.1stable]
+e2ee = "unsupported"
+spaces = "unsupported"
+voip_1to1 = "unsupported"
+threads = "unsupported"
+sso = "unsupported"
+voip_jitsi = "unsupported"
+multi_account = "unsupported"
+multi_language = "unsupported"
+oauth = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.2experimental]
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+
 [extra.packages]
 +++
 

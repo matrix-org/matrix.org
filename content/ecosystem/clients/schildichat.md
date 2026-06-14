@@ -1,5 +1,6 @@
 +++
 title = "SchildiChat"
+
 [extra]
 thumbnail = "schildichat.svg"
 maintainer = "SpiritCroc"
@@ -10,14 +11,23 @@ maturity = "Stable"
 repo = "https://github.com/SchildiChat"
 website = "https://schildi.chat/"
 featured = false
-[extra.features]
-e2ee = true
-spaces = true
-voip_1to1 = true
-voip_jitsi = true
-sso = true
-multi_account = false
-multi_language = true
+
+[extra.features.1stable]
+e2ee = "supported"
+spaces = "supported"
+voip_1to1 = "supported"
+threads = "unknown"
+sso = "supported"
+voip_jitsi = "supported"
+multi_account = "unsupported"
+multi_language = "supported"
+oauth = "unknown"
+invisible_crypto = "unknown"
+
+[extra.features.2experimental]
+voip_matrixrtc = "unknown"
+sliding_sync = "unknown"
+
 [extra.packages]
 windows_installer = "https://github.com/SchildiChat/schildichat-desktop/releases"
 macos_installer = "https://github.com/SchildiChat/schildichat-desktop/releases"
