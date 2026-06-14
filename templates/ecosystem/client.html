@@ -56,8 +56,13 @@
                 <h5>{{ clients::category_label(category_name=category) }}</h3>
                 <ul>
                     {% for feature, supported in features %}
-                        <li class="{{ supported }}">
-                            {{ clients::feature_label(feature_name=feature) | trim }}
+                        <li
+                            class="{{ supported }}"
+                            aria-label="{{ clients::feature_aria_label(feature_name=feature, feature_status=supported) }}"
+                        >
+                            <span aria-hidden>
+                                {{ clients::feature_label(feature_name=feature) | trim }}
+                            </span>
                         </li>
                     {% endfor %}
                 </ul>
