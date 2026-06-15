@@ -45,19 +45,19 @@ The current elected representatives are:
 
 #### Individual Members
 
-* Andy Balaam (he/him)
-* Gnuxie (she/her)
-* Greg Sutcliffe (he/him)
-* J. B. Crawford (they/them)
+* Andy Balaam (he/him)  
+* Greg Sutcliffe (he/him)  
+* Mathieu Velten (he/him)  
+* Max (he/him)
 
 </div>
 <div>
 
 #### Ecosystem Members
 
-* Bram van den Heuvel (he/they), *Elm SDK*
-* Kim Brose (he/him), *Matrix Community Events*
-* Nicolas Werner (he/him), *Nheko-Reborn*
+* Jade Ellis (she/her), *Continuwuity*  
+* Kim Brose (he/him), *Matrix Community Events*  
+* Nico Werner (he/him), *Nheko*
 
 </div>
 <div>
@@ -90,7 +90,7 @@ The current elected representatives are:
 
 #### Gold Members
 
-* Brad Murray (he/him), *Automattic (Beeper)*
+* Nick Mills-Barrett (he/him), Automattic
 * Vacant seat
 * Vacant seat
 
@@ -99,8 +99,8 @@ The current elected representatives are:
 
 #### Silver Members
 
-* Christian Kußowski (he/him), *Famedly*
-* Jan Kohnert (he/him), *Gematik GmbH*
+* Niklas Zender (he/him), Famedly
+* Yoan Pintas (he/hin), DINUM
 
 </div>
 </div>
@@ -115,17 +115,17 @@ The current elected representatives are:
 
 #### Guardians
 
-* (Amandine Le Pape (she/her) currently acting MD)
 * Matthew Hodgson (he/him)
-* Ross Schulman
+* Ross Schulman (he/him)
+* Vacant seat
 
 </div>
 <div>
 
 #### Spec Core Team
 
+* Alexey Rusakov (he/him)
 * Richard van der Hoff (he/him)
-* Travis Ralston (he/him)
 
 </div>
 <div>

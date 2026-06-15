@@ -16,6 +16,7 @@ We encourage you to read our [membership page](@/foundation/members/index.md) an
 * 2026-05 [Kicking off the nomination period for the 2026 Governing Board elections](@/blog/2026/05/2026-05-02-election-nomination.md)
 * 2026-05 [Announcing the candidates and kicking off the campaigning](@/blog/2026/05/2026-05-16-election-campaigning.md)
 * 2026-05 [Kicking off the voting period for the Governing Board election](@/blog/2026/05/2026-05-29-kicking-off-gb-voting.md)
+* 2026-06 [Announcing the results of the GB election](@/blog/2026/06/2026-06-15-governing-board-results.md)
 
 Read on for our [election schedule](@/foundation/governing-board-elections/2026/index.md#schedule) and more information about the election process.
 This page will be continually updated over the course of the elections to list all of the [nominees](@/foundation/governing-board-elections/2026/index.md#nominees) and eventually [elected representatives](@/foundation/governing-board-elections/2026/index.md#elected-representatives).
@@ -186,19 +187,45 @@ and answer questions before we convene for their first Governing Board meeting.
 
 ## Elected representatives
 
-All of the winners will be announced here on 15th June.
+Congratulations and welcome to our newly elected Governing Board members, whether it is their first or second term on the Board!
 
-<!-- Below is a list of this year's candidates who are now elected representatives. Visit the [Governing Board information page](/foundation/governing-board/) for a complete list of elected representatives regardless of which year they were elected.
+**Representatives of the Ecosystem members**  
+All three seats were up for renewal this year: we’re glad to keep Kim and Nico around for another term and happy to welcome Jade!
 
-* Andy Balaam (he/him), Individual Member
-* Gnuxie (she/her), Individual Member
-* Greg Sutcliffe (he/him), Individual Member
-* J.B. Crawford (they/them), Individual Member
-* Tobias Fella (he/him), KDE e.V., Associate Member
-* Brad Murray (he/him), Automattic (Beeper), Gold Member
-* Jan Kohnert (he/him), Gematik GmbH, Silver Member
-* Christian Kußowski (he/him), Famedly, Silver Member
--->
+* **Kim Brose** (Matrix Community Events)  
+* **Nico Werner** (Nheko)  
+* **Jade Ellis** (Continuwuity)
+
+**Representative of the Platinum member**  
+The Platinum seat was up for renewal this year and we are glad Neil is sticking around!
+
+* **Neil Johnson**, Element
+
+**Representatives of the Spec Core team**  
+Two seats were up for renewal this year, we are happy to welcome Alexey and keep Rich around for another term!
+
+* **Alexey Rusakov**  
+* **Richard van der Hoff**
+
+**Representatives of the Guardians**  
+Three seats were up for renewal this year, but only two candidates stepped up (as I am sitting on the Governing Board as the Acting Managing Director). We are glad to keep Ross and Matthew around for another term!
+
+* **Matthew Hodgson**  
+* **Ross Schulman**
+
+**Representatives of the Individual members**  
+Following another member stepping down last week, we now have two seats to fill rather than the one initially announced, so the two first elected candidates will get a seat. We’re excited to welcome two new members: Max and Mathieu!
+
+* **Max**  
+* **Mathieu Velten**
+
+**Representatives of the Silver members**  
+Following two members stepping down we had two out-of cycle seats to fill during this election, and are happy to welcome Yoan and Niklas!
+
+* **Yoan Pintas** (DINUM)  
+* **Niklas Zender** (Famedly)
+
+We will also welcome a new Governing Board member who joined as a replacement of his ex-colleague Brad Murray at Automattic, representative of the Gold member: please welcome **Nick Mills-Barrett!**
 
 ## Nominees
 
