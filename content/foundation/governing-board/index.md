@@ -55,8 +55,8 @@ The current elected representatives are:
 
 #### Ecosystem Members
 
-* Jade Ellis, *Continuwuity*  
-* Kim Brose, *Matrix Community Events*  
+* Jade Ellis, *Continuwuity*
+* Kim Brose, *Matrix Community Events*
 * Nicolas Werner, *Nheko-Reborn*
 
 </div>
