@@ -192,19 +192,19 @@ Congratulations and welcome to our newly elected Governing Board members, whethe
 **Representatives of the Ecosystem members**  
 All three seats were up for renewal this year: we’re glad to keep Kim and Nico around for another term and happy to welcome Jade!
 
-* **Kim Brose** (Matrix Community Events)  
-* **Nico Werner** (Nheko)  
+* **Kim Brose (HarHarLinks)** (Matrix Community Events)
+* **Nico (Nicolas Werner)** (Nheko)
 * **Jade Ellis** (Continuwuity)
 
 **Representative of the Platinum member**  
 The Platinum seat was up for renewal this year and we are glad Neil is sticking around!
 
-* **Neil Johnson**, Element
+* **Neil Johnson** (Element)
 
 **Representatives of the Spec Core team**  
 Two seats were up for renewal this year, we are happy to welcome Alexey and keep Rich around for another term!
 
-* **Alexey Rusakov**  
+* **Alexey “Kitsune” Rusakov**
 * **Richard van der Hoff**
 
 **Representatives of the Guardians**  
@@ -226,6 +226,8 @@ Following two members stepping down we had two out-of cycle seats to fill during
 * **Niklas Zender** (Famedly)
 
 We will also welcome a new Governing Board member who joined as a replacement of his ex-colleague Brad Murray at Automattic, representative of the Gold member: please welcome **Nick Mills-Barrett!**
+
+Meanwhile, we would also like to extend a huge thanks to all departing Governing Board members who have helped a lot in shaping how we work and ensure the highest impact. It was great to have you around and we are grateful for the time you have put into supporting the Foundation!
 
 ## Nominees
 
