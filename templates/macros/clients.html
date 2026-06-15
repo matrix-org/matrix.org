@@ -41,21 +41,21 @@ Experimental Features
 
 {# Human-readable labels for features #}
 {% macro feature_label(feature_name) %}
-{% if feature_name == "e2ee" %}
+{%- if feature_name == "e2ee" -%}
 E2EE
-{% elif feature_name == "sso" %}
+{%- elif feature_name == "sso" -%}
 Legacy SSO
-{% elif feature_name == "oauth" %}
+{%- elif feature_name == "oauth" -%}
 OAuth 2.0
-{% elif feature_name == "voip_1to1" %}
+{%- elif feature_name == "voip_1to1" -%}
 VoIP (1:1)
-{% elif feature_name == "voip_jitsi" %}
+{%- elif feature_name == "voip_jitsi" -%}
 VoIP (Jitsi)
-{% elif feature_name == "voip_matrixrtc" %}
+{%- elif feature_name == "voip_matrixrtc" -%}
 VoIP (MatrixRTC)
-{% else %}
-    {{feature_name | replace(from="_", to=" ") | title }}
-{% endif %}
+{%- else -%}
+    {{ feature_name | replace(from="_", to=" ") | title }}
+{%- endif -%}
 {% endmacro %}
 
 {# Feature aria-label #}
@@ -65,7 +65,7 @@ VoIP (MatrixRTC)
     {% else %}
         {% set verb = "is" %}
 
-        {% if feature_name == "spaces" or feature_name == "threads" %}
+        {% if feature_name in ["spaces", "threads"] %}
             {% set verb = "are" %}
         {% endif %}
 

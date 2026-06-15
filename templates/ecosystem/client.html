@@ -58,7 +58,7 @@
                     {% for feature, supported in features %}
                         <li
                             class="{{ supported }}"
-                            aria-label="{{ clients::feature_aria_label(feature_name=feature, feature_status=supported) }}"
+                            aria-label="{{ clients::feature_aria_label(feature_name=feature, feature_status=supported) | trim}}"
                         >
                             <span aria-hidden>
                                 {{ clients::feature_label(feature_name=feature) | trim }}
