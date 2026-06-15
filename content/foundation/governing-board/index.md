@@ -57,7 +57,7 @@ The current elected representatives are:
 
 * Jade Ellis (she/her), *Continuwuity*  
 * Kim Brose (he/him), *Matrix Community Events*  
-* Nico Werner (he/him), *Nheko*
+* Nicolas Werner (he/him), *Nheko-Reborn*
 
 </div>
 <div>

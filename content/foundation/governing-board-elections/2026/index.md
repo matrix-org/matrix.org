@@ -193,7 +193,7 @@ Congratulations and welcome to our newly elected Governing Board members, whethe
 All three seats were up for renewal this year: we’re glad to keep Kim and Nico around for another term and happy to welcome Jade!
 
 * **Kim Brose (HarHarLinks)** (Matrix Community Events)
-* **Nico (Nicolas Werner)** (Nheko)
+* **Nico (Nicolas Werner)** (Nheko-Reborn)
 * **Jade Ellis** (Continuwuity)
 
 **Representative of the Platinum member**  

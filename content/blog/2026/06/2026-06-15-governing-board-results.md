@@ -22,7 +22,7 @@ So without further ado, I would like to congratulate and welcome our newly elect
 All three seats were up for renewal this year: we’re glad to keep Kim and Nico around for another term and happy to welcome Jade!
 
 * **Kim Brose** (Matrix Community Events)
-* **Nico Werner** (Nheko)
+* **Nicolas Werner** (Nheko-Reborn)
 * **Jade Ellis** (Continuwuity)
 
 ## Representative of the Platinum member
