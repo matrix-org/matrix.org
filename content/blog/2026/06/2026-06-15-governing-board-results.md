@@ -29,7 +29,7 @@ All three seats were up for renewal this year: we’re glad to keep Kim and Nico
 
 The Platinum seat was up for renewal this year and we are glad Neil is sticking around!
 
-* **Neil Johnson**, Element
+* **Neil Johnson** (Element)
 
 ## Representatives of the Spec Core team
 
