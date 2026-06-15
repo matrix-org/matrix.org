@@ -61,6 +61,8 @@ Following two members stepping down we had two out-of-cycle seats to fill during
 
 We will also welcome a new Governing Board member who joined as a replacement of his ex-colleague Brad Murray at Automattic, representative of the Gold member: please welcome **Nick Mills-Barrett!**
 
+Meanwhile, we would also like to extend a huge thanks to all departing Governing Board members who have helped a lot in shaping how we work and ensure the highest impact. It was great to have you around and we are grateful for the time you have put into supporting the Foundation!
+
 The new members will be onboarded during the next few weeks by our current chair Greg and vice-chair Kim, and we are looking forward to getting to work!
 
 Congratulations all and welcome again!
