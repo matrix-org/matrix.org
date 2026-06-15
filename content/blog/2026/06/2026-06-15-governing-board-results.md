@@ -1,10 +1,10 @@
 +++
 date = "2026-06-15T16:00:00+00:00"
-title = "Announcing the results of the GB election"
+title = "Announcing the results of the Governing Board election"
 
 [taxonomies]
 author = ["Amandine"]
-category = ["Governing Board"]
+category = ["Elections", "Foundation", "Governing Board"]
 +++
 
 And that’s a wrap for this 2026 Governing Board election season! 🏁
