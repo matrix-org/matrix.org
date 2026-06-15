@@ -15,6 +15,8 @@ After one year of setting things up (2024), the last year (2025) has been the fi
 
 So without further ado, I would like to congratulate and welcome our newly elected Governing Board members, whether it is their first or second term on the Board!
 
+<!-- more -->
+
 ## Representatives of the Ecosystem members
 
 All three seats were up for renewal this year: we’re glad to keep Kim and Nico around for another term and happy to welcome Jade!
