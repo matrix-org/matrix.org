@@ -68,6 +68,4 @@ skip_anchor_prefixes = [
 # all the information [on the elections page](https:/matrix.org/foundation/governing-board-elections/<year>/)."
 banner = """
 📢 We are happy to launch [The Matrix Conference](https://conference.matrix.org) on 20th-23rd October in Malmö, Sweden. [Submit a proposal](https://cfp.2026.matrix.org/matrix-conference-2026/cfp) until 14th June and [get your ticket](https://conference.matrix.org/register/)!
-
-🗳️ The voting period for the Governing Board has started. Find all the information [on the elections page](/foundation/governing-board-elections/2026/).
 """
