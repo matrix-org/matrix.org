@@ -45,26 +45,26 @@ The current elected representatives are:
 
 #### Individual Members
 
-* Andy Balaam (he/him)  
-* Greg Sutcliffe (he/him)  
-* Mathieu Velten (he/him)  
-* Max (he/him)
+* Andy Balaam
+* Greg Sutcliffe
+* Mathieu Velten
+* Max
 
 </div>
 <div>
 
 #### Ecosystem Members
 
-* Jade Ellis (she/her), *Continuwuity*  
-* Kim Brose (he/him), *Matrix Community Events*  
-* Nicolas Werner (he/him), *Nheko-Reborn*
+* Jade Ellis, *Continuwuity*  
+* Kim Brose, *Matrix Community Events*  
+* Nicolas Werner, *Nheko-Reborn*
 
 </div>
 <div>
 
 #### Associate Members
 
-* Tobias Fella (he/him), *KDE e.V.*
+* Tobias Fella, *KDE e.V.*
 * Vacant seat
 
 </div>
@@ -80,7 +80,7 @@ The current elected representatives are:
 
 #### Platinum Members
 
-* Neil Johnson (he/him), *Element*
+* Neil Johnson, *Element*
 * Vacant seat
 * Vacant seat
 * Vacant seat
@@ -90,7 +90,7 @@ The current elected representatives are:
 
 #### Gold Members
 
-* Nick Mills-Barrett (he/him), Automattic
+* Nick Mills-Barrett, Automattic
 * Vacant seat
 * Vacant seat
 
@@ -99,8 +99,8 @@ The current elected representatives are:
 
 #### Silver Members
 
-* Niklas Zender (he/him), Famedly
-* Yoan Pintas (he/hin), DINUM
+* Niklas Zender, Famedly
+* Yoan Pintas, DINUM
 
 </div>
 </div>
@@ -115,8 +115,8 @@ The current elected representatives are:
 
 #### Guardians
 
-* Matthew Hodgson (he/him)
-* Ross Schulman (he/him)
+* Matthew Hodgson
+* Ross Schulman
 * Vacant seat
 
 </div>
@@ -124,15 +124,15 @@ The current elected representatives are:
 
 #### Spec Core Team
 
-* Alexey Rusakov (he/him)
-* Richard van der Hoff (he/him)
+* Alexey Rusakov
+* Richard van der Hoff
 
 </div>
 <div>
 
 #### Managing Director
 
-* Amandine Le Pape (she/her)
+* Amandine Le Pape
 
 </div>
 </div>
@@ -184,23 +184,23 @@ The current chairs of the Governing Board are:
 
 ### Governing Board
 
-* Greg Sutcliffe (he/him) — Chair
-* Kim Brose (he/him) — Vice Chair
+* Greg Sutcliffe — Chair
+* Kim Brose — Vice Chair
 
 </div>
 <div>
 
 ### Governance Committee
 
-* Bram van den Heuvel (he/they) — Chair
-* Neil Johnson (he/him) — Vice Chair
+* Bram van den Heuvel — Chair
+* Neil Johnson — Vice Chair
 
 </div>
 <div>
 
 ### Community Committee
 
-* Nicolas Werner (he/him) — Chair
+* Nicolas Werner — Chair
 * Vacant seat — Vice Chair
 
 </div>
@@ -208,8 +208,8 @@ The current chairs of the Governing Board are:
 
 ### Finance & Fundraising Committee
 
-* Gnuxie (she/her) — Chair
-* Amandine Le Pape (she/her) — Vice Chair
+* Gnuxie — Chair
+* Amandine Le Pape — Vice Chair
 
 </div>
 <div>
@@ -217,10 +217,9 @@ The current chairs of the Governing Board are:
 ### Trust & Safety Committee
 
 * J. B. Crawford — Chair
-* Nicolas Werner (he/him) — Vice Chair
+* Nicolas Werner — Vice Chair
 
 </div>
-
 </div>
 
 ## Where can I reach the Governing Board?
