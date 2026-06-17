@@ -18,7 +18,7 @@
                     <h3 id="{{ bridge.name | slugify }}">{{ bridge.name }}</h3>
                     <div class="maturity {{ bridge.maturity | lower }}">{{ bridge.maturity | title }}</div>
                 </div>
-                <p>{{ bridge.summary | markdown | safe }}</p>
+                <p>{{ bridge.summary | markdown(inline=true) | safe }}</p>
                 <div class="project-links">
                     {% if bridge.docs %}
                     <a href="{{ bridge.docs }}" class="pill">
