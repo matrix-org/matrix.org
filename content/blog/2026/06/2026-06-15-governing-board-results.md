@@ -17,7 +17,7 @@ So without further ado, I would like to congratulate and welcome our newly elect
 
 <!-- more -->
 
-## Representatives of the Ecosystem members
+## [Representatives of the Ecosystem members](https://opavote.com/results/5610581701951488)
 
 All three seats were up for renewal this year: we’re glad to keep Kim and Nico around for another term and happy to welcome Jade!
 
@@ -25,34 +25,34 @@ All three seats were up for renewal this year: we’re glad to keep Kim and Nico
 * **Nicolas Werner** (Nheko-Reborn)
 * **Jade Ellis** (Continuwuity)
 
-## Representative of the Platinum member
+## [Representative of the Platinum member](https://opavote.com/results/5945388797526016)
 
 The Platinum seat was up for renewal this year and we are glad Neil is sticking around!
 
 * **Neil Johnson** (Element)
 
-## Representatives of the Spec Core team
+## [Representatives of the Spec Core team](https://opavote.com/results/4764217057214464)
 
 Two seats were up for renewal this year, we are happy to welcome Alexey and keep Rich around for another term!
 
 * **Alexey Rusakov**
 * **Richard van der Hoff**
 
-## Representatives of the Guardians
+## [Representatives of the Guardians](https://opavote.com/results/5169092618354688)
 
 Three seats were up for renewal this year, but only two candidates stepped up (as I am sitting on the Governing Board as the Acting Managing Director). We are glad to keep Ross and Matthew around for another term!
 
 * **Matthew Hodgson**
 * **Ross Schulman**
 
-## Representatives of the Individual members
+## [Representatives of the Individual members](https://opavote.com/results/4709548834422784)
 
 Following another member stepping down last week, we now have two out-of-cycle seats to fill rather than the one initially announced, so the first two elected candidates will get a seat. We’re excited to welcome two new members: Max and Mathieu!
 
 * **Max**
 * **Mathieu Velten**
 
-## Representatives of the Silver members
+## [Representatives of the Silver members](https://opavote.com/results/5202619435057152)
 
 Following two members stepping down we had two out-of-cycle seats to fill during this election, and are happy to welcome Yoan and Niklas!
 
