@@ -1,3 +1,6 @@
+$color-code-background: #272822;
+$color-code-color: #f8f8f2;
+
 :root {
     --page-max-width: 57rem;
     --page-with-toc-max-width: 81rem;
@@ -113,9 +116,10 @@ ol:last-child {
 }
 
 pre {
+    background-color: $color-code-background;
     padding: 1rem;
     overflow: auto;
-    border-radius: 4px;
+    border-radius: 0.3rem;
 }
 
 // The line numbers already provide some kind of left/right padding
@@ -191,15 +195,31 @@ pre table {
     }
 }
 
-:not(pre)>code {
-    color: #f54029;
-    border: 1px solid #f54029;
-    border-radius: 4px;
-    padding: 0 .4rem;
+code {
+    background-color: $color-code-background;
+    color: $color-code-color;
+    border-radius: 0.3rem;
+    padding: 1px 5px 2px;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    code {
+        font-size: 0.75em;
+        padding-top: 0;
+    }
+}
+
+pre code {
+    white-space: inherit;
+    font-size: inherit;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
 }
 
 a>code {
-    border-color: var(--color-link);
     color: var(--color-link);
 }
 
