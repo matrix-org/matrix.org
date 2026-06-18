@@ -13,6 +13,35 @@
             background-image: url("/assets/frontpage/hero_dancing_lines_mobile.svg");
         }
 
+        @media (max-width: 767px) and (orientation: landscape) {
+            min-height: calc(100svh - var(--navbar-height));
+            height: auto;
+            padding-block: 1.5rem 4rem;
+
+            .hero_content {
+                height: auto;
+                justify-content: flex-start;
+                padding-top: 1.5rem;
+            }
+
+            .hero_content img {
+                width: 140px;
+                height: auto;
+                margin-bottom: 1rem;
+            }
+
+            .hero_content h2 {
+                font-size: 1.75rem;
+            }
+
+            #hero_curve1,
+            #hero_curve2,
+            #hero_curve3,
+            #hero_curve4 {
+                display: none;
+            }
+        }
+
         background-size: 100% 100%;
         background-repeat: no-repeat;
         position: relative;
