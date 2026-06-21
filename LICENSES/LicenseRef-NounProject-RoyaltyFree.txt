@@ -1,8 +1,5 @@
 The Noun Project — Royalty-Free License
 
-The "coral" icon by Andy Horvath (The Noun Project, icon #8016483) used as
-content/ecosystem/clients/zooid.svg was obtained via a paid download under
-The Noun Project's Royalty-Free License. This license grants a perpetual,
-worldwide, non-exclusive right to use the icon without attribution.
+This license grants a perpetual, worldwide, non-exclusive right to use the icon without attribution.
 
 Full terms: https://thenounproject.com/legal/terms-of-use/
