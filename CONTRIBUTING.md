@@ -19,13 +19,13 @@ Helping out can take many forms. A lot of work on the website involves coding, b
 
 Join [#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website%3Amatrix.org) to reach out!
 
-Here are 3 simple steps to get started submitting PRs:
+Here are a few simple steps to help you get started with submitting a Pull Request (PR):
 
 1. Check out our contributing docs - you're already here, just continue on reading!
-   We also recommend skimming our README for some tips in dealing with the repo and how to test your changes locally,
-   and our [CONTENT.md](./CONTENT.md) for further help on how to work on specific parts of the website.
-   See our documentation [below](#review--publishing-policy) about our expectations and what you can expect in return.
-1. Share your idea first - see [How we take decisions](#how-we-take-decisions).
+   We also recommend reading our [README.md](./README.md) for tips on working with the repository and testing your changes locally,
+   and our [CONTENT.md](./CONTENT.md) for further guidance on working on specific parts of the website.
+   See our review and publishing [documentation](#review--publishing-policy) for more information about our expectations and what you can expect in return.
+1. Share your idea first - for more information, please read about [how we take decisions](#how-we-take-decisions).
 1. Pick an issue and submit a PR!
    We use several labels to make it easier to find an issue that suits you:
    
@@ -34,8 +34,8 @@ Here are 3 simple steps to get started submitting PRs:
    - [needs decision](https://github.com/matrix-org/matrix.org/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22needs%20decision%22) - issues that require further input from maintainers before they can be addressed.
    
    Our process is usually not to assign issues to anyone, so we avoid blocking someone else from working on it.
-   If you are interested in one, check if there is a PR related to the issue already, and if not simply go ahead and submit one!
-1. Come chat with the website maintainers in [#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website%3Amatrix.org) :)
+   If you’re interested in a particular issue, check whether there’s already a related PR. If there isn’t, go ahead and open a PR.
+1. Come chat with the website maintainers and other contributors in [#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website%3Amatrix.org).
 
 ## What we are trying to achieve
 
