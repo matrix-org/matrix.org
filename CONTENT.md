@@ -152,7 +152,6 @@ maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 repo = "https://github.com/example-org/example-repo"
 matrix_room = "#your-matrix-room:example.com"
 licence = "PICK ONE identifier from https://spdx.org/licenses/"
-latest_release = "2022-11-02"
 featured = false
 # Used with featured = true to have a fixed order.
 # featured_order = 1

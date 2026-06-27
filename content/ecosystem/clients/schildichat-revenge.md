@@ -9,7 +9,6 @@ repo = "https://github.com/SchildiChat/schildi-revenge"
 website = "https://schildi.chat/revenge"
 matrix_room = "#revenge:schildi.chat"
 licence = "GPL-3.0-only"
-latest_release = "2026-04-04"
 featured = false
 
 [extra.features.1stable]

@@ -9,7 +9,6 @@ repo = "https://github.com/SchildiChat/schildichat-android-next"
 website = "https://schildi.chat/android/next"
 matrix_room = "#android:schildi.chat"
 licence = "AGPL-3.0-only"
-latest_release = "2024-11-15"
 featured = false
 
 [extra.features.1stable]

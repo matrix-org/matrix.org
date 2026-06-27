@@ -6,7 +6,6 @@ thumbnail = "mages.svg"
 maintainer = "mlm-games"
 licence = "AGPL-3.0-only"
 language = "Kotlin"
-latest_release = "2026-02-22"
 maturity = "Alpha"
 repo = "https://github.com/mlm-games/Mages"
 featured = false
