@@ -27,10 +27,12 @@ Here are 3 simple steps to get started submitting PRs:
    See our documentation [below](#review--publishing-policy) about our expectations and what you can expect in return.
 1. Share your idea first - see [How we take decisions](#how-we-take-decisions).
 1. Pick an issue and submit a PR!
-   We maintain several labels on our issues to make it easier to find one that suits you.
-   The [help wanted](https://github.com/matrix-org/matrix.org/issues?q=state%3Aopen%20label%3A%22help%20wanted%22) label is for issues we actively think are easy to tackle by outside contributors,
-   and we have [good first issue](https://github.com/matrix-org/matrix.org/issues?q=state%3Aopen%20label%3A%22good%20first%20issue%22) for those that are particularly suited to get started.
-   The label [needs decision](https://github.com/matrix-org/matrix.org/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22needs%20decision%22) marks issues that first need further input from the maintainers before considered ready to implement.
+   We use several labels to make it easier to find an issue that suits you:
+   
+   - [help wanted](https://github.com/matrix-org/matrix.org/issues?q=state%3Aopen%20label%3A%22help%20wanted%22) - issues we consider easy for outside contributors to tackle.
+   - [good first issue](https://github.com/matrix-org/matrix.org/issues?q=state%3Aopen%20label%3A%22good%20first%20issue%22) - issues that are particularly well suited for new contributors.
+   - [needs decision](https://github.com/matrix-org/matrix.org/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22needs%20decision%22) - issues that require further input from maintainers before they can be addressed.
+   
    Our process is usually not to assign issues to anyone, so we avoid blocking someone else from working on it.
    If you are interested in one, check if there is a PR related to the issue already, and if not simply go ahead and submit one!
 1. Come chat with the website maintainers in [#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website%3Amatrix.org) :)
