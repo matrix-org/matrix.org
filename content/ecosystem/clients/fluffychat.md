@@ -3,14 +3,14 @@ title = "FluffyChat"
 
 [extra]
 thumbnail = "fluffychat.svg"
-maintainer = "Christian Pauly"
+maintainer = "Christian Kußowski"
 licence = "AGPL-3.0-only"
 language = "Flutter"
-latest_release = "2021-12-01"
+latest_release = "2026-06-22"
 maturity = "Stable"
 repo = "https://github.com/krille-chan/fluffychat"
 website = "https://fluffychat.im"
-matrix_room = "#fluffychat:matrix.org"
+matrix_room = "#fluffychat-space:matrix.org"
 featured = true
 featured_order = 3
 screenshots = ["fluffychat-screenshot-roomlist.avif", "fluffychat-screenshot-timeline.avif"]
