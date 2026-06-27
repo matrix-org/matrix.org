@@ -4,6 +4,39 @@ Thank you for taking the time to contribute to Matrix!
 
 This is the repository for the matrix.org website, available at <https://matrix.org/>.
 
+## How to start contributing
+
+Contributions to this repository are welcome. We try to make it easy for newcomers and infrequent contributors to help!
+Please let the maintainers know when something is unclear.
+
+Helping out can take many forms. A lot of work on the website involves coding, but maintaining the website also includes:
+
+- Making sure the content is up to date - opening issues to highlight out-of-date content is a great help!
+- Writing new documentation - there are constantly new developments and insights around Matrix. If you feel knowledgeable about a topic, consider adding to our `/docs`!
+- Illustrations - a picture can be worth a thousand words! There are many places on the website that benefit from keeping illustrations up to date, or creating new ones!
+- Design - matrix.org has a lot of content, so we need to make sure it's well structured and easy to navigate. We also want it to look nice, inviting, and exciting. If you have ideas about the design, reach out to us!
+- Responsiveness and accessibility - the information on this website is for everyone, whether they use a big PC monitor, a vertical smartphone screen, or a screen reader. We are always open to feedback and insights on how we can improve in this area.
+
+Join [#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website%3Amatrix.org) to reach out!
+
+Here are a few simple steps to help you get started with submitting a Pull Request (PR):
+
+1. Check out our contributing docs - you're already here, just continue on reading!
+   We also recommend reading our [README.md](./README.md) for tips on working with the repository and testing your changes locally,
+   and our [CONTENT.md](./CONTENT.md) for further guidance on working on specific parts of the website.
+   See our review and publishing [documentation](#review--publishing-policy) for more information about our expectations and what you can expect in return.
+1. Share your idea first - for more information, please read about [how we take decisions](#how-we-take-decisions).
+1. Pick an issue and submit a PR!
+   We use several labels to make it easier to find an issue that suits you:
+   
+   - [help wanted](https://github.com/matrix-org/matrix.org/issues?q=state%3Aopen%20label%3A%22help%20wanted%22) - issues we consider easy for outside contributors to tackle.
+   - [good first issue](https://github.com/matrix-org/matrix.org/issues?q=state%3Aopen%20label%3A%22good%20first%20issue%22) - issues that are particularly well suited for new contributors.
+   - [needs decision](https://github.com/matrix-org/matrix.org/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22needs%20decision%22) - issues that require further input from maintainers before they can be addressed.
+   
+   Our process is usually not to assign issues to anyone in order to avoid blocking someone else from working on it.
+   If you’re interested in a particular issue, check whether there’s already a related PR. If there isn’t, go ahead and open a PR.
+1. Come chat with the website maintainers and other contributors in [#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website%3Amatrix.org).
+
 ## What we are trying to achieve
 
 One key mission of the Foundation is to make Matrix a mainstream protocol. For this, onboarding needs to be made easy for new users. The Matrix.org website is a critical step in this journey: this is where people land when they look up "what is Matrix chat" or "chatting on Matrix" in a search engine.
