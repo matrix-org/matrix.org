@@ -33,7 +33,7 @@ Here are a few simple steps to help you get started with submitting a Pull Reque
    - [good first issue](https://github.com/matrix-org/matrix.org/issues?q=state%3Aopen%20label%3A%22good%20first%20issue%22) - issues that are particularly well suited for new contributors.
    - [needs decision](https://github.com/matrix-org/matrix.org/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22needs%20decision%22) - issues that require further input from maintainers before they can be addressed.
    
-   Our process is usually not to assign issues to anyone, so we avoid blocking someone else from working on it.
+   Our process is usually not to assign issues to anyone in order to avoid blocking someone else from working on it.
    If you’re interested in a particular issue, check whether there’s already a related PR. If there isn’t, go ahead and open a PR.
 1. Come chat with the website maintainers and other contributors in [#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website%3Amatrix.org).
 
