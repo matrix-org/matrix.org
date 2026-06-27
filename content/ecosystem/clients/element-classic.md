@@ -8,7 +8,6 @@ maturity = "Stable"
 repo = "https://github.com/element-hq"
 matrix_room = "#element-ios:matrix.org"
 licence = "AGPL-3.0-or-later OR Element Commercial License"
-latest_release = "2025-08-06"
 featured = false
 
 [extra.features.1stable]

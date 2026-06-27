@@ -9,7 +9,6 @@ repo = "https://github.com/alphapapa/ement.el"
 matrix_room = "#ement.el:matrix.org"
 licence = "GPL-3.0-or-later"
 language = "Emacs Lisp"
-latest_release = "2024-10-13"
 featured = false
 
 [extra.features.1stable]

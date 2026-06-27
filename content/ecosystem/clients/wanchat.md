@@ -9,7 +9,6 @@ repo = "https://github.com/lj92458/wanchat-android"
 website = "https://wanchat.info"
 matrix_room = ""
 licence = "AGPL-3.0-only"
-latest_release = "2026-04-12"
 featured = false
 screenshots = []
 good_for = "Mobile-first users who want additional security (e.g., self-deleting messages). Tailored for China"

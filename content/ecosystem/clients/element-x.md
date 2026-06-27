@@ -8,7 +8,6 @@ maturity = "Stable"
 repo = "https://github.com/element-hq"
 matrix_room = "#element-x-ios:matrix.org"
 licence = "AGPL-3.0-or-later OR Element Commercial License"
-latest_release = "2025-09-23"
 featured = true
 featured_order = 2
 screenshots = ["element-x-screenshot-roomlist.avif", "element-x-screenshot-timeline.avif"]

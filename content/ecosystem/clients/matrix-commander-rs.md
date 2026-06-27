@@ -6,7 +6,6 @@ thumbnail = "matrix-commander-rs.svg"
 maintainer = "8go"
 licence = "GPL-3.0-or-later"
 language = "Rust"
-latest_release = "2024-09-01"
 maturity = "Stable"
 repo = "https://github.com/8go/matrix-commander-rs"
 featured = false
