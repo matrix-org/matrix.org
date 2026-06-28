@@ -29,6 +29,8 @@ invisible_crypto = "unsupported"
 [extra.features.2experimental]
 voip_matrixrtc = "unsupported"
 sliding_sync = "unsupported"
+
+[extra.packages]
 +++
 
 An open-source, self‑hostable client for collaborating with AI agents and your team in the same Matrix room.
