@@ -12,7 +12,7 @@
     Cite
 </button>
 
-<div id="{{ cb_id }}" class="cite-modal" popover role="dialog" aria-labelledby="{{ cb_id }}-title">
+<div id="{{ cb_id }}" class="cite-modal" popover="auto" role="dialog" aria-labelledby="{{ cb_id }}-title">
     <div class="cite-modal__box">
 
         <button
@@ -28,7 +28,6 @@
         <h3 id="{{ cb_id }}-title">Cite this post</h3>
 
         <div class="cite-formats">
-
             {% for fmt in formats %}
             <div class="cite-panel cite-panel--{{ fmt }}" data-cite-panel="{{ fmt }}">
                 <h4 class="cite-panel__heading">{{ fmt | upper }}</h4>
@@ -52,9 +51,7 @@
                 </div>
             </div>
             {% endfor %}
-
         </div>
-
     </div>
 </div>
 
