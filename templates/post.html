@@ -1,4 +1,5 @@
 {% extends "page.html" %}
+{% import "macros/citation.html" as citation %}
 {% block head_extra %}
 {#
 {% if page.summary %}
@@ -42,8 +43,10 @@
     ]
 }
 </script>
+<script type="module" src="{{ get_url(path="/js/citation.js" , cachebust=true) }}"></script>
 {% endblock head_extra %}
 {% block content %}
+
 <article class="content post {%- if page.toc %} with-sidebar{% endif %}">
     <header>
         <h1>{{ page.title }}</h1>
@@ -68,7 +71,9 @@
         {% if page.updated %}
         <br><small>Last update: {{ page.updated | date(format="%Y-%m-%d %H:%M") }}</small>
         {% endif %}
+        {{ citation::render(page=page) }}
     </header>
+
     <div class="post-main">
         <div class="post-content">
             {{ page.content | safe | markdown | safe }}
