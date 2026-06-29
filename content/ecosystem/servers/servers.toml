@@ -39,6 +39,17 @@ repository = "https://github.com/element-hq/dendrite"
 room = "#dendrite:matrix.org"
 
 [[servers]]
+name = "Zendrite"
+description = "Zendrite is a second-generation Matrix homeserver, forked from Dendrite with new MSCs and optimisations."
+author = "Patrick Schratz and Dendrite/Zendrite contributors"
+maturity = "Stable"
+language = "Go"
+licence = "AGPL-3.0-or-later"
+website = "https://zendrite.pat-s.me/"
+repository = "https://codefloe.com/pat-s/zendrite"
+room = "#dendrite:matrix.org"
+
+[[servers]]
 name = "Conduit"
 description = "Conduit is a simple, fast and reliable chat server written in Rust"
 author = "Timo Kösters"
