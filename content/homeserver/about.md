@@ -3,6 +3,7 @@ title = "The Matrix.org Homeserver"
 aliases = ["/homeserver"]
 insert_anchor_links = "left"
 weight = 0
+extra.summary = "The public Matrix network is a federated network of Matrix 'homeservers', in which users of one Matrix homeserver can communicate with users of another Matrix homeserver."
 +++
 
 The public Matrix network is a federated network of Matrix "homeservers", in which users of one Matrix homeserver can communicate with users of another Matrix homeserver.

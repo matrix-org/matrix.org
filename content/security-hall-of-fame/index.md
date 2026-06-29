@@ -2,6 +2,7 @@
 title = "Security Hall of Fame"
 template = "security-hall-of-fame.html"
 aliases = ["/hall-of-fame"]
+extra.summary = "Here we maintain a list of security researchers and their findings, to recognize them for having responsibly disclosed security issues to us in the past."
 +++
 
 Here we maintain a list of security researchers and their findings, to recognize
