@@ -1,60 +1,38 @@
 {# Human-readable labels for feature categories #}
 {% macro category_label(category_name) %}
-{% if category_name == "1stable" %}
+{%- if category_name == "1stable" -%}
 Stable Features
-{% elif category_name == "2experimental" %}
+{%- elif category_name == "2experimental" -%}
 Experimental Features
-{% else %}
+{%- else -%}
     {{category_name | replace(from="_", to=" ") | title }}
-{% endif %}
+{%- endif -%}
 {% endmacro %}
-
-{# Client macros for the matrix.org website Features Schema (all boolean values):
-- e2ee: End-to-end encryption support, including media and calls if supported
-- spaces: Matrix Spaces support
-- voip_1to1: 1-to-1 voice/video calls, see https://spec.matrix.org/v1.17/client-server-api/#voice-over-ip
-- voip_jitsi: Jitsi-based group calls
-- threads: Threading support
-- sso: Legacy Single Sign-On (m.login.sso)
-- oauth: Native OIDC/OAuth 2.0 authentication (added in spec 1.15)
-- invisible_crypto: Implements https://github.com/matrix-org/matrix-spec-proposals/pull/4153
-- sliding_sync: Uses the new sync API https://github.com/matrix-org/matrix-spec-proposals/pull/4186
-- multi_account: Supports multiple accounts in a single client instance
-- multi_language: Internationalization/localization support
-#}
-
-{# List of valid feature names for validation #}
-{% set VALID_FEATURES = [
-"e2ee",
-"spaces",
-"voip_1to1",
-"voip_jitsi",
-"voip_matrixrtc",
-"threads",
-"sso",
-"oauth",
-"invisible_crypto",
-"sliding_sync",
-"multi_account",
-"multi_language"
-] %}
 
 {# Human-readable labels for features #}
 {% macro feature_label(feature_name) %}
 {%- if feature_name == "e2ee" -%}
-E2EE
-{%- elif feature_name == "sso" -%}
-Legacy SSO
-{%- elif feature_name == "oauth" -%}
-OAuth 2.0
+End-to-end encryption
 {%- elif feature_name == "voip_1to1" -%}
 VoIP (1:1)
 {%- elif feature_name == "voip_jitsi" -%}
 VoIP (Jitsi)
 {%- elif feature_name == "voip_matrixrtc" -%}
 VoIP (MatrixRTC)
+{%- elif feature_name == "sso" -%}
+Legacy SSO
+{%- elif feature_name == "oauth" -%}
+OAuth 2.0
+{%- elif feature_name == "invisible_crypto" -%}
+Invisible Cryptography
+{%- elif feature_name == "sliding_sync" -%}
+Simplified Sliding Sync
+{%- elif feature_name == "multi_account" -%}
+Multi-Account
+{%- elif feature_name == "multi_language" -%}
+Multi-Language
 {%- else -%}
-    {{ feature_name | replace(from="_", to=" ") | title }}
+    {{feature_name | replace(from="_", to=" ") | title }}
 {%- endif -%}
 {% endmacro %}
 
@@ -77,6 +55,37 @@ VoIP (MatrixRTC)
 
         {{ self::feature_label(feature_name=feature_name) }} {{ verb }} {{ display_status }}
     {% endif %}
+{% endmacro %}
+
+{# Definitions for each of the features #}
+{% macro feature_description(feature_name) %}
+{%- if feature_name == "e2ee" -%}
+End-to-end encryption, including media and calls if supported
+{%- elif feature_name == "spaces" -%}
+Browse, join and manage Matrix spaces
+{%- elif feature_name == "voip_1to1" -%}
+1-to-1 voice/video calls
+{%- elif feature_name == "voip_jitsi" -%}
+Jitsi-based group calls
+{%- elif feature_name == "voip_matrixrtc" -%}
+Matrix-native voice/video calls based on MSC4143 MatrixRTC
+{%- elif feature_name == "threads" -%}
+Read, start and participate in threads
+{%- elif feature_name == "sso" -%}
+Log in with Single Sign-On using the legacy API
+{%- elif feature_name == "oauth" -%}
+Log in using the new API based on the OAuth 2.0/OIDC standard
+{%- elif feature_name == "invisible_crypto" -%}
+Simplified client user experience and improved security by enforcing device verification per MSC4153
+{%- elif feature_name == "sliding_sync" -%}
+Swift and efficient connection to the server using the next generation API from MSC4186
+{%- elif feature_name == "multi_account" -%}
+Log into multiple accounts at the same time using a single client instance
+{%- elif feature_name == "multi_language" -%}
+Client user interface supports multiple languages
+{%- else -%}
+{{ throw(message="Feature is missing a description!") }}
+{%- endif -%}
 {% endmacro %}
 
 {% macro classes(client) %}

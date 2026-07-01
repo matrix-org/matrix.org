@@ -59,10 +59,28 @@
                         <li
                             class="{{ supported }}"
                             aria-label="{{ clients::feature_aria_label(feature_name=feature, feature_status=supported) | trim}}"
+                            style="--tooltip-anchor-name: --tooltip-anchor-{{ feature }}"
                         >
                             <span aria-hidden>
                                 {{ clients::feature_label(feature_name=feature) | trim }}
                             </span>
+                            <button
+                                class="tooltip-toggle"
+                                popovertarget="{{ feature }}-tooltip"
+                                type="button"
+                            >
+                                <img
+                                    role="button"
+                                    src="/assets/circle_question.svg"
+                                >
+                            </button>
+                            <div
+                                id="{{ feature }}-tooltip"
+                                class="tooltip-content"
+                                popover
+                            >
+                                {{ clients::feature_description(feature_name=feature) | trim }}
+                            </div>
                         </li>
                     {% endfor %}
                 </ul>

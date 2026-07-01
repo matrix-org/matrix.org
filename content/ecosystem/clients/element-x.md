@@ -23,7 +23,7 @@ voip_jitsi = "unsupported"
 multi_account = "unsupported"
 multi_language = "supported"
 oauth = "supported"
-invisible_crypto = "supported"
+invisible_crypto = "partial"
 
 [extra.features.2experimental]
 voip_matrixrtc = "supported"

@@ -23,10 +23,10 @@ voip_jitsi = "supported"
 multi_account = "unsupported"
 multi_language = "supported"
 oauth = "supported"
-invisible_crypto = "unknown"
+invisible_crypto = "partial"
 
 [extra.features.2experimental]
-voip_matrixrtc = "unknown"
+voip_matrixrtc = "supported"
 sliding_sync = "unknown"
 
 [extra.packages]

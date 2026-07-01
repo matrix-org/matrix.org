@@ -121,6 +121,12 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
                 text-align: center;
             }
         }
+
+        img {
+            height: 1em;
+            vertical-align: center;
+            cursor: pointer;
+        }
     }
 
     p {
