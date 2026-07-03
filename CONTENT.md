@@ -135,6 +135,25 @@ _Due to restrictions on the third-party consumers it is mandatory that we use PN
 
 All of the ecosystem projects information are in subdirectories of [`/content/ecosystem`](https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/).
 
+### Automated data refresh
+
+Clients and servers are checked weekly by a scheduled job
+(`.github/workflows/refresh-ecosystem-data.yml`): it flags dead repo/website links (any
+host), and proposes bumping `maturity` to `Obsolete` when a linked repo gets archived.
+The archived-repo check only understands GitHub and GitLab - repos on other forges or
+VCS systems are simply skipped for that specific check and
+still get the dead-link check. This needs nothing from you beyond the
+`repo`/`repository` field you'd add anyway.
+
+If you want your listing kept fully in sync, including feature support, publish a small
+[DOAP](https://github.com/ewilderj/doap) file describing your project and set the optional
+`doap_url` field to its URL — see
+[`doc/ecosystem-doap-extension.md`](https://github.com/matrix-org/matrix.org/blob/main/doc/ecosystem-doap-extension.md)
+for the format.
+
+Any changes will be proposed as an automated PR requiring a human review.
+The COC and our repository rules still apply to this content.
+
 ### Clients
 
 Matrix clients are listed in [`/content/ecosystem/clients`](https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/clients). Every client has its individual page, so every client is represented by a markdown file. Most of the information is living in the _frontmatter_, between the two `+++` rows in a `.md` file.
@@ -152,6 +171,9 @@ maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 repo = "https://github.com/example-org/example-repo"
 matrix_room = "#your-matrix-room:example.com"
 licence = "PICK ONE identifier from https://spdx.org/licenses/"
+# Optional: a DOAP file you host and control, for automated data refresh.
+# See doc/ecosystem-doap-extension.md.
+# doap_url = "https://raw.githubusercontent.com/example-org/example-repo/main/matrix.doap"
 featured = false
 # Used with featured = true to have a fixed order.
 # featured_order = 1
@@ -201,6 +223,7 @@ Supercharge your communications with Example Client.
 - For `extra.features`, see the descriptions in [clients.html](/templates/macros/clients.html)
 - All of the properties under `extra.packages` are optional: only add the installation methods your project supports!
     - In case your option is not available please let us know by opening an issue.
+- `doap_url` is optional. See "Automated data refresh" above.
 
 ### Bridges
 
@@ -255,6 +278,9 @@ licence = "PICK ONE identifier from https://spdx.org/licenses/"
 repository = "https://github.com/example-org/example-repo"
 website = "https://mymatrixserver.dev"
 room = "#your-matrix-room:example.com"
+# Optional: a DOAP file you host and control, for automated data refresh.
+# See doc/ecosystem-doap-extension.md.
+# doap_url = "https://raw.githubusercontent.com/example-org/example-repo/main/matrix.doap"
 ```
 
 ### Integrations

@@ -2,3 +2,6 @@
 .DS_Store
 gatsby
 .vscode
+__pycache__/
+*.pyc
+.cache/
