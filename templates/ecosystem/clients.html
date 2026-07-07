@@ -10,10 +10,17 @@
 {% block content %}
 {% set clients = section.pages %}
 {% set licences = [] %}
+{% set features = [] %}
 {% for client in clients %}
-{% set_global licences = licences | concat(with=client.extra.licence) %}
+    {% set_global licences = licences | concat(with=client.extra.licence) %}
+    {% for feature_level_name, features_in_level in client.extra.features %}
+        {% for feature_name, feature_state in features_in_level %}
+            {% set_global features = features | concat(with=[feature_name]) %}
+        {% endfor %}
+    {% endfor %}
 {% endfor %}
 {% set licences = licences | unique | sort %}
+{% set features = features | unique %}
 <div class="page-header">
     <div class="hero-block">
         <h1>{{ section.title }}</h1>
@@ -152,38 +159,14 @@
             </button>
             <div id="filter-features-menu" class="filter-menu">
                 <p>The client must support all of the features checked.</p>
-                <div class="filter-option">
-                    <input id="feature-e2ee" type="checkbox">
-                    <label for="feature-e2ee">E2EE</label>
-                </div>
-                <div class="filter-option">
-                    <input id="feature-spaces" type="checkbox">
-                    <label for="feature-spaces">Spaces</label>
-                </div>
-                <div class="filter-option">
-                    <input id="feature-voip-1to1" type="checkbox">
-                    <label for="feature-voip-1to1">Native 1:1 calls</label>
-                </div>
-                <div class="filter-option">
-                    <input id="feature-widgets" type="checkbox">
-                    <label for="feature-widgets">Widgets</label>
-                </div>
-                <div class="filter-option">
-                    <input id="feature-threads" type="checkbox">
-                    <label for="feature-threads">Threads</label>
-                </div>
-                <div class="filter-option">
-                    <input id="feature-sso" type="checkbox">
-                    <label for="feature-sso">SSO (Enterprise login)</label>
-                </div>
-                <div class="filter-option">
-                    <input id="feature-multi-account" type="checkbox">
-                    <label for="feature-multi-account">Multi-account</label>
-                </div>
-                <div class="filter-option">
-                    <input id="feature-multi-language" type="checkbox">
-                    <label for="feature-multi-language">Multi-language</label>
-                </div>
+                {% for feature in features %}
+                    <div class="filter-option">
+                        <input id="feature-{{ feature | replace(from="_", to="-") }}" type="checkbox">
+                        <label for="feature-{{ feature | replace(from="_", to="-") }}">
+                            {{ clients::feature_label(feature_name=feature) | trim }}
+                        </label>
+                    </div>
+                {% endfor %}
                 <div class="reset-links">Select <button>all</button> - <button>none</button></div>
             </div>
         </div>
