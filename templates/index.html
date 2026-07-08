@@ -83,19 +83,19 @@
             {% if page.taxonomies.category and "This Week in Matrix" in page.taxonomies.category %}{% continue %}{% endif %}
             {% if blog_count >= 3 %}{% break %}{% endif %}
             {% set_global blog_count = blog_count + 1 %}
-            <div class="blog-preview-card">
+            <a href="{{ page.permalink }}" class="blog-preview-card">
                 <div class="blog-preview-meta">
                     <span class="blog-preview-date">{{ page.date | date(format="%B %d, %Y") }}</span>
                     {% if page.taxonomies.category %}
                     <span class="blog-preview-tag">{{ page.taxonomies.category | first }}</span>
                     {% endif %}
                 </div>
-                <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+                <h3>{{ page.title }}</h3>
                 {% if page.description %}
                 <p>{{ page.description }}</p>
                 {% endif %}
-                <a href="{{ page.permalink }}" class="blog-preview-readmore">Read more →</a>
-            </div>
+                <span class="blog-preview-readmore">Read more →</span>
+            </a>
             {% endfor %}
         </div>
         <a href="/blog/" class="call-to-action inverted">View All Posts</a>
