@@ -21,6 +21,8 @@
         width: 100%;
 
         .provider_card {
+            @extend .hoverable-card;
+
             display: flex;
             flex-direction: column;
             justify-content: space-between;
