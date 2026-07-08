@@ -427,6 +427,8 @@
             flex-direction: column;
             gap: 12px;
             transition: border-color 0.2s ease;
+            text-decoration: none;
+            color: #fff;
 
             &:hover {
                 border-color: #666;
@@ -437,14 +439,6 @@
                 font-weight: 700;
                 margin: 0;
                 line-height: 1.4;
-
-                a {
-                    color: #fff;
-
-                    &:hover {
-                        color: rgba(255, 255, 255, 0.7);
-                    }
-                }
             }
 
             p {
@@ -485,11 +479,6 @@
             font-weight: 600;
             margin-top: auto;
             text-decoration: none;
-
-            &:hover {
-                color: #fff;
-                text-decoration: underline;
-            }
         }
     }
 
