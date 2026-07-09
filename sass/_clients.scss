@@ -775,6 +775,16 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     padding-top: 3rem;
 }
 
+.ecosystem-detail-report {
+    max-width: 60rem;
+    margin-inline: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid var(--borders-color);
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+
 .ecosystem-detail {
     display: grid;
     grid-template-columns: 1fr 18rem;
@@ -786,7 +796,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     row-gap: 2rem;
     max-width: 60rem;
     margin-inline: auto;
-    padding-bottom: 3rem;
+    padding-bottom: 1.5rem;
 
     @media (max-width: 767px) {
         grid-template-columns: 1fr;
