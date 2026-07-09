@@ -12,6 +12,8 @@
 }
 
 .platform {
+    @extend .clickable-card;
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -23,24 +25,12 @@
 
     border: 1px solid #d2d2d2;
     border-radius: 16px;
-    transition:
-        border-color 0.15s ease,
-        box-shadow 0.15s ease;
-
-    &:hover {
-        border-color: #999;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
 
     img {
         width: 52px;
         height: 52px;
         flex-shrink: 0;
         object-fit: contain;
-        border-radius: 10px;
-        border: 1px solid #e8e8e8;
-        padding: 0.3rem;
-        background: #fafafa;
         box-sizing: border-box;
     }
 
@@ -51,7 +41,7 @@
         min-width: 0;
 
         h2 {
-            font-size: 1.05rem;
+            font-size: 1.2rem;
             font-weight: 700;
             margin: 0;
             line-height: 1.2;
@@ -59,7 +49,7 @@
 
         p {
             margin: 0;
-            font-size: 0.82rem;
+            font-size: 0.9rem;
             color: #555;
             line-height: 1.3;
         }
