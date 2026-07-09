@@ -12,9 +12,11 @@
     width: 100%;
 }
 
-.project-card {
-    @extend .hoverable-card;
+a.project-card {
+    @extend .clickable-card;
+}
 
+.project-card {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

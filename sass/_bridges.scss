@@ -11,6 +11,8 @@
     justify-content: center;
 
     .platform {
+        @extend .clickable-card;
+
         display: flex;
         flex-direction: row;
         gap: 1rem;
