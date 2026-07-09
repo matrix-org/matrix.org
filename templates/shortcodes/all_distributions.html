@@ -96,7 +96,17 @@
 <div id="filters-overlay"></div>
 
 <div id="all-distributions" class="projects-card-deck">
-    {% for distribution in distributions_data.distributions | sort(attribute="maturity") | reverse %}
+    {# Group distributions by maturity server-side and sort by name within each group #} 
+    {% set map = distributions_data.distributions | group_by(attribute="maturity") %}
+    {% set maturity_order = ["Stable", "Beta", "Alpha", "Obsolete"] %}
+    {% for maturity in maturity_order %}
+        {% if map[maturity] is defined %}
+            {% set matches = map[maturity] %}
+        {% else %}
+            {% set matches = [] %}
+        {% endif %} 
+        {% set matches = matches | sort(attribute="name") %}
+        {% for distribution in matches %}
     <div>
         <div class="project-card {{ srvutils::classes(distribution=distribution) }}">
             <div class="title-row">
@@ -128,5 +138,6 @@
             </div>
         </div>
     </div>
+        {% endfor %}
     {% endfor %}
 </div>
