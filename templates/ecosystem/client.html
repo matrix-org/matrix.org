@@ -36,10 +36,6 @@
                     <span class="ecosystem-detail-meta-item"
                         >By {{ page.extra.maintainer }}</span
                     >
-                    {% endif %} {% if page.extra.latest_release %}
-                    <span class="ecosystem-detail-meta-item"
-                        >Latest release: {{ page.extra.latest_release }}</span
-                    >
                     {% endif %} {% if page.extra.licence %}
                     <span class="ecosystem-detail-meta-item">
                         {% set licence_parts = page.extra.licence | split(pat=" OR ") %}
