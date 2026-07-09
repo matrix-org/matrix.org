@@ -41,9 +41,19 @@
                         >Latest release: {{ page.extra.latest_release }}</span
                     >
                     {% endif %} {% if page.extra.licence %}
-                    <span class="ecosystem-detail-meta-item"
-                        >{{ page.extra.licence }}</span
-                    >
+                    <span class="ecosystem-detail-meta-item">
+                        {% set licence_parts = page.extra.licence | split(pat=" OR ") %}
+                        {% for part in licence_parts %}
+                        {% if not loop.first %} OR {% endif %} {% if part is
+                        containing(" ") %} {{ part }} {% else %}
+                        <a
+                            href="https://spdx.org/licenses/{{ part }}.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >{{ part }}</a
+                        >
+                        {% endif %} {% endfor %}
+                    </span>
                     {% endif %}
                 </div>
                 <div class="platform-links">
@@ -141,9 +151,6 @@
                 </a>
                 {% endif %}
             </div>
-            <div class="stores">
-                {{ clients::install_links(packages=page.extra.packages) }}
-            </div>
             <p>Something wrong? <a href="https://github.com/matrix-org/matrix.org/issues/new?template=update-ecosystem-info.yaml">Report the issue here</a>.</p>
         </div>
 
@@ -152,37 +159,20 @@
             <div class="ecosystem-detail-features">
                 {% for category, features in page.extra.features %}
                 <div class="features-category">
-                    <h5>{{ clients::category_label(category_name=category) }}</h5>
-                    <ul>
+                    <p class="features-category-title">{{ clients::category_label(category_name=category) }}</p>
+                    <dl>
                         {% for feature, supported in features %}
-                            <li
-                                class="{{ supported }}"
-                                aria-label="{{ clients::feature_aria_label(feature_name=feature, feature_status=supported) | trim}}"
-                                style="--tooltip-anchor-name: --tooltip-anchor-{{ feature }}"
-                            >
-                                <span aria-hidden>
-                                    {{ clients::feature_label(feature_name=feature) | trim }}
-                                </span>
-                                <button
-                                    class="tooltip-toggle"
-                                    popovertarget="{{ feature }}-tooltip"
-                                    type="button"
-                                >
-                                    <img
-                                        role="button"
-                                        src="/assets/circle_question.svg"
-                                    >
-                                </button>
-                                <div
-                                    id="{{ feature }}-tooltip"
-                                    class="tooltip-content"
-                                    popover
-                                >
-                                    {{ clients::feature_description(feature_name=feature) | trim }}
-                                </div>
-                            </li>
+                        <div
+                            class="feature-row{% if supported %} {{ supported }}{% endif %}"
+                        >
+                            <dt>
+                                <span class="feature-row-indicator"></span>
+                                {{ clients::feature_label(feature_name=feature) | trim }}
+                            </dt>
+                            <dd>{{ clients::feature_description(feature_name=feature) | trim }}</dd>
+                        </div>
                         {% endfor %}
-                    </ul>
+                    </dl>
                 </div>
                 {% endfor %}
             </div>

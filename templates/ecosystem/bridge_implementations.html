@@ -86,10 +86,14 @@
                             <span class="bridge-card-access-label"
                                 >Access needed</span
                             >
-                            <span class="bridge-card-access-pill bridge-card-access-pill--platform"
+                            <span
+                                class="bridge-card-access-pill bridge-card-access-pill--platform"
+                                title="The privilege level you need on {{ section.title }} to set this bridge up"
                                 >{{ section.title }} {{ bridge.privilege.platform }}</span
                             >
-                            <span class="bridge-card-access-pill bridge-card-access-pill--matrix"
+                            <span
+                                class="bridge-card-access-pill bridge-card-access-pill--matrix"
+                                title="The privilege level you need on the Matrix side to set this bridge up"
                                 >Matrix {{ bridge.privilege.matrix }}</span
                             >
                         </div>

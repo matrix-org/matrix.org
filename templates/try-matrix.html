@@ -59,78 +59,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
 
                 <div class="client-cards">
                     {% for client in featured_clients %}
-                    <details id="{{ client.slug }}" class="client-card{% if client.extra.packages.apple_app_store %} platform-ios{% endif %}{% if client.extra.packages.google_play_store or client.extra.packages.f_droid %} platform-android{% endif %}{% if client.extra.packages.webapp %} platform-web{% endif %}{% if client.extra.packages.windows_installer %} platform-windows{% endif %}{% if client.extra.packages.macos_installer %} platform-macos{% endif %}{% if client.extra.packages.flathub or client.extra.packages.other_linux_link %} platform-linux{% endif %}">
-                        <summary class="client-card-summary">
-                            <div class="client-card-summary-inner">
-                                <img src="/ecosystem/clients/{{ client.extra.thumbnail }}"
-                                     alt="{{ client.title }} logo"
-                                     class="client-card-icon">
-                                <div class="client-card-header-text">
-                                    <span class="client-card-name">
-                                        {{ client.title }}
-                                        <a href="#{{ client.slug }}" class="client-card-anchor" aria-label="Link to {{ client.title }}">#</a>
-                                    </span>
-                                    {% if client.extra.good_for %}
-                                    <span class="client-card-good-for">{{ client.extra.good_for }}</span>
-                                    {% endif %}
-                                </div>
-                                <div class="client-card-summary-platforms">
-                                    {{ clients::platforms(packages=client.extra.packages) }}
-                                </div>
-                            </div>
-                        </summary>
-
-                        <div class="client-card-body">
-                            {% set lightbox_id = "lightbox-" ~ client.slug %}
-                            {% set screenshots = client.extra.screenshots | default(value=[]) %}
-                            {% if screenshots | length > 0 %}
-                            {% set multi = screenshots | length > 1 %}
-                            <div class="client-card-screenshot-wrap{% if multi %} client-card-screenshot-wrap--multi{% endif %}">
-                                {% for shot in screenshots %}
-                                {% set shot_lightbox_id = lightbox_id ~ "-" ~ loop.index %}
-                                <a href="#{{ shot_lightbox_id }}" class="client-card-screenshot-trigger" aria-label="Enlarge screenshot">
-                                    <img src="/ecosystem/clients/{{ shot }}"
-                                         alt="{{ client.title }} screenshot {{ loop.index }}"
-                                         class="client-card-screenshot">
-                                </a>
-                                {% endfor %}
-                            </div>
-                            {% for shot in screenshots %}
-                            {% set shot_lightbox_id = lightbox_id ~ "-" ~ loop.index %}
-                            <div class="client-lightbox" id="{{ shot_lightbox_id }}" role="dialog" aria-label="{{ client.title }} screenshot">
-                                <a href="#/" class="client-lightbox-backdrop" aria-label="Close"></a>
-                                <a href="#/" class="client-lightbox-close" aria-label="Close">&times;</a>
-                                <img src="/ecosystem/clients/{{ shot }}"
-                                     alt="{{ client.title }} screenshot {{ loop.index }}">
-                            </div>
-                            {% endfor %}
-                            {% else %}
-                            <div class="client-card-screenshot-wrap client-card-screenshot-placeholder">
-                                <span>Screenshot coming soon</span>
-                            </div>
-                            {% endif %}
-
-                            <div class="client-card-details">
-                                <p class="client-card-description">{{ client.content | markdown(inline=true) }}</p>
-
-                                <div class="client-card-features">
-                                    {% for feature_level_name, features_in_level in client.extra.features %}
-                                    {% for feature_name, feature_state in features_in_level %}
-                                    {% if feature_state == "supported" %}
-                                    <span class="client-feat-pill">{{ self::feature_label(feature_name=feature_name) | trim }}</span>
-                                    {% endif %}
-                                    {% endfor %}
-                                    {% endfor %}
-                                </div>
-
-                                <div class="client-card-downloads">
-                                    {{ clients::install_links(packages=client.extra.packages) }}
-                                </div>
-
-                                <a href="{{ client.path }}" class="client-card-more-link">View more details</a>
-                            </div>
-                        </div>
-                    </details>
+                    {{ clients::featured_client_card(client=client, id_prefix="try") }}
                     {% endfor %}
                 </div>
 

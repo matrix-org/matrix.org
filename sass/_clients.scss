@@ -124,12 +124,10 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 }
 
 // ── Shared <details> expand card component ────────────────────────────────────
-// Used on /ecosystem/clients/ (featured section) and /ecosystem/hosting/.
-// Mirrors the .client-card design from _try-matrix.scss so both pages share
-// the same design language.
+// Used by the featured_client_card() macro on /try-matrix/ and the
+// featured section of /ecosystem/clients/.
 
-.ecosystem-client-cards,
-.hosting-provider-cards {
+.client-cards {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
@@ -894,7 +892,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     // Dot separator between items
     & + &::before {
         content: "·";
-        margin-right: 0.75rem;
+        margin-right: 0.4rem;
         color: #ccc;
     }
 }
@@ -936,8 +934,21 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     margin: 0 0 0.6rem 0;
 }
 
-// Feature support list as a definition list
+// Feature support list as a definition list, grouped by category
 .ecosystem-detail-features {
+    .features-category {
+        & + .features-category {
+            margin-top: 1rem;
+        }
+    }
+
+    .features-category-title {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #666;
+        margin: 0 0 0.4rem;
+    }
+
     dl {
         border: 1px solid var(--borders-color);
         border-radius: 16px;
@@ -965,7 +976,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         line-height: 1.3;
     }
 
-    // Tick / cross indicator element
+    // Support-state indicator element
     .feature-row-indicator {
         display: inline-block;
         width: 1em;
@@ -974,7 +985,15 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        background-image: url("/assets/question_unknown.svg");
+    }
+
+    .feature-row.unsupported .feature-row-indicator {
         background-image: url("/assets/cross_unsupported.svg");
+    }
+
+    .feature-row.partial .feature-row-indicator {
+        background-image: url("/assets/flask_partial.svg");
     }
 
     .feature-row.supported .feature-row-indicator {
@@ -997,4 +1016,12 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     flex-wrap: wrap;
     gap: 0.75rem;
     align-items: center;
+
+    // These sit inline in a detail-page sidebar, not as hero CTAs —
+    // shrink the otherwise-global .call-to-action sizing to fit.
+    .call-to-action {
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.4em 1.1em;
+    }
 }

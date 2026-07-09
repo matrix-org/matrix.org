@@ -19,56 +19,45 @@ a.project-card {
 .project-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 1.1rem 1.25rem 1.1rem;
-    gap: 0;
-    text-align: left;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 24px;
+    gap: 0.75rem;
+    text-align: center;
 
     min-height: 100%;
 
     border: 1px solid #d2d2d2;
     border-radius: 16px;
-    transition:
-        border-color 0.15s ease,
-        box-shadow 0.15s ease;
-
-    &:hover {
-        border-color: #999;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
 
     // ── Logo + name header row ────────────────────────────────────────────────
     img {
-        margin: 0 0 0.65rem;
-        width: 44px;
-        height: 44px;
+        margin: 0;
+        width: 52px;
+        height: 52px;
         object-fit: contain;
-        border-radius: 10px;
-        border: 1px solid #e8e8e8;
-        padding: 0.25rem;
-        background: #fafafa;
         box-sizing: border-box;
         flex-shrink: 0;
     }
 
     h3 {
-        margin: 0 0 0.4rem;
+        margin: 0;
         font-style: normal;
         font-weight: 700;
-        font-size: 1.05rem;
+        font-size: 1.2rem;
         line-height: 1.25;
-        text-align: left;
+        text-align: center;
     }
 
     // ── Description ───────────────────────────────────────────────────────────
     p,
     & > span {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         line-height: 1.45;
         color: #555;
         margin: 0;
         flex-shrink: 0;
-        text-align: left;
+        text-align: center;
     }
 
     // ── Pills row — always immediately above the CTA ──────────────────────────
@@ -79,65 +68,25 @@ a.project-card {
         flex-wrap: wrap;
         gap: 0.25rem;
         margin-top: auto;
-        margin-bottom: 0.6rem;
         align-self: stretch;
         justify-content: center;
     }
 
     .pill {
-        display: inline-block;
-        font-size: 0.75rem;
-        background-color: #f3f3f3;
-        border: 1px solid #d1d5db;
-        border-radius: 9999px;
-        padding: 0.05rem 0.5rem;
+        background-color: #e9e9e9;
+        border: 1px solid transparent;
+        border-radius: 16px;
+        padding: 0.2rem 0.5rem;
         color: var(--color-text);
-        line-height: 1.6;
-    }
+        font-size: 0.85rem;
+        line-height: 1.2;
+        text-align: center;
 
-    // ── Licence pill colour families ──────────────────────────────────────────
-    // Permissive (MIT, Apache, ISC, BSD, CC0, Artistic, MIT-Modern-Variant)
-    .pill--licence-mit,
-    .pill--licence-mit-modern-variant,
-    .pill--licence-apache-2-0,
-    .pill--licence-isc,
-    .pill--licence-bsd,
-    .pill--licence-cc0-1-0,
-    .pill--licence-artistic-2-0 {
-        background-color: #e6f4ea;
-        border-color: #7acc8a;
-        color: #1a6b32;
-    }
-
-    // Strong copyleft (GPL family, AGPL)
-    .pill--licence-gpl-1-0-or-later,
-    .pill--licence-gpl-3-0,
-    .pill--licence-gpl-3-0-only,
-    .pill--licence-gpl-3-0-or-later,
-    .pill--licence-agpl-3-0,
-    .pill--licence-agpl-3-0-only,
-    .pill--licence-agpl-3-0-or-later {
-        background-color: #fff4e5;
-        border-color: #fcd9a0;
-        color: #92400e;
-    }
-
-    // Weak copyleft (LGPL, MPL, EUPL)
-    .pill--licence-lgpl-2-1-only,
-    .pill--licence-lgpl-3-0-only,
-    .pill--licence-lgpl-3-0-or-later,
-    .pill--licence-mpl-2-0,
-    .pill--licence-eupl-1-2 {
-        background-color: #e8f1ff;
-        border-color: #99bbee;
-        color: #1a4db0;
-    }
-
-    // Unknown / no licence
-    .pill--licence-none {
-        background-color: #f3f3f3;
-        border-color: #d1d5db;
-        color: #555;
+        &.licence {
+            background-color: transparent;
+            border-color: #888;
+            color: #555;
+        }
     }
 
     // ── Language pill colour families ─────────────────────────────────────────
@@ -231,18 +180,10 @@ a.project-card {
     // not an interactive element, so it carries no hover state of its own.
     a.open-project,
     .open-project {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-self: stretch;
-        margin-top: 0;
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: #555;
-        background-color: transparent;
-        border: 1px solid #d1d5db;
-        border-radius: 9999px;
-        padding: 0.2rem 0.75rem;
+        margin-top: auto;
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+        line-height: 1;
         text-decoration: none;
         pointer-events: none;
     }
@@ -363,14 +304,14 @@ a.project-card {
 }
 
 .maturity {
+    display: inline-block;
     border: 1px solid;
     border-radius: 9999px;
     padding: 0.1rem 0.45rem;
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     font-weight: 500;
     line-height: 1.6;
     max-width: fit-content;
-    justify-self: flex-end;
 
     &.stable {
         background-color: #dff6d5;
@@ -401,12 +342,13 @@ a.project-card {
     width: 100%;
     max-width: 100%;
     display: flex;
-    justify-content: space-between;
-    gap: 0.2rem;
-    align-items: start;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: .5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+
+    h3 {
+        text-align: center;
+    }
 }
 
 #filters-overlay {
