@@ -180,7 +180,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
                     <h3>{{ client.title }}</h3>
                     <div class="maturity {{ client.extra.maturity | lower }}">{{ client.extra.maturity }}</div>
                 </div>
-                <div class="licence-language">
+                <div class="pill-row">
                     <div class="pill licence">{{ client.extra.licence }}</div>
                 </div>
                 <span>{{ client.content | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</span>

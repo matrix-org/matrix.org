@@ -103,15 +103,15 @@
                 <h3>{{ distribution.name }}</h3>
                 <div class="maturity {{ distribution.maturity | lower }}">{{ distribution.maturity }}</div>
             </div>
-            {% if distribution.vendor %}<div class="subtitle">{{ distribution.vendor }}</div>{% endif %}
-            <div class="metadata-pills">
+            {% if distribution.vendor %}<div class="author">{{ distribution.vendor }}</div>{% endif %}
+            <div class="pill-row">
                 <div class="pill licence">{{ distribution.licence }}</div>
                 {% for framework in distribution.frameworks %}
-                <div class="pill">{{ framework }}</div>
+                <div class="pill pill--framework pill--framework-{{ framework | slugify }}">{{ framework }}</div>
                 {% endfor %}
             </div>
-            <p class="description">{{ distribution.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>
-            <div class="card-links distribution-links">
+            <span>{{ distribution.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</span>
+            <div class="distribution-links">
                 {% if distribution.website %}
                 <a href="{{ distribution.website }}">
                     {{ load_data(path="/assets/home.svg") | safe }}
