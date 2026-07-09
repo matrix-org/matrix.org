@@ -24,13 +24,11 @@ a.project-card {
     padding: 24px;
     gap: 0.75rem;
     text-align: center;
-
     min-height: 100%;
-
     border: 1px solid #d2d2d2;
     border-radius: 16px;
 
-    // ── Logo + name header row ────────────────────────────────────────────────
+    // Logo + name header row
     img {
         margin: 0;
         width: 52px;
@@ -49,7 +47,7 @@ a.project-card {
         text-align: center;
     }
 
-    // ── Description ───────────────────────────────────────────────────────────
+    // Description
     p,
     & > span {
         font-size: 0.9rem;
@@ -60,9 +58,9 @@ a.project-card {
         text-align: center;
     }
 
-    // ── Pills row — always immediately above the CTA ──────────────────────────
+    // Pills row - always immediately above the CTA
     .platform-links,
-    .licence-language {
+    .pill-row {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -89,7 +87,7 @@ a.project-card {
         }
     }
 
-    // ── Language pill colour families ─────────────────────────────────────────
+    // Language pill colour families
     // Systems (C, C++, Rust)
     .pill--lang-c,
     .pill--lang-cplusplus,
@@ -118,7 +116,7 @@ a.project-card {
     // Python
     .pill--lang-python {
         background-color: #e8f1ff;
-        border-color: #99bbee;
+        border-color: #9be;
         color: #1a4db0;
     }
 
@@ -168,15 +166,40 @@ a.project-card {
         color: #374151;
     }
 
-    // C# (separate from C/C++ — .NET ecosystem)
+    // C# (separate from C/C++ - .NET ecosystem)
     .pill--lang-csharp {
         background-color: #eef0fb;
         border-color: #8892d4;
         color: #2c3894;
     }
 
-    // ── CTA label pinned to the bottom ────────────────────────────────────────
-    // The whole card is already a link — this is a visual affordance only,
+    // Deployment framework pill colour families
+    // Kubernetes ecosystem (Helm, Helmfile, Kubernetes)
+    .pill--framework-helm,
+    .pill--framework-helmfile,
+    .pill--framework-kubernetes {
+        background-color: #e6f9f7;
+        border-color: #7fd6ce;
+        color: #0a6b62;
+    }
+
+    // Containers (Docker, Docker Compose)
+    .pill--framework-docker,
+    .pill--framework-docker-compose {
+        background-color: #e8f1ff;
+        border-color: #9be;
+        color: #1a4db0;
+    }
+
+    // Config management (Ansible)
+    .pill--framework-ansible {
+        background-color: #fde8e8;
+        border-color: #f0a8a8;
+        color: #a61b1b;
+    }
+
+    // CTA label pinned to the bottom
+    // The whole card is already a link - this is a visual affordance only,
     // not an interactive element, so it carries no hover state of its own.
     a.open-project,
     .open-project {
@@ -212,9 +235,7 @@ a.project-card {
             justify-content: space-between;
             gap: 0.8rem;
             z-index: 100;
-
             padding: 0.5rem 0.8rem;
-
             background-color: #fafafa;
             color: #000;
             border: 1px solid #d2d2d2;
@@ -256,9 +277,7 @@ a.project-card {
             min-width: 15rem;
             max-width: 20rem;
             z-index: 200;
-
             padding: 0.5rem 1rem;
-
             background-color: #fafafa;
             border: 1px solid var(--borders-color);
             border-radius: 16px;
@@ -358,8 +377,7 @@ a.project-card {
     right: 0;
     bottom: 0;
     z-index: 100;
-
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(0 0 0 / 50%);
 
     &:not(.display) {
         display: none;
@@ -370,7 +388,6 @@ a.project-card {
     display: flex;
     flex-wrap: wrap;
     gap: 0.3rem;
-
     margin-bottom: 1rem;
 }
 
@@ -378,7 +395,6 @@ a.pill {
     display: inline-flex;
     align-items: center;
     gap: 0.2rem;
-
     border: 1px solid var(--color-text);
     color: var(--color-text);
     border-radius: 9999px;
@@ -438,10 +454,10 @@ a.pill {
     }
 }
 
-// ── Breadcrumb navigation ─────────────────────────────────────────────────────
+// Breadcrumb navigation
 // Used on all ecosystem pages. Two contexts:
-//   1. Inside .page-header (dark background) — text is white/muted-white
-//   2. Inside .ecosystem-detail-page (light background) — text is muted grey
+//   1. Inside .page-header (dark background) - text is white/muted-white
+//   2. Inside .ecosystem-detail-page (light background) - text is muted grey
 
 .breadcrumb {
     ol {
@@ -473,12 +489,12 @@ a.pill {
         line-height: 1;
     }
 
-    // ── Dark context (inside .page-header) ───────────────────────────────────
+    // Dark context (inside .page-header)
     .page-header & {
         margin-bottom: 0.75rem;
 
         a {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgb(255 255 255 / 70%);
 
             &:hover {
                 color: #fff;
@@ -486,15 +502,15 @@ a.pill {
         }
 
         span {
-            color: rgba(255, 255, 255, 0.45);
+            color: rgb(255 255 255 / 45%);
         }
 
         li + li::before {
-            color: rgba(255, 255, 255, 0.45);
+            color: rgb(255 255 255 / 45%);
         }
     }
 
-    // ── Light context (inside .ecosystem-detail-page) ────────────────────────
+    // Light context (inside .ecosystem-detail-page)
     .ecosystem-detail-page & {
         margin-bottom: 1.25rem;
 
@@ -516,7 +532,7 @@ a.pill {
     }
 }
 
-// ── Shared ecosystem intro paragraph ─────────────────────────────────────────
+// Shared ecosystem intro paragraph
 // Used by .servers > p and .distributions > p (and any future listing pages)
 // for the centred intro text that sits below the page heading.
 
@@ -525,10 +541,10 @@ a.pill {
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 120%;
-    margin: 0 auto 4rem auto;
+    margin: 0 auto 4rem;
 }
 
-// ── Shared ecosystem link-pill row ────────────────────────────────────────────
+// Shared ecosystem link-pill row
 // Wrapping flex row of pill-shaped links used by .server-links and
 // .distribution-links.  Extend this placeholder to get the full set of rules
 // without duplicating them.
@@ -536,8 +552,7 @@ a.pill {
 %eco-link-pills {
     margin-top: auto;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
     gap: 0.35rem;
 
@@ -545,11 +560,9 @@ a.pill {
         display: inline-flex;
         align-items: center;
         gap: 0.25rem;
-
         border: 1px solid var(--borders-color);
         border-radius: 9999px;
         padding: 0.1rem 0.5rem;
-
         font-size: 0.78rem;
         color: var(--color-text);
         text-decoration: none;
@@ -564,11 +577,11 @@ a.pill {
             flex-shrink: 0;
 
             * {
-                fill: currentColor;
+                fill: currentcolor;
             }
 
             line {
-                stroke: currentColor;
+                stroke: currentcolor;
             }
         }
     }

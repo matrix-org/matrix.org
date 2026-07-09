@@ -85,7 +85,7 @@
                 <div class="maturity {{ server.maturity | lower }}">{{ server.maturity }}</div>
             </div>
             {% if server.author %}<div class="author">{{ server.author }}</div>{% endif %}
-            <div class="licence-language">
+            <div class="pill-row">
                 <div class="pill licence">{{ server.licence }}</div>
                 <div class="pill pill--lang pill--lang-{{ lang_helper::normalize_language(lang=server.language) }}">{{ server.language }}</div>
             </div>
