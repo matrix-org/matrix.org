@@ -11,8 +11,8 @@ Everyone can host their Matrix server, but not everybody wants to. These are the
 
 ## Why not matrix.org?
 
-Matrix could be described as what happens when email, instant messaging and
-encryption meet. To be able to use Matrix, you need a Matrix account which is
+[Matrix](/docs/matrix-concepts/elements-of-matrix/) could be described as what happens when email, instant messaging and
+encryption meet. To be able to use Matrix, you need a [Matrix account](/docs/chat_basics/matrix-for-im/#creating-a-matrix-account) which is
 provided by... a provider! The Matrix accounts identifiers look like
 `@username:example.com`. People on different providers can talk to one another,
 in the same way you can send emails to someone using another email provider.
@@ -26,8 +26,9 @@ or WhatsApp.
 
 **Organisations and community managers** will be interested in providers for two
 main reasons: they can proudly display their identity with their own domain
-in username and rooms identifiers, and their administrators remain in control
-of the data of their organisation.
+in username and rooms identifiers when [getting started with a community](/docs/communities/getting-started/),
+and their administrators remain in control of the data of their organisation
+through [room administration](/docs/communities/administration/) tools.
 
 The following providers have been brought to the attention of The Matrix.org
 Foundation. Please note that The Matrix.org Foundation doesn't endorse them,
