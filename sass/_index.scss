@@ -340,14 +340,10 @@
             text-decoration: none;
             width: 280px;
             flex-shrink: 0;
-            transition: border-color 0.2s ease;
+            @include clickable-card(#888);
 
             @media (max-width: 767px) {
                 width: 100%;
-            }
-
-            &:hover {
-                border-color: #888;
             }
 
             .twim__latest-eyebrow {
@@ -426,13 +422,9 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            transition: border-color 0.2s ease;
             text-decoration: none;
             color: #fff;
-
-            &:hover {
-                border-color: #666;
-            }
+            @include clickable-card(#666);
 
             h3 {
                 font-size: 1.125rem;
