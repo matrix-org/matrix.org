@@ -19,10 +19,8 @@
     align-items: center;
     gap: 1rem;
     padding: 0.85rem 1.1rem;
-
     color: var(--color-text);
     text-decoration: none;
-
     border: 1px solid #d2d2d2;
     border-radius: 16px;
 
@@ -65,7 +63,7 @@
     }
 }
 
-// ── Bridge network detail page ────────────────────────────────────────────────
+// Bridge network detail page
 
 .bridge-network-header {
     max-width: 60rem;
@@ -91,6 +89,14 @@
     border: 1px solid #d2d2d2;
     border-radius: 16px;
     overflow: hidden;
+}
+
+.bridge-card-report {
+    margin: 0;
+    padding: 0.85rem 1.5rem;
+    border-top: 1px solid #e8e8e8;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
 }
 
 .bridge-card-header {
@@ -166,14 +172,14 @@
     line-height: 1.6;
     border: 1px solid;
 
-    // Platform side — muted indigo/blue
+    // Platform side - muted indigo/blue
     &--platform {
         background-color: #eef0fb;
         border-color: #8892d4;
         color: #2c3894;
     }
 
-    // Matrix side — Matrix green
+    // Matrix side - Matrix green
     &--matrix {
         background-color: #dff6d5;
         border-color: #4a9e2f;
@@ -191,7 +197,7 @@
 }
 
 .bridge-card-left {
-    // Left column holds both the header and main — the aside spans full height
+    // Left column holds both the header and main - the aside spans full height
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -209,6 +215,7 @@
     background-color: #fafafa;
     border-left: 1px solid #e8e8e8;
     padding: 1.25rem 1rem;
+
     @media (max-width: 700px) {
         border-left: none;
         border-top: 1px solid #e8e8e8;
@@ -251,7 +258,7 @@
     }
 }
 
-// ── Legacy styles (kept for any other pages still referencing them) ────────────
+// Legacy styles (kept for any other pages still referencing them)
 
 .bridges_implem > :nth-child(even) {
     background-color: #fafafa;
