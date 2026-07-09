@@ -228,7 +228,7 @@ privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, Non
 
 # This can vary based on the network. Use Matrix terms here. When in doubt stick to this list.
 [bridges.supports]
-dm = true
+direct_messages = true
 groups = true
 message_media = true
 mentions = true

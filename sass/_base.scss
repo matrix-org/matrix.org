@@ -349,3 +349,13 @@ a>code {
     height:1em;
     vertical-align:-0.15em;
 }
+
+// Shared hover-highlight for any bordered card, clickable,
+// so hover behaviour is consistent across all card decks (ecosystem, hosting, branding, ...).
+.clickable-card {
+    transition: border-color 0.3s ease;
+
+    &:hover {
+        border-color: #000;
+    }
+}
