@@ -834,6 +834,12 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     grid-area: aside;
     position: sticky;
     top: calc(var(--navbar-height) + 1.5rem);
+
+    // Stacked single-column layout on mobile — sticky here would float
+    // the aside mid-scroll between the header and main content.
+    @media (max-width: 767px) {
+        position: static;
+    }
 }
 
 .ecosystem-detail-logo-wrap {
