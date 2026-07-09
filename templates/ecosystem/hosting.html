@@ -15,6 +15,7 @@
 <div class="content hosting_page">
     {{ section.content | safe }}
     {% if section.pages %}
+    <h2>Known providers</h2>
     <div class="hosting-provider-cards">
         {% for provider in section.pages %}
         <div>
