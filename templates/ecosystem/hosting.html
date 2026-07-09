@@ -2,12 +2,6 @@
 {% import "macros/breadcrumb.html" as breadcrumb %}
 {% block head_extra %}
 <meta name="description" content="{{ section.extra.summary }}" />
-<style>
-    html {
-        scroll-behavior: smooth;
-        scroll-padding-top: calc(var(--navbar-height) + 1rem);
-    }
-</style>
 {% endblock head_extra %}
 {% block content %}
 <div class="page-header">
