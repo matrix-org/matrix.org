@@ -35,7 +35,7 @@ matrix_standard = true
 [[distributions]]
 name = "ESS Community"
 description = "Element Server Suite Community is a Matrix distribution from Element, the creators of Matrix. It is built with a focus on quality and ease of use for non-commercial community use cases."
-vendor = "Element"
+vendor = "Element Creations Ltd."
 maturity = "Stable"
 frameworks = ["Helm","Kubernetes"]
 licence = "AGPL-3.0"
@@ -71,7 +71,7 @@ matrix_standard = true
 [[distributions]]
 name = "ESS Pro"
 description = "Element Server Suite Pro is an enterprise backend for Matrix-based communications."
-vendor = "Element"
+vendor = "Element Creations Ltd."
 maturity = "Stable"
 frameworks = ["Helm","Kubernetes"]
 licence = "Element Commercial License"
