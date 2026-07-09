@@ -90,13 +90,13 @@ Client user interface supports multiple languages
 
 {# CSS filter classes for the all-clients card deck #}
 {% macro classes(client) %}
-{% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}platform-ios {% endif %}
-{% if client.packages.google_play_store.app_id %}platform-android {% endif %}
-{% if client.packages.flathub.app_id %}platform-flathub {% endif %}
-{% if client.packages.other_linux_link %}platform-linux {% endif %}
-{% if client.packages.webapp %}platform-web {% endif %}
-{% if client.packages.windows_installer %}platform-windows {% endif %}
-{% if client.packages.macos_installer %}platform-macos {% endif %}
+{% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}platform-ios{% endif %}
+{% if client.packages.google_play_store.app_id %}platform-android{% endif %}
+{% if client.packages.flathub.app_id %}platform-flathub{% endif %}
+{% if client.packages.other_linux_link %}platform-linux{% endif %}
+{% if client.packages.webapp %}platform-web{% endif %}
+{% if client.packages.windows_installer %}platform-windows{% endif %}
+{% if client.packages.macos_installer %}platform-macos{% endif %}
 maturity-{{ client.maturity | lower }}
 licence-{{ client.licence | slugify }}
 
