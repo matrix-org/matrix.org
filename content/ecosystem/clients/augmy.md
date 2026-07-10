@@ -8,6 +8,7 @@ licence = "Proprietary"
 language = "Kotlin / Compose Multiplatform"
 maturity = "Beta"
 website = "https://augmy.org"
+matrix_room = "#public:augmy.org"
 featured = false
 screenshots = [
   "augmy-screenshot-home.png",
