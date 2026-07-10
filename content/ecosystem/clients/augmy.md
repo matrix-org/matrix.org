@@ -9,7 +9,11 @@ language = "Kotlin / Compose Multiplatform"
 maturity = "Beta"
 website = "https://augmy.org"
 featured = false
-screenshots = []
+screenshots = [
+  "augmy-screenshot-home.png",
+  "augmy-screenshot-garden.png",
+  "augmy-screenshot-planter.png"
+]
 good_for = "Families who want healthier digital communication habits and more meaningful interactions with the people who matter most"
 
 [extra.features.1stable]
