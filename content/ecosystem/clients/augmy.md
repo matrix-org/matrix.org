@@ -3,7 +3,7 @@ title = "Augmy"
 
 [extra]
 thumbnail = "augmy.svg"
-maintainer = "Augmy"
+maintainer = "Augmy s.r.o."
 licence = "Proprietary"
 language = "Kotlin / Compose Multiplatform"
 maturity = "Beta"
