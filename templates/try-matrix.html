@@ -114,15 +114,13 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
                                 <p class="client-card-description">{{ client.content | markdown(inline=true) }}</p>
 
                                 <div class="client-card-features">
-                                    {% set feat = client.extra.features %}
-                                    {% if feat.e2ee %}<span class="client-feat-pill">E2EE</span>{% endif %}
-                                    {% if feat.spaces %}<span class="client-feat-pill">Spaces</span>{% endif %}
-                                    {% if feat.threads %}<span class="client-feat-pill">Threads</span>{% endif %}
-                                    {% if feat.voip_1to1 %}<span class="client-feat-pill">Voice &amp; video calls</span>{% endif %}
-                                    {% if feat.voip_jitsi %}<span class="client-feat-pill">Group calls (Jitsi)</span>{% endif %}
-                                    {% if feat.multi_account %}<span class="client-feat-pill">Multi-account</span>{% endif %}
-                                    {% if feat.oauth %}<span class="client-feat-pill">OAuth 2.0</span>{% endif %}
-                                    {% if feat.sso %}<span class="client-feat-pill">SSO</span>{% endif %}
+                                    {% for feature_level_name, features_in_level in client.extra.features %}
+                                    {% for feature_name, feature_state in features_in_level %}
+                                    {% if feature_state == "supported" %}
+                                    <span class="client-feat-pill">{{ self::feature_label(feature_name=feature_name) | trim }}</span>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endfor %}
                                 </div>
 
                                 <div class="client-card-downloads">
