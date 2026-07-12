@@ -22,6 +22,7 @@ multi_account = "supported"
 multi_language = "supported"
 oauth = "unsupported"
 invisible_crypto = "unknown"
+image_packs = "unknown"
 
 [extra.features.2experimental]
 voip_matrixrtc = "unknown"

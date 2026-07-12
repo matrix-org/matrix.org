@@ -31,6 +31,8 @@ Simplified Sliding Sync
 Multi-Account
 {%- elif feature_name == "multi_language" -%}
 Multi-Language
+{%- elif feature_name == "image_packs" -%}
+Emoji and Image Packs
 {%- else -%}
     {{feature_name | replace(from="_", to=" ") | title }}
 {%- endif -%}
@@ -83,6 +85,8 @@ Swift and efficient connection to the server using the next generation API from 
 Log into multiple accounts at the same time using a single client instance
 {%- elif feature_name == "multi_language" -%}
 Client user interface supports multiple languages
+{%- elif feature_name == "image_packs" -%}
+Send and display "custom emoji" and stickers. Create, share, manage and subscribe to packs introduced by MSC2545.
 {%- else -%}
 {{ throw(message="Feature is missing a description!") }}
 {%- endif -%}
