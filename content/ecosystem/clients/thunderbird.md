@@ -7,7 +7,7 @@ maintainer = "Mozilla"
 licence = "MPL-2.0"
 language = "Javascript"
 maturity = "Beta"
-repo = "https://hg.mozilla.org/comm-central"
+repo = "https://github.com/thunderbird/thunderbird-desktop"
 website = "https://www.thunderbird.net"
 matrix_room = "#thunderbird:mozilla.org"
 featured = false
@@ -31,7 +31,7 @@ sliding_sync = "unknown"
 [extra.packages]
 windows_installer = "https://www.thunderbird.net"
 macos_installer = "https://www.thunderbird.net"
-flathub.app_id = "org.mozilla.Thunderbird"
+flathub.app_id = "org.mozilla.thunderbird"
 +++
 
 A free open-repo email, calendar & chat app
