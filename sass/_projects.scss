@@ -384,8 +384,8 @@ a.project-card {
     // Native checkboxes render at ~13px, well under the 24x24px minimum
     // WCAG 2.2 SC 2.5.8 recommends for touch targets. Bigger on mobile,
     // where taps (not precise mouse clicks) are the norm; also add some
-    // vertical breathing room so adjacent options are less likely to be
-    // mis-tapped.
+    // vertical breathing room so adjacent options are less likely to catch
+    // the wrong tap.
     @media (max-width: 700px) {
         gap: 0.6rem;
         padding-block: 0.4rem;
