@@ -207,7 +207,7 @@ licence-{{ client.licence | slugify }}
                 {% for feature_level_name, features_in_level in client.extra.features %}
                 {% for feature_name, feature_state in features_in_level %}
                 {% if feature_state == "supported" %}
-                {{ tooltip::hover(label=self::feature_label(feature_name=feature_name) | trim, text=self::feature_description(feature_name=feature_name) | trim, trigger_class="client-feat-pill") }}
+                {{ tooltip::hover(label=self::feature_label(feature_name=feature_name) | trim, text=self::feature_description(feature_name=feature_name) | trim, trigger_class="client-feat-pill", id=id_prefix ~ "-" ~ client.slug ~ "-" ~ feature_name) }}
                 {% endif %}
                 {% endfor %}
                 {% endfor %}

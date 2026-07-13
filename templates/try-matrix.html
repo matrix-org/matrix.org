@@ -1,6 +1,7 @@
 {% extends "page.html" %}
 {% import "macros/clients.html" as clients %}
 {% block head_extra %}
+<script type="module" src={{ get_url(path="/js/tooltip-position.js" , cachebust=true) }}></script>
 <style>
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 0.5rem); }
 </style>
