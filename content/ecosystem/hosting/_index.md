@@ -11,8 +11,8 @@ Everyone can host their Matrix server, but not everybody wants to. These are the
 
 ## Why not matrix.org?
 
-[Matrix](/docs/matrix-concepts/elements-of-matrix/) could be described as what happens when email, instant messaging and
-encryption meet. To be able to use Matrix, you need a [Matrix account](/docs/chat_basics/matrix-for-im/#creating-a-matrix-account) which is
+[Matrix](@/docs/matrix-concepts/elements-of-matrix/_index.md) could be described as what happens when email, instant messaging and
+encryption meet. To be able to use Matrix, you need a [Matrix account](@/docs/chat_basics/matrix-for-im/_index.md#creating-a-matrix-account) which is
 provided by... a provider! The Matrix accounts identifiers look like
 `@username:example.com`. People on different providers can talk to one another,
 in the same way you can send emails to someone using another email provider.
@@ -21,14 +21,14 @@ Matrix.org is the largest, free provider of Matrix accounts. Many people have an
 identifier like `@username:matrix.org`. This also means that the Matrix.org
 servers are crowded. Using your own provider **as an individual** can not only
 make your Matrix experience snappier, but also give you access to a set of
-pre-configured [bridges](/ecosystem/bridges/) to talk to friends on other networks such as Signal
+pre-configured [bridges](@/ecosystem/bridges/_index.md) to talk to friends on other networks such as Signal
 or WhatsApp.
 
 **Organisations and community managers** will be interested in providers for two
 main reasons: they can proudly display their identity with their own domain
-in username and rooms identifiers when [getting started with a community](/docs/communities/getting-started/),
+in username and rooms identifiers when [getting started with a community](@/docs/communities/getting-started/_index.md),
 and their administrators remain in control of the data of their organisation
-through [room administration](/docs/communities/administration/) tools.
+through [room administration](@/docs/communities/administration/_index.md) tools.
 
 The following providers have been brought to the attention of The Matrix.org
 Foundation. Please note that The Matrix.org Foundation doesn't endorse them,
