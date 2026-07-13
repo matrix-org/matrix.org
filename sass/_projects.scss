@@ -70,134 +70,6 @@ a.project-card {
         justify-content: center;
     }
 
-    .pill {
-        background-color: #e9e9e9;
-        border: 1px solid transparent;
-        border-radius: 16px;
-        padding: 0.2rem 0.5rem;
-        color: var(--color-text);
-        font-size: 0.85rem;
-        line-height: 1.2;
-        text-align: center;
-
-        &.licence {
-            background-color: transparent;
-            border-color: #888;
-            color: #555;
-        }
-    }
-
-    // Language pill colour families
-    // Systems (C, C++, Rust)
-    .pill--lang-c,
-    .pill--lang-cplusplus,
-    .pill--lang-rust {
-        background-color: #fff4e5;
-        border-color: #fcd9a0;
-        color: #92400e;
-    }
-
-    // JVM (Java, Kotlin)
-    .pill--lang-java,
-    .pill--lang-kotlin {
-        background-color: #ede9fe;
-        border-color: #c4b5fd;
-        color: #5b21b6;
-    }
-
-    // JavaScript / TypeScript
-    .pill--lang-javascript,
-    .pill--lang-typescript {
-        background-color: #fefce8;
-        border-color: #fde68a;
-        color: #854d0e;
-    }
-
-    // Python
-    .pill--lang-python {
-        background-color: #e8f1ff;
-        border-color: #9be;
-        color: #1a4db0;
-    }
-
-    // Go
-    .pill--lang-go {
-        background-color: #e6f9f7;
-        border-color: #7fd6ce;
-        color: #0a6b62;
-    }
-
-    // Apple (Swift, Objective-C)
-    .pill--lang-swift,
-    .pill--lang-objective-c {
-        background-color: #fff0eb;
-        border-color: #fdb99a;
-        color: #9a3412;
-    }
-
-    // Dynamic / functional (Ruby, Perl, Raku, Erlang, Elixir, Lisp, Racket)
-    .pill--lang-ruby,
-    .pill--lang-perl,
-    .pill--lang-raku,
-    .pill--lang-erlang,
-    .pill--lang-elixir,
-    .pill--lang-lisp,
-    .pill--lang-racket {
-        background-color: #fce7f3;
-        border-color: #f9a8d4;
-        color: #9d174d;
-    }
-
-    // Web / cross-platform (PHP, Dart, Elm, Haxe)
-    .pill--lang-php,
-    .pill--lang-dart,
-    .pill--lang-elm,
-    .pill--lang-haxe {
-        background-color: #e6f4ea;
-        border-color: #7acc8a;
-        color: #1a6b32;
-    }
-
-    // Shell / scripting (POSIX Shell, Nim)
-    .pill--lang-posix-shell,
-    .pill--lang-nim {
-        background-color: #f3f3f3;
-        border-color: #d1d5db;
-        color: #374151;
-    }
-
-    // C# (separate from C/C++ - .NET ecosystem)
-    .pill--lang-csharp {
-        background-color: #eef0fb;
-        border-color: #8892d4;
-        color: #2c3894;
-    }
-
-    // Deployment framework pill colour families
-    // Kubernetes ecosystem (Helm, Helmfile, Kubernetes)
-    .pill--framework-helm,
-    .pill--framework-helmfile,
-    .pill--framework-kubernetes {
-        background-color: #e6f9f7;
-        border-color: #7fd6ce;
-        color: #0a6b62;
-    }
-
-    // Containers (Docker, Docker Compose)
-    .pill--framework-docker,
-    .pill--framework-docker-compose {
-        background-color: #e8f1ff;
-        border-color: #9be;
-        color: #1a4db0;
-    }
-
-    // Config management (Ansible)
-    .pill--framework-ansible {
-        background-color: #fde8e8;
-        border-color: #f0a8a8;
-        color: #a61b1b;
-    }
-
     // CTA label pinned to the bottom
     // The whole card is already a link - this is a visual affordance only,
     // not an interactive element, so it carries no hover state of its own.
@@ -210,6 +82,134 @@ a.project-card {
         text-decoration: none;
         pointer-events: none;
     }
+}
+
+.pill {
+    background-color: #e9e9e9;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    padding: 0.2rem 0.5rem;
+    color: var(--color-text);
+    font-size: 0.85rem;
+    line-height: 1.2;
+    text-align: center;
+
+    &.licence {
+        background-color: transparent;
+        border-color: #888;
+        color: #555;
+    }
+}
+
+// Language pill colour families
+// Systems (C, C++, Rust)
+.pill--lang-c,
+.pill--lang-cplusplus,
+.pill--lang-rust {
+    background-color: #fff4e5;
+    border-color: #fcd9a0;
+    color: #92400e;
+}
+
+// JVM (Java, Kotlin)
+.pill--lang-java,
+.pill--lang-kotlin {
+    background-color: #ede9fe;
+    border-color: #c4b5fd;
+    color: #5b21b6;
+}
+
+// JavaScript / TypeScript
+.pill--lang-javascript,
+.pill--lang-typescript {
+    background-color: #fefce8;
+    border-color: #fde68a;
+    color: #854d0e;
+}
+
+// Python
+.pill--lang-python {
+    background-color: #e8f1ff;
+    border-color: #9be;
+    color: #1a4db0;
+}
+
+// Go
+.pill--lang-go {
+    background-color: #e6f9f7;
+    border-color: #7fd6ce;
+    color: #0a6b62;
+}
+
+// Apple (Swift, Objective-C)
+.pill--lang-swift,
+.pill--lang-objective-c {
+    background-color: #fff0eb;
+    border-color: #fdb99a;
+    color: #9a3412;
+}
+
+// Dynamic / functional (Ruby, Perl, Raku, Erlang, Elixir, Lisp, Racket)
+.pill--lang-ruby,
+.pill--lang-perl,
+.pill--lang-raku,
+.pill--lang-erlang,
+.pill--lang-elixir,
+.pill--lang-lisp,
+.pill--lang-racket {
+    background-color: #fce7f3;
+    border-color: #f9a8d4;
+    color: #9d174d;
+}
+
+// Web / cross-platform (PHP, Dart, Elm, Haxe)
+.pill--lang-php,
+.pill--lang-dart,
+.pill--lang-elm,
+.pill--lang-haxe {
+    background-color: #e6f4ea;
+    border-color: #7acc8a;
+    color: #1a6b32;
+}
+
+// Shell / scripting (POSIX Shell, Nim)
+.pill--lang-posix-shell,
+.pill--lang-nim {
+    background-color: #f3f3f3;
+    border-color: #d1d5db;
+    color: #374151;
+}
+
+// C# (separate from C/C++ - .NET ecosystem)
+.pill--lang-csharp {
+    background-color: #eef0fb;
+    border-color: #8892d4;
+    color: #2c3894;
+}
+
+// Deployment framework pill colour families
+// Kubernetes ecosystem (Helm, Helmfile, Kubernetes)
+.pill--framework-helm,
+.pill--framework-helmfile,
+.pill--framework-kubernetes {
+    background-color: #e6f9f7;
+    border-color: #7fd6ce;
+    color: #0a6b62;
+}
+
+// Containers (Docker, Docker Compose)
+.pill--framework-docker,
+.pill--framework-docker-compose {
+    background-color: #e8f1ff;
+    border-color: #9be;
+    color: #1a4db0;
+}
+
+// Config management (Ansible)
+.pill--framework-ansible {
+    background-color: #fde8e8;
+    border-color: #f0a8a8;
+    color: #a61b1b;
 }
 
 .filtered-out {
@@ -233,13 +233,17 @@ a.project-card {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
             gap: 0.8rem;
             z-index: 100;
             padding: 0.5rem 0.8rem;
             background-color: #fafafa;
-            color: #000;
+            color: var(--color-text);
+            font-size: 0.9rem;
+            font-weight: 500;
             border: 1px solid #d2d2d2;
             border-radius: 1000px;
+            transition: border-color 0.2s ease;
 
             cursor: pointer;
             user-select: none;
@@ -247,12 +251,16 @@ a.project-card {
             .divider {
                 width: 1px;
                 height: 100%;
-                border-left: 1px solid var(--borders-color);
+                border-left: 1px solid #d2d2d2;
             }
 
             img {
                 height: 0.9em;
                 margin-block: auto;
+            }
+
+            &:hover {
+                border-color: #888;
             }
 
             &.enabled {
@@ -262,6 +270,10 @@ a.project-card {
 
                 img {
                     filter: invert(1);
+                }
+
+                &:hover {
+                    border-color: #888;
                 }
             }
 
@@ -279,13 +291,14 @@ a.project-card {
             z-index: 200;
             padding: 0.5rem 1rem;
             background-color: #fafafa;
-            border: 1px solid var(--borders-color);
+            border: 1px solid #d2d2d2;
             border-radius: 16px;
 
             p {
                 margin: 0;
                 margin-bottom: 0.5rem;
-                font-size: 0.8rem;
+                font-size: 0.85rem;
+                color: var(--color-text-light);
                 text-align: start;
             }
 
@@ -299,8 +312,13 @@ a.project-card {
                 user-select: none;
             }
 
+            label {
+                font-size: 0.9rem;
+            }
+
             .reset-links {
-                font-size: 0.8rem;
+                margin-top: 0.75rem;
+                font-size: 0.85rem;
 
                 a {
                     cursor: pointer;
@@ -320,6 +338,37 @@ a.project-card {
             }
         }
     }
+}
+
+// A filter checkbox can optionally carry a small coloured dot before its
+// label, matching the colour family of the pill it filters for (see
+// .pill--lang-*, .pill--framework-* and .platform-pill--* above/in
+// _clients.scss, and .maturity below). Add both classes to the swatch,
+// e.g. class="filter-swatch pill--lang-python", to pick up its colour.
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+// The paired colour-family class (e.g. .maturity, .platform-pill--ios) still
+// supplies the actual background-color/border-color, so the dot matches its
+// pill exactly. This rule only pins down the shape/size - it deliberately
+// leaves background-color and border-color alone. Doubling the class bumps
+// specificity so these box-model resets win even though some paired classes
+// (e.g. .maturity) declare their own padding/border after this rule.
+.filter-swatch.filter-swatch {
+    display: inline-block;
+    width: 0.65em;
+    height: 0.65em;
+    padding: 0;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    font-size: inherit;
+    line-height: normal;
+    max-width: none;
+    flex-shrink: 0;
 }
 
 .maturity {
