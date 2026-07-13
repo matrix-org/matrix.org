@@ -12,8 +12,8 @@
 {% set languages = languages | unique | sort %}
 {% set partial_path = "partials/sdks/" ~ type ~ ".md" %}
 <div id="purpose-{{ type }}-panel" class="panel">
-    <p>
-        {{ load_data(path=partial_path) | markdown | safe }}
+    <p class="sdks-panel-intro">
+        {{ load_data(path=partial_path) | markdown(inline=true) | safe }}
     </p>
 
     <div id="{{ type }}-sdks-filters" class="filters">

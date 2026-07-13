@@ -9,17 +9,15 @@ do all the heavy lifting.
 """
 +++
 
-SDKs are pieces of software meant for developers, that take care of the
-technical Matrix protocol calls behind the scenes. They allow them to focus on
-where they can add the most value. If you're not a developer, this section of
-the website is probably not for you.
+SDKs are pieces of software meant for developers: they take care of the
+technical Matrix protocol calls behind the scenes, so you can focus on what
+makes your project unique. If you're not a developer, this section probably
+isn't for you.
 
-There are two fundamental types of SDKs: clients and appservices. This
-distinction is quite academical, and we went for a more pragmatic approach. You
-will find below SDKs by type of product you may want to create (namely: clients,
-bots, bridges). Don't be surprised if the same SDK appears in several sections!
-
-If you are a developer and are not sure what the difference between clients and
-appservices is, please head to [the developers documentation](/docs/matrix-concepts/).
+Pick what you want to build below and we'll show you the SDKs for it. Don't be
+surprised if the same SDK appears under more than one option - most SDKs cover
+several use cases. Not sure which applies to you? Check the
+[developer documentation](/docs/matrix-concepts/) for the difference between
+clients and appservices.
 
 {{ sdk_deck() }}
