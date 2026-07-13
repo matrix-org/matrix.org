@@ -13,25 +13,41 @@
         grid-template-columns: 1fr;
     }
 
-    input {
-        display: none;
-    }
 }
 
+// A plain button, not a native radio group, so each card gets its own Tab
+// stop instead of the group being one Tab stop with arrow-key navigation
+// between options (the usual native-radio/ARIA-radiogroup behaviour).
 .sdk-purpose-card {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
     padding: 1.1rem 1.25rem;
     background-color: #fafafa;
+    color: inherit;
+    font: inherit;
+    text-align: left;
     border: 1px solid #d2d2d2;
     border-radius: 16px;
     cursor: pointer;
     user-select: none;
-    transition: border-color 0.2s ease;
+    transition:
+        border-color 0.2s ease,
+        outline-color 0.2s ease;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
 
     &:hover {
         border-color: #888;
+    }
+
+    &:focus-visible {
+        outline-color: #000;
+    }
+
+    &[aria-pressed="true"] {
+        background-color: #fff;
+        border-color: #000;
     }
 }
 
@@ -48,11 +64,6 @@
     // font size. #555 matches the muted-text tone used elsewhere in cards
     // (e.g. .client-card-description-short) and clears AA comfortably.
     color: #555;
-}
-
-input[type="radio"]:checked + .sdk-purpose-card {
-    background-color: #fff;
-    border-color: #000;
 }
 
 // Short blurb for the selected purpose, shown between the cards and the
