@@ -1,0 +1,9 @@
+{# Reusable hover/focus tooltip. Wraps `label` in `trigger_class` and shows
+   `text` in a floating bubble above it on hover/focus. Pair with the
+   `.hover-tooltip` / `.tooltip-content` styles in sass/_tooltip.scss. #}
+{% macro hover(label, text, trigger_class="") %}
+<span class="hover-tooltip" tabindex="0">
+    <span class="{{ trigger_class }}">{{ label }}</span>
+    <span class="tooltip-content" role="tooltip">{{ text }}</span>
+</span>
+{% endmacro %}

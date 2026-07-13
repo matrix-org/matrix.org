@@ -21,3 +21,31 @@
         max-width: 400px;
     }
 }
+
+// Reusable hover/focus tooltip. Wraps any trigger element (pill, label, icon,
+// etc) and shows a .tooltip-content bubble above it on hover/focus, without
+// relying on the Popover API or CSS anchor positioning (both have patchy
+// cross-browser support).
+.hover-tooltip {
+    position: relative;
+    display: inline-block;
+
+    .tooltip-content {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-6px);
+        margin: 0;
+        width: max-content;
+        max-width: 240px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s ease;
+        z-index: 10;
+    }
+
+    &:hover .tooltip-content,
+    &:focus-visible .tooltip-content {
+        opacity: 1;
+    }
+}
