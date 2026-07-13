@@ -225,8 +225,22 @@ a.project-card {
     justify-content: center;
     gap: 1rem;
 
+    // Below 700px, .filter-menu becomes position: absolute relative to this
+    // element (see .filter-wrap below) rather than to the individual
+    // button, so it always sits directly under the row of filter buttons
+    // and its width is relative to .filters' own box, which already fits
+    // the viewport - it can't overflow horizontally, and unlike a
+    // position: fixed panel it scrolls with the page and stays reachable.
+    @media (max-width: 700px) {
+        position: relative;
+    }
+
     .filter-wrap {
         position: relative;
+
+        @media (max-width: 700px) {
+            position: static;
+        }
 
         .filter {
             position: relative;
@@ -294,6 +308,23 @@ a.project-card {
             border: 1px solid #d2d2d2;
             border-radius: 16px;
 
+            // Anchored relative to .filters (see above) instead of this
+            // button below 700px: sits right under the row of filter
+            // buttons rather than under one specific button, but its width
+            // is bounded by .filters' own box so it can't overflow the
+            // viewport, and it scrolls with the page like a normal element.
+            @media (max-width: 700px) {
+                top: 100%;
+                left: 0;
+                right: 0;
+                margin-top: 0.5rem;
+                min-width: 0;
+                width: auto;
+                max-width: none;
+                max-height: 60vh;
+                overflow-y: auto;
+            }
+
             p {
                 margin: 0;
                 margin-bottom: 0.5rem;
@@ -349,6 +380,21 @@ a.project-card {
     display: flex;
     align-items: center;
     gap: 0.4rem;
+
+    // Native checkboxes render at ~13px, well under the 24x24px minimum
+    // WCAG 2.2 SC 2.5.8 recommends for touch targets. Bigger on mobile,
+    // where taps (not precise mouse clicks) are the norm; also add some
+    // vertical breathing room so adjacent options are less likely to be
+    // mis-tapped.
+    @media (max-width: 700px) {
+        gap: 0.6rem;
+        padding-block: 0.4rem;
+
+        input[type="checkbox"] {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
 }
 
 // The paired colour-family class (e.g. .maturity, .platform-pill--ios) still
