@@ -4,6 +4,7 @@
 {% block head_extra %}
 {% set providers_data = load_data(path="content/ecosystem/hosting/providers.toml") %}
 {% set b2c_providers = providers_data.providers | filter(attribute="b2c", value=true) %}
+<script type="module" src={{ get_url(path="/js/tooltip-position.js" , cachebust=true) }}></script>
 <style>
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 0.5rem); }
 
