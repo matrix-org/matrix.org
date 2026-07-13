@@ -1,24 +1,21 @@
 {% import "macros/sdks.html" as sdkutils %}
 
-<fieldset id="sdk-purpose-selector">
-    <input type="radio" name="sdk-purpose" id="purpose-client" checked />
-    <label class="sdk-purpose-card" for="purpose-client">
+<div id="sdk-purpose-selector" role="group" aria-label="What do you want to build?">
+    <button type="button" class="sdk-purpose-card" id="purpose-client" aria-pressed="true">
         <span class="sdk-purpose-card-title">Client SDKs</span>
         <span class="sdk-purpose-card-desc">Build chat apps and clients</span>
-    </label>
+    </button>
 
-    <input type="radio" name="sdk-purpose" id="purpose-bot" />
-    <label class="sdk-purpose-card" for="purpose-bot">
+    <button type="button" class="sdk-purpose-card" id="purpose-bot" aria-pressed="false">
         <span class="sdk-purpose-card-title">Bot SDKs</span>
         <span class="sdk-purpose-card-desc">Automate rooms and accounts</span>
-    </label>
+    </button>
 
-    <input type="radio" name="sdk-purpose" id="purpose-bridge">
-    <label class="sdk-purpose-card" for="purpose-bridge">
+    <button type="button" class="sdk-purpose-card" id="purpose-bridge" aria-pressed="false">
         <span class="sdk-purpose-card-title">Bridge SDKs</span>
         <span class="sdk-purpose-card-desc">Connect Matrix to other networks</span>
-    </label>
-</fieldset>
+    </button>
+</div>
 
 <div id="sdks-panels">
     {{ sdkutils::sdks_panel(type="client") }}
