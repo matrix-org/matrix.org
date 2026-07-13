@@ -23,18 +23,22 @@
             <p>The distribution can support any of the maturity levels checked.</p>
             <div class="filter-option">
                 <input id="maturity-stable" type="checkbox" checked>
+                <span class="filter-swatch maturity stable"></span>
                 <label for="maturity-stable">Stable</label>
             </div>
             <div class="filter-option">
                 <input id="maturity-beta" type="checkbox" checked>
+                <span class="filter-swatch maturity beta"></span>
                 <label for="maturity-beta">Beta</label>
             </div>
             <div class="filter-option">
                 <input id="maturity-alpha" type="checkbox" checked>
+                <span class="filter-swatch maturity alpha"></span>
                 <label for="maturity-alpha">Alpha</label>
             </div>
             <div class="filter-option">
                 <input id="maturity-obsolete" type="checkbox">
+                <span class="filter-swatch maturity obsolete"></span>
                 <label for="maturity-obsolete">Obsolete</label>
             </div>
             <div class="reset-links">Select <button>all</button> - <button>none</button></div>
@@ -68,6 +72,7 @@
             {% for framework in frameworks %}
             <div class="filter-option">
                 <input id="framework-{{ framework | slugify }}" type="checkbox" checked>
+                <span class="filter-swatch pill--framework-{{ framework | slugify }}"></span>
                 <label for="framework-{{ framework | slugify }}">{{ framework }}</label>
             </div>
             {% endfor %}
