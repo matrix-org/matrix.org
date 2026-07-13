@@ -1,3 +1,5 @@
+{% import "macros/tooltip.html" as tooltip %}
+
 {# Human-readable labels for feature categories #}
 {% macro category_label(category_name) %}
 {%- if category_name == "1stable" -%}
@@ -205,7 +207,7 @@ licence-{{ client.licence | slugify }}
                 {% for feature_level_name, features_in_level in client.extra.features %}
                 {% for feature_name, feature_state in features_in_level %}
                 {% if feature_state == "supported" %}
-                <span class="client-feat-pill">{{ self::feature_label(feature_name=feature_name) | trim }}</span>
+                {{ tooltip::hover(label=self::feature_label(feature_name=feature_name) | trim, text=self::feature_description(feature_name=feature_name) | trim, trigger_class="client-feat-pill") }}
                 {% endif %}
                 {% endfor %}
                 {% endfor %}

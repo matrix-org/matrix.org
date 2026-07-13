@@ -1,10 +1,10 @@
-// ── Body lock when a client popup is open (legacy checkbox overlay) ───────────
+// Body lock when a client popup is open (legacy checkbox overlay)
 
 body:has(.projects-card-deck > div > .client-checkbox:checked) {
     overflow: hidden;
 }
 
-// ── Clients section page layout ───────────────────────────────────────────────
+// Clients section page layout
 
 .clients_page {
     padding-top: 3rem;
@@ -48,7 +48,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     flex-wrap: wrap;
 }
 
-// ── Platform pills ─────────────────────────────────────────────────────────────
+// Platform pills
 // Colored variants matching the Try Matrix design language.
 // Used on both the ecosystem client list and inside <details> cards.
 
@@ -65,7 +65,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 .platform-pill--ios {
     background: #e8f1ff;
     color: #1a4db0;
-    border-color: #99bbee;
+    border-color: #9be;
 }
 
 .platform-pill--android {
@@ -98,7 +98,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     border-color: #fcd9a0;
 }
 
-// ── Audience tags (hosting providers) ────────────────────────────────────────
+// Audience tags (hosting providers)
 // Reused from Try Matrix provider compact cards.
 
 .audience-tag {
@@ -113,7 +113,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     &--consumer {
         background: #e8f1ff;
         color: #1a4db0;
-        border-color: #99bbee;
+        border-color: #9be;
     }
 
     &--business {
@@ -123,7 +123,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 }
 
-// ── Shared <details> expand card component ────────────────────────────────────
+// Shared <details> expand card component
 // Used by the featured_client_card() macro on /try-matrix/ and the
 // featured section of /ecosystem/clients/.
 
@@ -139,8 +139,14 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 .client-card {
     border: 1px solid #d2d2d2;
     border-radius: 14px;
-    overflow: hidden;
     transition: border-color 0.2s ease;
+
+    // Clip to the rounded corners only while closed. Once open, tooltips and
+    // other content inside can need to overflow the card's bounds, so the
+    // relevant children round their own corners instead (see below).
+    &:not([open]) {
+        overflow: hidden;
+    }
 
     &[open] {
         border-color: #aaa;
@@ -151,12 +157,16 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 }
 
-// Summary row — always visible
+// Summary row - always visible
 .client-card-summary {
     list-style: none;
     cursor: pointer;
     padding: 0.85rem 1.1rem;
     user-select: none;
+
+    // Rounds the card's top corners itself now that .client-card only clips
+    // while closed (see .client-card).
+    border-radius: 13px 13px 0 0;
 
     @media (max-width: 600px) {
         padding: 0.5rem 0.75rem;
@@ -177,6 +187,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 
 .client-card-summary-inner {
     display: grid;
+
     // icon | header text | tags/platforms | chevron
     grid-template-columns: 40px 1fr auto 0.75rem;
     align-items: center;
@@ -272,7 +283,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 }
 
-// "good for" subtext — used on try-matrix; available here too if needed
+// "good for" subtext - used on try-matrix; available here too if needed
 .client-card-good-for {
     font-size: 0.85rem;
     color: #555;
@@ -294,7 +305,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 }
 
-// ── Expanded card body ────────────────────────────────────────────────────────
+// Expanded card body
 
 .client-card-body {
     display: grid;
@@ -305,15 +316,29 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     @media (max-width: 700px) {
         grid-template-columns: 1fr;
     }
+
+    // On the desktop 2-column layout this panel sits in the card's
+    // bottom-left corner, so it needs to round to match .client-card now
+    // that the card no longer clips its content while open (see .client-card).
+    // On mobile it stacks above the details column instead, so it keeps its
+    // plain corner radius.
+    > .client-card-screenshot-wrap {
+        border-bottom-left-radius: 13px;
+
+        @media (max-width: 700px) {
+            border-bottom-left-radius: 4px;
+        }
+    }
 }
 
-// Screenshot container — always full grid-row height in cards, 16:9 on detail pages
+// Screenshot container - always full grid-row height in cards, 16:9 on detail pages
 .client-card-screenshot-wrap {
     // overflow: hidden is intentionally omitted here so the expand badge
     // (::after) is never clipped by the container. Each screenshot trigger
     // clips its own image via overflow: hidden instead.
     position: relative;
     background-color: #f5f5f5;
+
     // Fill the full height of the .client-card-body grid row so the screenshot
     // panel always matches the details column, regardless of description length.
     // A min-height prevents collapse when the details side is very short.
@@ -334,7 +359,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         right: 1rem;
         font-size: 0.75rem;
         line-height: 1;
-        background: rgba(0, 0, 0, 0.55);
+        background: rgb(0 0 0 / 55%);
         color: #fff;
         padding: 0.2rem 0.35rem;
         border-radius: 4px;
@@ -387,6 +412,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     line-height: 0;
     overflow: hidden;
     border-radius: 4px;
+
     // Fill the full height of the wrap so the image covers the whole panel.
     flex: 1;
     align-self: stretch;
@@ -426,7 +452,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
             right: 0.5rem;
             font-size: 0.75rem;
             line-height: 1;
-            background: rgba(0, 0, 0, 0.55);
+            background: rgb(0 0 0 / 55%);
             color: #fff;
             padding: 0.2rem 0.35rem;
             border-radius: 4px;
@@ -447,7 +473,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 }
 
-// ── CSS-only lightbox ─────────────────────────────────────────────────────────
+// CSS-only lightbox
 
 .client-lightbox {
     display: none;
@@ -470,7 +496,6 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         height: auto;
         object-fit: contain;
         border-radius: 10px;
-
         margin: 0;
     }
 }
@@ -479,7 +504,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     position: fixed;
     inset: 0;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgb(0 0 0 / 85%);
     cursor: zoom-out;
 }
 
@@ -500,7 +525,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 }
 
-// ── Details column ────────────────────────────────────────────────────────────
+// Details column
 
 .client-card-details {
     padding: 1.25rem 1.5rem;
@@ -591,7 +616,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 }
 
-// ── Hosting provider card overrides ──────────────────────────────────────────
+// Hosting provider card overrides
 // The hosting page reuses the same .client-card shell but needs a wider logo
 // placeholder instead of a square app icon, and the body is single-column
 // (no screenshot panel).
@@ -639,7 +664,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 }
 
-// ── Legacy popup overlay (all-clients list) ───────────────────────────────────
+// Legacy popup overlay (all-clients list)
 
 .client-details {
     @media (max-width: 767px) {
@@ -739,7 +764,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgb(0 0 0 / 50%);
     }
 
     &:not(:checked) ~ .client-details-overlay {
@@ -768,7 +793,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 }
 
-// ── Shared ecosystem detail page layout ───────────────────────────────────────
+// Shared ecosystem detail page layout
 // Used by client.html and hosting-provider.html (and any future detail pages).
 
 .ecosystem-detail-page {
@@ -787,13 +812,11 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 
 .ecosystem-detail {
     display: grid;
-    grid-template-columns: 1fr 18rem;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-        "header aside"
-        "main   aside";
-    column-gap: 2rem;
-    row-gap: 2rem;
+    grid-template:
+        "header aside" auto
+        "main   aside" 1fr
+        / 1fr 18rem;
+    gap: 2rem;
     max-width: 60rem;
     margin-inline: auto;
     padding-bottom: 1.5rem;
@@ -845,7 +868,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     position: sticky;
     top: calc(var(--navbar-height) + 1.5rem);
 
-    // Stacked single-column layout on mobile — sticky here would float
+    // Stacked single-column layout on mobile - sticky here would float
     // the aside mid-scroll between the header and main content.
     @media (max-width: 767px) {
         position: static;
@@ -947,7 +970,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #666;
-    margin: 0 0 0.6rem 0;
+    margin: 0 0 0.6rem;
 }
 
 // Feature support list as a definition list, grouped by category
@@ -1018,6 +1041,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 
     dd {
         margin: 0;
+
         // Indent to align with the label text, past the indicator
         padding-left: calc(1em + 0.4rem);
         font-size: 0.8rem;
@@ -1033,7 +1057,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     gap: 0.75rem;
     align-items: center;
 
-    // These sit inline in a detail-page sidebar, not as hero CTAs —
+    // These sit inline in a detail-page sidebar, not as hero CTAs, so
     // shrink the otherwise-global .call-to-action sizing to fit.
     .call-to-action {
         font-size: 0.9rem;
