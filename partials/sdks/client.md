@@ -1,2 +1,2 @@
-Client SDKs are used to develop clients humans will interact with. They handle
-all the Matrix heavy lifting and leave it up to the developer to implement a UI.
+Client SDKs handle the Matrix heavy lifting for apps humans interact with
+directly, leaving you free to focus on the UI.

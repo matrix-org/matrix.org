@@ -2,13 +2,22 @@
 
 <fieldset id="sdk-purpose-selector">
     <input type="radio" name="sdk-purpose" id="purpose-client" checked />
-    <label for="purpose-client">Client SDKs</label>
+    <label class="sdk-purpose-card" for="purpose-client">
+        <span class="sdk-purpose-card-title">Client SDKs</span>
+        <span class="sdk-purpose-card-desc">Build chat apps and clients</span>
+    </label>
 
     <input type="radio" name="sdk-purpose" id="purpose-bot" />
-    <label for="purpose-bot">Bot SDKs</label>
+    <label class="sdk-purpose-card" for="purpose-bot">
+        <span class="sdk-purpose-card-title">Bot SDKs</span>
+        <span class="sdk-purpose-card-desc">Automate rooms and accounts</span>
+    </label>
 
     <input type="radio" name="sdk-purpose" id="purpose-bridge">
-    <label for="purpose-bridge">Bridge SDKs</label>
+    <label class="sdk-purpose-card" for="purpose-bridge">
+        <span class="sdk-purpose-card-title">Bridge SDKs</span>
+        <span class="sdk-purpose-card-desc">Connect Matrix to other networks</span>
+    </label>
 </fieldset>
 
 <div id="sdks-panels">
