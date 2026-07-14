@@ -214,9 +214,6 @@
 // deriving a width from page-max-width/cards-gap/tier count - simpler to
 // read, and doesn't need re-deriving if those values ever change. See
 // https://ishadeed.com/article/aligning-logos-css/ for the technique.
-// One size for everyone: Platinum/Gold/Silver used to be bigger, but now
-// that they're framed and flagged, a size difference on top just looked
-// like an inconsistency rather than a second tier signal.
 .supporters-card {
     --supporters-logo-size: 145px;
 }
@@ -257,14 +254,18 @@
     // more members than Platinum/Gold (double digits vs. a couple), so it
     // gets more room to flow into (enough for several logos per row instead
     // of collapsing to a cramped single column). All 5 tiers sit in one
-    // flex-wrap row, in DOM order - this is the closest CSS-only
-    // approximation of masonry that still guarantees Platinum, Gold,
-    // Silver, Ecosystem, Associate always read in that order as they wrap:
-    // true masonry (CSS grid-template-rows: masonry) is Firefox-only today,
-    // and CSS multi-column packs tighter but reorders content column-by-
-    // column instead of preserving that reading order. The tradeoff here is
-    // that flex rows don't backfill gaps the way real masonry would, so a
-    // short tile next to a tall one can leave whitespace beside it.
+    // flex-wrap row, in DOM order - true masonry (CSS grid-template-rows:
+    // masonry) is Firefox-only today, and CSS multi-column packs tighter but
+    // reorders content column-by-column instead of preserving DOM order, so
+    // neither is usable as the baseline. This plain flex-wrap row is what
+    // renders with no JS (and what a screen reader/no-JS browser sees):
+    // Platinum, Gold, Silver, Ecosystem, Associate always in that order, at
+    // every width - the only downside is that flex rows don't backfill gaps
+    // the way real masonry would, so a short tile next to a tall one can
+    // leave whitespace beside it. supporters-masonry.js progressively
+    // enhances this into hand-packed columns (see .js-masonry below) once
+    // it's had a chance to measure real rendered heights; anyone without JS,
+    // or before it's finished, still gets this fully working layout.
     .supporters-tier-flow {
         display: flex;
         flex-wrap: wrap;
@@ -281,6 +282,8 @@
 
     // Rough size classes so tiles with more members get more room to
     // spread their logos across, without needing an exact width per tier.
+    // Only meaningful in the flex-wrap (no-JS) row above; .js-masonry
+    // overrides these back to "fill the column" once JS has taken over.
     .supporters-section--sm {
         flex: 1 1 16rem;
     }
@@ -291,6 +294,34 @@
 
     .supporters-section--lg {
         flex: 3 1 32rem;
+    }
+
+    // supporters-masonry.js's progressive enhancement: it measures each
+    // tile's natural height (from the flex-wrap row above) and greedily
+    // places each one, in DOM order, into whichever of these columns is
+    // currently shortest - the same packing algorithm libraries like
+    // Masonry.js use. Tiles no longer read strictly left-to-right/top-to-
+    // bottom, but every column still fills in DOM order, and the underlying
+    // DOM order (what assistive tech and view-source see) never changes -
+    // this only moves nodes visually.
+    .supporters-tier-flow.js-masonry {
+        flex-wrap: nowrap;
+        align-items: stretch;
+
+        .supporters-tier-column {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 0;
+            min-width: 0;
+            gap: 1.5rem;
+        }
+
+        // Every tile fills its column - the flex-basis weighting above only
+        // applies to the un-enhanced single-row layout.
+        .supporters-section {
+            flex: none;
+            width: 100%;
+        }
     }
 
     .supporters-section {
