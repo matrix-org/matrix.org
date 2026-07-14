@@ -221,6 +221,17 @@
     --supporters-logo-size: 145px;
 }
 
+// Membership contracts specify Platinum logos must render larger than
+// Gold, which must render larger than Silver - a graduated step, not just
+// a flat "top 3 tiers are bigger" split.
+#platinum-supporters .supporters-card {
+    --supporters-logo-size: 190px;
+}
+
+#gold-supporters .supporters-card {
+    --supporters-logo-size: 165px;
+}
+
 #supporters {
     display: flex;
     flex-direction: column;
