@@ -1,36 +1,62 @@
-.support.main {
+// /support/ now reuses the shared .step-flow layout (_try-matrix.scss)
+// instead of its own grid. The rest of this file (.membership tiers,
+// #supporters wall) belongs to /foundation/members/ (membership.html).
 
-    &>div {
-
-        padding-block: 3rem;
-
-        @media (max-width: 767px) {
-            padding-block: 2rem;
-        }
-
-        &:nth-child(even) {
-            background-color: #eee;
-        }
-
-        .content {
-            display: grid;
-            gap: 1rem;
-
-            h2 {
-                margin-block: 0;
-            }
-
-            p:last-child {
-                margin-block-end: 0;
-            }
-
-            .call-to-action {
-                justify-self: left;
-            }
-        }
-
+// Breadcrumb nav (macros/breadcrumb.html), used by both pages' dark
+// .page-header hero. Only the dark-hero context is needed here; a
+// light/on-white variant exists on other in-flight branches but isn't
+// used by support.html or membership.html.
+.breadcrumb {
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 0.25rem;
+        font-size: 0.85rem;
     }
 
+    li {
+        display: flex;
+        align-items: center;
+
+        // Chevron separator before every item except the first
+        & + li::before {
+            content: "/";
+            margin-right: 0.25rem;
+            opacity: 0.45;
+        }
+    }
+
+    a,
+    span {
+        text-decoration: none;
+        line-height: 1;
+    }
+
+    .page-header & {
+        margin-bottom: 0.75rem;
+
+        a {
+            color: rgb(255 255 255 / 70%);
+
+            &:hover {
+                color: #fff;
+            }
+        }
+
+        // 45% white only clears ~4.4:1 against the black hero background,
+        // just under AA's 4.5:1 for text; 60% keeps it safely above.
+        span {
+            color: rgb(255 255 255 / 60%);
+        }
+
+        li + li::before {
+            color: rgb(255 255 255 / 45%);
+        }
+    }
 }
 
 .membership {
@@ -83,79 +109,222 @@
         display: grid;
         grid-template-columns: repeat(4, 15rem);
         gap: 1rem;
-        overflow-y: auto;
+        // These 4 columns are wider than the viewport on most screens, so
+        // this scrolls sideways (the "scroll to most-popular" script in
+        // membership.html relies on scrollLeft); it was previously
+        // overflow-y, which didn't let that horizontal scroll happen at all.
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
         padding-block-start: 1.5em;
         margin-block-end: 2em;
 
         .tier-card {
-            border: 1px solid var(--borders-color);
-            border-radius: 16px;
+            border: 1px solid var(--color-border);
+            border-top-width: 3px;
+            border-radius: var(--card-radius);
             background-color: #fff;
+            scroll-snap-align: start;
 
             display: flex;
             flex-direction: column;
-            padding: 1em;
+            gap: 0.6rem;
+            padding: 1.1em;
+            // The body-wide line-height (1.75) is meant for prose, not a
+            // dense list of short feature labels in a 15rem-wide card -
+            // it made wrapped lines look loosely, unevenly spaced.
+            line-height: 1.4;
+
+            // These tiers are literally named after materials - give
+            // Silver/Gold/Platinum a top-edge accent in their namesake
+            // colour (--color-tier-*, _base.scss). Individual isn't a
+            // material name, so it keeps the plain border.
+            &--silver {
+                border-top-color: var(--color-tier-silver);
+            }
+
+            &--gold {
+                border-top-color: var(--color-tier-gold);
+            }
+
+            &--platinum {
+                border-top-color: var(--color-tier-platinum);
+            }
+
+            // The individual tier is a different kind of thing than the 3
+            // organisation tiers next to it, not just a cheaper option -
+            // give that group boundary a bit of visual room and a divider,
+            // centred in the combined grid-gap + margin space between them.
+            &--group-start {
+                position: relative;
+                margin-inline-start: 0.5rem;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: -0.75rem;
+                    width: 1px;
+                    background-color: var(--color-border);
+                }
+            }
+
+            &-eyebrow {
+                margin: 0;
+                text-align: center;
+                font-size: 0.7rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                color: var(--color-text-muted);
+            }
 
             h3 {
-                margin-inline: auto;
-                margin-block-start: .5rem;
+                margin: 0;
+                text-align: center;
             }
 
             .pricing {
+                align-self: center;
                 background-color: #e9e9e9;
+                border: 1px solid var(--color-border);
                 border-radius: 9999px;
-                margin-inline: auto;
-                padding-inline: .8em;
+                padding: 0.15rem 0.8em;
+                font-weight: 700;
             }
 
             ul {
-                margin-block-start: 1rem;
-                padding-inline-start: 1em;
+                margin: 0;
+                padding-inline-start: 1.35em;
 
                 li {
                     list-style-image: url('/assets/tick_supported.svg');
-                    margin-block: .3em;
+                    font-size: 0.9rem;
+
+                    & + li {
+                        margin-block-start: 0.4em;
+                    }
                 }
             }
         }
     }
 }
 
-#platinum-supporters .supporters-card {
-    --cards-per-row: 4;
-}
-
-#gold-supporters .supporters-card {
-    --cards-per-row: 4;
-}
-
-#silver-supporters .supporters-card {
-    --cards-per-row: 5;
-}
-
-#associate-supporters .supporters-card {
-    --cards-per-row: 5;
-}
-
-#ecosystem-supporters .supporters-card {
-    --cards-per-row: 5;
+// Fixed logo box (_support.scss below) + object-fit: contain, instead of
+// deriving a width from page-max-width/cards-gap/tier count - simpler to
+// read, and doesn't need re-deriving if those values ever change. See
+// https://ishadeed.com/article/aligning-logos-css/ for the technique.
+// One size for everyone: Platinum/Gold/Silver used to be bigger, but now
+// that they're framed and flagged, a size difference on top just looked
+// like an inconsistency rather than a second tier signal.
+.supporters-card {
+    --supporters-logo-size: 145px;
 }
 
 #supporters {
     display: flex;
     flex-direction: column;
-    max-width: var(--page-max-width);
-    margin-inline: auto;
     margin-block-end: 5rem;
-    --supporters-padding-inline: 1rem;
-    padding-inline: var(--supporters-padding-inline);
+
+    // Full-bleed bands (same idea as .step-background in _try-matrix.scss)
+    // so each tier reads as its own section rather than all ~40 Silver/
+    // Ecosystem/Associate logos blurring into one continuous field.
+    .supporters-band {
+        padding-block: 2.5rem;
+        padding-inline: 1rem;
+
+        @media (max-width: 767px) {
+            padding-block: 1.5rem;
+        }
+
+        &:nth-of-type(even) {
+            background-color: #f0f0f0;
+        }
+    }
+
+    // Platinum/Gold/Silver side by side instead of stacked. Silver has far
+    // more members than Platinum/Gold (double digits vs. a couple), so it
+    // gets more room to flow into (enough for several logos per row instead
+    // of collapsing to a cramped single column). All 5 tiers sit in one
+    // flex-wrap row, in DOM order - this is the closest CSS-only
+    // approximation of masonry that still guarantees Platinum, Gold,
+    // Silver, Ecosystem, Associate always read in that order as they wrap:
+    // true masonry (CSS grid-template-rows: masonry) is Firefox-only today,
+    // and CSS multi-column packs tighter but reorders content column-by-
+    // column instead of preserving that reading order. The tradeoff here is
+    // that flex rows don't backfill gaps the way real masonry would, so a
+    // short tile next to a tall one can leave whitespace beside it.
+    .supporters-tier-flow {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 1.5rem;
+        max-width: var(--page-with-toc-max-width);
+        margin-inline: auto;
+
+        .supporters-section {
+            max-width: none;
+            margin-inline: 0;
+        }
+    }
+
+    // Rough size classes so tiles with more members get more room to
+    // spread their logos across, without needing an exact width per tier.
+    .supporters-section--sm {
+        flex: 1 1 16rem;
+    }
+
+    .supporters-section--md {
+        flex: 1 1 22rem;
+    }
+
+    .supporters-section--lg {
+        flex: 3 1 32rem;
+    }
 
     .supporters-section {
         display: flex;
         flex-direction: column;
+        max-width: var(--page-max-width);
+        margin-inline: auto;
+        width: 100%;
 
-        h2 {
-            text-align: center;
+        // Platinum/Gold/Silver get a frame in their namesake colour, sized
+        // to their own content (not the full band width) with a solid-fill
+        // flag sitting flush in the top-left corner - a bigger version of
+        // the same "this is a material tier" hint as .tier-card's top edge,
+        // without needing to colour every individual logo card inside it.
+        // Ecosystem/Associate get the same frame+flag shape for visual
+        // consistency, just in a neutral grey since they're not material
+        // names and shouldn't imply one.
+        &--platinum,
+        &--gold,
+        &--silver,
+        &--neutral {
+            position: relative;
+            border: 2px solid var(--tier-color);
+            border-radius: var(--card-radius);
+            padding: 2.75rem 1.5rem 1.5rem;
+        }
+
+        &--platinum {
+            --tier-color: var(--color-tier-platinum);
+            --tier-badge-color: var(--color-tier-platinum-badge);
+        }
+
+        &--gold {
+            --tier-color: var(--color-tier-gold);
+            --tier-badge-color: var(--color-tier-gold-badge);
+        }
+
+        &--silver {
+            --tier-color: var(--color-tier-silver);
+            --tier-badge-color: var(--color-tier-silver-badge);
+        }
+
+        &--neutral {
+            --tier-color: var(--color-border);
+            --tier-badge-color: var(--color-text-muted);
         }
 
         .cards {
@@ -166,14 +335,18 @@
             gap: var(--cards-gap);
             justify-content: center;
 
+            // Matches .account-tier (_try-matrix.scss): a plain border, no
+            // background tint of its own - it just sits on whatever the
+            // band behind it already is. A separate card tint on top of the
+            // alternating band tint was two different greys stacked, which
+            // read as odd rather than as a clean "cell".
             .supporters-card {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                --supporters-card-border-width: 1px;
-                border: var(--supporters-card-border-width) solid var(--borders-color);
-                border-radius: 16px;
+                border: 1px solid var(--color-border);
+                border-radius: var(--card-radius-sm);
                 --supporters-card-hpadding: 8px;
                 padding: var(--supporters-card-hpadding);
                 // The whitespace of the text at the bottom visually adds to the padding so we account for this on the top a little.
@@ -181,12 +354,78 @@
                 // This adds some space between the text and the image
                 gap: var(--supporters-card-hpadding);
 
+                // These are links to the member's site, but had no colour
+                // override or hover/focus feedback, so they rendered as a
+                // plain underlined blue link name sitting under the logo.
+                color: inherit;
+                text-decoration: none;
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+                transition: border-color 0.15s ease;
+
+                &:hover {
+                    border-color: #888;
+                }
+
+                &:focus-visible {
+                    outline-color: #000;
+                }
+
+                span {
+                    font-size: 0.85rem;
+                    // The body-wide line-height (1.75) left wrapped 2-line
+                    // company names looking loosely spaced in these small
+                    // cards; overflow-wrap guards against long single-word
+                    // names overflowing the fixed-width card.
+                    line-height: 1.3;
+                    text-align: center;
+                    overflow-wrap: break-word;
+                }
+
+                // Some source logo files have a lot of whitespace baked in
+                // around the mark, others are cropped tight - object-fit
+                // can't tell the difference, so those tight ones end up
+                // looking much bigger than the padded ones at the same box
+                // size. This inset padding doesn't fully equalise that (only
+                // re-cropping the source files would), but it shrinks every
+                // logo by the same amount, which shrinks the gap between
+                // them in absolute terms too.
                 img {
-                    aspect-ratio: 1/1;
+                    box-sizing: border-box;
+                    width: var(--supporters-logo-size, 145px);
+                    height: var(--supporters-logo-size, 145px);
+                    padding: 10px;
                     object-fit: contain;
-                    width: calc((var(--page-max-width) - 2* var(--supporters-padding-inline) - calc(var(--cards-per-row) - 1)* var(--cards-gap)) / var(--cards-per-row) - 2* var(--supporters-card-hpadding) - 2* var(--supporters-card-border-width));
+                }
+
+                // A few member logos ship with a baked-in white background
+                // (flagged via `white_bg = true` in members.toml), which
+                // shows as a visible white box against the card's tint.
+                // multiply drops the white and keeps the logo's own colours.
+                .white-bg-logo {
+                    mix-blend-mode: multiply;
                 }
             }
         }
+    }
+
+    // --tier-badge-color is set on .supporters-section--* above and
+    // inherited down to this span through the DOM, regardless of where this
+    // rule sits in the stylesheet. Sits flush in the frame's corner (not
+    // straddling the border like a badge-on-a-line) - its own top-left
+    // radius matches the frame's, so the two corners read as one shape.
+    .supporters-section-flag {
+        position: absolute;
+        // Offset by the frame's own border-width so the flag's outer corner
+        // aligns with the frame's outer corner exactly, instead of sitting
+        // one border-width inset from it.
+        top: -2px;
+        left: -2px;
+        padding: 0.4rem 1rem;
+        background-color: var(--tier-badge-color);
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 700;
+        border-radius: var(--card-radius) 0 0.6rem 0;
     }
 }

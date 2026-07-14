@@ -1,22 +1,41 @@
 {% extends "page.html" %}
 {% import "macros/banner.html" as banner %}
+{% import "macros/breadcrumb.html" as breadcrumb %}
 {% block head_extra %}
 <meta name="description" content="{{ page.extra.summary }}">
 {% endblock head_extra %}
 {% block content %}
 
-<div class="page-header support">
+<div class="page-header">
+    {{ breadcrumb::breadcrumb(l1_label="Home", l1_path="/", l2_label="Support") }}
     <div class="hero-block">
         <h1>{{ page.title }}</h1>
         <p>{{ page.extra.summary }}</p>
     </div>
 </div>
 
-<div class="support main">
-    <div id="membership">
-        <div class="content">
-            <h2>Join as a member</h2>
-            <div>
+<div class="step-flow">
+    <div class="step-background quickstart">
+        <div class="step no-image">
+            <div class="instructions quickstart-instructions">
+                <h2>Ready to help right now?</h2>
+                <p>
+                    A donation is the fastest way to make a difference today.
+                    Prefer a different way to pitch in? The options below cover
+                    membership, working groups, and merch too.
+                </p>
+                <div class="cta-wrapper">
+                    <a href="https://donorbox.org/keep-matrix-exciting" class="call-to-action">Donate with Donorbox</a>
+                    <a href="#membership" class="call-to-action secondary">See all the ways to help</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="step-background" id="membership">
+        <div class="step no-image">
+            <div class="instructions">
+                <h2>Join as a member</h2>
                 <p>
                     If you have a stake in Matrix, become a member of the
                     Foundation to support it in the most sustainable way. Being
@@ -31,15 +50,17 @@
                         href="https://conference.matrix.org"
                     >annual conference</a>.
                 </p>
+                <div class="cta-wrapper">
+                    <a href="/foundation/members" class="call-to-action">Learn more</a>
+                </div>
             </div>
-            <a href="/foundation/members" class="call-to-action">Learn more</a>
         </div>
     </div>
 
-    <div id="donation">
-        <div class="content">
-            <h2>Make a donation</h2>
-            <div>
+    <div class="step-background coloured" id="donation">
+        <div class="step no-image">
+            <div class="instructions">
+                <h2>Make a donation</h2>
                 <p>
                     One of the most efficient ways to help improve Matrix and make
                     it reach the masses is to make a donation. We provide a <a
@@ -53,17 +74,19 @@
                     If you believe in what we do and want to support us in our
                     mission, a donation, even small, can go a long way.
                 </p>
+                <div class="cta-wrapper">
+                    <a class="call-to-action" href="https://donorbox.org/keep-matrix-exciting">
+                        Donate with Donorbox
+                    </a>
+                </div>
             </div>
-            <a class="call-to-action" href="https://donorbox.org/keep-matrix-exciting">
-                Donate with Donorbox
-            </a>
         </div>
     </div>
 
-    <div id="working-group">
-        <div class="content">
-            <h2>Join a working group</h2>
-            <div>
+    <div class="step-background" id="working-group">
+        <div class="step no-image">
+            <div class="instructions">
+                <h2>Join a working group</h2>
                 <p>
                     Working groups are where you can help get things done. Having a
                     direction is great, having hands to implement it is even better.
@@ -78,15 +101,17 @@
                     Joining a working group is easy: Just pick one and join
                     their chat room!
                 </p>
+                <div class="cta-wrapper">
+                    <a href="/foundation/working-groups/" class="call-to-action">Get things done</a>
+                </div>
             </div>
-            <a href="/foundation/working-groups/" class="call-to-action">Get things done</a>
         </div>
     </div>
 
-    <div id="merch">
-        <div class="content">
-            <h2>Wear Matrix merch</h2>
-            <div>
+    <div class="step-background coloured" id="merch">
+        <div class="step no-image">
+            <div class="instructions">
+                <h2>Wear Matrix merch</h2>
                 <p>
                     To give Matrix a go, your friends needs to know it exists. You
                     can help us spread the word about Matrix by proudly wearing a
@@ -98,8 +123,10 @@
                     merch sales. If your primary goal is to support our work,
                     donations have a much higher impact.
                 </p>
+                <div class="cta-wrapper">
+                    <a href="https://shop.matrix.org" class="call-to-action">Visit our shop</a>
+                </div>
             </div>
-            <a href="https://shop.matrix.org" class="call-to-action">Visit our shop</a>
         </div>
     </div>
 </div>

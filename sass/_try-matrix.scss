@@ -12,7 +12,11 @@
     }
 }
 
-.try_matrix {
+// Generic "sequence of full-width steps" layout: alternating-background
+// blocks, each a centred column of instructions + a CTA row. Originally
+// built for try-matrix.html; reused by support.html and anywhere else that
+// wants the same step-by-step feel instead of a card grid.
+.step-flow {
     display: flex;
     flex-direction: column;
 

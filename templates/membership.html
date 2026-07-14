@@ -1,5 +1,6 @@
 {% extends "page.html" %}
 {% import "macros/banner.html" as banner %}
+{% import "macros/breadcrumb.html" as breadcrumb %}
 {% block head_extra %}
 <meta name="description" content="{{ page.extra.summary }}">
 <script>
@@ -14,7 +15,8 @@
 {% endblock head_extra %}
 {% block content %}
 {% set supporters = load_data(path="content/foundation/members/members.toml") %}
-<div class="page-header support">
+<div class="page-header">
+    {{ breadcrumb::breadcrumb(l1_label="Foundation", l1_path="/foundation/", l2_label="Members") }}
     <div class="hero-block">
         <h1>{{ page.title }}</h1>
         <p>{{ page.extra.summary }}</p>
@@ -26,6 +28,7 @@
         <h2>Become a member</h2>
         <div class="tiers-row">
             <div class="tier-card">
+                <p class="tier-card-eyebrow">For individuals</p>
                 <h3>Individual</h3>
                 <div class="pricing">$60 / year</div>
                 <ul>
@@ -35,7 +38,8 @@
                     <li>Free <a href="/homeserver/pricing">premium account</a> on Matrix.org</li>
                 </ul>
             </div>
-            <div id="most-popular" class="tier-card">
+            <div id="most-popular" class="tier-card tier-card--group-start tier-card--silver">
+                <p class="tier-card-eyebrow">For organisations</p>
                 <h3>Silver</h3>
                 <div class="pricing">$2k - 80k / year</div>
                 <ul>
@@ -47,7 +51,8 @@
                     <li>Ability to post on the Matrix Job Board</li>
                 </ul>
             </div>
-            <div class="tier-card">
+            <div class="tier-card tier-card--gold">
+                <p class="tier-card-eyebrow">For organisations</p>
                 <h3>Gold</h3>
                 <div class="pricing">$200k / year</div>
                 <ul>
@@ -56,7 +61,8 @@
                     <li>A success story on the blog each year</li>
                 </ul>
             </div>
-            <div class="tier-card">
+            <div class="tier-card tier-card--platinum">
+                <p class="tier-card-eyebrow">For organisations</p>
                 <h3>Platinum</h3>
                 <div class="pricing">$500k / year</div>
                 <ul>
@@ -76,61 +82,65 @@
                 class="call-to-action">Organisations membership</a>
         </div>
     </div>
+</div>
 
-    <div id="supporters">
-        <div class="supporters-section" id="platinum-supporters">
-            <h2>Platinum Members</h2>
-            <div class="cards">
-                {% for supporter in supporters.platinum %}
-                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
-                    <img src="/foundation/members/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
-                    <span>{{ supporter.name }}</span>
-                </a>
-                {% endfor %}
+<div id="supporters">
+    <div class="supporters-band">
+        <div class="supporters-tier-flow">
+            <div class="supporters-section supporters-section--platinum supporters-section--sm" id="platinum-supporters">
+                <span class="supporters-section-flag">Platinum</span>
+                <div class="cards">
+                    {% for supporter in supporters.platinum %}
+                    <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                        <img src="/foundation/members/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo"{% if supporter.white_bg %} class="white-bg-logo"{% endif %}>
+                        <span>{{ supporter.name }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-        <div class="supporters-section" id="gold-supporters">
-            <h2>Gold Members</h2>
-            <div class="cards">
-                {% for supporter in supporters.gold %}
-                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
-                    <img src="/foundation/members/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
-                    <span>{{ supporter.name }}</span>
-                </a>
-                {% endfor %}
+            <div class="supporters-section supporters-section--gold supporters-section--sm" id="gold-supporters">
+                <span class="supporters-section-flag">Gold</span>
+                <div class="cards">
+                    {% for supporter in supporters.gold %}
+                    <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                        <img src="/foundation/members/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo"{% if supporter.white_bg %} class="white-bg-logo"{% endif %}>
+                        <span>{{ supporter.name }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-        <div class="supporters-section" id="silver-supporters">
-            <h2>Silver Members</h2>
-            <div class="cards">
-                {% for supporter in supporters.silver %}
-                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
-                    <img src="/foundation/members/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
-                    <span>{{ supporter.name }}</span>
-                </a>
-                {% endfor %}
+            <div class="supporters-section supporters-section--silver supporters-section--lg" id="silver-supporters">
+                <span class="supporters-section-flag">Silver</span>
+                <div class="cards">
+                    {% for supporter in supporters.silver %}
+                    <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                        <img src="/foundation/members/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo"{% if supporter.white_bg %} class="white-bg-logo"{% endif %}>
+                        <span>{{ supporter.name }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-        <div class="supporters-section" id="ecosystem-supporters">
-            <h2>Ecosystem Members</h2>
-            <div class="cards">
-                {% for supporter in supporters.ecosystem %}
-                <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
-                    <img src="/foundation/members/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
-                    <span>{{ supporter.name }}</span>
-                </a>
-                {% endfor %}
+            <div class="supporters-section supporters-section--neutral supporters-section--lg" id="ecosystem-supporters">
+                <span class="supporters-section-flag">Ecosystem</span>
+                <div class="cards">
+                    {% for supporter in supporters.ecosystem %}
+                    <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
+                        <img src="/foundation/members/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo"{% if supporter.white_bg %} class="white-bg-logo"{% endif %}>
+                        <span>{{ supporter.name }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-        <div class="supporters-section" id="associate-supporters">
-            <h2>Associate Members</h2>
-            <div class="cards">
-                {% for supporter in supporters.associate %}
-                <a href="{{ supporter.website }}" class="supporters-card">
-                    <img src="/foundation/members/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo">
-                    <span>{{ supporter.name }}</span>
-                </a>
-                {% endfor %}
+            <div class="supporters-section supporters-section--neutral supporters-section--md" id="associate-supporters">
+                <span class="supporters-section-flag">Associate</span>
+                <div class="cards">
+                    {% for supporter in supporters.associate %}
+                    <a href="{{ supporter.website }}" class="supporters-card">
+                        <img src="/foundation/members/{{ supporter.logo }}" alt="{{ supporter.name }}'s logo"{% if supporter.white_bg %} class="white-bg-logo"{% endif %}>
+                        <span>{{ supporter.name }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
