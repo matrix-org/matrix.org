@@ -68,8 +68,8 @@ of Application Services.
   hood matrix-appservice-node is using Express).
 
 At present, the IRC application service is in beta, and is being run on #matrix
-and #matrix-dev. If you want to give it a go, [check it out on Github ]
-(<https://github.com/matrix-org/matrix-appservice-irc>)!
+and #matrix-dev. If you want to give it a go, [check it out on
+Github](https://github.com/matrix-org/matrix-appservice-irc)!
 
 ## What Application services can do for you
 
