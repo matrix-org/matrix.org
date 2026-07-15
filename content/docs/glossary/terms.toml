@@ -28,8 +28,8 @@ definition = "The process by which independently-run homeservers exchange room d
 learn_more = "/docs/matrix-concepts/elements-of-matrix/"
 
 [[terms.core]]
-term = "Matrix ID"
-aliases = ["MXID", "User ID"]
+term = "Matrix user ID"
+aliases = ["Matrix ID", "MXID", "User ID"]
 definition = "A user's identifier, made up of a local part and the domain of their homeserver, written as `@username:example.com`. Pronounced \"at username on example dot com\"."
 learn_more = "/docs/matrix-concepts/elements-of-matrix/#homeserver"
 
@@ -126,6 +126,7 @@ learn_more = "/foundation/governing-board/"
 term = "Spec Core Team"
 aliases = ["SCT"]
 definition = "The team responsible for stewarding the Matrix specification itself, including reviewing and merging Matrix Spec Changes (MSCs)."
+learn_more = "/foundation/about/#the-spec-core-team"
 
 [[terms.governance]]
 term = "Matrix Spec Change"
