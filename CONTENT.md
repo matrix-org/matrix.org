@@ -356,3 +356,22 @@ To keep documentation on matrix.org tidy and approachable, it needs to be sorted
 Images make concepts easier to understand than walls of text. Screenshots make the documentation easier to follow in the onboarding and community sections. Diagrams and other illustrations can help break down more technical or complicated documentation.
 
 We are happy to review your documentation contributions and help you with any questions that you may end up with.
+
+### Glossary
+
+The glossary at [`/docs/glossary/`](https://matrix.org/docs/glossary/) defines the words, jargon, and acronyms used across Matrix and The Matrix.org Foundation. All entries live in a single file, [`/content/docs/glossary/terms.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/docs/glossary/terms.toml), grouped loosely by category. You do not need to know Markdown, TOML tooling, or how the site builds to contribute — the file can be edited directly from GitHub's web UI.
+
+To add a term, append the following template to the end of `terms.toml`:
+
+```toml
+[[terms]]
+term = "My term"
+category = "Pick an existing category from the file, or introduce a new one"
+aliases = ["Optional alternate names or abbreviations"]
+definition = "One or two plain-language sentences explaining the term."
+learn_more = "/docs/some/relevant/page/#anchor" # optional, internal or external link
+```
+
+Only `term` and `definition` are required; `category`, `aliases`, and `learn_more` can be omitted. Terms don't need to be added in alphabetical order — the page sorts and groups them itself.
+
+If a term is really about the correct spelling or capitalisation of an official Matrix or Foundation name rather than what it means, it likely belongs on the [style guide](https://matrix.org/branding/#commonly-used-terms) instead.

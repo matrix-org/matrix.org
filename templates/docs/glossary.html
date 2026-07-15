@@ -1,0 +1,58 @@
+{% extends "skel.html" %}
+{% import "macros/breadcrumb.html" as breadcrumb %}
+{% block head_extra %}
+<meta name="description" content="{{ section.extra.meta_description }}">
+{% endblock head_extra %}
+{% block content %}
+{% set data = load_data(path="content/docs/glossary/terms.toml") %}
+{% set grouped = data.terms | sort(attribute="term") | group_by(attribute="category") %}
+<article class="content detail-page glossary">
+    {{ breadcrumb::breadcrumb(l1_label="Documentation", l1_path="/docs/", l2_label="Glossary") }}
+    <h1>{{ section.title }}</h1>
+
+    {{ section.content | markdown | safe }}
+
+    <p>
+        Definitions for the words, jargon, and acronyms used across Matrix and
+        The Matrix.org Foundation. For the correct spelling and capitalisation
+        of Matrix-related names, see the <a href="/branding/#commonly-used-terms">commonly
+        used terms</a> list instead.
+    </p>
+    <p class="glossary-contribute">
+        Missing a term, or spotted a mistake?
+        <a href="https://github.com/matrix-org/matrix.org/edit/main/content/docs/glossary/terms.toml" target="_blank" rel="noopener noreferrer">Suggest an edit on GitHub</a>.
+    </p>
+
+    <nav class="glossary-jump" aria-label="Jump to category">
+        {% for category, terms in grouped %}
+        <a href="#{{ category | slugify }}">{{ category }}</a>
+        {% endfor %}
+    </nav>
+
+    <div class="glossary-list">
+        {% for category, terms in grouped %}
+        <section class="glossary-category" id="{{ category | slugify }}">
+            <h2>{{ category }}</h2>
+            <dl>
+                {% for term in terms %}
+                <div class="glossary-term">
+                    <dt>
+                        {{ term.term }}
+                        {% if term.aliases %}
+                        <span class="glossary-aliases">({{ term.aliases | join(sep=", ") }})</span>
+                        {% endif %}
+                    </dt>
+                    <dd>
+                        {{ term.definition }}
+                        {% if term.learn_more %}
+                        <a href="{{ term.learn_more }}" class="glossary-learn-more">Learn more &rarr;</a>
+                        {% endif %}
+                    </dd>
+                </div>
+                {% endfor %}
+            </dl>
+        </section>
+        {% endfor %}
+    </div>
+</article>
+{% endblock content %}

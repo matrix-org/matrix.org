@@ -28,8 +28,13 @@ title = "Categories"
 href = "/category/"
 
 [[header]]
+id = "docs"
 title = "Docs"
 href = "/docs/"
+
+[[header.children]]
+title = "Glossary"
+href = "/docs/glossary/"
 
 [[header]]
 title = "Ecosystem"
