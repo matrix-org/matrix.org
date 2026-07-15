@@ -121,6 +121,9 @@
     }
 
     dt {
+        display: flex;
+        align-items: baseline;
+        gap: 0.35rem;
         font-weight: 700;
         font-size: 1.05rem;
     }
@@ -129,13 +132,33 @@
         margin: 0.35rem 0 0;
         color: var(--color-text-muted);
     }
+
+    // Only reveal the "#" permalink on hover/focus - it's a bonus for
+    // sighted mouse/keyboard users linking to a term, not something that
+    // needs to compete with the term name for attention at rest.
+    &:hover .glossary-term-anchor,
+    .glossary-term-anchor:focus {
+        opacity: 1;
+    }
 }
 
 .glossary-aliases {
-    margin-left: 0.35rem;
     font-weight: 400;
     font-size: 0.85rem;
     color: var(--color-text-light);
+}
+
+.glossary-term-anchor {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+
+    &:hover {
+        color: var(--color-link);
+    }
 }
 
 .glossary-learn-more {

@@ -42,12 +42,15 @@
             <h2>{{ label }}</h2>
             <dl>
                 {% for term in data.terms[key] | sort(attribute="term") %}
-                <div class="glossary-term">
+                {% set term_slug = term.term | slugify %}
+                {% set term_id = "term-" ~ term_slug %}
+                <div class="glossary-term" id="{{ term_id }}">
                     <dt>
                         {{ term.term }}
                         {% if term.aliases %}
                         <span class="glossary-aliases">({{ term.aliases | join(sep=", ") }})</span>
                         {% endif %}
+                        <a href="#{{ term_id }}" class="glossary-term-anchor" aria-label="Link to {{ term.term }}">#</a>
                     </dt>
                     <dd>
                         {{ term.definition }}
