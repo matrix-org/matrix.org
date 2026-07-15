@@ -53,7 +53,7 @@
                         <a href="#{{ term_id }}" class="glossary-term-anchor" aria-label="Link to {{ term.term }}">#</a>
                     </dt>
                     <dd>
-                        {{ term.definition }}
+                        {{ term.definition | markdown(inline=true) | safe }}
                         {% if term.learn_more %}
                         <a href="{{ term.learn_more }}" class="glossary-learn-more">Learn more &rarr;</a>
                         {% endif %}

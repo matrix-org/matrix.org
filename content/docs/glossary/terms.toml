@@ -81,6 +81,11 @@ definition = "Encryption where messages are only readable by the sending and rec
 learn_more = "/docs/matrix-concepts/end-to-end-encryption/"
 
 [[terms.security]]
+term = "vodozemac"
+definition = "The Rust library implementing the Olm and Megolm cryptographic ratchets used for Matrix end-to-end encryption, replacing the older, now-deprecated libolm. Named after [vodozémac](https://hjp.znanje.hr/index.php?show=search_by_id&id=f19vXxZ%2F), the Croatian word for \"amphibian\". Pronounced \"[vo-do-ze-mats](https://www.youtube.com/watch?v=mjndO734kco&t=38)\"."
+learn_more = "https://github.com/matrix-org/vodozemac"
+
+[[terms.security]]
 term = "Device verification"
 definition = "The process of two devices confirming each other's cryptographic identity keys out-of-band, so they can trust that messages are really coming from who they claim to be from."
 learn_more = "/docs/matrix-concepts/end-to-end-encryption/#blocking-verifying-devices"
