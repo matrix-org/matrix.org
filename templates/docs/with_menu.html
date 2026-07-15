@@ -79,6 +79,7 @@
     </div>
 
     <div class="docs-content">
+        {% block docs_content %}
         <article class="content">
             <header>
                 <h1>{{ section.title }}</h1>
@@ -99,6 +100,7 @@
 
             {{ section.content | markdown | safe }}
         </article>
+        {% endblock docs_content %}
     </div>
 </div>
 {% endblock content %}

@@ -1,9 +1,8 @@
-{% extends "skel.html" %}
-{% import "macros/breadcrumb.html" as breadcrumb %}
+{% extends "docs/with_menu.html" %}
 {% block head_extra %}
 <meta name="description" content="{{ section.extra.meta_description }}">
 {% endblock head_extra %}
-{% block content %}
+{% block docs_content %}
 {% set data = load_data(path="content/docs/glossary/terms.toml") %}
 {# Category labels/keys, kept in alphabetical order by label (not by TOML
    file order) so a reader doesn't get a seemingly-random category sequence.
@@ -12,9 +11,10 @@
    both, in the correct alphabetical position. #}
 {% set category_labels = ["Core concepts", "Governance", "Security", "Trust & Safety"] %}
 {% set category_keys = ["core", "governance", "security", "trust_safety"] %}
-<article class="content detail-page glossary">
-    {{ breadcrumb::breadcrumb(l1_label="Documentation", l1_path="/docs/", l2_label="Glossary") }}
-    <h1>{{ section.title }}</h1>
+<article class="content glossary">
+    <header>
+        <h1>{{ section.title }}</h1>
+    </header>
 
     {{ section.content | markdown | safe }}
 
@@ -65,4 +65,4 @@
         {% endfor %}
     </div>
 </article>
-{% endblock content %}
+{% endblock docs_content %}
