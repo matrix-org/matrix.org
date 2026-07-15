@@ -5,7 +5,13 @@
 {% endblock head_extra %}
 {% block content %}
 {% set data = load_data(path="content/docs/glossary/terms.toml") %}
-{% set grouped = data.terms | sort(attribute="term") | group_by(attribute="category") %}
+{# Category labels/keys, kept in alphabetical order by label (not by TOML
+   file order) so a reader doesn't get a seemingly-random category sequence.
+   Tera has no map literals to build a {label, terms} list dynamically and
+   sort it, so this is two parallel arrays instead - add new categories to
+   both, in the correct alphabetical position. #}
+{% set category_labels = ["Core concepts", "Governance", "Security", "Trust & Safety"] %}
+{% set category_keys = ["core", "governance", "security", "trust_safety"] %}
 <article class="content detail-page glossary">
     {{ breadcrumb::breadcrumb(l1_label="Documentation", l1_path="/docs/", l2_label="Glossary") }}
     <h1>{{ section.title }}</h1>
@@ -24,17 +30,18 @@
     </p>
 
     <nav class="glossary-jump" aria-label="Jump to category">
-        {% for category, terms in grouped %}
-        <a href="#{{ category | slugify }}">{{ category }}</a>
+        {% for label in category_labels %}
+        <a href="#{{ label | slugify }}">{{ label }}</a>
         {% endfor %}
     </nav>
 
     <div class="glossary-list">
-        {% for category, terms in grouped %}
-        <section class="glossary-category" id="{{ category | slugify }}">
-            <h2>{{ category }}</h2>
+        {% for label in category_labels %}
+        {% set key = category_keys[loop.index0] %}
+        <section class="glossary-category" id="{{ label | slugify }}">
+            <h2>{{ label }}</h2>
             <dl>
-                {% for term in terms %}
+                {% for term in data.terms[key] | sort(attribute="term") %}
                 <div class="glossary-term">
                     <dt>
                         {{ term.term }}

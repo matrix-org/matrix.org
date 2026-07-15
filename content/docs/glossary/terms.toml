@@ -1,158 +1,134 @@
 # Glossary entries shown on /docs/glossary/.
 #
-# To add a term, append a new [[terms]] block below (alphabetical order isn't
-# required - the page sorts them itself). Only `term` and `definition` are
-# required.
+# Terms are grouped into arrays-of-tables named terms.<category>, one per
+# category. To add a term, append a new block under the right category below
+# (or start a new terms.<category> for a new one - the page picks it up and
+# labels/sorts it automatically). Only `term` and `definition` are required.
 #
-#   [[terms]]
+#   [[terms.core]]
 #   term = "Your term"
-#   category = "One of the categories used below, or a new one"
 #   aliases = ["Optional alternate names or abbreviations"]
 #   definition = "One or two plain-language sentences."
 #   learn_more = "/docs/some/relevant/page/#anchor"   # optional, internal or external
 
-[[terms]]
+[[terms.core]]
 term = "Homeserver"
-category = "Core concepts"
 aliases = ["HS"]
 definition = "A server that hosts Matrix user accounts and participates in the network. Every account belongs to exactly one homeserver, identified by that server's domain."
 learn_more = "/docs/matrix-concepts/elements-of-matrix/#homeserver"
 
-[[terms]]
+[[terms.core]]
 term = "Client"
-category = "Core concepts"
 definition = "An application people use to read and send messages on Matrix, such as Element. Clients talk to a homeserver, never directly to other clients."
 learn_more = "/docs/matrix-concepts/elements-of-matrix/#client"
 
-[[terms]]
+[[terms.core]]
 term = "Federation"
-category = "Core concepts"
 definition = "The process by which independently-run homeservers exchange room data with each other, so users on different servers can share rooms without depending on a central server."
 learn_more = "/docs/matrix-concepts/elements-of-matrix/"
 
-[[terms]]
+[[terms.core]]
 term = "Matrix ID"
-category = "Core concepts"
 aliases = ["MXID", "User ID"]
 definition = "A user's identifier, made up of a local part and the domain of their homeserver, written as `@username:example.com`. Pronounced \"at username on example dot com\"."
 learn_more = "/docs/matrix-concepts/elements-of-matrix/#homeserver"
 
-[[terms]]
+[[terms.core]]
 term = "Room"
-category = "Core concepts"
 definition = "A conversation, shared between the homeservers of everyone taking part. Each participating server keeps its own local copy of the room, which is kept in sync with the others."
 learn_more = "/docs/matrix-concepts/rooms_and_events/"
 
-[[terms]]
+[[terms.core]]
 term = "Room ID"
-category = "Core concepts"
 definition = "The internal, permanent identifier of a room, written as `!opaqueid:example.com`. Unlike a room's published address, it never changes for the lifetime of the room."
 learn_more = "/docs/matrix-concepts/rooms_and_events/"
 
-[[terms]]
+[[terms.core]]
 term = "Event"
-category = "Core concepts"
 definition = "A single timestamped, signed item in a room's history: a message, a membership change, a room setting being updated, and so on. Rooms are built up from a directed acyclic graph of events."
 learn_more = "/docs/matrix-concepts/rooms_and_events/"
 
-[[terms]]
+[[terms.core]]
 term = "State event"
-category = "Core concepts"
 definition = "An event that represents a piece of persistent room state (such as the room name, topic, or a member's membership) rather than a one-off message. Only the latest state event for a given type and key is considered current."
 learn_more = "/docs/matrix-concepts/rooms_and_events/"
 
-[[terms]]
+[[terms.core]]
 term = "Power level"
-category = "Core concepts"
 aliases = ["PL"]
 definition = "A per-user or per-action number in a room that determines what a user is allowed to do, such as sending certain event types, kicking, or banning."
 learn_more = "/docs/matrix-concepts/rooms_and_events/#administration-privileges"
 
-[[terms]]
+[[terms.core]]
 term = "Application Service"
-category = "Core concepts"
 aliases = ["AppService"]
 definition = "A privileged piece of software, registered with a homeserver, that can puppet many virtual users and rooms at once. Bridges and some advanced bots are built as Application Services."
 learn_more = "https://spec.matrix.org/latest/application-service-api/"
 
-[[terms]]
+[[terms.core]]
 term = "Bridge"
-category = "Core concepts"
 definition = "A form of Application Service that relays messages between Matrix and a third-party chat platform (for example IRC, Slack, or Discord), so users on either side can talk to each other."
 learn_more = "/ecosystem/bridges/"
 
-[[terms]]
+[[terms.core]]
 term = "Identity server"
-category = "Core concepts"
 definition = "A separate, optional service that maps third-party identifiers (such as email addresses or phone numbers) to Matrix IDs, used when inviting someone by contact detail instead of by their Matrix ID."
 
-[[terms]]
+[[terms.security]]
 term = "End-to-end encryption"
-category = "Security"
 aliases = ["E2EE"]
 definition = "Encryption where messages are only readable by the sending and receiving devices, not by the homeservers relaying them. Matrix implements this using the Olm and Megolm cryptographic ratchets."
 learn_more = "/docs/matrix-concepts/end-to-end-encryption/"
 
-[[terms]]
+[[terms.security]]
 term = "Device verification"
-category = "Security"
 definition = "The process of two devices confirming each other's cryptographic identity keys out-of-band, so they can trust that messages are really coming from who they claim to be from."
 learn_more = "/docs/matrix-concepts/end-to-end-encryption/#blocking-verifying-devices"
 
-[[terms]]
+[[terms.security]]
 term = "Cross-signing"
-category = "Security"
 definition = "A mechanism where a user signs their own devices with a private master key, so other users only need to verify that one master key to trust all of that user's current and future devices."
 
-[[terms]]
+[[terms.security]]
 term = "Key backup"
-category = "Security"
 definition = "An encrypted, server-side backup of a user's message decryption keys, so they aren't lost if all of a user's devices are lost or logged out at once."
 
-[[terms]]
+[[terms.security]]
 term = "Unable to decrypt"
-category = "Security"
 aliases = ["UTD"]
 definition = "An error state shown for a message a client received but could not decrypt, usually because it never obtained the room key for that message."
 
-[[terms]]
+[[terms.trust_safety]]
 term = "Account locking"
-category = "Trust & Safety"
 definition = "A reversible action where a user is prevented from logging in to their account, but the account itself is preserved in place."
 
-[[terms]]
+[[terms.trust_safety]]
 term = "Account suspension"
-category = "Trust & Safety"
 definition = "A reversible action similar to locking, except the user can still log in and read their account; they just cannot write (send messages, join rooms, and so on)."
 
-[[terms]]
+[[terms.trust_safety]]
 term = "Account deactivation"
-category = "Trust & Safety"
 definition = "A destructive, irreversible action where an account is removed from all rooms and permanently deleted."
 
-[[terms]]
+[[terms.governance]]
 term = "Working Group"
-category = "Governance"
 aliases = ["WG"]
 definition = "A standing group, formed under the Foundation's Governing Board, focused on getting a specific area of work done - for example events, or a part of the ecosystem."
 learn_more = "/foundation/working-groups/"
 
-[[terms]]
+[[terms.governance]]
 term = "Governing Board"
-category = "Governance"
 aliases = ["GB"]
 definition = "The organ of The Matrix.org Foundation through which the ecosystem participates in its governance, made up of representatives elected or appointed from across the community."
 learn_more = "/foundation/governing-board/"
 
-[[terms]]
+[[terms.governance]]
 term = "Spec Core Team"
-category = "Governance"
 aliases = ["SCT"]
 definition = "The team responsible for stewarding the Matrix specification itself, including reviewing and merging Matrix Spec Changes (MSCs)."
 
-[[terms]]
+[[terms.governance]]
 term = "Matrix Spec Change"
-category = "Governance"
 aliases = ["MSC"]
 definition = "A proposal to change or extend the Matrix specification, following the process defined by the Spec Core Team."
 learn_more = "https://spec.matrix.org/proposals/"
