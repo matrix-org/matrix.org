@@ -1,63 +1,10 @@
 // /support/ now reuses the shared .step-flow layout (_try-matrix.scss)
 // instead of its own grid. The rest of this file (.membership tiers,
 // #supporters wall) belongs to /foundation/members/ (membership.html).
-
-// Breadcrumb nav (macros/breadcrumb.html), used by both pages' dark
-// .page-header hero. Only the dark-hero context is needed here; a
-// light/on-white variant exists on other in-flight branches but isn't
-// used by support.html or membership.html.
-.breadcrumb {
-    ol {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        gap: 0.25rem;
-        font-size: 0.85rem;
-    }
-
-    li {
-        display: flex;
-        align-items: center;
-
-        // Chevron separator before every item except the first
-        & + li::before {
-            content: "/";
-            margin-right: 0.25rem;
-            opacity: 0.45;
-        }
-    }
-
-    a,
-    span {
-        text-decoration: none;
-        line-height: 1;
-    }
-
-    .page-header & {
-        margin-bottom: 0.75rem;
-
-        a {
-            color: rgb(255 255 255 / 70%);
-
-            &:hover {
-                color: #fff;
-            }
-        }
-
-        // 45% white only clears ~4.4:1 against the black hero background,
-        // just under AA's 4.5:1 for text; 60% keeps it safely above.
-        span {
-            color: rgb(255 255 255 / 60%);
-        }
-
-        li + li::before {
-            color: rgb(255 255 255 / 45%);
-        }
-    }
-}
+//
+// Breadcrumb nav (macros/breadcrumb.html) is styled by the shared
+// _breadcrumb.scss partial - see there for the .page-header (dark) context
+// both pages use.
 
 .membership {
 
