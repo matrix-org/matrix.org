@@ -125,9 +125,8 @@
     // Term anchors (the "#" permalinks) sit under both the fixed
     // .site-header AND the sticky .glossary-category h2 above them, so they
     // need clearance for both, unlike the category anchor above which only
-    // has the site-header to clear. 2.95rem approximates the h2's own
-    // rendered height (font-size 1.44rem * line-height 1.3, plus its
-    // padding and border) - if that h2 changes, this needs to follow.
+    // has the site-header to clear. 1.7rem is a fine-tuned offset for the
+    // h2's own rendered height - if that h2 changes, this needs to follow.
     scroll-margin-top: calc(var(--navbar-height) + 1.7rem);
     padding: 1.25rem 0;
 
