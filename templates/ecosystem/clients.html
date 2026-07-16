@@ -18,7 +18,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
 {% set licences = [] %}
 {% set features = [] %}
 {% for client in clients %}
-    {% set_global licences = licences | concat(with=client.extra.licence) %}
+    {% set_global licences = licences | concat(with=client.extra.licence | split(pat=" OR ")) %}
     {% for feature_level_name, features_in_level in client.extra.features %}
         {% for feature_name, feature_state in features_in_level %}
             {% set_global features = features | concat(with=[feature_name]) %}
@@ -193,7 +193,9 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
                     <div class="maturity {{ client.extra.maturity | lower }}">{{ client.extra.maturity }}</div>
                 </div>
                 <div class="pill-row">
-                    <div class="pill licence">{{ client.extra.licence }}</div>
+                    {% for part in client.extra.licence | split(pat=" OR ") %}
+                    <div class="pill licence">{{ part }}</div>
+                    {% endfor %}
                 </div>
                 <span>{{ client.content | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</span>
                 <div class="platform-links">

@@ -100,7 +100,7 @@ Client user interface supports multiple languages
 {% if client.packages.windows_installer %}platform-windows{% endif %}
 {% if client.packages.macos_installer %}platform-macos{% endif %}
 maturity-{{ client.maturity | lower }}
-licence-{{ client.licence | slugify }}
+{% for part in client.licence | split(pat=" OR ") %}licence-{{ part | slugify }} {% endfor %}
 
 {% for feature_level_name, features in client.features %}
     {% for feature_name, feature_state in features %}

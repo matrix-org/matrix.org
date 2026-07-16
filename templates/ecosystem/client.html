@@ -37,15 +37,17 @@
                         >By {{ page.extra.maintainer }}</span
                     >
                     {% endif %} {% if page.extra.licence %}
-                    <span class="ecosystem-detail-meta-item">
+                    <span class="ecosystem-detail-meta-item pill-row">
                         {% set licence_parts = page.extra.licence | split(pat=" OR ") %}
                         {% for part in licence_parts %}
-                        {% if not loop.first %} OR {% endif %} {% if part is
-                        containing(" ") %} {{ part }} {% else %}
+                        {% if part is containing(" ") %}
+                        <span class="pill licence">{{ part }}</span>
+                        {% else %}
                         <a
                             href="https://spdx.org/licenses/{{ part }}.html"
                             target="_blank"
                             rel="noopener noreferrer"
+                            class="pill licence"
                             >{{ part }}</a
                         >
                         {% endif %} {% endfor %}
