@@ -291,9 +291,13 @@
                 }
             }
 
+            // .call-to-action is itself display: inline-flex, so once it's
+            // stretched to the card's full width its content still
+            // flex-aligns to the start - text-align has no effect here,
+            // justify-content does.
             .call-to-action {
                 align-self: stretch;
-                text-align: center;
+                justify-content: center;
             }
         }
     }
