@@ -155,6 +155,13 @@ pre table {
 
     @media (max-width: 767px) {
         padding-inline: 2rem;
+        // justify-content: center vertically centers the breadcrumb+hero as
+        // one block against a fixed min-height - on pages with a long
+        // title/summary that wraps to more lines (e.g. sdks), the block
+        // grows and eats into that centering slack, pushing the breadcrumb
+        // flush against the top edge. Guarantee a minimum gap regardless of
+        // how tall the hero text gets.
+        padding-top: 2rem;
     }
 
     padding-bottom: calc(var(--navbar-height)/2);
