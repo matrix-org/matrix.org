@@ -59,7 +59,7 @@ matrix_standard = true
 [[distributions]]
 name = "matrix-docker-ansible-deploy"
 description = "🐳 Matrix (An open network for secure, decentralized communication) server setup using Ansible and Docker"
-vendor = "Splanteev"
+vendor = "spantaleev"
 maturity = "Stable"
 frameworks = ["Ansible", "Docker"]
 licence = "AGPL-3.0"
