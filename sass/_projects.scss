@@ -47,15 +47,33 @@ a.project-card {
         text-align: center;
     }
 
-    // Description
+    // Author/maintainer/vendor line, muted
+    .author {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+
+    // Description - normal text color, not muted.
     p,
     & > span {
         font-size: 0.9rem;
         line-height: 1.45;
-        color: #555;
         margin: 0;
         flex-shrink: 0;
         text-align: center;
+    }
+
+    // Clamped to 4 lines with an ellipsis so cards with long descriptions
+    // stay a uniform height - skipped on integration cards, which don't
+    // link to a detail page where the rest of the text would be readable.
+    &:not(.project-card--no-clamp) {
+        p,
+        & > span {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
     }
 
     // Pills row - always immediately above the CTA

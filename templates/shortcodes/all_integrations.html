@@ -1,7 +1,7 @@
 {% set integrations_data = load_data(path="content/ecosystem/integrations/integrations.toml") %}
 <div class="projects-card-deck">
     {% for integration in integrations_data.integrations %}
-    <div class="project-card">
+    <div class="project-card project-card--no-clamp">
         <h3>{{ integration.name }}</h3>
         <p class="description">{{ integration.description | markdown(inline=true) | safe }}</p>
         <div class="server-links">
