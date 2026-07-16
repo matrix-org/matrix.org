@@ -586,10 +586,25 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
             max-width: none;
             margin: 0;
             border-radius: 6px;
+        }
+    }
 
-            @media (max-width: 700px) {
-                height: 30px;
-            }
+    // Plain flex-wrap packs a different number of badges per row depending
+    // on exactly how much width is left as the viewport narrows (4, then 3,
+    // then a forced 2) - the count keeps changing and, worse, stretching the
+    // last forced row to fill its column made icons grow again on the
+    // smallest screens. Switch to a stable 2-column grid instead, with
+    // icons kept at a fixed (smaller) height rather than stretched to fill
+    // their cell, so there's one predictable layout for the whole mobile
+    // range instead of several.
+    @media (max-width: 700px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+
+        a img {
+            height: 40px;
+            width: auto;
         }
     }
 }
