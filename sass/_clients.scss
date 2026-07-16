@@ -948,6 +948,15 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         margin-right: 0.4rem;
         color: #ccc;
     }
+
+    // Multi-licence clients (e.g. "AGPL-3.0 OR Element Commercial License")
+    // get one pill per licence instead of an "OR"-joined text run.
+    &.pill-row {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.3rem;
+    }
 }
 
 .ecosystem-detail-description {
