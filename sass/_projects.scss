@@ -399,6 +399,19 @@ a.project-card {
     align-items: center;
     gap: 0.4rem;
 
+    // Long, hyphen-only labels with no spaces to break at (e.g. licence ids
+    // like "AGPL-3.0-or-later") can't wrap, so as a flex row narrows they'd
+    // otherwise shrink the checkbox/swatch instead. Keep those a fixed size
+    // and let the label wrap/break, not the other way round.
+    input[type="checkbox"],
+    .filter-swatch {
+        flex-shrink: 0;
+    }
+
+    label {
+        overflow-wrap: break-word;
+    }
+
     // Native checkboxes render at ~13px, well under the 24x24px minimum
     // WCAG 2.2 SC 2.5.8 recommends for touch targets. Bigger on mobile,
     // where taps (not precise mouse clicks) are the norm; also add some
