@@ -398,6 +398,10 @@ a.project-card {
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    // Row spacing used to come for free from the label's inherited
+    // line-height; now that that's reset to 1 for alignment (below), it
+    // needs to be explicit instead.
+    padding-block: 0.3rem;
 
     // Long, hyphen-only labels with no spaces to break at (e.g. licence ids
     // like "AGPL-3.0-or-later") can't wrap, so as a flex row narrows they'd
@@ -408,7 +412,17 @@ a.project-card {
         flex-shrink: 0;
     }
 
+    // The browser's default UA margin on checkboxes and the page's inherited
+    // (larger) line-height on the label both add invisible box space around
+    // the actual glyph/control, so align-items: center was centering those
+    // padded boxes rather than the checkbox/dot/text themselves - close, but
+    // visibly a few px off from each other.
+    input[type="checkbox"] {
+        margin: 0;
+    }
+
     label {
+        line-height: 1;
         overflow-wrap: break-word;
     }
 
@@ -419,7 +433,7 @@ a.project-card {
     // the wrong tap.
     @media (max-width: 700px) {
         gap: 0.6rem;
-        padding-block: 0.4rem;
+        padding-block: 0.5rem;
 
         input[type="checkbox"] {
             width: 1.5rem;
