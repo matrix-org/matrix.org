@@ -1,5 +1,6 @@
 {% extends "page.html" %}
 {% import "macros/clients.html" as clients %}
+{% import "macros/tooltip.html" as tooltip %}
 {% block head_extra %}
 <script type="module" src={{ get_url(path="/js/tooltip-position.js" , cachebust=true) }}></script>
 <style>
@@ -140,8 +141,8 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
                                 <span class="provider-since">Since {{ provider.operating_since }}</span>
                                 {% endif %}
                                 <span class="provider-audience">
-                                    <span class="audience-tag audience-tag--consumer">Individuals</span>
-                                    {% if provider.b2b %}<span class="audience-tag audience-tag--business">Business</span>{% endif %}
+                                    {{ tooltip::hover(label="Individuals", text="Offers accounts for individual, personal use.", trigger_class="audience-tag audience-tag--consumer", id="try-matrix-" ~ provider.name ~ "-b2c") }}
+                                    {% if provider.b2b %}{{ tooltip::hover(label="Business", text="Offers dedicated accounts, contracts, or support for organizations.", trigger_class="audience-tag audience-tag--business", id="try-matrix-" ~ provider.name ~ "-b2b") }}{% endif %}
                                 </span>
                             </a>
                             {% endfor %}

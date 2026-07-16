@@ -1,5 +1,6 @@
 {% extends "section.html" %}
 {% import "macros/breadcrumb.html" as breadcrumb %}
+{% import "macros/tooltip.html" as tooltip %}
 {% block head_extra %}
 <meta name="description" content="{{ section.extra.summary }}" />
 {% endblock head_extra %}
@@ -39,10 +40,10 @@
                 {% endif %}
                 <div class="provider-audience-tags">
                     {% if provider.extra.b2c %}
-                    <span class="audience-tag audience-tag--consumer">Individuals</span>
+                    {{ tooltip::hover(label="Individuals", text="Offers accounts for individual, personal use.", trigger_class="audience-tag audience-tag--consumer", id="hosting-" ~ provider.title ~ "-b2c") }}
                     {% endif %}
                     {% if provider.extra.b2b %}
-                    <span class="audience-tag audience-tag--business">Business</span>
+                    {{ tooltip::hover(label="Business", text="Offers dedicated accounts, contracts, or support for organizations.", trigger_class="audience-tag audience-tag--business", id="hosting-" ~ provider.title ~ "-b2b") }}
                     {% endif %}
                 </div>
                 <p class="open-project">View details</p>
@@ -51,6 +52,6 @@
         {% endfor %}
     </div>
     {% endif %}
-    <p>Something missing? <a href="https://github.com/matrix-org/matrix.org/issues/new?template=update-ecosystem-info.yaml">Report the issue here</a>.</p>
+    <p class="ecosystem-detail-report">Something missing? <a href="https://github.com/matrix-org/matrix.org/issues/new?template=update-ecosystem-info.yaml">Report the issue here</a>.</p>
 </div>
 {% endblock content %}
