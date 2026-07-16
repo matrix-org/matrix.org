@@ -1,5 +1,6 @@
 {% extends "page.html" %}
 {% import "macros/breadcrumb.html" as breadcrumb %}
+{% import "macros/tooltip.html" as tooltip %}
 {% block head_extra %}
 <meta
     name="description"
@@ -30,13 +31,9 @@
                     {% endif %}
                     <span class="ecosystem-detail-meta-item">
                         {% if page.extra.b2c %}
-                        <span class="audience-tag audience-tag--consumer"
-                            >Individuals</span
-                        >
+                        {{ tooltip::hover(label="Individuals", text="Offers accounts for individual, personal use.", trigger_class="audience-tag audience-tag--consumer", id="hosting-provider-b2c") }}
                         {% endif %} {% if page.extra.b2b %}
-                        <span class="audience-tag audience-tag--business"
-                            >Business</span
-                        >
+                        {{ tooltip::hover(label="Business", text="Offers dedicated accounts, contracts, or support for organizations.", trigger_class="audience-tag audience-tag--business", id="hosting-provider-b2b") }}
                         {% endif %}
                     </span>
                 </div>
@@ -62,5 +59,6 @@
             </div>
         </div>
     </div>
+    <p class="ecosystem-detail-report">Something wrong? <a href="https://github.com/matrix-org/matrix.org/issues/new?template=update-ecosystem-info.yaml">Report the issue here</a>.</p>
 </article>
 {% endblock content %}
