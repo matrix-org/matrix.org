@@ -92,8 +92,12 @@
 .glossary-category {
     // The jump nav's #id targets this section, not the h2 - scroll-margin-top
     // has to live here so the fixed .site-header (height: --navbar-height)
-    // doesn't end up covering the heading when the browser jumps to it.
-    scroll-margin-top: calc(var(--navbar-height) - 20px);
+    // doesn't end up covering the heading when the browser jumps to it. The
+    // 1.25rem (not 20px) is a fine-tuning offset, same idea as html's own
+    // scroll-padding-top below - it has to stay in rem too, or it stops
+    // cancelling out proportionally once the browser's base font size (and
+    // so --navbar-height/scroll-padding-top) is anything other than 16px.
+    scroll-margin-top: calc(var(--navbar-height) - 1.25rem);
 
     h2 {
         position: sticky;
@@ -105,7 +109,10 @@
         padding: 0.5rem 0;
         background-color: var(--color-bg-tint);
         border-bottom: 1px solid var(--color-border);
-        font-size: 1.1rem;
+        // Big enough to read as a heading rather than blend into the term
+        // list below it (dt is 1.05rem) - matches the h4 step of the site's
+        // type scale (sass/_fonts.scss).
+        font-size: 1.44rem;
         font-weight: 700;
     }
 
