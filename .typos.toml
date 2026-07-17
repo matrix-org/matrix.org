@@ -84,6 +84,7 @@ extend-ignore-re = [
     "programm\\.fr",
     "supercable\\.onl",
     "shema\\.lv",
+    "piros\\.pitty\\.hu",
 
     "#interop-sme:matrix.org",
 
