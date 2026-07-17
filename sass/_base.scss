@@ -37,19 +37,12 @@ body {
     background-color: #fff;
     color: var(--color-text);
 
-    font-family: "Helvetica Neue",
-        "Helvetica",
-        Arial,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        sans-serif,
-        "Apple Color Emoji",
-        /* Emojis*/
-        "Segoe UI Emoji",
-        /* Emojis*/
-        "Segoe UI Symbol";
+    font-family:
+        "Inter",
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        // Insert fonts suited for mathematical symbols on different platforms before "Arial"
+        "STIX Two Math", "Cambria Math", "Noto Sans Math", "Dejavu Sans",
+        Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
     line-height: 1.75;
 }
