@@ -1,24 +1,85 @@
+// Purpose selector (Client/Bot/Bridge SDKs), styled as a row of clickable
+// cards - matching the .plan-card / .account-tier card language used on
+// try-matrix - instead of the underlined-text tabs this used to be.
 #sdk-purpose-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    border: none;
+
+    @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+// A plain button, not a native radio group, so each card gets its own Tab
+// stop instead of the group being one Tab stop with arrow-key navigation
+// between options (the usual native-radio/ARIA-radiogroup behaviour).
+.sdk-purpose-card {
     display: flex;
-    flex-direction: row;
-    gap: 3rem;
-    justify-content: center;
-    border: transparent;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.1rem 1.25rem;
+    background-color: #fafafa;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    border: 1px solid #d2d2d2;
+    border-radius: 16px;
+    cursor: pointer;
+    user-select: none;
+    transition:
+        border-color 0.2s ease,
+        outline-color 0.2s ease;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
 
-    input {
-        display: none;
+    &:hover {
+        border-color: #888;
     }
 
-    label {
-        cursor: pointer;
-        user-select: none;
-        font-weight: 700;
-        font-size: 1.25rem;
+    &:focus-visible {
+        outline-color: #000;
     }
 
-    input[type="radio"]:checked+label {
-        border-bottom: 3px solid black;
+    &[aria-pressed="true"] {
+        background-color: #fff;
+        border-color: #000;
     }
+}
+
+.sdk-purpose-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.sdk-purpose-card-desc {
+    font-size: 0.85rem;
+    // var(--color-text-light) (#757575) only reaches ~4.4:1 against the
+    // #fafafa card background, just short of WCAG AA's 4.5:1 for this
+    // font size. #555 matches the muted-text tone used elsewhere in cards
+    // (e.g. .client-card-description-short) and clears AA comfortably.
+    color: #555;
+}
+
+// Short blurb for the selected purpose, shown between the cards and the
+// filter bar. Boxed like the cards/filters around it (same #fafafa fill,
+// #d2d2d2 border, rounded corners) so it reads as one more piece of the
+// same UI cluster instead of a paragraph of running body text interrupting
+// the flow between the cards above and the filters below.
+.sdks-panel-intro {
+    margin: 0 0 1.5rem;
+    padding: 0.75rem 1rem;
+    background-color: #fafafa;
+    border: 1px solid #d2d2d2;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    // See .sdk-purpose-card-desc above for why this isn't var(--color-text-light).
+    color: #555;
 }
 
 .hidden {

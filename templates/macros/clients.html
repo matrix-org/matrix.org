@@ -1,3 +1,5 @@
+{% import "macros/tooltip.html" as tooltip %}
+
 {# Human-readable labels for feature categories #}
 {% macro category_label(category_name) %}
 {%- if category_name == "1stable" -%}
@@ -9,7 +11,7 @@ Experimental Features
 {%- endif -%}
 {% endmacro %}
 
-{# Human-readable labels for features #}
+{# Human-readable label for a feature #}
 {% macro feature_label(feature_name) %}
 {%- if feature_name == "e2ee" -%}
 End-to-end encryption
@@ -88,70 +90,51 @@ Client user interface supports multiple languages
 {%- endif -%}
 {% endmacro %}
 
+{# CSS filter classes for the all-clients card deck #}
 {% macro classes(client) %}
-{% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}
-platform-ios
-{% endif %}
-{% if client.packages.google_play_store.app_id %}
-platform-android
-{% endif %}
-{% if client.packages.flathub.app_id %}
-platform-flathub
-{% endif %}
-{% if client.packages.other_linux_link %}
-platform-linux
-{% endif %}
-{% if client.packages.webapp %}
-platform-web
-{% endif %}
-{% if client.packages.windows_installer %}
-platform-windows
-{% endif %}
-{% if client.packages.macos_installer %}
-platform-macos
-{% endif %}
-
+{% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}platform-ios{% endif %}
+{% if client.packages.google_play_store.app_id %}platform-android{% endif %}
+{% if client.packages.flathub.app_id %}platform-flathub{% endif %}
+{% if client.packages.other_linux_link %}platform-linux{% endif %}
+{% if client.packages.webapp %}platform-web{% endif %}
+{% if client.packages.windows_installer %}platform-windows{% endif %}
+{% if client.packages.macos_installer %}platform-macos{% endif %}
 maturity-{{ client.maturity | lower }}
-
-licence-{{ client.licence | slugify }}
+{% for part in client.licence | split(pat=" OR ") %}licence-{{ part | slugify }} {% endfor %}
 
 {% for feature_level_name, features in client.features %}
     {% for feature_name, feature_state in features %}
         {% if feature_state == "supported" %}feature-{{ feature_name | replace(from="_", to="-") }}{% endif %}
     {% endfor %}
 {% endfor %}
-{% endmacro classes %}
+{% endmacro %}
 
+{# Store badge install links #}
 {% macro install_links(packages) %}
 {% if packages.windows_installer %}
-<a href="{{ packages.windows_installer }}"><img src="/assets/stores/download_for_windows.svg"
-        alt="Download for Windows" /></a>
+<a href="{{ packages.windows_installer }}"><img src="/assets/stores/download_for_windows.svg" alt="Download for Windows" /></a>
 {% endif %}
 {% if packages.macos_installer %}
-<a href="{{ packages.macos_installer }}"><img src="/assets/stores/download_for_macos.svg"
-        alt="Download for macOS" /></a>
+<a href="{{ packages.macos_installer }}"><img src="/assets/stores/download_for_macos.svg" alt="Download for macOS" /></a>
 {% endif %}
 {% if packages.flathub %}
-<a href="https://flathub.org/apps/details/{{ packages.flathub.app_id }}"><img src="/assets/stores/flathub.svg"
-        alt="Download on Flathub" /></a>
+<a href="https://flathub.org/apps/details/{{ packages.flathub.app_id }}"><img src="/assets/stores/flathub.svg" alt="Download on Flathub" /></a>
 {% endif %}
 {% if packages.webapp %}
 <a href="{{ packages.webapp }}"><img src="/assets/stores/use_in_browser.svg" alt="Use in your browser" /></a>
 {% endif %}
 {% if packages.apple_app_store %}
-<a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"><img
-        src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
+<a href="https://apps.apple.com/app/{{ packages.apple_app_store.org }}/{{ packages.apple_app_store.app_id }}"><img src="/assets/stores/app_store.svg" alt="Download on the App Store" /></a>
 {% endif %}
 {% if packages.f_droid %}
-<a href="https://f-droid.org/packages/{{ packages.f_droid.app_id }}"><img src="/assets/stores/f-droid.svg"
-        alt="Download on F-Droid" /></a>
+<a href="https://f-droid.org/packages/{{ packages.f_droid.app_id }}"><img src="/assets/stores/f-droid.svg" alt="Download on F-Droid" /></a>
 {% endif %}
 {% if packages.google_play_store %}
-<a href="https://play.google.com/store/apps/details?id={{ packages.google_play_store.app_id }}"><img
-        src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
+<a href="https://play.google.com/store/apps/details?id={{ packages.google_play_store.app_id }}"><img src="/assets/stores/play_store.svg" alt="Download on Google Play" /></a>
 {% endif %}
 {% endmacro %}
 
+{# Colored platform pills #}
 {% macro platforms(packages) %}
 {% if packages.apple_app_store %}<div class="platform-pill platform-pill--ios">iOS</div>{% endif %}
 {% if packages.google_play_store or packages.f_droid %}<div class="platform-pill platform-pill--android">Android</div>{% endif %}
@@ -159,4 +142,83 @@ licence-{{ client.licence | slugify }}
 {% if packages.macos_installer %}<div class="platform-pill platform-pill--macos">macOS</div>{% endif %}
 {% if packages.flathub or packages.other_linux_link %}<div class="platform-pill platform-pill--linux">Linux</div>{% endif %}
 {% if packages.webapp %}<div class="platform-pill platform-pill--web">Web</div>{% endif %}
+{% endmacro %}
+
+{# Shared featured-client accordion card, used by try-matrix.html and
+   ecosystem/clients.html. `id_prefix` keeps element/lightbox ids unique
+   if a page ever renders the deck more than once. #}
+{% macro featured_client_card(client, id_prefix="client") %}
+<details id="{{ client.slug }}" class="client-card{% if client.extra.packages.apple_app_store %} platform-ios{% endif %}{% if client.extra.packages.google_play_store or client.extra.packages.f_droid %} platform-android{% endif %}{% if client.extra.packages.webapp %} platform-web{% endif %}{% if client.extra.packages.windows_installer %} platform-windows{% endif %}{% if client.extra.packages.macos_installer %} platform-macos{% endif %}{% if client.extra.packages.flathub or client.extra.packages.other_linux_link %} platform-linux{% endif %}">
+    <summary class="client-card-summary">
+        <div class="client-card-summary-inner">
+            <img src="/ecosystem/clients/{{ client.extra.thumbnail }}"
+                 alt="{{ client.title }} logo"
+                 class="client-card-icon">
+            <div class="client-card-header-text">
+                <span class="client-card-name">
+                    {{ client.title }}
+                    <span class="maturity {{ client.extra.maturity | lower }}">{{ client.extra.maturity }}</span>
+                    <a href="#{{ client.slug }}" class="client-card-anchor" aria-label="Link to {{ client.title }}">#</a>
+                </span>
+                {% if client.extra.good_for %}
+                <span class="client-card-good-for">Good for: {{ client.extra.good_for }}</span>
+                {% endif %}
+            </div>
+            <div class="client-card-summary-platforms">
+                {{ self::platforms(packages=client.extra.packages) }}
+            </div>
+        </div>
+    </summary>
+
+    <div class="client-card-body">
+        {% set lightbox_id = id_prefix ~ "-lightbox-" ~ client.slug %}
+        {% set screenshots = client.extra.screenshots | default(value=[]) %}
+        {% if screenshots | length > 0 %}
+        {% set multi = screenshots | length > 1 %}
+        <div class="client-card-screenshot-wrap{% if multi %} client-card-screenshot-wrap--multi{% endif %}">
+            {% for shot in screenshots %}
+            {% set shot_lightbox_id = lightbox_id ~ "-" ~ loop.index %}
+            <a href="#{{ shot_lightbox_id }}" class="client-card-screenshot-trigger" aria-label="Enlarge screenshot">
+                <img src="/ecosystem/clients/{{ shot }}"
+                     alt="{{ client.title }} screenshot {{ loop.index }}"
+                     class="client-card-screenshot">
+            </a>
+            {% endfor %}
+        </div>
+        {% for shot in screenshots %}
+        {% set shot_lightbox_id = lightbox_id ~ "-" ~ loop.index %}
+        <div class="client-lightbox" id="{{ shot_lightbox_id }}" role="dialog" aria-label="{{ client.title }} screenshot">
+            <a href="#/" class="client-lightbox-backdrop" aria-label="Close"></a>
+            <a href="#/" class="client-lightbox-close" aria-label="Close">&times;</a>
+            <img src="/ecosystem/clients/{{ shot }}"
+                 alt="{{ client.title }} screenshot {{ loop.index }}">
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="client-card-screenshot-wrap client-card-screenshot-placeholder">
+            <span>Screenshot coming soon</span>
+        </div>
+        {% endif %}
+
+        <div class="client-card-details">
+            <p class="client-card-description">{{ client.content | markdown(inline=true) }}</p>
+
+            <div class="client-card-features">
+                {% for feature_level_name, features_in_level in client.extra.features %}
+                {% for feature_name, feature_state in features_in_level %}
+                {% if feature_state == "supported" %}
+                {{ tooltip::hover(label=self::feature_label(feature_name=feature_name) | trim, text=self::feature_description(feature_name=feature_name) | trim, trigger_class="client-feat-pill", id=id_prefix ~ "-" ~ client.slug ~ "-" ~ feature_name) }}
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+            </div>
+
+            <div class="client-card-downloads">
+                {{ self::install_links(packages=client.extra.packages) }}
+            </div>
+
+            <a href="{{ client.path }}" class="client-card-more-link">View more details</a>
+        </div>
+    </div>
+</details>
 {% endmacro %}

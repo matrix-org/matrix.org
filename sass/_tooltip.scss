@@ -21,3 +21,51 @@
         max-width: 400px;
     }
 }
+
+// Reusable hover/focus tooltip. Wraps any trigger element (pill, label, icon,
+// etc) and shows a .tooltip-content bubble above it on hover/focus, without
+// relying on the Popover API or CSS anchor positioning (both have patchy
+// cross-browser support).
+.hover-tooltip {
+    position: relative;
+    display: inline-block;
+
+    .tooltip-content {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-6px);
+        margin: 0;
+        width: max-content;
+        max-width: 240px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s ease;
+        z-index: 10;
+    }
+
+    &:hover .tooltip-content,
+    &:focus-visible .tooltip-content {
+        opacity: 1;
+    }
+
+    // TODO: remove this whole @supports block, and the JS fallback it
+    // replaces (tooltip-position.js), once CSS Anchor Positioning is
+    // Baseline *widely* available - not just "newly available", which it
+    // became in January 2026. In supporting browsers, the bubble is placed
+    // and kept on-screen by the browser itself: position: fixed lets it
+    // escape any clipping/overflow context (e.g. the row of pills it's
+    // triggered from on mobile), and position-try-fallbacks handles
+    // flipping it if it would otherwise overflow either axis.
+    @supports (anchor-name: --tooltip-anchor-test) {
+        .tooltip-content {
+            position: fixed;
+            position-anchor: var(--tooltip-anchor-name);
+            position-area: top;
+            position-try-fallbacks: flip-block, flip-inline;
+            inset: auto;
+            transform: none;
+            margin-bottom: 6px;
+        }
+    }
+}

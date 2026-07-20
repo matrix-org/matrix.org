@@ -7,7 +7,7 @@
     margin-inline: auto;
 }
 
-.projects-card-deck>div {
+.projects-card-deck > div {
     height: 100%;
     width: 100%;
 }
@@ -22,100 +22,212 @@ a.project-card {
     justify-content: flex-start;
     align-items: center;
     padding: 24px;
-    gap: .75rem;
+    gap: 0.75rem;
+    text-align: center;
     min-height: 100%;
-
-    border: 1px solid #D2D2D2;
+    border: 1px solid #d2d2d2;
     border-radius: 16px;
 
+    // Logo + name header row
     img {
         margin: 0;
-        width: 65px;
-        height: 65px;
-        box-sizing: content-box;
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+        box-sizing: border-box;
+        flex-shrink: 0;
     }
 
     h3 {
         margin: 0;
         font-style: normal;
         font-weight: 700;
-        font-size: 1.6rem;
-        line-height: 1.15;
+        font-size: 1.2rem;
+        line-height: 1.25;
         text-align: center;
-        overflow-wrap: break-word;
-        word-break: break-word;
-        hyphens: auto;
     }
 
-    a {
-        color: var(--color-text-light);
-        text-decoration: none;
-    }
-
-    .open-project {
-        margin: 0;
+    // Author/maintainer/vendor line, muted
+    .author {
+        font-size: 0.9rem;
         color: var(--color-text-light);
     }
 
-    p {
-        line-height: 1;
+    // Description - normal text color, not muted.
+    p,
+    & > span {
+        font-size: 0.9rem;
+        line-height: 1.45;
         margin: 0;
+        flex-shrink: 0;
+        text-align: center;
+    }
 
-        &:empty {
-            display: none;
+    // Clamped to 4 lines with an ellipsis so cards with long descriptions
+    // stay a uniform height - skipped on integration cards, which don't
+    // link to a detail page where the rest of the text would be readable.
+    &:not(.project-card--no-clamp) {
+        p,
+        & > span {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
         }
     }
 
-    .metadata-pills,
-    .licence-language {
+    // Pills row - always immediately above the CTA
+    .platform-links,
+    .pill-row {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        gap: 0.25rem;
+        margin-top: auto;
+        align-self: stretch;
         justify-content: center;
-        gap: .3rem;
     }
 
-    .pill {
-        background-color: #e9e9e9;
-        border-radius: 16px;
-        padding: .2rem .5rem;
-        color: var(--color-text);
-        font-size: .85rem;
-        line-height: 1.2;
-        text-align: center;
-
-        &.licence {
-            background-color: transparent;
-            border: 1px solid #888;
-            color: #555;
-        }
-    }
-
-    .subtitle {
-        font-size: .9rem;
+    // CTA label pinned to the bottom
+    // The whole card is already a link - this is a visual affordance only,
+    // not an interactive element, so it carries no hover state of its own.
+    a.open-project,
+    .open-project {
+        margin-top: auto;
         color: var(--color-text-light);
-        text-align: center;
+        font-size: 0.9rem;
+        line-height: 1;
+        text-decoration: none;
+        pointer-events: none;
     }
+}
 
-    .description {
-        font-size: .9rem;
-        line-height: 1.4;
-        text-align: center;
-        margin: 0;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+.pill {
+    background-color: #e9e9e9;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    padding: 0.2rem 0.5rem;
+    color: var(--color-text);
+    font-size: 0.85rem;
+    line-height: 1.2;
+    text-align: center;
 
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        &:empty {
-            display: none;
-        }
+    &.licence {
+        background-color: transparent;
+        border-color: #888;
+        color: #555;
     }
+}
+
+// Language pill colour families
+// Systems (C, C++, Rust)
+.pill--lang-c,
+.pill--lang-cplusplus,
+.pill--lang-rust {
+    background-color: #fff4e5;
+    border-color: #fcd9a0;
+    color: #92400e;
+}
+
+// JVM (Java, Kotlin)
+.pill--lang-java,
+.pill--lang-kotlin {
+    background-color: #ede9fe;
+    border-color: #c4b5fd;
+    color: #5b21b6;
+}
+
+// JavaScript / TypeScript
+.pill--lang-javascript,
+.pill--lang-typescript {
+    background-color: #fefce8;
+    border-color: #fde68a;
+    color: #854d0e;
+}
+
+// Python
+.pill--lang-python {
+    background-color: #e8f1ff;
+    border-color: #9be;
+    color: #1a4db0;
+}
+
+// Go
+.pill--lang-go {
+    background-color: #e6f9f7;
+    border-color: #7fd6ce;
+    color: #0a6b62;
+}
+
+// Apple (Swift, Objective-C)
+.pill--lang-swift,
+.pill--lang-objective-c {
+    background-color: #fff0eb;
+    border-color: #fdb99a;
+    color: #9a3412;
+}
+
+// Dynamic / functional (Ruby, Perl, Raku, Erlang, Elixir, Lisp, Racket)
+.pill--lang-ruby,
+.pill--lang-perl,
+.pill--lang-raku,
+.pill--lang-erlang,
+.pill--lang-elixir,
+.pill--lang-lisp,
+.pill--lang-racket {
+    background-color: #fce7f3;
+    border-color: #f9a8d4;
+    color: #9d174d;
+}
+
+// Web / cross-platform (PHP, Dart, Elm, Haxe)
+.pill--lang-php,
+.pill--lang-dart,
+.pill--lang-elm,
+.pill--lang-haxe {
+    background-color: #e6f4ea;
+    border-color: #7acc8a;
+    color: #1a6b32;
+}
+
+// Shell / scripting (POSIX Shell, Nim)
+.pill--lang-posix-shell,
+.pill--lang-nim {
+    background-color: #f3f3f3;
+    border-color: #d1d5db;
+    color: #374151;
+}
+
+// C# (separate from C/C++ - .NET ecosystem)
+.pill--lang-csharp {
+    background-color: #eef0fb;
+    border-color: #8892d4;
+    color: #2c3894;
+}
+
+// Deployment framework pill colour families
+// Kubernetes ecosystem (Helm, Helmfile, Kubernetes)
+.pill--framework-helm,
+.pill--framework-helmfile,
+.pill--framework-kubernetes {
+    background-color: #e6f9f7;
+    border-color: #7fd6ce;
+    color: #0a6b62;
+}
+
+// Containers (Docker, Docker Compose)
+.pill--framework-docker,
+.pill--framework-docker-compose {
+    background-color: #e8f1ff;
+    border-color: #9be;
+    color: #1a4db0;
+}
+
+// Config management (Ansible)
+.pill--framework-ansible {
+    background-color: #fde8e8;
+    border-color: #f0a8a8;
+    color: #a61b1b;
 }
 
 .filtered-out {
@@ -131,23 +243,39 @@ a.project-card {
     justify-content: center;
     gap: 1rem;
 
+    // Below 700px, .filter-menu becomes position: absolute relative to this
+    // element (see .filter-wrap below) rather than to the individual
+    // button, so it always sits directly under the row of filter buttons
+    // and its width is relative to .filters' own box, which already fits
+    // the viewport - it can't overflow horizontally, and unlike a
+    // position: fixed panel it scrolls with the page and stays reachable.
+    @media (max-width: 700px) {
+        position: relative;
+    }
+
     .filter-wrap {
         position: relative;
+
+        @media (max-width: 700px) {
+            position: static;
+        }
 
         .filter {
             position: relative;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            gap: .8rem;
+            align-items: center;
+            gap: 0.8rem;
             z-index: 100;
-
-            padding: .5rem .8rem;
-
+            padding: 0.5rem 0.8rem;
             background-color: #fafafa;
-            color: #000;
+            color: var(--color-text);
+            font-size: 0.9rem;
+            font-weight: 500;
             border: 1px solid #d2d2d2;
             border-radius: 1000px;
+            transition: border-color 0.2s ease;
 
             cursor: pointer;
             user-select: none;
@@ -155,12 +283,16 @@ a.project-card {
             .divider {
                 width: 1px;
                 height: 100%;
-                border-left: 1px solid var(--borders-color);
+                border-left: 1px solid #d2d2d2;
             }
 
             img {
-                height: .9em;
+                height: 0.9em;
                 margin-block: auto;
+            }
+
+            &:hover {
+                border-color: #888;
             }
 
             &.enabled {
@@ -170,6 +302,10 @@ a.project-card {
 
                 img {
                     filter: invert(1);
+                }
+
+                &:hover {
+                    border-color: #888;
                 }
             }
 
@@ -185,17 +321,33 @@ a.project-card {
             min-width: 15rem;
             max-width: 20rem;
             z-index: 200;
-
-            padding: .5rem 1rem;
-
+            padding: 0.5rem 1rem;
             background-color: #fafafa;
-            border: 1px solid var(--borders-color);
+            border: 1px solid #d2d2d2;
             border-radius: 16px;
+
+            // Anchored relative to .filters (see above) instead of this
+            // button below 700px: sits right under the row of filter
+            // buttons rather than under one specific button, but its width
+            // is bounded by .filters' own box so it can't overflow the
+            // viewport, and it scrolls with the page like a normal element.
+            @media (max-width: 700px) {
+                top: 100%;
+                left: 0;
+                right: 0;
+                margin-top: 0.5rem;
+                min-width: 0;
+                width: auto;
+                max-width: none;
+                max-height: 60vh;
+                overflow-y: auto;
+            }
 
             p {
                 margin: 0;
-                margin-bottom: .5rem;
-                font-size: .8rem;
+                margin-bottom: 0.5rem;
+                font-size: 0.85rem;
+                color: var(--color-text-light);
                 text-align: start;
             }
 
@@ -209,8 +361,13 @@ a.project-card {
                 user-select: none;
             }
 
+            label {
+                font-size: 0.9rem;
+            }
+
             .reset-links {
-                font-size: .8rem;
+                margin-top: 0.75rem;
+                font-size: 0.85rem;
 
                 a {
                     cursor: pointer;
@@ -232,37 +389,111 @@ a.project-card {
     }
 }
 
+// A filter checkbox can optionally carry a small coloured dot before its
+// label, matching the colour family of the pill it filters for (see
+// .pill--lang-*, .pill--framework-* and .platform-pill--* above/in
+// _clients.scss, and .maturity below). Add both classes to the swatch,
+// e.g. class="filter-swatch pill--lang-python", to pick up its colour.
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    // Row spacing used to come for free from the label's inherited
+    // line-height; now that that's reset to 1 for alignment (below), it
+    // needs to be explicit instead.
+    padding-block: 0.3rem;
+
+    // Long, hyphen-only labels with no spaces to break at (e.g. licence ids
+    // like "AGPL-3.0-or-later") can't wrap, so as a flex row narrows they'd
+    // otherwise shrink the checkbox/swatch instead. Keep those a fixed size
+    // and let the label wrap/break, not the other way round.
+    input[type="checkbox"],
+    .filter-swatch {
+        flex-shrink: 0;
+    }
+
+    // The browser's default UA margin on checkboxes and the page's inherited
+    // (larger) line-height on the label both add invisible box space around
+    // the actual glyph/control, so align-items: center was centering those
+    // padded boxes rather than the checkbox/dot/text themselves - close, but
+    // visibly a few px off from each other.
+    input[type="checkbox"] {
+        margin: 0;
+    }
+
+    label {
+        line-height: 1;
+        overflow-wrap: break-word;
+    }
+
+    // Native checkboxes render at ~13px, well under the 24x24px minimum
+    // WCAG 2.2 SC 2.5.8 recommends for touch targets. Bigger on mobile,
+    // where taps (not precise mouse clicks) are the norm; also add some
+    // vertical breathing room so adjacent options are less likely to catch
+    // the wrong tap.
+    @media (max-width: 700px) {
+        gap: 0.6rem;
+        padding-block: 0.5rem;
+
+        input[type="checkbox"] {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
+
+// The paired colour-family class (e.g. .maturity, .platform-pill--ios) still
+// supplies the actual background-color/border-color, so the dot matches its
+// pill exactly. This rule only pins down the shape/size - it deliberately
+// leaves background-color and border-color alone. Doubling the class bumps
+// specificity so these box-model resets win even though some paired classes
+// (e.g. .maturity) declare their own padding/border after this rule.
+.filter-swatch.filter-swatch {
+    display: inline-block;
+    width: 0.65em;
+    height: 0.65em;
+    padding: 0;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    font-size: inherit;
+    line-height: normal;
+    max-width: none;
+    flex-shrink: 0;
+}
+
 .maturity {
-    border: 1px solid var(--borders-color);
+    display: inline-block;
+    border: 1px solid;
     border-radius: 9999px;
-    padding: 0 .6rem;
-    font-size: 1rem;
-    font-weight: 400;
+    padding: 0.1rem 0.45rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.6;
     max-width: fit-content;
-    justify-self: flex-end;
 
     &.stable {
-        background-color: #DFF6D5;
-        border-color: #245C0C;
-        color: #245C0C
+        background-color: #dff6d5;
+        border-color: #245c0c;
+        color: #245c0c;
     }
 
     &.beta {
-        background-color: #F6E7D5;
-        border-color: #6F420F;
-        color: #6F420F;
+        background-color: #f6e7d5;
+        border-color: #6f420f;
+        color: #6f420f;
     }
 
     &.alpha {
-        background-color: #F6D5D5;
-        border-color: #8B1212;
-        color: #8B1212;
+        background-color: #f6d5d5;
+        border-color: #8b1212;
+        color: #8b1212;
     }
 
     &.obsolete {
-        background-color: #E6E6E6;
-        border-color: #4A4A4A;
-        color: #4A4A4A;
+        background-color: #e6e6e6;
+        border-color: #4a4a4a;
+        color: #4a4a4a;
     }
 }
 
@@ -272,20 +503,11 @@ a.project-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: .3rem;
+    gap: 0.3rem;
 
     h3 {
         text-align: center;
     }
-}
-
-.card-links {
-    margin-top: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: .5rem;
 }
 
 #filters-overlay {
@@ -295,8 +517,7 @@ a.project-card {
     right: 0;
     bottom: 0;
     z-index: 100;
-
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgb(0 0 0 / 50%);
 
     &:not(.display) {
         display: none;
@@ -306,45 +527,46 @@ a.project-card {
 .project-links {
     display: flex;
     flex-wrap: wrap;
-    gap: .3rem;
-
+    gap: 0.3rem;
     margin-bottom: 1rem;
+}
 
-    .pill {
-        display: flex;
-        align-items: center;
-        gap: .2rem;
+a.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
+    border-radius: 9999px;
+    padding: 0.1rem 0.4rem;
+    text-decoration: none;
 
-        border: 1px solid var(--color-text);
-        color: var(--color-text);
-        border-radius: 9999px;
-        padding: .1rem .4rem;
+    svg {
+        flex-shrink: 0;
+        width: 1em;
+        height: 1em;
+    }
 
-        transition: background-color 0.3s ease;
+    .fillme {
+        fill: var(--color-text);
+        stroke: var(--color-text);
+    }
+
+    .fillme-inverse {
+        stroke: #fff;
+    }
+
+    &:hover {
+        background-color: var(--color-text);
+        color: #fff;
 
         .fillme {
-            fill: var(--color-text);
-            stroke: var(--color-text);
-            transition: fill 0.3s ease, stroke 0.3s ease;
+            fill: #fff;
+            stroke: #fff;
         }
 
         .fillme-inverse {
-            stroke: #fff;
-            transition: stroke 0.3s ease;
-        }
-
-        &:hover {
-            background-color: var(--color-text);
-            color: #fff;
-
-            .fillme {
-                fill: #fff;
-                stroke: #fff;
-            }
-
-            .fillme-inverse {
-                stroke: var(--color-text);
-            }
+            stroke: var(--color-text);
         }
     }
 }
@@ -356,26 +578,81 @@ a.project-card {
         padding-inline: 1rem;
 
         li {
-            padding: .5rem;
+            padding: 0.5rem;
             line-height: 1.6;
             list-style-position: inside;
-            list-style-image: url('/assets/question_unknown.svg');
-
-            &.unsupported {
-                list-style-image: url('/assets/cross_unsupported.svg');
-            }
-
-            &.partial {
-                list-style-image: url('/assets/flask_partial.svg');
-            }
+            list-style-image: url("/assets/cross_unsupported.svg");
 
             &.supported {
-                list-style-image: url('/assets/tick_supported.svg');
+                list-style-image: url("/assets/tick_supported.svg");
             }
 
-            &+li {
+            & + li {
                 border-top: 1px solid #d2d2d2;
             }
         }
+    }
+}
+
+// Breadcrumb navigation - see _breadcrumb.scss for the shared component.
+
+// Shared ecosystem intro paragraph
+// Used by .servers > p and .distributions > p (and any future listing pages)
+// for the centred intro text that sits below the page heading.
+
+%ecosystem-page-intro {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 120%;
+    margin: 0 auto 4rem;
+}
+
+// Shared ecosystem link-pill row
+// Wrapping flex row of pill-shaped links used by .server-links and
+// .distribution-links.  Extend this placeholder to get the full set of rules
+// without duplicating them.
+
+%eco-link-pills {
+    margin-top: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 0.35rem;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        border: 1px solid var(--borders-color);
+        border-radius: 9999px;
+        padding: 0.1rem 0.5rem;
+        font-size: 0.78rem;
+        color: var(--color-text);
+        text-decoration: none;
+        transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease,
+            color 0.15s ease;
+
+        svg {
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+
+            * {
+                fill: currentcolor;
+            }
+
+            line {
+                stroke: currentcolor;
+            }
+        }
+    }
+
+    a:hover {
+        background-color: var(--color-text);
+        border-color: var(--color-text);
+        color: #fff;
     }
 }

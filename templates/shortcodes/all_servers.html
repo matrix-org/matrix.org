@@ -1,4 +1,5 @@
 {% import "macros/servers.html" as srvutils %}
+{% import "macros/language_helpers.html" as lang_helper %}
 {% set servers_data = load_data(path="content/ecosystem/servers/servers.toml") %}
 {% set licences = [] %}
 {% set languages = [] %}
@@ -20,18 +21,22 @@
             <p>The server can support any of the maturity levels checked.</p>
             <div class="filter-option">
                 <input id="maturity-stable" type="checkbox" checked>
+                <span class="filter-swatch maturity stable"></span>
                 <label for="maturity-stable">Stable</label>
             </div>
             <div class="filter-option">
                 <input id="maturity-beta" type="checkbox" checked>
+                <span class="filter-swatch maturity beta"></span>
                 <label for="maturity-beta">Beta</label>
             </div>
             <div class="filter-option">
                 <input id="maturity-alpha" type="checkbox" checked>
+                <span class="filter-swatch maturity alpha"></span>
                 <label for="maturity-alpha">Alpha</label>
             </div>
             <div class="filter-option">
                 <input id="maturity-obsolete" type="checkbox">
+                <span class="filter-swatch maturity obsolete"></span>
                 <label for="maturity-obsolete">Obsolete</label>
             </div>
             <div class="reset-links">Select <button>all</button> - <button>none</button></div>
@@ -65,6 +70,7 @@
             {% for language in languages %}
             <div class="filter-option">
                 <input id="language-{{ language | slugify }}" type="checkbox" checked>
+                <span class="filter-swatch pill--lang-{{ lang_helper::normalize_language(lang=language) }}"></span>
                 <label for="language-{{ language | slugify }}">{{ language }}</label>
             </div>
             {% endfor %}
@@ -83,13 +89,13 @@
                 <h3>{{ server.name }}</h3>
                 <div class="maturity {{ server.maturity | lower }}">{{ server.maturity }}</div>
             </div>
-            {% if server.author %}<div class="subtitle">{{ server.author }}</div>{% endif %}
-            <div class="metadata-pills">
+            {% if server.author %}<div class="author">{{ server.author }}</div>{% endif %}
+            <div class="pill-row">
                 <div class="pill licence">{{ server.licence }}</div>
-                <div class="pill">{{ server.language }}</div>
+                <div class="pill pill--lang pill--lang-{{ lang_helper::normalize_language(lang=server.language) }}">{{ server.language }}</div>
             </div>
-            <p class="description">{{ server.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>
-            <div class="card-links server-links">
+            <span>{{ server.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</span>
+            <div class="server-links">
                 {% if server.website %}
                 <a href="{{ server.website }}">
                     {{ load_data(path="/assets/home.svg") | safe }}

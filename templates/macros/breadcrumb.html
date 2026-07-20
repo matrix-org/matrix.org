@@ -1,0 +1,18 @@
+{% macro breadcrumb(l1_label, l1_path, l2_label="", l2_path="", l3_label="") %}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="{{ l1_path }}">{{ l1_label }}</a></li>
+        {% if l2_label %}
+        <li>
+            {% if l3_label %}
+            <a href="{{ l2_path }}">{{ l2_label }}</a>
+            {% else %}
+            <span aria-current="page">{{ l2_label }}</span>
+            {% endif %}
+        </li>
+        {% endif %} {% if l3_label %}
+        <li><span aria-current="page">{{ l3_label }}</span></li>
+        {% endif %}
+    </ol>
+</nav>
+{% endmacro %}

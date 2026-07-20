@@ -1,18 +1,24 @@
 {% extends "section.html" %}
 {% import "macros/clients.html" as clients %}
+{% import "macros/breadcrumb.html" as breadcrumb %}
 {% block head_extra %}
 <meta name="description" content="{{ section.extra.summary }}">
 <noscript>
     <link rel="stylesheet" href={{ get_url(path="/no-js.css" , cachebust=true) }} />
 </noscript>
 <script type="module" src={{ get_url(path="/js/clients.js" , cachebust=true) }}></script>
+<script type="module" src={{ get_url(path="/js/tooltip-position.js" , cachebust=true) }}></script>
+<style>
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 0.5rem); }
+</style>
 {% endblock head_extra%}
 {% block content %}
 {% set clients = section.pages %}
+{% set featured_clients = clients | filter(attribute="extra.featured", value=true) | sort(attribute="extra.featured_order") %}
 {% set licences = [] %}
 {% set features = [] %}
 {% for client in clients %}
-    {% set_global licences = licences | concat(with=client.extra.licence) %}
+    {% set_global licences = licences | concat(with=client.extra.licence | split(pat=" OR ")) %}
     {% for feature_level_name, features_in_level in client.extra.features %}
         {% for feature_name, feature_state in features_in_level %}
             {% set_global features = features | concat(with=[feature_name]) %}
@@ -22,6 +28,7 @@
 {% set licences = licences | unique | sort %}
 {% set features = features | unique %}
 <div class="page-header">
+    {{ breadcrumb::breadcrumb(l1_label="Ecosystem", l1_path="/ecosystem/", l2_label="Clients") }}
     <div class="hero-block">
         <h1>{{ section.title }}</h1>
         <p>{{ section.extra.summary }}</p>
@@ -38,29 +45,9 @@
         mature ones you can safely use.
     </p>
 
-    <div class="projects-card-deck">
-        {% for client in clients %}
-        {% if client.extra.featured %}
-        <div>
-            <a href="{{ client.path }}" class="project-card client {{ clients::classes(client=client.extra) }}">
-                {# We're not using placeholders as a fallback because we want showcased clients to have an actual icon
-                #}
-                <img src="{{ client.extra.thumbnail }}" alt="{{ client.title }} Logo">
-                <div class="title-row">
-                    <h3>{{ client.title }}</h3>
-                    <div class="maturity {{ client.extra.maturity | lower }}">{{ client.extra.maturity }}</div>
-                </div>
-                <div class="metadata-pills">
-                    <div class="pill licence">{{ client.extra.licence }}</div>
-                </div>
-                <p class="description">{{ client.content | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>
-                <div class="card-links platform-links">
-                    {{ clients::platforms(packages=client.extra.packages) }}
-                </div>
-                <p class="open-project">Open client details</p>
-            </a>
-        </div>
-        {% endif %}
+    <div class="client-cards">
+        {% for client in featured_clients %}
+        {{ clients::featured_client_card(client=client, id_prefix="eco") }}
         {% endfor %}
     </div>
 
@@ -84,31 +71,38 @@
                 <p>The clients must support all of the platforms checked.</p>
                 <div class="filter-option">
                     <input id="platform-ios" type="checkbox">
+                    <span class="filter-swatch platform-pill--ios"></span>
                     <label for="platform-ios">Apple iOS</label>
                 </div>
                 <div class="filter-option">
+                    <input id="platform-macos" type="checkbox">
+                    <span class="filter-swatch platform-pill--macos"></span>
+                    <label for="platform-macos">Apple macOS</label>
+                </div>
+                <div class="filter-option">
                     <input id="platform-android" type="checkbox">
+                    <span class="filter-swatch platform-pill--android"></span>
                     <label for="platform-android">Google Android</label>
                 </div>
                 <div class="filter-option">
-                    <input id="platform-web" type="checkbox">
-                    <label for="platform-web">Web</label>
-                </div>
-                <div class="filter-option">
-                    <input id="platform-windows" type="checkbox">
-                    <label for="platform-windows">Windows</label>
-                </div>
-                <div class="filter-option">
-                    <input id="platform-macos" type="checkbox">
-                    <label for="platform-macos">macOS</label>
-                </div>
-                <div class="filter-option">
                     <input id="platform-flathub" type="checkbox">
+                    <span class="filter-swatch platform-pill--linux"></span>
                     <label for="platform-flathub">Linux (Flatpak)</label>
                 </div>
                 <div class="filter-option">
                     <input id="platform-linux" type="checkbox">
+                    <span class="filter-swatch platform-pill--linux"></span>
                     <label for="platform-linux">Linux (other)</label>
+                </div>
+                <div class="filter-option">
+                    <input id="platform-windows" type="checkbox">
+                    <span class="filter-swatch platform-pill--windows"></span>
+                    <label for="platform-windows">Microsoft Windows</label>
+                </div>
+                <div class="filter-option">
+                    <input id="platform-web" type="checkbox">
+                    <span class="filter-swatch platform-pill--web"></span>
+                    <label for="platform-web">Web</label>
                 </div>
                 <div class="reset-links">Select <button>all</button> - <button>none</button></div>
             </div>
@@ -123,18 +117,22 @@
                 <p>The client can support any of the maturity levels checked.</p>
                 <div class="filter-option">
                     <input id="maturity-stable" type="checkbox" checked>
+                    <span class="filter-swatch maturity stable"></span>
                     <label for="maturity-stable">Stable</label>
                 </div>
                 <div class="filter-option">
                     <input id="maturity-beta" type="checkbox" checked>
+                    <span class="filter-swatch maturity beta"></span>
                     <label for="maturity-beta">Beta</label>
                 </div>
                 <div class="filter-option">
                     <input id="maturity-alpha" type="checkbox" checked>
+                    <span class="filter-swatch maturity alpha"></span>
                     <label for="maturity-alpha">Alpha</label>
                 </div>
                 <div class="filter-option">
                     <input id="maturity-obsolete" type="checkbox">
+                    <span class="filter-swatch maturity obsolete"></span>
                     <label for="maturity-obsolete">Obsolete</label>
                 </div>
                 <div class="reset-links">Select <button>all</button> - <button>none</button></div>
@@ -194,11 +192,13 @@
                     <h3>{{ client.title }}</h3>
                     <div class="maturity {{ client.extra.maturity | lower }}">{{ client.extra.maturity }}</div>
                 </div>
-                <div class="metadata-pills">
-                    <div class="pill licence">{{ client.extra.licence }}</div>
+                <div class="pill-row">
+                    {% for part in client.extra.licence | split(pat=" OR ") %}
+                    <div class="pill licence">{{ part }}</div>
+                    {% endfor %}
                 </div>
-                <p class="description">{{ client.content | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>
-                <div class="card-links platform-links">
+                <span>{{ client.content | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</span>
+                <div class="platform-links">
                     {{ clients::platforms(packages=client.extra.packages) }}
                 </div>
                 <p class="open-project">Open client details</p>
