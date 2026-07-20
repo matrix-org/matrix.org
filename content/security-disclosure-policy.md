@@ -1,5 +1,6 @@
 +++
 title = "Security Disclosure Policy"
+extra.summary = "Matrix.org greatly appreciates investigative work into security vulnerabilities carried out by well-intentioned, ethical security researchers."
 +++
 
 Matrix.org greatly appreciates investigative work into security vulnerabilities

@@ -1,5 +1,6 @@
 +++
 title = "Writing a good \"This Week in Matrix\" entry"
+extra.summary = "This Week in Matrix (TWIM) is a weekly digest on the blog. There are some guidelines you should be aware of before publishing your update to TWIM."
 +++
 
 This Week in Matrix (TWIM) is a weekly digest on the blog in which

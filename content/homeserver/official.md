@@ -1,6 +1,7 @@
 +++
 title = "Matrix.org (Official Account)"
 weight = 10
+extra.summary = "The Matrix.org Foundation uses `@server:matrix.org` to message users on the matrix.org homeserver. It is a special account, used to send information from the server to registered users."
 +++
 
 ## Who is the Matrix.org (Official Account) `@server:matrix.org`?

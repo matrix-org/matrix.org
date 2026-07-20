@@ -1,5 +1,6 @@
 +++
 title = "Contact"
+extra.summary = "The best place to get information and connect is on Matrix itself - starting in #matrix:matrix.org or in the #foundation-office:matrix.org"
 +++
 
 The best place to get information and connect is on Matrix itself - starting in
