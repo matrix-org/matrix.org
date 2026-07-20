@@ -356,3 +356,21 @@ To keep documentation on matrix.org tidy and approachable, it needs to be sorted
 Images make concepts easier to understand than walls of text. Screenshots make the documentation easier to follow in the onboarding and community sections. Diagrams and other illustrations can help break down more technical or complicated documentation.
 
 We are happy to review your documentation contributions and help you with any questions that you may end up with.
+
+### Glossary
+
+The glossary at [`/docs/glossary/`](https://matrix.org/docs/glossary/) defines the words, jargon, and acronyms used across Matrix and The Matrix.org Foundation. All entries live in a single file, [`/content/docs/glossary/terms.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/docs/glossary/terms.toml), grouped into one array-of-tables per category (`[[terms.core]]`, `[[terms.security]]`, `[[terms.trust_safety]]`, `[[terms.governance]]`). You do not need to know Markdown, TOML tooling, or how the site builds to contribute — the file can be edited directly from GitHub's web UI.
+
+To add a term, append the following template under the right category's block in `terms.toml` (or start a new `[[terms.<category>]]` block for a new category - the page picks up and labels any category automatically):
+
+```toml
+[[terms.core]]
+term = "My term"
+aliases = ["Optional alternate names or abbreviations"]
+definition = "One or two plain-language sentences explaining the term."
+learn_more = "/docs/some/relevant/page/#anchor" # optional, internal or external link
+```
+
+Only `term` and `definition` are required; `aliases` and `learn_more` can be omitted. Terms don't need to be added in alphabetical order — the page sorts them itself. If you do start a new category, also add its display label to the `categories` list in `templates/docs/glossary.html` (e.g. `{"label": "My Category", "terms": data.terms.my_category}`).
+
+If a term is really about the correct spelling or capitalisation of an official Matrix or Foundation name rather than what it means, it likely belongs on the [style guide](https://matrix.org/branding/#commonly-used-terms) instead.
