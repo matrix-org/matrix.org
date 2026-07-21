@@ -135,7 +135,7 @@ email = "events-wg@foundation.matrix.org"
 name = "Homeserver Decentralisation"
 summary = "Helping users discover and join homeservers other than matrix.org"
 description = """
-The Homeserver Decentralisation Working Group promotes decentralisation across the Matrix network by helping users discover and join homeservers other than `matrix.org`.
+The Homeserver Decentralisation Working Group promotes decentralisation across the Matrix network by helping users discover and join homeservers other than [`matrix.org`](@/homeserver/about.md).
 The Working Group focuses on improving the onboarding experience across Matrix homeservers and clients. This may include developing technical solutions for homeserver discovery and selection, as well as proposing broader ecosystem improvements that make decentralised onboarding easier and more reliable.
 """
 charter = """
