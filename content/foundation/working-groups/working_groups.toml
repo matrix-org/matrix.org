@@ -158,7 +158,7 @@ The Working Group is responsible for maintaining The Matrix.org Foundation’s t
 """
 committee = "Community Committee"
 members = ["mcnesium", "Nicolas Da Mutten", "Clément", "HarHarLinks", "Sky", "Max (TheDarkWizard)", "Jade Ellis"]
-chairs = ["Nicolas Da Mutten", "Clement"]
+chairs = ["Nicolas Da Mutten", "Clément"]
 sponsor = "Max (TheDarkWizard)"
 meetings = "On the first Monday of the month, 19:00-20:00 Berlin time. Please reach out via our Matrix room to join."
 matrix_room_alias = "#homeserver-decentralisation:matrix.org"
