@@ -1,4 +1,33 @@
 [[bridges]]
+name = "beeper-line"
+maintainer = "beeper, highesttt"
+summary = """
+A bridgev2 project for bridging Matrix and [LINE](https://www.line.me/en). Written in Go using [mautrix-go](https://github.com/mautrix/go) and intended for use with [Beeper](https://www.beeper.com).
+"""
+maturity = "Stable"
+language = "Go"
+license = "MIT"
+docs = "https://github.com/beeper/line#setup"
+repo = "https://github.com/beeper/line"
+featured = true
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+dm = true
+group_chats = true
+formatted_text = false
+message_media = true
+replies = true
+mentions = true
+redactions = true
+editing = false
+reactions = true
+presence = false
+typing_notifications = false
+read_receipts = true
+history = true
+
+[[bridges]]
 name = "matrix-puppeteer-line"
 maintainer = "Andrew Ferrazzutti"
 summary = """
