@@ -157,7 +157,7 @@ The Working Group focuses on improving the onboarding experience across Matrix h
 The Working Group is responsible for maintaining The Matrix.org Foundation’s trusted public homeserver list and periodically reviewing the homeservers included on it.
 """
 committee = "Community Committee"
-members = ["mcnesium", "Nicolas Da Mutten", "Clement", "HarHarLinks", "Sky", "Max (TheDarkWizard)", "Jade Ellis"]
+members = ["mcnesium", "Nicolas Da Mutten", "Clément", "HarHarLinks", "Sky", "Max (TheDarkWizard)", "Jade Ellis"]
 chairs = ["Nicolas Da Mutten", "Clement"]
 sponsor = "Max (TheDarkWizard)"
 meetings = "On the first Monday of the month, 19:00-20:00 Berlin time. Please reach out via our Matrix room to join."
