@@ -211,7 +211,7 @@ email = ""
 name = "Matrix Safety Guild"
 summary = "The Matrix Safety Guild is a space to facilitate communication between safety projects and encourage collaboration."
 description = """
-The guild provides space for contributors to discuss safety sensitive problems that they have encountered
+The guild provides space for contributors to discuss safety-sensitive problems that they have encountered
 and any upcoming work that may impact other projects.
 """
 charter = """
@@ -220,7 +220,7 @@ charter = """
 The Matrix Safety Guild is a space to facilitate communication between safety projects and encourage collaboration.
 The guild encourages projects to share transparent updates in advance of upcoming work,
 in order to provide opportunity for early feedback and collaboration.
-The guild provides space for contributors to discuss safety sensitive problems that they have encountered.
+The guild provides space for contributors to discuss safety-sensitive problems that they have encountered.
 All members, including Foundation staff and representatives participate within the guild as equal partners in mutual understanding and cooperation.
 This charter formalises the governance of the guild to safe-guard the space.
 
@@ -233,11 +233,11 @@ Membership is maintained to foster a collaborative environment of mutual trust b
 To be eligible, applicants must either:
 
 - Contribute to an open source project in the Matrix ecosystem and be responsible for a safety-sensitive concern within that project.
-- Be actively involved with the moderation of a community on the public Matrix network that has significant ties to, or contributes feedback to, a safety guild project.
+- Be actively involved with the moderation of a community on the public Matrix network that has significant ties to, or contributes feedback to, a project that is a member of the safety guild.
 
 Guild members may introduce other applicants to the gateway procedure when they can provide sufficient reasoning to the rest of the guild and address any raised concerns.
 
-### Gateway Procedure
+#### Gateway Procedure
 
 To join the guild, first join the [landing room](https://matrix.to/#/#shared-safety-guild-landing:matrix.org) and answer the following questions:
 
@@ -248,9 +248,9 @@ This could be answered as follows:
 
 > Hi, I am applying to join the safety guild.
 >
-> I contribute to the Draupnir project https://github.com/the-draupnir-project/Drapunir. I want to share the work I have been doing with other safety contributors, particularly on standardising admin APIs between homeserver implementations.
+> I contribute to the Draupnir project <https://github.com/the-draupnir-project/Drapunir>. I want to share the work I have been doing with other safety contributors, particularly on standardising admin APIs between homeserver implementations.
 
-### Application Review Process
+#### Application Review Process
 
 1. On receipt of an application, the application is announced to other guild members internally and members are prompted to raise concerns.
   They may ask follow-up questions or clarifications to the applicant.
@@ -260,22 +260,22 @@ This could be answered as follows:
 
 3. After feedback has been gathered, and there are no concerns remaining, a chair accepts the application and invites the applicant to the space.
 
-### Removal Process
+#### Removal Process
 
 If trust has been violated, chairs are obligated to try to mediate the concern or remove contributors.
 
 ### Confidentiality Notice
 
-#### Within the announcements channel:
+#### Within the announcements channel
 
 Project updates made in the announcements channel are public information unless explicitly stated in the announcement.
 
-#### Within the space:
+#### Within the space
 
 The [Chatham House Rule](https://www.chathamhouse.org/about-us/chatham-house-rule) applies within the safety guild space.
-The Individual membership roster of the working group is not to be disclosed publicly in order to protect the privacy of contributors.
+The individual membership roster of the Working Group is not to be disclosed publicly in order to protect the privacy of contributors.
 
-Security-sensitive or confidential details could intentionally or unintentionally be disclosed anywhere within the space as a result of discussion. These details may not even be explicitly noted.
+Security-sensitive or confidential details could intentionally or unintentionally be disclosed anywhere within the space as a result of discussion. These details may not even be explicitly noted as confidential or of security context.
 In these situations, members must maintain confidentiality in order not to undermine the mutual trust between guild members.
 
 Generally, members are expected to be considerate of the work of other projects and act responsibly with details discussed with them.
