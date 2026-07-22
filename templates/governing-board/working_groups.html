@@ -31,7 +31,9 @@
         <p class="summary">{{ wg.summary }}</p>
         <div class="description">
             <div class="members">
-                <p><strong>Members:</strong> {{ wg.members | join(sep=", ") }}</p>
+                {% if wg.members %}
+                    <p><strong>Members:</strong> {{ wg.members | join(sep=", ") }}</p>
+                {% endif %}
                 <p><strong>Sponsor:</strong> {{ wg.sponsor }}</p>
                 {% if wg.meetings %}<p><strong>Meeting schedule:</strong> {{ wg.meetings }}</p>{% endif %}
             </div>
