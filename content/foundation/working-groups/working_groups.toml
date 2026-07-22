@@ -209,14 +209,15 @@ email = ""
 
 [[working_groups]]
 name = "Matrix Safety Guild"
-summary = "The Matrix Safety Guild is an autonomous community of safety contributors."
+summary = "The Matrix Safety Guild is a space to facilitate communication between safety projects and encourage collaboration."
 description = """
-The guild provides space for contributors to discuss safety sensitive problems that they have encountered.
+The guild provides space for contributors to discuss safety sensitive problems that they have encountered
+and any upcoming work that may impact other projects.
 """
 charter = """
 ### Overview
 
-The Matrix Safety Guild is an autonomous community of safety contributors.
+The Matrix Safety Guild is a space to facilitate communication between safety projects and encourage collaboration.
 The guild encourages projects to share transparent updates in advance of upcoming work.
 In order to provide opportunity for early feedback and collaboration.
 The guild provides space for contributors to discuss safety sensitive problems that they have encountered.
