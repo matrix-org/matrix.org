@@ -4,11 +4,11 @@
         <a href="{{ item.href }}" {% if item.newTab %}target="_blank"{% endif %}>{{ item.title }}</a>
         {% endfor %}
     </div>
-    <div class="external-links">
-        {% for item in navigation.footer_external %}
-        <a href="{{ item.href }}" {% if item.newTab %}target="_blank"{% endif %} {% if item.relMe %}rel="me"{% endif %} {% if item.alt %}aria-label="{{ item.alt }}"{% endif %}><span aria-hidden="true">{{ load_data(path="/assets/" ~ item.image) | safe }}</span></a>
-        {% endfor %}
-    </div>
+<div class="external-links">
+    {% for item in navigation.footer_external %}
+    <a href="{{ item.href }}" {% if item.newTab %}target="_blank"{% endif %} {% if item.relMe %}rel="me"{% endif %} {% if item.alt %}aria-label="{{ item.alt }}" title="{{ item.alt | replace(from="Matrix on ", to="") }}"{% endif %}><span aria-hidden="true">{{ load_data(path="/assets/" ~ item.image) | safe }}</span></a>
+    {% endfor %}
+</div>
     <div class="subfooter-links">
         {% for item in navigation.footer_subfooter %}
         <a href="{{ item.href }}" {% if item.newTab %}target="_blank"{% endif %}>{{ item.title }}</a>
