@@ -318,7 +318,7 @@ If this option has been exhausted, the Foundation should close the Working Group
 committee = "Trust & Safety Committee"
 members = []
 chairs = ["Gnuxie, Cat"]
-sponsor = "@Gnuxie"
+sponsor = "Jade"
 meetings = ""
 matrix_room_alias = "#shared-safety-guild-landing:matrix.org"
 email = ""
