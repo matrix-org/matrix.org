@@ -79,3 +79,15 @@ website = "https://element.io/server-suite"
 support_level = "Commercial"
 matrix_standard = true
 
+
+[[distributions]]
+name = "Syncloud"
+description = "Syncloud is an open-source self-hosting platform that lets non-technical users run mainstream open-source apps, including a Matrix homeserver, on their own device with one click, a domain name and automatic HTTPS. Syncloud also offers a subscription with commercial support."
+vendor = "Syncloud"
+maturity = "Stable"
+frameworks = ["Snap"]
+licence = "GPL-3.0"
+repository = "https://github.com/syncloud/platform"
+website = "https://syncloud.org"
+support_level = "Commercial"
+matrix_standard = true
