@@ -18,6 +18,31 @@
     --borders-color: #ddd;
 
     --notice-box-color: #ffcb006b;
+
+    // Tokens for the support/membership card redesign (_support.scss).
+    // Kept distinct from the older --borders-color/--color-text-light pair
+    // above rather than merged into them, since those are already used
+    // with their own (slightly different) shades elsewhere.
+    --color-border: #d2d2d2;
+    --color-text-muted: #555;
+    --color-bg-tint: #fafafa;
+    --card-radius: 16px;
+    --card-radius-sm: 8px;
+
+    // The top 3 "become a member" tiers are literally named after materials
+    // (Platinum/Gold/Silver) - used as a top-edge accent on .tier-card and a
+    // frame/flag around the matching tier of supporter logos (_support.scss).
+    // Platinum is deliberately lighter/cooler and Silver deliberately
+    // darker/warmer so the two don't read as the same grey. These plain
+    // colours are for the (thin, non-text) frame border only; the flag is a
+    // solid fill with white text, which needs its own darker "-badge" pair
+    // to clear AA (the plain colours are too light/desaturated for that).
+    --color-tier-platinum: #b8c4cc;
+    --color-tier-platinum-badge: #5b6b74;
+    --color-tier-gold: #c9a227;
+    --color-tier-gold-badge: #8a6d1c;
+    --color-tier-silver: #7c7f83;
+    --color-tier-silver-badge: #5c5f63;
 }
 
 * {
