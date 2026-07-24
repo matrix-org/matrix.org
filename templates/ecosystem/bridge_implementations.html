@@ -3,6 +3,11 @@
 {% import "macros/breadcrumb.html" as breadcrumb %}
 {% block content %}
 {% set bridges_data = load_data(path=section.path~"bridges.toml") %}
+{% set obsolete_bridges = bridges_data.bridges | filter(attribute="maturity", value="Obsolete") %}
+{% set active_bridges = [] %}
+{% for bridge in bridges_data.bridges %}
+{% if bridge.maturity != "Obsolete" %}{% set_global active_bridges = active_bridges | concat(with=[bridge]) %}{% endif %}
+{% endfor %}
 
 <article class="content detail-page">
     {{ breadcrumb::breadcrumb(l1_label="Ecosystem", l1_path="/ecosystem/", l2_label="Bridges", l2_path="/ecosystem/bridges/", l3_label=section.title) }}
@@ -35,132 +40,21 @@
     </div>
 
     <div class="bridge-cards">
-        {% for bridge in bridges_data.bridges %}
-        <div class="bridge-card" id="{{ bridge.name | slugify }}">
-            <div class="bridge-card-grid">
-                <div class="bridge-card-left">
-                    <div class="bridge-card-header">
-                        <div class="bridge-card-title-row">
-                            <h2 class="bridge-card-name">
-                                <a
-                                    href="#{{ bridge.name | slugify }}"
-                                    class="bridge-card-anchor"
-                                    >{{ bridge.name }}</a
-                                >
-                                <span class="maturity {{ bridge.maturity | lower }}"
-                                    >{{ bridge.maturity | title }}</span
-                                >
-                            </h2>
-                            {% if bridge.featured %}
-                            <span class="bridge-card-recommended">Recommended</span>
-                            {% endif %}
-                        </div>
-                        <div class="ecosystem-detail-meta">
-                            {% if bridge.maintainer %}
-                            <span class="ecosystem-detail-meta-item"
-                                >By {{ bridge.maintainer }}</span
-                            >
-                            {% endif %} {% if bridge.language %}
-                            <span class="ecosystem-detail-meta-item"
-                                >{{ bridge.language }}</span
-                            >
-                            {% endif %} {% if bridge.license %}
-                            <span class="ecosystem-detail-meta-item">
-                                <a
-                                    href="https://spdx.org/licenses/{{ bridge.license }}.html"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    >{{ bridge.license }}</a
-                                >
-                            </span>
-                            {% endif %}
-                        </div>
-                    </div>
-
-                    <div class="bridge-card-main">
-                        <div class="ecosystem-detail-description">
-                            {{ bridge.summary | markdown | safe }}
-                        </div>
-
-                        <div class="bridge-card-access">
-                            <span class="bridge-card-access-label"
-                                >Access needed</span
-                            >
-                            <span
-                                class="bridge-card-access-pill bridge-card-access-pill--platform"
-                                title="The privilege level you need on {{ section.title }} to set this bridge up"
-                                >{{ section.title }} {{ bridge.privilege.platform }}</span
-                            >
-                            <span
-                                class="bridge-card-access-pill bridge-card-access-pill--matrix"
-                                title="The privilege level you need on the Matrix side to set this bridge up"
-                                >Matrix {{ bridge.privilege.matrix }}</span
-                            >
-                        </div>
-
-                        <div class="ecosystem-detail-actions">
-                            {% if bridge.docs %}
-                            <a
-                                href="{{ bridge.docs }}"
-                                class="call-to-action secondary"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                {{ load_data(path="/assets/documentation.svg") | safe }}
-                                Documentation
-                            </a>
-                            {% endif %} {% if bridge.room %}
-                            <a
-                                href="https://matrix.to/#/{{ bridge.room }}"
-                                class="call-to-action secondary"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                {{ load_data(path="/assets/support.svg") | safe }}
-                                Support room
-                            </a>
-                            {% endif %} {% if bridge.repo %}
-                            <a
-                                href="{{ bridge.repo }}"
-                                class="call-to-action secondary"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                {{ load_data(path="/assets/repository.svg") | safe }}
-                                Source Code
-                            </a>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-
-                {% if bridge.supports %}
-                <aside class="bridge-card-features">
-                    <h3 class="ecosystem-detail-aside-title">
-                        Supported features
-                    </h3>
-                    <div class="ecosystem-detail-features">
-                        <dl>
-                            {% for feature, supported in bridge.supports %}
-                            <div
-                                class="feature-row{% if supported %} supported{% else %} unsupported{% endif %}"
-                            >
-                                <dt>
-                                    <span class="feature-row-indicator"></span>
-                                    {{ bridges::feature_label(feature_name=feature) | trim }}
-                                </dt>
-                                <dd>{{ bridges::feature_description(feature_name=feature) | trim }}</dd>
-                            </div>
-                            {% endfor %}
-                        </dl>
-                    </div>
-                </aside>
-                {% endif %}
-            </div>
-            <p class="bridge-card-report">Something wrong? Report the issue <a href="https://github.com/matrix-org/matrix.org/issues/new?template=update-ecosystem-info.yaml">here</a>.</p>
-        </div>
+        {% for bridge in active_bridges %}
+        {{ bridges::bridge_card(bridge=bridge, section=section) }}
         {% endfor %}
     </div>
+
+    {% if obsolete_bridges %}
+    <details class="obsolete-bridges">
+        <summary>Show {{ obsolete_bridges | length }} obsolete bridge{% if obsolete_bridges | length != 1 %}s{% endif %}</summary>
+        <div class="bridge-cards">
+            {% for bridge in obsolete_bridges %}
+            {{ bridges::bridge_card(bridge=bridge, section=section) }}
+            {% endfor %}
+        </div>
+    </details>
+    {% endif %}
 </article>
 
 {% endblock content %}
