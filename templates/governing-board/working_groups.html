@@ -34,6 +34,7 @@
                 {% if wg.members %}
                     <p><strong>Members:</strong> {{ wg.members | join(sep=", ") }}</p>
                 {% endif %}
+                <p><strong>Chairs:</strong> {{ wg.chairs | join(sep=", ") }}</p>
                 <p><strong>Sponsor:</strong> {{ wg.sponsor }}</p>
                 {% if wg.meetings %}<p><strong>Meeting schedule:</strong> {{ wg.meetings }}</p>{% endif %}
             </div>
