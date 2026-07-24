@@ -33,6 +33,7 @@
             <h2 id="members">Members</h2>
             <div class="members">
                 <p>{{ wg.members | join(sep=", ") }}</p>
+                <p><strong>Chairs:</strong> {{ wg.chairs | join(sep=", ") }}</p>
                 <p><strong>Sponsor:</strong> {{ wg.sponsor }}</p>
             </div>
             {% if wg.meeting %}
