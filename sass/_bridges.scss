@@ -65,6 +65,16 @@
     }
 }
 
+// Only obsolete bridges exist - dimmed like no-bridge, but still clickable
+// so the obsolete bridge(s) can be found on the detail page.
+.platform.obsolete-only {
+    opacity: 0.6;
+
+    img {
+        filter: grayscale(1);
+    }
+}
+
 // Bridge network detail page
 
 .bridge-network-header {
@@ -91,6 +101,26 @@
     border: 1px solid #d2d2d2;
     border-radius: 16px;
     overflow: hidden;
+}
+
+.obsolete-bridges {
+    max-width: 60rem;
+    margin-inline: auto;
+    padding-bottom: 3rem;
+
+    > summary {
+        cursor: pointer;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    .bridge-cards {
+        padding-bottom: 0;
+    }
 }
 
 .bridge-card-report {

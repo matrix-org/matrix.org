@@ -20,14 +20,19 @@
         {% for subsection_path in section.subsections %}
         {% set subsection = get_section(path=subsection_path) %}
         {% set bridges_data = load_data(path=subsection.path~"bridges.toml") %}
+        {% set all_bridges = bridges_data.bridges | default(value=[]) %}
+        {% set obsolete_bridges = all_bridges | filter(attribute="maturity", value="Obsolete") %}
+        {% set active_count = all_bridges | length - obsolete_bridges | length %}
         <a href="{{ subsection.path }}"
-           class="platform {% if not bridges_data.bridges %}no-bridge{% endif %}">
+           class="platform {% if active_count == 0 and not obsolete_bridges %}no-bridge{% elif active_count == 0 %}obsolete-only{% endif %}">
             <img src="{{ subsection.path }}logo.svg" alt="{{ subsection.title }} Logo" />
             <div class="details">
                 <h2>{{ subsection.title }}</h2>
                 <p>
-                    {% if bridges_data.bridges %}
-                    {{ bridges_data.bridges | length }} bridge{% if bridges_data.bridges | length > 1 %}s{% endif %}
+                    {% if active_count > 0 %}
+                    {{ active_count }} bridge{% if active_count > 1 %}s{% endif %}
+                    {% elif obsolete_bridges %}
+                    No active bridge
                     {% else %}
                     No bridge
                     {% endif %}
