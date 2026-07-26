@@ -4,17 +4,17 @@ title = "gomuks"
 [extra]
 maintainer = "Tulir"
 licence = "AGPL-3.0-or-later"
-language = "Go"
+language = "Go, TypeScript"
 maturity = "Beta"
-repo = "https://github.com/tulir/gomuks"
-matrix_room = "#gomuks:maunium.net"
+repo = "https://github.com/gomuks/gomuks"
+matrix_room = "#gomuks:gomuks.app"
 featured = false
 
 [extra.features.1stable]
 e2ee = "supported"
-spaces = "unsupported"
+spaces = "supported"
 voip_1to1 = "unsupported"
-threads = "unsupported"
+threads = "supported"
 sso = "supported"
 voip_jitsi = "unsupported"
 multi_account = "unsupported"
@@ -28,8 +28,8 @@ voip_matrixrtc = "unknown"
 sliding_sync = "unknown"
 
 [extra.packages]
-other_linux_link = "https://github.com/tulir/gomuks/releases"
-macos_installer = "https://github.com/tulir/gomuks/releases"
+other_linux_link = "https://github.com/gomuks/gomuks/releases"
+macos_installer = "https://github.com/gomuks/gomuks/releases"
 +++
 
-A terminal Matrix client written in Go.
+A Matrix client written in Go using mautrix-go with various frontends available, including web.
