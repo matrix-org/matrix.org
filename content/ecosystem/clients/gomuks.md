@@ -19,7 +19,7 @@ sso = "supported"
 voip_jitsi = "unsupported"
 multi_account = "unsupported"
 multi_language = "unsupported"
-oauth = "unknown"
+oauth = "supported"
 invisible_crypto = "unknown"
 
 [extra.features.2experimental]
