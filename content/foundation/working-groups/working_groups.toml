@@ -161,6 +161,7 @@ sponsor = "Jade Ellis"
 meetings = "On the first Monday of the month, 19:00-20:00 Berlin time. Please reach out via our Matrix room to join."
 matrix_room_alias = "#homeserver-decentralisation:matrix.org"
 email = ""
+git_repo = "https://github.com/cleverer/matrix-wg-promote-alternative-homeservers"
 summary = "Helping users discover and join homeservers other than matrix.org"
 description = """
 The Homeserver Decentralisation Working Group promotes decentralisation across the Matrix network by helping users discover and join homeservers other than [`matrix.org`](@/homeserver/about.md).

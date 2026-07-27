@@ -64,6 +64,21 @@
                     <span>Email</span>
                 </a>
                 {% endif %}
+                {% if wg.git_repo %}
+                <a href="{{ wg.git_repo }}" class="button">
+                    <!-- This icon is part of Material Icons by Google https://fonts.google.com/icons.
+                            The source is available at https://github.com/google/material-design-icons/blob/941fa95d7f6084a599a54ca71bc565f48e7c6d9e/src/action/commit/materialicons/24px.svg
+                            SPDX-SnippetBegin
+                            SPDX-SnippetCopyrightText: Copyright 2020 Google LLC
+                            SPDX-License-Identifier: Apache-2.0 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                        <path
+                            d="M352.5-325.5Q298-371 284-440H80v-80h204q14-69 68.5-114.5T480-680q73 0 127.5 45.5T676-520h204v80H676q-14 69-68.5 114.5T480-280q-73 0-127.5-45.5ZM480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z" />
+                    </svg>
+                    <!-- SPDX-SnippetEnd -->
+                    <span>Git Repository</span>
+                </a>
+                {% endif %}
             </div>
         </div>
 
