@@ -17,7 +17,7 @@ body:
     attributes:
       label: Current Information
       description: Please describe or quote the information that is currently outdated or incorrect.
-      placeholder: It says that VoIP is not supported.
+      placeholder: It says that stickers are not supported.
     validations:
       required: true
   - type: input
@@ -25,7 +25,7 @@ body:
     attributes:
       label: Suggested Correction
       description: What is the correct information?
-      placeholder: VoIP is actually supported
+      placeholder: Stickers are actually supported
     validations:
       required: true
   - type: input
