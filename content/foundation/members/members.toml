@@ -56,7 +56,7 @@ logo = "gematik.png"
 [[silver]]
 name = "IndieHosters"
 website = "https://indie.host"
-logo = "indiehosters.png"
+logo = "indiehosters.svg"
 
 [[silver]]
 name = "infra.run"
