@@ -3,7 +3,7 @@ date = "2026-06-15T16:00:00+00:00"
 title = "Announcing the results of the Governing Board election"
 
 [taxonomies]
-author = ["Amandine"]
+author = ["Amandine Le Pape"]
 category = ["Elections", "Foundation", "Governing Board"]
 +++
 
