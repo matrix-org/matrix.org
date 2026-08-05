@@ -11,7 +11,7 @@ date = "2025-08-14"
 reporter.name = "Timo Kösters"
 reporter.link = "https://www.linkedin.com/in/timokoesters"
 summary = """
-Highlighted that the creator of a room always has complete power over the room, which helped jumpstart [Project Hydra](https://matrix.org/blog/2025/08/project-hydra-improving-state-res/), and was made explicit in [MSC4289](https://github.com/matrix-org/matrix-spec-proposals/pull/4289).
+Highlighted that the creator of a room always has complete power over the room, which helped jumpstart [Project Hydra](@/blog/2025/08/2025-08-14-project-hydra-improving-state-res.md), and was made explicit in [MSC4289](https://github.com/matrix-org/matrix-spec-proposals/pull/4289).
 """
 project = "Matrix Specification"
 
@@ -217,7 +217,7 @@ Discovered a parsing issue which could lead to channel/room takeovers
 ([CVE-2022-39203](https://www.cve.org/CVERecord?id=CVE-2022-39203),
 [GHSA-xvqg-mv25-rwvw](https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-xvqg-mv25-rwvw)).
 Fixed in [matrix-appservice-irc 0.35.0](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.35.0)
-([blog post](https://matrix.org/blog/2022/09/13/security-release-of-matrix-appservice-irc-0-35-0-high-severity)).
+([blog post](@/blog/2022/09/2022-09-13-security-release-of-matrix-appservice-irc-0-35-0-high-severity.md)).
 """
 project = "matrix-appservice-irc"
 
@@ -230,7 +230,7 @@ Discovered an IRC mode parameter parsing confusion which could lead to wrong
 modes being applied ([CVE-2022-39202](https://www.cve.org/CVERecord?id=CVE-2022-39202),
 [GHSA-cq7q-5c67-w39w](https://github.com/matrix-org/matrix-appservice-irc/security/advisories/GHSA-cq7q-5c67-w39w)).
 Fixed in [matrix-appservice-irc 0.35.0](https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.35.0)
-([blog post](https://matrix.org/blog/2022/09/13/security-release-of-matrix-appservice-irc-0-35-0-high-severity)).
+([blog post](@/blog/2022/09/2022-09-13-security-release-of-matrix-appservice-irc-0-35-0-high-severity.md)).
 """
 project = "matrix-appservice-irc"
 
@@ -601,7 +601,7 @@ date = "2019-04-18"
 reporter.name = "fs0c131y"
 reporter.link = "https://fs0c131y.com/"
 summary = """
-An email validation exploit in Sydent. For more details see [here](https://matrix.org/blog/2019/04/18/security-update-sydent-1-0-2/)
+An email validation exploit in Sydent. For more details see [here](@/blog/2019/04/2019-04-18-security-update-sydent-1-0-2.md)
 and [CVE-2019-11340](https://www.cve.org/CVERecord?id=CVE-2019-11340).
 """
 project = "Sydent"
@@ -612,7 +612,7 @@ reporter.name = "Jaikey Sarraf"
 reporter.link = "https://twitter.com/jaikeysarraf/"
 summary = """
 Identified a unpatched RCE vulnerability in Matrix.org's public-facing Jenkins.
-It transpired the vulnerability had been [exploited by an attacker](https://matrix.org/blog/2019/04/11/security-incident/).
+It transpired the vulnerability had been [exploited by an attacker](@/blog/2019/04/2019-04-11-we-have-discovered-and-addressed-a-security-breach-updated-2019-04-12.md).
 """
 project = "Infrastructure"
 
