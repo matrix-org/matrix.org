@@ -1,4 +1,21 @@
 [[findings]]
+date = "2026-06-03"
+reporter.name = "Valère Fédronic of Element"
+summary = """
+Discovered that the Matrix Rust SDK is vulnerable to encrypted message spoofing via cleartext edits ([CVE-2026-45057](https://www.cve.org/CVERecord?id=CVE-2026-45057) / [GHSA-h97m-27fx-42rx](https://github.com/matrix-org/matrix-rust-sdk/security/advisories/GHSA-h97m-27fx-42rx)).
+"""
+project = "Matrix Rust SDK"
+
+[[findings]]
+date = "2025-08-14"
+reporter.name = "Timo Kösters"
+reporter.link = "https://www.linkedin.com/in/timokoesters"
+summary = """
+Highlighted that the creator of a room always has complete power over the room, which helped jumpstart [Project Hydra](https://matrix.org/blog/2025/08/project-hydra-improving-state-res/), and was made explicit in [MSC4289](https://github.com/matrix-org/matrix-spec-proposals/pull/4289).
+"""
+project = "Matrix Specification"
+
+[[findings]]
 date = "2025-03-04"
 reporter.name = "Fatih Bozkurt"
 reporter.link = "https://instagram.com/fatihbozkurt.1453"
