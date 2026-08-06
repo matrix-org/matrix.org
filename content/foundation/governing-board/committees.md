@@ -46,10 +46,10 @@ There are currently 4 Committees:
 
 ### Members
 
-Amandine Le Pape, Gnuxie, Greg Sutcliffe, Kim Brose, Matthew Hodgson, Nicolas Werner
+Amandine Le Pape, Greg Sutcliffe, Jade Ellis, Kim Brose, Mathieu Velten, Matthew Hodgson, Max, Nicolas Werner, Yoan Pintas
 
 Chair: Nicolas Werner  
-Vice Chair: *vacant*
+Vice Chair: Max
 
 ### Meeting Schedule
 
@@ -76,9 +76,9 @@ The committee aims to meet on the last Monday of the month.
 
 ### Members
 
-Brad Murray, Bram Noordstar, Gnuxie, Greg Sutcliffe, Kim Brose, Jan Kohnert, Neil Johnson, Nicolas Werner, Travis Ralston
+Greg Sutcliffe, Jade Ellis, Kim Brose, Neil Johnson, Nicolas Werner
 
-Chair: Bram Noordstar  
+Chair: Jade Ellis
 Vice Chair: Neil Johnson
 
 ### Meeting schedule
@@ -126,9 +126,9 @@ Since we expect that the [Governance Working Group](@/foundation/working-groups/
 
 ### Members
 
-Bram Noordstar, J. B. Crawford, Jan Kohnert, Matthew Hodgson, Nicolas Werner, Tobias Fella, Travis Ralston
+Jade Ellis, Matthew Hodgson, Max, Nick Mills-Barrett, Nicolas Werner, Tobias Fella
 
-Chair: J. B. Crawford  
+Chair: *vacant*
 Vice Chair: Nicolas Werner
 
 ### Meeting Schedule
@@ -159,9 +159,9 @@ topics, priorities initiatives, gather feedback and share knowledge.
 
 ### Members
 
-Amandine Le Pape, Andy Balaam, Brad Murray, Gnuxie, Greg Sutcliffe, J. B. Crawford, Matthew Hodgson, Nicolas Werner, Richard van der Hoff, Travis Ralston
+Amandine Le Pape, Andy Balaam, Greg Sutcliffe, Mathieu Velten, Matthew Hodgson, Nicolas Werner, Niklas Zender, Richard van der Hoff, Yoan Pintas
 
-Chair: Gnuxie  
+Chair: Yoan Pintas
 Vice Chair: Amandine Le Pape
 
 ### Meeting schedule

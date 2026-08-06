@@ -80,7 +80,7 @@ Paramount to all these formalities we are introducing by creating a WG from a Fo
   - this explicitly excludes decisions about the merchandise sold on the store and the financial aspects, but includes only the technical operation.
 """
 committee = "Community Committee"
-members = ["Thib", "HarHarLinks", "MTRNord", "Jack", "weeman"]
+members = ["Andy Piper", "HarHarLinks", "Jack", "MTRNord", "Thib", "weeman"]
 chairs = ["MTRNord"]
 sponsor = "HarHarLinks"
 meetings = "Thursdays, 16:00-17:00 Berlin time. Please reach out via our Matrix room to join."
@@ -124,7 +124,15 @@ The WG also acts as first contact point for similar community endeavours, e.g. i
 - make Matrix attractive to get invited to events
 """
 committee = "Community Committee"
-members = ["Yan", "Nadine", "Thib", "HarHarLinks", "The one with the braid", "Dominik"]
+members = [
+    "Andy Piper",
+    "Dominik",
+    "HarHarLinks",
+    "Nadine",
+    "The one with the braid",
+    "Thib",
+    "Yan",
+]
 chairs = ["HarHarLinks"]
 sponsor = "HarHarLinks"
 meetings = "Mondays, 16:00-17:00 Berlin time. Please reach out via our Matrix room."
@@ -157,9 +165,22 @@ The Working Group focuses on improving the onboarding experience across Matrix h
 The Working Group is responsible for maintaining The Matrix.org Foundation’s trusted public homeserver list and periodically reviewing the homeservers included on it.
 """
 committee = "Community Committee"
-members = ["Nicolas Da Mutten", "Cat", "Ginger [she/her]", "Sky", "Austin Huang", "Zach", "HarHarLinks", "june ✿ 🏳️‍⚧️ (it/she/puppy)", "mcnesium", "Clément", "Max (TheDarkWizard)" ]
+members = [
+    "Austin Huang",
+    "Cat",
+    "Clément",
+    "Ginger [she/her]",
+    "HarHarLinks",
+    "Jade Ellis",
+    "june ✿ 🏳️‍⚧️ (it/she/puppy)",
+    "Max (TheDarkWizard)",
+    "mcnesium",
+    "Nicolas Da Mutten",
+    "Sky",
+    "Zach",
+]
 chairs = ["Nicolas Da Mutten", "Clément"]
-sponsor = "Max (TheDarkWizard)"
+sponsor = "Jade Ellis"
 meetings = "On the first Monday of the month, 19:00-20:00 Berlin time. Please reach out via our Matrix room to join."
 matrix_room_alias = "#homeserver-decentralisation:matrix.org"
 email = ""
@@ -207,8 +228,28 @@ The T&S committee may decide to remove members from the WG if it sees a member a
 Interested members should be able to apply to the WG freely, but the WG and the T&S committee should do a short background check, if they are willing to give the applicant access to the information or if there are any active abuse concerns. This should be a low bar to clear, but is intended to keep malicious individuals out.
 """
 committee = "Trust & Safety Committee"
-members = ["Nico", "Cat", "Niko", "SFaulken", "Gnuxie", "Sky", "Andy Balaam", "Tobias Fella", "Max", "Travis Ralston", "andypiper", "Meldane", "Dustin", "juliet", "crb", "aranjedeath", "Jim", "James Bot", "moise"]
-chairs = ["Andy Balaam", "Max"]
+members = [
+    "Andy Balaam",
+    "Andy Piper",
+    "aranjedeath",
+    "Cat",
+    "crb",
+    "Dustin",
+    "Gnuxie",
+    "James Bot",
+    "Jim",
+    "juliet",
+    "Max (TheDarkWizard)",
+    "Meldane",
+    "moise",
+    "Nico",
+    "Niko",
+    "SFaulken",
+    "Sky",
+    "Tobias Fella",
+    "Travis Ralston",
+]
+chairs = ["Andy Balaam", "Max (TheDarkWizard)"]
 sponsor = "Nico"
 matrix_room_alias = "#tns-rnd-wg-office:neko.dev"
 email = ""
@@ -234,7 +275,15 @@ The membership of the Room Directory Working Group will be determined by the [Tr
 Members may be added or removed by a majority vote of the T&S Committee.
 """
 committee = "Trust & Safety Committee"
-members = ["Nico", "Sky", "mahdi", "Emma [it/its]", "Krille - Christian K.", "LogN", "Max (TheDarkWizard)"]
+members = [
+    "Emma [it/its]",
+    "Krille - Christian K.",
+    "LogN",
+    "Max (TheDarkWizard)",
+    "mahdi",
+    "Nico",
+    "Sky",
+]
 chairs = ["Sky", "LogN"]
 sponsor = "Nico"
 matrix_room_alias = "#room-dir-wg-office:neko.dev"
@@ -350,7 +399,7 @@ If this option has been exhausted, the Foundation should close the Working Group
 committee = "Trust & Safety Committee"
 chairs = ["Gnuxie, Cat"]
 members = []
-sponsor = "Jade"
+sponsor = "Jade Ellis"
 meetings = ""
 matrix_room_alias = "#shared-safety-guild-landing:matrix.org"
 email = ""
@@ -388,9 +437,17 @@ Similarly, the Committee’s chair is considered the sponsor of the Working Grou
 The Working Group meets monthly by default. The frequency can be increased to biweekly if urgency and number of topics require it.
 """
 committee = "Governance Committee"
-members = ["Brad Murray", "Bram Noordstar", "Gnuxie", "Greg Sutcliffe", "Kim Brose", "Jan Kohnert", "Neil Johnson", "Nicolas Werner", "Travis Ralston"]
-chairs = ["Bram Noordstar", "Neil Johnson"]
-sponsor = "Bram Noordstar"
+members = [
+    "Gnuxie",
+    "Greg Sutcliffe",
+    "Jade Ellis",
+    "Kim Brose",
+    "Neil Johnson",
+    "Nicolas Werner",
+    "Travis Ralston",
+]
+chairs = ["Jade Ellis", "Neil Johnson"]
+sponsor = "Jade Ellis"
 meetings = "On the second Friday of the month, 16:00-17:00 UTC. Please reach out via our Matrix room to join."
 matrix_room_alias = "#governance-wg:matrix.org"
 email = ""
