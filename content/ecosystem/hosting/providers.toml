@@ -134,8 +134,11 @@ image = "hostsharing-logo.svg"
 website = "https://hostsharing.net"
 operating_since = "2000"
 description = """
-Hostsharing eG is a German cooperative that operates its own servers in data centres in Germany and offers its members comprehensive, one-stop IT solutions.
-Business customers in the EU who are members of the cooperative can sign up for a customised, managed Matrix solution. In Germany, private individuals can also become members of the cooperative.
+Hostsharing eG is a German cooperative that operates its own servers in data centres in Germany. 
+The cooperative offers its members comprehensive, one-stop IT solutions.
+Members can sign up for a customised, managed Matrix solution.
+The offer includes storage replication to standby servers and remote backup.
+The service is available in Germany and the European Union.
 """
 b2b = true
-b2c = false
+b2c = true
