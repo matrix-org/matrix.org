@@ -1,6 +1,7 @@
 +++
 title = "We have discovered and addressed a security breach. (Updated 2019-04-12)"
 path = "/blog/2019/04/11/we-have-discovered-and-addressed-a-security-breach-updated-2019-04-12"
+aliases = ["/blog/2019/04/11/security-incident"]
 
 [taxonomies]
 author = ["Matrix.org Team"]
