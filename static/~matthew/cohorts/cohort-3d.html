@@ -20,7 +20,8 @@ body {
 
     // Called when the Visualization API is loaded.
     function drawVisualization() {
-        var query = window.location.search.substring(1) || "ios";
+        var rawQuery = window.location.search.substring(1) || "ios";
+        var query = /^[a-zA-Z0-9_-]+$/.test(rawQuery) ? rawQuery : "ios";
         fetch("./cohort-3d-" + query + ".csv").then((res)=>{
             res.text().then((body)=>{
                 draw(body);    
