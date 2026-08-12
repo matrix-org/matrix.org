@@ -1,5 +1,12 @@
 [[working_groups]]
 name = "Website & Content"
+committee = "Community Committee"
+members = ["Andy Piper", "HarHarLinks", "Jack", "Kaitlin", "MTRNord", "weeman"]
+chairs = ["MTRNord"]
+sponsor = "HarHarLinks"
+meetings = "Thursdays, 16:00-17:00 Berlin time. Please reach out via our Matrix room to join."
+matrix_room_alias = "#matrix.org-website:matrix.org"
+email = ""
 summary = "Editoral and technical oversight of the main websites and socials"
 description = """
 The Website and Content Working Group is responsible for the editorial and technical oversight of the main Matrix websites and social media channels.
@@ -79,16 +86,24 @@ Paramount to all these formalities we are introducing by creating a WG from a Fo
   - ability to update documentation, i.e. making sure the modalities are as clear and easy to find as possible
   - this explicitly excludes decisions about the merchandise sold on the store and the financial aspects, but includes only the technical operation.
 """
-committee = "Community Committee"
-members = ["Andy Piper", "HarHarLinks", "Jack", "Kaitlin", "MTRNord", "weeman"]
-chairs = ["MTRNord"]
-sponsor = "HarHarLinks"
-meetings = "Thursdays, 16:00-17:00 Berlin time. Please reach out via our Matrix room to join."
-matrix_room_alias = "#matrix.org-website:matrix.org"
-email = ""
 
 [[working_groups]]
 name = "Events"
+committee = "Community Committee"
+members = [
+    "Andy Piper",
+    "Dominik",
+    "HarHarLinks",
+    "Nadine",
+    "The one with the braid",
+    "Thib",
+    "Yan",
+]
+chairs = ["HarHarLinks"]
+sponsor = "HarHarLinks"
+meetings = "Mondays, 16:00-17:00 Berlin time. Please reach out via our Matrix room."
+matrix_room_alias = "#events-wg:matrix.org"
+email = "events-wg@foundation.matrix.org"
 summary = "Organising the Foundation's official events and appearances at conferences"
 description = """
 The Events Working Group is the main organising team of the official events hosted by the Foundation, such as The Matrix Conference or co-hosting FOSDEM Fringe, as well as official appearances at other conferences, e.g. the FOSDEM booth and devroom. The WG also acts as first contact point for similar community endeavours, e.g. inquiries related to the Matrix Community Summit, or the FrOSCon Matrix Community devroom, and tries to foster an ecosystem of decentralised events and user groups.
@@ -123,24 +138,29 @@ The WG also acts as first contact point for similar community endeavours, e.g. i
 - maintain a knowledgebase at <https://handbook.matrix.org/>
 - make Matrix attractive to get invited to events
 """
-committee = "Community Committee"
-members = [
-    "Andy Piper",
-    "Dominik",
-    "HarHarLinks",
-    "Nadine",
-    "The one with the braid",
-    "Thib",
-    "Yan",
-]
-chairs = ["HarHarLinks"]
-sponsor = "HarHarLinks"
-meetings = "Mondays, 16:00-17:00 Berlin time. Please reach out via our Matrix room."
-matrix_room_alias = "#events-wg:matrix.org"
-email = "events-wg@foundation.matrix.org"
 
 [[working_groups]]
 name = "Homeserver Decentralisation"
+committee = "Community Committee"
+members = [
+    "Austin Huang",
+    "Cat",
+    "Clément",
+    "Ginger [she/her]",
+    "HarHarLinks",
+    "Jade Ellis",
+    "june ✿ 🏳️‍⚧️ (it/she/puppy)",
+    "Max (TheDarkWizard)",
+    "mcnesium",
+    "Nicolas Da Mutten",
+    "Sky",
+    "Zach",
+]
+chairs = ["Nicolas Da Mutten", "Clément"]
+sponsor = "Jade Ellis"
+meetings = "On the first Monday of the month, 19:00-20:00 Berlin time. Please reach out via our Matrix room to join."
+matrix_room_alias = "#homeserver-decentralisation:matrix.org"
+email = ""
 summary = "Helping users discover and join homeservers other than matrix.org"
 description = """
 The Homeserver Decentralisation Working Group promotes decentralisation across the Matrix network by helping users discover and join homeservers other than [`matrix.org`](@/homeserver/about.md).
@@ -164,29 +184,35 @@ The Working Group focuses on improving the onboarding experience across Matrix h
 
 The Working Group is responsible for maintaining The Matrix.org Foundation’s trusted public homeserver list and periodically reviewing the homeservers included on it.
 """
-committee = "Community Committee"
-members = [
-    "Austin Huang",
-    "Cat",
-    "Clément",
-    "Ginger [she/her]",
-    "HarHarLinks",
-    "Jade Ellis",
-    "june ✿ 🏳️‍⚧️ (it/she/puppy)",
-    "Max (TheDarkWizard)",
-    "mcnesium",
-    "Nicolas Da Mutten",
-    "Sky",
-    "Zach",
-]
-chairs = ["Nicolas Da Mutten", "Clément"]
-sponsor = "Jade Ellis"
-meetings = "On the first Monday of the month, 19:00-20:00 Berlin time. Please reach out via our Matrix room to join."
-matrix_room_alias = "#homeserver-decentralisation:matrix.org"
-email = ""
 
 [[working_groups]]
 name = "Trust & Safety Research & Documentation"
+committee = "Trust & Safety Committee"
+members = [
+    "Andy Balaam",
+    "Andy Piper",
+    "aranjedeath",
+    "Cat",
+    "crb",
+    "Dustin",
+    "Gnuxie",
+    "James Bot",
+    "Jim",
+    "juliet",
+    "Max (TheDarkWizard)",
+    "Meldane",
+    "moise",
+    "Nico",
+    "Niko",
+    "SFaulken",
+    "Sky",
+    "Tobias Fella",
+    "Travis Ralston",
+]
+chairs = ["Andy Balaam", "Max (TheDarkWizard)"]
+sponsor = "Nico"
+matrix_room_alias = "#tns-rnd-wg-office:neko.dev"
+email = ""
 summary = "Documenting and Researching the state of Trust and Safety in the ecosystem"
 description = """
 To make appropriate decisions, the T&S Committee needs to know about the state of T&S in the wider ecosystem. It needs to have insights into current challenges, solutions and initiatives.
@@ -227,35 +253,23 @@ The T&S committee may decide to remove members from the WG if it sees a member a
 
 Interested members should be able to apply to the WG freely, but the WG and the T&S committee should do a short background check, if they are willing to give the applicant access to the information or if there are any active abuse concerns. This should be a low bar to clear, but is intended to keep malicious individuals out.
 """
-committee = "Trust & Safety Committee"
-members = [
-    "Andy Balaam",
-    "Andy Piper",
-    "aranjedeath",
-    "Cat",
-    "crb",
-    "Dustin",
-    "Gnuxie",
-    "James Bot",
-    "Jim",
-    "juliet",
-    "Max (TheDarkWizard)",
-    "Meldane",
-    "moise",
-    "Nico",
-    "Niko",
-    "SFaulken",
-    "Sky",
-    "Tobias Fella",
-    "Travis Ralston",
-]
-chairs = ["Andy Balaam", "Max (TheDarkWizard)"]
-sponsor = "Nico"
-matrix_room_alias = "#tns-rnd-wg-office:neko.dev"
-email = ""
 
 [[working_groups]]
 name = "Room Directory"
+committee = "Trust & Safety Committee"
+members = [
+    "Emma [it/its]",
+    "Krille - Christian K.",
+    "LogN",
+    "Max (TheDarkWizard)",
+    "mahdi",
+    "Nico",
+    "Sky",
+]
+chairs = ["Sky", "LogN"]
+sponsor = "Nico"
+matrix_room_alias = "#room-dir-wg-office:neko.dev"
+email = ""
 summary = "Help maintain the room directory on the matrix.org homeserver"
 description = """
 The purpose of the room directory Working Group is to implement the matrix.org room directory policy, as described in that policy.
@@ -274,23 +288,16 @@ Additionally the Working Group might propose improvements to the policy, which t
 The membership of the Room Directory Working Group will be determined by the [Trust & Safety Committee of the Governing Board](@/foundation/governing-board/committees.md#trust-safety).
 Members may be added or removed by a majority vote of the T&S Committee.
 """
-committee = "Trust & Safety Committee"
-members = [
-    "Emma [it/its]",
-    "Krille - Christian K.",
-    "LogN",
-    "Max (TheDarkWizard)",
-    "mahdi",
-    "Nico",
-    "Sky",
-]
-chairs = ["Sky", "LogN"]
-sponsor = "Nico"
-matrix_room_alias = "#room-dir-wg-office:neko.dev"
-email = ""
 
 [[working_groups]]
 name = "Matrix Safety Guild"
+committee = "Trust & Safety Committee"
+chairs = ["Gnuxie, Cat"]
+members = []
+sponsor = "Jade Ellis"
+meetings = ""
+matrix_room_alias = "#shared-safety-guild-landing:matrix.org"
+email = ""
 summary = "The Matrix Safety Guild is a space to facilitate communication between safety projects and encourage collaboration."
 description = """
 The Guild provides space for contributors to discuss safety-sensitive problems that they have encountered
@@ -396,16 +403,22 @@ Should chairs become vacant, it is the responsibility of Guild members to field 
 Should the position of sponsor and both chairs become vacant or unaccountable, the Foundation's Trust & Safety Committee should organise replacements or amend the charter while respecting the membership process, autonomy, and consent of contributors.
 If this option has been exhausted, the Foundation should close the Working Group.
 """
-committee = "Trust & Safety Committee"
-chairs = ["Gnuxie, Cat"]
-members = []
-sponsor = "Jade Ellis"
-meetings = ""
-matrix_room_alias = "#shared-safety-guild-landing:matrix.org"
-email = ""
 
 [[working_groups]]
 name = "Governance"
+committee = "Governance Committee"
+members = [
+    "Greg Sutcliffe",
+    "Jade Ellis",
+    "Kim Brose",
+    "Neil Johnson",
+    "Nicolas Werner",
+]
+chairs = ["Jade Ellis", "Neil Johnson"]
+sponsor = "Jade Ellis"
+meetings = "On the second Friday of the month, 16:00-17:00 UTC. Please reach out via our Matrix room to join."
+matrix_room_alias = "#governance-wg:matrix.org"
+email = ""
 summary = "Discuss the governance of the Governing Board and the Foundation"
 description = """
 The Governance Working Group is the intended Working Group for discussing most of the tasks that are considered the main responsibility of the [Governance Committee](@/foundation/governing-board/committees.md#governance) in the open, together with the community.
@@ -436,16 +449,3 @@ Similarly, the Committee’s chair is considered the sponsor of the Working Grou
 
 The Working Group meets monthly by default. The frequency can be increased to biweekly if urgency and number of topics require it.
 """
-committee = "Governance Committee"
-members = [
-    "Greg Sutcliffe",
-    "Jade Ellis",
-    "Kim Brose",
-    "Neil Johnson",
-    "Nicolas Werner",
-]
-chairs = ["Jade Ellis", "Neil Johnson"]
-sponsor = "Jade Ellis"
-meetings = "On the second Friday of the month, 16:00-17:00 UTC. Please reach out via our Matrix room to join."
-matrix_room_alias = "#governance-wg:matrix.org"
-email = ""
