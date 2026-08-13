@@ -50,7 +50,7 @@
     // Platinum, Gold, Silver, Ecosystem, Associate always in that order, at
     // every width - the only downside is that flex rows don't backfill gaps
     // the way real masonry would, so a short tile next to a tall one can
-    // leave whitespace beside it. supporters-masonry.js progressively
+    // leave whitespace beside it. members-masonry.js progressively
     // enhances this into hand-packed columns (see .js-masonry below) once
     // it's had a chance to measure real rendered heights; anyone without JS,
     // or before it's finished, still gets this fully working layout.
@@ -84,7 +84,7 @@
         flex: 3 1 32rem;
     }
 
-    // supporters-masonry.js's progressive enhancement: it measures each
+    // members-masonry.js's progressive enhancement: it measures each
     // tile's natural height (from the flex-wrap row above) and greedily
     // places each one, in DOM order, into whichever of these columns is
     // currently shortest - the same packing algorithm libraries like
