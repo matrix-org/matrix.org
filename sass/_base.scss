@@ -37,12 +37,12 @@
     // colours are for the (thin, non-text) frame border only; the flag is a
     // solid fill with white text, which needs its own darker "-badge" pair
     // to clear AA (the plain colours are too light/desaturated for that).
-    --color-tier-platinum: #b8c4cc;
-    --color-tier-platinum-badge: #5b6b74;
-    --color-tier-gold: #c9a227;
-    --color-tier-gold-badge: #8a6d1c;
-    --color-tier-silver: #7c7f83;
-    --color-tier-silver-badge: #5c5f63;
+    --color-tier-platinum: #4596a3;
+    --color-tier-platinum-badge: #1c3c41;
+    --color-tier-gold: #d48f2f;
+    --color-tier-gold-badge: #4b300d;
+    --color-tier-silver: #969eaa;
+    --color-tier-silver-badge: #3c3f44;
 }
 
 * {
