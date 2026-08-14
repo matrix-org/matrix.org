@@ -184,15 +184,15 @@ The current chairs of the Governing Board are:
 
 ### Governing Board
 
-* Greg Sutcliffe — Chair
-* Kim Brose — Vice Chair
+* Kim Brose — Chair
+* Richard van der Hoff — Vice Chair
 
 </div>
 <div>
 
 ### Governance Committee
 
-* Bram van den Heuvel — Chair
+* Jade Ellis — Chair
 * Neil Johnson — Vice Chair
 
 </div>
@@ -201,14 +201,14 @@ The current chairs of the Governing Board are:
 ### Community Committee
 
 * Nicolas Werner — Chair
-* Vacant seat — Vice Chair
+* Max — Vice Chair
 
 </div>
 <div>
 
 ### Finance & Fundraising Committee
 
-* Gnuxie — Chair
+* Yoan Pintas — Chair
 * Amandine Le Pape — Vice Chair
 
 </div>
@@ -216,7 +216,7 @@ The current chairs of the Governing Board are:
 
 ### Trust & Safety Committee
 
-* J. B. Crawford — Chair
+* Vacant seat — Chair
 * Nicolas Werner — Vice Chair
 
 </div>
