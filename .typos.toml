@@ -30,6 +30,7 @@ extend-exclude = [
     "content/blog/2026/02/2026-02-20-twim.md", # the lib indeed is "smal" and not "small"
     "content/blog/2026/05/2026-05-29-twim.md", # choking on a YT ID
     "content/blog/2026/07/2026-07-03-twim.md", # Deutsch ist gut
+    "content/blog/2026/08/2026-08-14-twim.md", # ignore seeked
     "content/docs/older/stateres-v2.md",
 ]
 
