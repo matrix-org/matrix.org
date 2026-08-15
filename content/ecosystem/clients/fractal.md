@@ -21,11 +21,11 @@ multi_account = "supported"
 multi_language = "supported"
 oauth = "supported"
 invisible_crypto = "unknown"
-image_packs = "unknown"
+image_packs = "unsupported"
 
 [extra.features.2experimental]
-voip_matrixrtc = "unknown"
-sliding_sync = "unknown"
+voip_matrixrtc = "unsupported"
+sliding_sync = "unsupported"
 
 [extra.packages]
 flathub.app_id = "org.gnome.Fractal"
