@@ -146,7 +146,7 @@ author = "Jordan Bancino"
 maturity = "Alpha"
 language = "C"
 licence = "MIT"
-repository = "https://git.telodendria.io/Telodendria/Telodendria"
+repository = "https://github.com/Telodendria/Telodendria"
 room = "#general:synapse.telodendria.io"
 
 [[servers]]
