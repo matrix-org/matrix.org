@@ -128,7 +128,7 @@ The Datanauten Matrix Homeserver offers an easy entry into the open and interope
 b2b = true
 b2c = true
 
-[providers]
+[[providers]]
 name = "Hostsharing eG"
 image = "hostsharing-logo.svg"
 website = "https://hostsharing.net"
