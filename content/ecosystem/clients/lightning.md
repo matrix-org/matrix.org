@@ -22,12 +22,12 @@ sso = "unsupported"
 voip_jitsi = "unsupported"
 multi_account = "supported"
 multi_language = "unsupported"
-oauth = "unsupported"
-invisible_crypto = "unknown"
+oauth = "supported"
+invisible_crypto = "unsupported"
 
 [extra.features.2experimental]
 voip_matrixrtc = "unsupported"
-sliding_sync = "partial"
+sliding_sync = "supported"
 
 [extra.packages]
 windows_installer = "https://gitlab.smetonis.net/Mizerd/lightning/-/releases"
