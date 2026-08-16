@@ -30,8 +30,8 @@ voip_matrixrtc = "unsupported"
 sliding_sync = "supported"
 
 [extra.packages]
-windows_installer = "https://gitlab.smetonis.net/Mizerd/lightning/-/releases"
-other_linux_link = "https://gitlab.smetonis.net/Mizerd/lightning/-/releases"
+windows_installer = "https://github.com/Mizerd/lightning/releases"
+other_linux_link = "https://github.com/Mizerd/lightning/releases"
 +++
 
 Lightning is a native desktop Matrix client for Linux and Windows, built with Qt 6 / QML and the official Rust Matrix SDK. It supports end-to-end encrypted messaging, rooms and Spaces, threads, reactions, MSC3381 polls, inline media, notifications, themes and multi-account switching.
