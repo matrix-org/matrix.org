@@ -4,6 +4,9 @@
     <div class="project-card">
         <h3>{{ project.name }}</h3>
         <div class="subtitle">{{ project.maintainer }}</div>
+        <div class="metadata-pills">
+            <div class="pill licence">{{ project.licence }}</div>
+        </div>
         <p class="description">{{ project.description | markdown(inline=true) | safe }}</p>
         <div class="server-links">
             {% if project.repository %}
