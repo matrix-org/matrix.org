@@ -1,5 +1,5 @@
 +++
-title = "Other"
+title = "Miscellaneous"
 template = "ecosystem/other.html"
 weight = 7
 extra.summary = """
