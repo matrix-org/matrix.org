@@ -25,6 +25,12 @@
 
         @media (max-width: 767px) {
             padding: 1rem;
+            // The sticky header's real rendered height on mobile is taller
+            // than the site-wide scroll-padding-top (_base.scss) accounts
+            // for, so an anchor jump lands with the heading tucked behind
+            // it. Desktop's header is shorter and the site-wide value
+            // already covers it fine, so this stays mobile-only.
+            scroll-margin-top: 4.625rem;
         }
 
         &.coloured {

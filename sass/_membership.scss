@@ -43,6 +43,73 @@
         }
     }
 
+    .tiers-row-wrap {
+        position: relative;
+    }
+
+    .tiers-scroll-hint {
+        display: none;
+        position: absolute;
+        // Set by JS (membership.html) to the real vertical centre of the
+        // first card; this static fallback is only an approximation
+        // (roughly half the card row's own height down from its top) for
+        // when JS hasn't run yet.
+        top: var(--tiers-scroll-hint-top, calc(1.5em + 7.75rem));
+        transform: translateY(-50%);
+        z-index: 3;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.55);
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.2s ease;
+        text-decoration: none;
+
+        img {
+            width: 1rem;
+            height: 1rem;
+            // Base asset points down; point it sideways instead.
+            filter: invert(1);
+        }
+
+        // Real links to the first/last card (not JS-only), so the row is
+        // still reachable end-to-end without JS - see membership.html.
+        &--left {
+            left: 0.5rem;
+            // Sane default before JS runs / without JS: hidden, since a
+            // fresh page load starts scrolled to the left already.
+            opacity: 0;
+
+            img {
+                transform: rotate(90deg);
+            }
+        }
+
+        &--right {
+            right: 0.5rem;
+            // Sane default: visible, since there's normally more to the
+            // right to scroll to on a fresh load.
+            opacity: 1;
+
+            img {
+                transform: rotate(-90deg);
+            }
+        }
+
+        @media (max-width: 767px) {
+            display: flex;
+        }
+    }
+
+    .tiers-row-wrap.has-scroll-left .tiers-scroll-hint--left {
+        opacity: 1;
+    }
+
+    .tiers-row-wrap.no-scroll-right .tiers-scroll-hint--right {
+        opacity: 0;
+    }
+
     .tiers-row {
         display: grid;
         grid-template-columns: repeat(4, 15rem);
@@ -142,6 +209,39 @@
                     & + li {
                         margin-block-start: 0.4em;
                     }
+                }
+            }
+        }
+
+        // Sit as extra grid items below the card row (grid-auto-flow keeps
+        // the default "sparse" packing, so a col-1 item and a col-2/5 item
+        // land on a new row rather than squeezing into row 1) - inside the
+        // same scrolling grid as the cards so they track the row's own
+        // horizontal scroll on mobile instead of drifting out of alignment.
+        .tiers-row-cta {
+            display: flex;
+
+            .call-to-action {
+                width: 100%;
+                text-align: center;
+                padding: 0.5em 1em;
+                // .call-to-action's own font-size (_base.scss) is sized for
+                // full-width page CTAs and is too large for this 15rem-wide
+                // column; match the tier-card's own list-item text size
+                // (ul li, above) instead of picking a new magic number.
+                font-size: 0.9rem;
+            }
+
+            &--individual {
+                grid-column: 1;
+            }
+
+            &--orgs {
+                grid-column: 2 / 5;
+                justify-content: center;
+
+                .call-to-action {
+                    width: auto;
                 }
             }
         }

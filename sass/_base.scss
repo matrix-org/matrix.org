@@ -177,6 +177,10 @@ pre table {
 
     @media (max-width: 767px) {
         padding-inline: 2rem;
+        // The announcement banner sits directly above .page-header with no
+        // gap of its own, so on mobile (where the banner text wraps taller)
+        // the breadcrumb ends up crammed right underneath it.
+        padding-top: 1.5rem;
     }
 
     padding-bottom: calc(var(--navbar-height)/2);

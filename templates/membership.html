@@ -5,11 +5,67 @@
 <meta name="description" content="{{ page.extra.summary }}">
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
-        let mostPopular = document.getElementById("most-popular");
-        let tierList = mostPopular.parentElement;
-        let cardWidth = mostPopular.getBoundingClientRect().width;
-        let scrollto = mostPopular.offsetLeft - 16 - (tierList.clientWidth - cardWidth) / 2;
-        tierList.scrollLeft = scrollto;
+        // On mobile there's no room to centre Silver without pushing
+        // Individual off-screen to the left, so leave the row at its
+        // natural scroll position (Individual first) there instead.
+        if (window.matchMedia('(min-width: 768px)').matches) {
+            let mostPopular = document.getElementById("most-popular");
+            let tierList = mostPopular.parentElement;
+            let cardWidth = mostPopular.getBoundingClientRect().width;
+            let scrollto = mostPopular.offsetLeft - 16 - (tierList.clientWidth - cardWidth) / 2;
+            tierList.scrollLeft = scrollto;
+        }
+
+        // The sticky tier label should only appear once it's actually
+        // stuck (i.e. the corner flag it duplicates has scrolled out of
+        // view) - otherwise the two labels sit right next to each other
+        // and just look like a mistake.
+        let navbarHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height')) * 16;
+        document.querySelectorAll('.supporters-section').forEach((section) => {
+            let flag = section.querySelector('.supporters-section-flag');
+            let observer = new IntersectionObserver(([entry]) => {
+                section.classList.toggle('is-stuck', !entry.isIntersecting);
+            }, { rootMargin: `-${navbarHeight}px 0px 0px 0px`, threshold: 0 });
+            observer.observe(flag);
+        });
+
+        // Left/right scroll hints on the tiers row - CSS alone shows a
+        // sane default (right hint visible, left hidden - correct for the
+        // common "just landed, not scrolled yet" case) so the hints work
+        // and link somewhere useful even without JS; this only refines
+        // which one shows as the row actually gets scrolled, and centres
+        // them on the real card height instead of a guessed offset.
+        let tiersRow = document.querySelector('.tiers-row');
+        let wrap = tiersRow.closest('.tiers-row-wrap');
+        let firstCard = document.querySelector('.tier-card');
+        let updateScrollHints = () => {
+            let maxScroll = tiersRow.scrollWidth - tiersRow.clientWidth;
+            wrap.classList.toggle('has-scroll-left', tiersRow.scrollLeft > 4);
+            wrap.classList.toggle('no-scroll-right', tiersRow.scrollLeft >= maxScroll - 4);
+
+            let cardRect = firstCard.getBoundingClientRect();
+            let wrapRect = wrap.getBoundingClientRect();
+            let centerY = cardRect.top - wrapRect.top + cardRect.height / 2;
+            wrap.style.setProperty('--tiers-scroll-hint-top', `${centerY}px`);
+        };
+        tiersRow.addEventListener('scroll', updateScrollHints, { passive: true });
+        window.addEventListener('resize', updateScrollHints);
+        updateScrollHints();
+
+        // The href targets (#tier-individual / #tier-platinum) are plain
+        // in-page anchors so the row is still reachable without JS, but a
+        // native anchor jump scrolls the *page* to bring the target into
+        // view vertically too - not what we want here, we only want the
+        // row itself to scroll sideways. With JS available, do that scroll
+        // manually instead and skip the native jump.
+        document.querySelectorAll('.tiers-scroll-hint').forEach((hint) => {
+            hint.addEventListener('click', (e) => {
+                let target = document.querySelector(hint.getAttribute('href'));
+                if (!target) return;
+                e.preventDefault();
+                tiersRow.scrollTo({ left: target.offsetLeft - 16, behavior: 'smooth' });
+            });
+        });
     });
 </script>
 <script type="module" src={{ get_url(path="/js/members-masonry.js" , cachebust=true) }}></script>
@@ -27,8 +83,18 @@
 <div class="membership">
     <div class="membership-tiers">
         <h2>Become a member</h2>
+        <div class="tiers-row-wrap">
+        <!-- Real anchors (not JS-only) so the row is still scrollable to
+             either end without JS - the scroll-tracking below only
+             refines *which one shows*, it isn't required for them to work. -->
+        <a href="#tier-individual" class="tiers-scroll-hint tiers-scroll-hint--left" aria-label="Scroll to the individual tier">
+            <img src="/assets/down-arrow.svg" alt="">
+        </a>
+        <a href="#tier-platinum" class="tiers-scroll-hint tiers-scroll-hint--right" aria-label="Scroll to the organisation tiers">
+            <img src="/assets/down-arrow.svg" alt="">
+        </a>
         <div class="tiers-row">
-            <div class="tier-card">
+            <div class="tier-card" id="tier-individual">
                 <p class="tier-card-eyebrow">For individuals</p>
                 <h3>Individual</h3>
                 <div class="pricing">$60 / year</div>
@@ -62,7 +128,7 @@
                     <li>A success story on the blog each year</li>
                 </ul>
             </div>
-            <div class="tier-card tier-card--platinum">
+            <div class="tier-card tier-card--platinum" id="tier-platinum">
                 <p class="tier-card-eyebrow">For organisations</p>
                 <h3>Platinum</h3>
                 <div class="pricing">$500k / year</div>
@@ -76,11 +142,13 @@
                         Live</a> episode each year</li>
                 </ul>
             </div>
+            <div class="tiers-row-cta tiers-row-cta--individual">
+                <a href="https://donorbox.org/membership-303" class="call-to-action secondary">Individuals membership</a>
+            </div>
+            <div class="tiers-row-cta tiers-row-cta--orgs">
+                <a href="https://cryptpad.fr/form/#/2/form/view/j1+wOJVZWyrDKvGP-G1r-zEOI3a52j5Y22brxhrdcmM/" class="call-to-action">Organisations membership</a>
+            </div>
         </div>
-        <div class="cta-row">
-            <a href="https://donorbox.org/membership-303" class="call-to-action secondary">Individuals membership</a>
-            <a href="https://cryptpad.fr/form/#/2/form/view/j1+wOJVZWyrDKvGP-G1r-zEOI3a52j5Y22brxhrdcmM/"
-                class="call-to-action">Organisations membership</a>
         </div>
     </div>
 </div>
@@ -90,6 +158,7 @@
         <div class="supporters-tier-flow">
             <div class="supporters-section supporters-section--platinum supporters-section--sm" id="platinum-supporters">
                 <span class="supporters-section-flag">Platinum</span>
+                <span class="supporters-section-sticky-label">Platinum</span>
                 <div class="cards">
                     {% for supporter in supporters.platinum %}
                     <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
@@ -101,6 +170,7 @@
             </div>
             <div class="supporters-section supporters-section--gold supporters-section--sm" id="gold-supporters">
                 <span class="supporters-section-flag">Gold</span>
+                <span class="supporters-section-sticky-label">Gold</span>
                 <div class="cards">
                     {% for supporter in supporters.gold %}
                     <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
@@ -112,6 +182,7 @@
             </div>
             <div class="supporters-section supporters-section--silver supporters-section--lg" id="silver-supporters">
                 <span class="supporters-section-flag">Silver</span>
+                <span class="supporters-section-sticky-label">Silver</span>
                 <div class="cards">
                     {% for supporter in supporters.silver %}
                     <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
@@ -123,6 +194,7 @@
             </div>
             <div class="supporters-section supporters-section--neutral supporters-section--lg" id="ecosystem-supporters">
                 <span class="supporters-section-flag">Ecosystem</span>
+                <span class="supporters-section-sticky-label">Ecosystem</span>
                 <div class="cards">
                     {% for supporter in supporters.ecosystem %}
                     <a href="{{ supporter.website }}" target="_blank" class="supporters-card">
@@ -134,6 +206,7 @@
             </div>
             <div class="supporters-section supporters-section--neutral supporters-section--md" id="associate-supporters">
                 <span class="supporters-section-flag">Associate</span>
+                <span class="supporters-section-sticky-label">Associate</span>
                 <div class="cards">
                     {% for supporter in supporters.associate %}
                     <a href="{{ supporter.website }}" class="supporters-card">

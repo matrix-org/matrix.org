@@ -6,15 +6,11 @@
     --supporters-logo-size: 145px;
 }
 
-// Membership contracts specify Platinum logos must render larger than
-// Gold, which must render larger than Silver - a graduated step, not just
-// a flat "top 3 tiers are bigger" split.
-#platinum-supporters .supporters-card {
-    --supporters-logo-size: 190px;
-}
-
+// Platinum and Gold render at the same, larger size; only Silver (and
+// below) stay at the base size.
+#platinum-supporters .supporters-card,
 #gold-supporters .supporters-card {
-    --supporters-logo-size: 165px;
+    --supporters-logo-size: 190px;
 }
 
 #supporters {
@@ -155,6 +151,37 @@
         &--neutral {
             --tier-color: var(--color-border);
             --tier-badge-color: var(--color-text-muted);
+        }
+
+        // Separate from .supporters-section-flag (the decorative corner
+        // flourish, which scrolls away with the section) - this stays
+        // pinned near the top of the viewport while a tall section scrolls
+        // past, so it's still clear which tier's logos are on screen.
+        .supporters-section-sticky-label {
+            align-self: flex-start;
+            position: sticky;
+            top: calc(var(--navbar-height) + 0.5rem);
+            z-index: 2;
+            margin-bottom: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 9999px;
+            background-color: var(--tier-badge-color);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+
+            // Hidden until JS (membership.html) marks the section as
+            // .is-stuck, i.e. the corner flag has scrolled out of view -
+            // otherwise this sits right next to that flag and just reads
+            // as a duplicate label.
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.15s ease;
+        }
+
+        &.is-stuck .supporters-section-sticky-label {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         .cards {
