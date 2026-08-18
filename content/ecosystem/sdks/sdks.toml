@@ -663,3 +663,15 @@ purpose = ["bot"]
 description = """
 An easy to use Matrix library inspired by discord.py.
 """
+
+[[sdks]]
+name = "matrix.py"
+maintainer = "Code Society Lab, Simon Roy (PenguinBoi12)"
+maturity = "Beta"
+language = "Python"
+licence = "MIT"
+repository = "https://github.com/Code-Society-Lab/matrixpy"
+purpose = ["bot"]
+description = """
+A simple, developer-friendly library to create powerful Matrix bots.
+"""
