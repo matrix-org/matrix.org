@@ -7,7 +7,7 @@ maintainer = "Rokas Smetonis"
 licence = "GPL-3.0-or-later"
 language = "C++"
 maturity = "Alpha"
-repo = "https://gitlab.smetonis.net/Mizerd/lightning"
+repo = "https://github.com/Mizerd/lightning"
 matrix_room = "#lightning:matrix.smetonis.net"
 featured = false
 screenshots = ["lightning-main-chat.avif", "lightning-media-gallery.avif", "lightning-thread-view.avif"]
@@ -22,16 +22,16 @@ sso = "unsupported"
 voip_jitsi = "unsupported"
 multi_account = "supported"
 multi_language = "unsupported"
-oauth = "unsupported"
-invisible_crypto = "unknown"
+oauth = "supported"
+invisible_crypto = "unsupported"
 
 [extra.features.2experimental]
 voip_matrixrtc = "unsupported"
-sliding_sync = "partial"
+sliding_sync = "supported"
 
 [extra.packages]
-windows_installer = "https://gitlab.smetonis.net/Mizerd/lightning/-/releases"
-other_linux_link = "https://gitlab.smetonis.net/Mizerd/lightning/-/releases"
+windows_installer = "https://github.com/Mizerd/lightning/releases"
+other_linux_link = "https://github.com/Mizerd/lightning/releases"
 +++
 
 Lightning is a native desktop Matrix client for Linux and Windows, built with Qt 6 / QML and the official Rust Matrix SDK. It supports end-to-end encrypted messaging, rooms and Spaces, threads, reactions, MSC3381 polls, inline media, notifications, themes and multi-account switching.
