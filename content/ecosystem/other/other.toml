@@ -1,9 +1,0 @@
-[[project]]
-name = "Third room"
-description = """
-Open, decentralised, immersive worlds built on Matrix.
-"""
-maintainer = "Element Creations Ltd."
-licence = "Apache-2.0"
-repository = "https://github.com/matrix-org/thirdroom"
-room = "#thirdroom-dev:matrix.org"
