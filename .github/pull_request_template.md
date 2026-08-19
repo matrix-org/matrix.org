@@ -10,7 +10,7 @@
 
 ### Role
 
-<!-- Are you contributing as an individual or on behalf of an organisation? Are you affiliated with any project relevant to this PR? -->
+<!-- Are you affiliated with any project relevant to this PR? Are you contributing as an individual or on behalf of an organisation? -->
 
 ### Timeline
 
