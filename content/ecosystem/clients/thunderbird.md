@@ -21,7 +21,7 @@ sso = "supported"
 voip_jitsi = "unsupported"
 multi_account = "supported"
 multi_language = "supported"
-oauth = "unknown"
+oauth = "unsupported"
 invisible_crypto = "unknown"
 image_packs = "unknown"
 
