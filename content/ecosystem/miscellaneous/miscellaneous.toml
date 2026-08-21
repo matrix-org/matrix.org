@@ -3,6 +3,7 @@ name = "Third room"
 description = """
 Open, decentralised, immersive worlds built on Matrix.
 """
+maturity = "Obsolete"
 maintainer = "Element Creations Ltd."
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/thirdroom"
