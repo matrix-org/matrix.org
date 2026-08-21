@@ -1,0 +1,30 @@
+{% set miscellaneous_projects_data = load_data(path="content/ecosystem/miscellaneous/miscellaneous.toml") %}
+<div class="projects-card-deck">
+    {% for project in miscellaneous_projects_data.project %}
+    <div class="project-card">
+      	<div class="title-row">
+        	<h3>{{ project.name }}</h3>
+        	<div class="maturity {{ project.maturity | lower }}">{{ project.maturity }}</div>
+      	</div>
+        <div class="subtitle">{{ project.maintainer }}</div>
+        <div class="metadata-pills">
+            <div class="pill licence">{{ project.licence }}</div>
+        </div>
+        <p class="description">{{ project.description | markdown(inline=true) | safe }}</p>
+        <div class="server-links">
+            {% if project.repository %}
+            <a href="{{ project.repository }}">
+                {{ load_data(path="/assets/projects/repo.svg") | safe }}
+                Repository
+            </a>
+            {% endif %}
+            {% if project.room %}
+            <a href="https://matrix.to/#/{{ project.room }}">
+                {{ load_data(path="/assets/projects/matrix.svg") | safe }}
+                Matrix Room
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
