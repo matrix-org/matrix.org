@@ -2,7 +2,10 @@
 <div class="projects-card-deck">
     {% for project in miscellaneous_projects_data.project %}
     <div class="project-card">
-        <h3>{{ project.name }}</h3>
+      	<div class="title-row">
+        	<h3>{{ project.name }}</h3>
+        	<div class="maturity {{ project.maturity | lower }}">{{ project.maturity }}</div>
+      	</div>
         <div class="subtitle">{{ project.maintainer }}</div>
         <div class="metadata-pills">
             <div class="pill licence">{{ project.licence }}</div>
