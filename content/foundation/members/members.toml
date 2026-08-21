@@ -22,6 +22,7 @@ logo = "connect2x.png"
 name = "DINUM"
 website = "https://www.numerique.gouv.fr/"
 logo = "dinum.svg"
+white_bg = true
 
 [[silver]]
 name = "Discourse"
@@ -112,6 +113,7 @@ logo = "cinny.svg"
 name = "Community Moderation Effort"
 website = ""
 logo = "community-moderation-effort.png"
+white_bg = true
 
 [[ecosystem]]
 name = "Conduit"
@@ -127,6 +129,7 @@ logo = "continuwuity.svg"
 name = "Draupnir"
 website = "https://github.com/the-draupnir-project/Draupnir"
 logo = "draupnir.png"
+white_bg = true
 
 [[ecosystem]]
 name = "Elm SDK"
@@ -137,6 +140,7 @@ logo = "elm-sdk.svg"
 name = "FluffyChat"
 website = "https://fluffychat.im/"
 logo = "fluffychat.svg"
+white_bg = true
 
 [[ecosystem]]
 name = "Fractal"
@@ -167,6 +171,7 @@ logo = "polychat.svg"
 name = "Rory&::LibMatrix"
 website = "https://cgit.rory.gay/matrix"
 logo = "rory-libmatrix.png"
+white_bg = true
 
 [[ecosystem]]
 name = "Thunderbird"
