@@ -21,13 +21,13 @@ threads = "supported"
 voip_jitsi = "unsupported"
 multi_account = "supported"
 multi_language = "unsupported"
-oauth = "unsupported"
+oauth = "supported"
 invisible_crypto = "unknown"
-image_packs = "unknown"
+image_packs = "supported"
 
 [extra.features.2experimental]
-voip_matrixrtc = "unknown"
-sliding_sync = "unknown"
+voip_matrixrtc = "supported"
+sliding_sync = "supported"
 
 [extra.packages]
 webapp = "https://app.sable.moe/"
