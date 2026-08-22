@@ -1,19 +1,23 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
     let selector = document.getElementById("sdk-purpose-selector");
-    for (const panelOption of selector.children) {
-        panelOption.addEventListener("change", (event) => {
-            let allPanels = document.getElementsByClassName("panel");
-            for (const panel of allPanels) {
-                panel.classList.add("hidden");
-            }
-            let panel = document.getElementById(panelOption.id + "-panel");
-            panel.classList.remove("hidden");
-        });
+    let buttons = selector.querySelectorAll(".sdk-purpose-card");
+
+    function selectPurpose(button) {
+        for (const other of buttons) {
+            other.setAttribute("aria-pressed", other === button ? "true" : "false");
+        }
+
+        let allPanels = document.getElementsByClassName("panel");
+        for (const panel of allPanels) {
+            panel.classList.add("hidden");
+        }
+        let panel = document.getElementById(button.id + "-panel");
+        panel.classList.remove("hidden");
     }
 
-    let allPanels = document.getElementsByClassName("panel");
-    for (const panel of allPanels) {
-        panel.classList.add("hidden");
+    for (const button of buttons) {
+        button.addEventListener("click", () => selectPurpose(button));
     }
-    allPanels[0].classList.remove("hidden");
+
+    selectPurpose(buttons[0]);
 });

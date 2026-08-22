@@ -1,0 +1,13 @@
+{# Reusable hover/focus tooltip. Wraps `label` in `trigger_class` and shows
+   `text` in a floating bubble above it on hover/focus. Pair with the
+   `.hover-tooltip` / `.tooltip-content` styles in sass/_tooltip.scss.
+   `id`, if given, must be unique on the page - it sets a CSS anchor name so
+   browsers with CSS Anchor Positioning support can place the bubble
+   natively (see the @supports block in _tooltip.scss). Also used by the JS
+   fallback (tooltip-position.js) as a target for its own positioning. #}
+{% macro hover(label, text, trigger_class="", id="") %}
+<span class="hover-tooltip" tabindex="0"{% if id %} style="--tooltip-anchor-name: --tooltip-anchor-{{ id | slugify }}; anchor-name: var(--tooltip-anchor-name);"{% endif %}>
+    <span class="{{ trigger_class }}">{{ label }}</span>
+    <span class="tooltip-content" role="tooltip">{{ text }}</span>
+</span>
+{% endmacro %}

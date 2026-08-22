@@ -12,8 +12,8 @@
 {% set languages = languages | unique | sort %}
 {% set partial_path = "partials/sdks/" ~ type ~ ".md" %}
 <div id="purpose-{{ type }}-panel" class="panel">
-    <p>
-        {{ load_data(path=partial_path) | markdown | safe }}
+    <p class="sdks-panel-intro">
+        {{ load_data(path=partial_path) | markdown(inline=true) | safe }}
     </p>
 
     <div id="{{ type }}-sdks-filters" class="filters">
@@ -27,18 +27,22 @@
                 <p>The SDK can support any of the maturity levels checked.</p>
                 <div class="filter-option">
                     <input id="maturity-stable" type="checkbox" checked>
+                    <span class="filter-swatch maturity stable"></span>
                     <label for="maturity-stable">Stable</label>
                 </div>
                 <div class="filter-option">
                     <input id="maturity-beta" type="checkbox" checked>
+                    <span class="filter-swatch maturity beta"></span>
                     <label for="maturity-beta">Beta</label>
                 </div>
                 <div class="filter-option">
                     <input id="maturity-alpha" type="checkbox" checked>
+                    <span class="filter-swatch maturity alpha"></span>
                     <label for="maturity-alpha">Alpha</label>
                 </div>
                 <div class="filter-option">
                     <input id="maturity-obsolete" type="checkbox">
+                    <span class="filter-swatch maturity obsolete"></span>
                     <label for="maturity-obsolete">Obsolete</label>
                 </div>
                 <div class="reset-links">Select <button>all</button> - <button>none</button></div>
@@ -74,6 +78,7 @@
                     {% set language_slug = lang_helper::normalize_language(lang=language) %}
                     <div class="filter-option">
                         <input id="language-{{ language_slug }}" type="checkbox" checked>
+                        <span class="filter-swatch pill--lang-{{ language_slug }}"></span>
                         <label for="language-{{ language_slug }}">{{ language }}</label>
                     </div>
                 {% endfor %}
@@ -94,13 +99,13 @@
                     <h3>{{ sdk.name }}</h3>
                     <div class="maturity {{ sdk.maturity | lower }}">{{ sdk.maturity }}</div>
                 </div>
-                {% if sdk.maintainer %}<div class="subtitle">{{ sdk.maintainer }}</div>{% endif %}
-                <div class="metadata-pills">
+                <div class="author">{{ sdk.maintainer }}</div>
+                <div class="pill-row">
                     <div class="pill licence">{{ sdk.licence }}</div>
-                    <div class="pill">{{ sdk.language }}</div>
+                    <div class="pill pill--lang pill--lang-{{ lang_helper::normalize_language(lang=sdk.language) }}">{{ sdk.language }}</div>
                 </div>
-                {% if sdk.description %}<p class="description">{{ sdk.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>{% endif %}
-                <div class="card-links server-links">
+                {% if sdk.description %}<p>{{ sdk.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>{% endif %}
+                <div class="server-links">
                     {% if sdk.repository %}
                     <a href="{{ sdk.repository }}">
                         {{ load_data(path="/assets/projects/repo.svg") | safe }}
