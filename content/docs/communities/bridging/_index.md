@@ -8,7 +8,7 @@ tile = "I want to bridge my community from another platform with Matrix"
 updated = "2022-11-18T09:50:00Z"
 +++
 
-The easiest way to bridge your Matrix community with you Discord one is to rely
+The easiest way to bridge your Matrix community with your Discord one is to rely
 on the free Discord bridge [provided by t2bot.io](https://t2bot.io/discord/).
 
 It contains all the instructions about how to bridge your Discord channels with
