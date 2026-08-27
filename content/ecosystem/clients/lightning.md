@@ -37,4 +37,4 @@ macos_installer = "https://www.lightning-matrix.org/#download"
 other_linux_link = "https://www.lightning-matrix.org/#download"
 +++
 
-Lightning is a native desktop Matrix client for Linux, Windows and macOS, built with Qt 6 / QML and the official Rust Matrix SDK. It supports end-to-end encrypted messaging, rooms and Spaces, threads, MatrixRTC group calls with camera and screen sharing, reactions, MSC3381 polls, inline media, notifications, themes and multi-account switching.
+A real desktop app, not a website in a window — Qt 6, the Rust Matrix SDK, and calls that reach Element.
