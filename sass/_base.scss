@@ -18,6 +18,9 @@
     --borders-color: #ddd;
 
     --notice-box-color: #ffcb006b;
+
+    // Used by the shared breadcrumb component (_breadcrumb.scss).
+    --color-text-muted: #555;
 }
 
 * {
@@ -152,6 +155,13 @@ pre table {
 
     @media (max-width: 767px) {
         padding-inline: 2rem;
+        // justify-content: center vertically centers the breadcrumb+hero as
+        // one block against a fixed min-height - on pages with a long
+        // title/summary that wraps to more lines (e.g. sdks), the block
+        // grows and eats into that centering slack, pushing the breadcrumb
+        // flush against the top edge. Guarantee a minimum gap regardless of
+        // how tall the hero text gets.
+        padding-top: 2rem;
     }
 
     padding-bottom: calc(var(--navbar-height)/2);
@@ -291,13 +301,39 @@ a>code {
 }
 
 .call-to-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
     background-color: #000;
     border: 2px solid #000;
     color: #fff;
     font-size: 1.125rem;
     font-weight: 600;
     border-radius: 1000px;
-    padding: .6em 2em;
+    padding: 0.6em 2em;
+
+    svg {
+        width: 1.1em;
+        height: 1.1em;
+        flex-shrink: 0;
+
+        .fillme {
+            fill: currentcolor;
+            stroke: currentcolor;
+        }
+
+        .fillme-inverse {
+            stroke: #000;
+        }
+    }
+
+    &.secondary svg .fillme-inverse {
+        stroke: #fff;
+    }
+
+    &.secondary:hover svg .fillme-inverse {
+        stroke: #000;
+    }
 
     &.inverted {
         border: 2px solid #fff;
@@ -310,7 +346,7 @@ a>code {
 
             &:hover {
                 background-color: #fff;
-                color: #000
+                color: #000;
             }
         }
     }
