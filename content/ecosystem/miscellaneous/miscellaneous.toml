@@ -15,6 +15,7 @@ A standalone collaborative whiteboard based on Matrix.
 maintainer = "Nordeck IT + Consulting GmbH"
 licence = "AGPL-3.0-or-later"
 repository = "https://github.com/nordeck/matrix-neoboard-standalone"
+website = "https://neoboard.io/"
 room = "#nordeck:nordeck.io"
 
 [[project]]
