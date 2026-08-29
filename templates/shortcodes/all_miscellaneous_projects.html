@@ -14,6 +14,12 @@
         </div>
         <p class="description">{{ project.description | markdown(inline=true) | safe }}</p>
         <div class="server-links">
+            {% if project.website %}
+            <a href="{{ project.website }}">
+                {{ load_data(path="/assets/home.svg") | safe }}
+                Homepage
+            </a>
+            {% endif %}
             {% if project.repository %}
             <a href="{{ project.repository }}">
                 {{ load_data(path="/assets/projects/repo.svg") | safe }}
