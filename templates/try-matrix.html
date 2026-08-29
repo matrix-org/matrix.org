@@ -1,10 +1,26 @@
 {% extends "page.html" %}
 {% import "macros/clients.html" as clients %}
+
 {% block head_extra %}
+{% set providers_data = load_data(path="content/ecosystem/hosting/providers.toml") %}
+{% set b2c_providers = providers_data.providers | filter(attribute="b2c", value=true) %}
 <style>
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 1rem); }
+
+/**
+ * todo: replace with sibling-index when broadly supported
+ * https://caniuse.com/?search=sibling-index
+ */
+{% for provider in b2c_providers %}
+    .provider-compact:nth-child({{ loop.index }}) {
+        --i: {{ loop.index0 }};
+    }
+{% endfor %}
+
+
 </style>
 {% endblock head_extra %}
+
 {% block content %}
 {% set clients_section = get_section(path="ecosystem/clients/_index.md") %}
 {% set featured_clients = clients_section.pages | filter(attribute="extra.featured", value=true) | sort(attribute="extra.featured_order") %}
