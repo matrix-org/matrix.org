@@ -12,7 +12,7 @@ template = "governing-board/working_group.html"
 - [The Matrix Conference](https://conference.matrix.org/) since 2025
 - Matrix.org booth kit
 - Support community events with merch and stickers - contact us!
-- Manage [`Meetups & Conferences`](https://matrix.to/#/#mx-meetups-conferences:t2l.io) Matrix Space
+- Manage [`Meetups & Conferences`](https://matrix.to/#/%23mx-meetups-conferences:t2l.io) Matrix Space
 - Maintain and contribute to software helping us run our events
   - [Helfertool](https://github.com/matrix-org/helfertool/commits/matrix-build/) - [volunteer.matrix.org](https://volunteer.matrix.org)
   - [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy)

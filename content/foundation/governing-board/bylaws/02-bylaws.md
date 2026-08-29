@@ -131,7 +131,7 @@ several Committees.
 Working Groups must have a dedicated public Matrix room (which will
 be listed on
 [the Working Groups webpage](@/foundation/working-groups/index.md)
-and the [Working Groups Matrix space](https://matrix.to/#/#matrix-wgs:matrix.org))
+and the [Working Groups Matrix space](https://matrix.to/#/%23matrix-wgs:matrix.org))
 and have access to a Discourse category for communication with the Board,
 documentation, and voting. In order to ensure transparency and
 accountability, Working Groups should take notes in meetings and

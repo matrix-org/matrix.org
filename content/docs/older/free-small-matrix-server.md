@@ -187,9 +187,9 @@ be offered anymore.
 
 - [#free-matrix-server:matrix.org](https://gitlab.com/ptman/matrix-docs/-/tree/master/free-matrix-server)
   to discuss this guide specifically
-- [#matrix-docker-ansible-deploy:devture.com](https://matrix.to/#/#matrix-docker-ansible-deploy:devture.com)
+- [#matrix-docker-ansible-deploy:devture.com](https://matrix.to/#/%23matrix-docker-ansible-deploy:devture.com)
   to discuss the playbook used in this guide
-- [#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org) to discuss
+- [#synapse:matrix.org](https://matrix.to/#/%23synapse:matrix.org) to discuss
   running synapse in general
 - Email author at <mailto:paul.totterman@gmail.com>.
 

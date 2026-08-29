@@ -490,7 +490,7 @@ represents the final resolved state.
 Now that you have completed all of the above steps, you have successfully
 implemented State Resolution v2! If you have any questions, please feel free to
 join us in the [Homeserver
-Developers](https://matrix.to/#/#homeservers-dev:matrix.org) channel.
+Developers](https://matrix.to/#/%23homeservers-dev:matrix.org) channel.
 
 Further reading:
 

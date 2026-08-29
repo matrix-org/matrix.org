@@ -8,7 +8,7 @@ The list of candidates and their information.
 weight = 2
 +++
 
-Announcements are posted on our blog, our social channels, as well as in the [Office of The Matrix.org Foundation](https://matrix.to/#/#foundation-office:matrix.org) room, the [Office of the Governing Board](https://matrix.to/#/#governing-board-office:matrix.org) room, and the [Matrix News](https://matrix.to/#/#matrix-news:matrix.org) room.
+Announcements are posted on our blog, our social channels, as well as in the [Office of The Matrix.org Foundation](https://matrix.to/#/%23foundation-office:matrix.org) room, the [Office of the Governing Board](https://matrix.to/#/%23governing-board-office:matrix.org) room, and the [Matrix News](https://matrix.to/#/%23matrix-news:matrix.org) room.
 
 We encourage you to read our [membership page](@/foundation/members/index.md) and announcements:
 
@@ -108,7 +108,7 @@ For reference, you can find previous years' nominations in our [election centre]
 You can familiarise yourself with the Terms of Reference, Bylaws, expectations
 and other processes on [the Governing Board page of the website](@/foundation/governing-board/index.md#bylaws-processes-and-norms).
 Many current members of the Governing Board are also available for questions via the
-[Office of the Governing Board](https://matrix.to/#/#governing-board-office:matrix.org)
+[Office of the Governing Board](https://matrix.to/#/%23governing-board-office:matrix.org)
 Matrix room.
 
 The Governing Board exists to support the project.
@@ -133,17 +133,17 @@ We now have a [final list of nominees](@/foundation/governing-board-elections/20
 
 The campaign period is an opportunity for candidates to share more about themselves and their priorities. We encourage candidates to engage with the rest of the ecosystem, and in particular those who are part of the same constituency group.
 
-We have [a dedicated Matrix space](https://matrix.to/#/#governing-board-nominee-campaigning-bonfire:matrix.org) with rooms for candidates and constituents to communicate with one another:
+We have [a dedicated Matrix space](https://matrix.to/#/%23governing-board-nominee-campaigning-bonfire:matrix.org) with rooms for candidates and constituents to communicate with one another:
 
-* [All nominees](https://matrix.to/#/#gbncb-all:matrix.org)
-* [Guardians nominees](https://matrix.to/#/#gbnc-guardians:matrix.org)
-* [Spec Core Team nominees](https://matrix.to/#/#gbnc-speccoreteam:matrix.org)
-* [Platinum Member nominees](https://matrix.to/#/#gbnc-platinum:matrix.org)
-* [Ecosystem Member nominees](https://matrix.to/#/#gbnc-ecosystem:matrix.org)
-* [Silver Member nominees](https://matrix.to/#/#gbnc-silver:matrix.org)
-* [Individual Member nominees](https://matrix.to/#/#gbnc-individual:matrix.org)
-* [Associate Member nominees](https://matrix.to/#/#gbnc-associate:matrix.org)
-* [Gold Member nominees](https://matrix.to/#/#gbnc-gold:matrix.org)
+* [All nominees](https://matrix.to/#/%23gbncb-all:matrix.org)
+* [Guardians nominees](https://matrix.to/#/%23gbnc-guardians:matrix.org)
+* [Spec Core Team nominees](https://matrix.to/#/%23gbnc-speccoreteam:matrix.org)
+* [Platinum Member nominees](https://matrix.to/#/%23gbnc-platinum:matrix.org)
+* [Ecosystem Member nominees](https://matrix.to/#/%23gbnc-ecosystem:matrix.org)
+* [Silver Member nominees](https://matrix.to/#/%23gbnc-silver:matrix.org)
+* [Individual Member nominees](https://matrix.to/#/%23gbnc-individual:matrix.org)
+* [Associate Member nominees](https://matrix.to/#/%23gbnc-associate:matrix.org)
+* [Gold Member nominees](https://matrix.to/#/%23gbnc-gold:matrix.org)
 
 ### Voting (30th May)
 

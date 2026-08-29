@@ -195,7 +195,7 @@ video calling via WebRTC in one-to-one rooms and via Jitsi elsewhere.
 
 #### How can I get involved?
 
-There are plenty of ways to get involved. First, create a user account and come say hi on [#matrix:matrix.org](https://matrix.to/#/#matrix:matrix.org)!
+There are plenty of ways to get involved. First, create a user account and come say hi on [#matrix:matrix.org](https://matrix.to/#/%23matrix:matrix.org)!
 
 Then...
 
@@ -213,13 +213,13 @@ for full details on how to contribute to the project. All are welcome!
 
 #### Where can I get support?
 
-The point of entry for everything matrix is [#matrix:matrix.org](https://matrix.to/#/#matrix:matrix.org) aka #matrix on irc.libera.chat.
+The point of entry for everything matrix is [#matrix:matrix.org](https://matrix.to/#/%23matrix:matrix.org) aka #matrix on irc.libera.chat.
 
 If you're a developer and are looking to get involved with building something on
-Matrix, try [#matrix-dev:matrix.org](https://matrix.to/#/#matrix-dev:matrix.org).
+Matrix, try [#matrix-dev:matrix.org](https://matrix.to/#/%23matrix-dev:matrix.org).
 
 If you host a Synapse homeserver, you can get support in the
-[#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org) room.
+[#synapse:matrix.org](https://matrix.to/#/%23synapse:matrix.org) room.
 
 #### How do I create a link to a Matrix room or user?
 
@@ -618,7 +618,7 @@ documentation as it is currently written](https://spec.matrix.org), then review
 start by writing a publicly-accessible proposal describing your change.
 
 To see the proposals currently under discussion, join us in
-[#matrix-spec:matrix.org](https://matrix.to/#/#matrix-spec:matrix.org).
+[#matrix-spec:matrix.org](https://matrix.to/#/%23matrix-spec:matrix.org).
 
 #### What is the process for adding Spec proposals?
 

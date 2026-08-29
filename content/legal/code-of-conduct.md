@@ -5,7 +5,7 @@ version = "2.0.0"
 
 This code of conduct outlines our expectations for participants within the Matrix community, as well as steps for reporting unacceptable behaviour. We are committed to providing a welcoming and inspiring community for all, and expect our code of conduct to be honoured. Anyone who violates this code of conduct may be banned from the community.
 
-This applies to conversation in the any room in the Matrix Space ([#team:matrix.org](https://matrix.to/#/#team:matrix.org)) and commits and comments relating to any project in the [matrix-org](https://github.com/matrix-org) Github space.
+This applies to conversation in the any room in the Matrix Space ([#team:matrix.org](https://matrix.to/#/%23team:matrix.org)) and commits and comments relating to any project in the [matrix-org](https://github.com/matrix-org) Github space.
  
 Our open source community strives to:
 

@@ -69,7 +69,7 @@ description = """
 
 etke.cc is the only fully FOSS-based Matrix Hosting service. It's operated by a [team](https://etke.cc/about/) of active members of the self-hosting community. Based on [matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy), but hassle-free (SaaS) and contains improvements, extra addons and [support](https://etke.cc/services/support/). Get hosted on rented servers or use your own infra (on any provider) in a non-vendor-lock-in way.
 
-[Matrix Space](https://matrix.to/#/#service:etke.cc) | [Announcements on Matrix](https://matrix.to/#/#news:etke.cc)
+[Matrix Space](https://matrix.to/#/%23service:etke.cc) | [Announcements on Matrix](https://matrix.to/#/%23news:etke.cc)
 """
 b2b = true
 b2c = true

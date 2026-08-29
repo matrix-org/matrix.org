@@ -224,7 +224,7 @@ The current chairs of the Governing Board are:
 
 ## Where can I reach the Governing Board?
 
-The Governing Board has a dedicated room on Matrix, [#governing-board-office:matrix.org](https://matrix.to/#/#governing-board-office:matrix.org), where you can reach out to them.
+The Governing Board has a dedicated room on Matrix, [#governing-board-office:matrix.org](https://matrix.to/#/%23governing-board-office:matrix.org), where you can reach out to them.
 
 ## Publications and News
 

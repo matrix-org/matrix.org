@@ -8,7 +8,7 @@ The list of candidates and their information.
 weight = 2
 +++
 
-Announcements are posted on our blog, our social channels, as well as in the [Office of The Matrix.org Foundation](https://matrix.to/#/#foundation-office:matrix.org) room, the [Office of the Governing Board](https://matrix.to/#/#governing-board-office:matrix.org) room, and the [Matrix News](https://matrix.to/#/#matrix-news:matrix.org) room.
+Announcements are posted on our blog, our social channels, as well as in the [Office of The Matrix.org Foundation](https://matrix.to/#/%23foundation-office:matrix.org) room, the [Office of the Governing Board](https://matrix.to/#/%23governing-board-office:matrix.org) room, and the [Matrix News](https://matrix.to/#/%23matrix-news:matrix.org) room.
 
 We encourage you to read our [membership page](/membership/) and announcements:
 
@@ -67,13 +67,13 @@ For reference, you can find last year's nominations on our [2024 election centre
 
 The campaign period is an opportunity for candidates to share more about themselves and their priorities. We encourage candidates to engage with the rest of the ecosystem, and in particular those who are part of the same constituency group.
 
-Thanks to a proactive member of the community, we have [a dedicated Matrix space](https://matrix.to/#/#governing-board-nominee-campaigning-bonfire:matrix.org) with rooms for candidates and constituents to communicate with one another:
+Thanks to a proactive member of the community, we have [a dedicated Matrix space](https://matrix.to/#/%23governing-board-nominee-campaigning-bonfire:matrix.org) with rooms for candidates and constituents to communicate with one another:
 
-* [All nominees](https://matrix.to/#/#gbncb-all:matrix.org)
-* [Gold Member nominees](https://matrix.to/#/#gbnc-gold:matrix.org)
-* [Silver Member nominees](https://matrix.to/#/#gbnc-silver:matrix.org)
-* [Associate Member nominees](https://matrix.to/#/#gbnc-associate:matrix.org)
-* [Individual Member nominees](https://matrix.to/#/#gbnc-individual:matrix.org)
+* [All nominees](https://matrix.to/#/%23gbncb-all:matrix.org)
+* [Gold Member nominees](https://matrix.to/#/%23gbnc-gold:matrix.org)
+* [Silver Member nominees](https://matrix.to/#/%23gbnc-silver:matrix.org)
+* [Associate Member nominees](https://matrix.to/#/%23gbnc-associate:matrix.org)
+* [Individual Member nominees](https://matrix.to/#/%23gbnc-individual:matrix.org)
 
 ### Voting (May 31)
 

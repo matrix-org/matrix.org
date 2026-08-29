@@ -6,7 +6,7 @@ This Week in Matrix (TWIM) is a weekly digest on the blog in which
 anyone can post small concise updates about their Matrix projects, events
 and happenings.
 Those updates are collected through the Matrix room
-[#thisweekin:matrix.org](https://matrix.to/#/#thisweekin:matrix.org)
+[#thisweekin:matrix.org](https://matrix.to/#/%23thisweekin:matrix.org)
 and published every Friday on the [matrix.org blog](/category/this-week-in-matrix/).
 It aims to allow the community to show off their work in the Matrix ecosystem.
 
@@ -22,7 +22,7 @@ can decline entries related to dangerous or unethical software.
 ## Publishing
 
 For publishing to TWIM all you need is a Matrix account and [participate](/docs/chat_basics/public-rooms/#joining-a-specific-room)
-in the [#thisweekin:matrix.org](https://matrix.to/#/#thisweekin:matrix.org) Matrix room.
+in the [#thisweekin:matrix.org](https://matrix.to/#/%23thisweekin:matrix.org) Matrix room.
 
 After joining you should start your post with a mention of the user "TWIM".
 The easiest way to do this is to use your client's mention completion feature.
@@ -150,13 +150,13 @@ on the category for a project.
 {% notice_box() %}
 This section documents the process "behind the scenes" for anyone interested.
 Reading the above info is sufficient to ensure writing a great TWIM entry.
-Please approach the [Website and Content Working Group](https://matrix.to/#/#matrix.org-website:matrix.org)
+Please approach the [Website and Content Working Group](https://matrix.to/#/%23matrix.org-website:matrix.org)
 with any questions or ideas about TWIM and its process.
 {% end %}
 
 This Week in Matrix is part of the outreach programme of The Matrix Foundation.
 
-The Matrix Foundation hosts the [TWIM Matrix room](https://matrix.to/#/#twim:matrix.org) for the purpose of
+The Matrix Foundation hosts the [TWIM Matrix room](https://matrix.to/#/%23twim:matrix.org) for the purpose of
 communicating with the wider ecosystem and allowing everyone to announce Matrix-related news to be published
 in the weekly digest.
 
@@ -237,7 +237,7 @@ They also consider factors such as time sensitivity of news (e.g. security updat
 After the website updated and everything looks good, the editor posts the summary and link to the TWIM room
 using a `@room` ping, as well as to social media.
 After some minutes have passed, the editor checks that the RSS bot announced it also to
-the [Matrix News](https://matrix.to/#/#matrix-news:matrix.org) room, or does so manually if not.
+the [Matrix News](https://matrix.to/#/%23matrix-news:matrix.org) room, or does so manually if not.
 
 Finally, the editor `!clear`s the now published entries from the TWIM bot, making sure to re-add any
 submissions that arrived in the meantime using the `⭕` reaction.

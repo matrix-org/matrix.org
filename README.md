@@ -9,7 +9,7 @@ and how to write content for the website in [CONTENT.md](./CONTENT.md).
 
 To discuss maintenance of this site, please come talk to us, the
 [Website & Content Working Group](https://matrix.org/foundation/working-groups/#website-and-content), in
-[#matrix.org-website:matrix.org](https://matrix.to/#/#matrix.org-website:matrix.org).
+[#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website:matrix.org).
 
 ## Cloning the Repository
 
