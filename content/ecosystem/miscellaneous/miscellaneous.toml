@@ -8,3 +8,12 @@ maintainer = "Element Creations Ltd."
 licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/thirdroom"
 room = "#thirdroom-dev:matrix.org"
+
+[[project]]
+name = "matrirc"
+description = """
+A local IRC server that bridges to Matrix with native E2EE.
+"""
+maintainer = "pawelb0"
+licence = "GPL-3.0-or-later"
+repository = "https://github.com/pawelb0/matrirc"
