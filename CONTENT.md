@@ -339,6 +339,25 @@ This page is meant to help end users find a hosting provider for their needs. Fo
 """
 ```
 
+### Miscellaneous Projects
+
+Miscellaneous projects are listed in [`/content/ecosystem/miscellaneous/miscellaneous.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/miscellaneous/miscellaneous.toml). A miscellaneous project is simply a project that does not fit neatly into any of the pre-existing ecosystem categories.
+
+To add a project please use this template and append it to `miscellaneous.toml`:
+
+```toml
+[[project]]
+name = "Project name"
+description = """
+A short description about the project.
+"""
+maturity = "PICK Obsolete OR omit entirely."
+maintainer = "Your name or organisation"
+licence = "PICK ONE identifier from https://spdx.org/licenses/"
+repository = "https://github.com/example-org/example-repo"
+room = "#your-matrix-room:example.com"
+```
+
 ## Adding documentation
 
 Matrix.org provides a place to have documentation. Documentation is required to be on topic of the Matrix Protocol itself or how to get started using the protocol.
