@@ -108,7 +108,7 @@
                     </a>
                     {% endif %}
                     {% if sdk.room %}
-                    <a href="https://matrix.to/#/{{ sdk.room }}">
+                    <a href="https://matrix.to/#/{{ sdk.room | urlencode_strict }}">
                         {{ load_data(path="/assets/projects/matrix.svg") | safe }}
                         Matrix Room
                     </a>

@@ -12,7 +12,7 @@
             </a>
             {% endif %}
             {% if integration.room %}
-            <a href="https://matrix.to/#/{{ integration.room }}">
+            <a href="https://matrix.to/#/{{ integration.room | urlencode_strict }}">
                 {{ load_data(path="/assets/projects/matrix.svg") | safe }}
                 Matrix Room
             </a>
