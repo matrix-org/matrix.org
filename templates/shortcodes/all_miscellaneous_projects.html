@@ -21,7 +21,7 @@
             </a>
             {% endif %}
             {% if project.room %}
-            <a href="https://matrix.to/#/{{ project.room }}">
+            <a href="https://matrix.to/#/{{ project.room | urlencode_strict }}">
                 {{ load_data(path="/assets/projects/matrix.svg") | safe }}
                 Matrix Room
             </a>
