@@ -4,7 +4,9 @@
     <div class="project-card">
       	<div class="title-row">
         	<h3>{{ project.name }}</h3>
+            {% if project.maturity %}
         	<div class="maturity {{ project.maturity | lower }}">{{ project.maturity }}</div>
+            {% endif %}
       	</div>
         <div class="subtitle">{{ project.maintainer }}</div>
         <div class="metadata-pills">
