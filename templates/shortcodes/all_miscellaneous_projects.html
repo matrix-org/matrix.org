@@ -1,6 +1,20 @@
-{% set miscellaneous_projects_data = load_data(path="content/ecosystem/miscellaneous/miscellaneous.toml") %}
+{% set data = load_data(path="content/ecosystem/miscellaneous/miscellaneous.toml") %}
+{% set miscellaneous_projects = data.project %}
+
+{% set no_maturity = miscellaneous_projects
+  | filter(attribute="maturity", value="")
+%}
+
+{% set obsolete = miscellaneous_projects
+  | filter(attribute="maturity", value="Obsolete")
+%}
+
+{% set projects = no_maturity
+  | concat(with=obsolete)
+%}
+
 <div class="projects-card-deck">
-    {% for project in miscellaneous_projects_data.project %}
+    {% for project in projects %}
     <div class="project-card">
       	<div class="title-row">
         	<h3>{{ project.name }}</h3>
