@@ -17,3 +17,12 @@ A local IRC server that bridges to Matrix with native E2EE.
 maintainer = "pawelb0"
 licence = "GPL-3.0-or-later"
 repository = "https://github.com/pawelb0/matrirc"
+
+[[project]]
+name = "NeoBoard Standalone"
+description = """
+A standalone collaborative whiteboard based on Matrix.
+"""
+maintainer = "Nordeck IT + Consulting GmbH"
+licence = "AGPL-3.0-or-later"
+repository = "https://github.com/nordeck/matrix-neoboard-standalone"
