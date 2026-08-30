@@ -5,13 +5,10 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="twitter:widgets:csp" content="on" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@matrixdotorg" />
-    <meta name="twitter:creator" content="@matrixdotorg" />
     <meta property="og:site_name" content="matrix.org" />
     {% if current_url %}
     <meta property="og:url" content="{{ current_url | safe }}" />
@@ -39,7 +36,6 @@
     <meta property="og:image" content="{{ section.extra.image | safe }}" />
     {% else %}
     <meta property="og:image" content="https://matrix.org/blog/img/matrix-logo.png" />
-    <meta name="twitter:image" content="https://matrix.org/blog/img/matrix-logo.png" />
     {% endif %}
     <title>
         {%- if config.mode == "serve" -%}&#x1F6E0;&#xFE0F; {% endif -%}
