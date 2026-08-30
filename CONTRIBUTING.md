@@ -131,7 +131,7 @@ painless while at the same time enabling collaboration between Foundation teams
 and other WGs to guarantee that we meet the quality standards we have set for
 the matrix.org website. Our aim is to improve this process continually, so
 please reach out with your feedback or suggestions directly, or our public room
-[#matrix.org-website:matrix.org](https://matrix.to/#/#matrix.org-website:matrix.org).
+[#matrix.org-website:matrix.org](https://matrix.to/#/%23matrix.org-website:matrix.org).
 
 When contributing to our repos:
 

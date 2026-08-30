@@ -141,7 +141,7 @@ step-by-step guide would include:
 ### Write your own server:
 
 We are still working on the server-server spec, so the best thing to do if you
-are interested in writing a server, is to come talk to us in [#matrix:matrix.org](https://matrix.to/#/#matrix:matrix.org).
+are interested in writing a server, is to come talk to us in [#matrix:matrix.org](https://matrix.to/#/%23matrix:matrix.org).
 
 If you are interested in how federation works, please see the [Server-Server
 API spec](https://matrix.org/docs/spec/server_server/latest.html).

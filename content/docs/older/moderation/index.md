@@ -566,7 +566,7 @@ rules to messaging providers - meaning that servers running in affected
 territories may be legally obligated to provide their users with content
 filtering tools of this nature.
 
-See [#matrix-reputation:matrix.org](https://matrix.to/#/#matrix-reputation:matrix.org) and
+See [#matrix-reputation:matrix.org](https://matrix.to/#/%23matrix-reputation:matrix.org) and
 [https://docs.google.com/document/d/1rijGLs9-RJ9Mz2Yk5wWycMbErrCDK1VJkACdUPMN0-M/](https://docs.google.com/document/d/1rijGLs9-RJ9Mz2Yk5wWycMbErrCDK1VJkACdUPMN0-M/)
 for more details on this.
 

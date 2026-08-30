@@ -3,7 +3,7 @@ title = "The Matrix Jobs Room"
 aliases = ["/docs/guides/matrix-jobs-room"]
 +++
 
-The Matrix Jobs Room ([#jobs:matrix.org](https://matrix.to/#/#jobs:matrix.org)) 
+The Matrix Jobs Room ([#jobs:matrix.org](https://matrix.to/#/%23jobs:matrix.org)) 
 is a public room to discuss Matrix-related paid projects. Customers can post 
 jobs and potential vendors can apply to take them.
 

@@ -27,7 +27,7 @@
                     </a>
                     {% endif %}
                     {% if bridge.room %}
-                    <a href="https://matrix.to/#/{{ bridge.room }}" class="pill">
+                    <a href="https://matrix.to/#/{{ bridge.room | urlencode_strict }}" class="pill">
                         {{ load_data(path="/assets/support.svg") | safe }}
                         Support room
                     </a>

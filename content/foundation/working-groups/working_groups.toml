@@ -61,7 +61,7 @@ Paramount to all these formalities we are introducing by creating a WG from a Fo
   - content creation can be delegated
   - review (content and technical e.g. editing) and publish it
 - manage respective rooms: TWIM, TWIM offtopic, website, news room
-  - Manage the [#community:matrix.org](https://matrix.to/#/#community:matrix.org) space
+  - Manage the [#community:matrix.org](https://matrix.to/#/%23community:matrix.org) space
     - making this known and establishing processes for it
   - shared with T&S
 - socials
@@ -329,7 +329,7 @@ Guild members may introduce other applicants to the gateway procedure when they 
 
 #### Gateway Procedure
 
-To join the Guild, first join the [landing room](https://matrix.to/#/#shared-safety-guild-landing:matrix.org) and answer the following questions:
+To join the Guild, first join the [landing room](https://matrix.to/#/%23shared-safety-guild-landing:matrix.org) and answer the following questions:
 
 1. Which project are you affiliated with? Can you please also link the repository url?
 2. Why are you interested in the Guild specifically?

@@ -4,7 +4,7 @@ template = "otwsu.html"
 aliases = ["/open-tech-will-save-us/"]
 +++
 
-[Join the live chat now!](https://matrix.to/#/#otwsu:matrix.org)
+[Join the live chat now!](https://matrix.to/#/%23otwsu:matrix.org)
 
 Open Tech Will Save Us is a virtual meetup, taking the form of a monthly live 
 video stream broadcasting on the last Wednesday of every month at 6pm Paris 

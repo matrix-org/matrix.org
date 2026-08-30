@@ -104,7 +104,7 @@ looks like the following.
 To join a Space, you need to either know its address, or click on a matrix.to
 link to that space someone would have shared with you. For example, to join the
 Space of the Matrix Community, you can click on
-[https://matrix.to/#/#community:matrix.org](https://matrix.to/#/#community:matrix.org)
+[https://matrix.to/#/%23community:matrix.org](https://matrix.to/#/%23community:matrix.org)
 
 The process to join a Space is the same as for [Joining a specific room](#joining-a-specific-room).
 

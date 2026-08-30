@@ -242,7 +242,7 @@ more attention and understanding from people who see it.
 ![Physical Pi](/docs/legacy/elizabot-pi.png)
 
 To learn more about Matrix development, take a look at the [Matrix Guides](https://matrix.org/docs/guides)
-page, and join us in the [#matrix-dev:matrix.org](https://matrix.to/#/#matrix-dev:matrix.org) room!
+page, and join us in the [#matrix-dev:matrix.org](https://matrix.to/#/%23matrix-dev:matrix.org) room!
 
 [matrix-bot-sdk]: https://github.com/turt2live/matrix-bot-sdk
 [TravisR]: https://github.com/turt2live
