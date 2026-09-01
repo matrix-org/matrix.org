@@ -31,3 +31,14 @@ licence = "Apache-2.0"
 repository = "https://github.com/matrix-org/thirdroom"
 website = "https://thirdroom.io/"
 room = "#thirdroom-dev:matrix.org"
+
+[[project]]
+name = "Matrix Widget Toolkit"
+description = """
+Reusable framework for creating Matrix widgets.
+"""
+maturity = ""
+maintainer = "Nordeck IT + Consulting GmbH"
+licence = "Apache-2.0"
+repository = "https://github.com/nordeck/matrix-widget-toolkit"
+room = "#nordeck:nordeck.io"
