@@ -16,8 +16,8 @@
 {% set root_section = get_section(path="docs/technical/_index.md") %}
 {% endif %}
 
-<div class="docs-body">
-    <div class="docs-menu">
+<div data-pagefind-filter="section:Documentation" class="docs-body">
+    <div class="docs-menu" data-pagefind-ignore="all">
         <div class="docs-menu-inner">
             {% for doc_section_path in docs_sections.subsections %}
             {% set doc_section = get_section(path=doc_section_path) %}
