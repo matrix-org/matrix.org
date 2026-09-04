@@ -14,7 +14,7 @@ featured = false
 # Screenshots are expected to be in the same folder
 screenshots = []
 # Should describe the target user group
-good_for = "All individuals and enterprises who want to skyrocket their productivity"
+good_for = "An all-in-one email client designed for productivity and privacy for home users, professionals, and enterprises alike."
 
 [extra.features.1stable]
 e2ee = "supported"
@@ -36,7 +36,7 @@ sliding_sync = "unsupported"
 
 [extra.packages]
 windows_installer = "https://www.emclient.com/download"
-macos_installer = "https://www.emclient.com/download"
+macos_installer = "https://www.emclient.com/download-mac"
 #google_play_store.app_id = "com.example.app"
 #f_droid.app_id = "com.example.app"
 #apple_app_store = { app_id = "id1234567890", org = "example" }
