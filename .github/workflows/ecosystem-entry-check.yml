@@ -1,0 +1,45 @@
+name: Ecosystem Entry Check
+
+on:
+  pull_request_target: # zizmor: ignore[dangerous-triggers] -- read-only: inspects the PR diff via `gh api`, never checks out or runs code from the fork
+    types: [opened, reopened, ready_for_review, synchronize]
+    paths:
+      - "content/ecosystem/clients/**"
+      - "content/ecosystem/servers/servers.toml"
+
+permissions: {}
+
+concurrency:
+  group: ecosystem-entry-check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Check new/changed ecosystem entries
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write # comment on the PR
+      contents: read # checkout our own script from the base branch
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+          # No `ref:` here on purpose - always our own trusted main, never the PR head.
+
+      - name: Check if PR is bot-authored
+        id: author
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          is_bot="$(gh pr view "$PR_NUMBER" --json author --jq '.author.is_bot')"
+          echo "is_bot=$is_bot" >> "$GITHUB_OUTPUT"
+
+      - name: Check entries and comment
+        if: steps.author.outputs.is_bot != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: python3 .github/scripts/check_ecosystem_pr.py
