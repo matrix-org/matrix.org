@@ -26,6 +26,11 @@
     {% elif section.extra.meta_description %}
     {% set og_description = section.extra.meta_description %}
     {% else %}
+    {% elif page.extra.summary %}
+    {% set og_description = page.extra.summary %}
+    {% elif section.extra.summary %}
+    {% set og_description = section.extra.summary %}
+    {% else %}
     {% set og_description = "Matrix, the open protocol for secure decentralised communications" %}
     {% endif %}
     <meta property="og:description" content="{{ og_description }}" />
