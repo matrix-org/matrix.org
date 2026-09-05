@@ -25,7 +25,6 @@
     {% set og_description = page.extra.meta_description %}
     {% elif section.extra.meta_description %}
     {% set og_description = section.extra.meta_description %}
-    {% else %}
     {% elif page.extra.summary %}
     {% set og_description = page.extra.summary %}
     {% elif section.extra.summary %}
