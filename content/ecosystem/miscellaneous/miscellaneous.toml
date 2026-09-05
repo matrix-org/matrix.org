@@ -1,0 +1,44 @@
+[[project]]
+name = "matrirc"
+description = """
+A local IRC server that bridges to Matrix with native E2EE.
+"""
+maturity = ""
+maintainer = "pawelb0"
+licence = "GPL-3.0-or-later"
+repository = "https://github.com/pawelb0/matrirc"
+
+[[project]]
+name = "NeoBoard Standalone"
+description = """
+A standalone collaborative whiteboard based on Matrix.
+"""
+maturity = ""
+maintainer = "Nordeck IT + Consulting GmbH"
+licence = "AGPL-3.0-or-later"
+repository = "https://github.com/nordeck/matrix-neoboard-standalone"
+website = "https://neoboard.io/"
+room = "#nordeck:nordeck.io"
+
+[[project]]
+name = "Third room"
+description = """
+Open, decentralised, immersive worlds built on Matrix.
+"""
+maturity = "Obsolete"
+maintainer = "Element Creations Ltd."
+licence = "Apache-2.0"
+repository = "https://github.com/matrix-org/thirdroom"
+website = "https://thirdroom.io/"
+room = "#thirdroom-dev:matrix.org"
+
+[[project]]
+name = "Matrix Widget Toolkit"
+description = """
+Reusable framework for creating Matrix widgets.
+"""
+maturity = ""
+maintainer = "Nordeck IT + Consulting GmbH"
+licence = "Apache-2.0"
+repository = "https://github.com/nordeck/matrix-widget-toolkit"
+room = "#nordeck:nordeck.io"
