@@ -45,4 +45,4 @@ macos_installer = "https://www.emclient.com/download-mac"
 #other_linux_link = "https://example.com/download"
 +++
 
-Get the best email client for Windows, macOS, Android and iOS for professionals and home users alike. Now with Matrix support https://www.emclient.com/blog/matrix-chat-support-815
+A desktop email client for managing your email, chats, calendar, contacts, notes, and more in one place.
