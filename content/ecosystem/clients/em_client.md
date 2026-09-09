@@ -8,7 +8,6 @@ maturity = "Beta"
 licence = "Proprietary"
 featured = false
 screenshots = []
-# Should describe the target user group
 good_for = "An all-in-one email client designed for productivity and privacy for home users, professionals, and enterprises alike."
 
 [extra.features.1stable]
