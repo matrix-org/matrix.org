@@ -8,7 +8,7 @@ maturity = "Beta"
 licence = "Proprietary"
 featured = false
 screenshots = []
-good_for = "An all-in-one email client designed for productivity and privacy for home users, professionals, and enterprises alike."
+good_for = "Users who want an all-in-one application for email, calendars, contacts, notes, and chat”
 
 [extra.features.1stable]
 e2ee = "supported"
