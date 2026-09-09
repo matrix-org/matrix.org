@@ -9,9 +9,6 @@ maturity = "Beta"
 #matrix_room = "#your-matrix-room:example.com"
 licence = "Proprietary"
 featured = false
-# Used with featured = true to have a fixed order.
-# featured_order = 1
-# Screenshots are expected to be in the same folder
 screenshots = []
 # Should describe the target user group
 good_for = "An all-in-one email client designed for productivity and privacy for home users, professionals, and enterprises alike."
