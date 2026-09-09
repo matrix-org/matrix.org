@@ -27,7 +27,6 @@ image_packs = "unsupported"
 voip_matrixrtc = "unsupported"
 sliding_sync = "unsupported"
 
-
 [extra.packages]
 windows_installer = "https://www.emclient.com/download"
 macos_installer = "https://www.emclient.com/download-mac"
