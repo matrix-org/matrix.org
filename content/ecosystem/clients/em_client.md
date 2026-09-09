@@ -4,7 +4,7 @@ title = "eM Client"
 [extra]
 thumbnail = "em_client.svg"
 maintainer = "eM Client, s.r.o."
-maturity = "Stable"
+maturity = "Beta"
 #repo = "https://github.com/example-org/example-repo"
 #matrix_room = "#your-matrix-room:example.com"
 licence = "Proprietary"
