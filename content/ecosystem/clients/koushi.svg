@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Koushi logo: a glowing photon at a lattice node with light running along the grid">
+<title>Koushi — photon node</title>
+<rect x="6" y="6" width="116" height="116" rx="28" fill="#13233F"/>
+<g stroke="#3E72B8" stroke-width="2.5" stroke-linecap="round">
+<line x1="34" y1="34" x2="34" y2="94"/>
+<line x1="49" y1="34" x2="49" y2="94"/>
+<line x1="64" y1="34" x2="64" y2="94"/>
+<line x1="79" y1="34" x2="79" y2="94"/>
+<line x1="94" y1="34" x2="94" y2="94"/>
+<line x1="34" y1="34" x2="94" y2="34"/>
+<line x1="34" y1="49" x2="94" y2="49"/>
+<line x1="34" y1="64" x2="94" y2="64"/>
+<line x1="34" y1="79" x2="94" y2="79"/>
+<line x1="34" y1="94" x2="94" y2="94"/>
+</g>
+<g stroke="#8FE9FF" stroke-width="3.5" stroke-linecap="round">
+<line x1="64" y1="34" x2="64" y2="94"/>
+<line x1="34" y1="64" x2="94" y2="64"/>
+</g>
+<circle cx="64" cy="64" r="13" fill="#8FE9FF" opacity="0.22"/>
+<circle cx="64" cy="64" r="6.5" fill="#FFFFFF"/>
+</svg>
