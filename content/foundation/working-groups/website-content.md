@@ -1,6 +1,7 @@
 +++
 title = "Website & Content WG"
 template = "governing-board/working_group.html"
+extra.meta_description = "Information about the Matrix.org Website & Content Working Group"
 +++
 
 ## Activities
