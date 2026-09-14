@@ -274,3 +274,16 @@ maintainer = "urmaul"
 language = "TypeScript"
 license = "MIT"
 repository = "https://codeberg.org/urmaul/toot-feed-bot"
+
+[[integrations]]
+name = "matrix-google-classroom"
+description = """
+Posts Google Classroom announcements, assignments and materials into a Matrix
+room per course, each from a ghost user standing for its author. One-way: the
+Classroom API exposes no comments endpoint, so nothing said in a course stream
+is reachable and nothing sent from Matrix reaches Classroom.
+"""
+maintainer = "by-architect"
+language = "TypeScript"
+licence = "Apache-2.0"
+repository = "https://github.com/by-architect/GoogleClassroomMatrixBridge"
