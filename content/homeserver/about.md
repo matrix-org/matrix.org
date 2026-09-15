@@ -1,7 +1,7 @@
 +++
 title = "The Matrix.org Homeserver"
 aliases = ["/homeserver"]
-insert_anchor_links = "left"
+insert_anchor_links = "right"
 weight = 0
 +++
 
