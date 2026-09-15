@@ -1,0 +1,105 @@
+name: Refresh Ecosystem Data
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # every Monday at 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Print proposed diffs without opening/updating a PR"
+        type: boolean
+        default: false
+
+permissions: {}
+
+# Never runs the writer job twice at once - avoids two runs racing to push to the same
+# branch.
+concurrency:
+  group: refresh-ecosystem-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Refresh client/server data and open a PR
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # push the automated/refresh-ecosystem-data branch
+      pull-requests: write # open/update the PR from that branch
+      issues: write # create/update the standing outstanding-issues tracking issue
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: true # needed for the plain `git push` below
+
+      # Bridges transient outages on a maintainer's site between runs. Deliberate
+      # removals (404/410) are never served from this cache - see
+      # fetch_doap_bytes() in the script - so this can't be used to route around a
+      # DOAP file being taken down for moderation or any other reason.
+      - name: Restore DOAP fetch cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .cache/doap
+          key: doap-cache-${{ github.run_id }}
+          restore-keys: doap-cache-
+
+      - name: Run refresh script
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          RUNNER_TEMP: ${{ runner.temp }}
+          DRY_RUN: ${{ inputs.dry_run == true && '--dry-run' || '' }}
+        run: |
+          python3 .github/scripts/refresh_ecosystem_data.py $DRY_RUN \
+            --pr-body-file "${RUNNER_TEMP}/pr-body.md" \
+            --issue-body-file "${RUNNER_TEMP}/issue-body.md"
+
+      # No-op if there's no diff; reuses the fixed branch/PR on repeat runs.
+      - name: Open or update pull request
+        if: ${{ inputs.dry_run != true }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          RUNNER_TEMP: ${{ runner.temp }}
+          BRANCH: automated/refresh-ecosystem-data
+          TITLE: "Automated ecosystem client/server data refresh"
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- content/ecosystem/clients content/ecosystem/servers/servers.toml; then
+            echo "No changes, nothing to do."
+            exit 0
+          fi
+
+          base="$(git branch --show-current)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add content/ecosystem/clients content/ecosystem/servers/servers.toml
+          git commit -s -m "Automated: refresh ecosystem client/server data"
+          git push --force origin "$BRANCH"
+
+          number="$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json number --jq '.[0].number')"
+          if [ -n "$number" ]; then
+            gh pr edit "$number" -R "$REPO" --title "$TITLE" --body-file "${RUNNER_TEMP}/pr-body.md"
+          else
+            gh pr create -R "$REPO" --title "$TITLE" --body-file "${RUNNER_TEMP}/pr-body.md" \
+              --label ecosystem --base "$base" --head "$BRANCH"
+          fi
+
+      # Standing issue for findings with no accompanying edit (the PR step above
+      # only runs on an actual diff). Kept up to date in place; never closed
+      # here - pinning/locking is done manually.
+      - name: Update the outstanding-issues tracking issue
+        if: ${{ inputs.dry_run != true }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          ISSUE_TITLE: "Ecosystem data refresh: outstanding issues"
+          ISSUE_BODY_FILE: ${{ runner.temp }}/issue-body.md
+        run: |
+          number="$(gh issue list -R "$REPO" --search "in:title \"$ISSUE_TITLE\"" --json number --jq '.[0].number')"
+          if [ -n "$number" ]; then
+            gh issue edit "$number" -R "$REPO" --body-file "$ISSUE_BODY_FILE"
+          else
+            gh issue create -R "$REPO" --title "$ISSUE_TITLE" --body-file "$ISSUE_BODY_FILE" --label ecosystem
+          fi
