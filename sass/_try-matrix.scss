@@ -1,6 +1,6 @@
 .step-flow {
 
-    // ── Client cards (details/summary dropdowns) ──────────────────────────────
+    // Client cards (details/summary dropdowns)
 
     .client-cards {
         display: flex;
@@ -11,7 +11,7 @@
     }
 
     .client-card {
-        border: 1px solid #d2d2d2;
+        border: 1px solid var(--color-border);
         border-radius: 14px;
         overflow: hidden;
         transition: border-color 0.2s ease;
@@ -232,7 +232,7 @@
         }
     }
 
-    // ── CSS-only lightbox via :target ─────────────────────────────────────────
+    // CSS-only lightbox via :target
 
     .client-lightbox {
         display: none;
@@ -368,7 +368,7 @@
         font-weight: 600;
         color: var(--color-text);
         background-color: #f0f0f0;
-        border: 1px solid #d2d2d2;
+        border: 1px solid var(--color-border);
         border-radius: 9999px;
         padding: 0.3rem 0.9rem;
         text-decoration: none;
@@ -424,7 +424,7 @@
         border-color: #fcd9a0;
     }
 
-    // ── Account tiers (Create an account section) ─────────────────────────────
+    // Account tiers (Create an account section)
 
     .account-tiers {
         display: flex;
@@ -434,8 +434,8 @@
     }
 
     .account-tier {
-        border: 1px solid #d2d2d2;
-        border-radius: 16px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--card-radius);
         padding: 1.5rem 2rem;
 
         @media (max-width: 767px) {
@@ -473,12 +473,7 @@
         font-weight: 500;
         white-space: nowrap;
 
-        &.foundation {
-            background-color: #e9e9e9;
-            border: 1px solid #888;
-            color: #333;
-        }
-
+        &.foundation,
         &.commercial {
             background-color: #e9e9e9;
             border: 1px solid #888;
@@ -492,7 +487,7 @@
         }
     }
 
-    // ── matrix.org Free / Premium plan cards ─────────────────────────────────
+    // matrix.org Free / Premium plan cards
 
     .matrixorg-plans {
         display: grid;
@@ -508,7 +503,7 @@
             flex-direction: column;
             gap: 0.75rem;
             padding: 1.25rem 1.5rem;
-            border: 1px solid #d2d2d2;
+            border: 1px solid var(--color-border);
             border-radius: 12px;
 
             @media (max-width: 767px) {
@@ -549,7 +544,7 @@
         }
     }
 
-    // ── Provider marquee ──────────────────────────────────────────────────────
+    // Provider marquee
     //
     // Each .provider-compact is independently animated with a staggered delay
     // so cards stream from right to left with no HTML duplication.
@@ -604,7 +599,7 @@
         }
     }
 
-    // ── Compact provider cards (managed hosting tier) ─────────────────────────
+    // Compact provider cards (managed hosting tier)
 
     .provider-compact {
         position: absolute;
@@ -645,8 +640,8 @@
         gap: 0.5rem;
         padding: 1.25rem 1rem;
 
-        border: 1px solid #d2d2d2;
-        border-radius: 16px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--card-radius);
 
         color: var(--color-text);
         text-decoration: none;
