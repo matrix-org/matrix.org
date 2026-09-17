@@ -115,18 +115,16 @@
         margin-inline: auto;
         width: 100%;
 
-        // Platinum/Gold/Silver get a frame in their namesake colour, sized
-        // to their own content (not the full band width) with a solid-fill
-        // flag sitting flush in the top-left corner - a bigger version of
-        // the same "this is a material tier" hint as .tier-card's top edge,
-        // without needing to colour every individual logo card inside it.
-        // Ecosystem/Associate get the same frame+flag shape for visual
-        // consistency, just in a neutral grey since they're not material
-        // names and shouldn't imply one.
+        // Every tier gets a frame in its own colour, sized to its own
+        // content (not the full band width) with a solid-fill flag sitting
+        // flush in the top-left corner - a bigger version of the same
+        // "this is a member tier" hint as .tier-card's top edge, without
+        // needing to colour every individual logo card inside it.
         &--platinum,
         &--gold,
         &--silver,
-        &--neutral {
+        &--ecosystem,
+        &--associate {
             position: relative;
             border: 2px solid var(--tier-color);
             border-radius: var(--card-radius);
@@ -148,9 +146,14 @@
             --tier-badge-color: var(--color-tier-silver-badge);
         }
 
-        &--neutral {
-            --tier-color: var(--color-border);
-            --tier-badge-color: var(--color-text-muted);
+        &--ecosystem {
+            --tier-color: var(--color-tier-ecosystem);
+            --tier-badge-color: var(--color-tier-ecosystem-badge);
+        }
+
+        &--associate {
+            --tier-color: var(--color-tier-associate);
+            --tier-badge-color: var(--color-tier-associate-badge);
         }
 
         // Separate from .supporters-section-flag (the decorative corner
