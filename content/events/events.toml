@@ -1,0 +1,36 @@
+# Upcoming events shown by the {{ upcoming_events() }} shortcode (used in
+# TWIM posts). Each entry is a single occurrence, not a recurring series -
+# add a new entry per date. Entries whose end_date (or date, if no end_date)
+# has passed relative to the post they're shown in are hidden automatically.
+
+[[event]]
+name = "The Matrix Conference 2026"
+url = "https://conference.matrix.org/"
+date = "2026-10-20"
+end_date = "2026-10-23"
+location = "Malmö, Sweden"
+
+[[event]]
+name = "Matrix Stammtisch (CCCAC)"
+url = "https://matrix.to/#/#matrix-stammtisch:ccc.ac"
+date = "2026-09-14"
+location = "CCCAC"
+
+[[event]]
+name = "Matrix Stammtisch Karlsruhe"
+url = "https://matrix.to/#/#stammtisch-karlsruhe:alsace.hair"
+date = "2026-09-15"
+location = "Fachschaft ETIT, Karlsruhe"
+
+[[event]]
+name = "Matrix Stammtisch Freiburg"
+url = "https://blog.freiburg.social/event/matrix-stammtisch-freiburg-6/"
+date = "2026-09-17"
+location = "Blauer Fuchs, Freiburg"
+
+[[event]]
+name = "Matrix Stammtisch Dresden"
+url = "https://dresden.datenpunks.de/events/matrix/2026-09-20-matrix-stammtisch/"
+date = "2026-09-19"
+location = "Datenspuren, Dresden"
+
