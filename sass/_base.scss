@@ -19,7 +19,7 @@
 
     --notice-box-color: #ffcb006b;
 
-    // Tokens for the support/membership card redesign (_support.scss).
+    // Tokens for the support/membership card redesign (_supporters.scss).
     // Kept distinct from the older --borders-color/--color-text-light pair
     // above rather than merged into them, since those are already used
     // with their own (slightly different) shades elsewhere.
@@ -31,7 +31,7 @@
 
     // The "become a member" tiers - used as a top-edge accent on .tier-card
     // and a frame/flag around the matching tier of supporter logos
-    // (_support.scss). Sourced from the reference logos in
+    // (_supporters.scss). Sourced from the reference logos in
     // static/branding/membership/ so each tier's website colour actually
     // matches its own badge artwork. These plain colours are for the (thin,
     // non-text) frame border only; the flag is a solid fill with white
