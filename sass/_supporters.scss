@@ -1,4 +1,4 @@
-// Fixed logo box (_support.scss below) + object-fit: contain, instead of
+// Fixed logo box (_supporters.scss below) + object-fit: contain, instead of
 // deriving a width from page-max-width/cards-gap/tier count - simpler to
 // read, and doesn't need re-deriving if those values ever change. See
 // https://ishadeed.com/article/aligning-logos-css/ for the technique.
@@ -57,11 +57,6 @@
         gap: 1.5rem;
         max-width: var(--page-with-toc-max-width);
         margin-inline: auto;
-
-        .supporters-section {
-            max-width: none;
-            margin-inline: 0;
-        }
     }
 
     // Rough size classes so tiles with more members get more room to
@@ -111,8 +106,6 @@
     .supporters-section {
         display: flex;
         flex-direction: column;
-        max-width: var(--page-max-width);
-        margin-inline: auto;
         width: 100%;
 
         // Every tier gets a frame in its own colour, sized to its own
@@ -168,10 +161,7 @@
             margin-bottom: 0.75rem;
             padding: 0.2rem 0.7rem;
             border-radius: 9999px;
-            background-color: var(--tier-badge-color);
-            color: #fff;
             font-size: 0.75rem;
-            font-weight: 700;
 
             // Hidden until JS (membership.html) marks the section as
             // .is-stuck, i.e. the corner flag has scrolled out of view -
@@ -218,7 +208,6 @@
                 // override or hover/focus feedback, so they rendered as a
                 // plain underlined blue link name sitting under the logo.
                 color: inherit;
-                text-decoration: none;
                 outline: 2px solid transparent;
                 outline-offset: 2px;
                 transition: border-color 0.15s ease;
@@ -252,8 +241,8 @@
                 // them in absolute terms too.
                 img {
                     box-sizing: border-box;
-                    width: var(--supporters-logo-size, 145px);
-                    height: var(--supporters-logo-size, 145px);
+                    width: var(--supporters-logo-size);
+                    height: var(--supporters-logo-size);
                     padding: 10px;
                     object-fit: contain;
                 }
@@ -270,10 +259,18 @@
     }
 
     // --tier-badge-color is set on .supporters-section--* above and
-    // inherited down to this span through the DOM, regardless of where this
-    // rule sits in the stylesheet. Sits flush in the frame's corner (not
-    // straddling the border like a badge-on-a-line) - its own top-left
-    // radius matches the frame's, so the two corners read as one shape.
+    // inherited down to both of these through the DOM, regardless of where
+    // this rule sits in the stylesheet.
+    .supporters-section-flag,
+    .supporters-section-sticky-label {
+        background-color: var(--tier-badge-color);
+        color: #fff;
+        font-weight: 700;
+    }
+
+    // Sits flush in the frame's corner (not straddling the border like a
+    // badge-on-a-line) - its own top-left radius matches the frame's, so
+    // the two corners read as one shape.
     .supporters-section-flag {
         position: absolute;
         // Offset by the frame's own border-width so the flag's outer corner
@@ -282,10 +279,7 @@
         top: -2px;
         left: -2px;
         padding: 0.4rem 1rem;
-        background-color: var(--tier-badge-color);
-        color: #fff;
         font-size: 0.8rem;
-        font-weight: 700;
         border-radius: var(--card-radius) 0 0.6rem 0;
     }
 }
