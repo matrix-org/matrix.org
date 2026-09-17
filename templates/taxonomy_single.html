@@ -1,4 +1,5 @@
 {% extends "skel.html" %}
+{% import "macros/callout.html" as callout %}
 {% block head_extra %}
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ term.permalink | safe }}atom.xml">
 {% endblock head_extra %}
@@ -18,6 +19,17 @@
             </h2>
             {% endif %}
         </header>
+
+        {% if term.name == "This Week in Matrix" %}
+        {{ callout::callout(
+            heading="Got Matrix news?",
+            body="<p>Share your project, release or event in next week's digest.</p>",
+            cta_text="Send your notes",
+            cta_href="/twim-guide",
+            plausible_event="TwimCtaSendNotes",
+            variant="wide"
+        ) }}
+        {% endif %}
 
         {% for page in paginator.pages %}
         <article class="post">
