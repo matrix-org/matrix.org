@@ -1,0 +1,52 @@
+{% set data = load_data(path="content/ecosystem/miscellaneous/miscellaneous.toml") %}
+{% set miscellaneous_projects = data.project %}
+
+{% set no_maturity = miscellaneous_projects
+  | filter(attribute="maturity", value="")
+%}
+
+{% set obsolete = miscellaneous_projects
+  | filter(attribute="maturity", value="Obsolete")
+%}
+
+{% set projects = no_maturity
+  | concat(with=obsolete)
+%}
+
+<div class="projects-card-deck">
+    {% for project in projects %}
+    <div class="project-card">
+      	<div class="title-row">
+        	<h3>{{ project.name }}</h3>
+            {% if project.maturity %}
+        	<div class="maturity {{ project.maturity | lower }}">{{ project.maturity }}</div>
+            {% endif %}
+      	</div>
+        <div class="subtitle">{{ project.maintainer }}</div>
+        <div class="metadata-pills">
+            <div class="pill licence">{{ project.licence }}</div>
+        </div>
+        <p class="description">{{ project.description | markdown(inline=true) | safe }}</p>
+        <div class="server-links">
+            {% if project.website %}
+            <a href="{{ project.website }}">
+                {{ load_data(path="/assets/home.svg") | safe }}
+                Homepage
+            </a>
+            {% endif %}
+            {% if project.repository %}
+            <a href="{{ project.repository }}">
+                {{ load_data(path="/assets/projects/repo.svg") | safe }}
+                Repository
+            </a>
+            {% endif %}
+            {% if project.room %}
+            <a href="https://matrix.to/#/{{ project.room | urlencode_strict }}">
+                {{ load_data(path="/assets/projects/matrix.svg") | safe }}
+                Matrix Room
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
