@@ -1,0 +1,142 @@
+.membership {
+    max-width: 65rem;
+    padding-inline: 1rem;
+    margin-inline: auto;
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        margin-block: 2rem 3rem;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+
+    .representatives {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+
+        h3 {
+            text-align: center;
+        }
+
+        ul {
+            padding-inline: 0;
+            width: 100%;
+        }
+
+        li {
+            list-style: none;
+            text-align: center;
+            background-color: #fafafa;
+            border-radius: 8px;
+            margin-block: 0.5em;
+            padding: 0.5em 1rem;
+        }
+    }
+
+    // A wrapping row instead of a fixed-width horizontal scroller: every
+    // card gets full width on mobile, several per row as space allows on
+    // wider screens, and nothing is ever hidden off-screen to the side.
+    // See PR #3534 review discussion for why the scroll-row was dropped.
+    .tiers-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding-block-start: 1.5em;
+        margin-block-end: 2em;
+
+        .tier-card {
+            flex: 1 1 15rem;
+            border: 1px solid var(--color-border);
+            border-top-width: 3px;
+            border-radius: var(--card-radius);
+            background-color: #fff;
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            padding: 1.1em;
+            // The body-wide line-height (1.75) is meant for prose, not a
+            // dense list of short feature labels in a 15rem-wide card -
+            // it made wrapped lines look loosely, unevenly spaced.
+            line-height: 1.4;
+
+            // These tiers are literally named after materials - give
+            // Silver/Gold/Platinum a top-edge accent in their namesake
+            // colour (--color-tier-*, _base.scss). Individual isn't a
+            // material name, so it keeps the plain border.
+            &--silver {
+                border-top-color: var(--color-tier-silver);
+            }
+
+            &--gold {
+                border-top-color: var(--color-tier-gold);
+            }
+
+            &--platinum {
+                border-top-color: var(--color-tier-platinum);
+            }
+
+            &-eyebrow {
+                margin: 0;
+                text-align: center;
+                font-size: 0.7rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                color: var(--color-text-muted);
+            }
+
+            h3 {
+                margin: 0;
+                text-align: center;
+            }
+
+            .pricing {
+                align-self: center;
+                background-color: #e9e9e9;
+                border: 1px solid var(--color-border);
+                border-radius: 9999px;
+                padding: 0.15rem 0.8em;
+                font-weight: 700;
+            }
+
+            ul {
+                margin: 0;
+                padding-inline-start: 1.35em;
+
+                li {
+                    list-style-image: url("/assets/tick_supported.svg");
+                    font-size: 0.9rem;
+
+                    & + li {
+                        margin-block-start: 0.4em;
+                    }
+                }
+            }
+
+            // Pinned to the card's bottom edge regardless of how many
+            // feature lines the tier above it has, via the card's own flex
+            // column + this margin-top: auto.
+            .call-to-action {
+                margin-block-start: auto;
+                text-align: center;
+                padding: 0.5em 1em;
+                // .call-to-action's own font-size (_base.scss) is sized for
+                // full-width page CTAs and is too large for this 15rem-wide
+                // card; match the tier-card's own list-item text size
+                // (ul li, above) instead of picking a new magic number.
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
