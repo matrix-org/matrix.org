@@ -1,0 +1,188 @@
+// /docs/glossary/ - pure CSS/HTML, no JS. The jump nav is a set of plain
+// anchor links to each category's #id, and .glossary-category headings use
+// position: sticky so the current category stays visible while its terms
+// scroll past, same idea as MDN's glossary letter headings.
+//
+// This page has its own breadcrumb markup instead of a shared macro, so it
+// can land as an independent PR without depending on other in-flight work -
+// but it does add (and use) --color-border/--color-bg-tint/--color-text-muted
+// in _base.scss, so later work can build on those instead of redefining them.
+.glossary-breadcrumb {
+    margin-bottom: 0.75rem;
+
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 0.25rem;
+        font-size: 0.85rem;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+
+        & + li::before {
+            content: "/";
+            margin-right: 0.25rem;
+            opacity: 0.45;
+        }
+    }
+
+    a {
+        color: var(--color-text-muted);
+        text-decoration: none;
+        line-height: 1;
+
+        &:hover {
+            color: var(--color-text);
+        }
+    }
+
+    // The current-page label is text, not decoration, so it still needs to
+    // clear WCAG AA (4.5:1) against white; #aaa only manages ~2.3:1.
+    span {
+        color: var(--color-text-light);
+        line-height: 1;
+    }
+
+    li + li::before {
+        color: #ccc;
+    }
+}
+
+.glossary {
+    .glossary-contribute {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+    }
+}
+
+.glossary-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+
+    a {
+        padding: 0.4rem 0.9rem;
+        border: 1px solid var(--color-border);
+        border-radius: 999px;
+        color: inherit;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition: background-color 0.15s ease;
+
+        &:hover {
+            background-color: var(--color-bg-tint);
+        }
+    }
+}
+
+.glossary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.glossary-category {
+    // The jump nav's #id targets this section, not the h2 - scroll-margin-top
+    // has to live here so the fixed .site-header (height: --navbar-height)
+    // doesn't end up covering the heading when the browser jumps to it. The
+    // 1.25rem (not 20px) is a fine-tuning offset, same idea as html's own
+    // scroll-padding-top below - it has to stay in rem too, or it stops
+    // cancelling out proportionally once the browser's base font size (and
+    // so --navbar-height/scroll-padding-top) is anything other than 16px.
+    scroll-margin-top: calc(var(--navbar-height) - 1.25rem);
+
+    h2 {
+        position: sticky;
+        // Stick just below the fixed site header, not at the very top of the
+        // viewport, otherwise it's hidden behind the header and the first
+        // term ends up looking like the top of the section instead.
+        top: var(--navbar-height);
+        margin: 0;
+        padding: 0.5rem 0;
+        background-color: var(--color-bg-tint);
+        border-bottom: 1px solid var(--color-border);
+        // Big enough to read as a heading rather than blend into the term
+        // list below it (dt is 1.05rem) - matches the h4 step of the site's
+        // type scale (sass/_fonts.scss).
+        font-size: 1.44rem;
+        font-weight: 700;
+    }
+
+    dl {
+        margin: 0;
+    }
+}
+
+.glossary-term {
+    // Term anchors (the "#" permalinks) sit under both the fixed
+    // .site-header AND the sticky .glossary-category h2 above them, so they
+    // need clearance for both, unlike the category anchor above which only
+    // has the site-header to clear. 1.7rem is a fine-tuned offset for the
+    // h2's own rendered height - if that h2 changes, this needs to follow.
+    scroll-margin-top: calc(var(--navbar-height) + 1.7rem);
+    padding: 1.25rem 0;
+
+    & + .glossary-term {
+        border-top: 1px solid var(--color-border);
+    }
+
+    dt {
+        display: flex;
+        align-items: baseline;
+        gap: 0.35rem;
+        font-weight: 700;
+        font-size: 1.05rem;
+    }
+
+    dd {
+        margin: 0.35rem 0 0;
+        color: var(--color-text-muted);
+    }
+
+    // Only reveal the "#" permalink on hover/focus - it's a bonus for
+    // sighted mouse/keyboard users linking to a term, not something that
+    // needs to compete with the term name for attention at rest.
+    &:hover .glossary-term-anchor,
+    .glossary-term-anchor:focus {
+        opacity: 1;
+    }
+}
+
+.glossary-aliases {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+
+.glossary-term-anchor {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+
+    &:hover {
+        color: var(--color-link);
+    }
+}
+
+.glossary-learn-more {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-weight: 600;
+    color: var(--color-link);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

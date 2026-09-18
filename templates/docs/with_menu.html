@@ -26,6 +26,14 @@
             {% else %}
             {% set current = false %}
             {% endif %}
+            {% if doc_section.toc | length == 0 and doc_section.subsections | length == 0 %}
+            {# A flat page with no h2s/subsections of its own (e.g. the glossary) has
+               nothing to build an accordion out of - link straight to it instead of
+               rendering an empty, unclickable group. #}
+            <div>
+                <a href="{{ doc_section.path }}" class="submenu-title">{{ doc_section.title }}</a>
+            </div>
+            {% else %}
             <div>
                 <input id="{{ doc_section.title }}-submenu-checkbox" type="checkbox" class="submenu-checkbox"
                     aria-hidden="true" {% if current %}checked{% endif %}>
@@ -65,11 +73,13 @@
                 <div class="spacer"></div>
                 {% endif %}
             </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
 
     <div class="docs-content">
+        {% block docs_content %}
         <article class="content">
             <header>
                 <h1>{{ section.title }}</h1>
@@ -90,6 +100,7 @@
 
             {{ section.content | markdown | safe }}
         </article>
+        {% endblock docs_content %}
     </div>
 </div>
 {% endblock content %}

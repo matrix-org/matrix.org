@@ -18,6 +18,14 @@
     --borders-color: #ddd;
 
     --notice-box-color: #ffcb006b;
+
+    // Tokens for the shared breadcrumb/page-header component below. Kept
+    // distinct from the older --borders-color/--color-text-light pair above
+    // rather than merged into them, since those are already used with their
+    // own (slightly different) shades elsewhere.
+    --color-border: #d2d2d2;
+    --color-text-muted: #555;
+    --color-bg-tint: #fafafa;
 }
 
 * {
