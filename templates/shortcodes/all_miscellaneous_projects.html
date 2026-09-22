@@ -1,17 +1,47 @@
 {% set data = load_data(path="content/ecosystem/miscellaneous/miscellaneous.toml") %}
 {% set miscellaneous_projects = data.project %}
 
-{% set no_maturity = miscellaneous_projects
+{% set projects_without_maturity = miscellaneous_projects
   | filter(attribute="maturity", value="")
 %}
 
-{% set obsolete = miscellaneous_projects
-  | filter(attribute="maturity", value="Obsolete")
+{% set stable_projects_upper = miscellaneous_projects | filter(attribute="maturity", value="Stable") %}
+{% set stable_projects_lower = miscellaneous_projects | filter(attribute="maturity", value="stable") %}
+{% set beta_projects_upper = miscellaneous_projects | filter(attribute="maturity", value="Beta") %}
+{% set beta_projects_lower = miscellaneous_projects | filter(attribute="maturity", value="beta") %}
+{% set alpha_projects_upper = miscellaneous_projects | filter(attribute="maturity", value="Alpha") %}
+{% set alpha_projects_lower = miscellaneous_projects | filter(attribute="maturity", value="alpha") %}
+{% set obsolete_projects_upper = miscellaneous_projects | filter(attribute="maturity", value="Obsolete") %}
+{% set obsolete_projects_lower = miscellaneous_projects | filter(attribute="maturity", value="obsolete") %}
+
+{% set stable_projects = []
+  | concat(with=stable_projects_upper)
+  | concat(with=stable_projects_lower)
 %}
 
-{% set projects = no_maturity
-  | concat(with=obsolete)
+{% set beta_projects = []
+  | concat(with=beta_projects_upper)
+  | concat(with=beta_projects_lower)
 %}
+
+{% set alpha_projects = []
+  | concat(with=alpha_projects_upper)
+  | concat(with=alpha_projects_lower)
+%}
+
+{% set obsolete_projects = []
+  | concat(with=obsolete_projects_upper)
+  | concat(with=obsolete_projects_lower)
+%}
+
+{% set projects = []
+  | concat(with=stable_projects)
+  | concat(with=beta_projects)
+  | concat(with=alpha_projects)
+  | concat(with=projects_without_maturity)
+  | concat(with=obsolete_projects)
+%}
+
 
 <div class="projects-card-deck">
     {% for project in projects %}
