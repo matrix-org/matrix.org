@@ -34,4 +34,4 @@ webapp = "https://polycule.im/web"
 other_linux_link = "https://polycule.im/#download"
 +++
 
-A geeky and efficient \[matrix\] client for power users.
+A geeky and efficient Matrix client for power users.
