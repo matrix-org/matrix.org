@@ -5,7 +5,9 @@ title = "Element Web / Desktop"
 thumbnail = "element.svg"
 maintainer = "Element Creations Ltd."
 maturity = "Stable"
-repo = "https://github.com/element-hq/element-web"
+repo = [{
+    {title :"web", url:"https://github.com/element-hq/element-web"}
+}]
 matrix_room = "#element-web:matrix.org"
 licence = "AGPL-3.0 OR GPL-3.0 OR Element Commercial License"
 featured = true
