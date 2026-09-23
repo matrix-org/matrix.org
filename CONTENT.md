@@ -351,7 +351,7 @@ name = "Project name"
 description = """
 A short description about the project.
 """
-maturity = "PICK Obsolete OR leave empty."
+maturity = "PICK Obsolete OR leave empty"
 maintainer = "Your name or organisation"
 licence = "PICK ONE identifier from https://spdx.org/licenses/"
 repository = "https://github.com/example-org/example-repo/"
