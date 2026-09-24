@@ -7,6 +7,11 @@
     <label for="site-header-dropdown-checkbox" class="page-overlay"></label>
     <nav>
         {% for link in navigation.header %}
+        {% if loop.index0 == navigation.header | length - 1 %}
+        <pagefind-modal-trigger></pagefind-modal-trigger>
+        <pagefind-modal></pagefind-modal>
+        {% endif %}
+        
         {% if link.section %}
         {% set href = "/" ~ link.section ~ "/" %}
         {% set section = get_section(path=link.section ~ "/_index.md") %}
