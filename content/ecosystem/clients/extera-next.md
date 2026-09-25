@@ -3,33 +3,34 @@ title = "Extera Next"
 
 [extra]
 thumbnail = "extera-next.svg"
-maintainer = "OfficialDakari"
+maintainer = "rustyraven"
 licence = "AGPL-3.0"
 language = "Dart"
 maturity = "Beta"
-repo = "https://github.com/ExteraApp/Extera"
+repo = "https://source.extera.xyz/Extera/Extera"
 website = "https://extera.xyz"
-matrix_room = "#extera:extera.xyz"
+matrix_room = "#community:extera.xyz"
 featured = false
 
 [extra.features.1stable]
 e2ee = "supported"
 spaces = "supported"
-voip_1to1 = "supported"
+voip_1to1 = "unsupported"
 threads = "supported"
 sso = "supported"
-voip_jitsi = "supported"
+voip_jitsi = "unsupported"
 multi_account = "supported"
 multi_language = "supported"
 oauth = "unknown"
 invisible_crypto = "unknown"
-image_packs = "unknown"
+image_packs = "supported"
 
 [extra.features.2experimental]
-voip_matrixrtc = "unknown"
+voip_matrixrtc = "supported"
 sliding_sync = "unknown"
 
 [extra.packages]
+other_linux_link = "https://source.extera.xyz/Extera/Extera/releases"
 +++
 
-Extera Next is another generation of Extera, made on top of FluffyChat.
+Extera Next is a feature-rich Matrix client made with Flutter.
