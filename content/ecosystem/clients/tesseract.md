@@ -5,25 +5,26 @@ title = "Tesseract"
 thumbnail = "tesseract.svg"
 maintainer = "Marco Alvarez"
 licence = "GPL-3.0-or-later"
-latest_release = "2026-07-31"
-maturity = "Alpha"
+latest_release = "2026-09-29"
+maturity = "Beta"
 repo = "https://github.com/surakin/tesseract"
 website = "https://surakin.github.io/tesseract"
 matrix_room = "#tesseract-client:matrix.org"
-good_for = "A native desktop client built on the matrix-rust-sdk."
+good_for = "Users who prefer a native desktop client"
 
 [extra.features.1stable]
 e2ee = "supported"
 spaces = "supported"
 threads = "supported"
+voip_1to1 = "unsupported"
 voip_jitsi = "unsupported"
 multi_account = "supported"
 multi_language = "supported"
 oauth = "supported"
-sliding_sync = "supported"
+image_packs = "supported"
 
 [extra.features.2experimental]
-voip_1to1 = "supported"
+sliding_sync = "supported"
 voip_matrixrtc = "supported"
 
 [extra.packages]
