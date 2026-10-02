@@ -115,7 +115,67 @@ article.post {
     // Necessary to allow the pre to scroll on overflow
     min-width: 0;
 
+    img,
+    .lightbox-trigger {
+        display: block;
+        max-width: 100%;
+        margin: 1.5rem auto;
+    }
+
+    img {
+        border: 1px solid var(--borders-color);
+        border-radius: 4px;
+    }
+
+    .lightbox-trigger img {
+        margin: 0;
+        max-width: 100%;
+    }
+
     blockquote {
+        img,
+        .lightbox-trigger {
+            margin-inline: 0;
+        }
+
+        // Two+ images in a row pair up in a grid instead of stacking.
+        // Grid (not float/inline-block) so preceding text (e.g. a link)
+        // can't share a line with them and starve the second image of room.
+        $img-el: ':is(img, .lightbox-trigger)';
+
+        p:has(> #{$img-el} + #{$img-el}) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 1rem;
+            row-gap: 1rem;
+            align-items: start;
+
+            > :not(#{$img-el}) {
+                grid-column: 1 / -1;
+            }
+
+            #{$img-el} {
+                width: 100%;
+                margin: 0;
+                height: 260px;
+                object-fit: cover;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            @media (max-width: 767px) {
+                grid-template-columns: 1fr;
+
+                #{$img-el} {
+                    height: auto;
+                }
+            }
+        }
+
         h2 {
             font-size: 1.5rem;
         }
