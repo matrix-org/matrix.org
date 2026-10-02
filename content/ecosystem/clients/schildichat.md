@@ -1,12 +1,11 @@
 +++
-title = "SchildiChat"
+title = "SchildiChat Legacy"
 
 [extra]
 thumbnail = "schildichat.svg"
 maintainer = "SpiritCroc"
 licence = "Apache-2.0"
-language = "Javascript"
-maturity = "Stable"
+maturity = "Obsolete"
 repo = "https://github.com/SchildiChat"
 website = "https://schildi.chat/"
 featured = false
@@ -25,8 +24,8 @@ invisible_crypto = "unknown"
 image_packs = "partial"
 
 [extra.features.2experimental]
-voip_matrixrtc = "unknown"
-sliding_sync = "unknown"
+voip_matrixrtc = "unsupported"
+sliding_sync = "unsupported"
 
 [extra.packages]
 windows_installer = "https://github.com/SchildiChat/schildichat-desktop/releases"
@@ -37,4 +36,4 @@ flathub.app_id = "chat.schildi.desktop"
 webapp = "https://app.schildi.chat/"
 +++
 
-Based on Element, with a more traditional instant messaging experience.
+Based on Element Classic, with additional features and tweaks.
