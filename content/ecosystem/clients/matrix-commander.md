@@ -5,7 +5,6 @@ title = "matrix-commander"
 thumbnail = "matrix-commander.svg"
 maintainer = "8go"
 licence = "GPL-3.0-or-later"
-language = "Python"
 maturity = "Stable"
 repo = "https://github.com/8go/matrix-commander"
 featured = false
