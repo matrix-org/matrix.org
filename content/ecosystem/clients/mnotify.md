@@ -4,7 +4,6 @@ title = "mnotify"
 [extra]
 maintainer = "Stefan Tatschner"
 licence = "MIT"
-language = "Rust"
 maturity = "Obsolete"
 repo = "https://github.com/rumpelsepp/mnotify/"
 matrix_room = "#mnotify:hackbrettl.de"

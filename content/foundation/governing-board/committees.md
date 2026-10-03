@@ -78,7 +78,7 @@ The committee aims to meet on the last Monday of the month.
 
 Greg Sutcliffe, Jade Ellis, Kim Brose, Neil Johnson, Nicolas Werner
 
-Chair: Jade Ellis
+Chair: Jade Ellis  
 Vice Chair: Neil Johnson
 
 ### Meeting schedule
@@ -128,7 +128,7 @@ Since we expect that the [Governance Working Group](@/foundation/working-groups/
 
 Jade Ellis, Matthew Hodgson, Max, Nick Mills-Barrett, Nicolas Werner, Tobias Fella
 
-Chair: *vacant*
+Chair: *vacant*  
 Vice Chair: Nicolas Werner
 
 ### Meeting Schedule
@@ -161,7 +161,7 @@ topics, priorities initiatives, gather feedback and share knowledge.
 
 Amandine Le Pape, Andy Balaam, Greg Sutcliffe, Mathieu Velten, Matthew Hodgson, Nicolas Werner, Niklas Zender, Richard van der Hoff, Yoan Pintas
 
-Chair: Yoan Pintas
+Chair: Yoan Pintas  
 Vice Chair: Amandine Le Pape
 
 ### Meeting schedule

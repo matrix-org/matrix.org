@@ -4,7 +4,6 @@ title = "gomuks"
 [extra]
 maintainer = "Tulir"
 licence = "AGPL-3.0-or-later"
-language = "Go, TypeScript"
 maturity = "Beta"
 repo = "https://github.com/gomuks/gomuks"
 matrix_room = "#gomuks:gomuks.app"

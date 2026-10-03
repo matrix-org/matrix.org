@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: rvben/rumdl@50dbfef7cf08f1d28633b684c0884490a63094e3 # v0.2.60
+      - uses: rvben/rumdl@41e15c580461c971819816143d4e43c636647674 # v0.2.75
         with:
           version: "0.1.2"
           config: .rumdl.toml

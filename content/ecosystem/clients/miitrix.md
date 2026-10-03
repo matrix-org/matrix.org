@@ -4,7 +4,6 @@ title = "Miitrix"
 [extra]
 maintainer = "sorunome"
 licence = "Apache-2.0"
-language = "C++"
 maturity = "Obsolete"
 repo = "https://github.com/Sorunome/miitrix"
 matrix_room = "#miitrix:sorunome.de"
