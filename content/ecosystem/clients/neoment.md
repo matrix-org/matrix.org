@@ -7,7 +7,6 @@ maturity = "Beta"
 repo = "https://github.com/Massolari/neoment"
 matrix_room = "#neoment-nvim:matrix.org"
 licence = "MIT"
-language = "Lua"
 featured = false
 
 [extra.features.1stable]

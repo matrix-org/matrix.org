@@ -8,7 +8,6 @@ maturity = "Stable"
 repo = "https://github.com/alphapapa/ement.el"
 matrix_room = "#ement.el:matrix.org"
 licence = "GPL-3.0-or-later"
-language = "Emacs Lisp"
 featured = false
 
 [extra.features.1stable]
