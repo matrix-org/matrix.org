@@ -12,7 +12,7 @@ website = "https://wizardchat.org"
 matrix_room = "#wizardchat-app:matrix.org"
 featured = false
 screenshots = ["wizardchat-screenshot.avif"]
-good_for= "New users who are familiar with Discord."
+good_for= "New users who are familiar with Discord"
 
 [extra.features.1stable]
 e2ee = "supported"
