@@ -136,8 +136,7 @@ _Due to restrictions on the third-party consumers it is mandatory that we use PN
 
 All of the ecosystem projects information are in subdirectories of [`/content/ecosystem`](https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/).
 
-We aim to keep an index of active and maintained projects.
-In order to reduce noise and maintenance overhead, we may decide to wait up to 3 months to see that new projects remain alive and supporting Matrix before we merge them into the listing.
+We aim to maintain an index of active, maintained projects. To reduce noise and maintenance overhead, we will ensure that a new project has been active and supported Matrix for at least three months before it is considered for listing.
 
 ### Clients
 
