@@ -4,7 +4,7 @@ title = "Voyage"
 [extra]
 thumbnail = "voyage.svg"
 maintainer = "nv"
-maturity = "Stable"
+maturity = "Beta"
 repo = "https://github.com/VoyageClient/Voyage"
 matrix_room = "#voyage:matrix.org"
 licence = "AGPL-3.0-or-later"
