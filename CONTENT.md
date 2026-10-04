@@ -136,6 +136,8 @@ _Due to restrictions on the third-party consumers it is mandatory that we use PN
 
 All of the ecosystem projects information are in subdirectories of [`/content/ecosystem`](https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/).
 
+We aim to maintain an index of active, maintained projects. To reduce noise and maintenance overhead, we will ensure that a new project has been active and supported Matrix for at least three months before it is considered for listing.
+
 ### Clients
 
 Matrix clients are listed in [`/content/ecosystem/clients`](https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/clients). Every client has its individual page, so every client is represented by a markdown file. Most of the information is living in the _frontmatter_, between the two `+++` rows in a `.md` file.
