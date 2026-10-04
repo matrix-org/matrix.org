@@ -158,9 +158,9 @@ licence = "PICK ONE identifier from https://spdx.org/licenses/"
 featured = false
 # Used with featured = true to have a fixed order.
 # featured_order = 1
-# Screenshots are expected to be in the same folder
+# Screenshots are expected to be in the same folder, only shown with featured = true
 screenshots = []
-# Should describe the target user group
+# Should describe the target user group, only shown with featured = true
 good_for = "Useful for users coming from another platform"
 
 [extra.features.1stable]
