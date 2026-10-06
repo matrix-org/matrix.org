@@ -30,8 +30,9 @@ sliding_sync = "supported"
 macos_installer = "https://github.com/shinaoka/koushi-matrix/releases/latest/download/Koushi-macos-arm64.dmg"
 +++
 
-Koushi is a desktop Matrix client with multiple account tabs, threads, and
-full-text search across encrypted history, including Japanese and other CJK
-text. The interface is available in English and Japanese. macOS on Apple
-Silicon is officially supported; experimental Windows and Linux builds are
+Koushi is a desktop Matrix client with multiple account tabs and threads.
+Its full-text search uses n-gram indexing to search encrypted history in
+multiple languages, including Japanese, Chinese, and Korean. The interface
+is available in English and Japanese. macOS on Apple Silicon is officially
+supported; experimental Windows and Linux builds are
 available from [GitHub Releases](https://github.com/shinaoka/koushi-matrix/releases).
