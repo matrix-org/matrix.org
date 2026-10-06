@@ -9,7 +9,7 @@ maturity = "Beta"
 repo = "https://github.com/surakin/tesseract"
 website = "https://surakin.github.io/tesseract"
 matrix_room = "#tesseract-client:matrix.org"
-good_for = "Users who prefer a native desktop client"
+featured = false
 
 [extra.features.1stable]
 e2ee = "supported"
