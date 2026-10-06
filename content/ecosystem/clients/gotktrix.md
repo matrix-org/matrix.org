@@ -4,7 +4,6 @@ title = "gotktrix"
 [extra]
 maintainer = "diamondburned"
 licence = "AGPL-3.0-or-later"
-language = "Go"
 maturity = "Obsolete"
 repo = "https://github.com/diamondburned/gotktrix"
 featured = false
