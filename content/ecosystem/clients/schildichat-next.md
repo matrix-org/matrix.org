@@ -4,7 +4,7 @@ title = "SchildiChat Next"
 [extra]
 thumbnail = "schildichat-next.svg"
 maintainer = "SpiritCroc"
-maturity = "Beta"
+maturity = "Stable"
 repo = "https://github.com/SchildiChat/schildichat-android-next"
 website = "https://schildi.chat/android/next"
 matrix_room = "#android:schildi.chat"
@@ -15,22 +15,22 @@ featured = false
 e2ee = "supported"
 spaces = "supported"
 voip_1to1 = "supported"
-threads = "unsupported"
+threads = "partial"
 sso = "unsupported"
 voip_jitsi = "unsupported"
 multi_account = "unsupported"
 multi_language = "supported"
-oauth = "unknown"
-invisible_crypto = "unknown"
+oauth = "supported"
+invisible_crypto = "partial"
 image_packs = "partial"
 
 [extra.features.2experimental]
-voip_matrixrtc = "unknown"
-sliding_sync = "unknown"
+voip_matrixrtc = "supported"
+sliding_sync = "supported"
 
 [extra.packages]
 google_play_store.app_id = "chat.schildi.android"
 f_droid.app_id = "chat.schildi.android"
 +++
 
-A fork of Element X with additional features such as Spaces support.
+A fork of Element X with additional features and tweaks.
