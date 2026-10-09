@@ -84,7 +84,7 @@
 <div id="all-servers" class="projects-card-deck">
     {% for server in servers_data.servers | sort(attribute="maturity") | reverse %}
     <div>
-        <div class="project-card {{ srvutils::classes(server=server) }}">
+        <div class="project-card project-card--no-clamp {{ srvutils::classes(server=server) }}">
             <div class="title-row">
                 <h3>{{ server.name }}</h3>
                 <div class="maturity {{ server.maturity | lower }}">{{ server.maturity }}</div>

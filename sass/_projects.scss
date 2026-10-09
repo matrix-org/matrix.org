@@ -64,8 +64,8 @@ a.project-card {
     }
 
     // Clamped to 4 lines with an ellipsis so cards with long descriptions
-    // stay a uniform height - skipped on integration cards, which don't
-    // link to a detail page where the rest of the text would be readable.
+    // stay a uniform height. Skipped on integration and server cards, which
+    // have no detail page where the rest of the text would be readable.
     &:not(.project-card--no-clamp) {
         p,
         & > span {
