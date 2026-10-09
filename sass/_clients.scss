@@ -933,21 +933,13 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 
 .ecosystem-detail-meta {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.25rem 0.75rem;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .ecosystem-detail-meta-item {
     font-size: 0.9rem;
     color: #666;
-
-    // Dot separator between items
-    & + &::before {
-        content: "·";
-        margin-right: 0.4rem;
-        color: #ccc;
-    }
 
     // Multi-licence clients (e.g. "AGPL-3.0 OR Element Commercial License")
     // get one pill per licence instead of an "OR"-joined text run.
