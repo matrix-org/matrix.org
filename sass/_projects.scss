@@ -471,6 +471,7 @@ a.project-card {
     font-weight: 500;
     line-height: 1.6;
     max-width: fit-content;
+    text-transform: capitalize;
 
     &.stable {
         background-color: #dff6d5;
