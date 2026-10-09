@@ -159,9 +159,9 @@ featured = false
 # Used with featured = true to have a fixed order.
 # featured_order = 1
 # Screenshots are expected to be in the same folder, only shown with featured = true
-screenshots = []
+# screenshots = []
 # Should describe the target user group, only shown with featured = true
-good_for = "Useful for users coming from another platform"
+# good_for = "Useful for users coming from another platform"
 
 [extra.features.1stable]
 e2ee = "supported"
