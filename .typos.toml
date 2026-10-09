@@ -73,6 +73,7 @@ extend-ignore-re = [
     "Linerly",
     "Tristan Lins",
     "Lyche, Tom",
+    "byteM",
 
     "add-ons",
     "json-clos",
