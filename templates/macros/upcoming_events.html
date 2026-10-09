@@ -1,0 +1,28 @@
+{% macro table(before, within_days=60) %}
+{%- set events_data = load_data(path="content/events/events.toml") -%}
+{%- set sorted_events = events_data.event | sort(attribute="date") -%}
+{%- set before_ts = before | date(format="%s") | int -%}
+{%- set horizon_ts = before_ts + within_days * 86400 -%}
+<table class="upcoming-events">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%- for event in sorted_events -%}
+        {%- set event_start_ts = event.date | date(format="%s") | int -%}
+        {%- set event_end_ts = event.end_date | default(value=event.date) | date(format="%s") | int -%}
+        {%- if event_end_ts >= before_ts and event_start_ts <= horizon_ts %}
+        <tr>
+            <td>{{ event.date }}{% if event.end_date and event.end_date != event.date %} – {{ event.end_date }}{% endif %}</td>
+            <td><a href="{{ event.url }}">{{ event.name }}</a></td>
+            <td>{{ event.location | default(value="") }}</td>
+        </tr>
+        {%- endif -%}
+        {%- endfor %}
+    </tbody>
+</table>
+{% endmacro table %}
