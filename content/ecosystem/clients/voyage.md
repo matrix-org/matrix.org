@@ -26,6 +26,8 @@ image_packs = "supported"
 [extra.features.2experimental]
 voip_matrixrtc = "unsupported"
 sliding_sync = "supported"
+[extra.packages]
+
 +++
 
 Matrix client for Android, based on Element Classic.
