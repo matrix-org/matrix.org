@@ -1,0 +1,68 @@
+{% extends "docs/with_menu.html" %}
+{% block head_extra %}
+<meta name="description" content="{{ section.extra.meta_description }}">
+{% endblock head_extra %}
+{% block docs_content %}
+{% set data = load_data(path="content/docs/glossary/terms.toml") %}
+{# Category labels/keys, kept in alphabetical order by label (not by TOML
+   file order) so a reader doesn't get a seemingly-random category sequence.
+   Tera has no map literals to build a {label, terms} list dynamically and
+   sort it, so this is two parallel arrays instead - add new categories to
+   both, in the correct alphabetical position. #}
+{% set category_labels = ["Core concepts", "Governance", "Security", "Trust & Safety"] %}
+{% set category_keys = ["core", "governance", "security", "trust_safety"] %}
+<article class="content glossary">
+    <header>
+        <h1>{{ section.title }}</h1>
+    </header>
+
+    {{ section.content | markdown | safe }}
+
+    <p>
+        Definitions for the words, jargon, and acronyms used across Matrix and
+        The Matrix.org Foundation. For the correct spelling and capitalisation
+        of Matrix-related names, see the <a href="/branding/#commonly-used-terms">commonly
+        used terms</a> list instead.
+    </p>
+    <p class="glossary-contribute">
+        Missing a term, or spotted a mistake?
+        <a href="https://github.com/matrix-org/matrix.org/edit/main/content/docs/glossary/terms.toml" target="_blank" rel="noopener noreferrer">Suggest an edit on GitHub</a>.
+    </p>
+
+    <nav class="glossary-jump" aria-label="Jump to category">
+        {% for label in category_labels %}
+        <a href="#{{ label | slugify }}">{{ label }}</a>
+        {% endfor %}
+    </nav>
+
+    <div class="glossary-list">
+        {% for label in category_labels %}
+        {% set key = category_keys[loop.index0] %}
+        <section class="glossary-category" id="{{ label | slugify }}">
+            <h2>{{ label }}</h2>
+            <dl>
+                {% for term in data.terms[key] | sort(attribute="term") %}
+                {% set term_slug = term.term | slugify %}
+                {% set term_id = "term-" ~ term_slug %}
+                <div class="glossary-term" id="{{ term_id }}">
+                    <dt>
+                        {{ term.term }}
+                        {% if term.aliases %}
+                        <span class="glossary-aliases">({{ term.aliases | join(sep=", ") }})</span>
+                        {% endif %}
+                        <a href="#{{ term_id }}" class="glossary-term-anchor" aria-label="Link to {{ term.term }}">#</a>
+                    </dt>
+                    <dd>
+                        {{ term.definition | markdown(inline=true) | safe }}
+                        {% if term.learn_more %}
+                        <a href="{{ term.learn_more }}" class="glossary-learn-more">Learn more &rarr;</a>
+                        {% endif %}
+                    </dd>
+                </div>
+                {% endfor %}
+            </dl>
+        </section>
+        {% endfor %}
+    </div>
+</article>
+{% endblock docs_content %}
