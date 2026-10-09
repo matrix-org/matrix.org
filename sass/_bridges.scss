@@ -65,8 +65,8 @@
     }
 }
 
-// Only obsolete bridges exist - dimmed like no-bridge, but still clickable
-// so the obsolete bridge(s) can be found on the detail page.
+// There are only obsolete bridges for this platform. Dimmed like no-bridge,
+// but still clickable so they can be found on the detail page.
 .platform.obsolete-only {
     opacity: 0.6;
 
