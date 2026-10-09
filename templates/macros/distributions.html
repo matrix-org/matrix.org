@@ -1,7 +1,8 @@
+{% import "macros/licence.html" as lic %}
 {% macro classes(distribution) %}
 maturity-{{ distribution.maturity | lower }}
 
-licence-{{ distribution.licence | slugify }}
+{{ lic::classes(licence=distribution.licence) }}
 
 {% for framework in distribution.frameworks %}
 framework-{{ framework | slugify }}

@@ -1,3 +1,4 @@
+{% import "macros/licence.html" as lic %}
 {% import "macros/tooltip.html" as tooltip %}
 
 {# Human-readable labels for feature categories #}
@@ -108,7 +109,7 @@ Send and display "custom emoji" and stickers. Create, share, manage and subscrib
 {% if client.packages.windows_installer %}platform-windows{% endif %}
 {% if client.packages.macos_installer %}platform-macos{% endif %}
 maturity-{{ client.maturity | lower }}
-{% for part in client.licence | split(pat=" OR ") %}licence-{{ part | slugify }} {% endfor %}
+{{ lic::classes(licence=client.licence) }}
 
 {% for feature_level_name, features in client.features %}
     {% for feature_name, feature_state in features %}

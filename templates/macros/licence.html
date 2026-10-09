@@ -12,3 +12,8 @@
 {% endif %}
 {% endfor %}
 {% endmacro %}
+
+{# Filter classes for a card, one per licence in an "A OR B" expression. #}
+{% macro classes(licence) %}
+{% for part in licence | split(pat=" OR ") %}licence-{{ part | slugify }} {% endfor %}
+{% endmacro %}

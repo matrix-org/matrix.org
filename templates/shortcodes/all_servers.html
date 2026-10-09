@@ -5,7 +5,7 @@
 {% set licences = [] %}
 {% set languages = [] %}
 {% for server in servers_data.servers %}
-{% set_global licences = licences | concat(with=server.licence) %}
+{% set_global licences = licences | concat(with=server.licence | split(pat=" OR ")) %}
 {% set_global languages = languages | concat(with=server.language) %}
 {% endfor %}
 {% set licences = licences | unique | sort %}

@@ -1,7 +1,8 @@
+{% import "macros/licence.html" as lic %}
 {% macro classes(server) %}
 maturity-{{ server.maturity | lower }}
 
-licence-{{ server.licence | slugify }}
+{{ lic::classes(licence=server.licence) }}
 
 language-{{ server.language | slugify }}
 {% endmacro %}

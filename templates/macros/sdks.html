@@ -6,8 +6,10 @@
 {% set licences = [] %}
 {% set languages = [] %}
 {% for sdk in sdks_data.sdks %}
-{% set_global licences = licences | concat(with=sdk.licence) %}
+{% if sdk.purpose is containing(type) %}
+{% set_global licences = licences | concat(with=sdk.licence | split(pat=" OR ")) %}
 {% set_global languages = languages | concat(with=sdk.language) %}
+{% endif %}
 {% endfor %}
 {% set licences = licences | unique | sort %}
 {% set languages = languages | unique | sort %}
@@ -95,7 +97,7 @@
         {% set language_slug = lang_helper::normalize_language(lang=sdk.language) %}
         <div>
             <div
-                class="project-card maturity-{{ sdk.maturity | lower }} licence-{{ sdk.licence | slugify }} language-{{ language_slug }}">
+                class="project-card maturity-{{ sdk.maturity | lower }} {{ lic::classes(licence=sdk.licence) }} language-{{ language_slug }}">
                 <div class="title-row">
                     <h3>{{ sdk.name }}</h3>
                     <div class="maturity {{ sdk.maturity | lower }}">{{ sdk.maturity }}</div>

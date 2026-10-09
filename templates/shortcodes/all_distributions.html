@@ -5,7 +5,7 @@
 {% set frameworks = [] %}
 {% set support_levels = [] %}
 {% for distribution in distributions_data.distributions %}
-{% set_global licences = licences | concat(with=distribution.licence) %}
+{% set_global licences = licences | concat(with=distribution.licence | split(pat=" OR ")) %}
 {% set_global frameworks = frameworks | concat(with=distribution.frameworks) %}
 {% set_global support_levels = support_levels | concat(with=distribution.support_level) %}
 {% endfor %}
