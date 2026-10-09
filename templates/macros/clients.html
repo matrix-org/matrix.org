@@ -35,8 +35,12 @@ Multi-Account
 Multi-Language
 {%- elif feature_name == "image_packs" -%}
 Emoji and Image Packs
+{%- elif feature_name == "spaces" -%}
+Spaces
+{%- elif feature_name == "threads" -%}
+Threads
 {%- else -%}
-    {{feature_name | replace(from="_", to=" ") | title }}
+{{ throw(message="Feature '" ~ feature_name ~ "' is missing a label!") }}
 {%- endif -%}
 {% endmacro %}
 
