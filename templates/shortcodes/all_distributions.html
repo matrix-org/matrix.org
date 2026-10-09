@@ -1,4 +1,5 @@
 {% import "macros/distributions.html" as srvutils %}
+{% import "macros/licence.html" as lic %}
 {% set distributions_data = load_data(path="content/ecosystem/distributions/distributions.toml") %}
 {% set licences = [] %}
 {% set frameworks = [] %}
@@ -110,7 +111,7 @@
             </div>
             {% if distribution.vendor %}<div class="author">{{ distribution.vendor }}</div>{% endif %}
             <div class="pill-row">
-                <div class="pill licence">{{ distribution.licence }}</div>
+                {{ lic::pills(licence=distribution.licence, link=false) }}
                 {% for framework in distribution.frameworks %}
                 <div class="pill pill--framework pill--framework-{{ framework | slugify }}">{{ framework }}</div>
                 {% endfor %}

@@ -1,4 +1,5 @@
 {% import "macros/language_helpers.html" as lang_helper %}
+{% import "macros/licence.html" as lic %}
 
 {% macro sdks_panel(type) %}
 {% set sdks_data = load_data(path="content/ecosystem/sdks/sdks.toml") %}
@@ -101,7 +102,7 @@
                 </div>
                 <div class="author">{{ sdk.maintainer }}</div>
                 <div class="pill-row">
-                    <div class="pill licence">{{ sdk.licence }}</div>
+                    {{ lic::pills(licence=sdk.licence, link=false) }}
                     <div class="pill pill--lang pill--lang-{{ lang_helper::normalize_language(lang=sdk.language) }}">{{ sdk.language }}</div>
                 </div>
                 {% if sdk.description %}<p>{{ sdk.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</p>{% endif %}

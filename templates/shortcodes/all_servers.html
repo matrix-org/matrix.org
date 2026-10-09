@@ -1,5 +1,6 @@
 {% import "macros/servers.html" as srvutils %}
 {% import "macros/language_helpers.html" as lang_helper %}
+{% import "macros/licence.html" as lic %}
 {% set servers_data = load_data(path="content/ecosystem/servers/servers.toml") %}
 {% set licences = [] %}
 {% set languages = [] %}
@@ -91,7 +92,7 @@
             </div>
             {% if server.author %}<div class="author">{{ server.author }}</div>{% endif %}
             <div class="pill-row">
-                <div class="pill licence">{{ server.licence }}</div>
+                {{ lic::pills(licence=server.licence, link=false) }}
                 <div class="pill pill--lang pill--lang-{{ lang_helper::normalize_language(lang=server.language) }}">{{ server.language }}</div>
             </div>
             <span>{{ server.description | markdown(inline=true) | regex_replace(pattern=`<a.*>(?P<text>.*)</a>`, rep=`$text`) | safe }}</span>

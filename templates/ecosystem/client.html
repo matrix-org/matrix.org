@@ -1,6 +1,7 @@
 {% extends "page.html" %}
 {% import "macros/clients.html" as clients %}
 {% import "macros/breadcrumb.html" as breadcrumb %}
+{% import "macros/licence.html" as lic %}
 {% block head_extra %}
 <meta
     name="description"
@@ -38,19 +39,7 @@
                     >
                     {% endif %} {% if page.extra.licence %}
                     <span class="ecosystem-detail-meta-item pill-row">
-                        {% set licence_parts = page.extra.licence | split(pat=" OR ") %}
-                        {% for part in licence_parts %}
-                        {% if part is containing(" ") %}
-                        <span class="pill licence">{{ part }}</span>
-                        {% else %}
-                        <a
-                            href="https://spdx.org/licenses/{{ part }}.html"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="pill licence"
-                            >{{ part }}</a
-                        >
-                        {% endif %} {% endfor %}
+                        {{ lic::pills(licence=page.extra.licence) }}
                     </span>
                     {% endif %}
                 </div>

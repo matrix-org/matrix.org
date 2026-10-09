@@ -1,0 +1,14 @@
+{# One pill per licence in an SPDX "A OR B" expression. With link=false (cards
+   that are already links) the pills are plain text. Ids with a space (e.g.
+   "Element Commercial License") are not SPDX ids, so they never link. #}
+{% macro pills(licence, link=true) %}
+{% for part in licence | split(pat=" OR ") %}
+{% if not link %}
+<div class="pill licence">{{ part }}</div>
+{% elif part is containing(" ") %}
+<span class="pill licence">{{ part }}</span>
+{% else %}
+<a href="https://spdx.org/licenses/{{ part }}.html" target="_blank" rel="noopener noreferrer" class="pill licence">{{ part }}</a>
+{% endif %}
+{% endfor %}
+{% endmacro %}

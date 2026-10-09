@@ -1,4 +1,5 @@
 {# Bridge feature macros for the matrix.org website. #}
+{% import "macros/licence.html" as lic %}
 
 {# Human-readable label for a bridge feature key #}
 {% macro feature_label(feature_name) %}
@@ -67,13 +68,8 @@
                         >{{ bridge.language }}</span
                     >
                     {% endif %} {% if bridge.license %}
-                    <span class="ecosystem-detail-meta-item">
-                        <a
-                            href="https://spdx.org/licenses/{{ bridge.license }}.html"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >{{ bridge.license }}</a
-                        >
+                    <span class="ecosystem-detail-meta-item pill-row">
+                        {{ lic::pills(licence=bridge.license) }}
                     </span>
                     {% endif %}
                 </div>
