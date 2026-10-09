@@ -11,4 +11,5 @@
 /static/.well-known/pgp-key.txt @matrix-org/security
 /static/.well-known/security.txt @matrix-org/security
 /static/.well-known/matrix/ @matrix-org/sre
+/content/homeserver/features.md @matrix-org/synapse-core @matrix-org/website-wg
 /.github/CODEOWNERS @matrix-org/matrix-foundation
