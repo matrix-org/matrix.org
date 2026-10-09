@@ -2,7 +2,7 @@
 
 {# Human-readable label for a bridge feature key #}
 {% macro feature_label(feature_name) %}
-{% if feature_name == "dm" %}Direct messages
+{% if feature_name == "direct_messages" %}Direct messages
 {% elif feature_name == "channels" %}Channels
 {% elif feature_name == "channel" %}Channels
 {% elif feature_name == "groups" %}Groups
@@ -31,7 +31,7 @@
 {% elif feature_name == "quotes" %}Quotes
 {% elif feature_name == "communities" %}Communities
 {% elif feature_name == "multi_domain" %}Multi-domain
-{% else %}{{ feature_name | replace(from="_", to=" ") | title }}
+{% else %}{{ throw(message="Bridge feature '" ~ feature_name ~ "' is missing a label!") }}
 {% endif %}
 {% endmacro %}
 
@@ -165,7 +165,7 @@
 
 {# Short description for a bridge feature key #}
 {% macro feature_description(feature_name) %}
-{% if feature_name == "dm" %}Bridge direct/private messages between users.
+{% if feature_name == "direct_messages" %}Bridge direct/private messages between users.
 {% elif feature_name == "channels" or feature_name == "channel" %}Bridge public or private channels to Matrix rooms.
 {% elif feature_name == "groups" or feature_name == "group_chats" or feature_name == "group_chat" %}Bridge group conversations to Matrix rooms.
 {% elif feature_name == "formatted_text" %}Rich text formatting such as bold, italic, and code blocks is preserved.
