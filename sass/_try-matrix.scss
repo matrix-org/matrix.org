@@ -333,30 +333,6 @@
         gap: 0.5rem;
     }
 
-    .client-card-screenshot-trigger {
-        position: relative;
-        display: block;
-        cursor: zoom-in;
-        line-height: 0;
-
-        // Expand badge — visible in bottom-right corner on all devices
-        &::after {
-            content: "⤢";
-            position: absolute;
-            bottom: 0.4rem;
-            right: 0.4rem;
-            font-size: 1.1rem;
-            line-height: 1;
-            background: rgba(0, 0, 0, 0.55);
-            color: #fff;
-            padding: 0.3rem 0.5rem;
-            border-radius: 4px;
-            pointer-events: none;
-            opacity: 0.85;
-            z-index: 1;
-        }
-    }
-
     .client-card-screenshot {
         display: block;
         max-width: 100%;
@@ -389,59 +365,6 @@
             object-fit: cover;
             object-position: top center;
             border-radius: 0;
-        }
-    }
-
-    // ── CSS-only lightbox via :target ─────────────────────────────────────────
-
-    .client-lightbox {
-        display: none;
-        position: fixed;
-        inset: 0;
-        z-index: 1000;
-        align-items: center;
-        justify-content: center;
-
-        &:target {
-            display: flex;
-        }
-
-        img {
-            position: relative;
-            z-index: 2;
-            max-width: min(90vw, 1200px);
-            max-height: 90vh;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border-radius: 10px;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
-            margin: 0;
-        }
-    }
-
-    .client-lightbox-backdrop {
-        position: fixed;
-        inset: 0;
-        z-index: 1;
-        background: rgba(0, 0, 0, 0.85);
-        cursor: zoom-out;
-    }
-
-    .client-lightbox-close {
-        position: fixed;
-        top: 1rem;
-        right: 1.25rem;
-        z-index: 3;
-        font-size: 2rem;
-        line-height: 1;
-        color: #fff;
-        text-decoration: none;
-        opacity: 0.8;
-        cursor: pointer;
-
-        &:hover {
-            opacity: 1;
         }
     }
 

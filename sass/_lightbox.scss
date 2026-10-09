@@ -1,0 +1,79 @@
+// CSS-only lightbox via :target.
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+
+    &:target {
+        display: flex;
+    }
+
+    img {
+        position: relative;
+        z-index: 2;
+        max-width: min(90vw, 1200px);
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+        margin: 0;
+    }
+}
+
+.lightbox-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: zoom-out;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 1rem;
+    right: 1.25rem;
+    z-index: 3;
+    font-size: 2rem;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.lightbox-trigger {
+    position: relative;
+    display: block;
+    width: fit-content;
+    cursor: zoom-in;
+    line-height: 0;
+
+    // Expand badge, visible so it works on touch too.
+    &::after {
+        content: "⤢";
+        position: absolute;
+        bottom: 0.4rem;
+        right: 0.4rem;
+        font-size: 1.1rem;
+        line-height: 1;
+        background: rgba(0, 0, 0, 0.55);
+        // blur + ring keep it visible over a dark image too.
+        backdrop-filter: blur(4px);
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+        color: #fff;
+        padding: 0.3rem 0.5rem;
+        border-radius: 4px;
+        pointer-events: none;
+        opacity: 0.85;
+        z-index: 1;
+    }
+}
