@@ -38,12 +38,12 @@
                     Support room
                 </a>
                 {% endif %}
-                {% if page.extra.repo %}
-                <a href="{{ page.extra.repo }}" class="pill">
+                {% for repo in page.extra.repo %}
+                <a href="{{ repo.url }}" class="pill">
                     {{ load_data(path="/assets/repository.svg") | safe }}
-                    Source Code
+                    {{ repo.title }} Source Code
                 </a>
-                {% endif %}
+                {% endfor %}
             </div>
             <div class="stores">
                 {{ clients::install_links(packages=page.extra.packages) }}
