@@ -1,3 +1,41 @@
+// Colour families shared by every pill: platform, audience, language,
+// framework and maturity. Each family is (background, border, text).
+$pill-families: (
+    blue: (#e8f1ff, #9be, #1a4db0),
+    green: (#e6f4ea, #7acc8a, #1a6b32),
+    purple: (#ede9fe, #c4b5fd, #5b21b6),
+    teal: (#e6f9f7, #7fd6ce, #0a6b62),
+    gray: (#f3f3f3, #d1d5db, #374151),
+    orange: (#fff4e5, #fcd9a0, #92400e),
+    yellow: (#fefce8, #fde68a, #854d0e),
+    coral: (#fff0eb, #fdb99a, #9a3412),
+    pink: (#fce7f3, #f9a8d4, #9d174d),
+    indigo: (#eef0fb, #8892d4, #2c3894),
+    red: (#fde8e8, #f0a8a8, #a61b1b),
+    stable: (#dff6d5, #245c0c, #245c0c),
+    beta: (#f6e7d5, #6f420f, #6f420f),
+    alpha: (#f6d5d5, #8b1212, #8b1212),
+    obsolete: (#e6e6e6, #4a4a4a, #4a4a4a),
+);
+
+@mixin pill-family($name) {
+    $colours: map-get($pill-families, $name);
+    background-color: nth($colours, 1);
+    border-color: nth($colours, 2);
+    color: nth($colours, 3);
+}
+
+%pill-badge {
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 9999px;
+}
+
+%bordered-card {
+    border: 1px solid #d2d2d2;
+    border-radius: 16px;
+}
+
 .projects-card-deck {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(17.6rem, 1fr));
@@ -25,8 +63,7 @@ a.project-card {
     gap: 0.75rem;
     text-align: center;
     min-height: 100%;
-    border: 1px solid #d2d2d2;
-    border-radius: 16px;
+    @extend %bordered-card;
 
     // Logo + name header row
     img {
@@ -115,119 +152,45 @@ a.project-card {
     &.licence {
         background-color: transparent;
         border-color: #888;
-        color: #555;
+        color: var(--color-text-muted);
     }
 }
 
 // Language pill colour families
-// Systems (C, C++, Rust)
-.pill--lang-c,
-.pill--lang-cplusplus,
-.pill--lang-rust {
-    background-color: #fff4e5;
-    border-color: #fcd9a0;
-    color: #92400e;
-}
+$lang-families: (
+    orange: (c cplusplus rust),
+    purple: (java kotlin),
+    yellow: (javascript typescript),
+    blue: (python),
+    teal: (go),
+    coral: (swift objective-c),
+    pink: (ruby perl raku erlang elixir lisp racket),
+    green: (php dart elm haxe),
+    gray: (posix-shell nim),
+    indigo: (csharp),
+);
 
-// JVM (Java, Kotlin)
-.pill--lang-java,
-.pill--lang-kotlin {
-    background-color: #ede9fe;
-    border-color: #c4b5fd;
-    color: #5b21b6;
-}
-
-// JavaScript / TypeScript
-.pill--lang-javascript,
-.pill--lang-typescript {
-    background-color: #fefce8;
-    border-color: #fde68a;
-    color: #854d0e;
-}
-
-// Python
-.pill--lang-python {
-    background-color: #e8f1ff;
-    border-color: #9be;
-    color: #1a4db0;
-}
-
-// Go
-.pill--lang-go {
-    background-color: #e6f9f7;
-    border-color: #7fd6ce;
-    color: #0a6b62;
-}
-
-// Apple (Swift, Objective-C)
-.pill--lang-swift,
-.pill--lang-objective-c {
-    background-color: #fff0eb;
-    border-color: #fdb99a;
-    color: #9a3412;
-}
-
-// Dynamic / functional (Ruby, Perl, Raku, Erlang, Elixir, Lisp, Racket)
-.pill--lang-ruby,
-.pill--lang-perl,
-.pill--lang-raku,
-.pill--lang-erlang,
-.pill--lang-elixir,
-.pill--lang-lisp,
-.pill--lang-racket {
-    background-color: #fce7f3;
-    border-color: #f9a8d4;
-    color: #9d174d;
-}
-
-// Web / cross-platform (PHP, Dart, Elm, Haxe)
-.pill--lang-php,
-.pill--lang-dart,
-.pill--lang-elm,
-.pill--lang-haxe {
-    background-color: #e6f4ea;
-    border-color: #7acc8a;
-    color: #1a6b32;
-}
-
-// Shell / scripting (POSIX Shell, Nim)
-.pill--lang-posix-shell,
-.pill--lang-nim {
-    background-color: #f3f3f3;
-    border-color: #d1d5db;
-    color: #374151;
-}
-
-// C# (separate from C/C++ - .NET ecosystem)
-.pill--lang-csharp {
-    background-color: #eef0fb;
-    border-color: #8892d4;
-    color: #2c3894;
+@each $family, $names in $lang-families {
+    @each $name in $names {
+        .pill--lang-#{$name} {
+            @include pill-family($family);
+        }
+    }
 }
 
 // Deployment framework pill colour families
-// Kubernetes ecosystem (Helm, Helmfile, Kubernetes)
-.pill--framework-helm,
-.pill--framework-helmfile,
-.pill--framework-kubernetes {
-    background-color: #e6f9f7;
-    border-color: #7fd6ce;
-    color: #0a6b62;
-}
+$framework-families: (
+    teal: (helm helmfile kubernetes),
+    blue: (docker docker-compose),
+    red: (ansible),
+);
 
-// Containers (Docker, Docker Compose)
-.pill--framework-docker,
-.pill--framework-docker-compose {
-    background-color: #e8f1ff;
-    border-color: #9be;
-    color: #1a4db0;
-}
-
-// Config management (Ansible)
-.pill--framework-ansible {
-    background-color: #fde8e8;
-    border-color: #f0a8a8;
-    color: #a61b1b;
+@each $family, $names in $framework-families {
+    @each $name in $names {
+        .pill--framework-#{$name} {
+            @include pill-family($family);
+        }
+    }
 }
 
 .filtered-out {
@@ -323,8 +286,7 @@ a.project-card {
             z-index: 200;
             padding: 0.5rem 1rem;
             background-color: #fafafa;
-            border: 1px solid #d2d2d2;
-            border-radius: 16px;
+            @extend %bordered-card;
 
             // Anchored relative to .filters (see above) instead of this
             // button below 700px: sits right under the row of filter
@@ -398,9 +360,7 @@ a.project-card {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    // Row spacing used to come for free from the label's inherited
-    // line-height; now that that's reset to 1 for alignment (below), it
-    // needs to be explicit instead.
+    // Explicit row spacing, since the label's line-height is reset to 1 below.
     padding-block: 0.3rem;
 
     // Long, hyphen-only labels with no spaces to break at (e.g. licence ids
@@ -463,9 +423,7 @@ a.project-card {
 }
 
 .maturity {
-    display: inline-block;
-    border: 1px solid;
-    border-radius: 9999px;
+    @extend %pill-badge;
     padding: 0.1rem 0.45rem;
     font-size: 0.85rem;
     font-weight: 500;
@@ -473,28 +431,10 @@ a.project-card {
     max-width: fit-content;
     text-transform: capitalize;
 
-    &.stable {
-        background-color: #dff6d5;
-        border-color: #245c0c;
-        color: #245c0c;
-    }
-
-    &.beta {
-        background-color: #f6e7d5;
-        border-color: #6f420f;
-        color: #6f420f;
-    }
-
-    &.alpha {
-        background-color: #f6d5d5;
-        border-color: #8b1212;
-        color: #8b1212;
-    }
-
-    &.obsolete {
-        background-color: #e6e6e6;
-        border-color: #4a4a4a;
-        color: #4a4a4a;
+    @each $status in stable, beta, alpha, obsolete {
+        &.#{$status} {
+            @include pill-family($status);
+        }
     }
 }
 
@@ -525,13 +465,6 @@ a.project-card {
     }
 }
 
-.project-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-    margin-bottom: 1rem;
-}
-
 a.pill {
     display: inline-flex;
     align-items: center;
@@ -542,63 +475,16 @@ a.pill {
     padding: 0.1rem 0.4rem;
     text-decoration: none;
 
-    svg {
-        flex-shrink: 0;
-        width: 1em;
-        height: 1em;
-    }
-
-    .fillme {
-        fill: var(--color-text);
-        stroke: var(--color-text);
-    }
-
-    .fillme-inverse {
-        stroke: #fff;
-    }
-
     &:hover {
         background-color: var(--color-text);
         color: #fff;
-
-        .fillme {
-            fill: #fff;
-            stroke: #fff;
-        }
-
-        .fillme-inverse {
-            stroke: var(--color-text);
-        }
-    }
-}
-
-.features-matrix {
-    ul {
-        border: 1px solid var(--borders-color);
-        border-radius: 16px;
-        padding-inline: 1rem;
-
-        li {
-            padding: 0.5rem;
-            line-height: 1.6;
-            list-style-position: inside;
-            list-style-image: url("/assets/cross_unsupported.svg");
-
-            &.supported {
-                list-style-image: url("/assets/tick_supported.svg");
-            }
-
-            & + li {
-                border-top: 1px solid #d2d2d2;
-            }
-        }
     }
 }
 
 // Breadcrumb navigation - see _breadcrumb.scss for the shared component.
 
 // Shared ecosystem intro paragraph
-// Used by .servers > p and .distributions > p (and any future listing pages)
+// Used by .servers > p, .distributions > p and .clients_page > p
 // for the centred intro text that sits below the page heading.
 
 %ecosystem-page-intro {

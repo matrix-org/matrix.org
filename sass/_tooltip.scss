@@ -1,25 +1,9 @@
-.tooltip-toggle {
-    anchor-name: var(--tooltip-anchor-name);
-    background: none;
-    border: none;
-}
-
 .tooltip-content {
     background-color: #000;
     border-radius: 8px;
     color: #fff;
-    margin: 0 16px;
     padding: 6px 6px 4px;
-    position-anchor: var(--tooltip-anchor-name);
-    position-area: bottom;
     text-align: center;
-}
-
-@media screen and (min-width: 768px) {
-    .tooltip-content {
-        margin: 0;
-        max-width: 400px;
-    }
 }
 
 // Reusable hover/focus tooltip. Wraps any trigger element (pill, label, icon,

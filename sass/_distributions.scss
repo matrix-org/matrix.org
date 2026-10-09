@@ -7,14 +7,3 @@
 .distribution-links {
     @extend %eco-link-pills;
 }
-
-.standard {
-    border: 1px solid var(--borders-color);
-    border-radius: 9999px;
-    padding: 0 0.6rem;
-    font-weight: 600;
-    justify-self: flex-end;
-    background-color: #f6d5d5;
-    border-color: #8b1212;
-    color: #8b1212;
-}

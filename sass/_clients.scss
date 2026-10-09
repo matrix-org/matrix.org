@@ -1,9 +1,3 @@
-// Body lock when a client popup is open (legacy checkbox overlay)
-
-body:has(.projects-card-deck > div > .client-checkbox:checked) {
-    overflow: hidden;
-}
-
 // Clients section page layout
 
 .clients_page {
@@ -16,12 +10,8 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
         margin-bottom: 1rem;
     }
 
-    >p {
-        text-align: center;
-        font-weight: 400;
-        font-size: 1.125rem;
-        line-height: 120%;
-        margin: 0 auto 4rem auto;
+    > p {
+        @extend %ecosystem-page-intro;
         max-width: 40rem;
     }
 }
@@ -49,77 +39,47 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 }
 
 // Platform pills
-// Colored variants matching the Try Matrix design language.
+// Coloured variants matching the Try Matrix design language.
 // Used on both the ecosystem client list and inside <details> cards.
 
 .platform-pill {
-    display: inline-block;
+    @extend %pill-badge;
     font-size: 0.72rem;
     padding: 0.1rem 0.45rem;
-    border-radius: 9999px;
-    border: 1px solid;
     white-space: nowrap;
     font-weight: 500;
 }
 
-.platform-pill--ios {
-    background: #e8f1ff;
-    color: #1a4db0;
-    border-color: #9be;
-}
+$platform-families: (
+    ios: blue,
+    android: green,
+    web: purple,
+    windows: teal,
+    macos: gray,
+    linux: orange,
+);
 
-.platform-pill--android {
-    background: #e6f4ea;
-    color: #1a6b32;
-    border-color: #7acc8a;
-}
-
-.platform-pill--web {
-    background: #ede9fe;
-    color: #5b21b6;
-    border-color: #c4b5fd;
-}
-
-.platform-pill--windows {
-    background: #e6f9f7;
-    color: #0a6b62;
-    border-color: #7fd6ce;
-}
-
-.platform-pill--macos {
-    background: #f3f3f3;
-    color: #374151;
-    border-color: #d1d5db;
-}
-
-.platform-pill--linux {
-    background: #fff4e5;
-    color: #92400e;
-    border-color: #fcd9a0;
+@each $platform, $family in $platform-families {
+    .platform-pill--#{$platform} {
+        @include pill-family($family);
+    }
 }
 
 // Audience tags (hosting providers)
-// Reused from Try Matrix provider compact cards.
 
 .audience-tag {
-    display: inline-block;
+    @extend %pill-badge;
     font-size: 0.72rem;
     padding: 0.1rem 0.4rem;
-    border-radius: 9999px;
-    border: 1px solid;
     white-space: nowrap;
     font-weight: 500;
 
     &--consumer {
-        background: #e8f1ff;
-        color: #1a4db0;
-        border-color: #9be;
+        @include pill-family(blue);
     }
 
     &--business {
-        background: #f3f3f3;
-        color: #374151;
-        border-color: #d1d5db;
+        @include pill-family(gray);
     }
 }
 
@@ -164,8 +124,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     padding: 0.85rem 1.1rem;
     user-select: none;
 
-    // Rounds the card's top corners itself now that .client-card only clips
-    // while closed (see .client-card).
+    // Rounds its own top corners, since .client-card only clips while closed.
     border-radius: 13px 13px 0 0;
 
     @media (max-width: 600px) {
@@ -269,24 +228,10 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     opacity: 1;
 }
 
-.client-card-description-short {
-    font-size: 0.85rem;
-    color: #555;
-    line-height: 1.3;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    @media (max-width: 600px) {
-        font-size: 0.8rem;
-        white-space: normal;
-    }
-}
-
 // "good for" subtext - used on try-matrix; available here too if needed
 .client-card-good-for {
     font-size: 0.85rem;
-    color: #555;
+    color: var(--color-text-muted);
     line-height: 1.3;
 
     @media (max-width: 600px) {
@@ -318,8 +263,8 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 
     // On the desktop 2-column layout this panel sits in the card's
-    // bottom-left corner, so it needs to round to match .client-card now
-    // that the card no longer clips its content while open (see .client-card).
+    // bottom-left corner, so it needs to round to match .client-card, which
+    // only clips its content while closed.
     // On mobile it stacks above the details column instead, so it keeps its
     // plain corner radius.
     > .client-card-screenshot-wrap {
@@ -329,6 +274,23 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
             border-bottom-left-radius: 4px;
         }
     }
+}
+
+// The small "expand" glyph shown over screenshots
+@mixin expand-badge($inset) {
+    content: "⤢";
+    position: absolute;
+    bottom: $inset;
+    right: $inset;
+    font-size: 0.75rem;
+    line-height: 1;
+    background: rgb(0 0 0 / 55%);
+    color: #fff;
+    padding: 0.2rem 0.35rem;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0.85;
+    z-index: 2;
 }
 
 // Screenshot container - always full grid-row height in cards, 16:9 on detail pages
@@ -353,19 +315,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 
     // Expand badge anchored to the wrap so it is never clipped
     &::after {
-        content: "⤢";
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-        font-size: 0.75rem;
-        line-height: 1;
-        background: rgb(0 0 0 / 55%);
-        color: #fff;
-        padding: 0.2rem 0.35rem;
-        border-radius: 4px;
-        pointer-events: none;
-        opacity: 0.85;
-        z-index: 2;
+        @include expand-badge(1rem);
     }
 }
 
@@ -387,20 +337,16 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 
     .client-card-screenshot-trigger {
-        flex: 1;
-        overflow: hidden;
         border-radius: 0;
     }
+}
 
-    .client-card-screenshot {
-        width: 100%;
-        height: 100%;
-        max-width: unset;
-        max-height: unset;
-        object-fit: cover;
-        object-position: top center;
-        border-radius: 0;
-    }
+.ecosystem-detail-main .client-card-screenshot-wrap .client-card-screenshot,
+.client-card-screenshot-wrap--multi .client-card-screenshot {
+    // Beats `.content img`, which would otherwise cap the height.
+    height: 100%;
+    max-width: unset;
+    max-height: unset;
 }
 
 .client-card-screenshot-trigger {
@@ -439,37 +385,12 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 
     .client-card-screenshot-trigger {
-        flex: 1;
         min-width: 0;
-        overflow: hidden;
-        border-radius: 4px;
 
         // Per-trigger expand badge for multi-screenshot layouts
         &::after {
-            content: "⤢";
-            position: absolute;
-            bottom: 0.5rem;
-            right: 0.5rem;
-            font-size: 0.75rem;
-            line-height: 1;
-            background: rgb(0 0 0 / 55%);
-            color: #fff;
-            padding: 0.2rem 0.35rem;
-            border-radius: 4px;
-            pointer-events: none;
-            opacity: 0.85;
-            z-index: 2;
+            @include expand-badge(0.5rem);
         }
-    }
-
-    .client-card-screenshot {
-        width: 100%;
-        height: 100%;
-        max-width: unset;
-        max-height: unset;
-        object-fit: cover;
-        object-position: top center;
-        border-radius: 0;
     }
 }
 
@@ -558,14 +479,13 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 }
 
 .client-feat-pill {
-    display: inline-block;
+    @extend %pill-badge;
     padding: 0.2rem 0.6rem;
-    border-radius: 9999px;
     font-size: 0.78rem;
     font-weight: 500;
     background-color: #e9f0ff;
     color: #1a3a80;
-    border: 1px solid #bcd0f7;
+    border-color: #bcd0f7;
     white-space: nowrap;
 }
 
@@ -652,145 +572,6 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
     }
 }
 
-// Single-column body (no screenshot slot)
-.hosting-provider-body {
-    grid-template-columns: 1fr !important;
-}
-
-.hosting-provider-description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--color-text);
-
-    p,
-    ul,
-    ol {
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-    }
-
-    ul,
-    ol {
-        padding-left: 1.4rem;
-    }
-
-    a {
-        color: var(--color-link);
-    }
-}
-
-// Legacy popup overlay (all-clients list)
-
-.client-details {
-    @media (max-width: 767px) {
-        grid-template-columns: 1fr;
-    }
-
-    .details {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1rem;
-
-        .app-logo {
-            width: 8rem;
-            margin-inline: auto;
-            margin-bottom: 1rem;
-        }
-
-        h3 {
-            display: flex;
-            gap: 0.5rem;
-            margin: 0 auto;
-            align-items: center;
-            justify-content: center;
-
-            font-style: normal;
-            font-weight: 700;
-            font-size: 2rem;
-
-            @media (max-width: 767px) {
-                flex-direction: column;
-            }
-
-            .maturity {
-                padding-block: 0.3rem;
-            }
-        }
-
-        p {
-            margin: 0;
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        .latest-release {
-            margin-bottom: 0 auto;
-            font-size: 0.8rem;
-            text-align: center;
-        }
-    }
-
-    .project-links {
-        margin-top: 1rem;
-        justify-content: center;
-    }
-
-    h4 {
-        text-align: center;
-    }
-
-    .features-matrix {
-        display: grid;
-        grid-gap: 1rem;
-        grid-template-columns: 1fr 1fr;
-
-        @media (max-width: 767px) {
-            grid-template-columns: 1fr;
-        }
-
-        .features-category {
-            h5 {
-                text-align: center;
-            }
-        }
-
-        img {
-            height: 1em;
-            vertical-align: center;
-            cursor: pointer;
-        }
-    }
-
-    p {
-        font-size: 80%;
-        text-align: center;
-        margin-top: 1rem;
-    }
-}
-
-.client-checkbox {
-    display: none;
-
-    &:checked ~ .client-details-overlay {
-        position: fixed;
-        z-index: 150;
-        top: var(--navbar-height);
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgb(0 0 0 / 50%);
-    }
-
-    &:not(:checked) ~ .client-details-overlay {
-        display: none;
-    }
-
-    &:not(:checked) ~ .client-details {
-        display: none;
-    }
-}
-
 .stores {
     display: flex;
     gap: 0.3rem 1rem;
@@ -808,7 +589,7 @@ body:has(.projects-card-deck > div > .client-checkbox:checked) {
 }
 
 // Shared ecosystem detail page layout
-// Used by client.html and hosting-provider.html (and any future detail pages).
+// Used by the client and hosting provider detail pages.
 
 .detail-page {
     padding-top: 3rem;

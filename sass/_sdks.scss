@@ -1,6 +1,5 @@
 // Purpose selector (Client/Bot/Bridge SDKs), styled as a row of clickable
-// cards - matching the .plan-card / .account-tier card language used on
-// try-matrix - instead of the underlined-text tabs this used to be.
+// cards matching the .plan-card / .account-tier card language on try-matrix.
 #sdk-purpose-selector {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -27,8 +26,7 @@
     color: inherit;
     font: inherit;
     text-align: left;
-    border: 1px solid #d2d2d2;
-    border-radius: 16px;
+    @extend %bordered-card;
     cursor: pointer;
     user-select: none;
     transition:
@@ -59,11 +57,9 @@
 
 .sdk-purpose-card-desc {
     font-size: 0.85rem;
-    // var(--color-text-light) (#757575) only reaches ~4.4:1 against the
-    // #fafafa card background, just short of WCAG AA's 4.5:1 for this
-    // font size. #555 matches the muted-text tone used elsewhere in cards
-    // (e.g. .client-card-description-short) and clears AA comfortably.
-    color: #555;
+    // var(--color-text-light) only reaches ~4.4:1 against the #fafafa card
+    // background, just short of WCAG AA's 4.5:1 at this font size.
+    color: var(--color-text-muted);
 }
 
 // Short blurb for the selected purpose, shown between the cards and the
@@ -78,8 +74,8 @@
     border: 1px solid #d2d2d2;
     border-radius: 12px;
     font-size: 0.9rem;
-    // See .sdk-purpose-card-desc above for why this isn't var(--color-text-light).
-    color: #555;
+    // Muted for the same contrast reason as .sdk-purpose-card-desc.
+    color: var(--color-text-muted);
 }
 
 .hidden {
