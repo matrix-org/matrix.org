@@ -1,6 +1,6 @@
 {% extends "skel.html" %}
 {% block content %}
-<article class="content">
+<article data-pagefind-filter="section:Documentation" class="content">
     <header>
         <h1>{{ section.title }}</h1>
         {% set iso_date = section.extra.updated | date(format = '%Y-%m-%d') %}

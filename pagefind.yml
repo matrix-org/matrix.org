@@ -1,0 +1,10 @@
+site: public
+output_subdir: pagefind
+exclude_selectors:
+  # Ignore codeblocks
+  - "code"
+  # Blocked due to https://github.com/Pagefind/pagefind/issues/1134
+  # - "#that-s-all-i-know"
+  # - "#that-s-all-i-know-checkered-flag"
+  # - "#that-s-all-i-know+p"
+  # - "#that-s-all-i-know-checkered-flag+p"
