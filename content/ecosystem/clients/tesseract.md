@@ -30,6 +30,8 @@ voip_matrixrtc = "supported"
 windows_installer = "https://github.com/surakin/tesseract/releases/latest"
 macos_installer = "https://github.com/surakin/tesseract/releases/latest"
 other_linux_link = "https://github.com/surakin/tesseract/releases/latest"
+flatpakref = "https://surakin.github.io/tesseract/io.github.surakin.Tesseract.flatpakref"
+
 +++
 
 A native desktop client built on the matrix-rust-sdk.

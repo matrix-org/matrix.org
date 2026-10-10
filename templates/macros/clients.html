@@ -103,7 +103,7 @@ Send and display "custom emoji" and stickers. Create, share, manage and subscrib
 {% macro classes(client) %}
 {% if client.packages.apple_app_store.app_id and client.packages.apple_app_store.org %}platform-ios{% endif %}
 {% if client.packages.google_play_store.app_id %}platform-android{% endif %}
-{% if client.packages.flathub.app_id %}platform-flathub{% endif %}
+{% if client.packages.flathub.app_id or client.packages.flatpakref %}platform-flathub{% endif %}
 {% if client.packages.other_linux_link %}platform-linux{% endif %}
 {% if client.packages.webapp %}platform-web{% endif %}
 {% if client.packages.windows_installer %}platform-windows{% endif %}
@@ -126,8 +126,16 @@ maturity-{{ client.maturity | lower }}
 {% if packages.macos_installer %}
 <a href="{{ packages.macos_installer }}"><img src="/assets/stores/download_for_macos.svg" alt="Download for macOS" /></a>
 {% endif %}
+{% if packages.other_linux_link %}
+<a href="{{ packages.other_linux_link }}"><img src="/assets/stores/download_for_linux.svg"
+        alt="Download for Linux" /></a>
+{% endif %}
 {% if packages.flathub %}
 <a href="https://flathub.org/apps/details/{{ packages.flathub.app_id }}"><img src="/assets/stores/flathub.svg" alt="Download on Flathub" /></a>
+{% endif %}
+{% if packages.flatpakref %}
+<a href="{{ packages.flatpakref }}"><img src="/assets/stores/install_with_flatpak.svg"
+        alt="Download Flatpak" /></a>
 {% endif %}
 {% if packages.webapp %}
 <a href="{{ packages.webapp }}"><img src="/assets/stores/use_in_browser.svg" alt="Use in your browser" /></a>
@@ -149,7 +157,7 @@ maturity-{{ client.maturity | lower }}
 {% if packages.google_play_store or packages.f_droid %}<div class="platform-pill platform-pill--android">Android</div>{% endif %}
 {% if packages.windows_installer %}<div class="platform-pill platform-pill--windows">Windows</div>{% endif %}
 {% if packages.macos_installer %}<div class="platform-pill platform-pill--macos">macOS</div>{% endif %}
-{% if packages.flathub or packages.other_linux_link %}<div class="platform-pill platform-pill--linux">Linux</div>{% endif %}
+{% if packages.flathub or packages.flatpakref or packages.other_linux_link %}<div class="platform-pill platform-pill--linux">Linux</div>{% endif %}
 {% if packages.webapp %}<div class="platform-pill platform-pill--web">Web</div>{% endif %}
 {% endmacro %}
 
@@ -157,7 +165,7 @@ maturity-{{ client.maturity | lower }}
    ecosystem/clients.html. `id_prefix` keeps element/lightbox ids unique
    if a page ever renders the deck more than once. #}
 {% macro featured_client_card(client, id_prefix="client") %}
-<details id="{{ client.slug }}" class="client-card{% if client.extra.packages.apple_app_store %} platform-ios{% endif %}{% if client.extra.packages.google_play_store or client.extra.packages.f_droid %} platform-android{% endif %}{% if client.extra.packages.webapp %} platform-web{% endif %}{% if client.extra.packages.windows_installer %} platform-windows{% endif %}{% if client.extra.packages.macos_installer %} platform-macos{% endif %}{% if client.extra.packages.flathub or client.extra.packages.other_linux_link %} platform-linux{% endif %}">
+<details id="{{ client.slug }}" class="client-card{% if client.extra.packages.apple_app_store %} platform-ios{% endif %}{% if client.extra.packages.google_play_store or client.extra.packages.f_droid %} platform-android{% endif %}{% if client.extra.packages.webapp %} platform-web{% endif %}{% if client.extra.packages.windows_installer %} platform-windows{% endif %}{% if client.extra.packages.macos_installer %} platform-macos{% endif %}{% if client.extra.packages.flathub or client.extra.packages.flatpakref or client.extra.packages.other_linux_link %} platform-linux{% endif %}">
     <summary class="client-card-summary">
         <div class="client-card-summary-inner">
             <img src="/ecosystem/clients/{{ client.extra.thumbnail }}"

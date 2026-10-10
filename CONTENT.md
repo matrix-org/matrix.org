@@ -188,6 +188,7 @@ google_play_store.app_id = "com.example.app"
 f_droid.app_id = "com.example.app"
 apple_app_store = { app_id = "id1234567890", org = "example" }
 flathub.app_id = "com.example.app"
+flatpakref = "https://example.com/download/com.example.appname.flatpakref"
 webapp = "https://chat.example.com"
 other_linux_link = "https://example.com/download"
 +++
