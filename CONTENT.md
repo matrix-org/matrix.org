@@ -155,11 +155,11 @@ maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
 repo = "https://github.com/example-org/example-repo"
 matrix_room = "#your-matrix-room:example.com"
 licence = "PICK ONE identifier from https://spdx.org/licenses/"
+# Screenshots are expected to be in the same folder
+screenshots = []
 featured = false
 # Used with featured = true to have a fixed order.
 # featured_order = 1
-# Screenshots are expected to be in the same folder, only shown with featured = true
-# screenshots = []
 # Should describe the target user group, only shown with featured = true
 # good_for = "Useful for users coming from another platform"
 
