@@ -1,5 +1,6 @@
 {# Bridge feature macros for the matrix.org website. #}
 {% import "macros/licence.html" as lic %}
+{% import "macros/language_helpers.html" as lang_helper %}
 
 {# Human-readable label for a bridge feature key #}
 {% macro feature_label(feature_name) %}
@@ -64,9 +65,11 @@
                         >By {{ bridge.maintainer }}</span
                     >
                     {% endif %} {% if bridge.language %}
-                    <span class="ecosystem-detail-meta-item"
-                        >{{ bridge.language }}</span
-                    >
+                    <span class="ecosystem-detail-meta-item pill-row">
+                        {% for language in bridge.language | split(pat=", ") %}
+                        <span class="pill pill--lang pill--lang-{{ lang_helper::normalize_language(lang=language) }}">{{ language }}</span>
+                        {% endfor %}
+                    </span>
                     {% endif %} {% if bridge.license %}
                     <span class="ecosystem-detail-meta-item pill-row">
                         {{ lic::pills(licence=bridge.license) }}
