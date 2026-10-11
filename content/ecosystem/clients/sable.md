@@ -4,9 +4,9 @@ title = "Sable"
 [extra]
 thumbnail = "sable.svg"
 maintainer = "Seven"
-licence = "AGPL-3.0-only"
+licence = "AGPL-3.0-later"
 maturity = "Beta"
-repo = "https://github.com/SableClient/Sable"
+repo = "https://git.sable.moe/SableClient/Sable-next"
 website = "https://docs.sable.moe/"
 matrix_room = "#sable:sable.moe"
 featured = false
@@ -32,4 +32,4 @@ sliding_sync = "supported"
 webapp = "https://app.sable.moe/"
 +++
 
-An almost stable Matrix client, based on Cinny but with more features.
+An almost stable Matrix client.
