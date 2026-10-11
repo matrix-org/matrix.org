@@ -53,6 +53,10 @@ title = "Donate"
 href = "/support"
 
 [[footer_internal]]
+title = "Conference"
+href = "https://conference.matrix.org"
+
+[[footer_internal]]
 title = "Shop"
 href = "https://shop.matrix.org"
 
