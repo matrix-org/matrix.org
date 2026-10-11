@@ -327,7 +327,7 @@ matrix_standard = true if it is compatible with Matrix standard apps, false if i
 
 Hosting providers are listed as pages in [`/content/ecosystem/hosting/`](https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/hosting). It lists providers which provide Matrix components like servers or bots to customers. We require this section to only contain providers that do the actual hosting. Providers which either provide a setup script or only provide selfhosting should go into the Distributions section instead.
 
-To add a hosting provider, add a markdown file for it. Place the logo next to the markdown file. A logo should be in the SVG format. However if this is not available a PNG is acceptable provided it has sufficient resolution while also having reasonable filesize.
+To add a hosting provider, add a markdown file for it. Place the logo next to the markdown file. A logo should be in the SVG format. If this is not available, a raster image with sufficient resolution and reasonable filesize is acceptable - see our [image guidelines](#adding-pictures-in-your-post).
 
 ```markdown
 +++
