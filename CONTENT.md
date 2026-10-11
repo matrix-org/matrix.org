@@ -342,7 +342,7 @@ b2c = true
 +++
 
 What the service provides and any noteworthy limitations or features.
-This page is meant to help end users find a hosting provider for their needs. For marketing opportunities, please reach out to managing-director@foundation.matrix.org
+This page is meant to help end users find a hosting provider for their needs. For marketing opportunities, please reach out to <managing-director@foundation.matrix.org>
 ```
 
 ## Adding documentation
