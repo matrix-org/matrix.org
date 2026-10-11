@@ -325,20 +325,24 @@ matrix_standard = true if it is compatible with Matrix standard apps, false if i
 
 ### Hosting providers
 
-Hosting providers are listed in [`/content/ecosystem/hosting/providers.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/hosting/providers.toml). It lists providers which provide Matrix components like servers or bots to customers. We require this section to only contain providers that do the actual hosting. Providers which either provide a setup script or only provide selfhosting should go into the Distributions section instead.
+Hosting providers are listed as pages in [`/content/ecosystem/hosting/`](https://github.com/matrix-org/matrix.org/tree/main/content/ecosystem/hosting). It lists providers which provide Matrix components like servers or bots to customers. We require this section to only contain providers that do the actual hosting. Providers which either provide a setup script or only provide selfhosting should go into the Distributions section instead.
 
-To add a hosting provider entry, add the following template to the `providers.toml`. Logos should be placed next to the toml file. A logo should be in the SVG format. However if this is not available a PNG is acceptable provided it has sufficient resolution while also having reasonable filesize.
+To add a hosting provider, add a markdown file for it. Place the logo next to the markdown file. A logo should be in the SVG format. If this is not available, a raster image with sufficient resolution and reasonable filesize is acceptable - see our [image guidelines](#adding-pictures-in-your-post).
 
-```toml
-[[providers]]
-name = "The provider's name"
+```markdown
++++
+title = "The provider's name"
+
+[extra]
 image = "logo.svg"
 website = "https://example.com"
 operating_since = "2018"
-description = """
+b2b = true
+b2c = true
++++
+
 What the service provides and any noteworthy limitations or features.
-This page is meant to help end users find a hosting provider for their needs. For marketing opportunities, please reach out to managing-director@foundation.matrix.org
-"""
+This page is meant to help end users find a hosting provider for their needs. For marketing opportunities, please reach out to <managing-director@foundation.matrix.org>.
 ```
 
 ## Adding documentation

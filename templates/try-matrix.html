@@ -3,8 +3,8 @@
 {% import "macros/tooltip.html" as tooltip %}
 
 {% block head_extra %}
-{% set providers_data = load_data(path="content/ecosystem/hosting/providers.toml") %}
-{% set b2c_providers = providers_data.providers | filter(attribute="b2c", value=true) %}
+{% set hosting_section = get_section(path="ecosystem/hosting/_index.md") %}
+{% set b2c_providers = hosting_section.pages | filter(attribute="extra.b2c", value=true) %}
 <script type="module" src={{ get_url(path="/js/tooltip-position.js" , cachebust=true) }}></script>
 <style>
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 0.5rem); }
@@ -26,7 +26,6 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
 {% block content %}
 {% set clients_section = get_section(path="ecosystem/clients/_index.md") %}
 {% set featured_clients = clients_section.pages | filter(attribute="extra.featured", value=true) | sort(attribute="extra.featured_order") %}
-{% set providers_data = load_data(path="content/ecosystem/hosting/providers.toml") %}
 <div class="page-header">
     <div class="hero-block">
         <h1>{{ page.title }}</h1>
@@ -147,18 +146,17 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--navbar-height) + 
                             These services run a Matrix server for you — good if you want your
                             own domain, dedicated resources, or more storage.
                         </p>
-                        {% set b2c_providers = providers_data.providers | filter(attribute="b2c", value=true) %}
                         <div class="providers-carousel" style="--items: {{ b2c_providers | length }}">
                             {% for provider in b2c_providers %}
-                            <a href="{{ provider.website }}" class="provider-compact">
-                                <img src="/ecosystem/hosting/{{ provider.image }}" alt="{{ provider.name }} logo">
-                                <span class="provider-name">{{ provider.name }}</span>
-                                {% if provider.operating_since %}
-                                <span class="provider-since">Since {{ provider.operating_since }}</span>
+                            <a href="{{ provider.extra.website }}" class="provider-compact">
+                                <img src="/ecosystem/hosting/{{ provider.extra.image }}" alt="{{ provider.title }} logo">
+                                <span class="provider-name">{{ provider.title }}</span>
+                                {% if provider.extra.operating_since %}
+                                <span class="provider-since">Since {{ provider.extra.operating_since }}</span>
                                 {% endif %}
                                 <span class="provider-audience">
-                                    {{ tooltip::hover(label="Individuals", text="Offers accounts for individual, personal use.", trigger_class="audience-tag audience-tag--consumer", id="try-matrix-" ~ provider.name ~ "-b2c") }}
-                                    {% if provider.b2b %}{{ tooltip::hover(label="Business", text="Offers dedicated accounts, contracts, or support for organizations.", trigger_class="audience-tag audience-tag--business", id="try-matrix-" ~ provider.name ~ "-b2b") }}{% endif %}
+                                    {{ tooltip::hover(label="Individuals", text="Offers accounts for individual, personal use.", trigger_class="audience-tag audience-tag--consumer", id="try-matrix-" ~ provider.title ~ "-b2c") }}
+                                    {% if provider.extra.b2b %}{{ tooltip::hover(label="Business", text="Offers dedicated accounts, contracts, or support for organizations.", trigger_class="audience-tag audience-tag--business", id="try-matrix-" ~ provider.title ~ "-b2b") }}{% endif %}
                                 </span>
                             </a>
                             {% endfor %}
