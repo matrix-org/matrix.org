@@ -4,7 +4,7 @@ title = "Sable"
 [extra]
 thumbnail = "sable.svg"
 maintainer = "Seven"
-licence = "AGPL-3.0-later"
+licence = "AGPL-3.0-or-later"
 maturity = "Beta"
 repo = "https://git.sable.moe/SableClient/Sable-next"
 website = "https://docs.sable.moe/"
