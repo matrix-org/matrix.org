@@ -3,8 +3,16 @@
         <img src="/images/matrix-logo-white.svg" alt="Matrix logo">
     </a>
     <input id="site-header-dropdown-checkbox" type="checkbox" class="dropdown-checkbox" aria-hidden="true">
-    <label for="site-header-dropdown-checkbox" class="dropdown-button">&#xe602;</label>
-    <label for="site-header-dropdown-checkbox" class="page-overlay"></label>
+    <label
+        for="site-header-dropdown-checkbox"
+        class="dropdown-button"
+        aria-label="Toggle drop-down"
+    >&#xe602;</label>
+    <label
+        for="site-header-dropdown-checkbox"
+        class="page-overlay"
+        aria-label="Toggle drop-down"
+    ></label>
     <nav>
         {% for link in navigation.header %}
         {% if link.section %}
@@ -13,10 +21,13 @@
         <div class="section-wrap">
             <input id="{{ link.section }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true"
                 {{ util::current_checked(if_path_starts_with="/" ~ link.section) }}>
-            <label for="{{ link.section }}-submenu-checkbox" class="submenu-title">
-            <a href="/{{ link.section }}">
-                {{ link.title }}</a> <div class="arrow">
-                </div></label>
+            <div class="submenu-title">
+                <a href="/{{ link.section }}">{{ link.title }}</a>
+                <label
+                    for="{{ link.section }}-submenu-checkbox" class="arrow"
+                    aria-label="Toggle drop-down"
+                ></label>
+            </div>
 
             <div class="section-submenu-wrap">
                 <div class="section-submenu">
@@ -46,12 +57,14 @@
                         aria-hidden="true"
                         {{ util::current_checked(if_path_starts_with=link.href) }}
                     >
-                    <label for="{{ link.id }}-submenu-checkbox" class="submenu-title">
-                        <a href="{{ link.href }}">
-                            {{ link.title }}
-                        </a>
-                        <div class="arrow"></div>
-                    </label>
+                    <div class="submenu-title">
+                        <a href="{{ link.href }}">{{ link.title }}</a>
+                        <label
+                            for="{{ link.id }}-submenu-checkbox"
+                            class="arrow"
+                            aria-label="Toggle drop-down"
+                        ></label>
+                    </div>
                     <div class="section-submenu-wrap">
                         <div class="section-submenu">
                             {% for child in link.children %}

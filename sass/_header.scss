@@ -34,7 +34,7 @@
     .dropdown-button {
         font-family: 'webflow-icons';
         font-size: 1.5rem;
-
+        cursor: pointer;
         padding: 0 1rem;
 
         // Make the button take the full height
@@ -146,6 +146,10 @@
                 gap: 1rem;
 
                 font-size: 1.5rem;
+            }
+
+            a {
+                padding: 0px;
             }
 
             label:hover {
