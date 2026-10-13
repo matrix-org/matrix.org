@@ -54,7 +54,7 @@ However, few users realise that this independence needs sustainable funding to l
 
 ### 1.3 Train decision makers and buyers in open source procurement
 
-Procurement is one of the biggest hurdles the ecosystem faces: decision makers need to understand why open source matters and how to buy it. The EDIC could become the reference source of guidance for different types of buyers, covering what open source brings to sovereignty, privacy and cost savings (backed by the evidence described below), and matching solutions with buyers’ needs.
+Procurement is one of the biggest hurdles the ecosystem faces: decision makers need to understand why open source matters, how to buy it, and why the best way to keep open source free is to financially support the upstream developers. The EDIC could become the reference source of guidance for different types of buyers, covering what open source brings to sovereignty, privacy and cost savings (backed by the evidence described below), and matching solutions with buyers’ needs.
 
 ### 1.4 Identify challenges that all Member States share
 
@@ -70,7 +70,7 @@ The EDIC should provide operational guidance to organisations switching to open 
 
 ### 2.2 Fund usability, security and compliance so digital commons can scale
 
-Open source projects that fail to displace their vendor-locked equivalents usually stumble on the same hurdles: their usability cannot compete, or they cannot shoulder security and compliance requirements (CRA, accessibility, audits…). Promotion and ecosystem management matter too, but a user-friendly common can grow organically without them, as VideoLAN’s VLC shows. Usability, security and compliance work could be funded by existing programmes, but it also fits squarely within the EU-STF and the DC-EDIC mission. On security, the EDIC could even play the role WHO’s pathogen surveillance network plays for outbreaks, coordinating how Member States spot and respond to vulnerabilities in the commons they share.
+Open source projects that fail to displace their vendor-locked equivalents usually stumble on the same hurdles: their usability cannot compete, or they cannot shoulder security and compliance requirements (CRA, accessibility, audits…). Promotion and ecosystem management matter too, but a user-friendly commons can grow organically without them, as VideoLAN’s VLC shows. Usability, security and compliance work could be funded by existing programmes, but it also fits squarely within the EU-STF and the DC-EDIC mission. On security, the EDIC could even play the role WHO’s pathogen surveillance network plays for outbreaks, coordinating how Member States spot and respond to vulnerabilities in the commons they share.
 
 ### 2.3 Support the development of full stack solutions
 
