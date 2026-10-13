@@ -28,11 +28,11 @@ Whilst open source communities are used to such collaborations, the intergovernm
 
 Now replace “health” with “digital sovereignty” in the paragraph above and see how, beyond ensuring that the EU Member States collaborate and share experiences, the DC-EDIC could become a place of:
 
-1.  **Guidance and trust**, for example by providing the tools to make appropriate choices (think pre-qualification).
+1. **Guidance and trust**, for example by providing the tools to make appropriate choices (think pre-qualification).
 
-2.  **Standard setting**, by promoting best practices including the convergence towards open standards (think essential medicines).
+2. **Standard setting**, by promoting best practices including the convergence towards open standards (think essential medicines).
 
-3.  **Coordination**, in particular around problem solving and funding (think outbreak response and governance forums).
+3. **Coordination**, in particular around problem solving and funding (think outbreak response and governance forums).
 
 Here is how the EDIC could take on these roles.
 
