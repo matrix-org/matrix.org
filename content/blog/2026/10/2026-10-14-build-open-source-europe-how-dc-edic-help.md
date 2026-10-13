@@ -8,11 +8,9 @@ author = ["Amandine Le Pape"]
 category = ["Advocacy", "EU"]
 +++
 
-# What will it take to build an open source Europe and how the Digital Commons EDIC can help
-
 A few years ago, it would have been unthinkable that Governments could have dedicated open source and digital commons strategies championed by ministers. But that has changed profoundly: in June, the European Commission unveiled a European Tech Sovereignty Package, which identified some [€264 billion](https://ec.europa.eu/commission/presscorner/api/files/attachment/882568/Factsheet%20Tech%20Sovereignty.pdf) spent annually on proprietary, non-European products and services as a strategic risk. The Matrix Foundation has been a driving force in this change. Last week, I was in Paris representing Matrix at [an event hosted by the General Directorate for Enterprises](https://docs.numerique.gouv.fr/docs/f810ea27-d9f2-4e27-89bc-7e2a6af08614/) to discuss the vital role open source plays in Europe’s digital policy agenda. The event was opened by the French Minister Delegate for AI and Digital affairs Anne Le Henanff and the German State Secretary at the Federal Ministry for Digital Transformation and Government Modernisation (BMDS) Markus Richter. At the same time [our Developer Relations lead, Andy Piper](https://matrix.org/foundation/about/#the-staff-of-the-foundation), was in [Luxembourg](https://conference.opensource.lu/) speaking on a panel with a new European body that grew out of the Tech Sovereignty Package: the [Digital Commons European Digital Infrastructure Consortium](https://digital-commons-edic.eu/) (DC-EDIC).
 
-![French Minister Delegate Anne Le Henanff opening the DGE open source event](DC-EDIC_blog_image1.jpg) ![German State Secretary Markus Richter opening the DGE open source event](DC-EDIC_blog_image2.jpg)
+![French Minister Delegate Anne Le Henanff opening the DGE open source event](/blog/img/DC-EDIC_blog_image1.jpg) ![German State Secretary Markus Richter opening the DGE open source event](/blog/img/DC-EDIC_blog_image2.jpg)
 
 *The French and German ministers opened the DGE open source event.*
 
