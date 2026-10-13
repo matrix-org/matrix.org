@@ -18,6 +18,8 @@ The DC-EDIC was created in December last year with the mission to “develop, ma
 
 With 12 years under our belt spent building and maintaining Matrix as an open standard, taking it to the point where it serves as the backbone of communications for [millions of European civil servants](https://element.io/en/matrix-in-europe), we have built a strong understanding of the gaps in the market and ecosystem that hold back the sustainable use of digital commons. Here are our recommendations for how the DC-EDIC can maximise the impact of its [five goals](https://digital-commons-edic.eu/about/).
 
+<!-- more -->
+
 ## 1\. Build a European community
 
 The EDIC plans to build a thriving, trusted ecosystem of open source actors, collaborating with existing open source communities and ultimately “connect\[ing\] deployment experience with development priorities”. That covers sharing knowledge, promoting success stories, and favouring collaboration over duplication.
