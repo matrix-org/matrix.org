@@ -81,21 +81,17 @@
     align-self: stretch;
 }
 
-.gallery-img {
+// The compound selector beats `.content img`, which sets `height: auto` and
+// caps the size.
+.gallery .gallery-img {
     display: block;
     width: 100%;
     height: 100%;
+    max-width: unset;
+    max-height: unset;
     object-fit: cover;
     object-position: top center;
     border-radius: 0;
-}
-
-.gallery--frame .gallery-img,
-.gallery--multi .gallery-img {
-    // Beats `.content img`, which would otherwise cap the height.
-    height: 100%;
-    max-width: unset;
-    max-height: unset;
 }
 
 // Several images share one row
