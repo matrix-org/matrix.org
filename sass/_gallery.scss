@@ -134,6 +134,36 @@
     }
 }
 
+// Shows every image whole at its own aspect ratio instead of cropping it to
+// fill the panel. Used inside figures.
+.gallery--contain {
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+    background: none;
+    align-self: auto;
+    align-items: center;
+
+    .gallery-item {
+        align-self: center;
+    }
+
+    .gallery-img {
+        height: auto;
+        object-fit: contain;
+    }
+
+    @media (max-width: 700px) {
+        .gallery-item {
+            align-self: stretch;
+        }
+
+        .gallery-img {
+            height: 100%;
+        }
+    }
+}
+
 // Framed galleries keep the frame edge-to-edge even with several images
 .gallery--frame.gallery--multi {
     padding: 0;

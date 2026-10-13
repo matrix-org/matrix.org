@@ -93,6 +93,15 @@ It is possible to add pictures to your posts in markdown. First you need to drop
 
 This shortcode ensures that images have a consistent look across posts.
 
+To show several pictures in one figure, pass a list as `img`. They are displayed as a gallery that can be enlarged by clicking, and as a swipeable strip on narrow screens. The `caption` and `alt` apply to the whole gallery, and each image is numbered in its alt text.
+
+```jinja
+{{ figure(
+    img=["/blog/img/first-picture.avif", "/blog/img/second-picture.avif"]
+    caption="A description of both pictures"
+) }}
+```
+
 We prefer using AVIF, or failing that WebP, files when possible.
 They can be created/converted using many tools, a commandline tool being `magick mogrify -format avif -quality 90 image.png`.
 However if this is not an option we also accept PNG files provided they are reasonable sized and the file size is appropriate for web usage.
