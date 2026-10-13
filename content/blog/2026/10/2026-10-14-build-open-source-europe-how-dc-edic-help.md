@@ -40,7 +40,7 @@ Just as WHO provides guidance on ‘essential’ medical products, the DC-EDIC c
 
 ### 1.2 Support the independent governance of digital commons
 
-True digital sovereignty benefits from an independently governed commons. There are different models for doing this, but non-profit foundations such as the [Python Software Foundation](https://www.python.org/psf-landing/) and the [Matrix.org Foundation](https://matrix.org/) could provide a helpful starting point. These organisations provide administrative and governance support for their projects and protocol. The EDIC could:
+True digital sovereignty benefits from an independently governed commons. There are different models for doing this, but non-profit foundations such as the [Python Software Foundation](https://www.python.org/psf-landing/) and [The Matrix.org Foundation](/) could provide a helpful starting point. These organisations provide administrative and governance support for their projects and protocol. The EDIC could:
 
 - Provide guidance to Member States’ procurement on integrating governance funding into their framework, or advise law makers on the importance of the same
 
