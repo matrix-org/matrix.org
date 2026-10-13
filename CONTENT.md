@@ -93,7 +93,7 @@ It is possible to add pictures to your posts in markdown. First you need to drop
 
 This shortcode ensures that images have a consistent look across posts.
 
-To show several pictures in one figure, pass a list as `img`. They are displayed as a gallery that can be enlarged by clicking, and as a swipeable strip on narrow screens. The `caption` and `alt` apply to the whole gallery, and each image is numbered in its alt text.
+To show several pictures in one figure, pass a list as `img`. They are displayed as a grid that wraps onto several rows when space runs out. Clicking an image enlarges it. The `caption` and `alt` apply to the whole gallery, and each image is numbered in its alt text.
 
 ```jinja
 {{ figure(

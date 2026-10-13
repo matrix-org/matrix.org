@@ -92,6 +92,33 @@
     cursor: zoom-out;
 }
 
+.lightbox-nav {
+    position: fixed;
+    top: 50%;
+    z-index: 3;
+    transform: translateY(-50%);
+    padding: 0.5rem 1rem;
+    font-size: 3rem;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 0 0.5rem rgb(0 0 0 / 60%);
+    text-decoration: none;
+    opacity: 0.8;
+
+    &:hover,
+    &:focus-visible {
+        opacity: 1;
+    }
+}
+
+.lightbox-prev {
+    left: 0.25rem;
+}
+
+.lightbox-next {
+    right: 0.25rem;
+}
+
 .lightbox-close {
     position: fixed;
     top: 1rem;
