@@ -1,0 +1,192 @@
+// Image gallery with a CSS-only lightbox, see templates/macros/gallery.html.
+// Used for the client screenshots and available to any page via the macro.
+
+// The small "expand" glyph shown over gallery images
+@mixin expand-badge($inset) {
+    content: "⤢";
+    position: absolute;
+    bottom: $inset;
+    right: $inset;
+    font-size: 0.75rem;
+    line-height: 1;
+    background: rgb(0 0 0 / 55%);
+    color: #fff;
+    padding: 0.2rem 0.35rem;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0.85;
+    z-index: 2;
+}
+
+// Container. By default it fills the full height of its grid row (the client
+// cards); add `.gallery--frame` for a fixed 16:9 frame instead.
+.gallery {
+    // No overflow: hidden on the container, so the expand badge (::after) is
+    // not clipped. Each item clips its own image instead.
+    position: relative;
+    background-color: #f5f5f5;
+
+    // Fill the full height of the .client-card-body grid row so the panel
+    // always matches the details column, regardless of description length.
+    // A min-height prevents collapse when the details side is very short.
+    align-self: stretch;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    gap: 0.5rem;
+    border-radius: 4px;
+
+    // Expand badge anchored to the container so it is never clipped
+    &::after {
+        @include expand-badge(1rem);
+    }
+}
+
+// 16:9 frame: the item fills the whole frame and the image covers it from the
+// top, so it is never cut off at the top and baked-in bottom whitespace is
+// cropped away naturally.
+.gallery--frame {
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+    align-items: stretch;
+
+    // Move the badge inside the rounded corner area
+    &::after {
+        bottom: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .gallery-item {
+        border-radius: 0;
+    }
+}
+
+.gallery-item {
+    // Each item clips its own image; position keeps it above the container's
+    // ::after badge so a hovered item can still be a zoom target.
+    position: relative;
+    display: block;
+    cursor: zoom-in;
+    line-height: 0;
+    overflow: hidden;
+    border-radius: 4px;
+
+    // Fill the full height of the container so the image covers the panel.
+    flex: 1;
+    align-self: stretch;
+}
+
+.gallery-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 0;
+}
+
+.gallery--frame .gallery-img,
+.gallery--multi .gallery-img {
+    // Beats `.content img`, which would otherwise cap the height.
+    height: 100%;
+    max-width: unset;
+    max-height: unset;
+}
+
+// Several images share one row
+.gallery--multi {
+    padding: 0.5rem;
+    align-items: stretch;
+    overflow: hidden;
+
+    // Hide the container-level badge; each item has its own
+    &::after {
+        display: none;
+    }
+
+    .gallery-item {
+        min-width: 0;
+
+        &::after {
+            @include expand-badge(0.5rem);
+        }
+    }
+
+    // On narrow screens a row of thumbnails gets too small to read, so turn
+    // it into a swipeable strip where the next image peeks in.
+    @media (max-width: 700px) {
+        height: 16rem;
+        aspect-ratio: auto;
+        justify-content: flex-start;
+        overflow: auto hidden;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+
+        .gallery-item {
+            flex: 0 0 80%;
+            scroll-snap-align: center;
+        }
+    }
+}
+
+// Framed galleries keep the frame edge-to-edge even with several images
+.gallery--frame.gallery--multi {
+    padding: 0;
+}
+
+// CSS-only lightbox
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+
+    &:target {
+        display: flex;
+    }
+
+    img {
+        position: relative;
+        z-index: 2;
+        max-width: min(90vw, 1200px);
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 10px;
+        margin: 0;
+    }
+}
+
+.lightbox-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: rgb(0 0 0 / 85%);
+    cursor: zoom-out;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 1rem;
+    right: 1.25rem;
+    z-index: 3;
+    font-size: 2rem;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+}

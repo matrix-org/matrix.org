@@ -1,0 +1,24 @@
+{# Image gallery with a CSS-only lightbox (see sass/_gallery.scss).
+   `images` is a list of image paths, each prefixed with `base`. `id` must be
+   unique on the page: it is used for the lightbox anchors. `class` adds
+   context-specific modifier classes to the gallery container. #}
+{% macro gallery(images, alt, id, base="", class="") %}
+{% set multi = images | length > 1 %}
+<div class="gallery{% if multi %} gallery--multi{% endif %}{% if class %} {{ class }}{% endif %}">
+    {% for image in images %}
+    <a href="#{{ id }}-{{ loop.index }}" class="gallery-item" aria-label="Enlarge image">
+        <img src="{{ base }}{{ image }}"
+             alt="{{ alt }}{% if multi %} {{ loop.index }}{% endif %}"
+             class="gallery-img">
+    </a>
+    {% endfor %}
+</div>
+{% for image in images %}
+<div class="lightbox" id="{{ id }}-{{ loop.index }}" role="dialog" aria-label="{{ alt }}">
+    <a href="#/" class="lightbox-backdrop" aria-label="Close"></a>
+    <a href="#/" class="lightbox-close" aria-label="Close">&times;</a>
+    <img src="{{ base }}{{ image }}"
+         alt="{{ alt }}{% if multi %} {{ loop.index }}{% endif %}">
+</div>
+{% endfor %}
+{% endmacro gallery %}

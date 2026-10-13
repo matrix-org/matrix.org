@@ -2,6 +2,7 @@
 {% import "macros/clients.html" as clients %}
 {% import "macros/breadcrumb.html" as breadcrumb %}
 {% import "macros/licence.html" as lic %}
+{% import "macros/gallery.html" as gallery %}
 {% block head_extra %}
 <meta
     name="description"
@@ -55,49 +56,9 @@
             </div>
 
             {% set screenshots = page.extra.screenshots | default(value=[]) %}
-            {% if screenshots | length > 0 %} {% set lightbox_id =
-            "detail-lightbox-" ~ page.slug %} {% set multi = screenshots |
-            length > 1 %}
-            <div
-                class="client-card-screenshot-wrap{% if multi %} client-card-screenshot-wrap--multi{% endif %}"
-            >
-                {% for shot in screenshots %} {% set shot_lightbox_id =
-                lightbox_id ~ "-" ~ loop.index %}
-                <a
-                    href="#{{ shot_lightbox_id }}"
-                    class="client-card-screenshot-trigger"
-                    aria-label="Enlarge screenshot"
-                >
-                    <img
-                        src="../{{ shot }}"
-                        alt="{{ page.title }} screenshot {{ loop.index }}"
-                        class="client-card-screenshot"
-                    />
-                </a>
-                {% endfor %}
-            </div>
-            {% for shot in screenshots %} {% set shot_lightbox_id = lightbox_id
-            ~ "-" ~ loop.index %}
-            <div
-                class="client-lightbox"
-                id="{{ shot_lightbox_id }}"
-                role="dialog"
-                aria-label="{{ page.title }} screenshot"
-            >
-                <a
-                    href="#/"
-                    class="client-lightbox-backdrop"
-                    aria-label="Close"
-                ></a>
-                <a href="#/" class="client-lightbox-close" aria-label="Close"
-                    >&times;</a
-                >
-                <img
-                    src="../{{ shot }}"
-                    alt="{{ page.title }} screenshot {{ loop.index }}"
-                />
-            </div>
-            {% endfor %} {% endif %}
+            {% if screenshots | length > 0 %}
+            {{ gallery::gallery(images=screenshots, base="../", alt=page.title ~ " screenshot", id="detail-lightbox-" ~ page.slug, class="gallery--frame") }}
+            {% endif %}
 
             <div class="stores">
                 {{ clients::install_links(packages=page.extra.packages) }}

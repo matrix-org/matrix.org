@@ -1,5 +1,6 @@
 {% import "macros/licence.html" as lic %}
 {% import "macros/tooltip.html" as tooltip %}
+{% import "macros/gallery.html" as gallery %}
 
 {# Human-readable labels for feature categories #}
 {% macro category_label(category_name) %}
@@ -180,31 +181,11 @@ maturity-{{ client.maturity | lower }}
     </summary>
 
     <div class="client-card-body">
-        {% set lightbox_id = id_prefix ~ "-lightbox-" ~ client.slug %}
         {% set screenshots = client.extra.screenshots | default(value=[]) %}
         {% if screenshots | length > 0 %}
-        {% set multi = screenshots | length > 1 %}
-        <div class="client-card-screenshot-wrap{% if multi %} client-card-screenshot-wrap--multi{% endif %}">
-            {% for shot in screenshots %}
-            {% set shot_lightbox_id = lightbox_id ~ "-" ~ loop.index %}
-            <a href="#{{ shot_lightbox_id }}" class="client-card-screenshot-trigger" aria-label="Enlarge screenshot">
-                <img src="/ecosystem/clients/{{ shot }}"
-                     alt="{{ client.title }} screenshot {{ loop.index }}"
-                     class="client-card-screenshot">
-            </a>
-            {% endfor %}
-        </div>
-        {% for shot in screenshots %}
-        {% set shot_lightbox_id = lightbox_id ~ "-" ~ loop.index %}
-        <div class="client-lightbox" id="{{ shot_lightbox_id }}" role="dialog" aria-label="{{ client.title }} screenshot">
-            <a href="#/" class="client-lightbox-backdrop" aria-label="Close"></a>
-            <a href="#/" class="client-lightbox-close" aria-label="Close">&times;</a>
-            <img src="/ecosystem/clients/{{ shot }}"
-                 alt="{{ client.title }} screenshot {{ loop.index }}">
-        </div>
-        {% endfor %}
+        {{ gallery::gallery(images=screenshots, base="/ecosystem/clients/", alt=client.title ~ " screenshot", id=id_prefix ~ "-lightbox-" ~ client.slug) }}
         {% else %}
-        <div class="client-card-screenshot-wrap client-card-screenshot-placeholder">
+        <div class="gallery client-card-screenshot-placeholder">
             <span>Screenshot coming soon</span>
         </div>
         {% endif %}
