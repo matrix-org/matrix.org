@@ -1,4 +1,5 @@
 {% extends "page.html" %}
+{% import "macros/callout.html" as callout %}
 {% block head_extra %}
 {#
 {% if page.summary %}
@@ -72,27 +73,26 @@
     <div class="post-main">
         <div class="post-content">
             {{ page.content | safe | markdown | safe }}
-            <div class="callout">
-                <div class="left-col">
-                    <h2>The Foundation needs you</h2>
-                </div>
-                <div class="right-col">
-                    <p>
-                        The Matrix.org Foundation is a non-profit and only relies
-                        on donations to operate. Its core mission is to maintain
-                        the Matrix Specification, but it does much more than that.
-                    </p>
-                    <p>
-                        It maintains the matrix.org homeserver and hosts several
-                        bridges for free. It fights for our collective rights to
-                        digital privacy and dignity.
-                    </p>
-                    <a class="call-to-action plausible-event-name=BlogPostCtaSupportUs" href="/support">Support us</a>
-                </div>
-            </div>
+            {{ callout::callout(
+                heading="The Foundation needs you",
+                body="<p>The Matrix.org Foundation is a non-profit and only relies on donations to operate. Its core mission is to maintain the Matrix Specification, but it does much more than that.</p><p>It maintains the matrix.org homeserver and hosts several bridges for free. It fights for our collective rights to digital privacy and dignity.</p>",
+                cta_text="Support us",
+                cta_href="/support",
+                plausible_event="BlogPostCtaSupportUs"
+            ) }}
         </div>
         {% if page.toc %}
         <aside>
+            {% if page.taxonomies.category and "This Week in Matrix" in page.taxonomies.category %}
+            {{ callout::callout(
+                heading="Got Matrix news?",
+                body="<p>Share your project, new feature, event or more in next week's digest!</p>",
+                cta_text="Share your update",
+                cta_href="/twim-guide",
+                plausible_event="TwimCtaSendNotes",
+                variant="compact"
+            ) }}
+            {% endif %}
             <h3>Post Contents</h3>
 
             <ul style="list-style: none; padding-left: 0px;">
