@@ -183,9 +183,9 @@ maturity-{{ client.maturity | lower }}
     <div class="client-card-body">
         {% set screenshots = client.extra.screenshots | default(value=[]) %}
         {% if screenshots | length > 0 %}
-        {{ gallery::gallery(images=screenshots, base="/ecosystem/clients/", alt=client.title ~ " screenshot", id=id_prefix ~ "-lightbox-" ~ client.slug) }}
+        {{ gallery::gallery(images=screenshots, base="/ecosystem/clients/", alt=client.title ~ " screenshot", id=id_prefix ~ "-lightbox-" ~ client.slug, class="client-card-gallery") }}
         {% else %}
-        <div class="gallery client-card-screenshot-placeholder">
+        <div class="client-card-gallery client-card-screenshot-placeholder">
             <span>Screenshot coming soon</span>
         </div>
         {% endif %}

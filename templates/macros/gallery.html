@@ -6,7 +6,7 @@
    without the markdown renderer ending the HTML block. #}
 {% macro gallery(images, alt, id, base="", class="") -%}
 {%- set multi = images | length > 1 -%}
-<div class="gallery{% if multi %} gallery--multi{% endif %}{% if class %} {{ class }}{% endif %}">
+<div class="gallery{% if class %} {{ class }}{% endif %}">
     {%- for image in images %}
     <a href="#{{ id }}-{{ loop.index }}" class="gallery-item" aria-label="Enlarge image">
         <img src="{{ base }}{{ image }}"

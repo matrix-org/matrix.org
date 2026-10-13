@@ -57,7 +57,7 @@
 
             {% set screenshots = page.extra.screenshots | default(value=[]) %}
             {% if screenshots | length > 0 %}
-            {{ gallery::gallery(images=screenshots, base="../", alt=page.title ~ " screenshot", id="detail-lightbox-" ~ page.slug, class="gallery--frame") }}
+            {{ gallery::gallery(images=screenshots, base="../", alt=page.title ~ " screenshot", id="detail-lightbox-" ~ page.slug) }}
             {% endif %}
 
             <div class="stores">

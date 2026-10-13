@@ -262,18 +262,28 @@ $platform-families: (
         grid-template-columns: 1fr;
     }
 
-    // On the desktop 2-column layout this panel sits in the card's
-    // bottom-left corner, so it needs to round to match .client-card, which
-    // only clips its content while closed.
-    // On mobile it stacks above the details column instead, so it keeps its
-    // plain corner radius.
-    > .gallery {
-        border-bottom-left-radius: 13px;
+    // The screenshot panel stretches to the height of the details column. On
+    // the desktop 2-column layout it sits in the card's bottom-left corner, so
+    // it rounds to match .client-card, which only clips its content while
+    // closed. On mobile it stacks above the details column instead and keeps
+    // its plain corner radius.
+    > .client-card-gallery {
+        display: grid;
+        align-content: center;
+        align-self: stretch;
+        min-height: 200px;
+        padding: 0.5rem;
+        background-color: #f5f5f5;
+        border-radius: 4px 4px 4px 13px;
 
         @media (max-width: 700px) {
-            border-bottom-left-radius: 4px;
+            border-radius: 4px;
         }
     }
+}
+
+.client-card-screenshot-placeholder {
+    place-items: center;
 }
 
 // Details column
