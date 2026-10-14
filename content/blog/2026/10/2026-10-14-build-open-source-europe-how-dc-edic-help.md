@@ -1,6 +1,6 @@
 +++
 title = "What will it take to build an open source Europe and how the Digital Commons EDIC can help"
-date = "2026-10-14T16:00:00Z"
+date = "2026-10-14T14:00:00Z"
 path = "/blog/2026/10/14/build-open-source-europe-how-dc-edic-help"
 
 [taxonomies]
