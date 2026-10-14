@@ -10,7 +10,7 @@ repo = "https://github.com/Mizerd/lightning"
 website = "https://www.lightning-matrix.org"
 matrix_room = "#lightning:matrix.smetonis.net"
 featured = false
-screenshots = ["lightning-main-chat.avif", "lightning-media-gallery.avif", "lightning-thread-view.avif"]
+screenshots = ["lightning-conversation.avif", "lightning-call.avif", "lightning-threads.avif", "lightning-themes.avif"]
 good_for = "Linux, Windows and macOS users who want a fast, native desktop Matrix client with encryption, Spaces, threads and MatrixRTC calls"
 
 [extra.features.1stable]
