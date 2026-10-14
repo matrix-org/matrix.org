@@ -10,5 +10,8 @@
             "type": "livekit",
             "livekit_service_url": "https://livekit-jwt.call.matrix.org"
         }
-    ]
+    ],
+    "io.element.migration_banner": {
+        "enabled" : true
+    }
 }
