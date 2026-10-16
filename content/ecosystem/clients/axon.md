@@ -37,4 +37,4 @@ macos_installer = "https://github.com/matrix-axon/matrix-axon/releases"
 other_linux_link = "https://github.com/matrix-axon/matrix-axon/releases"
 +++
 
-Axon is a self-hosted personal agent for Matrix. It runs on your own MacOS, Linux, or Windows hardware or cloud instance (available as a Docker stack, Debian package, homebrew install, or direct download), keeps your decrypted history, full-text search and media cache in a local Postgres database, and serves them to two first-party clients: a web client (also packaged as a desktop app for macOS, Windows and Linux and iOS and Android mobile apps) and a terminal UI with inline image rendering, full-text search, threads, replies, and reactions. One Axon can hold several Matrix accounts at once.
+Axon is a self-hosted Matrix client that runs on desktop (Linux/MacOS/Windows), mobile (iOS/Android), and web, as well as a separate terminal interface. Distinguishing features include clean design, speed, gestures, and full-text E2EE search across any number of Matrix accounts.
