@@ -830,11 +830,11 @@
       #000000 70%,                 
       rgba(0, 0, 0, 0) 100%        
     ),
-    url("/assets/pattern-2h.svg");
+    url("/assets/pattern.svg");
 
-  background-repeat: no-repeat, repeat;
+  background-repeat: no-repeat, round;
   background-position: center, center;
-  background-size: cover, 160px 320px;
+  background-size: cover, auto 100%; // tiles follow the banner height, so only whole squares show
 }
 
 .conf-hero {
