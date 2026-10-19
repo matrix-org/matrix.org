@@ -875,8 +875,8 @@
   align-items: center;
   text-align: center;
   gap: 1.25rem;
-  flex: 0 1 300px;
-  max-width: 320px;
+  flex: 0 1 340px;
+  max-width: 340px; // fits both buttons at an 18px root font size
 
   h2 {
     color: #fff;
