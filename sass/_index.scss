@@ -820,21 +820,20 @@
     background-color: #000;
     text-align: center;
     z-index: 999;
-    color:#fff;
+    color: #fff;
 
-  background-image:
-    linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0) 0%,
-      #000000 30%,
-      #000000 70%,
-      rgba(0, 0, 0, 0) 100%
-    ),
-    url("/assets/pattern.svg");
+    background-image:
+        linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        #000000 30%,
+        #000000 70%,
+        rgba(0, 0, 0, 0) 100%
+        ),
+        url("/assets/pattern.svg");
 
-  background-repeat: no-repeat, round;
   background-position: center, center;
-  background-size: cover, auto 100%; // tiles follow the banner height, so only whole squares show
+  background-size: cover, auto 100%;
 }
 
 .conf-hero {
