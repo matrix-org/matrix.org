@@ -951,6 +951,26 @@
     background-color: initial;
   text-decoration: none;
   box-sizing: border-box;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 1px 2px;
+    background: #000;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0 6px;
+    border-block: 1px solid #3c3f44;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover::after { opacity: 0; }
 }
 
 .conf-curve {
