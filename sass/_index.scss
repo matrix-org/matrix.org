@@ -921,51 +921,11 @@
         border: 0;
     }
 }
-.conf-rooms-label {
-    margin: 0.75rem 0 0.5rem;
-    text-align: center;
-    color: #ffffffdc;
-    font-size: 0.9375rem;
-    font-weight: 400;
-
-    a {
-        color: inherit;
-        text-decoration: underline;
-    }
-}
-
-.conf-rooms {
+.conf-hero-actions {
     display: flex;
-    gap: 0.5rem;
-    justify-content: center;
     flex-wrap: wrap;
-}
-
-.conf-room {
-    font-family: inherit;
-    font-size: 0.9375rem;
-    font-weight: 700;
-    color: #fff;
-    background: transparent;
-    border: 1px solid #555;
-    padding: 0.5rem 1.25rem;
-    cursor: pointer;
-
-    &:hover { border-color: #aaa; }
-
-    &.is-active {
-        background: #222;
-        border: 2px solid transparent;
-        border-image: linear-gradient(
-            340deg,
-            rgb(244, 91, 105) 3%,
-            rgb(246, 174, 45) 25%,
-            rgb(166, 255, 161) 48%,
-            rgb(117, 244, 244) 70%,
-            rgb(174, 127, 233) 93%
-        ) 1;
-        padding: calc(0.5rem - 1px) calc(1.25rem - 1px); // offsets the thicker border so the button doesn't grow
-    }
+    gap: 0.75rem;
+    justify-content: center;
 }
 
 .bracket-btn {
