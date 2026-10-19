@@ -724,7 +724,7 @@
     }
 }
 
-/* === COMMENTING THIS OUT AS IT'S RESTYLED BELOW 
+/* === COMMENTING THIS OUT AS IT'S RESTYLED BELOW
 #information-banner {
     width: 100%;
     padding: .4em 1em;
@@ -821,14 +821,14 @@
     text-align: center;
     z-index: 999;
     color:#fff;
-  
-  background-image: 
+
+  background-image:
     linear-gradient(
       to right,
-      rgba(0, 0, 0, 0) 0%,         
-      #000000 30%,                 
-      #000000 70%,                 
-      rgba(0, 0, 0, 0) 100%        
+      rgba(0, 0, 0, 0) 0%,
+      #000000 30%,
+      #000000 70%,
+      rgba(0, 0, 0, 0) 100%
     ),
     url("/assets/pattern.svg");
 
@@ -839,7 +839,7 @@
 
 .conf-hero {
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
     box-sizing: border-box;
     background-color: #000;
 
@@ -862,12 +862,12 @@
     justify-content: center;
     gap: 1rem;
 
-    width: 100%;   
-    max-width: 1100px;        
-    margin: 0 auto;   
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 
     @media (max-width: 767px) {
-        flex-direction: column; 
+        flex-direction: column;
         text-align: center;
         gap: 2rem;
     }
@@ -896,8 +896,8 @@
 }
 
 .conf-hero-logo {
-    width: 100%;     
-    max-width: 380px;   
+    width: 100%;
+    max-width: 380px;
     height: auto;
     display: block;
     aspect-ratio: 512 / 400; // the svg has empty space below the artwork
@@ -905,7 +905,7 @@
     object-position: top;
 }
 
-.conf-video-container { 
+.conf-video-container {
     flex: 1 1 450px;
     max-width: 560px;
     width: 100%;
