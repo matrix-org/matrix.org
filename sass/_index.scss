@@ -902,6 +902,10 @@
     flex: 1 1 450px;
     max-width: 560px;
     width: 100%;
+
+    @media (max-width: 767px) {
+        flex: 0 0 auto; // the 450px basis would otherwise set the height in a column
+    }
 }
 
 .conf-video {
