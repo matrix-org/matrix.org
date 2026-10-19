@@ -70,5 +70,5 @@ skip_anchor_prefixes = [
 #📢 We are happy to launch [The Matrix Conference](https://conference.matrix.org) on 20th-23rd October in Malmö, Sweden. Don't forget to [get your ticket](https://conference.matrix.org/register/) and [check the schedule](https://conference.matrix.org/schedule/)!
 #
 banner = """
-✨Happening now! The Matrix Conference 2026, 20-23 October in Malmö! Watch below.✨
+✨Happening now! The Matrix Conference 2026, 20-23 October in Malmö! Watch live below or [see all streams](https://conference.matrix.org/watch/).✨
 """
