@@ -896,6 +896,9 @@
     max-width: 380px;   
     height: auto;
     display: block;
+    aspect-ratio: 512 / 400; // the svg has empty space below the artwork
+    object-fit: cover;
+    object-position: top;
 }
 
 .conf-video-container { 
