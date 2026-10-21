@@ -4,6 +4,8 @@
 {% endblock head_extra %}
 {% block content %}
 <div id="frontpage">
+
+    <!-- ============ COMMENTING OUT STANDARD HOMEPAGE HEADER ============
     <div id="hero" class="section">
         <div class="hero_content">
             <img src="images/matrix-logo-white.svg" alt="The Matrix Logo" />
@@ -14,6 +16,39 @@
         <div id="hero_curve3"></div>
         <div id="hero_curve4"></div>
     </div>
+    -->
+
+<!-- ============ CONF HOMEPAGE TAKEOVER ============ -->
+<div id="heroconf" class="section conf-hero">
+    <div class="conf-hero-box">
+        <div class="conf-hero-info">
+            <img src="/assets/conference-logo-26-white.svg" class="conf-hero-logo" alt="The Matrix Conference Logo" />
+            <h2>20th to 23rd October</h2>
+            <div class="conf-hero-actions">
+                <a href="https://conference.matrix.org/" class="bracket-btn">Learn more</a>
+                <a href="https://conference.matrix.org/watch/" class="bracket-btn">All streams</a>
+            </div>
+        </div>
+
+        <div class="conf-video-container">
+            <div class="conf-video">
+                <iframe
+                    src="https://streaming.media.ccc.de/matrix-conf-2026/embed/sofya/hls/native/no-autoplay"
+                    title="Matrix Conference livestream"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="hero_curve1"></div>
+    <div id="hero_curve2"></div>
+    <div id="hero_curve3"></div>
+    <div id="hero_curve4"></div>
+</div>
+
+
     <div id="use-case-personal" class="section">
         <div class="use-case-personal-content">
             <div class="col">
