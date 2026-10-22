@@ -450,3 +450,88 @@ Similarly, the Committee’s chair is considered the sponsor of the Working Grou
 
 The Working Group meets monthly by default. The frequency can be increased to biweekly if urgency and number of topics require it.
 """
+
+[[working_groups]]
+name = "Widgets"
+committee = "Community Committee"
+members = [
+    "Benedict Benken",
+    "Danielle Kirkwood",
+    "Florian Heese",
+    "Hato Nordeck",
+    "Kim Brose",
+    "Marco Holz",
+    "Nadine Minagawa",
+    "networkException",
+    "Richard van der Hoff",
+    "Robert Gerbauld",
+    "Timo Kandra",
+    "Yan Minagawa",
+]
+chairs = ["Hato Nordeck", "Timo Kandra"]
+sponsor = "Richard van der Hoff"
+meetings = "Monthly one-hour WG meeting, with a \"Widget clinic\" working session in between. Please reach out via our Matrix room to join."
+matrix_room_alias = "#widgets-working-group:matrix.org"
+email = ""
+git_repo = "https://github.com/matrix-widgets-wg"
+summary = "Clarifying, improving and advancing support for embeddable applications (Widgets) in Matrix"
+description = """
+The Widgets Working Group exists to clarify, improve, and advance the Matrix ecosystem's support for embeddable applications: commonly referred to as "Widgets".
+This group aims to align on the taxonomy of widgets, coordinate specification work (MSCs), support the community to build an ecosystem around widgets and drive
+concrete improvements for both users and developers.
+Questions about Widgets are welcome in the community room [#matrix-widgets:matrix.org](https://matrix.to/#/%23matrix-widgets:matrix.org).
+"""
+charter = """
+### Purpose
+
+The Matrix Widgets Working Group (Widgets WG) exists to clarify, improve, and advance the Matrix ecosystem's support for embeddable applications — commonly referred to as "Widgets". The WG addresses a recognised gap: today, there is no shared definition of what a Matrix Widget is, no aligned taxonomy across clients and implementations, and no clear path from widget discovery to deployment. The WG serves as the dedicated space for the community to resolve these open questions, coordinate specification work, and drive concrete improvements for both users and developers.
+
+The WG operates within the Foundation's ecosystem and complements the work of the Spec Core Team (SCT), but focuses specifically on the widget layer — from definitions and use cases through to distribution and developer tooling. It does not govern the Matrix spec itself, but produces proposals and requirements that feed into the spec process (MSCs) where appropriate.
+
+### Goals
+
+- **Have a shared Taxonomy**: clear definitions and names for the different types of embeddable applications in Matrix (e.g. Matrix Apps, inline widgets, external HTTP apps, bot interfaces, client customisations) to enable precise communication across the community.
+- **Build a Community around widgets**: We want a healthy and active community around Widgets.
+- **Adoption**: Achieve widespread client support for Widgets in the Matrix ecosystem, where everyone is able to access widgets easily.
+- **A great Widget Developer Experience**: A thriving developer ecosystem exists that allows developers to have a great time building widgets.
+- **Create Monetisation & Hosting Models**: There should be models for widget monetisation, decentralised hosting, and policies around trusted widget distribution.
+- **Specification for Widgets**: The widget related MSCs should be cleared up, finalized and become part of the Matrix specification.
+
+### Activities of the WG
+
+- **Maintain an overview of Widget-related Activities**: Establish an overview of Widget-related activities across different organizations and projects.
+- **Understand/Coordinate user and market Requirements**: Identify user needs and how to maximise product value with Widgets — ensuring the WG's work is grounded in real use cases and delivers tangible value to end users.
+- **Identify and Address Pain Points in the Widget Development Workflow**, including tooling, documentation, and the Widget API / MSC landscape.
+- **Facilitate Client Support**: Coordinate with Matrix client teams on requirements and approaches for implementing widget support.
+- **Collect and prioritise use cases**: Maintain a curated list of widget use cases beyond chat (e.g. collaborative editing, telephone book, task management) to guide specification and implementation priorities.
+- **Produce MSC input**: Where technical decisions are needed, draft requirements or proposals to feed into the Matrix spec process.
+- **Track and communicate active projects**: The WG should be aware of all ongoing widget related projects, track their progress and help coordinating.
+- **Coordinate and motivate "sprints"**: The working group has context of the most important challenges and should try to funnel available resources, e.g. by organising technical meetings.
+- **Maintain a list of ideas and opinions**: Lots of proposals and improvements will come up. The WG should maintain an overview of opinions and ideas to connect the right people.
+- **Help and respond to Questions around Widgets**: The WG is active in the community room [#matrix-widgets:matrix.org](https://matrix.to/#/%23matrix-widgets:matrix.org).
+
+### Potential future activities of the WG
+
+- After Widgets became part of the spec: **Reviewing proposals and supporting MSC authors** to incorporate awareness of widgets into their feature design, to be implemented as "the working group reviewing *all* MSCs which enter proposed-FCP".
+- **A Reference Widget Player**: Define requirements and coordinate building a reference implementation of a Widget Player that client developers can align against.
+- **Widget Discovery & Distribution**: Develop proposals for how widgets are discovered, distributed, and trusted — including the concept of a widget catalogue or "App Store / Integrator" — drawing on analogies like F-Droid or the Pebble watch ecosystem.
+- **Public communication**: Write blog posts, organise talks, support marketing of related projects.
+
+### Membership
+
+Membership is open to anyone in the Matrix community with an interest in advancing the widget ecosystem — developers, client maintainers, operators, and end-user advocates alike. There are no additional membership requirements beyond the general Working Group participation requirements of the Foundation.
+
+### Roles
+
+- **Chair**: responsible for organising meetings, documenting results, and communicating with the Governing Board Sponsor.
+- **Governing Board Sponsor**: responsible for the contact and communication with the Foundation Governing Board.
+
+### Meetings
+
+The WG starts with a monthly one-hour WG meeting and an extra "Widget clinic" working session in between. The cadence can be changed by the WG according to the needs of the group.
+
+### Resources
+
+- A dedicated Matrix room for async collaboration: [#widgets-working-group:matrix.org](https://matrix.to/#/%23widgets-working-group:matrix.org)
+- Community room: [#matrix-widgets:matrix.org](https://matrix.to/#/%23matrix-widgets:matrix.org)
+"""
