@@ -66,9 +66,6 @@ skip_anchor_prefixes = [
 #
 # governing_board_elections: "🗳️ We are holding our Governing Board elections. Find 
 # all the information [on the elections page](https:/matrix.org/foundation/governing-board-elections/<year>/)."
-#
-#📢 We are happy to launch [The Matrix Conference](https://conference.matrix.org) on 20th-23rd October in Malmö, Sweden. Don't forget to [get your ticket](https://conference.matrix.org/register/) and [check the schedule](https://conference.matrix.org/schedule/)!
-#
 banner = """
-✨&nbsp;Happening now! The Matrix Conference, 20th to 23rd October, 2026, Malmö, Sweden! Watch live below or [see all streams](https://conference.matrix.org/watch/).&nbsp;✨
+📺 Missed a talk at The Matrix Conference? [Watch the recordings now →](https://conference.matrix.org/watch/)
 """
