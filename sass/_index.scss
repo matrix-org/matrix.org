@@ -855,12 +855,10 @@
 
 .conf-hero-box {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, min-content);
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    justify-items: center;
     gap: 1rem;
 
     width: 100%;
@@ -868,8 +866,7 @@
     margin: 0 auto;
 
     @media (max-width: 767px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: none;
+        flex-direction: column;
         text-align: center;
         gap: 2rem;
     }
@@ -915,14 +912,6 @@
     @media (max-width: 767px) {
         flex: 0 0 auto; // the 450px basis would otherwise set the height in a column
     }
-}
-
-.conf-room-actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .75rem;
-    flex-wrap: wrap;
 }
 
 .conf-video {
