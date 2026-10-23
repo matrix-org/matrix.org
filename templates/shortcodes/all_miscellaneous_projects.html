@@ -1,0 +1,82 @@
+{% set data = load_data(path="content/ecosystem/miscellaneous/miscellaneous.toml") %}
+{% set miscellaneous_projects = data.project %}
+
+{% set projects_without_maturity = miscellaneous_projects
+  | filter(attribute="maturity", value="")
+%}
+
+{% set stable_projects_upper = miscellaneous_projects | filter(attribute="maturity", value="Stable") %}
+{% set stable_projects_lower = miscellaneous_projects | filter(attribute="maturity", value="stable") %}
+{% set beta_projects_upper = miscellaneous_projects | filter(attribute="maturity", value="Beta") %}
+{% set beta_projects_lower = miscellaneous_projects | filter(attribute="maturity", value="beta") %}
+{% set alpha_projects_upper = miscellaneous_projects | filter(attribute="maturity", value="Alpha") %}
+{% set alpha_projects_lower = miscellaneous_projects | filter(attribute="maturity", value="alpha") %}
+{% set obsolete_projects_upper = miscellaneous_projects | filter(attribute="maturity", value="Obsolete") %}
+{% set obsolete_projects_lower = miscellaneous_projects | filter(attribute="maturity", value="obsolete") %}
+
+{% set stable_projects = []
+  | concat(with=stable_projects_upper)
+  | concat(with=stable_projects_lower)
+%}
+
+{% set beta_projects = []
+  | concat(with=beta_projects_upper)
+  | concat(with=beta_projects_lower)
+%}
+
+{% set alpha_projects = []
+  | concat(with=alpha_projects_upper)
+  | concat(with=alpha_projects_lower)
+%}
+
+{% set obsolete_projects = []
+  | concat(with=obsolete_projects_upper)
+  | concat(with=obsolete_projects_lower)
+%}
+
+{% set projects = []
+  | concat(with=stable_projects)
+  | concat(with=beta_projects)
+  | concat(with=alpha_projects)
+  | concat(with=projects_without_maturity)
+  | concat(with=obsolete_projects)
+%}
+
+
+<div class="projects-card-deck">
+    {% for project in projects %}
+    <div class="project-card">
+      	<div class="title-row">
+        	<h3>{{ project.name }}</h3>
+            {% if project.maturity %}
+        	<div class="maturity {{ project.maturity | lower }}">{{ project.maturity }}</div>
+            {% endif %}
+      	</div>
+        <div class="subtitle">{{ project.maintainer }}</div>
+        <div class="metadata-pills">
+            <div class="pill licence">{{ project.licence }}</div>
+        </div>
+        <p class="description">{{ project.description | markdown(inline=true) | safe }}</p>
+        <div class="server-links">
+            {% if project.website %}
+            <a href="{{ project.website }}">
+                {{ load_data(path="/assets/home.svg") | safe }}
+                Homepage
+            </a>
+            {% endif %}
+            {% if project.repository %}
+            <a href="{{ project.repository }}">
+                {{ load_data(path="/assets/projects/repo.svg") | safe }}
+                Repository
+            </a>
+            {% endif %}
+            {% if project.room %}
+            <a href="https://matrix.to/#/{{ project.room | urlencode_strict }}">
+                {{ load_data(path="/assets/projects/matrix.svg") | safe }}
+                Matrix Room
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
