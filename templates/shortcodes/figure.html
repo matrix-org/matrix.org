@@ -1,4 +1,12 @@
+{%- import "macros/gallery.html" as gallery -%}
+{%- set alt_text = alt | default(value=caption) -%}
 <figure style="height:100%;">
-    <img src="{{ img }}" {% if alt %}alt="{{ alt }}{% endif %}" />
+    {%- if img is iterable %}
+    {%- set first_image = img | first %}
+    {%- set gallery_id = "figure-" ~ first_image | slugify %}
+    {{ gallery::gallery(images=img, alt=alt_text, id=gallery_id) }}
+    {%- else %}
+    <img src="{{ img }}" {% if alt %}alt="{{ alt }}"{% endif %} />
+    {%- endif %}
     <figcaption>{{ caption | markdown | safe }}</figcaption>
 </figure>
