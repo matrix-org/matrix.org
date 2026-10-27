@@ -16,10 +16,10 @@ You can learn more about how Committees work in the [Bylaws of the Governing Boa
 
 There are currently 4 Committees:
 
-* [Community](@/foundation/governing-board/committees.md#community)
-* [Governance](@/foundation/governing-board/committees.md#governance)
-* [Trust & Safety](@/foundation/governing-board/committees.md#trust-safety)
-* [Finance & Fundraising](@/foundation/governing-board/committees.md#finance-fundraising)
+* [Community](@/foundation/committees.md#community)
+* [Governance](@/foundation/committees.md#governance)
+* [Trust & Safety](@/foundation/committees.md#trust-safety)
+* [Finance & Fundraising](@/foundation/committees.md#finance-fundraising)
 
 ## Community
 

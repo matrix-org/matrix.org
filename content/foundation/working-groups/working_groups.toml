@@ -286,7 +286,7 @@ Additionally the Working Group might propose improvements to the policy, which t
 
 ### Membership
 
-The membership of the Room Directory Working Group will be determined by the [Trust & Safety Committee of the Governing Board](@/foundation/governing-board/committees.md#trust-safety).
+The membership of the Room Directory Working Group will be determined by the [Trust & Safety Committee of the Governing Board](@/foundation/committees.md#trust-safety).
 Members may be added or removed by a majority vote of the T&S Committee.
 """
 
@@ -422,12 +422,12 @@ matrix_room_alias = "#governance-wg:matrix.org"
 email = ""
 summary = "Discuss the governance of the Governing Board and the Foundation"
 description = """
-The Governance Working Group is the intended Working Group for discussing most of the tasks that are considered the main responsibility of the [Governance Committee](@/foundation/governing-board/committees.md#governance) in the open, together with the community.
+The Governance Working Group is the intended Working Group for discussing most of the tasks that are considered the main responsibility of the [Governance Committee](@/foundation/committees.md#governance) in the open, together with the community.
 """
 charter = """
 ### Purpose
 
-The Governance Working Group is the intended Working Group for discussing most of the tasks that are considered the main responsibility of the [Governance Committee](@/foundation/governing-board/committees.md#governance).
+The Governance Working Group is the intended Working Group for discussing most of the tasks that are considered the main responsibility of the [Governance Committee](@/foundation/committees.md#governance).
 
 By making much of this procedure open, we intend to achieve transparency and give the community direct access to participate in the discussion and creation of proposals, while keeping the overhead small.
 
