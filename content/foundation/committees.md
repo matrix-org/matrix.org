@@ -1,5 +1,6 @@
 +++
 title = "Governing Board Committees"
+aliases = ["/foundation/governing-board/committees/"]
 extra.summary = """
 The Committees of the Governing Board are subgroups focusing on specific areas of interest to The Matrix Foundation.
 """
