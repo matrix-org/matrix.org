@@ -1,0 +1,17 @@
+{% if page.extra.redirect_url %}
+	{% set redirect_url = page.extra.redirect_url %}
+{% elif section.extra.redirect_url %}
+	{% set redirect_url = section.extra.redirect_url %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0; url={{ redirect_url }}">
+  <title>Redirecting...</title>
+</head>
+<body>
+  <p>If you aren’t redirected, <a href="{{ redirect_url }}">click here</a> to go to {{ redirect_url }}.</p>
+</body>
+</html>
