@@ -279,7 +279,7 @@ quorum, and minutes.
 
 #### 2. Committees
 
-The [Committees of the Governing Board](@/foundation/governing-board/committees.md)
+The [Committees of the Governing Board](@/foundation/committees.md)
 are subgroups focusing on specific areas of interest to The Matrix Foundation.
 They are the primary working units of the Board
 and consist exclusively of Board members.

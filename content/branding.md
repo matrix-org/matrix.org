@@ -37,7 +37,7 @@ The following table lists some terms that either are wordmarks of The Matrix.org
 | matrix.org website | matrix.org (if context permits) | The website of the Foundation at <https://matrix.org>. Lower case (like the name giving domain), unless title cased. |
 | The Matrix Conference | (the) Conference, #MatrixConf | The [annual conference](https://conference.matrix.org/) hosted by the Foundation. Capitalised. The canonical URL is <https://conference.matrix.org/> with YEAR.matrix.org serving as an archive/semi-permalink. |
 | Governing Board | GB | The Foundation's [Governing Board](https://matrix.org/foundation/governing-board/) is an organ enabling ecosystem participation. Capitalised. |
-| Committee | | [Committees](https://matrix.org/foundation/governing-board/committees/) are subsets of the Governing Board. Capitalised, including specific ones ("Community Committee"). |
+| Committee | | [Committees](https://matrix.org/foundation/committees/) are subsets of the Governing Board. Capitalised, including specific ones ("Community Committee"). |
 | Working Group | WG | [Working Groups](https://matrix.org/foundation/working-groups/) are an instrument of the Governing Board. Capitalised, including specific ones ("Events Working Group"). |
 | other organs | | Other organs of the Foundation are similarly capitalised, e.g. "Guardians", "Spec Core Team", "Trust & Safety". |
 | `#room:server.tld` | | Pronounced "[hash room on server dot tld](https://matrix.org/blog/wp-content/uploads/2014/09/Introducing-matrix.pdf)". |

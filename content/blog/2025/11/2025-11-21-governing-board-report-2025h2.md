@@ -15,7 +15,7 @@ Another 6 months have passed, and November is once again here - and that means a
 
 Since the [last report in May](@/blog/2025/05/2025-05-25-governing-board-report-may-25.md), we've had elections! This was important, since it's the first time we've added new folk to the existing Governing Board - last year we were *all* new. So, it took a little time to figure out how we do onboarding (and offboarding!) and getting the new folk up to speed.
 
-In the meantime, the [processes](@/foundation/governing-board/bylaws/04-processes.md) we've put in place around [Committees](@/foundation/governing-board/committees.md) and [Working Groups](@/foundation/working-groups/index.md) appear to be functioning. Remember, if you have an idea for something to get done, you can [propose a WG yourself](@/foundation/governing-board/bylaws/02-bylaws.md#5-working-groups)! There are reports from these in the minutes below. On a side note, Nico and Kim from the Governing Board also shared an overview of these structures and processes surrounding the Governing Board and Working Groups at The Matrix Conference, which can be viewed on [YouTube](https://www.youtube.com/watch?v=sa623up96mA&list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG&index=27) and [media.ccc.de](https://media.ccc.de/v/matrix-conf-2025-75078-governing-board-transparency-update).
+In the meantime, the [processes](@/foundation/governing-board/bylaws/04-processes.md) we've put in place around [Committees](@/foundation/committees.md) and [Working Groups](@/foundation/working-groups/index.md) appear to be functioning. Remember, if you have an idea for something to get done, you can [propose a WG yourself](@/foundation/governing-board/bylaws/02-bylaws.md#5-working-groups)! There are reports from these in the minutes below. On a side note, Nico and Kim from the Governing Board also shared an overview of these structures and processes surrounding the Governing Board and Working Groups at The Matrix Conference, which can be viewed on [YouTube](https://www.youtube.com/watch?v=sa623up96mA&list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG&index=27) and [media.ccc.de](https://media.ccc.de/v/matrix-conf-2025-75078-governing-board-transparency-update).
 
 The work those groups do can range from the very-visible (Events, I'm looking at you 😛) to invisible work going on behind the scenes - but it's all needed. Since the last report, we've onboarded 2 more WGs, and have discussions in play about several more. This is exciting to me, because this is what we're for - giving the passion in our community a way to gain momentum.
 
@@ -28,7 +28,7 @@ As usual, I'm posting a lightly-edited version of the minutes from the meeting b
 * Introduction and context setting
 * Committee Reports 
   * **Governance**: 
-    * Mostly internal process stuff, [new vice-chair](@/foundation/governing-board/committees.md#members-1), and work on allowing non-board members to contribute to the governance discussions
+    * Mostly internal process stuff, [new vice-chair](@/foundation/committees.md#members-1), and work on allowing non-board members to contribute to the governance discussions
   * **T&S**: 
     * The Room Directory WG is up and running, working with the Foundation T&S team
     * The Research & Documentation Working Group also has new members
