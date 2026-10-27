@@ -1,5 +1,7 @@
 +++
 title = "Governing Board Committees"
+aliases = ["/foundation/governing-board/committees/"]
+weight = 4
 extra.summary = """
 The Committees of the Governing Board are subgroups focusing on specific areas of interest to The Matrix Foundation.
 """
@@ -15,10 +17,10 @@ You can learn more about how Committees work in the [Bylaws of the Governing Boa
 
 There are currently 4 Committees:
 
-* [Community](@/foundation/governing-board/committees.md#community)
-* [Governance](@/foundation/governing-board/committees.md#governance)
-* [Trust & Safety](@/foundation/governing-board/committees.md#trust-safety)
-* [Finance & Fundraising](@/foundation/governing-board/committees.md#finance-fundraising)
+* [Community](@/foundation/committees.md#community)
+* [Governance](@/foundation/committees.md#governance)
+* [Trust & Safety](@/foundation/committees.md#trust-safety)
+* [Finance & Fundraising](@/foundation/committees.md#finance-fundraising)
 
 ## Community
 
