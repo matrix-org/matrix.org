@@ -48,7 +48,7 @@ The current elected representatives are:
 * Andy Balaam
 * Greg Sutcliffe
 * Mathieu Velten
-* Max
+* Reid Anderson
 
 </div>
 <div>

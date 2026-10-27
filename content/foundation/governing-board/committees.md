@@ -46,10 +46,10 @@ There are currently 4 Committees:
 
 ### Members
 
-Amandine Le Pape, Greg Sutcliffe, Jade Ellis, Kim Brose, Mathieu Velten, Matthew Hodgson, Max, Nicolas Werner, Yoan Pintas
+Amandine Le Pape, Greg Sutcliffe, Jade Ellis, Kim Brose, Mathieu Velten, Matthew Hodgson, Nicolas Werner, Yoan Pintas
 
 Chair: Nicolas Werner  
-Vice Chair: Max
+Vice Chair: *vacant*
 
 ### Meeting Schedule
 
@@ -126,7 +126,7 @@ Since we expect that the [Governance Working Group](@/foundation/working-groups/
 
 ### Members
 
-Jade Ellis, Matthew Hodgson, Max, Nick Mills-Barrett, Nicolas Werner, Tobias Fella
+Jade Ellis, Matthew Hodgson, Nick Mills-Barrett, Nicolas Werner, Tobias Fella
 
 Chair: *vacant*  
 Vice Chair: Nicolas Werner
