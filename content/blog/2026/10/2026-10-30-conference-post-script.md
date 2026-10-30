@@ -1,5 +1,5 @@
 +++
-date = "2026-10-30T12:00:00Z"
+date = "2026-10-30T12:30:00Z"
 title = "The Matrix Conference 2026: Our biggest edition yet"
 path = "/blog/2026/10/30/conference-2026-wrap-up"
 
@@ -106,7 +106,7 @@ Thanks are due to so many people who helped make this event possible. In particu
     caption="Kim and Andy discussing the event organisation behind a laptop"
 ) }}
 
-So what's next? Firstly, we are pleased to announce that we will be at [FOSDEM 2027](https://fosdem.org/2027/), in Brussels 30-31 January, co-hosting a Decentralised Messaging devroom with the XMPP Standards Foundation (XSF) and DeltaChat communities. We're also excited that the next Matrix Conference will be in the Netherlands, with venue details and dates to be shared in the near future. If you have tips for us or are interested in helping the Events Working Group organise it, contact us via our [Matrix room](https://matrix.to/#/%23events-wg:matrix.org).
+So what's next? Firstly, we are pleased to announce that we will be at [FOSDEM 2027](https://fosdem.org/2027/), in Brussels 30-31 January, [co-hosting a Decentralised Messaging devroom](/blog/2026/10/30/fosdem-devroom) with the XMPP Standards Foundation (XSF) and DeltaChat communities. We're also excited that the next Matrix Conference will be in the Netherlands, with venue details and dates to be shared in the near future. If you have tips for us or are interested in helping the Events Working Group organise it, contact us via our [Matrix room](https://matrix.to/#/%23events-wg:matrix.org).
 
 You'll also continue to hear from us across our socials ([Fediverse](https://mastodon.matrix.org/@matrix), [LinkedIn](https://www.linkedin.com/company/matrix-org), [Bluesky](https://bsky.app/profile/matrix.org)), you can join our [Matrix room](https://matrix.to/#/%23events-wg:matrix.org), and of course you can stay in the loop here on the blog: [https://matrix.org/category/this-week-in-matrix/](/category/this-week-in-matrix/).
 
