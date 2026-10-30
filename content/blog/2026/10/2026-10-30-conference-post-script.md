@@ -65,8 +65,7 @@ An open standard needs a neutral steward. [The Matrix Foundation](@/foundation/a
 
 {{ figure(
     img="/blog/img/conf26-govboard.jpg"
-    caption=""
-    alt="Governing Board members Amandine, Nico, Rich and Neil on stage for the Foundation keynote"
+    caption="Governing Board members Amandine, Nico, Rich and Neil on stage for the Foundation keynote"
 ) }}
 
 Sovereignty, notes Amandine, "is only real if it is sustainable." In several talks, the Foundation presented ideas it is exploring to finance its future, and the future of sovereign communications.
