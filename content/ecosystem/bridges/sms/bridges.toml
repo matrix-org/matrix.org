@@ -67,3 +67,29 @@ mms = true
 rcs = false
 group_chats = true
 history_from_android = true
+
+[[bridges]]
+name = "matrix-kdeconnect-sms"
+maintainer = "by-architect"
+summary = """
+Bridges SMS through [KDE Connect](https://kdeconnect.kde.org/), using a phone
+you have already paired rather than a modem, a carrier API or a second
+handset. One room per SMS thread, and a ghost user per phone number.
+"""
+maturity = "Alpha"
+language = "TypeScript"
+license = "Apache-2.0"
+repo = "https://github.com/by-architect/SmsKdeConnectMatrixBridge"
+featured = false # Keep this as false. This will be handled by the repo maintainers
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+sms = true
+mms = false
+rcs = false
+reactions = false
+replies = false
+typing_notifications = false
+read_receipts = false
+group_chats = false
+history_from_android = false
