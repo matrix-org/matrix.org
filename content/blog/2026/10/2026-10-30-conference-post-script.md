@@ -104,8 +104,7 @@ Thanks are due to so many people who helped make this event possible. In particu
 
 {{ figure(
     img="/blog/img/conf26-kim-andy.avif"
-    caption=""
-    alt="Kim and Andy discussing the event organisation behind a laptop"
+    caption="Kim and Andy discussing the event organisation behind a laptop"
 ) }}
 
 So what's next? Firstly, we are pleased to announce that we will be at [FOSDEM 2027](https://fosdem.org/2027/), in Brussels 30-31 January, co-hosting a Decentralised Messaging devroom with the XMPP Standards Foundation (XSF) and DeltaChat communities. We're also excited that the next Matrix Conference will be in the Netherlands, with venue details and dates to be shared in the near future. If you have tips for us or are interested in helping the Events Working Group organise it, contact us via our [Matrix room](https://matrix.to/#/%23events-wg:matrix.org).
