@@ -1,7 +1,9 @@
-# Upcoming events shown by the {{ upcoming_events() }} shortcode (used in
-# TWIM posts). Each entry is a single occurrence, not a recurring series -
-# add a new entry per date. Entries whose end_date (or date, if no end_date)
-# has passed relative to the post they're shown in are hidden automatically.
+# Upcoming events shown in the "Upcoming Events" table of TWIM posts.
+# One-off events get a date (and optionally an end_date). Events on a fixed
+# schedule use weekday (1 = Monday ... 7 = Sunday) and nth (1-4) instead of a
+# date, e.g. weekday = 2, nth = 3 is the third Tuesday of every month. Leave
+# nth out for a weekly event. Events with changing venues or URLs are listed
+# as one entry per date. Entries are hidden once their date has passed.
 
 [[event]]
 name = "The Matrix Conference 2026"
@@ -13,19 +15,22 @@ location = "Malmö, Sweden"
 [[event]]
 name = "Matrix Stammtisch (CCCAC)"
 url = "https://matrix.to/#/#matrix-stammtisch:ccc.ac"
-date = "2026-09-14"
+weekday = 1
+nth = 2
 location = "CCCAC"
 
 [[event]]
 name = "Matrix Stammtisch Karlsruhe"
 url = "https://matrix.to/#/#stammtisch-karlsruhe:alsace.hair"
-date = "2026-09-15"
+weekday = 2
+nth = 3
 location = "Fachschaft ETIT, Karlsruhe"
 
 [[event]]
 name = "Matrix Stammtisch Freiburg"
-url = "https://blog.freiburg.social/event/matrix-stammtisch-freiburg-6/"
-date = "2026-09-17"
+url = "https://matrix.to/#/#matrix-stammtisch:freiburg.social"
+weekday = 4
+nth = 3
 location = "Blauer Fuchs, Freiburg"
 
 [[event]]
@@ -33,4 +38,3 @@ name = "Matrix Stammtisch Dresden"
 url = "https://dresden.datenpunks.de/events/matrix/2026-09-20-matrix-stammtisch/"
 date = "2026-09-19"
 location = "Datenspuren, Dresden"
-
