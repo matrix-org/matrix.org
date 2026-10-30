@@ -110,6 +110,7 @@ extend-ignore-re = [
 automations = "automations" # valid word
 requestor = "requestor" # valid spelling variant
 wrk = "wrk" # application name
+certifi = "certifi" # valid word
 
 # (user)names
 feld = "feld"
