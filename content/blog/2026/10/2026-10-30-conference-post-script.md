@@ -88,8 +88,7 @@ Some of the most exciting talks at this year's conference focused on new feature
 
 {{ figure(
     img="/blog/img/conf26-continuwuity.avif"
-    caption=""
-    alt="Ginger and Jade on stage discussing Continuwuity"
+    caption="Ginger and Jade on stage discussing Continuwuity"
 ) }}
 
 We also got to hear about the interesting tools being built around Matrix, such as: [Matrix Wrench](https://2026.matrix.org/watch/#matrix-wrench-an-admin-tool-for-operators-and-community-managers), a multipurpose tool for community managers; [Continuwuity](https://2026.matrix.org/watch/#a-year-and-a-half-of-continuwuity), a homeserver that after just 18 months in existence is already running 1.5K Matrix servers; and [Gua](https://2026.matrix.org/watch/#making-matrix-feel-like-whats-app-without-centralizing-it), which attempts to mimic the simplicity and ease of use of WhatsApp without sacrificing federation. We also learned more about how incorporating the software language [Rust](https://2026.matrix.org/watch/#a-faster-rustier-element-web) is speeding Element Web, and what's new in Rust [Software Development Kits](https://2026.matrix.org/watch/#whats-new-in-the-matrix-rust-sdk) (SDK) to enable more Matrix features.
