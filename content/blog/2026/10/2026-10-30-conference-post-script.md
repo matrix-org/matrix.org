@@ -25,14 +25,14 @@ A demo of Matrix real-time communication (MatrixRTC), was one of the highlights,
     alt="Matthew demos three different apps in a group call showing himself in three different windows"
 ) }}
 
-This year we introduced the community attendance sponsorship package, which allowed us to fund travel for the maintainers of one of the community-created Matrix homeservers called [Continuwuity](https://continuwuity.org/); their talks and workshop were among the most popular of the event.
+This year we introduced the community attendance sponsorship package, which allowed us to fund travel for the maintainers of one of the community-created Matrix homeservers called [Continuwuity](https://continuwuity.org/); their talks and workshop were among the most popular of the event. Thanks to Famedly for supporting this initiative via the community attendance sponsorship option.
 
 Of course, we took advantage of being in the home of IKEA to adopt some Blåhajar:
 
 {{ figure(
     img="/blog/img/conf26-shark2.avif"
     caption=""
-    alt="A Blåhaj with some Föderation postcards"
+    alt="A Blåhaj with some 'Föderation' postcards with a parody on IKEA manuals"
 ) }}
 
 A lot more happened, so read on for more highlights from The Matrix Conference 2026.
@@ -74,7 +74,7 @@ Sovereignty, notes Amandine, "is only real if it is sustainable." In several tal
 {{ figure(
     img="/blog/img/conf26-membership.png"
     caption=""
-    alt="Slide showing membership dynamics"
+    alt="Slide showing funding membership dynamics: The 2026 Foundation budget is $1.2 million, at 1.6 it can become independent from Element, and at 2.3 the Matrix mission would be fully funded."
 ) }}
 
 Perhaps the most important revenue stream is [membership](@/foundation/members/index.md). Matrix Foundation members provide an annual contribution to the Foundation and are the backbone of keeping Matrix open, neutral, and free. Among other membership benefits, Members get a free ticket to the annual Matrix Conference, where they have the opportunity to network with the talented and committed Matrix community.
@@ -97,9 +97,11 @@ We also got to hear about the interesting tools being built around Matrix, such 
 
 ## Where we are and where we are going next
 
-Overall this year we had more than 340 attendees and 70 talks, supported by 52 incredible volunteers - our largest Matrix Conference to date. It ended with a hackathon and fully live edition of [Matrix Live](https://www.youtube.com/watch?v=iGxbWGTUVic), where we streamed the ideas and projects that grew out of the creativity that can be unleashed when a hundred of us sit in the same room. Many thanks to our friends at Aalborg University in Copenhagen for hosting our hackathon!
+Overall this year we had more than 340 attendees and 70 talks - our largest Matrix Conference to date. It ended with a hackathon and fully live edition of [Matrix Live](https://www.youtube.com/watch?v=iGxbWGTUVic), where we streamed the ideas and projects that grew out of the creativity that can be unleashed when a hundred of us sit in the same room. Many thanks to our friends in Copenhagen for hosting our hackathon!
 
-**You can revisit the whole conference (over 25 hours of talks) on our [watch page](https://2026.matrix.org/watch/)**. We will also be sharing photos from the event soon, but we're still combing through to ensure that we follow event etiquette.
+Thanks are due to so many people who helped make this event possible. In particular, our sponsors who supported the conference this year: [Element](https://element.io), [Famedly](https://famedly.com), [Connect2X](https://connect2x.de), [Rocket.Chat](https://rocket.chat), [ERCOM](https://ercom.com), [DINUM](https://www.numerique.gouv.fr/), [Nordeck](https://nordeck.net/), [CGM](https://www.cgm.com/), [Aalborg University](https://www.en.aau.dk/), and [Futurewei](https://www.futurewei.com/). We also couldn't have done it without the **52 volunteers** who helped throughout the event, the [Events Working Group](@/foundation/working-groups/events.md) themselves for organising it all, and the [Website & Content Working Group](@/foundation/working-groups/website-content.md) for making sure everything was up-to-date and online. The conference was streamed through the efforts and support of the [CCC Video Operation Center](https://c3voc.de/). Thanks to Nadine Minagawa for the design concept for our "Föderation" graphic!
+
+**You can revisit the whole conference (over 25 hours of talks) on our [watch page](https://2026.matrix.org/watch/)**. We will also be sharing photos from the event soon, but we're still combing through to ensure that we follow event etiquette. We'd love to [hear your feedback about the conference](https://cryptpad.fr/form/#/2/form/view/46kuEAinL6gbhaSxlUefu3UjjuKMmKmxRGm0T+2+g3k/), if you were able to join us.
 
 {{ figure(
     img="/blog/img/conf26-kim-andy.avif"
@@ -109,7 +111,7 @@ Overall this year we had more than 340 attendees and 70 talks, supported by 52 i
 
 So what's next? Firstly, we are pleased to announce that we will be at [FOSDEM 2027](https://fosdem.org/2027/), in Brussels 30-31 January, co-hosting a Decentralised Messaging devroom with the XMPP Standards Foundation (XSF) and DeltaChat communities. We're also excited that the next Matrix Conference will be in the Netherlands, with venue details and dates to be shared in the near future.
 
-You can stay in the loop here: [https://matrix.org/category/this-week-in-matrix/](/category/this-week-in-matrix/).
+You'll also continue to hear from us across our socials ([Fediverse](https://mastodon.matrix.org/@matrix), [LinkedIn](https://www.linkedin.com/company/matrix-org), [Bluesky](https://bsky.app/profile/matrix.org)), you can join our [Matrix Space](https://matrix.to/#/%23events-wg:matrix.org), and of course you can stay in the loop here: [https://matrix.org/category/this-week-in-matrix/](/category/this-week-in-matrix/).
 
 {{ figure(
     img="/blog/img/conf26-thanks.png"
