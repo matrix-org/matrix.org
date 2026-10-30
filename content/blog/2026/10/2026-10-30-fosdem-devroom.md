@@ -14,7 +14,7 @@ image = "https://matrix.org/blog/img/matrix-fosdem.png"
 The Matrix.org Foundation, together with our friends from the XMPP Standards Foundation (XSF) and Delta Chat communities, is organising a **Decentralised Messaging** devroom at [FOSDEM 2027](https://fosdem.org/), and we are looking for speakers!
 
 Focused on federated and self-hostable chat, this devroom brings our ecosystems together to tackle shared challenges. Although our architectures look pretty different under the hood, we face many of the same hurdles. We want to get together to share operational and implementation experiences, discuss shared technical challenges, and look at practical ways our networks can cooperate.
-
+<!-- more -->
 Each of our communities have plenty of material to share, and we are also reaching beyond them to invite contributors working on chat across other federated and decentralised ecosystems (such as AT Protocol and ActivityPub), as well as developers building reusable components like moderation tools.
 
 Talks that others can learn from are preferred; marketing talks will be rejected.
