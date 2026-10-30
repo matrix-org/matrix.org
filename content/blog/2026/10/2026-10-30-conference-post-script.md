@@ -61,7 +61,7 @@ We saw [a live demo of Matrix deployments in Sweden, France, the European Commis
 
 ## Sovereignty requires sustainability - and that means supporting the Foundation
 
-An open standard needs a neutral steward. The Matrix Foundation exists to safeguard the independence of the protocol. But while "Matrix is free to use," says Amandine, acting Managing Director of the Foundation, "it is not free to maintain." A lot of available funding aims to support new features, but the particular urgent need is to finance the less noticeable but every-bit-as-essential work that keeps Matrix running: protect and evolve the protocol itself (i.e. the spec work), ensure the whole ecosystem is heard (community management), grow the adoption of Matrix (advocacy and promotion) and keep the network safe (trust and safety).
+An open standard needs a neutral steward. [The Matrix Foundation](@/foundation/about/index.md#governance) exists to safeguard the independence of the protocol. But while "Matrix is free to use," says Amandine, acting Managing Director of the Foundation, "it is not free to maintain." A lot of available funding aims to support new features, but the particular urgent need is to finance the less noticeable but every-bit-as-essential work that keeps Matrix running: protect and evolve the protocol itself (i.e. the spec work), ensure the whole ecosystem is heard (community management), grow the adoption of Matrix (advocacy and promotion) and keep the network safe (trust and safety).
 
 {{ figure(
     img="/blog/img/conf26-govboard.jpg"
