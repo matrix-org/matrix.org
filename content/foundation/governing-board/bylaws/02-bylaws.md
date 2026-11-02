@@ -73,7 +73,7 @@ initial draft charter and be presented in the Board Discussions forum; a simple
 majority vote of the Board is sufficient to create a Committee. Henceforth the
 canonical versions of the Committee charters are maintained by the Governing
 Board [via the matrix.org website git
-repo](https://github.com/matrix-org/matrix.org/blob/main/content/foundation/governing-board/committees.md).
+repo](https://github.com/matrix-org/matrix.org/blob/main/content/foundation/committees.md).
 
 Committees are primarily composed of Governing Board members (with rare
 exceptions). Their main role is to coordinate and provide strategic oversight

@@ -1,6 +1,6 @@
 +++
 title = "Reports"
-weight = 5
+weight = 6
 extra.summary = """
 As the steward of an open protocol, The Matrix.org Foundation is committed to transparency. We publish annual reports to give an overview of our programs, finances, and impact.
 """
