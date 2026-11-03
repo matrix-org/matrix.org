@@ -290,19 +290,19 @@
 
     // Desktop nav only.
     @media (min-width: 1150px) {
-        // Dropdowns fade in and settle 10px. display is animated too so they can fade out.
+        // Dropdowns fade in and settle 10px, and fade out again. They stay laid out
+        // when closed (display would cut the fade, and Firefox does not animate it);
+        // visibility hides them for clicks and keyboard once the fade is done.
         .site-header .section-submenu {
-            transition: opacity 0.35s ease, translate 0.4s $ease-out, display 0.35s allow-discrete;
-
-            @starting-style {
-                opacity: 0;
-                translate: 0 -10px;
-            }
+            transition: opacity 0.35s ease, translate 0.4s $ease-out, visibility 0s;
         }
 
         .site-header .section-wrap:not(:hover, :focus-within) .section-submenu {
+            display: flex;
             opacity: 0;
             translate: 0 -10px;
+            visibility: hidden;
+            transition: opacity 0.35s ease, translate 0.4s $ease-out, visibility 0s 0.35s;
         }
 
         // Needs the cap unit (older browsers just get no brackets).
