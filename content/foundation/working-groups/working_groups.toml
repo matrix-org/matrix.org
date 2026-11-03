@@ -187,6 +187,29 @@ The Working Group is responsible for maintaining The Matrix.org Foundation’s t
 """
 
 [[working_groups]]
+name = "Public Sector"
+committee = "Community Committee"
+members = [
+    "tbd",
+]
+chairs = ["to be elected"]
+sponsor = "Amandine Le Pape"
+meetings = "On the [tbd] of the month, xx:00-xx:00 Berlin time. Please reach out via our Matrix room to join."
+matrix_room_alias = "#public-sector-wg:matrix.org"
+email = ""
+summary = "Evangelising and sharing knowledge about the use of Matrix in the Public Sector"
+description = """
+The Public Sector Working Group is a place where public sector organisations can
+- share knowledge and learnings on how to deploy, run, fund a Matrix deployment in public sector,
+- gather forces/resources to enable developments for Matrix,
+- promote Matrix within the public sector, and
+- educate the wider public sector about the use of Matrix.
+"""
+charter = """
+tbd
+"""
+
+[[working_groups]]
 name = "Trust & Safety Research & Documentation"
 committee = "Trust & Safety Committee"
 members = [
