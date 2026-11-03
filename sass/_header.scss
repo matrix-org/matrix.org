@@ -24,10 +24,12 @@
     .brand {
         margin-right: auto;
 
-        img {
+        .logo {
             width: 128px;
             height: 55px;
             display: block;
+            // The brackets move outside the viewBox on hover.
+            overflow: visible;
         }
     }
 
@@ -89,7 +91,15 @@
             &.primary {
                 border-radius: 60px;
                 background-color: #fff;
-                color: #000 !important;
+                color: #000;
+
+                // Inverts to an outlined pill like the secondary buttons. The outline is
+                // a shadow so the pill does not change size.
+                &:hover {
+                    background-color: #000;
+                    color: #fff;
+                    box-shadow: inset 0 0 0 2px #fff;
+                }
 
 
                 padding-inline: clamp(1em, 3dvw, 2em);
@@ -188,11 +198,12 @@
             background: #fff;
             border: 1px solid #f4f4f4;
             border-radius: 6px;
-            padding-inline: 1rem;
-            padding-block: 0.75rem;
+            padding-inline: 1.75rem;
+            padding-block: 1rem;
 
             display: flex;
             flex-direction: column;
+            gap: 0.3rem;
 
             a {
                 white-space: nowrap;
@@ -241,6 +252,99 @@
 
         &:not(:checked)~nav {
             display: none;
+        }
+    }
+}
+
+// Motion for the nav. Respects reduced motion by leaving all of it out.
+@media (prefers-reduced-motion: no-preference) {
+    $ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+    .site-header nav a.primary {
+        transition: background-color 0.4s $ease-out, color 0.4s $ease-out, box-shadow 0.4s $ease-out;
+    }
+
+    // The logo brackets open up a little on hover. Lengths are in viewBox units.
+    .site-header .brand .logo > :is(:first-child, :last-child) {
+        transition: translate 0.4s $ease-out;
+    }
+
+    .site-header .brand:hover .logo {
+        > :first-child {
+            translate: -2.5px 0;
+        }
+
+        > :last-child {
+            translate: 2.5px 0;
+        }
+    }
+
+    // Desktop nav only.
+    @media (min-width: 1150px) {
+        // Dropdowns fade in and settle 10px. display is animated too so they can fade out.
+        .site-header .section-submenu {
+            transition: opacity 0.35s ease, translate 0.4s $ease-out, display 0.35s allow-discrete;
+
+            @starting-style {
+                opacity: 0;
+                translate: 0 -10px;
+            }
+        }
+
+        .site-header .section-wrap:not(:hover, :focus-within) .section-submenu {
+            opacity: 0;
+            translate: 0 -10px;
+        }
+
+        // Matrix-style square brackets slide in around the hovered link and stay
+        // around the current page's link. --bracket-inset is how far from the
+        // element's edge they sit.
+        .site-header nav {
+            > a:not(.primary),
+            .submenu-title {
+                --bracket-inset: calc(var(--header-padding) - 0.6em);
+            }
+
+            .section-submenu a {
+                --bracket-inset: -0.9em;
+                align-self: flex-start;
+            }
+
+            > a:not(.primary),
+            .submenu-title,
+            .section-submenu a {
+                position: relative;
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    top: 50%;
+                    opacity: 0;
+                    transition: opacity 0.35s ease, translate 0.45s $ease-out;
+                }
+
+                &::before {
+                    content: "[";
+                    left: var(--bracket-inset);
+                    translate: 0.4em -50%;
+                }
+
+                &::after {
+                    content: "]";
+                    right: var(--bracket-inset);
+                    translate: -0.4em -50%;
+                }
+            }
+
+            > a:not(.primary):is(:hover, :focus-visible, .current),
+            .section-wrap:is(:hover, :focus-within, :has(.submenu-checkbox:checked)) .submenu-title,
+            .section-submenu a:is(:hover, :focus-visible) {
+                &::before,
+                &::after {
+                    opacity: 1;
+                    translate: 0 -50%;
+                }
+            }
         }
     }
 }
