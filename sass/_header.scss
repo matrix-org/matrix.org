@@ -296,52 +296,55 @@
             translate: 0 -10px;
         }
 
-        // Matrix-style square brackets slide in around the hovered link and stay
-        // around the current page's link. --bracket-inset and --bracket-top are
-        // where they sit from the element's edge, matching its padding.
+        // Square brackets slide in around the hovered link and stay around the
+        // current page's link. They are drawn like the logo's: twice the height of
+        // the capitals, centred on the middle of the lowercase letters (vertical-align:
+        // middle, as in the logo), with every other measure a fraction of that
+        // height and a 1px floor so the thin strokes stay crisp. They sit in the
+        // text flow with margins that cancel their width, so nothing moves.
         .site-header nav {
-            > a:not(.primary),
-            .submenu-title {
-                --bracket-inset: calc(var(--header-padding) - 0.6em);
-                --bracket-top: var(--header-vertical-padding);
-            }
-
-            .section-submenu a {
-                --bracket-inset: -0.9em;
-                --bracket-top: 0;
-                align-self: flex-start;
-            }
+            --bracket-height: calc(2.03 * 1cap);
+            --bracket-width: max(0.095 * var(--bracket-height), 3px);
+            --bracket-stem: max(0.026 * var(--bracket-height), 1px);
+            --bracket-tab: max(0.023 * var(--bracket-height), 1px);
+            --bracket-gap: calc(0.077 * var(--bracket-height));
 
             > a:not(.primary),
-            .submenu-title,
+            .submenu-title a,
             .section-submenu a {
-                position: relative;
-
                 &::before,
                 &::after {
-                    // Placed at the top of the text line instead of centred, so they
-                    // share its baseline in any font.
-                    position: absolute;
-                    top: var(--bracket-top);
+                    content: "";
+                    display: inline-block;
+                    box-sizing: border-box;
+                    width: var(--bracket-width);
+                    height: var(--bracket-height);
+                    margin-block: calc(var(--bracket-height) / -2);
+                    vertical-align: middle;
+                    border: var(--bracket-tab) solid currentcolor;
                     opacity: 0;
                     transition: opacity 0.35s ease, translate 0.45s $ease-out;
                 }
 
                 &::before {
-                    content: "[";
-                    left: var(--bracket-inset);
+                    margin-left: calc(-1 * (var(--bracket-width) + var(--bracket-gap)));
+                    margin-right: var(--bracket-gap);
+                    border-left-width: var(--bracket-stem);
+                    border-right: 0;
                     translate: 0.4em 0;
                 }
 
                 &::after {
-                    content: "]";
-                    right: var(--bracket-inset);
+                    margin-left: var(--bracket-gap);
+                    margin-right: calc(-1 * (var(--bracket-width) + var(--bracket-gap)));
+                    border-right-width: var(--bracket-stem);
+                    border-left: 0;
                     translate: -0.4em 0;
                 }
             }
 
             > a:not(.primary):is(:hover, :focus-visible, .current),
-            .section-wrap:is(:hover, :focus-within, :has(.submenu-checkbox:checked)) .submenu-title,
+            .section-wrap:is(:hover, :focus-within, :has(.submenu-checkbox:checked)) .submenu-title a,
             .section-submenu a:is(:hover, :focus-visible) {
                 &::before,
                 &::after {
