@@ -363,7 +363,7 @@
 
                 > a:not(.primary):is(:hover, :focus-visible, .current),
                 .section-wrap:is(:hover, :focus-within, :has(.submenu-checkbox:checked)) .submenu-title a,
-                .section-submenu a:is(:hover, :focus-visible) {
+                .section-submenu a:is(:hover, :focus-visible, .current) {
                     &::before,
                     &::after {
                         opacity: 1;
