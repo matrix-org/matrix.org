@@ -297,16 +297,18 @@
         }
 
         // Matrix-style square brackets slide in around the hovered link and stay
-        // around the current page's link. --bracket-inset is how far from the
-        // element's edge they sit.
+        // around the current page's link. --bracket-inset and --bracket-top are
+        // where they sit from the element's edge, matching its padding.
         .site-header nav {
             > a:not(.primary),
             .submenu-title {
                 --bracket-inset: calc(var(--header-padding) - 0.6em);
+                --bracket-top: var(--header-vertical-padding);
             }
 
             .section-submenu a {
                 --bracket-inset: -0.9em;
+                --bracket-top: 0;
                 align-self: flex-start;
             }
 
@@ -317,8 +319,10 @@
 
                 &::before,
                 &::after {
+                    // Placed at the top of the text line instead of centred, so they
+                    // share its baseline in any font.
                     position: absolute;
-                    top: 50%;
+                    top: var(--bracket-top);
                     opacity: 0;
                     transition: opacity 0.35s ease, translate 0.45s $ease-out;
                 }
@@ -326,13 +330,13 @@
                 &::before {
                     content: "[";
                     left: var(--bracket-inset);
-                    translate: 0.4em -50%;
+                    translate: 0.4em 0;
                 }
 
                 &::after {
                     content: "]";
                     right: var(--bracket-inset);
-                    translate: -0.4em -50%;
+                    translate: -0.4em 0;
                 }
             }
 
@@ -342,7 +346,7 @@
                 &::before,
                 &::after {
                     opacity: 1;
-                    translate: 0 -50%;
+                    translate: 0;
                 }
             }
         }
