@@ -50,6 +50,9 @@
     }
 
     nav {
+        // Hover and current colour from the redesign tokens (accent.on-dark).
+        --nav-hover: #f07241;
+
         display: flex;
 
         @media screen and (max-width: 1149px) {
@@ -81,11 +84,11 @@
             padding: var(--header-vertical-padding) var(--header-padding);
 
             &:hover {
-                color: #0082f3;
+                color: var(--nav-hover);
             }
 
             &.current {
-                color: #0082f3;
+                color: var(--nav-hover);
             }
 
             &.primary {
@@ -161,7 +164,7 @@
             }
 
             label:hover {
-                color: #0082f3;
+                color: var(--nav-hover);
             }
 
             margin: auto 0;
@@ -197,8 +200,9 @@
         }
 
         .section-submenu {
-            background: #fff;
-            border: 1px solid #f4f4f4;
+            // The tokens only define a dark header, so the dropdown stays dark too.
+            background: #000;
+            border: 1px solid #fff;
             border-radius: 6px;
             padding-inline: 1.75rem;
             padding-block: 1rem;
@@ -209,7 +213,7 @@
 
             a {
                 white-space: nowrap;
-                color: #000;
+                color: #fff;
                 // The parent already provides the padding
                 padding: 0;
             }
@@ -347,6 +351,13 @@
                         border-left: 0;
                         translate: -0.4em 0;
                     }
+                }
+
+                // Padding under the brackets keeps the gap to the text hoverable.
+                // The negative margin cancels it so nothing moves.
+                .section-submenu a {
+                    padding-inline: calc(var(--bracket-width) + var(--bracket-gap));
+                    margin-inline: calc(-1 * (var(--bracket-width) + var(--bracket-gap)));
                 }
 
                 > a:not(.primary):is(:hover, :focus-visible, .current),
