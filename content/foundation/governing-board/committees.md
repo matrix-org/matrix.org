@@ -76,7 +76,7 @@ The committee aims to meet on the last Monday of the month.
 
 ### Members
 
-Greg Sutcliffe, Jade Ellis, Kim Brose, Neil Johnson, Nicolas Werner
+Amandine Le Pape, Greg Sutcliffe, Jade Ellis, Kim Brose, Neil Johnson, Nicolas Werner
 
 Chair: Jade Ellis  
 Vice Chair: Neil Johnson

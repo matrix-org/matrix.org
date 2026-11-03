@@ -409,6 +409,7 @@ If this option has been exhausted, the Foundation should close the Working Group
 name = "Governance"
 committee = "Governance Committee"
 members = [
+    "Amandine Le Pape",
     "Greg Sutcliffe",
     "Jade Ellis",
     "Kim Brose",
