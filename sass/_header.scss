@@ -297,6 +297,11 @@
             transition: opacity 0.35s ease, translate 0.4s $ease-out, visibility 0s;
         }
 
+        // The wrapper keeps its box while closed, so it must not catch the pointer.
+        .site-header .section-wrap:not(:hover, :focus-within) .section-submenu-wrap {
+            pointer-events: none;
+        }
+
         .site-header .section-wrap:not(:hover, :focus-within) .section-submenu {
             display: flex;
             opacity: 0;
