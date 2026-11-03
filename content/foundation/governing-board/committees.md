@@ -46,7 +46,7 @@ There are currently 4 Committees:
 
 ### Members
 
-Amandine Le Pape, Greg Sutcliffe, Jade Ellis, Kim Brose, Mathieu Velten, Matthew Hodgson, Nicolas Werner, Yoan Pintas
+Alexey Rusakov, Amandine Le Pape, Greg Sutcliffe, Jade Ellis, Kim Brose, Mathieu Velten, Matthew Hodgson, Nicolas Werner, Richard van der Hoff, Yoan Pintas
 
 Chair: Nicolas Werner  
 Vice Chair: *vacant*
