@@ -163,7 +163,8 @@
                 font-size: 1.5rem;
             }
 
-            label:hover {
+            // The brackets sit outside the link, so colour from the whole title.
+            &:hover a {
                 color: var(--nav-hover);
             }
 
