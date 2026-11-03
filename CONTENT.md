@@ -345,6 +345,34 @@ What the service provides and any noteworthy limitations or features.
 This page is meant to help end users find a hosting provider for their needs. For marketing opportunities, please reach out to <managing-director@foundation.matrix.org>.
 ```
 
+## Upcoming events in TWIM
+
+Every "This Week in Matrix" post ends with a table of upcoming events. The table is built from [`/content/events/events.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/events/events.toml), so to add or fix an event, open a pull request against that file. If you would rather not write a pull request, use the [update ecosystem info issue template](https://github.com/matrix-org/matrix.org/issues/new?template=update-ecosystem-info.yaml) instead. Events show up in every TWIM post published until they are over, so there is no extra step to announce them.
+
+A one-off event has a date:
+
+```toml
+[[event]]
+name = "My Matrix Meetup"
+url = "https://example.com/meetup"
+date = "2026-12-01"
+end_date = "2026-12-02" # optional
+location = "Berlin, Germany"
+```
+
+An event on a fixed schedule has a weekday (1 is Monday, 7 is Sunday) and optionally which one in the month. This is the third Tuesday of every month, leave out `nth` for a weekly event:
+
+```toml
+[[event]]
+name = "My Matrix Stammtisch"
+url = "https://matrix.to/#/#my-stammtisch:example.com"
+weekday = 2
+nth = 3
+location = "Berlin, Germany"
+```
+
+Events whose URL or venue changes from time to time should be added once per date instead.
+
 ## Adding documentation
 
 Matrix.org provides a place to have documentation. Documentation is required to be on topic of the Matrix Protocol itself or how to get started using the protocol.
