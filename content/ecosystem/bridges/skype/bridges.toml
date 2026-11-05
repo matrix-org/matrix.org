@@ -10,7 +10,7 @@ language = "Go"
 license = "AGPL-3.0-or-later"
 repo = "https://github.com/kelaresg/go-skype-bridge"
 room = "#goskypebridge:matrix.org"
-featured = true
+featured = false
 privilege.platform = "User" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
 [bridges.supports]
