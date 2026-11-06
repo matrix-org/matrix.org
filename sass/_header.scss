@@ -24,10 +24,12 @@
     .brand {
         margin-right: auto;
 
-        img {
+        .logo {
             width: 128px;
             height: 55px;
             display: block;
+            // The brackets move outside the viewBox on hover.
+            overflow: visible;
         }
     }
 
@@ -48,6 +50,9 @@
     }
 
     nav {
+        // Hover and current colour from the redesign tokens (accent.on-dark).
+        --nav-hover: #f07241;
+
         display: flex;
 
         @media screen and (max-width: 1149px) {
@@ -79,17 +84,27 @@
             padding: var(--header-vertical-padding) var(--header-padding);
 
             &:hover {
-                color: #0082f3;
+                color: var(--nav-hover);
             }
 
             &.current {
-                color: #0082f3;
+                color: var(--nav-hover);
             }
 
             &.primary {
                 border-radius: 60px;
                 background-color: #fff;
-                color: #000 !important;
+                color: #000;
+
+                // Inverts to an outlined pill like the secondary buttons. The outline is
+                // a shadow so the pill does not change size. Not on touch, where hover sticks.
+                @media (hover: hover) {
+                    &:hover {
+                        background-color: #000;
+                        color: #fff;
+                        box-shadow: inset 0 0 0 2px #fff;
+                    }
+                }
 
 
                 padding-inline: clamp(1em, 3dvw, 2em);
@@ -148,8 +163,9 @@
                 font-size: 1.5rem;
             }
 
-            label:hover {
-                color: #0082f3;
+            // The brackets sit outside the link, so colour from the whole title.
+            &:hover a {
+                color: var(--nav-hover);
             }
 
             margin: auto 0;
@@ -185,18 +201,20 @@
         }
 
         .section-submenu {
-            background: #fff;
-            border: 1px solid #f4f4f4;
+            // The tokens only define a dark header, so the dropdown stays dark too.
+            background: #000;
+            border: 1px solid #fff;
             border-radius: 6px;
-            padding-inline: 1rem;
-            padding-block: 0.75rem;
+            padding-inline: 1.75rem;
+            padding-block: 1rem;
 
             display: flex;
             flex-direction: column;
+            gap: 0.3rem;
 
             a {
                 white-space: nowrap;
-                color: #000;
+                color: #fff;
                 // The parent already provides the padding
                 padding: 0;
             }
@@ -241,6 +259,123 @@
 
         &:not(:checked)~nav {
             display: none;
+        }
+    }
+}
+
+// Motion for the nav. Respects reduced motion by leaving all of it out.
+@media (prefers-reduced-motion: no-preference) {
+    $ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+    .site-header nav a.primary {
+        transition: background-color 0.4s $ease-out, color 0.4s $ease-out, box-shadow 0.4s $ease-out;
+    }
+
+    // The logo brackets open up a little on hover. Lengths are in viewBox units.
+    .site-header .brand .logo > :is(:first-child, :last-child) {
+        transition: translate 0.4s $ease-out;
+    }
+
+    @media (hover: hover) {
+        .site-header .brand:hover .logo {
+            > :first-child {
+                translate: -2.5px 0;
+            }
+
+            > :last-child {
+                translate: 2.5px 0;
+            }
+        }
+    }
+
+    // Desktop nav only.
+    @media (min-width: 1150px) {
+        // Dropdowns fade in and settle 10px, and fade out again. They stay laid out
+        // when closed (display would cut the fade, and Firefox does not animate it);
+        // visibility hides them for clicks and keyboard once the fade is done.
+        .site-header .section-submenu {
+            transition: opacity 0.35s ease, translate 0.4s $ease-out, visibility 0s;
+        }
+
+        // The wrapper keeps its box while closed, so it must not catch the pointer.
+        .site-header .section-wrap:not(:hover, :focus-within) .section-submenu-wrap {
+            pointer-events: none;
+        }
+
+        .site-header .section-wrap:not(:hover, :focus-within) .section-submenu {
+            display: flex;
+            opacity: 0;
+            translate: 0 -10px;
+            visibility: hidden;
+            transition: opacity 0.35s ease, translate 0.4s $ease-out, visibility 0s 0.35s;
+        }
+
+        // Needs the cap unit (older browsers just get no brackets).
+        @supports (height: 1cap) {
+            // Square brackets slide in around the hovered link and stay around the
+            // current page's link. They are drawn like the logo's: twice the height of
+            // the capitals, centred on the middle of the lowercase letters (vertical-align:
+            // middle, as in the logo), with every other measure a fraction of that
+            // height and a 1px floor so the thin strokes stay crisp. They sit in the
+            // text flow with margins that cancel their width, so nothing moves.
+            .site-header nav {
+                --bracket-height: calc(2.03 * 1cap);
+                --bracket-width: max(0.095 * var(--bracket-height), 3px);
+                --bracket-stem: max(0.026 * var(--bracket-height), 1px);
+                --bracket-tab: max(0.023 * var(--bracket-height), 1px);
+                --bracket-gap: calc(0.077 * var(--bracket-height));
+
+                > a:not(.primary),
+                .submenu-title a,
+                .section-submenu a {
+                    &::before,
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        box-sizing: border-box;
+                        width: var(--bracket-width);
+                        height: var(--bracket-height);
+                        margin-block: calc(var(--bracket-height) / -2);
+                        vertical-align: middle;
+                        border: var(--bracket-tab) solid currentcolor;
+                        opacity: 0;
+                        transition: opacity 0.35s ease, translate 0.45s $ease-out;
+                    }
+
+                    &::before {
+                        margin-left: calc(-1 * (var(--bracket-width) + var(--bracket-gap)));
+                        margin-right: var(--bracket-gap);
+                        border-left-width: var(--bracket-stem);
+                        border-right: 0;
+                        translate: 0.4em 0;
+                    }
+
+                    &::after {
+                        margin-left: var(--bracket-gap);
+                        margin-right: calc(-1 * (var(--bracket-width) + var(--bracket-gap)));
+                        border-right-width: var(--bracket-stem);
+                        border-left: 0;
+                        translate: -0.4em 0;
+                    }
+                }
+
+                // Padding under the brackets keeps the gap to the text hoverable.
+                // The negative margin cancels it so nothing moves.
+                .section-submenu a {
+                    padding-inline: calc(var(--bracket-width) + var(--bracket-gap));
+                    margin-inline: calc(-1 * (var(--bracket-width) + var(--bracket-gap)));
+                }
+
+                > a:not(.primary):is(:hover, :focus-visible, .current),
+                .section-wrap:is(:hover, :focus-within, :has(.submenu-checkbox:checked)) .submenu-title a,
+                .section-submenu a:is(:hover, :focus-visible, .current) {
+                    &::before,
+                    &::after {
+                        opacity: 1;
+                        translate: 0;
+                    }
+                }
+            }
         }
     }
 }

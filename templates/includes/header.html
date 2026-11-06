@@ -1,6 +1,6 @@
 <header class="site-header">
-    <a href="/" class="brand">
-        <img src="/images/matrix-logo-white.svg" alt="Matrix logo">
+    <a href="/" class="brand" aria-label="Matrix">
+        {% include "includes/logo.html" %}
     </a>
     <input id="site-header-dropdown-checkbox" type="checkbox" class="dropdown-checkbox" aria-hidden="true">
     <label for="site-header-dropdown-checkbox" class="dropdown-button">&#xe602;</label>
@@ -14,8 +14,7 @@
             <input id="{{ link.section }}-submenu-checkbox" type="checkbox" class="submenu-checkbox" aria-hidden="true"
                 {{ util::current_checked(if_path_starts_with="/" ~ link.section) }}>
             <label for="{{ link.section }}-submenu-checkbox" class="submenu-title">
-            <a href="/{{ link.section }}">
-                {{ link.title }}</a> <div class="arrow">
+            <a href="/{{ link.section }}">{{ link.title }}</a> <div class="arrow">
                 </div></label>
 
             <div class="section-submenu-wrap">
@@ -24,13 +23,13 @@
                     {% set subsection = get_section(path=subsection_path) %}
                     {# We ignore subsections with "navigation" key being false in the metadata. Note this variable may be unset #}
                     {% if subsection.extra.navigation is not defined or subsection.extra.navigation %}
-                    <a href="{{ subsection.path }}">{{ subsection.title }}</a>
+                    <a href="{{ subsection.path }}" class="{{ util::current_class(if_path_starts_with=subsection.path) }}">{{ subsection.title }}</a>
                     {% endif %}
                     {% endfor %}
                     {% for mypage in section.pages %}
                     {# We ignore subsections with "navigation" key being false in the metadata. Note this variable may be unset #}
                     {% if mypage.extra.navigation is undefined or mypage.extra.navigation %}
-                    <a href="{{ mypage.path }}">{{ mypage.title }}</a>
+                    <a href="{{ mypage.path }}" class="{{ util::current_class(if_path_starts_with=mypage.path) }}">{{ mypage.title }}</a>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -47,24 +46,20 @@
                         {{ util::current_checked(if_path_starts_with=link.href) }}
                     >
                     <label for="{{ link.id }}-submenu-checkbox" class="submenu-title">
-                        <a href="{{ link.href }}">
-                            {{ link.title }}
-                        </a>
+                        <a href="{{ link.href }}">{{ link.title }}</a>
                         <div class="arrow"></div>
                     </label>
                     <div class="section-submenu-wrap">
                         <div class="section-submenu">
                             {% for child in link.children %}
-                                <a href="{{ child.href }}">{{ child.title }}</a>
+                                <a href="{{ child.href }}" class="{{ util::current_class(if_path_starts_with=child.href) }}">{{ child.title }}</a>
                             {% endfor %}
                         </div>
                     </div>
                 </div>
             {% else %}
                 <a href="{{ link.href }}" class="{% if link.primary %}primary{% endif %}
-                    {{ util::current_class(if_path_starts_with=link.href) }}">
-                    {{ link.title }}
-                </a>
+                    {{ util::current_class(if_path_starts_with=link.href) }}">{{ link.title }}</a>
             {% endif %}
         {% endif %}
         {% endfor %}
