@@ -1,0 +1,31 @@
+[[bridges]]
+name = "matrix-appservice-activitypub"
+maintainer = "Haven"
+summary = """
+Turns your Matrix server into a fully functioning ActivityPub server. Every linked Profile Room mints
+its own ActivityPub actor, hosted by the bridge itself, so Matrix users can post, reply, react, repost,
+poll, DM, and chat across the fediverse with no separate fediverse account needed. Also bridges PeerTube
+video channels and Shoot guilds and channels. Written in Python.
+"""
+maturity = "Beta"
+language = "Python"
+license = "GPL-3.0-or-later"
+docs = "https://github.com/Haven-Organization/matrix-appservice-activitypub/blob/main/INSTALL.md"
+repo = "https://github.com/Haven-Organization/matrix-appservice-activitypub"
+featured = false # left to the website maintainers, per CONTENT.md
+privilege.platform = "" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+direct_messages = true
+channels = true
+message_media = true
+mentions = true
+replies = true
+threads = true
+quotes = true
+redactions = true
+editing = true
+reactions = true
+presence = false
+typing_notifications = false
+read_receipts = false
