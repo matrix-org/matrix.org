@@ -2,15 +2,15 @@
 name = "go-skype-bridge"
 maintainer = "kelaresg"
 summary = """
-A library for bridging matrix and skype，api lib using
+A library for bridging matrix and skype, api lib using
 [go-skypeapi](https://github.com/kelaresg/go-skypeapi).
 """
-maturity = "Beta"
+maturity = "Obsolete"
 language = "Go"
 license = "AGPL-3.0-or-later"
 repo = "https://github.com/kelaresg/go-skype-bridge"
 room = "#goskypebridge:matrix.org"
-featured = true
+featured = false
 privilege.platform = "User" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
 [bridges.supports]
