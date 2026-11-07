@@ -33,6 +33,11 @@
                             <a href="{{ mypage.path }}">{{ mypage.title }}</a>
                         {% endif %}
                     {% endfor %}
+                    {% if link.children %}
+                        {% for child in link.children %}
+                            <a href="{{ child.href }}">{{ child.title }}</a>
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
