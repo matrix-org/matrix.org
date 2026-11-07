@@ -6,6 +6,10 @@ href = "https://spec.matrix.org"
 title = "Foundation"
 section = "foundation"
 
+[[header.children]]
+title = "Conference"
+href = "https://conference.matrix.org"
+
 [[header]]
 id = "blog"
 title = "Blog"
@@ -51,6 +55,10 @@ primary = true
 [[footer_internal]]
 title = "Donate"
 href = "/support"
+
+[[footer_internal]]
+title = "The Matrix Conference"
+href = "https://conference.matrix.org"
 
 [[footer_internal]]
 title = "Shop"
