@@ -91,6 +91,7 @@ Paramount to all these formalities we are introducing by creating a WG from a Fo
 name = "Events"
 committee = "Community Committee"
 members = [
+    "Alexey Rusakov",
     "Andy Piper",
     "Dominik",
     "HarHarLinks",
