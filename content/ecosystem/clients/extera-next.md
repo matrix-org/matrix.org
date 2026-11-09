@@ -31,4 +31,4 @@ sliding_sync = "unknown"
 [extra.packages]
 +++
 
-Extera Next is a Matrix client built for modern age.
+Extera Next is a Matrix client built for the modern age.
