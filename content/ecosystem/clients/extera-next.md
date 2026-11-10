@@ -20,13 +20,13 @@ sso = "supported"
 voip_jitsi = "unsupported"
 multi_account = "supported"
 multi_language = "supported"
-oauth = "unknown"
-invisible_crypto = "unknown"
+oauth = "supported"
+invisible_crypto = "unsupported"
 image_packs = "supported"
 
 [extra.features.2experimental]
 voip_matrixrtc = "supported"
-sliding_sync = "unknown"
+sliding_sync = "unsupported"
 
 [extra.packages]
 +++
