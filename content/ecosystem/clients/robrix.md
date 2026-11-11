@@ -9,7 +9,11 @@ repo = "https://github.com/project-robius/robrix"
 website = "https://github.com/project-robius/robrix/releases/latest"
 matrix_room = "#robius-robrix:matrix.org"
 licence = "MIT"
-screenshots = []
+screenshots = [
+    "robrix-desktop-light.png",
+    "robrix-android-phone.png",
+    "robrix-android-foldable.png",
+]
 featured = false
 good_for = "Power users, multi-room split view, customizability, performance"
 
