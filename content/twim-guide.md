@@ -19,6 +19,10 @@ Like all things on matrix.org, your post has to follow and comply with the
 [Matrix.org Code of Conduct](/legal/code-of-conduct). Additionally, the editors
 can decline entries related to dangerous or unethical software.
 
+TWIM is intended for human-to-human communication.
+Please handwrite your post to be considered for publishing.
+You can learn more about this rule in the matrix.org website [AI Policy](https://github.com/matrix-org/matrix.org/blob/main/CONTRIBUTING.md#ai-policy).
+
 ## Publishing
 
 For publishing to TWIM all you need is a Matrix account and [participate](/docs/chat_basics/public-rooms/#joining-a-specific-room)
