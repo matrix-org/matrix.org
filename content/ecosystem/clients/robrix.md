@@ -40,5 +40,5 @@ macos_installer = "https://github.com/project-robius/robrix/releases/latest"
 other_linux_link = "https://github.com/project-robius/robrix/releases/latest"
 +++
 
-A high-performance, customizable client for power users, featuring our signature **dockable tabs** workspace layout for chatting in multiple rooms/threads at once.
+A high-performance, customizable client for power users. Its signature feature is a workspace layout with **dockable tabs** for chatting in many rooms and threads side by side.
 Robrix is written from scratch in Rust and available on macOS, iOS, Android, Linux, and Windows.
