@@ -11,7 +11,7 @@ The Matrix Foundation Governing Board recently met for our bi-annual meeting, so
 
 ## Changes to the Board
 
-This was our first board meeting since the [elections](https://matrix.org/blog/2026/06/governing-board-results/) earlier this year. As a reminder, half the Board is re-elected each year, so in June we said goodbye to a number of previous members and welcomed a clutch of new ones.
+This was our first board meeting since the [elections](@/blog/2026/06/2026-06-15-governing-board-results.md) earlier this year. As a reminder, half the Board is re-elected each year, so in June we said goodbye to a number of previous members and welcomed a clutch of new ones.
 
 Greg also stood down as chair after two years; particular thanks are due to him for his work and leadership which were essential in getting the Board set up. The board elected Kim Brose, our previous vice-chair, as chair in his stead, and myself (Rich vdH) as the new vice-chair.
 
@@ -19,7 +19,7 @@ Since the elections, we have been joined by Reid Anderson as an Individual Membe
 
 ## Working Groups
 
-It’s been exciting to see the number of [working groups](https://matrix.org/foundation/working-groups/) continue to grow: we now have a total of eight fully-established working groups, with more under discussion.
+It’s been exciting to see the number of [working groups](@/foundation/working-groups/index.md) continue to grow: we now have a total of eight fully-established working groups, with more under discussion.
 
 Working groups are where much of the work of the Governing Board gets done; the scope of their work varies widely, and they are generally open to everybody. They are a great way to get involved with the direction of Matrix; if you are interested in getting involved, just join the group’s Matrix chat and see what’s going on\!
 
