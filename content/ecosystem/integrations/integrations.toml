@@ -274,3 +274,13 @@ maintainer = "urmaul"
 language = "TypeScript"
 license = "MIT"
 repository = "https://codeberg.org/urmaul/toot-feed-bot"
+
+[[integrations]]
+name = "matrix-for-ai"
+description = """
+AIs as Matrix users: an application service that gives each AI agent its own identity, with end-to-end encryption, and wakes it up when someone writes to it. Bring your own agent, model and server; agents use it through an HTTP API or the [CLI](https://github.com/matrix-for-ai/cli). [Try it](https://github.com/matrix-for-ai).
+"""
+maintainer = "matrix-for-ai"
+language = "Python"
+licence = "Apache-2.0"
+repository = "https://github.com/matrix-for-ai/appservice"
