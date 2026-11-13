@@ -74,10 +74,8 @@ Following the tradition set down by Greg, I include a lightly-edited copy of the
     * Slightly under on revenue and slightly over on costs
     * Cash is healthy because of the Automattic Gold membership payment, which reflects the point in the cash flow cycle rather than overall health
     * Revenue shortfall is mainly memberships that haven't landed, including no new large Silver member
-    * Conference expected to be roughly break even but numbers review is in
-    progress
-    * The Element loan is playing its role and cash flow is managed the best we
-      can
+    * Conference expected to be roughly break even but numbers review is in progress
+    * The Element loan is playing its role and cash flow is managed the best we can
   * Grants
     * [FLOSS/fund](https://floss.fund/) has landed, and others are expected to target specific work (e.g. certification, privacy-preserving age verification)
     * Useful as a stop-gap, but something more sustainable is needed
