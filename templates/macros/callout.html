@@ -1,0 +1,12 @@
+{# Dark image + text call-to-action box. variant: "" (default, two-column) or "compact" (narrow, single column, for sidebars). #}
+{% macro callout(heading, body, cta_text, cta_href, image="/assets/mandala.svg", plausible_event="", variant="") %}
+<div class="callout{% if variant %} callout--{{ variant }}{% endif %}">
+    <div class="left-col" style="background-image: url('{{ image }}');">
+        <h2>{{ heading }}</h2>
+    </div>
+    <div class="right-col">
+        {{ body | safe }}
+        <a class="call-to-action{% if plausible_event %} plausible-event-name={{ plausible_event }}{% endif %}" href="{{ cta_href }}">{{ cta_text }}</a>
+    </div>
+</div>
+{% endmacro callout %}
