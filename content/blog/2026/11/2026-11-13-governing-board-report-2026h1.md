@@ -36,7 +36,7 @@ Following the tradition set down by Greg, I include a lightly-edited copy of the
     * Working as a committee rather than a WG, as topics need a lot of shared context, though WGs may spin out later
     * Focus on the server maturity rubric and website integration. Discussion in progress.
     * Ecosystem Interoperability topic: stemmed from an invite incompatibility between Synapse and Continuwuity. Proposing a process to resolve similar future cases.
-    * More contributions to Complement would be good, but are stalled on maintainer bandwidth. Interest exists on the Element side if others can help.
+    * More contributions to the Complement test suite would be good, but are stalled on maintainer bandwidth. Interest exists on the Element side if others can help.
   * Trust & Safety
     * Room Directory WG: finished preparation work and is now picking up the community space. A moderation bot is ready, but currently waiting on approval from the Foundation.
     * Research and Documentation WG: found a mode of operation, with room moderation guide about to be published
@@ -63,7 +63,7 @@ Following the tradition set down by Greg, I include a lightly-edited copy of the
 * Foundation report
   * External environment
     * Tailwinds from policy, regulation and growing public sector adoption
-    * A document on open letters and the Foundation's position will go to the Board for feedback
+    * A document on an open letter about the KIDS Act and the Foundation's position will go to the Board for information and potential feedback
     * Risk of fragmentation around MLS implementation and MIMI
       * The Foundation and Board can do more to help people improve Matrix together rather than build their own solutions
       * More SCT bandwidth may be needed here
@@ -72,20 +72,23 @@ Following the tradition set down by Greg, I include a lightly-edited copy of the
     * No immediate impact on revenue, but the non-financial impact is positive
   * FY26 year to date
     * Slightly under on revenue and slightly over on costs
-    * Cash is healthy because of the Automattic payment, which reflects the point in the cash flow cycle rather than overall health
+    * Cash is healthy because of the Automattic Gold membership payment, which reflects the point in the cash flow cycle rather than overall health
     * Revenue shortfall is mainly memberships that haven't landed, including no new large Silver member
-    * Conference expected to roughly break even
-    * Unpaid invoices are not yet due and are deferred to manage cash flow
+    * Conference expected to be roughly break even but numbers review is in
+    progress
+    * The Element loan is playing its role and cash flow is managed the best we
+      can
   * Grants
     * [FLOSS/fund](https://floss.fund/) has landed, and others are expected to target specific work (e.g. certification, privacy-preserving age verification)
     * Useful as a stop-gap, but something more sustainable is needed
     * Lack of dedicated Foundation developers makes pursuing grants difficult
   * Revenue and costs
-    * Events should at least break even, ideally profit, without turning the Foundation into an events company
-    * Element's in-kind support covers half of 2027, after which Element becomes a paid member
-    * Membership is flat year on year, with 5 companies in the pipeline (including two Gold candidates)
+    * Events should at least break even, ideally profit, without turning the Foundation into a pure events company
+    * Looking at having Element's in-kind support only continue half of 2027, after which Element becomes a paid member
+    * Number of membership is flat compared to last year, with 5 companies in the pipeline (including two Gold candidates)
     * matrix.org premium accounts are growing steadily, but more slowly than hoped
       * Break-even is the goal
+      * Needs to be deployed to existing users
       * Blockers are process, client UX and capacity to handle the expected spike in support requests
   * New revenue initiatives
     * Direct fundraising, focused on companies and organisations that use Matrix
