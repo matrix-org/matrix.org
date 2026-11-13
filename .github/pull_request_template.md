@@ -20,7 +20,13 @@
 
 Please [sign off](https://github.com/matrix-org/matrix.org/blob/main/CONTRIBUTING.md) your individual commits.
 
+#### AI notice
 
+<!--
+From our AI Policy: (https://github.com/matrix-org/matrix.org/blob/main/CONTRIBUTING.md#ai-policy)
+> If content was made with the help of AI, you MUST convey that this is the case.
+> This includes content that you authored but was motivated by a suggestion of AI.
+--->
 
 <!-- ------------------------------ DO NOT WRITE BELOW THIS LINE ------------------------------ -->
 <!-- Thank you for creating a Pull Request to the matrix.org website!
