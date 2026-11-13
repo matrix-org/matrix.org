@@ -161,8 +161,8 @@
     }
 
     // Client cards
-    // All .client-card*, .platform-pill*, .client-lightbox* and
-    // .client-card-screenshot* rules live globally in _clients.scss.
+    // All .client-card* and .platform-pill* rules live globally in
+    // _clients.scss; the screenshot galleries live in _gallery.scss.
     // Only the cards container margin differs on this page.
 
     .client-cards {
