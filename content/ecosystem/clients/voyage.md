@@ -9,6 +9,7 @@ repo = "https://github.com/VoyageClient/Voyage"
 matrix_room = "#voyage:matrix.org"
 licence = "AGPL-3.0-or-later"
 featured = false
+screenshots = ["voyage-screenshot-room-list.png", "voyage-screenshot-timeline.png", "voyage-screenshot-room-overview.png", "voyage-screenshot-image-editor.png"]
 
 [extra.features.1stable]
 e2ee = "supported"
