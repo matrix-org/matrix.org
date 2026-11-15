@@ -242,6 +242,8 @@ typing_notifications = true
 read_receipts = true
 ```
 
+Third-party networks should be removed if they have shut down since being listed.
+
 ### Servers
 
 Matrix Servers are listed in [`/content/ecosystem/servers/servers.toml`](https://github.com/matrix-org/matrix.org/blob/main/content/ecosystem/servers/servers.toml). Each entry is a new section in this toml file.
