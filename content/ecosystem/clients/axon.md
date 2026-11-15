@@ -24,7 +24,7 @@ voip_jitsi = "unsupported"
 multi_account = "supported"
 multi_language = "unsupported"
 oauth = "supported"
-invisible_crypto = "unsupported"
+invisible_crypto = "partial"
 image_packs = "partial"
 
 [extra.features.2experimental]
