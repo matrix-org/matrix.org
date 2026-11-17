@@ -1,11 +1,7 @@
 +++
 title = "About Matrix"
 aliases = ["/foundation/", "/about/"]
-extra.meta_description = """
-The Matrix.org Foundation is overseen by its Guardians. The Spec Core Team works
-on maintaining the Matrix Specification in accordance with the Foundation rules
-and manifesto.
-"""
+extra.meta_description = "Learn about The Matrix.org Foundation, including its principles, mission, values, and structure"
 weight = 1
 +++
 
