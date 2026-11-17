@@ -185,6 +185,6 @@ description = "Versatile experimental Matrix homeserver written in Golang from s
 author = "timedout"
 maturity = "Alpha"
 licence = "MPL-2.0"
-repository = "https://codeberg.org/timedout/venator"
+repository = "https://codeberg.org/matrix-venator/venator"
 room = "#venator:nexy7574.co.uk"
 language = "Go"
