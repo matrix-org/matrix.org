@@ -72,7 +72,7 @@ When you get started, you can do all the admin by yourself, but as soon as your 
 
 Your moderation team should be made up of people who have earned the trust of you and the people in your room, and they should be delegated responsibility gradually, as the level of trust they have earned increases. You and your moderation team need to work together to decide policies and processes that work for your community.
 
-If possible, look for people who can be around at different times: even if your room is usually only active at specific times, this is helpful for combatting spam, which can arrive at unusual times.
+If possible, look for people who can be around at different times: even if your room is usually only active at specific times, this is helpful for combating spam, which can arrive at unusual times.
 
 ### Power levels
 
