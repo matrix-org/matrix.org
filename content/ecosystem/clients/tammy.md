@@ -13,7 +13,7 @@ featured = false
 
 [extra.features.1stable]
 e2ee = "supported"
-spaces = "unsupported"
+spaces = "supported"
 voip_1to1 = "unsupported"
 threads = "unsupported"
 sso = "supported"
@@ -21,12 +21,12 @@ voip_jitsi = "unsupported"
 multi_account = "supported"
 multi_language = "supported"
 oauth = "supported"
-invisible_crypto = "unknown"
-image_packs = "unknown"
+invisible_crypto = "unsupported"
+image_packs = "supported"
 
 [extra.features.2experimental]
-voip_matrixrtc = "unknown"
-sliding_sync = "unknown"
+voip_matrixrtc = "supported"
+sliding_sync = "unsupported"
 
 [extra.packages]
 windows_installer = "https://tammy.connect2x.de"
