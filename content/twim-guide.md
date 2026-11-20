@@ -1,7 +1,24 @@
 +++
 title = "Writing a good \"This Week in Matrix\" entry"
 +++
+## TWIM Quick Guide (Simplified for Beginners)
 
+This Week in Matrix (TWIM) is a weekly blog where you can share updates about your Matrix projects.
+
+### Before you post
+- Follow the Matrix Code of Conduct
+- Make sure your content is safe and appropriate
+
+### How to post
+- Mention @this-week-in-matrix:matrix.org
+- Write your update in markdown
+- Start your title with ###
+- Keep your update short and clear
+
+### Tips
+- You can submit multiple updates
+- Write in simple and clear language
+  
 This Week in Matrix (TWIM) is a weekly digest on the blog in which
 anyone can post small concise updates about their Matrix projects, events
 and happenings.
