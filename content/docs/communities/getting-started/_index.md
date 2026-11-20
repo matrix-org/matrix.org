@@ -127,24 +127,12 @@ Finally head to the "Security & Privacy" tab
 There is no best practice here, it depends entirely on your preferences and what
 you want for your community.
 
-## Basic Moderation
+## Moderation
 
-For a good overview of what are roles, power levels, redactions, and how to keep
-a group safe at the room level, please head to
-[the group chat documentation](/docs/chat_basics/private-group-chat/#keeping-the-group-safe).
+If you are creating only a small private room, you can keep your chat safe with a small number of easy Matrix features, outlined in
+[the group chat documentation](@/docs/chat_basics/private-group-chat/_index.md#keeping-the-group-safe).
 
-## Advanced moderation
-
-Basic moderation is enough for small groups, but it tends not to scale too well
-as the number of people and rooms in a community grow. Indeed, the basic 
-moderation decisions you take are only enforced room by room. If you wanted to
-ban someone from your entire community, you would have to ban them from all the
-rooms manually. Tedious, and not efficient!
-
-The Matrix.org Foundation created a bot called mjolnir, which you could consider
-as the security guard of your community. You tell it in a control room to
-perform certain actions against one or a group of individuals, and the mjolnir
-bot enforces it in all the rooms. More information in the [moderation section](/docs/communities/moderation).
+If your room is going to be public-facing, you will want to familiarize yourself with the [moderation section](@/docs/communities/moderation/_index.md) -- Matrix has some features and tools that make moderation at scale a lot easier, but also some traps for the unwary, so it's worth a read.
 
 ## Moving to another provider
 
