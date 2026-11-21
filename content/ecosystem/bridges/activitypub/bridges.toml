@@ -12,8 +12,9 @@ language = "Python"
 license = "GPL-3.0-or-later"
 docs = "https://github.com/Haven-Organization/matrix-appservice-activitypub/blob/main/INSTALL.md"
 repo = "https://github.com/Haven-Organization/matrix-appservice-activitypub"
+room = ""
 featured = false # left to the website maintainers, per CONTENT.md
-privilege.platform = "" # Free text
+privilege.platform = "None" # Free text
 privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
 [bridges.supports]
 direct_messages = true
