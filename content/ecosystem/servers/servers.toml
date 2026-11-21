@@ -47,7 +47,7 @@ language = "Go"
 licence = "AGPL-3.0-or-later"
 website = "https://zendrite.pat-s.me/"
 repository = "https://codefloe.com/pat-s/zendrite"
-room = "#dendrite:matrix.org"
+room = "#help:zendrite.xyz"
 
 [[servers]]
 name = "Conduit"
