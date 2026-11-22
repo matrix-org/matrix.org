@@ -5,9 +5,8 @@ title = "WizardChat"
 thumbnail = "wizardchat.svg"
 maintainer = "Arian Farahani, Jan Philipp Kleinschmidt"
 licence = "AGPL-3.0"
-latest_release = "2026-10-01"
 maturity = "Beta"
-repo = "https://gitlab.com/wizardchat/wizardchat-web"
+repo = "https://gitlab.com/wizardchat/wizardchat"
 website = "https://wizardchat.org"
 matrix_room = "#wizardchat-app:matrix.org"
 featured = false
@@ -21,10 +20,10 @@ voip_1to1 = "unsupported"
 threads = "supported"
 sso = "supported"
 voip_jitsi = "unsupported"
-multi_account = "unsupported"
+multi_account = "supported"
 multi_language = "supported"
-oauth = "unsupported"
-invisible_crypto = "unsupported"
+oauth = "supported"
+invisible_crypto = "partial"
 image_packs = "supported"
 
 [extra.features.2experimental]
@@ -32,9 +31,9 @@ voip_matrixrtc = "supported"
 sliding_sync = "unsupported"
 
 [extra.packages]
-windows_installer = "https://gitlab.com/wizardchat/wizardchat-desktop/-/releases"
-macos_installer = "https://gitlab.com/wizardchat/wizardchat-desktop/-/releases"
-other_linux_link = "https://gitlab.com/wizardchat/wizardchat-desktop/-/releases"
+windows_installer = "https://gitlab.com/wizardchat/wizardchat/-/releases"
+macos_installer = "https://gitlab.com/wizardchat/wizardchat/-/releases"
+other_linux_link = "https://gitlab.com/wizardchat/wizardchat/-/releases"
 webapp = "https://app.wizardchat.org"
 +++
 
