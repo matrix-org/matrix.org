@@ -8,6 +8,6 @@ seamlessly.
 """
 +++
 
-Interoperability is a important feature of Matrix. As an [open standard](https://spec.matrix.org/latest/),
+Interoperability is an important feature of Matrix. As an [open standard](https://spec.matrix.org/latest/),
 Matrix enables messages to be exchanged with other platforms. These connections are called bridges.
 Select a platform to explore its existing bridges.
