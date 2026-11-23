@@ -8,6 +8,7 @@ licence = "AGPL-3.0-or-later (with an additional permission)"
 maturity = "Beta"
 repo = "https://git.sable.moe/SableClient/Sable-next"
 website = "https://sable.moe/"
+docs = "https://docs.sable.moe/"
 matrix_room = "#sable:sable.moe"
 featured = false
 
