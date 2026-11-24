@@ -420,11 +420,11 @@ A matrix client sdk built upon lager and the value-oriented design it enables.
 
 [[sdks]]
 name = "matrix-bot-sdk"
-maintainer = "Travis Ralston"
+maintainer = "Element Creations Ltd."
 maturity = "Beta"
 language = "TypeScript"
 licence = "MIT"
-repository = "https://github.com/turt2live/matrix-bot-sdk"
+repository = "https://github.com/element-hq/matrix-bot-sdk"
 purpose = ["bot", "bridge"]
 description = """
 TypeScript/JavaScript SDK for Matrix bots.
