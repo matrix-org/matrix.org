@@ -41,13 +41,10 @@ other_linux_link = "https://sable.moe/en/download/"
 
 An almost stable Matrix client with end-to-end encryption, spaces, threads, multiple accounts, and voice and video calls.
 
-Also available from the [AUR](https://aur.archlinux.org/packages/sable-bin),
+Also available from [Arch Linux](https://archlinux.org/packages/extra/x86_64/sable/),
 [Homebrew](https://git.sable.moe/SableClient/homebrew-sable), and
 [IzzyOnDroid](https://apt.izzysoft.de/packages/moe.sable.client).
 iOS builds can be installed using
-[AltStore or SideStore](https://git.sable.moe/SableClient/sable-next#altstore-sidestore).
-[Download Sable](https://sable.moe/en/download/)
-for Windows, macOS, Linux (AppImage, deb, rpm), Android, and iOS.
-
-The web client can be [self-hosted with Docker](https://git.sable.moe/SableClient/sable-next/src/branch/main/docs/web.md)
-using the `git.sable.moe/sableclient/sable-next:latest` image.
+[AltStore or SideStore](https://git.sable.moe/SableClient/sable-next#altstore-classic-sidestore).
+[Download Sable](https://sable.moe/en/download/) for Linux (AppImage, deb, rpm, Nix).
+The web client can be [self-hosted with Docker](https://docs.sable.moe/installation/self-hosting/).
