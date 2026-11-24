@@ -1,6 +1,6 @@
 +++
 title = "The Matrix.org Foundation Privacy Policy"
-version = "3.4"
+version = "3.4.0"
 +++
 
 Effective date of 24 November 2026
@@ -27,10 +27,10 @@ Email: [dpo@matrix.org](mailto:dpo@matrix.org)
 
 Postal address:
 
-The Matrix.org Foundation
-14 Turnham Green Terrace Mews
-London
-United Kingdom
+The Matrix.org Foundation  
+14 Turnham Green Terrace Mews  
+London  
+United Kingdom  
 W4 1QU
 
 Should you have other questions or concerns about this document, please send us an email at [dpo@matrix.org](mailto:dpo@matrix.org).
@@ -91,8 +91,8 @@ Because an account deactivation causes the removal of any data which could be us
 As described above, erasing a state event may result in our needing to erase the entire conversation at the same time. Deciding whether to take this drastic step will require a balancing exercise to be carried out at the time of the request, and will depend on:
 
 1. the nature of the Personal Data that the user is requesting to be erased;  
-2. how many other users would have their fundamental rights and freedoms put at risk if the Right to Erasure were to be exercised  
-3. to what degree these other users would have their fundamental rights and freedoms put at risk if the Right to Erasure were to be exercised
+2. how many other users would have their fundamental rights and freedoms put at risk if the Right to Erasure were to be exercised;  
+3. to what degree these other users would have their fundamental rights and freedoms put at risk if the Right to Erasure were to be exercised.
 
 The Personal Data contained in a state event is usually limited to the username, the timestamp and the conversation in which the state event was issued. State events only represent that a user participated in a given conversation at a given time. It is rare that this data is sensitive enough to warrant its erasure given the drastic impact this will have on other users.
 
@@ -153,9 +153,9 @@ This content includes any information about yourself that you choose to share.
 
 ##### 2.2.1.3 Information you provide through purchases in the Matrix.org Foundation shop
 
-The Matrix.org Shop is an online store at which you can purchase Matrix.org-branded merchandise, such as stickers or tee-shirts. All proceeds go to The Matrix.org Foundation. Data you provide for this purpose is processed under Performance of Contract. This means that we process your data for the purposes of fulfilling orders you make from us, getting in touch with you, responding to your requests, working with our suppliers to deliver the Service and enabling its features, ensuring the security of our Service, developing, fixing and improving our Service, administering our business and complying with the law.
+The Matrix.org Shop is an online store at which you can purchase Matrix.org-branded merchandise, such as stickers or t-shirts. All proceeds go to The Matrix.org Foundation. Data you provide for this purpose is processed under Performance of Contract. This means that we process your data for the purposes of fulfilling orders you make from us, getting in touch with you, responding to your requests, working with our suppliers to deliver the Service and enabling its features, ensuring the security of our Service, developing, fixing and improving our Service, administering our business and complying with the law.
 
-The information we collect is purely for the purpose of taking payments for merchandise and shipping your purchases to you. We do not profile users or their data on the Service. We may need your personal information to establish, bring or defend legal claims. For this purpose, we will retain your personal information for the statutory recommended 7 years after the date it is no longer needed by us for any of the purposes listed under How we use your information above.
+The information we collect is purely for the purpose of taking payments for merchandise and shipping your purchases to you. We do not profile users or their data on the Service. We may need your personal information to establish, bring or defend legal claims. For this purpose, we will retain your personal information for the statutory recommended 7 years after the date it is no longer needed by us for any of the purposes listed above.
 
 ##### 2.2.1.3.1 Information you provide to us
 
@@ -227,7 +227,7 @@ For more information on Pretix, who support us with event ticketing, please see 
 * LinkedIn profile  
 * Other media (e.g., a text box where speakers can link to their website or any other relevant content)
 
-For more information on Pretalx, who support us with event scheduling, please see their Privacy Policy.
+For more information on Pretalx, who support us with event scheduling, please see their [Privacy Policy](https://pretalx.com/p/privacy).
 
 ##### 2.2.1.5 Information collected for paid plans
 
@@ -259,7 +259,7 @@ Synapse (the Matrix homeserver implementation) can send us a periodic report on 
 
 Where reporting is switched on, each report contains the server's name; counts describing how the server is being used, such as how many accounts exist on it, how many are active daily and monthly, how many rooms and messages there are, and how many of those are end-to-end encrypted; and technical information about how the server is running, such as its uptime, memory use, Python version and database version. Reports contain no messages or files, and no usernames or other details of the people using that server. As with any connection to our infrastructure, we also see the IP address the report is sent from.
 
-We use this information to understand how widely the Matrix protocol is deployed and how usage changes over time, and to publish statistics about the Matrix network. Published statistics are aggregated across all reporting servers.
+We use this information to understand how widely the Matrix protocol is deployed and how usage changes over time, and to publish statistics about the Matrix Network. Published statistics are aggregated across all reporting servers.
 
 Our legal basis for this is our legitimate interest in understanding how the protocol we maintain is used, and in reporting on it publicly (GDPR Article 6(1)(f)). If you run a homeserver and would prefer us not to hold this information, you can switch the reporting off as described above, and you can contact us to ask us to delete reports we have already received.
 
@@ -341,7 +341,7 @@ In unencrypted and encrypted rooms, users connecting to the [Matrix.org homeserv
 Rooms have different visibility settings which are determined by the room administrators. The history visibility possibilities are the following, by increasing order of openness (least open first):
 
 * `joined`: people need to join the room to see the history, and will only see the messages sent after they joined.  
-* `invited`: people can only see messages sent after they were joined, no history is visible before that point.  
+* `invited`: people can only see messages sent after they joined, no history is visible before that point.  
 * `shared`: people need to join the room to see the history, but will then see the history up to when this visibility setting was set (the change is not retroactive).  
 * `world_readable`: everyone can see the room history without even joining the room.
 
@@ -397,7 +397,7 @@ Please act in good faith towards our users' privacy and data during your disclos
 
 We try to meet the highest standards when collecting and using personal information. For this reason, we take any complaints we receive about this very seriously. We encourage people to bring it to our attention at [dpo@matrix.org](mailto:dpo@matrix.org) if they think that our collection or use of information is unfair, misleading or inappropriate. We would also welcome any suggestions for improving our procedures.
 
-If you want to make a complaint about the way we have processed your personal information to the supervisory authority, you can contact the ICO (the statutory body which oversees data protection law) at [https://www.ico.org.uk/concerns](https://www.ico.org.uk/concerns).
+If you want to make a complaint about the way we have processed your personal information to the supervisory authority, you can contact the ICO (the statutory body which oversees data protection law) at [https://ico.org.uk/make-a-complaint/](https://ico.org.uk/make-a-complaint/).
 
 ## Document History
 
@@ -419,6 +419,6 @@ If you want to make a complaint about the way we have processed your personal in
 * 3.2.0 - update 2.2.1 in light of MAS [Matrix Authentication Service](https://element-hq.github.io/matrix-authentication-service/index.html) migration. Fix links. Update minimum age of use in light of DSA requirements - June 2025  
 * 3.3.0 - update 2.2.1 to include information associated with paid plans. Changes to legal basis of processing. - July 2025  
 * 3.3.1 - correct links; add information about cookie usage for paid plans (2.2.2) - August 2025  
-* 3.4 - update 2.1 and 2.2 following [MAS](https://element-hq.github.io/matrix-authentication-service/index.html) migration (legal basis, account and authentication data, IP logging); add 2.2.3 on Synapse usage statistics; update 2.11 on AWS, Amazon SES and Cloudflare, including Trust & Safety content scanning; update registered address; numbering, spelling and consistency fixes - November 2026
+* 3.4 - update 2.1 and 2.2 following [MAS](https://element-hq.github.io/matrix-authentication-service/index.html) migration (legal basis, account and authentication data, IP logging); add 2.2.3 on Synapse usage statistics; update 2.11 on AWS, Amazon SES and Cloudflare, including Trust & Safety content scanning; update registered address; update third-party links; numbering, spelling and consistency fixes - November 2026
 
 **A note to other startups**: this document was heavily inspired by Balsamiq's plain English ToS document. We were impressed by their championing of plain English, and wanted to reproduce that as much as possible in our own legal documentation. Feel free to draw similar inspiration from this document, though be sure to get any documents you produce checked over by a lawyer. Good luck!
