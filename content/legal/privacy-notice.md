@@ -3,7 +3,7 @@ title = "The Matrix.org Foundation Privacy Policy"
 version = "3.4"
 +++
 
-Effective date of 20 November 2026
+Effective date of 24 November 2026
 
 Please read this document carefully before accessing or using this service.
 
@@ -27,11 +27,11 @@ Email: [dpo@matrix.org](mailto:dpo@matrix.org)
 
 Postal address:
 
-The Matrix.org Foundation  
-10 Queen Street Place  
-London  
-United Kingdom  
-EC4R 1AG
+The Matrix.org Foundation
+14 Turnham Green Terrace Mews
+London
+United Kingdom
+W4 1QU
 
 Should you have other questions or concerns about this document, please send us an email at [dpo@matrix.org](mailto:dpo@matrix.org).
 
@@ -324,7 +324,7 @@ If you become aware of any unauthorised use of your account or any other breach 
 
 If you forget your password (and you have registered an email address) you can use the password reset facility to reset it. It is our policy to not change passwords on your behalf. This is ultimately to protect your privacy and the integrity of your account.
 
-You can manage your account by using a Matrix client such as Element, FluffyChat, and many others. Click [here](@/ecosystem/clients/_index.md) for a comprehensive list of Matrix clients.
+You can manage your account by using a Matrix client such as Element, FluffyChat, and many others. Click [here](@/ecosystem/clients/_index.md) for a list of Matrix clients.
 
 ### 2.7 Our commitment to children's privacy
 
@@ -419,6 +419,6 @@ If you want to make a complaint about the way we have processed your personal in
 * 3.2.0 - update 2.2.1 in light of MAS [Matrix Authentication Service](https://element-hq.github.io/matrix-authentication-service/index.html) migration. Fix links. Update minimum age of use in light of DSA requirements - June 2025  
 * 3.3.0 - update 2.2.1 to include information associated with paid plans. Changes to legal basis of processing. - July 2025  
 * 3.3.1 - correct links; add information about cookie usage for paid plans (2.2.2) - August 2025  
-* 3.4 - update 2.1 and 2.2 following [MAS](https://element-hq.github.io/matrix-authentication-service/index.html) migration (legal basis, account and authentication data, IP logging); add 2.2.3 on Synapse usage statistics; update 2.11 on AWS, Amazon SES and Cloudflare, including Trust & Safety content scanning; numbering, spelling and consistency fixes - November 2026
+* 3.4 - update 2.1 and 2.2 following [MAS](https://element-hq.github.io/matrix-authentication-service/index.html) migration (legal basis, account and authentication data, IP logging); add 2.2.3 on Synapse usage statistics; update 2.11 on AWS, Amazon SES and Cloudflare, including Trust & Safety content scanning; update registered address; numbering, spelling and consistency fixes - November 2026
 
 **A note to other startups**: this document was heavily inspired by Balsamiq's plain English ToS document. We were impressed by their championing of plain English, and wanted to reproduce that as much as possible in our own legal documentation. Feel free to draw similar inspiration from this document, though be sure to get any documents you produce checked over by a lawyer. Good luck!
