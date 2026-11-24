@@ -151,7 +151,7 @@ We store and distribute the messages and files you share using the Service (and 
 
 This content includes any information about yourself that you choose to share.
 
-##### 2.2.1.3 Information you provide through purchases in the Matrix.org Foundation shop
+##### 2.2.1.3 Information you provide through purchases in the Matrix.org Foundation Shop
 
 The Matrix.org Foundation Shop is an online store at which you can purchase Matrix.org-branded merchandise, such as stickers or t-shirts. All proceeds go to The Matrix.org Foundation. Data you provide for this purpose is processed under Performance of Contract. This means that we process your data for the purposes of fulfilling orders you make from us, getting in touch with you, responding to your requests, working with our suppliers to deliver the Service and enabling its features, ensuring the security of our Service, developing, fixing and improving our Service, administering our business and complying with the law.
 
