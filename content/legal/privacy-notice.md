@@ -157,7 +157,7 @@ The Matrix.org Foundation Shop is an online store at which you can purchase Matr
 
 The information we collect is purely for the purpose of taking payments for merchandise and shipping your purchases to you. We do not profile users or their data on the Service. We may need your personal information to establish, bring or defend legal claims. For this purpose, we will retain your personal information for the statutory recommended 7 years after the date it is no longer needed by us for any of the purposes listed above.
 
-##### 2.2.1.3.1 Information you provide to us
+###### 2.2.1.3.1 Information you provide to us
 
 We collect information about you when you input it into the Service or otherwise provide it directly to us.
 
@@ -166,11 +166,11 @@ We collect information about you when you input it into the Service or otherwise
 * Purchase information  
 * Payment details (handled by Big Cartel, not visible to Matrix.org Foundation employees)
 
-##### 2.2.1.3.2 Information we collect automatically as you use the service
+###### 2.2.1.3.2 Information we collect automatically as you use the Service
 
 Your IP address is logged when you access the Service. This data is used in order to mitigate abuse and debug operational issues. Our logs are kept for no longer than 180 days.
 
-##### 2.2.1.3.3 Third parties
+###### 2.2.1.3.3 Third parties
 
 **Big Cartel**
 
