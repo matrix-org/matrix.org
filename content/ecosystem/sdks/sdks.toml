@@ -420,7 +420,7 @@ A matrix client sdk built upon lager and the value-oriented design it enables.
 
 [[sdks]]
 name = "matrix-bot-sdk"
-maintainer = "Element"
+maintainer = "Element Creations Ltd."
 maturity = "Beta"
 language = "TypeScript"
 licence = "MIT"
