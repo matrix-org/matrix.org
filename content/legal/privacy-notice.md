@@ -13,13 +13,13 @@ Please read this document carefully before accessing or using this service.
 
 Most Privacy Policy documents are unreadable. They are written by lawyers and for lawyers, and in our opinion are not very effective. Data protection and privacy are important, and we want you to understand the issues involved. For that reason we decided to use plain English instead as much as possible, to make our terms as clear as possible.
 
-When you read 'the Matrix.org homeserver', 'matrix.org' or 'the Service' below, it refers to the services made available at matrix.org which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix Network.
+When you read 'the matrix.org homeserver', 'matrix.org' or 'the Service' below, it refers to the services made available at matrix.org which store your account and personal conversation history, provide services such as bots and bridges, and communicate via the open Matrix decentralised communication protocol with the public Matrix network.
 
-The public Matrix Network is a decentralised and openly federated communication network. This means that user messages are replicated on each participant's server and messages posted to a room are visible to all participants including in some cases any new joiners. This is further explained at 2.3.
+The public Matrix network is a decentralised and openly federated communication network. This means that user messages are replicated on each participant's server and messages posted to a room are visible to all participants including in some cases any new joiners. This is further explained at 2.3.
 
 Where you read Matrix.org, Matrix.org Foundation C.I.C., The Matrix.org Foundation, or The Foundation, it refers to the Community Interest Company incorporated on 29 October 2018 to be the neutral custodian of the Matrix protocol: The Matrix.org Foundation C.I.C., and their agents.
 
-The Matrix protocol is licensed by The Matrix.org Foundation which makes it available to third parties who set up their own homeserver. This privacy policy does not apply to such Matrix servers run by anyone else - Matrix is an open network like the Web and this agreement only applies to the server (Matrix.org) provided by the Foundation.
+The Matrix protocol is licensed by The Matrix.org Foundation which makes it available to third parties who set up their own homeserver. This privacy policy does not apply to such Matrix servers run by anyone else - Matrix is an open network like the Web and this agreement only applies to the server (matrix.org) provided by the Foundation.
 
 Matrix.org is the Data Controller for the Service and works with [Element](https://element.io) as a Processor for data processing, hosting and management purposes. We can be contacted as per the details below:
 
@@ -143,7 +143,7 @@ We collect information about you when you register for an account. This informat
 
 Additionally, we collect data associated with each of your sessions, specifically: when it was created; when it finished (we keep finished sessions for 30 days before deleting them); when it was last active; the last-seen IP for it (which we clear 30 days after last activity, even for sessions that are still active); the user agent we saw when it got created; and which client you used. If you start creating an account, we keep a short record of that attempt – including your IP address, user agent, and the username you requested – for 30 days, to help us detect and investigate abuse such as automated bulk registration.
 
-Your email address and/or telephone number are used so that other users can look up your Matrix ID from these identifiers via the Matrix.org Identity Server. We will also use your email address to let you reset your password if you forget it, and to send you notifications about missed messages from users trying to contact you on Matrix if you enable the option. We may also send you infrequent urgent messages about platform updates.
+Your email address and/or telephone number are used so that other users can look up your Matrix ID from these identifiers via the matrix.org Identity Server. We will also use your email address to let you reset your password if you forget it, and to send you notifications about missed messages from users trying to contact you on Matrix if you enable the option. We may also send you infrequent urgent messages about platform updates.
 
 ##### 2.2.1.2 Content you provide through using the Service
 
@@ -151,7 +151,7 @@ We store and distribute the messages and files you share using the Service (and 
 
 This content includes any information about yourself that you choose to share.
 
-##### 2.2.1.3 Information you provide through purchases in the Matrix.org Foundation Shop
+##### 2.2.1.3 Information you provide through purchases in The Matrix.org Foundation Shop
 
 The Matrix.org Foundation Shop is an online store at which you can purchase Matrix.org-branded merchandise, such as stickers or t-shirts. All proceeds go to The Matrix.org Foundation. Data you provide for this purpose is processed under Performance of Contract. This means that we process your data for the purposes of fulfilling orders you make from us, getting in touch with you, responding to your requests, working with our suppliers to deliver the Service and enabling its features, ensuring the security of our Service, developing, fixing and improving our Service, administering our business and complying with the law.
 
@@ -259,7 +259,7 @@ Synapse (the Matrix homeserver implementation) can send us a periodic report on 
 
 Where reporting is switched on, each report contains the server's name; counts describing how the server is being used, such as how many accounts exist on it, how many are active daily and monthly, how many rooms and messages there are, and how many of those are end-to-end encrypted; and technical information about how the server is running, such as its uptime, memory use, Python version and database version. Reports contain no messages or files, and no usernames or other details of the people using that server. As with any connection to our infrastructure, we also see the IP address the report is sent from.
 
-We use this information to understand how widely the Matrix protocol is deployed and how usage changes over time, and to publish statistics about the Matrix Network. Published statistics are aggregated across all reporting servers.
+We use this information to understand how widely the Matrix protocol is deployed and how usage changes over time, and to publish statistics about the Matrix network. Published statistics are aggregated across all reporting servers.
 
 Our legal basis for this is our legitimate interest in understanding how the protocol we maintain is used, and in reporting on it publicly (GDPR Article 6(1)(f)). If you run a homeserver and would prefer us not to hold this information, you can switch the reporting off as described above, and you can contact us to ask us to delete reports we have already received.
 
@@ -269,7 +269,7 @@ Our legal basis for this is our legitimate interest in understanding how the pro
 
 We may share your information when working with our suppliers in order to provide the Service.
 
-In addition, the [Matrix.org homeserver](@/homeserver/about.md) is a decentralised and open service. This means that, to support communication between users on different homeservers or different messaging platforms, your username, display name and messages and files are sometimes shared with other services that are connected with the [matrix.org homeserver](@/homeserver/about.md).
+In addition, the [matrix.org homeserver](@/homeserver/about.md) is a decentralised and open service. This means that, to support communication between users on different homeservers or different messaging platforms, your username, display name and messages and files are sometimes shared with other services that are connected with the [matrix.org homeserver](@/homeserver/about.md).
 
 ##### 2.3.1.1 Federation
 
@@ -293,13 +293,13 @@ Access control settings, requests to remove messages by "redactions" or remove p
 
 ##### 2.3.1.3 Integration services (bots and widgets)
 
-The [Matrix.org homeserver](@/homeserver/about.md) provides a range of integrations in the form of Widgets (miniature web applications accessed as part of a Matrix Client) and Bots (automated participants in rooms).
+The [matrix.org homeserver](@/homeserver/about.md) provides a range of integrations in the form of Widgets (miniature web applications accessed as part of a Matrix Client) and Bots (automated participants in rooms).
 
 Bots and Widgets currently have access to all the messages and files in any room in which they participate, although we are adding a more sophisticated access control system.
 
 ### 2.4 Transfers of your data
 
-If you use our Service your data will be transferred outside of the EU to other homeservers and services connected with Matrix.org as this is necessary to provide the Service to you. By the very nature of our Service, such transfers will occur regularly and we have no control over the safeguards adopted by third party recipients.
+If you use our Service your data will be transferred outside of the EU to other homeservers and services connected with matrix.org as this is necessary to provide the Service to you. By the very nature of our Service, such transfers will occur regularly and we have no control over the safeguards adopted by third party recipients.
 
 Where we engage suppliers to process your data outside the EU we will ensure that appropriate safeguards such as the Standard Contractual Clauses are in place.
 
@@ -336,7 +336,7 @@ You can access all the information we collect about you by using any compatible 
 
 ### 2.9 Who can see my messages and files?
 
-In unencrypted and encrypted rooms, users connecting to the [Matrix.org homeserver](@/homeserver/about.md) (directly or over federation) will be able to see messages and files according to the access permissions configuration of the relevant room. This data is stored in the format it was received on our servers, and can be viewed by [Element](https://element.io) engineers (employees and contractors) under the conditions outlined below.
+In unencrypted and encrypted rooms, users connecting to the [matrix.org homeserver](@/homeserver/about.md) (directly or over federation) will be able to see messages and files according to the access permissions configuration of the relevant room. This data is stored in the format it was received on our servers, and can be viewed by [Element](https://element.io) engineers (employees and contractors) under the conditions outlined below.
 
 Rooms have different visibility settings which are determined by the room administrators. The history visibility possibilities are the following, by increasing order of openness (least open first):
 
