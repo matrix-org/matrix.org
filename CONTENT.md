@@ -152,8 +152,10 @@ title = "My client name"
 thumbnail = "your-client-name.svg"
 maintainer = "Your name or organisation"
 maturity = "PICK ONE Stable OR Beta OR Alpha OR Obsolete"
-repo = "https://github.com/example-org/example-repo"
+website = "https://example.com"
+docs = "https://example.com/docs"
 matrix_room = "#your-matrix-room:example.com"
+repo = "https://github.com/example-org/example-repo"
 licence = "PICK ONE identifier from https://spdx.org/licenses/"
 # Screenshots are expected to be in the same folder
 screenshots = []
