@@ -8,8 +8,6 @@ seamlessly.
 """
 +++
 
-An important idea in Matrix is Interoperability. This means that Matrix is open
-to exchanging data and messages with other platforms using an
-[Open Standard](https://matrix.org/docs/spec). We refer to the connection to
-other platforms as bridging. Click on the platform you would like to bridge to
-to see all the existing bridges.
+Interoperability is an important feature of Matrix. As an [open standard](https://spec.matrix.org/latest/),
+Matrix makes it possible to build bridges that allow messages to be exchanged with other platforms.
+Select a platform to explore its existing bridges.
