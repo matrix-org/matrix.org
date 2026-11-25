@@ -294,4 +294,4 @@ with little to no human supervision.
 
 ## Code of Conduct
 
-All participants of the Matrix community, including contributors, are expected to adhere to the Matrix Code of Conduct. For more information, visit https://matrix.org/legal/code-of-conduct/.
+All participants of the Matrix community, including contributors, are expected to adhere to the Matrix Code of Conduct. For more information, visit <https://matrix.org/legal/code-of-conduct/>.
