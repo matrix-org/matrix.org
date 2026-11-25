@@ -41,7 +41,7 @@ other_linux_link = "https://sable.moe/en/download/"
 
 An almost stable Matrix client with end-to-end encryption, spaces, threads, multiple accounts, and voice and video calls.
 
-Also available from [Arch Linux](https://archlinux.org/packages/extra/x86_64/sable/),
+Also available from the [Arch Linux](https://archlinux.org/packages/extra/x86_64/sable/) repositories,
 [Homebrew](https://git.sable.moe/SableClient/homebrew-sable), and
 [IzzyOnDroid](https://apt.izzysoft.de/packages/moe.sable.client).
 iOS builds can be installed using
