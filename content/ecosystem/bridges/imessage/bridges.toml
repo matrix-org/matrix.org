@@ -34,7 +34,7 @@ A Matrix-iMessage puppeting bridge for Linux, written in Go using [mautrix-go](h
 maturity = "Alpha"
 language = "Go"
 license = "MPL-2.0"
-docs = "https://github.com/312-dev/macoun-matrix/blob/main/docs/setup.md"
+docs = "https://github.com/312-dev/macoun-matrix/wiki"
 repo = "https://github.com/312-dev/macoun-matrix"
 featured = false
 privilege.platform = "User" # Free text
