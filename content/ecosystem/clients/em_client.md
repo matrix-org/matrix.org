@@ -4,7 +4,7 @@ title = "eM Client"
 [extra]
 thumbnail = "em_client.svg"
 maintainer = "eM Client, s.r.o."
-maturity = "Beta"
+maturity = "Stable"
 licence = "Proprietary"
 featured = false
 screenshots = []
