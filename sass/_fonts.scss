@@ -14,7 +14,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6{
     scroll-margin-top: 74px;
 
     a {
@@ -55,6 +56,9 @@ h5 {
     font-size: 1.2rem;
 }
 
+h6 {
+    font-size: 1rem;
+}
 
 h2+h3 {
     margin-block-start: 1rem;
