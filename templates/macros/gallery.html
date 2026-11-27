@@ -1,0 +1,36 @@
+{# Image gallery with a CSS-only lightbox (see sass/_gallery.scss).
+   `images` is a list of image paths, each prefixed with `base`. `id` must be
+   unique on the page: it is used for the lightbox anchors. `class` adds
+   context-specific modifier classes to the gallery container. Lightboxes of
+   a gallery with several images link to the previous and next image, wrapping
+   around at the ends.
+   The output contains no blank lines, so it can be used from shortcodes
+   without the markdown renderer ending the HTML block. #}
+{% macro gallery(images, alt, id, base="", class="") -%}
+{%- set multi = images | length > 1 -%}
+<div class="gallery{% if class %} {{ class }}{% endif %}">
+    {%- for image in images %}
+    <a href="#{{ id }}-{{ loop.index }}" class="gallery-item" aria-label="Enlarge image">
+        <img src="{{ base }}{{ image }}"
+             alt="{{ alt }}{% if multi %} {{ loop.index }}{% endif %}"
+             class="gallery-img">
+    </a>
+    {%- endfor %}
+</div>
+{%- for image in images %}
+{%- set previous = loop.index0 %}
+{%- if previous == 0 %}{% set previous = images | length %}{% endif %}
+{%- set next = loop.index + 1 %}
+{%- if loop.last %}{% set next = 1 %}{% endif %}
+<div class="lightbox" id="{{ id }}-{{ loop.index }}" role="dialog" aria-label="{{ alt }}">
+    <a href="#/" class="lightbox-backdrop" aria-label="Close"></a>
+    <a href="#/" class="lightbox-close" aria-label="Close">&times;</a>
+    {%- if multi %}
+    <a href="#{{ id }}-{{ previous }}" class="lightbox-nav lightbox-prev" aria-label="Previous image">&lsaquo;</a>
+    <a href="#{{ id }}-{{ next }}" class="lightbox-nav lightbox-next" aria-label="Next image">&rsaquo;</a>
+    {%- endif %}
+    <img src="{{ base }}{{ image }}"
+         alt="{{ alt }}{% if multi %} {{ loop.index }}{% endif %}">
+</div>
+{%- endfor %}
+{%- endmacro gallery %}
