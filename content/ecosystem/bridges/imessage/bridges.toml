@@ -24,3 +24,30 @@ editing = false
 reactions = true
 typing_notifications = true
 read_receipts = true
+
+[[bridges]]
+name = "macoun-matrix"
+maintainer = "312.dev"
+summary = """
+A Matrix-iMessage puppeting bridge for Linux, written in Go using [mautrix-go](https://github.com/mautrix/go) bridgev2 and [rustpush](https://github.com/OpenBubbles/rustpush). A Mac you own runs a small relay for Apple registration; messages go directly between the bridge and Apple. Self-hosted and built from source.
+"""
+maturity = "Alpha"
+language = "Go"
+license = "MPL-2.0"
+docs = "https://github.com/312-dev/macoun-matrix/wiki"
+repo = "https://github.com/312-dev/macoun-matrix"
+featured = false
+privilege.platform = "User" # Free text
+privilege.matrix = "Homeserver Admin" # Any of Homeserver Admin, Room Admin, None
+[bridges.supports]
+direct_messages = true
+groups = true
+message_media = true
+replies = true
+mentions = false
+threads = false
+redactions = true
+editing = true
+reactions = true
+typing_notifications = true
+read_receipts = true
