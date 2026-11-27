@@ -49,6 +49,11 @@ website = "https://www.flatturtle.com/"
 logo = "flatturtle.png"
 
 [[silver]]
+name = "FLOSS/fund"
+website = "https://floss.fund/"
+logo = "flossfund.svg"
+
+[[silver]]
 name = "Gematik"
 website = "https://www.gematik.de/"
 logo = "gematik.png"
