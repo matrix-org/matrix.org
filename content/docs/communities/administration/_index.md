@@ -103,7 +103,7 @@ Here are some important factors to guide your choice:
 
 Bots and integrations in your rooms may require additional manual migration steps.
 After upgrading, reconfigure your bots and integrations for the new room.
-This is particularly important for any moderation tooling you are using, such as [draupnir](https://the-draupnir-project.github.io/draupnir-documentation/) or [mjolnir](@/docs/communities/moderation/_index.md#your-community-s-security-guard).
+This is particularly important for any moderation tooling you are using, such as [Draupnir or Meowlnir](@/docs/communities/moderation/_index.md#moderation-bots).
 Check if your integrations need a configuration update, e.g. supplying them with the new room ID, and check that they have joined the upgraded room.
 Some integrations also store state in Matrix rooms, so consider if you need to recreate or copy some [room state](https://spec.matrix.org/latest/client-server-api/#types-of-room-events) over, as is the case for example with [Hookshot](https://matrix-org.github.io/matrix-hookshot/latest/usage/room_configuration.html) configuration.
 
