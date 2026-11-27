@@ -161,7 +161,7 @@ topics, priorities initiatives, gather feedback and share knowledge.
 
 ### Members
 
-Amandine Le Pape, Andy Balaam, Greg Sutcliffe, Mathieu Velten, Matthew Hodgson, Nicolas Werner, Niklas Zender, Richard van der Hoff, Yoan Pintas
+Amandine Le Pape, Andy Balaam, Greg Sutcliffe, Mathieu Velten, Matthew Hodgson, Nicolas Werner, Niklas Zender, Reid Anderson, Richard van der Hoff, Yoan Pintas
 
 Chair: Yoan Pintas  
 Vice Chair: Amandine Le Pape
