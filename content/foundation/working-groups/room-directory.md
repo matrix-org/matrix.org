@@ -1,6 +1,7 @@
 +++
 title = "Room Directory WG"
 template = "governing-board/working_group.html"
+extra.meta_description = "Learn about The Matrix.org Foundation's Room Directory Working Group, including its charter, membership, activities, contact details, and room directory policy"
 +++
 
 ## Activities
