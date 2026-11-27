@@ -7,6 +7,8 @@ maintainer = "eM Client, s.r.o."
 maturity = "Stable"
 licence = "Proprietary"
 featured = false
+docs = "https://www.emclient.com/em-client-with-matrix
+matrix_room = "#emclient:matrix.org"
 screenshots = []
 good_for = "Users who want an all-in-one application for email, calendars, contacts, notes, and chat"
 
